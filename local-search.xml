@@ -115,9 +115,9 @@
     
     <tags>
       
-      <tag>课程笔记</tag>
-      
       <tag>数据结构</tag>
+      
+      <tag>课程笔记</tag>
       
     </tags>
     
@@ -144,13 +144,13 @@
     
     <tags>
       
+      <tag>课程笔记</tag>
+      
       <tag>物理</tag>
       
       <tag>电磁学</tag>
       
       <tag>光学</tag>
-      
-      <tag>课程笔记</tag>
       
     </tags>
     
@@ -177,9 +177,9 @@
     
     <tags>
       
-      <tag>物理</tag>
-      
       <tag>课程笔记</tag>
+      
+      <tag>物理</tag>
       
       <tag>量子力学</tag>
       
@@ -243,9 +243,9 @@
     
     <tags>
       
-      <tag>物理</tag>
-      
       <tag>课程笔记</tag>
+      
+      <tag>物理</tag>
       
       <tag>力学</tag>
       
@@ -276,13 +276,13 @@
     
     <tags>
       
-      <tag>HTML</tag>
-      
       <tag>前端</tag>
       
       <tag>Web</tag>
       
       <tag>笔记</tag>
+      
+      <tag>HTML</tag>
       
     </tags>
     
@@ -300,9 +300,7 @@
     
     <categories>
       
-      <category>web 开发</category>
-      
-      <category>工具</category>
+      <category>-Web 开发 - 工具</category>
       
     </categories>
     
