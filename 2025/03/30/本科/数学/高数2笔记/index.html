@@ -1,0 +1,1596 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/avatar.jpg">
+  <link rel="icon" href="/img/avatar.jpg">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="东川路第一寒冰">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="重积分 重积分的概念和性质 二重积分的概念 定义： 设 \(D\) 是平面上的有界闭区域，\(f(x,y)\) 为 \(D\) 上的有界函数，\(I\) 为实数.若对 \(D\) 的任意分割 \(\Delta D_1 , \Delta D_2 , \cdots , \Delta D_n\) ，任取 \((\xi_i , \eta_i)\in\Delta D_i(i&#x3D;1,\ldots,n)\)，作和">
+<meta property="og:type" content="article">
+<meta property="og:title" content="高等数学 2 笔记">
+<meta property="og:url" content="http://dcldyhb.github.io/2025/03/30/%E6%9C%AC%E7%A7%91/%E6%95%B0%E5%AD%A6/%E9%AB%98%E6%95%B02%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="东川路第一寒冰的笔记">
+<meta property="og:description" content="重积分 重积分的概念和性质 二重积分的概念 定义： 设 \(D\) 是平面上的有界闭区域，\(f(x,y)\) 为 \(D\) 上的有界函数，\(I\) 为实数.若对 \(D\) 的任意分割 \(\Delta D_1 , \Delta D_2 , \cdots , \Delta D_n\) ，任取 \((\xi_i , \eta_i)\in\Delta D_i(i&#x3D;1,\ldots,n)\)，作和">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-03-30T13:39:54.000Z">
+<meta property="article:modified_time" content="2025-09-19T06:39:04.056Z">
+<meta property="article:author" content="东川路第一寒冰">
+<meta property="article:tag" content="课程笔记">
+<meta property="article:tag" content="高数">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>高等数学 2 笔记 - 东川路第一寒冰的笔记</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"dcldyhb.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.jpeg","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>哦耶</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="高等数学 2 笔记"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-03-30 21:39" pubdate>
+          2025年3月30日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          9.3k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          78 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">高等数学 2 笔记</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="重积分">重积分</h2>
+<h3 id="重积分的概念和性质">重积分的概念和性质</h3>
+<h4 id="二重积分的概念">二重积分的概念</h4>
+<p><strong>定义：</strong></p>
+<p>设 <span class="math inline">\(D\)</span> 是平面上的有界闭区域，<span class="math inline">\(f(x,y)\)</span> 为 <span class="math inline">\(D\)</span> 上的有界函数，<span class="math inline">\(I\)</span> 为实数.若对 <span class="math inline">\(D\)</span> 的任意分割 <span class="math inline">\(\Delta D_1 , \Delta D_2 , \cdots , \Delta D_n\)</span> ，任取 <span class="math inline">\((\xi_i , \eta_i)\in\Delta D_i(i=1,\ldots,n)\)</span>，作和 <span class="math inline">\(\displaystyle\sum_{i=1}^nf(\xi_i,\eta_i)\Delta \sigma_i\)</span> （<span class="math inline">\(\Delta \sigma_i\)</span> 为 <span class="math inline">\(D_i\)</span> 的面积），总有</p>
+<p><span class="math display">\[
+\lim_{\lambda\to 0}\sum_{i=1}^nf(\xi_i,\eta_i)\Delta \sigma_i = I
+\]</span></p>
+<p>其中 <span class="math inline">\(\displaystyle\lambda = \max_{1\leq i\leq d} \{d_i\}\)</span>，<span class="math inline">\(d_i\)</span> 是小区域 <span class="math inline">\(\Delta D_i\)</span> 的直径，则称函数 <span class="math inline">\(f(x,y)\)</span> 在 <span class="math inline">\(D\)</span> 上<strong>可积</strong>，记为 <span class="math inline">\(f\in R(D)\)</span>；极限值 <span class="math inline">\(I\)</span> 称为 <span class="math inline">\(f(x,y)\)</span> 在 <span class="math inline">\(D\)</span> 上的<strong>二重积分</strong>，记作</p>
+<p><span class="math display">\[
+\iint_D f(x,y)\,\mathrm{d}\sigma.
+\]</span></p>
+<ul>
+<li><p><span class="math inline">\(\displaystyle \iint\)</span> 积分号</p></li>
+<li><p><span class="math inline">\(D\)</span> 积分区域</p></li>
+<li><p><span class="math inline">\(f(x,y)\)</span> 被积函数</p></li>
+<li><p><span class="math inline">\(\mathrm{d}\sigma\)</span> 面积元素（微元）</p></li>
+<li><p>二重积分的几何意义</p>
+<ul>
+<li>当被积函数大于 <span class="math inline">\(0\)</span> 时，二重积分是柱体体积</li>
+<li>当被积函数小于 <span class="math inline">\(0\)</span> 时，二重积分是柱体体积的负值</li>
+<li>一般的，为曲顶柱体体积的代数和</li>
+</ul></li>
+<li><p>可积的充分条件</p>
+<ul>
+<li><strong>定理：</strong> 若函数 <span class="math inline">\(f(x,y)\)</span> 在区域 <span class="math inline">\(D\)</span> 上连续，则 <span class="math inline">\(f(x,y)\in D\)</span>.</li>
+</ul></li>
+<li><p><span class="math inline">\(f(x,y)\)</span> 在 <span class="math inline">\(D\)</span> 上的可积性及积分值与其在 <span class="math inline">\(D\)</span> 内<strong>有限条光滑曲线</strong>上的定义无关</p></li>
+</ul>
+<h3 id="二重积分的性质">二重积分的性质</h3>
+<ol type="1">
+<li><p><span class="math inline">\(\displaystyle\iint_D\,\mathrm{d}\sigma = \iint_D 1\,\mathrm{d}\sigma = A_D \quad\left(\text{D 的面积}\right)\)</span>.</p></li>
+<li><p><strong>线性性：</strong> 设 <span class="math inline">\(f,g\in R(D)\)</span>，<span class="math inline">\(\alpha , \beta\)</span>，是任意常数，则 <span class="math inline">\(\alpha f +\beta g \in R(D)\)</span>，且</p>
+<p><span class="math display">\[
+\iint_D (\alpha f +\beta g)\,\mathrm{d}\sigma = \alpha \iint_D f\,\mathrm{d}\sigma + \beta \iint_D g\,\mathrm{d}\sigma
+\]</span></p></li>
+<li><p><strong>区域可加性：</strong> 若 <span class="math inline">\(f\in R(D)\)</span> 且积分区域 <span class="math inline">\(D\)</span> 分为内部不相交的子区域 <span class="math inline">\(D_1 , D_2\)</span>，则</p>
+<p><span class="math display">\[
+\iint_D f(x,y) \,\mathrm{d}\sigma = \iint_{D_1} f(x,y)\,\mathrm{d}\sigma + \iint_{D_2} f(x,y)\,\mathrm{d}\sigma
+\]</span></p></li>
+<li><p><strong>保序性：</strong> 若 <span class="math inline">\(f,g\in R(D)\)</span>，且当 <span class="math inline">\((x,y)\in D\)</span> 时，<span class="math inline">\(f(x,y)\leq g(x,y)\)</span>，则</p>
+<p><span class="math display">\[
+\iint_D f(x,y)\,\mathrm{d}\sigma \leq \iint_D g(x,y)\,\mathrm{d}\sigma
+\]</span></p>
+<ul>
+<li><strong>推论 1：</strong> 若 <span class="math inline">\(f\in R(D)\)</span> ,则 <span class="math inline">\(\vert f(x,y) \vert \in R(D)\)</span>，且</li>
+</ul>
+<p><span class="math display">\[
+ \left\vert \iint_D f(x,y)\,\mathrm{d}\sigma \right\vert \leq \iint_D \vert f(x,y) \vert \,\mathrm{d}\sigma
+\]</span></p>
+<ul>
+<li><strong>推论 2：</strong> 若 <span class="math inline">\(f\in R(D)\)</span>，且当 <span class="math inline">\((x,y)\in D\)</span> 时， <span class="math inline">\(m\leq f(x,y) \leq M\)</span>，则</li>
+</ul>
+<p><span class="math display">\[
+ mA_D \leq \iint_D f(x,y)\,\mathrm{d}\sigma \leq MA_D
+\]</span></p>
+<ul>
+<li><strong>推论 3：</strong> 若 <span class="math inline">\(f\in R(D)\)</span>，且当 <span class="math inline">\((x,y)\in D\)</span> 时，<span class="math inline">\(f(x,y) \geq 0\)</span>，则</li>
+</ul>
+<p><span class="math display">\[
+ \iint_D f(x,y)\,\mathrm{d}\sigma \geq 0
+\]</span></p></li>
+<li><p><strong>积分中值定理：</strong> 若 <span class="math inline">\(f(x,y)\in C(D)\)</span> ，<span class="math inline">\(g(x,y)\in R(D)\)</span>，且 <span class="math inline">\(g\)</span> 在 <span class="math inline">\(D\)</span> 上不变号，则 <span class="math inline">\(\exists \xi , \eta \in D\)</span>，使得</p>
+<p><span class="math display">\[
+\iint_D f(x,y)g(x,y)\,\mathrm{d}\sigma = f(\xi ,\eta )\iint_D g(x,y)\,\mathrm{d}\sigma
+\]</span></p>
+<ul>
+<li><strong>推论：</strong> 若 <span class="math inline">\(f(x,y)\in C(D)\)</span>，则存在 <span class="math inline">\((\xi , \eta )\in D\)</span>，使得</li>
+</ul>
+<p><span class="math display">\[
+ \iint_D f(x,y)\,\mathrm{d}\sigma = f(\xi ,\eta )A_D
+\]</span></p>
+<p>称 <span class="math inline">\(f(\xi,\eta) = \frac{\iint_D f\,\mathrm{d}\sigma}{A_D}\)</span> 为函数 <span class="math inline">\(f(x,y)\)</span> 在有界闭区域 <span class="math inline">\(D\)</span> 上的<strong>平均值</strong></p></li>
+</ol>
+<h3 id="二重积分的计算">二重积分的计算</h3>
+<h4 id="直角坐标系下的计算">直角坐标系下的计算</h4>
+<p>当二重积分存在时，可利用平行于坐标轴的直线来划分积分区域 <span class="math inline">\(D\)</span>，此时，面积元素</p>
+<p><span class="math display">\[
+\mathrm{d}\sigma = \mathrm{d}x\mathrm{d}y
+\]</span></p>
+<p>故二重积分在直角坐标系下可表示为</p>
+<p><span class="math display">\[
+\iint_D f(x,y)\,\mathrm{d}\sigma = \iint_D f(x,y)\,\mathrm{d}x\mathrm{d}y
+\]</span></p>
+<h5 id="x-型正则区域"><span class="math inline">\(x\)</span> 型正则区域</h5>
+<p><span class="math display">\[
+D = \left\{(x,y)\bigg| \varphi_1(x)\leq y\leq \varphi_2(x),a\leq x\leq b\right\}
+\]</span></p>
+<p>化为先 <span class="math inline">\(y\)</span> 后 <span class="math inline">\(x\)</span> 的二次积分</p>
+<p><span class="math display">\[
+\begin{aligned}
+    \iint_D f(x,y)\,\mathrm{d}x\mathrm{d}y &amp;= \int_a^b\left[\int_{\varphi_1(x)}^{\varphi_2(x)} f(x,y)\,\mathrm{d}y\right]\mathrm{d}x \\
+    &amp;\equiv \int_a^b f(x,y)\,\mathrm{d}x\mathrm{d}y
+\end{aligned}
+\]</span></p>
+<h5 id="y-型正则区域"><span class="math inline">\(y\)</span> 型正则区域</h5>
+<p><span class="math display">\[
+D = \left\{(x,y)\bigg| \varphi_1(y)\leq x\leq \varphi_2(y),c\leq y\leq d\right\}
+\]</span></p>
+<p>化为先 <span class="math inline">\(x\)</span> 后 <span class="math inline">\(y\)</span> 的二次积分</p>
+<p><span class="math display">\[
+\begin{aligned}
+    \iint_D f(x,y)\,\mathrm{d}x\mathrm{d}y &amp;= \int_c^d\left[\int_{\varphi_1(y)}^{\varphi_2(y)} f(x,y)\,\mathrm{d}x\right]\mathrm{d}y \\
+    &amp;\equiv \int_c^d f(x,y)\,\mathrm{d}x\mathrm{d}y
+\end{aligned}
+\]</span></p>
+<h5 id="一般区域的二重积分">一般区域的二重积分</h5>
+<p>分割成若干个正则子区域，利用积分区域可加性，分别在子区域上积分后求和</p>
+<blockquote>
+<p>直角坐标计算二重积分的步骤</p>
+<ol type="1">
+<li><strong>画出积分区域</strong> <span class="math inline">\(D\)</span> 的草图，并<strong>确定类型</strong></li>
+<li>按照所确定的类型<strong>表示区域</strong> <span class="math inline">\(D\)</span></li>
+<li><strong>化二重积分为二次积分</strong>（注意上下限）</li>
+<li><strong>计算</strong>二重积分</li>
+</ol>
+</blockquote>
+<h4 id="极坐标系下的计算">极坐标系下的计算</h4>
+<p>当积分区域的边界曲线或被积函数用极坐标表示较为简单时，可用极坐标来计算二重积分.</p>
+<p>面积元素 <span class="math inline">\(\Delta \sigma\)</span> 在极坐标下为</p>
+<p><span class="math display">\[
+\boxed{\Delta\sigma= r\mathrm{d}r\mathrm{d}\theta}
+\]</span></p>
+<p>从直角坐标到极坐标时的二重积分变换公式为</p>
+<p><span class="math display">\[
+\iint_D f(x,y)\,\mathrm{d}\sigma = \iint_D f(r\cos\theta,r\sin\theta)r\,\mathrm{d}r\mathrm{d}\theta
+\]</span></p>
+<p><span class="math display">\[
+\left\{\left(r,\theta\right)\left \vert r_1(\theta)\leq r \leq r_2(\theta) , \alpha \leq \theta \leq \beta \right.\right\}
+\]</span></p>
+<p>则</p>
+<p><span class="math display">\[
+\iint_D f(x,y)\,\mathrm{d}\sigma = \int_\alpha^\beta\, \mathrm{d}\theta\int_{r_1(\theta)}^{r_2(\theta)} f(r\cos\theta,r\sin\theta)r\,\mathrm{d}r
+\]</span></p>
+<h4 id="二重积分的变量代换">二重积分的变量代换</h4>
+<p><strong>定理：</strong></p>
+<p>设变换 <span class="math inline">\(\displaystyle T :\begin{cases}x=x(u,v)\\y=y(u,v)\end{cases}\)</span> 有连续偏导数，且满足 <span class="math inline">\(\displaystyle J = \frac{\partial (x,y)}{\partial (u,v)}\coloneqq \begin{vmatrix}x_u ,x_v\newline y_u,y_v\end{vmatrix} \left(\text{Jacobi 行列式}\right)\neq 0\)</span>，而 <span class="math inline">\(f(x,y)\in C(D)\)</span>，则</p>
+<p><span class="math display">\[
+\iint_D f(x,y)\,\mathrm{d}\sigma = \iint_{D^*} f(x(u,v),y(u,v))\left\vert J \right\vert \,\mathrm{d}u\mathrm{d}v
+\]</span></p>
+<ul>
+<li><p>在定理条件下，变换 <span class="math inline">\(T\)</span> 一定存在逆变换 <span class="math inline">\(T^{-1}:\begin{cases}u=u(x,y)\\v=v(x,y)\end{cases}\)</span>，且 <span class="math inline">\(\frac{\partial (u,v)}{\partial (x,y)}\cdot \frac{\partial (x,y)}{\partial (u,v)} = 1\)</span></p>
+<p>有时，借助此式求 <span class="math inline">\(J\)</span> 较为简单</p></li>
+<li><p>当 Jacobi 行列式仅在区域 <span class="math inline">\(D^*\)</span> 内个别点上或个别曲线上为 <span class="math inline">\(0\)</span> 时，定理结论仍成立</p></li>
+<li><p>在广义极坐标 <span class="math inline">\(\begin{cases}x=ar\cos\theta\\y=br\sin\theta\end{cases}\)</span> 下，<span class="math inline">\(J = abr\)</span></p></li>
+</ul>
+<h3 id="三重积分">三重积分</h3>
+<h4 id="三重积分的定义">三重积分的定义</h4>
+<p><strong>定义：</strong></p>
+<p>设 <span class="math inline">\(\Omega\)</span> 是 <span class="math inline">\(\mathbb{R}^3\)</span> 中的有界闭区域，三元函数 <span class="math inline">\(f(x,y,z)\)</span> 在 <span class="math inline">\(\Omega\)</span> 上有界，<span class="math inline">\(I\)</span> 为实数. 若将 <span class="math inline">\(\Omega\)</span> 任意分割成 <span class="math inline">\(n\)</span> 个小区域 <span class="math inline">\(\Delta \Omega_1,\Delta\Omega_2,\ldots,\Delta\Omega_n\)</span>，任取 <span class="math inline">\(\left(\varepsilon_i,\eta_i,\xi_i \right)\in\Delta\Omega_i\left(i=1,2,\ldotp,n\right)\)</span>，作和 <span class="math inline">\(\displaystyle\sum_{i=1}^nf\left(\varepsilon_i,\eta_i,\xi_i \right)\Delta V_i\)</span>，（<span class="math inline">\(\Delta V_i\)</span> 是 <span class="math inline">\(\Delta\Omega_i\)</span> 的体积），总有</p>
+<p><span class="math display">\[
+\lim_{\lambda\to 0}\sum_{i=1}^nf\left(\varepsilon_i,\eta_i,\xi_i \right)\Delta V_i = I
+\]</span></p>
+<p>其中 <span class="math inline">\(\lambda = \max_{1\leq i\leq n}\{d_i\}\)</span>，<span class="math inline">\(d_i\)</span> 是 <span class="math inline">\(\Delta\Omega_i\)</span> 的直径，则称函数 <span class="math inline">\(f(x,y,z)\)</span> 在 <span class="math inline">\(\Omega\)</span> 上<strong>可积</strong>，记为 <span class="math inline">\(f\in R(\Omega)\)</span>； <span class="math inline">\(I\)</span> 称为 <span class="math inline">\(f(x,y,z)\)</span> 在 <span class="math inline">\(\Omega\)</span> 上的<strong>三重积分</strong>，记作</p>
+<p><span class="math display">\[
+\iiint_\Omega f(x,y,z)\,\mathrm{d}V
+\]</span></p>
+<p>其中 <span class="math inline">\(V_\Omega\)</span> 是区域 <span class="math inline">\(\Omega\)</span> 的体积</p>
+<ul>
+<li>若 <span class="math inline">\(f(x,y,z)\)</span> 表示占有三维空间区域 <span class="math inline">\(\Omega\)</span> 的物体的体密度函数，则 <span class="math inline">\(\displaystyle\iiint_\Omega f(x,y,z)\,\mathrm{d}V\)</span> 给出了物体的<strong>质量</strong></li>
+<li>类似二重积分，三重积分具有线性性，区域可加性，保序性以及推论和积分中值定理，并且有 <span class="math inline">\(\displaystyle\iiint_\Omega \,\mathrm{d}V = V_\Omega\)</span></li>
+</ul>
+<h4 id="直角坐标系下的计算-1">直角坐标系下的计算</h4>
+<p>直角坐标系下，由于 <span class="math inline">\(\mathrm{d}V=\mathrm{d}x\mathrm{d}y\mathrm{d}z\)</span>，故</p>
+<p><span class="math display">\[
+\iiint_\Omega f(x,y,z)\,\mathrm{d}V = \iiint_\Omega f(x,y,z)\,\mathrm{d}x\mathrm{d}y\mathrm{d}z
+\]</span></p>
+<h5 id="柱线法坐标面投影法">柱线法（坐标面投影法）</h5>
+<p>设 <span class="math inline">\(\Omega\)</span> 是以曲面 <span class="math inline">\(z=z_1(x,y)\)</span> 为底，曲面 <span class="math inline">\(x=x_2(x,y)\)</span>，而侧面是母线平行于 <span class="math inline">\(z\)</span> 轴的柱体所围成的区域</p>
+<p>设 <span class="math inline">\(\Omega\)</span> 在 <span class="math inline">\(xOy\)</span> 面上的投影区域为 <span class="math inline">\(D_1\)</span> ，则 <span class="math inline">\(\Omega\)</span> 可表示为</p>
+<p><span class="math display">\[
+\Omega = \left\{(x,y,z)\bigg| (x,y)\in D_1 , z_1(x,y)\leq z\leq z_2(x,y)(x,y)\in D\right\}
+\]</span></p>
+<p>则物体总质量为</p>
+<p><span class="math display">\[
+\iint_D\left(\int_{z_1(x,y)}^{z_2(x,y)}f(x,y,z)\,\mathrm{d}z\right) \,\mathrm{d}x\mathrm{d}y
+\]</span></p>
+<p>故有</p>
+<p><span class="math display">\[
+\iiint_\Omega f(x,y,z)\,\mathrm{d}V = \iint_{D_1} \,\mathrm{d}x\mathrm{d}y\int_{z_1(x,y)}^{z_2(x,y)} f(x,y,z)\,\mathrm{d}z
+\]</span></p>
+<h5 id="截面法坐标轴投影法">截面法（坐标轴投影法）</h5>
+<p>设区域 <span class="math inline">\(\Omega\)</span> 在 <span class="math inline">\(z\)</span> 轴上的投影区间为 <span class="math inline">\([h_1,h_2]\)</span>，即 <span class="math inline">\(\Omega\)</span> 介于平面 <span class="math inline">\(z=h_1\)</span> 和 <span class="math inline">\(z=h_2\)</span> 之间，过 <span class="math inline">\(z\)</span> 处且垂直于 <span class="math inline">\(z\)</span> 轴的平面截 <span class="math inline">\(\Omega\)</span> 得截面区域 <span class="math inline">\(D_z\)</span>，则 <span class="math inline">\(\Omega\)</span> 可表示为</p>
+<p><span class="math display">\[
+\Omega = \left\{(x,y,z)\bigg| h_1\leq z\leq h_2 , (x,y)\in D_z\right\}
+\]</span></p>
+<p>物体总质量为</p>
+<p><span class="math display">\[
+\int_{h_1}^{h_2}\left(\iint_{D_z} f(x,y,z)\,\mathrm{d}x\mathrm{d}y\right) \,\mathrm{d}z
+\]</span></p>
+<p>故有</p>
+<p><span class="math display">\[
+\iiint_\Omega f(x,y,z)\,\mathrm{d}V = \int_{h_1}^{h_2}\,\mathrm{d}z\iint_{D_z} f(x,y,z)\,\mathrm{d}x\mathrm{d}y
+\]</span></p>
+<h4 id="三重积分的变量代换">三重积分的变量代换</h4>
+<p><strong>定理：</strong></p>
+<p>设变换 <span class="math inline">\(T:\begin{cases}x=x(u,v,w)\\y=y(u,v,w)\\z=z(u,v,w)\end{cases}\)</span> 有连续偏导数，且满足 <span class="math inline">\(J=\frac{\partial (x,y,z)}{\partial (u,v,w)}\neq 0\)</span>，而 <span class="math inline">\(f(x,y,z)\in C(\Omega)\)</span>，则</p>
+<p><span class="math display">\[
+  \iiint_\Omega f(x,y,z)\,\mathrm{d}V = \iiint_{\Omega^*} f(x(u,v,w),y(u,v,w),z(u,v,w))\left\vert J \right\vert \,\mathrm{d}u\mathrm{d}v\mathrm{d}w
+\]</span></p>
+<h5 id="柱面坐标系下的计算">柱面坐标系下的计算</h5>
+<p>柱面坐标系，实际上就是将 <span class="math inline">\(x,y\)</span> 坐标转换为极坐标</p>
+<p><span class="math display">\[
+\begin{cases}
+x = r\cos\theta\\
+y = r\sin\theta\\
+z = z
+\end{cases}
+\]</span></p>
+<p>其 Jacobi 行列式为</p>
+<p><span class="math display">\[
+J = \frac{\partial (x,y,z)}{\partial (r,\theta,z)} = \begin{vmatrix}
+\cos\theta &amp; -r\sin\theta &amp; 0\\
+\sin\theta &amp; r\cos\theta &amp; 0\\
+0 &amp; 0 &amp; 1
+\end{vmatrix} = r
+\]</span></p>
+<p>则柱面积分积分公式为</p>
+<p><span class="math display">\[
+\iiint_\Omega f(x,y,z)\,\mathrm{d}V = \iiint_{\Omega^*} f(r\cos\theta,r\sin\theta,z)r\,\mathrm{d}r\mathrm{d}\theta\mathrm{d}z
+\]</span></p>
+<h5 id="球面坐标系下的计算">球面坐标系下的计算</h5>
+<p>球面坐标系，实际上就是将 <span class="math inline">\(x,y,z\)</span> 坐标转换为球坐标</p>
+<p><span class="math display">\[
+\begin{cases}
+x = \rho\sin\varphi\cos\theta\\
+y = \rho\sin\varphi\sin\theta\\
+z = \rho\cos\varphi
+\end{cases}
+\]</span></p>
+<p>其 Jacobi 行列式为</p>
+<p><span class="math display">\[
+J = \frac{\partial (x,y,z)}{\partial (\rho,\varphi,\theta)} = \begin{vmatrix}
+\sin\varphi\cos\theta &amp; \rho\cos\varphi\cos\theta &amp; -\rho\sin\varphi\sin\theta\\
+\sin\varphi\sin\theta &amp; \rho\cos\varphi\sin\theta &amp; \rho\sin\varphi\cos\theta\\
+\cos\varphi &amp; -\rho\sin\varphi &amp; 0
+\end{vmatrix} = \rho^2\sin\varphi
+\]</span></p>
+<p>则球面积分积分公式为</p>
+<p><span class="math display">\[
+\iiint_\Omega f(x,y,z)\,\mathrm{d}V = \iiint_{\Omega^*} f(\rho\sin\varphi\cos\theta,\rho\sin\varphi\sin\theta,\rho\cos\varphi)\rho^2\sin\varphi\,\mathrm{d}\rho\mathrm{d}\varphi\mathrm{d}\theta
+\]</span></p>
+<h3 id="重积分的应用">重积分的应用</h3>
+<h4 id="重积分的几何应用">重积分的几何应用</h4>
+<h5 id="平面图形的面积">平面图形的面积</h5>
+<p><span class="math display">\[
+A(D) = \iint_D \,\mathrm{d}\sigma = \iint_D \,\mathrm{d}x\mathrm{d}y
+\]</span></p>
+<h5 id="立体的体积">立体的体积</h5>
+<p><span class="math display">\[
+V(\Omega) = \iiint_\Omega \,\mathrm{d}V = \iiint_\Omega \,\mathrm{d}x\mathrm{d}y\mathrm{d}z
+\]</span></p>
+<h5 id="曲面的面积">曲面的面积</h5>
+<p>设空间曲面 <span class="math inline">\(S:z=f(x,y),(x,y)\in D\)</span>.</p>
+<p>则曲面 <span class="math inline">\(S\)</span> 的面积为</p>
+<p><span class="math display">\[
+A(S) = \iint_D \sqrt{1+z_x^2+z_y^2}\,\mathrm{d}x\mathrm{d}y
+\]</span></p>
+<h4 id="重积分的物理应用">重积分的物理应用</h4>
+<h6 id="质心">质心</h6>
+<p>体密度为 <span class="math inline">\(\rho(x, y)\)</span> 的物体占据空间 <span class="math inline">\(\Omega\)</span>，其质心坐标为</p>
+<p><span class="math display">\[
+\begin{cases}
+  \displaystyle\bar{x} = \frac{\iiint_\Omega x\rho(x,y,z)\,\mathrm{d}V}{\iiint_\Omega\mu(x,y,z)\,\mathrm{d}V} \\
+  \displaystyle\bar{y} = \frac{\iiint_\Omega y\rho(x,y,z)\,\mathrm{d}V}{\iiint_\Omega\mu(x,y,z)\,\mathrm{d}V}\\
+  \displaystyle\bar{z} = \frac{\iiint_\Omega z\rho(x,y,z)\,\mathrm{d}V}{\iiint_\Omega\mu(x,y,z)\,\mathrm{d}V}
+\end{cases}
+\]</span></p>
+<h5 id="转动惯量">转动惯量</h5>
+<p>设物体的密度为 <span class="math inline">\(\rho(x,y,z)\)</span>，则物体分别关于 <span class="math inline">\(x\)</span>，<span class="math inline">\(y\)</span>，<span class="math inline">\(z\)</span> 轴的转动惯量为</p>
+<p><span class="math display">\[
+\begin{cases}
+  I_x = \iiint_\Omega \rho(x,y,z)(y^2+z^2)\,\mathrm{d}V\\
+  I_y = \iiint_\Omega \rho(x,y,z)(x^2+z^2)\,\mathrm{d}V\\
+  I_z = \iiint_\Omega \rho(x,y,z)(x^2+y^2)\,\mathrm{d}V
+\end{cases}
+\]</span></p>
+<h5 id="引力">引力</h5>
+<p><span class="math display">\[
+\begin{aligned}
+  &amp;\mathrm{d}\vec{F} = G\frac{m_0\mathrm{d}m}{r^3}\vec{r}\\
+  =&amp; G\frac{m_0\rho(x,y,z)\mathrm{d}V}{r^3}\cdot\left(x-x_0,y-y_0,z-z_0\right)\\
+  =&amp;\left(\mathrm{d}F_x,\mathrm{d}F_y,\mathrm{d}F_z\right)
+\end{aligned}
+\]</span></p>
+<h2 id="曲线积分和曲面积分">曲线积分和曲面积分</h2>
+<h3 id="第一类曲线积分和曲面积分">第一类曲线积分和曲面积分</h3>
+<h4 id="第一类曲线积分的概念">第一类曲线积分的概念</h4>
+<p><strong>定义：</strong></p>
+<p>设 <span class="math inline">\(C\)</span> 是 <span class="math inline">\(xOy\)</span> 面上的一条光滑曲线弧，函数 <span class="math inline">\(f(x,y)\)</span> 是定义在 <span class="math inline">\(C\)</span> 上的有界函数，在 <span class="math inline">\(C\)</span> 上任意插入分点 <span class="math inline">\(A = A_0,A_1,\ldots,A_{n-1},A_n=B\)</span>，将其分成 <span class="math inline">\(n\)</span> 个小弧段，记第 <span class="math inline">\(i\)</span> 个小弧段的弧长为 <span class="math inline">\(\Delta s_i\)</span>，在第 <span class="math inline">\(i\)</span> 个小段上任取点 <span class="math inline">\((\epsilon_i,\eta_i)\)</span>，和式 <span class="math inline">\(\displaystyle\sum_{i=1}^{+\infty}f(\epsilon_i,\eta_i)\Delta s_i\)</span>，当 <span class="math inline">\(\displaystyle\lambda=\max_{1\leq i\leq n}\{\Delta s_i\}\to 0\)</span> 时，有确定的极限值 <span class="math inline">\(I\)</span>，即</p>
+<p><span class="math display">\[
+\lim_{\lambda\to 0}\sum_{i=1}^nf(\epsilon_i,\eta_i)\Delta s_i = I
+\]</span></p>
+<p>则称函数 <span class="math inline">\(f(x,y)\)</span> 在曲线 <span class="math inline">\(C\)</span> 上<strong>可积</strong>，并将此极限值 <span class="math inline">\(I\)</span> 称为函数 <span class="math inline">\(f(x,y)\)</span> 在曲线 <span class="math inline">\(C\)</span> 上的<strong>第一类曲线积分</strong>，记作 <span class="math inline">\(\displaystyle\int_Cf(x,y)\,\mathrm{d}s\)</span>，即</p>
+<p><span class="math display">\[
+I = \int_C f(x,y)\,\mathrm{d}s = \lim_{\lambda\to 0}\sum_{i=1}^nf(\epsilon_i,\eta_i)\Delta s_i
+\]</span></p>
+<ul>
+<li>第一类曲线积分的几何含义为柱面的面积</li>
+<li><span class="math inline">\(\displaystyle\int_C\,\mathrm{d}s = \displaystyle\int_c1\,\mathrm{d}s=s_C\)</span></li>
+<li>若 <span class="math inline">\(C\)</span> 是封闭曲线，即 <span class="math inline">\(C\)</span> 的二端点重合，则记第一类曲线积分为 <span class="math inline">\(\displaystyle\oint_Cf(x,y)\,\mathrm{d}s\)</span></li>
+</ul>
+<h4 id="第一类曲线积分的性质">第一类曲线积分的性质</h4>
+<h5 id="与曲线方向无关">与曲线方向无关</h5>
+<p>若曲线 <span class="math inline">\(C\)</span> 的端点为 <span class="math inline">\(A\)</span> 和 <span class="math inline">\(B\)</span>，<span class="math inline">\(f(x,y)\)</span> 在曲线 <span class="math inline">\(C\)</span> 上可积，则</p>
+<p><span class="math display">\[
+\int_{\widehat{AB}} f(x,y)\,\mathrm{d}s=\oint_{\widehat{BA}} f(x,y)\,\mathrm{d}s
+\]</span></p>
+<h5 id="线性性">线性性</h5>
+<p>若 <span class="math inline">\(f,g\)</span> 在曲线 <span class="math inline">\(C\)</span> 上可积，<span class="math inline">\(\alpha , \beta\)</span> 是任意常数，则 <span class="math inline">\(\alpha f + \beta g\)</span> 在曲线 <span class="math inline">\(C\)</span> 上可积，且</p>
+<p><span class="math display">\[
+\int_C (\alpha f + \beta g)\,\mathrm{d}s = \alpha \int_C f(x,y)\,\mathrm{d}s + \beta \int_C g(x,y)\,\mathrm{d}s
+\]</span></p>
+<h5 id="路径可加性">路径可加性</h5>
+<p>若曲线 <span class="math inline">\(C\)</span> 由两段光滑曲线 <span class="math inline">\(C_1\)</span> 和 <span class="math inline">\(C_2\)</span> 首尾连接而成，则 <span class="math inline">\(f(x,y)\)</span> 在曲线 <span class="math inline">\(C\)</span> 上可积，等价于 <span class="math inline">\(f(x,y)\)</span> 在曲线 <span class="math inline">\(C_1\)</span> 和 <span class="math inline">\(C_2\)</span> 上均可积，且</p>
+<p><span class="math display">\[
+\int_C f(x,y)\,\mathrm{d}s = \int_{C_1} f(x,y)\,\mathrm{d}s + \int_{C_2} f(x,y)\,\mathrm{d}s
+\]</span></p>
+<h5 id="中值定理">中值定理</h5>
+<p>设函数 <span class="math inline">\(f\)</span> 在光滑曲线 <span class="math inline">\(C\)</span> 上连续，则 <span class="math inline">\(\exists (\epsilon,\eta)\in C\)</span>，使得</p>
+<p><span class="math display">\[
+\int_C f(x,y)\,\mathrm{d}s = f(\epsilon,\eta)\cdot s_C
+\]</span></p>
+<p>其中 <span class="math inline">\(s_C\)</span> 是曲线段 <span class="math inline">\(C\)</span> 的长度</p>
+<h4 id="第一类曲线积分的计算">第一类曲线积分的计算</h4>
+<p>设函数 <span class="math inline">\(f(x,y)\)</span> 在光滑曲线 <span class="math inline">\(C\)</span> 上连续，<span class="math inline">\(C\)</span> 的参数方程为 <span class="math inline">\(\begin{cases}x=x(t)\\y=y(t)\end{cases}\)</span>，<span class="math inline">\(t\in [a,b]\)</span>，满足 <span class="math inline">\(x&#39;(t)\)</span>，<span class="math inline">\(y&#39;(t)\)</span> 连续，且 <span class="math inline">\(x&#39;(t)^2 + y&#39;(t)^2 \neq 0\)</span>，则</p>
+<p><span class="math display">\[
+\int_C f(x,y)\,\mathrm{d}s = \int_\alpha^\beta f(x(t),y(t))\sqrt{x&#39;(t)^2 + y&#39;(t)^2}\,\mathrm{d}t
+\]</span></p>
+<ul>
+<li>右端积分限应 <span class="math inline">\(\alpha &lt; \beta\)</span></li>
+<li>当曲线 <span class="math inline">\(C\)</span> 形式为 <span class="math inline">\(y=y(x)\)</span>，<span class="math inline">\(x\in [a,b]\)</span> 时，则 <span class="math inline">\(\displaystyle\int_Cf(x,y)\,\mathrm{d}s =\int_a^bf(x,y(x))\sqrt{1+y&#39;^2(x)}\,\mathrm{d}x\)</span></li>
+<li>当曲线 <span class="math inline">\(C\)</span> 为极坐标 <span class="math inline">\(r=r(\theta)\)</span>，<span class="math inline">\(\theta\in [\alpha,\beta]\)</span> 时，则 <span class="math inline">\(\displaystyle\int_Cf(x,y)\,\mathrm{d}s = \int_\alpha^\beta f(r(\theta)\cos\theta,r(\theta)\sin\theta)\sqrt{r(\theta)^2+r&#39;^2(\theta)}\,\mathrm{d}\theta\)</span></li>
+</ul>
+<h3 id="第二类曲线积分与曲面积分">第二类曲线积分与曲面积分</h3>
+<h4 id="第二类曲线积分的概念">第二类曲线积分的概念</h4>
+<p><strong>定义：</strong></p>
+<p>设 <span class="math inline">\(C\)</span> 为平面光滑定向曲线(<span class="math inline">\(A\rightarrow B\)</span>)，且向量值函数 <span class="math inline">\(\vec{F}(x,y) = R(x,y)\vec{i}+Q(x,y)\vec{j}\)</span> 在 <span class="math inline">\(C\)</span> 上有界，<span class="math inline">\(\vec{e}_\tau\)</span> 为 <span class="math inline">\(C\)</span> 上点 <span class="math inline">\((x,y)\)</span> 处于定向一致的单位切向量，若</p>
+<p><span class="math display">\[
+\int_C \vec{F}(x,y) \cdot \vec{e}_\tau \,\mathrm{d}s
+\]</span></p>
+<p>存在，则称为<strong>向量值函数 <span class="math inline">\(\vec{F}\)</span> 在定向曲线 <span class="math inline">\(C\)</span> 上的曲线积分或第二类曲线积分</strong></p>
+<p>若 <span class="math inline">\(\vec{e}_\tau(x,y) = (\cos\alpha,\cos\beta)\)</span>，则</p>
+<p><span class="math display">\[
+\begin{aligned}
+  \int_C \vec{F}(x,y) \cdot \vec{e}_\tau \,\mathrm{d}s &amp;= \int_C P(x,y)\cos\alpha + Q(x,y)\cos\beta \,\mathrm{d}s \\
+  &amp;= \int_C P(x,y)\cos\alpha \,\mathrm{d}s + \int_C Q(x,y)\cos\beta \,\mathrm{d}s \\
+  &amp;= \int_C P(x,y)\,\mathrm{d}x +  Q(x,y)\,\mathrm{d}y
+\end{aligned}
+\]</span></p>
+<p>这是对坐标的曲线积分</p>
+<p>记 <span class="math inline">\(\vec{r} = (x,y)\)</span>，则 <span class="math inline">\(\mathrm{d}\vec{e} = \vec{e}_\tau \,\mathrm{d}s\)</span> 称为<strong>定向弧微分</strong></p>
+<p>从而有向量形式的第一类曲线积分</p>
+<p><span class="math display">\[
+\int_C \vec{F}(x,y) \cdot \mathrm{d}\vec{e} = \int_C \vec{F}\cdot \mathrm{d}\vec{r}
+\]</span></p>
+<h5 id="第二类曲线积分的性质">第二类曲线积分的性质</h5>
+<p>第二类曲线积分与<strong>曲线方向有关</strong>，即</p>
+<p><span class="math display">\[
+\int_{\widehat{AB}} \vec{F}(x,y) \cdot \mathrm{d}\vec{r} = -\oint_{\widehat{BA}} \vec{F}(x,y) \cdot \mathrm{d}\vec{r}
+\]</span></p>
+<p>此外线性性与对定向积分路径的可加性等仍然成立</p>
+<h5 id="第二类曲线积分的计算">第二类曲线积分的计算</h5>
+<p>若曲线 <span class="math inline">\(C\)</span> 为 <span class="math inline">\(\begin{cases}x=x(t)\\y=y(t)\end{cases}\)</span>，<span class="math inline">\(t:\alpha\rightarrow \beta\)</span></p>
+<p>起点 <span class="math inline">\(A\)</span> 对应 <span class="math inline">\(\alpha\)</span>，终点 <span class="math inline">\(B\)</span> 对应 <span class="math inline">\(\beta\)</span></p>
+<p>考察 <span class="math inline">\(\displaystyle\int_C P\,\mathrm{d}x + Q\,\mathrm{d}y = \int_C \vec{F}\cdot\vec{e}_\tau \,\mathrm{d}s\)</span>，沿曲线 <span class="math inline">\(C\)</span> 有 <span class="math inline">\(\vec{F} = \left(P\left(x(t),y(t)\right),Q\left(x(t),y(t)\right)\right)\)</span>，则</p>
+<p><span class="math display">\[
+\int_C P\,\mathrm{d}x + Q\,\mathrm{d}y = \int_\alpha^\beta P\left(x(t),y(t)\right)\,\mathrm{d}x(t) + Q\left(x(t),y(t)\right)\,\mathrm{d}y(t)
+\]</span></p>
+<h4 id="第二类曲面积分的概念">第二类曲面积分的概念</h4>
+<h5 id="双侧曲面">双侧曲面</h5>
+<p><strong>定义：</strong></p>
+<p>若点 <span class="math inline">\(P\)</span> 沿曲面 <span class="math inline">\(S\)</span> 上任何不越过曲面边界的连续闭曲线移动后回到起始位置时，法向量 <span class="math inline">\(\vec{n}\)</span> 保持原来的指向，则称 <span class="math inline">\(S\)</span> 为<strong>双侧曲面</strong></p>
+<p>典型的，Mobius 面不是双侧曲面</p>
+<p>选定双侧曲面 <span class="math inline">\(S\)</span> 一侧为正向，称为<strong>正侧</strong>，记为 <span class="math inline">\(S^+\)</span> ，其相反测记作 <span class="math inline">\(S^-\)</span></p>
+<h5 id="双侧曲面定侧">双侧曲面定侧</h5>
+<p>若 <span class="math inline">\(S:z=z(x,y)\)</span>，<span class="math inline">\((x,y)\in D_{xy}\)</span>，<span class="math inline">\(\vec{n}_0=\left(\cos\alpha,\cos\beta,\cos\gamma\right)=\pm\frac{\left(-z_x,-z_y,1\right)}{\sqrt{1+z_x^2+z_y^2}}\)</span></p>
+<p>若选取 <span class="math inline">\(\vec{n}_0=\left(\cos\alpha,\cos\beta,\cos\gamma\right)=\frac{\left(-z_x,-z_y,1\right)}{\sqrt{1+z_x^2+z_y^2}}\)</span>，则说明 <span class="math inline">\(\cos\gamma &gt; 0\)</span>，选取了曲面的上侧</p>
+<p>一般的</p>
+<p><span class="math display">\[
+\begin{cases}
+  \cos\alpha &gt;0 \Leftrightarrow \text{前侧}，\cos\alpha &lt; 0 \Leftrightarrow \text{后侧}\\
+  \cos\beta &gt;0 \Leftrightarrow \text{右侧}，\cos\beta &lt; 0 \Leftrightarrow \text{左侧}\\
+  \cos\gamma &gt;0 \Leftrightarrow \text{上侧}，\cos\gamma &lt; 0 \Leftrightarrow \text{下侧}
+\end{cases}
+\]</span></p>
+<p>习惯上选取曲面片的上侧为 <span class="math inline">\(S^+\)</span>；对于封闭曲面，选取外侧为 <span class="math inline">\(S^+\)</span></p>
+<p>对于向量值函数 <span class="math inline">\(\vec{F} = (P,Q,R)\)</span></p>
+<p><span class="math display">\[
+\int_C \vec{F}\cdot\,\mathrm{d}S = \int_c P\,\mathrm{d}x\mathrm{d}y + Q\,\mathrm{d}y\mathrm{d}z + R\,\mathrm{d}z\mathrm{d}x
+\]</span></p>
+<h5 id="第二类曲面积分的性质">第二类曲面积分的性质</h5>
+<p>第二类曲面积分与在曲面的哪一侧积分有关</p>
+<p><span class="math display">\[
+\iint_{S^+}P\,\mathrm{d}x\mathrm{d}y + Q\,\mathrm{d}y\mathrm{d}z + R\,\mathrm{d}z\mathrm{d}x = -\iint_{S^-}P\,\mathrm{d}x\mathrm{d}y + Q\,\mathrm{d}y\mathrm{d}z + R\,\mathrm{d}z\mathrm{d}x
+\]</span></p>
+<p>此外第二类曲面积分也具有线性性和可加性等性质</p>
+<h4 id="第二类曲面积分的计算">第二类曲面积分的计算</h4>
+<h5 id="合一投影法">合一投影法</h5>
+<p><span class="math display">\[
+\iint_{S^+}P\,\mathrm{d}x\mathrm{d}y + Q\,\mathrm{d}y\mathrm{d}z + R\,\mathrm{d}z\mathrm{d}x = \iint_{D_{xy}} \left(-Pz_x-Qz_y+R\right)\,\mathrm{d}x\mathrm{d}y
+\]</span></p>
+<h5 id="分面投影法">分面投影法</h5>
+<p>分 <span class="math inline">\(P\,\mathrm{d}x\mathrm{d}y\)</span>，<span class="math inline">\(Q\,\mathrm{d}y\mathrm{d}z\)</span>，<span class="math inline">\(R\,\mathrm{d}z\mathrm{d}x\)</span> 三个部分进行积分</p>
+<p>常在部分曲面垂直坐标轴时进行</p>
+<h5 id="公式法">公式法</h5>
+<p>常用于参数方程确定的曲面</p>
+<p>设 <span class="math inline">\(S:\vec{r} = \left(x(u,v),y(u,v),z(u,v)\right)\)</span>，其中 <span class="math inline">\((u,v)\in D_{xy}\)</span>，则</p>
+<p><span class="math display">\[
+\iint_{S^+}\vec{F}\cdot\,\mathrm{d}\vec{S} = \iint_{D_{uv}}\vec{F}\cdot\left(\vec{r}_u\times\vec{r_v}\right)\,\mathrm{d}u\mathrm{d}v
+\]</span></p>
+<h3 id="green-公式及其应用">Green 公式及其应用</h3>
+<h4 id="green-公式">Green 公式</h4>
+<h5 id="连通区域及其边界方向">连通区域及其边界方向</h5>
+<p>设 <span class="math inline">\(D\)</span> 为平面区域, 若 <span class="math inline">\(D\)</span> 内的任意一条闭曲线所围的区域都落在 <span class="math inline">\(D\)</span> 内, 则称 <span class="math inline">\(D\)</span> 是单连通的, 否则称 <span class="math inline">\(D\)</span> 为复连通的</p>
+<p>当点沿区域边界朝一个方向前进时, 区域总在它的左侧, 则将此方向规定为边界曲线 <span class="math inline">\(C\)</span> 的正向,记为 <span class="math inline">\(C^+\)</span>, 与 <span class="math inline">\(C^+\)</span> 相反方向为 <span class="math inline">\(C^−\)</span></p>
+<h5 id="green-公式-1">Green 公式</h5>
+<p><strong>定理：</strong></p>
+<p>设有界闭区域 <span class="math inline">\(D\)</span> 由分段光滑曲线 <span class="math inline">\(C\)</span> 围成，函数 <span class="math inline">\(P(x, y)\)</span>, <span class="math inline">\(Q(x, y)\)</span> 在 <span class="math inline">\(D\)</span> 上有一阶连续偏导数, 则</p>
+<p><span class="math display">\[
+\oint_{C^+} P\,\mathrm{d}x + Q\,\mathrm{d}y = \iint_D \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right)\,\mathrm{d}x\mathrm{d}y
+\]</span></p>
+<ul>
+<li>对于复连通区域 <span class="math inline">\(D\)</span>，Green 公式仍然成立，但需将 <span class="math inline">\(C\)</span> 分成若干个单连通区域 <span class="math inline">\(D_i\)</span>，并对每个区域应用 Green 公式</li>
+<li>公式也可以记为 <span class="math inline">\(\displaystyle\oint_{C^+} P\,\mathrm{d}x + Q\,\mathrm{d}y = \iint_D \begin{vmatrix}\frac{\partial}{\partial x}&amp;\frac{\partial}{\partial y}\newline P&amp;Q\end{vmatrix}\,\mathrm{d}x\mathrm{d}y\)</span></li>
+</ul>
+<h5 id="green-公式的向量形式">Green 公式的向量形式</h5>
+<p><span class="math display">\[
+\oint_{C^+} \vec{F}\cdot\,\mathrm{d}\vec{r} = \iint_D \nabla\times\vec{F}\,\mathrm{d}x\mathrm{d}y
+\]</span></p>
+<h4 id="曲线积分与路径无关的条件">曲线积分与路径无关的条件</h4>
+<p><strong>定义：</strong></p>
+<p>设 <span class="math inline">\(P(x,y)\)</span>，<span class="math inline">\(Q(x,y)\)</span> 在区域 <span class="math inline">\(D\)</span> 内连续，若对 <span class="math inline">\(D\)</span> 内任意两点 <span class="math inline">\(A\)</span>，<span class="math inline">\(B\)</span> 以及 <span class="math inline">\(D\)</span> 内连接 <span class="math inline">\(A,B\)</span> 的任意二分段光滑曲线 <span class="math inline">\(C_1\)</span>，<span class="math inline">\(C_2\)</span>，均有</p>
+<p><span class="math display">\[
+\int_{C_1} P\,\mathrm{d}x +Q\,\mathrm{d}y = \int_{C_2} P\,\mathrm{d}x +Q\,\mathrm{d}y
+\]</span></p>
+<p>则称曲线积分 <span class="math inline">\(\displaystyle\int_C P\,\mathrm{d}x +Q\,\mathrm{d}y\)</span> 在 <span class="math inline">\(D\)</span> 内<strong>与路径无关</strong></p>
+<p><strong>定理：</strong></p>
+<p>设函数 <span class="math inline">\(P\)</span>，<span class="math inline">\(Q\)</span> 在<strong>单连通</strong>区域 <span class="math inline">\(D\)</span> 上有连续偏导数，则下述四命题等价</p>
+<ol type="1">
+<li>在 <span class="math inline">\(D\)</span> 内的任一条分段光滑闭曲线 <span class="math inline">\(C\)</span> 上，有 <span class="math inline">\(\displaystyle \int_C P\,\mathrm{d}x +Q\,\mathrm{d}y = 0\)</span></li>
+<li>曲线积分 <span class="math inline">\(\displaystyle \int_C P\,\mathrm{d}x +Q\,\mathrm{d}y\)</span> 在 <span class="math inline">\(D\)</span> 内与路径无关</li>
+<li>存在 <span class="math inline">\(D\)</span> 上的可微函数 <span class="math inline">\(u(x,y)\)</span> 使得 <span class="math inline">\(\displaystyle \mathrm{d}u = P\,\mathrm{d}x +Q\,\mathrm{d}y\)</span>，此时称 <span class="math inline">\(u(x,y)\)</span> 为 <span class="math inline">\(\displaystyle P\,\mathrm{d}x +Q\,\mathrm{d}y\)</span> 的一个<strong>原函数</strong></li>
+<li><span class="math inline">\(\displaystyle \frac{\partial Q}{\partial x} = \frac{\partial P}{\partial y}\)</span> 在 <span class="math inline">\(D\)</span> 内恒成立</li>
+</ol>
+<h4 id="全微分求积与全微分方程">全微分求积与全微分方程</h4>
+<p>设函数 <span class="math inline">\(P\)</span>，<span class="math inline">\(Q\)</span> 在单连通区域 <span class="math inline">\(D\)</span> 上有连续偏导数，且 <span class="math inline">\(\displaystyle \frac{\partial Q}{\partial x} = \frac{\partial P}{\partial y}\)</span> ，则 <span class="math inline">\(\displaystyle P\,\mathrm{d}x +Q\,\mathrm{d}y\)</span> 为某函数 <span class="math inline">\(u\)</span> 的全微分，且取定 <span class="math inline">\((x_0,y_0)\in D\)</span></p>
+<p><span class="math display">\[
+u(x,y) = u(x_0,y_0) + \int_{(x_0,y_0)}^{(x,y)} P\,\mathrm{d}x +Q\,\mathrm{d}y,\quad (x,y)\in D
+\]</span></p>
+<p>从而全体函数为 <span class="math inline">\(u(x,y) + C\)</span></p>
+<p>称求 <span class="math inline">\(P\,\mathrm{d}x +Q\,\mathrm{d}y\)</span> 的原函数的过程为<strong>全微分求积</strong></p>
+<p>若 <span class="math inline">\(P\,\mathrm{d}x +Q\,\mathrm{d}y\)</span> 是某二元函数的全微分，称方程</p>
+<p><span class="math display">\[
+P(x,y)\,\mathrm{d}x +Q(x,y)\,\mathrm{d}y = 0
+\]</span></p>
+<p>为<strong>全微分方程</strong></p>
+<p>求出一个原函数 <span class="math inline">\(u(x,y)\)</span>，则方程的通解为 <span class="math inline">\(u(x,y) = C\)</span>，其中 <span class="math inline">\(C\)</span> 是任意常数</p>
+<h3 id="gauss-公式和-strokes-公式">Gauss 公式和 Strokes 公式</h3>
+<h4 id="gauss-公式">Gauss 公式</h4>
+<p><strong>定理：</strong></p>
+<p>设函数 <span class="math inline">\(P(x,y,z)\)</span>，<span class="math inline">\(Q(x,y,z)\)</span>，<span class="math inline">\(R(x,y,z)\)</span> 在空间有界闭区域 <span class="math inline">\(\Omega\)</span> 上有连续偏导数，<span class="math inline">\(\Omega\)</span> 的边界时光滑或分片光滑的闭曲面 <span class="math inline">\(\Sigma\)</span>，则</p>
+<p><span class="math display">\[
+\oiint_{\Sigma^+} P\,\mathrm{d}x\mathrm{d}y + Q\,\mathrm{d}y\mathrm{d}z + R\,\mathrm{d}z\mathrm{d}x = \iiint_\Omega \left(\frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z}\right)\,\mathrm{d}x\mathrm{d}y\mathrm{d}z
+\]</span></p>
+<ul>
+<li>令 <span class="math inline">\(P=\frac{x}{3}\)</span>，<span class="math inline">\(Q=\frac{y}{3}\)</span>，<span class="math inline">\(R=\frac{z}{3}\)</span>，则可导出 <span class="math inline">\(\displaystyle V_\Omega = \frac{1}{3}\oiint_{\Sigma^+} x\,\mathrm{d}y\mathrm{d}z + y\,\mathrm{d}z\mathrm{d}x + z\,\mathrm{d}x\mathrm{d}y\)</span>，即体积公式</li>
+<li>使用 Gauss 公式时，注意 <span class="math inline">\(\Sigma^+\)</span> 的方向应与 <span class="math inline">\(\Omega\)</span> 的外侧一致</li>
+</ul>
+<h5 id="向量形式的-gauss-公式">向量形式的 Gauss 公式</h5>
+<p><span class="math display">\[
+\oiint_{\Sigma^+} \vec{F}\cdot\,\mathrm{d}\vec{S} = \iiint_\Omega \nabla\cdot\vec{F}\,\mathrm{d}x\mathrm{d}y\mathrm{d}z
+\]</span></p>
+<h4 id="通量和散度">通量和散度</h4>
+<h5 id="通量">通量</h5>
+<p>若给定向量场</p>
+<p><span class="math display">\[
+\vec{F} = \left(P(x,y,z),Q(x,y,z),R(x,y,z)\right)
+\]</span></p>
+<p>则称曲面积分</p>
+<p><span class="math display">\[
+\Phi = \oiint_{\Sigma^+} \vec{F}\cdot\,\mathrm{d}\vec{S} = \oiint_{\Sigma^+} P\,\mathrm{d}x\mathrm{d}y + Q\,\mathrm{d}y\mathrm{d}z + R\,\mathrm{d}z\mathrm{d}x
+\]</span></p>
+<p>为向量场 <span class="math inline">\(\vec{F}\)</span> 在通过定侧曲面 <span class="math inline">\(\Sigma^+\)</span> 的<strong>通量</strong></p>
+<h5 id="散度">散度</h5>
+<p>称</p>
+<p><span class="math display">\[
+\mathrm{div}\vec{F} = \nabla\cdot\vec{F}=\frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z}
+\]</span></p>
+<p>为向量场 <span class="math inline">\(\vec{F}\)</span> 的<strong>散度</strong></p>
+<p>则 Gauss 公式可写为</p>
+<p><span class="math display">\[
+\Phi =\oiint_{\Sigma^+} \vec{F}\cdot\,\mathrm{d}\vec{S} = \iiint_\Omega \mathrm{div}\vec{F}\,\mathrm{d}V
+\]</span></p>
+<h2 id="级数">级数</h2>
+<h3 id="数项级数">数项级数</h3>
+<h4 id="数项级数的概念">数项级数的概念</h4>
+<p><strong>定义：</strong></p>
+<p>给定数列 <span class="math inline">\(\{a_n\}\)</span> ，和式</p>
+<p><span class="math display">\[
+\sum_{n=1}^{\infty} a_n = a_1 + a_2 + \cdots + a_n + \cdots
+\]</span></p>
+<p>称为 <strong>（无穷）极数</strong> ，<span class="math inline">\(a_n\)</span> 称为级数的<strong>通项</strong>（或<strong>一般项</strong>）</p>
+<ul>
+<li><span class="math inline">\(\displaystyle S_n = \sum_{k=1}^n a_k\)</span> 称为级数 <span class="math inline">\(\displaystyle \sum_{n=1} a_n\)</span> 的前 <span class="math inline">\(n\)</span> 项<strong>部分和</strong></li>
+<li><span class="math inline">\(\displaystyle\sum_{k=n+1}^\infty a_k\)</span> 称为级数 <span class="math inline">\(\displaystyle \sum_{n=1} a_n\)</span> 的<strong>余项级数</strong></li>
+</ul>
+<p><strong>定义：</strong></p>
+<ul>
+<li>若级数 <span class="math inline">\(\displaystyle\sum_{n=1}^\infty a_n\)</span> 的部分和数列 <span class="math inline">\(\{S_n\}\)</span> 收敛，且 <span class="math inline">\(\displaystyle \lim_{n\to\infty}S_n = S\)</span>，则称级数 <span class="math inline">\(\displaystyle \sum_{n=1}^\infty a_n\)</span> <strong>收敛</strong>，<span class="math inline">\(S\)</span> 称为级数 <span class="math inline">\(\displaystyle \sum_{n=1}^\infty a_n\)</span> 的<strong>和</strong>，记作 <span class="math inline">\(\displaystyle \sum_{n=1}^\infty a_n = S\)</span></li>
+<li>若部分和数列 <span class="math inline">\(\{S_n\}\)</span> 发散，则称级数 <span class="math inline">\(\displaystyle \sum_{n=1}^\infty a_n\)</span> <strong>发散</strong></li>
+</ul>
+<blockquote>
+<p>常用结论：</p>
+<p><strong>等比数列</strong> <span class="math inline">\(\displaystyle \sum_{n=1}^\infty aq^{n-1}\begin{cases}\text{收敛于}\frac{a}{1-q} &amp; ,\vert q \vert &lt; 1\newline \text{发散} &amp; ,\vert q \vert \geq 1\end{cases}\)</span></p>
+</blockquote>
+<h4 id="数项级数的基本性质">数项级数的基本性质</h4>
+<h5 id="基本性质">基本性质</h5>
+<ol type="1">
+<li>若常数 <span class="math inline">\(\alpha \neq 0\)</span>，则级数 <span class="math inline">\(\displaystyle \sum_{n=1}^\infty a_n\)</span> 与级数 <span class="math inline">\(\displaystyle \sum_{n=1}^\infty \alpha a_n\)</span> 有相同敛散性</li>
+<li><strong>线性性：</strong> 若级数 <span class="math inline">\(\displaystyle \sum_{n=1}^\infty a_n = S\)</span>，<span class="math inline">\(\displaystyle \sum_{n=1}^\infty b_n = T\)</span>，则 <span class="math inline">\(\forall \alpha , \beta\in \mathbb{R}\)</span>，有 <span class="math inline">\(\displaystyle \sum_{n=1}^\infty (\alpha a_n + \beta b_n) = \alpha S + \beta T\)</span></li>
+<li><strong>可加性：</strong> 将级数增加、删减或改换<strong>有限项</strong>，不改变级数的<strong>敛散性</strong></li>
+<li><strong>结合律：</strong> 若级数收敛于 <span class="math inline">\(S\)</span>，则将相邻若干项添加括号所成新级数仍收敛于 <span class="math inline">\(S\)</span>
+<ul>
+<li>其本质是部分和数列收敛于 <span class="math inline">\(S\)</span>，则子列均收敛于 <span class="math inline">\(S\)</span></li>
+<li>加括号后级数收敛 <span class="math inline">\(\nRightarrow\)</span> 原级数收敛</li>
+<li>加括号后级数发散 <span class="math inline">\(\Rightarrow\)</span> 原级数发散</li>
+</ul></li>
+</ol>
+<h5 id="级数收敛的必要条件">级数收敛的必要条件</h5>
+<p><strong>定理：</strong></p>
+<p>若 <span class="math inline">\(\displaystyle \sum_{n=1}^\infty a_n\)</span> 收敛，则 <span class="math inline">\(\displaystyle \lim_{n\to\infty} a_n = 0\)</span></p>
+<ul>
+<li>若 <span class="math inline">\(\displaystyle \lim_{n\to\infty} a_n \neq 0 \nRightarrow \displaystyle \sum_{n=1}^\infty a_n\)</span> 发散</li>
+<li>若 <span class="math inline">\(\displaystyle \lim_{n\to\infty} a_n = 0 \nRightarrow \displaystyle \sum_{n=1}^\infty a_n\)</span> 收敛，比如调和级数</li>
+</ul>
+<h3 id="正项级数敛散性">正项级数敛散性</h3>
+<h4 id="正项级数">正项级数</h4>
+<p><strong>定义：</strong></p>
+<p>若级数 <span class="math inline">\(\displaystyle \sum_{n=1}^\infty a_n\)</span> 满足 <span class="math inline">\(a_n &gt;0 \quad \left(n\in\mathbb{N}^+\right)\)</span>，则称此级数为<strong>正项级数</strong></p>
+<p><strong>定理：（收敛原理）</strong></p>
+<p>正项级数 <span class="math inline">\(\displaystyle \sum_{n=1}^\infty a_n\)</span> 收敛 <span class="math inline">\(\Leftrightarrow\)</span> 是其部分和数列 <span class="math inline">\(\{S_n\}\)</span> 有上界，即 <span class="math inline">\(\exists M\in\mathbb{R},\forall n \in \mathbb{N}^+:S_n \leq M\)</span></p>
+<blockquote>
+<p><span class="math inline">\(p\)</span> 级数</p>
+<p><span class="math inline">\(\displaystyle \sum_{n=1}^\infty \frac{1}{n^p} \begin{cases}\text{收敛} &amp; ,p&gt;1\newline \text{发散} &amp; ,p\leq 1\end{cases}\)</span></p>
+</blockquote>
+<h4 id="正项级数敛散性判别法">正项级数敛散性判别法</h4>
+<h5 id="比较判别法">比较判别法</h5>
+<p><strong>定理：</strong></p>
+<p>设正项级数 <span class="math inline">\(\displaystyle \sum_{n=1}^\infty a_n\)</span>，<span class="math inline">\(\displaystyle \sum_{n=1}^\infty b_n\)</span> 满足 <span class="math inline">\(a_n \leq b_n \quad (\forall n \in \mathbb{N}^+)\)</span> ，则 <span class="math inline">\(\displaystyle \sum_{n=1}^\infty b_n\)</span> 收敛 <span class="math inline">\(\Rightarrow \displaystyle \sum_{n=1}^\infty a_n\)</span> 收敛，<span class="math inline">\(\displaystyle \sum_{n=1}^\infty a_n\)</span> 发散 <span class="math inline">\(\Rightarrow \displaystyle \sum_{n=1}^\infty b_n\)</span> 发散</p>
+<ul>
+<li>条件 <span class="math inline">\(\forall n \in \mathbb{N}^+，a_n \leq b_n\)</span> 可改为 <span class="math inline">\(\exists N,C &gt;0 ,\forall n\in \mathbb{N}^+，\forall n \geq N，a_n \leq Cb_n\)</span></li>
+<li>使用该判别法时需要有参照级数，常选<strong>等比级数</strong>或 <strong><span class="math inline">\(p\)</span> 级数</strong>作参照</li>
+</ul>
+<h5 id="比较判别法极限形式">比较判别法（极限形式）</h5>
+<p><strong>定理：</strong></p>
+<p>正项级数 <span class="math inline">\(\displaystyle \sum_{n=1}^\infty a_n\)</span>，<span class="math inline">\(\displaystyle \sum_{n=1}^\infty b_n\)</span> 满足 <span class="math inline">\(\displaystyle \lim_{n\to\infty} \frac{a_n}{b_n} = l\)</span></p>
+<ul>
+<li>当 <span class="math inline">\(0 &lt;l&lt;+\infty\)</span> 时，<span class="math inline">\(\displaystyle \sum_{n=1}^\infty a_n\)</span> 与 <span class="math inline">\(\displaystyle \sum_{n=1}^\infty b_n\)</span> 同敛散</li>
+<li>当 <span class="math inline">\(l=0\)</span> 时，<span class="math inline">\(\displaystyle \sum_{n=1}^\infty b_n\)</span> 收敛 <span class="math inline">\(\Rightarrow \displaystyle \sum_{n=1}^\infty a_n\)</span> 收敛</li>
+<li>当 <span class="math inline">\(l=+\infty\)</span> 时，<span class="math inline">\(\displaystyle \sum_{n=1}^\infty b_n\)</span> 发散 <span class="math inline">\(\Rightarrow \displaystyle \sum_{n=1}^\infty a_n\)</span> 发散</li>
+</ul>
+<blockquote>
+<p>通常使用 <span class="math inline">\(b_n = \frac{1}{n^p}\)</span> 作为参照物，因为我们此时在分析无穷小 <span class="math inline">\(a_n\)</span> 的阶</p>
+</blockquote>
+<h5 id="比值判别法dalembert-判别法">比值判别法（d’Alembert 判别法）</h5>
+<p><strong>定理：</strong></p>
+<p>若<strong>正项级数</strong> <span class="math inline">\(\displaystyle \sum_{n=1}^\infty a_n\)</span> 满足 <span class="math inline">\(\displaystyle \lim_{n\to\infty} \frac{a_{n+1}}{a_n} = l\)</span>，则</p>
+<ul>
+<li>当 <span class="math inline">\(0\leq l&lt;1\)</span> 时，<span class="math inline">\(\displaystyle \sum_{n=1}^\infty a_n\)</span> 收敛</li>
+<li>当 <span class="math inline">\(l&gt;1\)</span> 时，<span class="math inline">\(\displaystyle \sum_{n=1}^\infty a_n\)</span> 发散</li>
+<li>当 <span class="math inline">\(l=1\)</span> 时，判别法失效</li>
+</ul>
+<blockquote>
+<p>Stirling 公式： <span class="math inline">\(n! \sim \left(\frac{n}{e}\right)^n \sqrt{2n\pi} \quad (n\to\infty)\)</span></p>
+</blockquote>
+<blockquote>
+<p>当 <span class="math inline">\(a_n\)</span> 是一些乘积构成或含 <span class="math inline">\(n!\)</span> 时，可以考虑比值法</p>
+</blockquote>
+<h5 id="根值判别法cauchy-判别法">根值判别法（Cauchy 判别法）</h5>
+<p><strong>定理：</strong></p>
+<p>若正项级数 <span class="math inline">\(\displaystyle \sum_{n=1}^\infty a_n\)</span> 满足 <span class="math inline">\(\displaystyle \lim_{n\to\infty} \sqrt[n]{a_n} = l\)</span>，则</p>
+<ol type="1">
+<li>当 <span class="math inline">\(0\leq l&lt;1\)</span> 时，<span class="math inline">\(\displaystyle \sum_{n=1}^\infty a_n\)</span> 收敛</li>
+<li>当 <span class="math inline">\(1 &lt; l \leq +\infty\)</span> 时，<span class="math inline">\(\displaystyle \sum_{n=1}^\infty a_n\)</span> 发散</li>
+<li>当 <span class="math inline">\(l=1\)</span> 时，判别法失效</li>
+</ol>
+<blockquote>
+<p>当 <span class="math inline">\(a_n\)</span> 中含有 <span class="math inline">\(n\)</span> 次方时，可以考虑使用根值法</p>
+</blockquote>
+<blockquote>
+<p>比值法和根值法实际上可看作是在将级数与等比级数作比较，均智能判断收敛速度不满与等比级数的级数.当所求级数存在时，可称级数为<strong>拟等比级数</strong></p>
+</blockquote>
+<blockquote>
+<p>根值法优于比值法</p>
+<ul>
+<li><span class="math inline">\(\displaystyle\lim_{n\to\infty}\frac{a_{n+1}}{a_n} = l \Rightarrow \displaystyle \sqrt[n]{a_n} = l\)</span></li>
+<li><span class="math inline">\(\displaystyle \sqrt[n]{a_n} =l \nRightarrow \displaystyle\lim_{n\to\infty}\frac{a_{n+1}}{a_n} = l\)</span></li>
+</ul>
+</blockquote>
+<h5 id="积分判别法">积分判别法</h5>
+<p><strong>定理：</strong></p>
+<p>设 <span class="math inline">\(\displaystyle \sum_{n=1}^\infty a_n\)</span> 为<strong>正项级数</strong>，若非负函数 <span class="math inline">\(f(X)\)</span> 在 <span class="math inline">\([1,+\infty)\)</span> 上<strong>单调递减</strong>，且 <span class="math inline">\(a_n = f(n)\quad \left(\forall n \in \mathbb{N}^+\right)\)</span>，则级数 <span class="math inline">\(\displaystyle \sum_{n=1}^\infty a_n\)</span> 与反常积分 <span class="math inline">\(\displaystyle \int_1^{+\infty} f(x)\,\mathrm{d}x\)</span> 有相同的敛散性</p>
+<ul>
+<li>条件 <span class="math inline">\(\left[1,+\infty\right)\)</span> 可改为 <span class="math inline">\(\left[a,+\infty\right)，(a&gt;1)\)</span></li>
+</ul>
+<h3 id="任意项级数的敛散性">任意项级数的敛散性</h3>
+<p><strong>任意项级数</strong></p>
+<p>正负项分布是任意的级数</p>
+<h4 id="交错级数敛散性的判别法">交错级数敛散性的判别法</h4>
+<h5 id="交错级数">交错级数</h5>
+<p><strong>定义：</strong></p>
+<p>各项正负相间的级数称为<strong>交错级数</strong>，其形式为</p>
+<p><span class="math display">\[
+\pm\sum_{n=1}^\infty {-1}^{n-1}a_n \quad \left(\text{其中}a_n &gt; 0\right)
+\]</span></p>
+<h5 id="leibniz-判别法">Leibniz 判别法</h5>
+<p><strong>定理：</strong></p>
+<p>若交错级数 <span class="math inline">\(\displaystyle \sum_{n=1}^\infty (-1)^{n-1}a_n \,\left(a_n&gt;0\right)\)</span> 满足:</p>
+<ol type="1">
+<li><span class="math inline">\(a_{n+1} \leq a_n \quad \left(n = 1 ,2 ,\ldots\right)\)</span></li>
+<li><span class="math inline">\(\displaystyle\lim_{n\to\infty}a_n =0\)</span></li>
+</ol>
+<p>则级数 <span class="math inline">\(\displaystyle \sum_{n=1}^\infty (-1)^{n-1}a_n\)</span> 收敛，且其余项级数满足</p>
+<p><span class="math display">\[
+\left\vert \sum_{k=n+1}^\infty a_k \right\vert \leq a_{n+1}
+\]</span></p>
+<blockquote>
+<p>我们称满足定理条件的级数为 <strong>leibniz 型级数</strong></p>
+</blockquote>
+<h4 id="abel-判别法和-dirichlet-判别法">Abel 判别法和 Dirichlet 判别法</h4>
+<p><strong>定理：（Abel 判别法）</strong></p>
+<p>若 <span class="math inline">\(\{a_n\}\)</span> 单调且有界，<span class="math inline">\(\displaystyle\sum_{n=1}^\infty b_n\)</span> 收敛，则 <span class="math inline">\(\displaystyle \sum_{n=1}^\infty a_nb_n\)</span> 收敛</p>
+<p><strong>定理：（Dirichlet 判别法）</strong></p>
+<p>若 <span class="math inline">\(\{a_n\}\)</span> 单调趋于 <span class="math inline">\(0\)</span>，<span class="math inline">\(\displaystyle \sum_{n=1}^\infty b_n\)</span> 的部分和数列有界，则 <span class="math inline">\(\displaystyle \sum_{n=1}^\infty a_nb_n\)</span> 收敛</p>
+<h4 id="绝对收敛与条件收敛">绝对收敛与条件收敛</h4>
+<p><strong>定义：</strong></p>
+<p>设 <span class="math inline">\(\displaystyle \sum_{n=1}^\infty a_n\)</span> 为任意项级数</p>
+<ol type="1">
+<li>若级数 <span class="math inline">\(\displaystyle \sum_{n=1}^\infty \vert a_n \vert\)</span> 收敛，则称级数 <span class="math inline">\(\displaystyle \sum_{n=1}^\infty a_n\)</span> 为<strong>绝对收敛</strong></li>
+<li>若 <span class="math inline">\(\displaystyle \sum_{n=1}^\infty \vert a_n \vert\)</span> 发散，而 <span class="math inline">\(\displaystyle \sum_{n=1}^\infty a_n\)</span> 收敛，但 ，则称 <span class="math inline">\(\displaystyle \sum_{n=1}^\infty a_n\)</span> <strong>条件收敛</strong></li>
+</ol>
+<p><strong>定理：</strong></p>
+<p>若 <span class="math inline">\(\displaystyle \sum_{n=1}^\infty a_n\)</span> 绝对收敛，则 <span class="math inline">\(\displaystyle \sum_{n=1}^\infty a_n\)</span> 收敛</p>
+<blockquote>
+<p><strong>常用结论：</strong></p>
+<p><span class="math display">\[
+\displaystyle \sum_{n=1}^\infty \frac{(-1)^{n}}{n^p}\begin{cases}\text{绝对收敛} &amp; ,p&gt;1\\ \text{条件收敛} &amp; , 0 &lt; p\leq 1 \end{cases}
+\]</span></p>
+</blockquote>
+<p><strong>定理：（绝对收敛与条件收敛的本质）</strong></p>
+<ol type="1">
+<li>绝对收敛的级数，可以改变任意项的顺序，其收敛性与和均不变（即满足加法交换律）</li>
+<li>条件收敛的级数，总可以适当改变项的顺序，使其按照任意预定的方式收敛或者发散</li>
+</ol>
+<h3 id="函数项级数">函数项级数</h3>
+<p><strong>定义：</strong></p>
+<p>设函数列 <span class="math inline">\(\{u_n{x}\} (n=1,2,\ldots)\)</span> 在数集 <span class="math inline">\(X\)</span> 上有定义，则称形式和</p>
+<p><span class="math display">\[
+\sum_{n=1}^\infty u_n(x)= u_1(x) + u_2(x) + \cdots + u_n(x) + \cdots
+\]</span></p>
+<p>为<strong>函数项级数</strong>，其中 <span class="math inline">\(u_n(x)\)</span> 称为<strong>通项</strong></p>
+<p><strong>定义：</strong></p>
+<p>若数项级数 <span class="math inline">\(\displaystyle \sum_{n=1}^\infty u_n(x_0)\)</span> 收敛，则 <span class="math inline">\(x_0\)</span> 为函数项级数 <span class="math inline">\(\displaystyle \sum_{n=1}^\infty u_n(x)\)</span> 的一个<strong>收敛点</strong>，否则称为<strong>发散点</strong>，全体收敛点所组成的集合 <span class="math inline">\(I\)</span> 称为<strong>收敛域</strong></p>
+<p><strong>定义</strong></p>
+<p>记 <span class="math inline">\(\displaystyle S_n(x) =\sum_{k=1}^\infty u_k(x)\)</span>,为 <span class="math inline">\(\displaystyle \sum_{n=1}^\infty u_n(x)\)</span> 的前 <span class="math inline">\(n\)</span> 项<strong>部分和(函数)</strong>，记 <span class="math inline">\(\displaystyle r_n(x) = \sum_{k=n+1}^\infty u_k(x)\)</span> 为<strong>余和</strong></p>
+<p><strong>定义：</strong></p>
+<p>对于收敛域 <span class="math inline">\(I\)</span> 中的任意一点 <span class="math inline">\(x\)</span>，记 <span class="math inline">\(\displaystyle \sum_{n=1}^\infty u_n(x)\)</span> 的和为 <span class="math inline">\(S(x)\)</span>，称此函数 <span class="math inline">\(S(x)\)</span> 为 <span class="math inline">\(\displaystyle \sum_{n=1}^\infty u_n(x)\)</span> 的<strong>和函数</strong></p>
+<p>显然，<span class="math inline">\(\forall x\in I\)</span>，<span class="math inline">\(\displaystyle \lim_{n\to +\infty}S_n(x) =S(x)\)</span>，<span class="math inline">\(\displaystyle \lim_{n\to +\infty}r_n(x)=0\)</span></p>
+<h3 id="幂级数">幂级数</h3>
+<h4 id="幂级数及其收敛半径">幂级数及其收敛半径</h4>
+<p>在函数项级数中，最简单及最重要的级数形如</p>
+<p><span class="math display">\[
+\sum_{n=0}^\infty a_n(x-x_0)^n = a_0 +a_1x + a_2(x-x_0)^2 + \ldots + a_n(x-x_0)^n + \ldots
+\]</span></p>
+<p>称为<strong>幂级数</strong>，其中常数项 <span class="math inline">\(a_0,a_1,\ldots,a_n,\ldots\)</span> 称为幂级数的<strong>系数</strong></p>
+<p>幂级数更加一半的形式为 <span class="math inline">\(\displaystyle \sum_{n=0}^\infty a_n(x-x_0)^n\)</span></p>
+<h5 id="abel-定理"><strong>Abel 定理</strong></h5>
+<ol type="1">
+<li>若幂级数 <span class="math inline">\(\displaystyle \sum_{n=0}^\infty a_n(x-x_0)^n\)</span> 在 <span class="math inline">\(x=x_0(x\neq 0)\)</span> 收敛，则当 <span class="math inline">\(\vert x \vert &lt;\vert x_0\vert\)</span>，时，幂级数 <span class="math inline">\(\displaystyle \sum_{n=0}^\infty a_n(x-x_0)^n\)</span> 绝对收敛</li>
+<li>若幂级数 <span class="math inline">\(\displaystyle \sum_{n=0}^\infty a_nx^n\)</span> 在 <span class="math inline">\(x=x_1\)</span> 发散，则当 <span class="math inline">\(\vert x \vert &gt;\vert x_1\vert\)</span> 时，幂级数 <span class="math inline">\(\displaystyle \sum_{n=0}^\infty a_nx^n\)</span> 发散</li>
+</ol>
+<h6 id="推论幂级数收敛域的情况">推论（幂级数收敛域的情况）</h6>
+<p>幂级数 <span class="math inline">\(\displaystyle \sum_{n=0}^\infty a_n(x-x_0)^n\)</span> 的收敛域 <span class="math inline">\(I\)</span> 仅有以下几种情况：</p>
+<ol type="1">
+<li>仅在 <span class="math inline">\(x=0\)</span> 的情况收敛（<span class="math inline">\(R=0\)</span>）</li>
+<li>在区间 <span class="math inline">\((-R,R)(R&gt;0)\)</span> 内绝对收敛，在 <span class="math inline">\((-\infty ,-R)\bigcup(R,+\infty)\)</span> 发散</li>
+<li>在区间 <span class="math inline">\((-R,R)\)</span> 内绝对收敛（<span class="math inline">\(R=+\infty\)</span>）</li>
+</ol>
+<h3 id="幂级数收敛半径的求法">幂级数收敛半径的求法</h3>
+<h4 id="系数模比值法">系数模比值法</h4>
+<p><strong>定理：</strong></p>
+<p>对幂级数 <span class="math inline">\(\displaystyle \sum_{n=1}^\infty a_nx^n\)</span>，若 <span class="math inline">\(\displaystyle \lim_{n\to+\infty}\left\vert\frac{a_{n+1}}{a_n}\right\vert = \rho\)</span>，则收敛半径 <span class="math inline">\(\displaystyle R=\begin{cases}&amp;0,&amp;&amp;\rho=+\infty\newline &amp; \frac{1}{\rho},&amp;&amp; 0&lt;\rho&lt;+\infty\newline &amp;+\infty ,&amp;&amp;\rho=0\end{cases}\)</span></p>
+<h4 id="系数模根值法">系数模根值法</h4>
+<p><strong>定理：</strong></p>
+<p>对幂级数 <span class="math inline">\(\displaystyle \sum_{n=1}^\infty a_nx^n\)</span>，若 <span class="math inline">\(\displaystyle \lim_{n\to+\infty}\sqrt[n]{\left\vert a_n\right\vert} = \rho\)</span>，则收敛半径 <span class="math inline">\(\displaystyle R=\begin{cases}&amp;0,&amp;&amp;\rho=+\infty\newline &amp; \frac{1}{\rho},&amp;&amp; 0&lt;\rho&lt;+\infty\newline &amp;+\infty ,&amp;&amp;\rho=0\end{cases}\)</span></p>
+<h3 id="幂级数的性质">幂级数的性质</h3>
+<ol type="1">
+<li>设幂级数 <span class="math inline">\(\displaystyle \sum_{n=0}^\infty a_nx^n\)</span> 和 <span class="math inline">\(\displaystyle \sum_{n=0}^\infty b_nx^n\)</span> 的收敛半径分别为 <span class="math inline">\(R_1\)</span> 和 <span class="math inline">\(R_2\)</span>，则 <span class="math inline">\(\displaystyle \sum_{n=0}^\infty (a_n+b_n)x^n\)</span> 的收敛半径为 <span class="math inline">\(R=\min\{R_1,R_2\}\)</span></li>
+<li>若幂级数 <span class="math inline">\(\displaystyle \sum_{n=0}^\infty a_nx^n\)</span> 的收敛半径 <span class="math inline">\(R&gt;0\)</span>，在收敛区间 <span class="math inline">\((-R,R)\)</span> 内的和函数为 <span class="math inline">\(S(n)\)</span>，则 <span class="math inline">\(S(n)\)</span> 在 <span class="math inline">\((-R,R)\)</span> 上连续；若 <span class="math inline">\(\displaystyle\sum_{n=0}^\infty a_nx^n\)</span> 在 <span class="math inline">\(x=R\)</span> 或 <span class="math inline">\(x=-R\)</span> 收敛，则和函数 <span class="math inline">\(S(n)\)</span> 在 <span class="math inline">\(x=R\)</span> 左连续或 <span class="math inline">\(x=-R\)</span> 处右连续，即 <span class="math inline">\(\displaystyle \lim_{x\to R^-}S(x)=S(R)=\sum_{n=0}^\infty a_nR^n\)</span></li>
+<li>若幂级数 <span class="math inline">\(\displaystyle \sum_{n=0}^\infty a_nx^n\)</span> 的收敛半径 <span class="math inline">\(R&gt;0\)</span>，在收敛区间 <span class="math inline">\((-R,R)\)</span> 内的和函数为 <span class="math inline">\(S(n)\)</span>，则 <span class="math inline">\(S(n)\)</span> 在 <span class="math inline">\((-R,R)\)</span> 上可导，且有<strong>逐项求导公式</strong></li>
+</ol>
+<p><span class="math display">\[
+  \begin{aligned}
+  S&#39;(x) = &amp;\left(\sum_{n=0}^\infty a_nx^n\right)&#39;\\
+    = &amp;\sum_{n=0}^\infty \left(a_nx^n\right)&#39;\\
+    = &amp;\sum_{n=0}^\infty na_nx^{n-1}\\
+  \end{aligned}
+\]</span></p>
+<p>且幂级数 <span class="math inline">\(\displaystyle \sum_{n=0}^\infty na_nx^{n-1}\)</span> 的收敛半径仍为 <span class="math inline">\(R\)</span></p>
+<ol start="4" type="1">
+<li>若幂级数 <span class="math inline">\(\displaystyle \sum_{n=0}^\infty a_nx^n\)</span> 的收敛半径 <span class="math inline">\(R&gt;0\)</span>，在收敛区间 <span class="math inline">\((-R,R)\)</span> 内的和函数为 <span class="math inline">\(S(n)\)</span>，则 <span class="math inline">\(S(n)\)</span> 在 <span class="math inline">\((-R,R)\)</span> 上可导，且有<strong>逐项求积公式</strong></li>
+</ol>
+<p><span class="math display">\[
+  \begin{aligned}
+  \int_0^xS(t)\,\mathrm{d}t = &amp;\int_0^x\left(\sum_{n=0}^\infty a_nt^n\right)\,\mathrm{d}t\\
+    = &amp;\sum_{n=0}^\infty \int_0^x a_nt^n\,\mathrm{d}t\\
+    = &amp;\sum_{n=0}^\infty \frac{a_n}{n+1}x^{n+1}\\
+  \end{aligned}
+\]</span></p>
+<p>且幂级数 <span class="math inline">\(\displaystyle \sum_{n=0}^\infty a_nt^n\)</span> 的收敛半径仍为 <span class="math inline">\(R\)</span></p>
+<h4 id="幂级数的分析性质">幂级数的分析性质</h4>
+<p><strong>性质：</strong></p>
+<p>若幂级数 <span class="math inline">\(\displaystyle \sum_{n=0}^\infty a_nx^n\)</span> 的收敛半径为 <span class="math inline">\(R&gt;0\)</span>，在收敛区间 <span class="math inline">\((-R,R)\)</span> 上连续；若 <span class="math inline">\(\displaystyle\sum_{n=0}^\infty a_nx^n\)</span> 在 <span class="math inline">\(x=R\)</span> 或 <span class="math inline">\(x=-R\)</span> 收敛，则和函数 <span class="math inline">\(S(n)\)</span> 在 <span class="math inline">\(x=R\)</span> 左连续或 <span class="math inline">\(x=-R\)</span> 处右连续，即</p>
+<p><span class="math display">\[
+\displaystyle \lim_{x\to R^-}S(x)=S(R)=\sum_{n=0}^\infty a_nR^n
+\]</span></p>
+<p><strong>性质：</strong></p>
+<p>若幂函数 <span class="math inline">\(\displaystyle \sum_{n=0}^\infty a_nx^n\)</span> 的收敛半径为 <span class="math inline">\(R&gt;0\)</span>，在收敛区间 <span class="math inline">\((-R,R)\)</span> 上的和函数为 <span class="math inline">\(S(n)\)</span>，则 <span class="math inline">\(S(n)\)</span> 在 <span class="math inline">\((-R,R)\)</span> 上可导，且有<strong>逐项求导公式</strong></p>
+<p><span class="math display">\[
+\begin{aligned}
+S&#39;(x) = &amp;\left(\sum_{n=0}^\infty a_nx^n\right)&#39;\\
+  = &amp;\sum_{n=0}^\infty \left(a_nx^n\right)&#39;\\
+  = &amp;\sum_{n=0}^\infty na_nx^{n-1}\\
+\end{aligned}
+\]</span></p>
+<p>且幂级数 <span class="math inline">\(\displaystyle \sum_{n=0}^\infty na_nx^{n-1}\)</span> 的收敛半径仍为 <span class="math inline">\(R\)</span></p>
+<p><strong>性质：</strong></p>
+<p>若幂级数 <span class="math inline">\(\displaystyle \sum_{n=0}^\infty a_nx^n\)</span> 的收敛半径为 <span class="math inline">\(R&gt;0\)</span>，在收敛区间 <span class="math inline">\((-R,R)\)</span> 上的和函数为 <span class="math inline">\(S(n)\)</span>，则 <span class="math inline">\(S(n)\)</span> 在 <span class="math inline">\((-R,R)\)</span> 上可导，且有<strong>逐项求积公式</strong></p>
+<p><span class="math display">\[
+\begin{aligned}
+\int_0^xS(t)\,\mathrm{d}t = &amp;\int_0^x\left(\sum_{n=0}^\infty a_nt^n\right)\,\mathrm{d}t\\
+  = &amp;\sum_{n=0}^\infty \int_0^x a_nt^n\,\mathrm{d}t\\
+  = &amp;\sum_{n=0}^\infty \frac{a_n}{n+1}x^{n+1}\\
+\end{aligned}
+\]</span></p>
+<p>且幂级数 <span class="math inline">\(\displaystyle \sum_{n=0}^\infty a_nt^n\)</span> 的收敛半径仍为 <span class="math inline">\(R\)</span></p>
+<blockquote>
+<ol type="1">
+<li>幂函数逐项求导，逐项积分后，收敛半径不变，但是收敛域可能改变</li>
+<li>幂函数在收敛区间内具有任意阶导数</li>
+</ol>
+</blockquote>
+<h4 id="taylor-级数">Taylor 级数</h4>
+<p><strong>定义：</strong></p>
+<p>设函数 <span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\(x_0\)</span> 的某领域内有任意阶导数，称幂级数</p>
+<p><span class="math display">\[
+\sum_{n=0}^\infty \frac{f^{(n)}(x_0)}{n!}(x-x_0)^n
+\]</span></p>
+<p>为 <span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\(x_0\)</span> 处的 <strong>Taylor</strong> 级数，记为</p>
+<p><span class="math display">\[
+f(x) = \sum_{n=0}^\infty \frac{f^{(n)}(x_0)}{n!}(x-x_0)^n
+\]</span></p>
+<p><span class="math inline">\(x_0=0\)</span> 是，称为 <strong>Maclaurin 级数</strong></p>
+<p><strong>定理（唯一性）</strong></p>
+<p>若 <span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\(x_0\)</span> 可展开为幂级数，则展开式唯一，且恰为 Taylor 级数</p>
+<p><strong>定理</strong></p>
+<p>设 <span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\(x_0\)</span> 的某领域 <span class="math inline">\(I\)</span> 内任意阶可导，则在 <span class="math inline">\(I\)</span> 内</p>
+<p><span class="math display">\[
+f(x) = \sum_{n=0}^\infty \frac{f^{(n)}(x_0)}{n!}(x-x_0)^n \Leftrightarrow \lim_{n\to\infty}R_n(x) =0
+\]</span></p>
+<h4 id="常用的初等函数的幂级数展开式">常用的初等函数的幂级数展开式</h4>
+<ol type="1">
+<li><span class="math inline">\(\displaystyle e^x = \sum_{n=0}^\infty \frac{x^n}{n!} \quad (x\in\mathbb{R})\)</span></li>
+<li><span class="math inline">\(\displaystyle \sin x = \sum_{n=0}^\infty \frac{(-1)^nx^{2n+1}}{(2n+1)!} \quad (x\in\mathbb{R})\)</span></li>
+<li><span class="math inline">\(\displaystyle \cos x = \sum_{n=0}^\infty \frac{(-1)^nx^{2n}}{(2n)!} \quad (x\in\mathbb{R})\)</span></li>
+<li><span class="math inline">\(\displaystyle \ln(1+x) = \sum_{n=1}^\infty \frac{(-1)^{n-1}x^n}{n} \quad (\left\vert x \right\vert&lt;1)\)</span></li>
+<li><span class="math inline">\(\displaystyle (1+x)^\alpha = \sum_{n=0}^\infty \frac{\alpha(\alpha-1)\cdots(\alpha-n+1)}{n!}x^n \quad (\left\vert x\right\vert&lt;1)\)</span></li>
+<li><span class="math inline">\(\displaystyle \frac{1}{1-x} = \sum_{n=0}^\infty x^n \quad (\left\vert x\right\vert&lt;1)\)</span></li>
+<li><span class="math inline">\(\displaystyle \frac{1}{1+x} = \sum_{n=0}^\infty (-1)^nx^n \quad (\left\vert x\right\vert&lt;1)\)</span></li>
+<li><span class="math inline">\(\displaystyle \arctan{x} = \sum_{n=0}^\infty \frac{(-1)^n x^{2n+1}}{2n+1} \quad (\left\vert x\right\vert\leq 1)\)</span></li>
+</ol>
+<h4 id="正弦级数和余弦级数">正弦级数和余弦级数</h4>
+<p>若周期为 <span class="math inline">\(2\pi\)</span> 的函数 <span class="math inline">\(f(x)\)</span> 是奇函数时，其 Fourier 系数 <span class="math inline">\(a_n=0\)</span>，从而</p>
+<p><span class="math display">\[
+f(x) \sim \sum_{n=1}^{+\infty}b_n\sin(nx)\quad\text{正弦级数}
+\]</span></p>
+<p>其中 <span class="math inline">\(\displaystyle b_n =\frac{2}{\pi}\int_0^\pi f(x)\sin(nx) \,\mathrm{d}x\)</span></p>
+<p>若周期为 <span class="math inline">\(2\pi\)</span> 的函数 <span class="math inline">\(f(x)\)</span> 是偶函数，其 Fourier 系数 <span class="math inline">\(b_n=0\)</span>，从而</p>
+<p><span class="math display">\[
+f(x) \sim \frac{a_0}{2}+\sum_{n=0}^{+\infty}a_n\cos(nx)\quad\text{余弦级数}
+\]</span></p>
+<p>其中 <span class="math inline">\(\displaystyle a_n =\frac{1}{\pi}\int_0^\pi f(x)\cos(nx) \,\mathrm{d}x\)</span></p>
+<p>若函数 <span class="math inline">\(f(x)\)</span> 定义在 <span class="math inline">\([0,\pi]\)</span> 上，可作奇延拓</p>
+<p><span class="math display">\[
+F(x)=
+\begin{cases}
+  f(x), &amp; 0&lt; x&lt; \pi\\
+  -f(-x), &amp; -\pi &lt; x &lt; 0\\
+  0, &amp; x=0,\pm\pi\\
+\end{cases}
+\]</span></p>
+<p>使得 <span class="math inline">\(F(x)\)</span> 为 <span class="math inline">\([-\pi,\pi]\)</span> 上的奇函数</p>
+<p>也可作偶延拓</p>
+<p><span class="math display">\[
+G(x)=
+\begin{cases}
+  f(x), &amp; 0&lt; x&lt; \pi\\
+  f(-x), &amp; -\pi &lt; x &lt; 0\\
+  0, &amp; x=0,\pm\pi\\
+\end{cases}
+\]</span></p>
+<p>使得函数 <span class="math inline">\(G(x)\)</span> 为 <span class="math inline">\([-\pi,\pi]\)</span> 上的偶函数</p>
+<p>对于一定义在 <span class="math inline">\([0,\pi]\)</span> 上的函数 <span class="math inline">\(f(x)\)</span>，可以对其先做奇延拓或者偶延拓，再将其展开为 正弦级数或者余弦级数</p>
+<h4 id="周期为-2l-的-fourier-级数">周期为 <span class="math inline">\(2l\)</span> 的 Fourier 级数</h4>
+<p>设函数 <span class="math inline">\(f(x)\)</span> 在区间 <span class="math inline">\([-l,l]\)</span> 上可积，作代换 <span class="math inline">\(x =\frac{l}{\pi}t\)</span>，使得 <span class="math inline">\(F(t) = f\left(\frac{l}{\pi}t\right)\)</span> 为 <span class="math inline">\([-\pi,\pi]\)</span> 上的可积函数，从而</p>
+<p><span class="math display">\[
+F(t) \sim \frac{a_0}{2}+\sum_{n=1}^{+\infty}a_n\cos(nt)+\sum_{n=1}^{+\infty}b_n\sin(nt)
+\]</span></p>
+<p>其中</p>
+<p><span class="math display">\[
+\begin{aligned}
+a_n &amp;= \frac{1}{\pi}\int_{-\pi}^{\pi}F(t)\cos(nt)\,\mathrm{d}t = \frac{1}{l}\int_{-l}^{l}f(x)\cos\left(\frac{\pi n}{l}x\right)\,\mathrm{d}x\\
+b_n &amp;= \frac{1}{\pi}\int_{-\pi}^{\pi}F(t)\sin(nt)\,\mathrm{d}t = \frac{1}{l}\int_{-l}^{l}f(x)\sin\left(\frac{\pi n}{l}x\right)\,\mathrm{d}x
+\end{aligned}
+\]</span></p>
+<p>故</p>
+<p><span class="math display">\[
+f(x) \sim \frac{a_0}{2}+\sum_{n=1}^{+\infty}\left(a_n\cos\left(\frac{\pi n}{l}x\right)+b_n\sin\left(\frac{\pi n}{l}x\right)\right)
+\]</span></p>
+<p>其中</p>
+<p><span class="math display">\[
+\begin{aligned}
+a_n &amp;= \frac{1}{l}\int_{-l}^{l}f(x)\cos\left(\frac{\pi n}{l}x\right)\,\mathrm{d}x\\
+b_n &amp;= \frac{1}{l}\int_{-l}^{l}f(x)\sin\left(\frac{\pi n}{l}x\right)\,\mathrm{d}x
+\end{aligned}
+\]</span></p>
+<p><strong>定理：</strong></p>
+<p>若 <span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\([-l,l]\)</span> 上满足 Dirichlet 条件，则 Fourier 级数</p>
+<p><span class="math display">\[
+\frac{a_0}{2}+\sum_{n=1}^{+\infty}\left(a_n\cos\left(\frac{\pi n}{l}x\right)+b_n\sin\left(\frac{\pi n}{l}x\right)\right)
+\]</span></p>
+<p>收敛到</p>
+<p><span class="math display">\[
+S(n) =
+\begin{cases}
+  f(x), &amp; x \text{为} f(x) \text{的连续点}\\
+  \frac{f(x^+)+f(x^-)}{2}, &amp; x \text{为} f(x) \text{的间断点}\\
+  \frac{f(l^-)+f(-l^+)}{2} ,&amp; x=\pm l
+\end{cases}
+\]</span></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE%E7%A8%8B/" class="category-chain-item">专业课程</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE%E7%A8%8B/%E6%95%B0%E5%AD%A6/" class="category-chain-item">数学</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/" class="print-no-link">#课程笔记</a>
+      
+        <a href="/tags/%E9%AB%98%E6%95%B0/" class="print-no-link">#高数</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>高等数学 2 笔记</div>
+      <div>http://dcldyhb.github.io/2025/03/30/本科/数学/高数2笔记/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>东川路第一寒冰</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年3月30日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2025/03/30/%E6%9C%AC%E7%A7%91/%E6%95%B0%E5%AD%A6/%E6%95%B0%E7%90%86%E6%96%B9%E6%B3%95%E7%AC%94%E8%AE%B0/" title="数理方法笔记">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">数理方法笔记</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/03/30/%E6%9C%AC%E7%A7%91/%E7%89%A9%E7%90%86/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%863/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%863%E7%AC%94%E8%AE%B0/" title="大学物理3笔记">
+                        <span class="hidden-mobile">大学物理3笔记</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
