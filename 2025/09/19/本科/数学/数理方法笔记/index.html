@@ -27,8 +27,8 @@
 <meta property="og:description" content="几类偏微分方程的导出和定解问题 偏微分方程的基本概念 什么是微分方程 函数 \(u\) 关于 \(t\) 及 \((x,y,z)\) 的各阶偏导数满足的关系式 一般形式： \[ F(x_1,x_2,\ldots,x_n,u,\mathrm{D}u,\mathrm{D}^2u,\ldots,\mathrm{D}^Nu)&#x3D;0 \] 其中  \(\displaystyle(x_1,x_2,\ldots,">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509190831381.png">
-<meta property="article:published_time" content="2025-09-19T01:37:13.720Z">
-<meta property="article:modified_time" content="2025-09-19T01:37:13.720Z">
+<meta property="article:published_time" content="2025-09-19T05:26:00.980Z">
+<meta property="article:modified_time" content="2025-09-19T05:26:00.980Z">
 <meta property="article:author" content="东川路第一寒冰">
 <meta property="article:tag" content="课程笔记">
 <meta property="article:tag" content="高数">
@@ -216,8 +216,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-09-19 09:37" pubdate>
-          2025年9月19日 上午
+        <time datetime="2025-09-19 13:26" pubdate>
+          2025年9月19日 下午
         </time>
       </span>
     
@@ -228,7 +228,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.5k 字
+          2.6k 字
         
       </span>
     
@@ -239,7 +239,7 @@
         
         
         
-          21 分钟
+          22 分钟
         
       </span>
     
@@ -539,7 +539,31 @@ u(x,y,z)=int_D\frac{\rho}{r}\,\mathrm{d}\varepsilon\mathrm{d}\eta\mathrm{d}\zeta
 \Delta u = \Delta\left(\int_D\frac{\rho}{r}\,\mathrm{d}\varepsilon\mathrm{d}\eta\mathrm{d}\zeta\right) = \int_D\rho\Delta\left(\frac{1}{r}\right)\,\mathrm{d}\varepsilon\mathrm{d}\eta\mathrm{d}\zeta= 0
 \]</span></p>
 <p><strong>Poisson 方程</strong></p>
-<p>我们考虑</p>
+<p>我们考虑真空中的静电场，这是由一个电荷分布为 <span class="math inline">\(\rho(x,y,z)\)</span> 的物体 <span class="math inline">\(D\)</span> 产生的</p>
+<p>我们由 Gauss 定律可得</p>
+<p><span class="math display">\[
+\int_s\vec{E}\mathrm{d}S=\frac{1}{\varepsilon_0}\iiint_V\rho\,\mathrm{d}V
+\]</span></p>
+<p>由 Green 定理可得</p>
+<p><span class="math display">\[
+\int_s\vec{E}\mathrm{d}S=\iiint_V\vec{\nabla}\cdot\vec{E}\,\mathrm{d}V=\frac{1}{\varepsilon_0}\iiint_V\rho\,\mathrm{d}V
+\]</span></p>
+<p>则</p>
+<p><span class="math display">\[
+\iiint_V\vec{\nabla}\cdot\vec{E}\,\mathrm{d}V=\frac{1}{\varepsilon_0}\iiint_V\rho\,\mathrm{d}V
+\]</span></p>
+<p>我们去掉积分号，得到</p>
+<p><span class="math display">\[
+\vec{\nabla}\cdot\vec{E}=\frac{\rho}{\varepsilon_0}
+\]</span></p>
+<p>由电场的保守性可知，存在一个电势函数 <span class="math inline">\(u\)</span>，使得 <span class="math inline">\(\vec{E}=-\vec{\nabla}u\)</span>，则</p>
+<p><span class="math display">\[
+\vec{\nabla}\cdot\vec{E}=-\vec{\nabla}\cdot\vec{\nabla}u=-\Delta u=
+\]</span></p>
+<p>所以我们得到 Poisson 方程</p>
+<p><span class="math display">\[
+\Delta u = -\frac{\rho}{\varepsilon_0}
+\]</span></p>
 
                 
               </div>
@@ -639,9 +663,9 @@ u(x,y,z)=int_D\frac{\rho}{r}\,\mathrm{d}\varepsilon\mathrm{d}\eta\mathrm{d}\zeta
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/09/19/%E6%9C%AC%E7%A7%91/%E7%BC%96%E7%A8%8B/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AF%BC%E8%AE%BA/" title="人工智能导论">
+                      <a href="/2025/09/19/%E6%9C%AC%E7%A7%91/%E5%8C%96%E5%AD%A6/%E8%83%BD%E6%BA%90%E5%8C%96%E5%AD%A6/" title="能源化学">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">人工智能导论</span>
+                        <span class="hidden-mobile">能源化学</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
