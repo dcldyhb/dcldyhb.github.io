@@ -113,9 +113,9 @@
     
     <tags>
       
-      <tag>专业课程</tag>
-      
       <tag>编程</tag>
+      
+      <tag>专业课程</tag>
       
       <tag>人工智能</tag>
       
@@ -144,11 +144,11 @@
     
     <tags>
       
-      <tag>课程笔记</tag>
-      
       <tag>电路</tag>
       
       <tag>电路理论</tag>
+      
+      <tag>课程笔记</tag>
       
     </tags>
     
@@ -202,9 +202,9 @@
     
     <tags>
       
-      <tag>自动控制原理</tag>
-      
       <tag>课程笔记</tag>
+      
+      <tag>自动控制原理</tag>
       
     </tags>
     
@@ -233,13 +233,13 @@
     
     <tags>
       
-      <tag>Git</tag>
-      
-      <tag>教程</tag>
-      
       <tag>hexo</tag>
       
       <tag>博客</tag>
+      
+      <tag>教程</tag>
+      
+      <tag>Git</tag>
       
     </tags>
     
@@ -266,11 +266,11 @@
     
     <tags>
       
+      <tag>教程</tag>
+      
       <tag>Git</tag>
       
       <tag>版本控制</tag>
-      
-      <tag>教程</tag>
       
     </tags>
     
@@ -297,13 +297,13 @@
     
     <tags>
       
-      <tag>HTML</tag>
-      
       <tag>前端</tag>
       
       <tag>Web</tag>
       
       <tag>笔记</tag>
+      
+      <tag>HTML</tag>
       
     </tags>
     
