@@ -28,8 +28,9 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509152359458.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509160009862.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509232158890.png">
 <meta property="article:published_time" content="2025-09-15T10:00:00.000Z">
-<meta property="article:modified_time" content="2025-09-22T09:04:09.389Z">
+<meta property="article:modified_time" content="2025-09-25T07:01:47.393Z">
 <meta property="article:author" content="东川路第一寒冰">
 <meta property="article:tag" content="课程笔记">
 <meta property="article:tag" content="自动控制原理">
@@ -229,7 +230,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.2k 字
+          3.1k 字
         
       </span>
     
@@ -240,7 +241,7 @@
         
         
         
-          19 分钟
+          27 分钟
         
       </span>
     
@@ -584,6 +585,105 @@ r(t)=R\cos(\omega t+\varphi)
 r(t)=R e^{a t}
 \]</span></p>
 <h2 id="控制系统的数学模型">控制系统的数学模型</h2>
+<h3 id="概述-1">概述</h3>
+<h4 id="数学模型的定义">数学模型的定义</h4>
+<p>数学模型是定义系统行为的数学表达式，也是系统定量分析和研究的首要条件</p>
+<h5 id="狭义定义">狭义定义</h5>
+<p>是对实际物理系统后的数学抽象</p>
+<h5 id="广义定义">广义定义</h5>
+<p>揭示控制系统各变量内在联系及关系的解析式或图形表示</p>
+<h5 id="分类">分类</h5>
+<ul>
+<li>静态模型
+<ul>
+<li>揭示控制系统各变量内在联系及关系的解析式或图形表示</li>
+<li>静态模型：在静态条件下，描述变量间关系的代数方程
+<ul>
+<li>静态条件：变量各阶导数为零</li>
+</ul></li>
+</ul></li>
+<li>动态模型：用微分方程描述变量在动态过程中的关系</li>
+</ul>
+<h4 id="表现形式">表现形式</h4>
+<h5 id="数学表示">数学表示</h5>
+<p>用于分析研究系统的动态特性</p>
+<p>其基本形式有</p>
+<ul>
+<li>微分方程</li>
+<li>代数方程</li>
+<li>逻辑方程</li>
+</ul>
+<p>数学表示中的传递函数、频率特性等适用于单输入、单输出系统</p>
+<p>状态空间描述：用于多变量系统及最优控制问题</p>
+<h5 id="图形表示">图形表示</h5>
+<p>用于分析研究系统内部的结构和动态特性</p>
+<p>其基本形式有</p>
+<ul>
+<li>信号流图</li>
+<li>方块图</li>
+<li>根轨迹图</li>
+<li>频率特性图</li>
+</ul>
+<p>等</p>
+<p>还有在数字计算机上的程序综合</p>
+<h5 id="建模原则">建模原则</h5>
+<p>要分清主次、合理简化，从而建立适当的数学模型</p>
+<p>要根据选定的系统分析方法建立起相关的数学模型</p>
+<ul>
+<li>时间域：微分方程</li>
+<li>复数域：传递函数</li>
+<li>频率域：频率特性</li>
+</ul>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509232158890.png" srcset="/img/loading.jpeg" lazyload alt="三种数学模型" /><figcaption aria-hidden="true">三种数学模型</figcaption>
+</figure>
+<h5 id="复频域分析法">复频域分析法</h5>
+<p>时域中列出微分方程得到时域的解</p>
+<p>复频域中列出代数方程得到复频域的解</p>
+<p>微分方程通过 Laplace 变换得到代数方程</p>
+<p>代数方程通过 Laplace 逆变换得到微分方程</p>
+<p>通过这个我们可以在复频域中分析时域问题，从而解决时域分析法存在的难点</p>
+<h5 id="建模方法">建模方法</h5>
+<h6 id="数学分析法">数学分析法</h6>
+<p>我们在知道系统的结构和原理的情况下通过数学分析法建立数学模型</p>
+<p>分析元件或者系统的物理化学规律，再通过微分方程求解、分析系统</p>
+<h6 id="工程分析法">工程分析法</h6>
+<p>当我们不知道系统的结构和原理时，我们可以通过工程分析法建立数学模型</p>
+<p>对实际系统贾一定形式的输出信号，求取输出的相应</p>
+<p>使用传递函数、频率特性对系统进行分析、求解</p>
+<p>它比数学分析法更加简单、方便、直观</p>
+<h3 id="微分方程">微分方程</h3>
+<h4 id="建立方法">建立方法</h4>
+<ol type="1">
+<li>明确输入量和输出量</li>
+<li>应用物理规律列出变量的关系是</li>
+<li>划分环节</li>
+<li>写出每个环节的微分方程</li>
+<li>简化微分方程至只含有输入量和输出量</li>
+<li>将微分方程转换为标准形式</li>
+</ol>
+<h4 id="标准形式">标准形式</h4>
+<p><span class="math display">\[
+a_n\frac{\mathrm{d^n c(t)}}{\mathrm{d}t^{n-1}}+a_{n-1}\frac{\mathrm{d^{n-1}c(t)}}{\mathrm{d}t^{n-1}}+\cdots+a_1\frac{\mathrm{d}c(t)}{\mathrm{d}t}+a_0c(t)=b_m\frac{\mathrm{d^m r(t)}}{\mathrm{d}t^m}+b_{m-1}\frac{\mathrm{d^{m-1}r(t)}}{\mathrm{d}t^{m-1}}+\cdots+b_1\frac{\mathrm{d}r(t)}{\mathrm{d}t}+b_0r(t)
+\]</span></p>
+<p>其中</p>
+<ul>
+<li><span class="math inline">\(c(t)\)</span> 是系统的输出量</li>
+<li><span class="math inline">\(r(t)\)</span> 是系统的输入量</li>
+</ul>
+<p>一般来说 <span class="math inline">\(n\geq m\)</span>，因为系统中含有储能元件</p>
+<h3 id="传递函数">传递函数</h3>
+<h4 id="定义">定义</h4>
+<p>线性定常系统在初始条件为零的情况下，输出量的 Laplace 变换和输入量的 Laplace 变换之比，称为系统的传递函数</p>
+<p><span class="math display">\[
+G(s)=\frac{C(s)}{R(s)}
+\]</span></p>
+<p>其中</p>
+<ul>
+<li><span class="math inline">\(G(s)\)</span> 是系统的传递函数</li>
+<li><span class="math inline">\(C(s)=L(c(t))\)</span> 是系统输出量的 Laplace 变换</li>
+<li><span class="math inline">\(R(s)=L(r(t))\)</span> 是系统输入量的 Laplace 变换</li>
+</ul>
 <h2 id="控制系统的时域分析">控制系统的时域分析</h2>
 <h2 id="控制系统的复域分析">控制系统的复域分析</h2>
 <h2 id="控制系统的频域分析">控制系统的频域分析</h2>
