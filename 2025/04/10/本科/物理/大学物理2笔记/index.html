@@ -30,8 +30,12 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509180832207.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509180835005.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509180836392.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509281337024.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509281410764.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509281411344.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509281420775.png">
 <meta property="article:published_time" content="2025-04-10T06:55:56.000Z">
-<meta property="article:modified_time" content="2025-09-26T12:36:53.724Z">
+<meta property="article:modified_time" content="2025-09-28T06:22:34.196Z">
 <meta property="article:author" content="东川路第一寒冰">
 <meta property="article:tag" content="课程笔记">
 <meta property="article:tag" content="物理">
@@ -233,7 +237,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.2k 字
+          2k 字
         
       </span>
     
@@ -244,7 +248,7 @@
         
         
         
-          10 分钟
+          17 分钟
         
       </span>
     
@@ -433,6 +437,115 @@ E=\frac{\sigma}{2\varepsilon_0}\left[1-\frac{x}{\sqrt{x^2+R^2}}\right]
 \Phi_e=\oint_S\vec{E}\cdot\mathrm{d}\vec{S}=\frac{\sum_{i=1}^nq_{i内}}{\varepsilon_0}
 \]</span></p>
 <h3 id="环流定理和电势">环流定理和电势</h3>
+<h4 id="场强环流定理">场强环流定理</h4>
+<p>单位实验电荷沿着闭合路径移动回出发点时，电场力做功为 <span class="math inline">\(0\)</span></p>
+<p><span class="math display">\[
+\oint_{abcd}\vec{E}\cdot\mathrm{d}\vec{l}=\int_{abc}\vec{E}\cdot\mathrm{d}\vec{l}+\int_{cda}\vec{E}\cdot\mathrm{d}\vec{l}=0
+\]</span></p>
+<p>即</p>
+<p><span class="math display">\[
+\oint\vec{E}\cdot\mathrm{d}\vec{l}=0
+\]</span></p>
+<p>在<strong>静电场</strong>中场强沿着闭合环路的第一类线积分等于零</p>
+<h4 id="电势能和电势">电势能和电势</h4>
+<h5 id="电势能">电势能</h5>
+<p>静电场是保守场，所以可以引入电势能的概念</p>
+<p><span class="math display">\[
+W_a-W_b=A_{ab}=\int_b^a\vec{F}\cdot\mathrm{d}\vec{l}=q\int_b^a\vec{E}\cdot\mathrm{d}\vec{l}
+\]</span></p>
+<p>我们通常取无限远处为电势能零点</p>
+<p>则试验电荷 <span class="math inline">\(q_0\)</span> 在 a 点处的电势能为</p>
+<p><span class="math display">\[
+W_a=A_{a\infty}=q_0\int_\infty^a\vec{E}\cdot\mathrm{d}\vec{l}
+\]</span></p>
+<p>也就是说试验电荷 <span class="math inline">\(q_0\)</span> 在 a 点的电势能等于它从无限远处移到 a 点时电场力所做的功</p>
+<h5 id="电势">电势</h5>
+<p><span class="math display">\[
+\varphi_a=\frac{W_a}{q_0}=\int_\infty^a\vec{E}\cdot\mathrm{d}\vec{l}
+\]</span></p>
+<p>电势的单位为伏特 <span class="math inline">\(V\)</span>，<span class="math inline">\(1V=1J/C\)</span></p>
+<h5 id="电势差">电势差</h5>
+<p>a 点和 b 点之间电势的差值 <span class="math inline">\(U_a-U_b\)</span> 称为电势差</p>
+<p>也被称为<strong>电压</strong></p>
+<h5 id="几种常见的模型电势">几种常见的模型电势</h5>
+<h6 id="点电荷的电势">点电荷的电势</h6>
+<p><span class="math display">\[
+\varphi=\frac{1}{4\pi\varepsilon_0}\frac{q}{r}
+\]</span></p>
+<h6 id="带电圆环轴线上一点的电势">带电圆环轴线上一点的电势</h6>
+<p>均匀带电细圆环,总电量为 <span class="math inline">\(q\)</span>,半径为 <span class="math inline">\(R\)</span>,求圆环轴线上任一点的电势</p>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509281337024.png" srcset="/img/loading.jpeg" lazyload alt="带电圆环" /><figcaption aria-hidden="true">带电圆环</figcaption>
+</figure>
+<p>由前文可知带电圆环上任意一点的电场强度为</p>
+<p><span class="math display">\[
+E=\frac{qx}{4\pi\varepsilon_0(x^2+R^2)^{3/2}}
+\]</span></p>
+<p>则</p>
+<p><span class="math display">\[
+\varphi=\int_\infty^xE\mathrm{d}x=\frac{q}{4\pi\varepsilon_0(x^2+R^2)^\frac{1}{2}}
+\]</span></p>
+<h6 id="均匀带电球体的电势">均匀带电球体的电势</h6>
+<p>均匀带电球体,总电量为 <span class="math inline">\(q\)</span>,半径为 <span class="math inline">\(R\)</span>,求球外和球内任一点的电势</p>
+<p><span class="math display">\[
+V=
+\left\{
+  \begin{aligned}
+    &amp;\frac{1}{4\pi\varepsilon_0}\cdot\frac{q}{r}&amp;&amp; (r\ge R)\\
+    &amp;\frac{1}{4\pi\varepsilon_0}\cdot\frac{q(3R^2-r^2)}{2R^3}&amp;&amp; (r&lt;R)
+  \end{aligned}
+\right.
+\]</span></p>
+<h6 id="带电球壳的电势">带电球壳的电势</h6>
+<p><span class="math display">\[
+V=
+\left\{
+  \begin{aligned}
+    &amp;\frac{1}{4\pi\varepsilon_0}\cdot\frac{q}{r}&amp;&amp; (r\ge R)\\
+    &amp;\frac{1}{4\pi\varepsilon_0}\cdot\frac{q}{R}&amp;&amp; (r&lt;R)
+  \end{aligned}
+\right.
+\]</span></p>
+<h4 id="电偶极子">电偶极子</h4>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509281410764.png" srcset="/img/loading.jpeg" lazyload alt="电偶极子" /><figcaption aria-hidden="true">电偶极子</figcaption>
+</figure>
+<ul>
+<li>电量 <span class="math inline">\(q\)</span> 的正负两点电荷</li>
+<li>电偶极矩 <span class="math inline">\(\vec{p}=q\vec{l}\)</span></li>
+</ul>
+<h5 id="电偶极子场中的电势">电偶极子场中的电势</h5>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509281411344.png" srcset="/img/loading.jpeg" lazyload alt="电偶极子场中一点电荷" /><figcaption aria-hidden="true">电偶极子场中一点电荷</figcaption>
+</figure>
+<p><span class="math display">\[
+\begin{aligned}
+  &amp;V_+=\frac{1}{4\pi\varepsilon_0}\cdot\frac{q}{r_+}\\
+  &amp;V_-=\frac{1}{4\pi\varepsilon_0}\cdot\frac{-q}{r_-}\\
+  &amp;V=V_++V_-=\frac{1}{4\pi\varepsilon_0}\left(\frac{q}{r_+}-\frac{q}{r_-}\right)\\
+\end{aligned}
+\]</span></p>
+<p>因为 <span class="math inline">\(l\ll r\)</span>，<span class="math inline">\(r_--r_+\approx l\cos{\theta}\)</span>，<span class="math inline">\(r_+r_-\approx r^2\)</span>，所以</p>
+<p><span class="math display">\[
+V=\frac{1}{4\pi\varepsilon_0}\cdot\frac{ql\cos{\theta}}{r^2}=\frac{1}{4\pi\varepsilon_0}\cdot\frac{p\cos\theta}{r^2}
+\]</span></p>
+<h5 id="电偶极子场中的场强">电偶极子场中的场强</h5>
+<p><span class="math display">\[
+\begin{aligned}
+  &amp;E_r=-\frac{\partial V}{\partial r}=\frac{1}{2\pi\varepsilon_0}\cdot\frac{p\cos\theta}{r^3}\\
+  &amp;E_\theta=-\frac{1}{r}\frac{\partial V}{\partial\theta}=\frac{1}{4\pi\varepsilon_0}\cdot\frac{p\sin\theta}{r^3}\\
+  &amp;\vec{E}=E_r\vec{e_r}+E_\theta\vec{e_\theta}
+\end{aligned}
+\]</span></p>
+<h4 id="均匀外电场中的电偶极子">均匀外电场中的电偶极子</h4>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509281420775.png" srcset="/img/loading.jpeg" lazyload alt="均匀外电场中的电偶极子" /><figcaption aria-hidden="true">均匀外电场中的电偶极子</figcaption>
+</figure>
+<ul>
+<li>电场力 <span class="math inline">\(\displaystyle \vec{F}=q\vec{E}-q\vec{E}=0\)</span></li>
+<li>力矩 <span class="math inline">\(\displaystyle \vec{M}=\vec{p}\times\vec{E}\)</span></li>
+<li>电势能 <span class="math inline">\(\displaystyle W=-\vec{p}\cdot\vec{E}=-pE\cos\theta\)</span></li>
+</ul>
 
                 
               </div>

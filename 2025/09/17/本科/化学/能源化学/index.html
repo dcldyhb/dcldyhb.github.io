@@ -41,11 +41,14 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509251411124.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509251427044.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/img/202503151817449.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509262117643.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509262128874.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509271638306.png">
 <meta property="article:published_time" content="2025-09-17T00:01:00.000Z">
-<meta property="article:modified_time" content="2025-09-26T12:36:53.721Z">
+<meta property="article:modified_time" content="2025-09-28T06:22:34.193Z">
 <meta property="article:author" content="东川路第一寒冰">
-<meta property="article:tag" content="能源化学">
 <meta property="article:tag" content="课程笔记">
+<meta property="article:tag" content="能源化学">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509200101666.png">
   
@@ -242,7 +245,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.5k 字
+          4.4k 字
         
       </span>
     
@@ -253,7 +256,7 @@
         
         
         
-          13 分钟
+          37 分钟
         
       </span>
     
@@ -468,7 +471,7 @@ S=\frac{Z^+}{CN^+}
 <figure>
 <img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509251427044.png" srcset="/img/loading.jpeg" lazyload alt="14种布拉菲点阵图" /><figcaption aria-hidden="true">14种布拉菲点阵图</figcaption>
 </figure>
-<h4 id="xrd">XRD</h4>
+<h3 id="xrd">XRD</h3>
 <h4 id="bragg-方程">Bragg 方程</h4>
 <figure>
 <img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/img/202503151817449.png" srcset="/img/loading.jpeg" lazyload alt="X射线衍射" /><figcaption aria-hidden="true">X射线衍射</figcaption>
@@ -477,11 +480,27 @@ S=\frac{Z^+}{CN^+}
 <p><span class="math display">\[
 2d\sin\theta=n\lambda
 \]</span></p>
-<h5 id="晶粒大小的测定范围">晶粒大小的测定范围</h5>
+<p>这个公式暗含了一个条件：<span class="math inline">\(D&gt;\frac{\lambda}{2}\)</span></p>
+<h4 id="xrd-光源">XRD 光源</h4>
+<p>通过高能 X 射线辐射铜靶，产生的多个特征波长的荧光 X 射线，其中 k 层电子被激发，外层电子填充时发射的波，称为 <span class="math inline">\(\ce{CuK}\)</span> 射线</p>
+<ul>
+<li><span class="math inline">\(\ce{CuK\alpha}\)</span>：<span class="math inline">\(1.54056\ Å\)</span></li>
+</ul>
+<h4 id="样品的制备">样品的制备</h4>
+<ul>
+<li>样品的颗粒度对 X 射线的衍射强度以及重现性有很大的影响 一般样品的颗粒越大,则参与衍射的晶粒数就越少并还会产生初级消光效应使得强度的重现性较差</li>
+<li>要求粉体样品的颗粒度大小在 <span class="math inline">\(0.1\sim 10\mu m\)</span> 范围
+<ul>
+<li>当吸收系数大的样品参加衍射的晶粒数减少也会使重现性变差</li>
+<li>在选择参比物质时尽可能选择结晶完好晶粒小于 <span class="math inline">\(5\mu m\)</span>，吸收系数小的样品</li>
+</ul></li>
+<li>一般可以采用<strong>压片胶带粘</strong>以及<strong>石蜡分散</strong>的方法进行制样 X 射线的吸收与其质量密度有关，因此要求样品制备均匀，否则会严重影响定量结果的重现性</li>
+</ul>
+<h4 id="晶粒大小的测定原理">晶粒大小的测定原理</h4>
 <p>使用 Scherrer 公式进行计算</p>
-<p>$$</p>
-<p>D=</p>
-<p>$$</p>
+<p><span class="math display">\[
+D=\frac{0.89\lambda}{\beta\cos\theta}
+\]</span></p>
 <p>其中</p>
 <ul>
 <li><span class="math inline">\(D\)</span>：晶粒度</li>
@@ -492,9 +511,196 @@ S=\frac{Z^+}{CN^+}
 </ul></li>
 <li><span class="math inline">\(\theta\)</span>：衍射角</li>
 </ul>
+<h4 id="xps">XPS</h4>
+<p>X 射线光电子能谱（X-ray Photoelectron Spectroscopy, XPS）是利用光电子能谱技术研究物质表面组成和化学状态的一种分析方法</p>
+<p>利用 X 射线激发材料表面的原子，使其内层电子逸出并且测量这些逸出电子的动能，从而计算出电子的结合能</p>
 <h3 id="晶体的基本类型和特征">晶体的基本类型和特征</h3>
+<p>固体物质按照原子或分子或离子在空间中的排列是否长程有序分为晶体和无定形两大类</p>
+<ul>
+<li>晶体：原子、离子、分子等微粒在空间按一定周期重复地排列构成的固体物质
+<ul>
+<li>规则排序：在空间上“一定数量种类的微粒”每隔一定距离重复出现，即所谓晶体的周期性</li>
+</ul></li>
+<li>无定形固体：原子、离子、分子等微粒在空间中无规则排列或者仅仅短程有序，不能通过对称性相关联</li>
+</ul>
+<h4 id="晶体结构特征">晶体结构特征</h4>
+<h5 id="自范性">自范性</h5>
+<p>晶体能够自发形成多面体外形，并且满足欧拉定理</p>
 <p><span class="math display">\[
+F+V=E+2
 \]</span></p>
+<p>其中</p>
+<ul>
+<li><span class="math inline">\(F\)</span>：晶体的面数</li>
+<li><span class="math inline">\(V\)</span>：晶体的顶点数</li>
+<li><span class="math inline">\(E\)</span>：晶体的棱数</li>
+</ul>
+<p>因为晶体内部结构有对称性，所以晶体的理想外形也有特定的对称性</p>
+<h5 id="各向异性">各向异性</h5>
+<p>晶体中的某些物理或化学性质沿着不同的平面是不同的，这种现象被称为是晶体的<strong>各向异性</strong></p>
+<h5 id="均匀性">均匀性</h5>
+<p>一块晶体的内部的各个部分的宏观性质是相同的，比如具有相同的密度、化学组成等</p>
+<h5 id="有确定的熔点">有确定的熔点</h5>
+<p>晶体在加热时，在一定温度下突然熔化，这个温度称为晶体的熔点</p>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509262117643.png" srcset="/img/loading.jpeg" lazyload alt="熔化示例" /><figcaption aria-hidden="true">熔化示例</figcaption>
+</figure>
+<h5 id="对称性">对称性</h5>
+<p>理想晶体的外形与其内部的微观结构是紧密相关的，都具有特定的对称性，而且其对称性与性质的关系非常紧密</p>
+<h5 id="晶体的-x-射线衍射">晶体的 X 射线衍射</h5>
+<p>晶体的周期性结构，使它成为天然的三维光栅，其周期性 X 光波长相当，能够对 X 光产生衍射</p>
+<h4 id="晶体的分类">晶体的分类</h4>
+<p>按照组成晶体的质点与质点间相互作用力的类型不同，将晶体分为四类</p>
+<ul>
+<li>离子晶体</li>
+<li>分子晶体</li>
+<li>原子晶体（共价晶体）</li>
+<li>金属晶体</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">晶体类型</th>
+<th style="text-align: center;">晶格上节点</th>
+<th style="text-align: center;">节点间作用力</th>
+<th style="text-align: center;">代表性物质</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">金属晶体</td>
+<td style="text-align: center;">金属原子或金属正离子</td>
+<td style="text-align: center;">金属键</td>
+<td style="text-align: center;">Fe</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">离子晶体</td>
+<td style="text-align: center;">阴阳离子</td>
+<td style="text-align: center;">离子键</td>
+<td style="text-align: center;">NaCl</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">分子晶体</td>
+<td style="text-align: center;">分子</td>
+<td style="text-align: center;">范德华力、氢键（分子间作用力）</td>
+<td style="text-align: center;"><span class="math inline">\(\ce{I2}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">原子晶体</td>
+<td style="text-align: center;">原子</td>
+<td style="text-align: center;">共价键</td>
+<td style="text-align: center;"><span class="math inline">\(\ce{C}\)</span>（金刚石）</td>
+</tr>
+</tbody>
+</table>
+<h5 id="离子晶体">离子晶体</h5>
+<p>常见的离子晶体有强碱、金属氧化物、部分盐等</p>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509262128874.png" srcset="/img/loading.jpeg" lazyload alt="氯化钠晶胞" /><figcaption aria-hidden="true">氯化钠晶胞</figcaption>
+</figure>
+<h5 id="原子晶体">原子晶体</h5>
+<p>两个或多个原子共用它们的外层电子，在理想状态下达到电子饱和的状态，由此组成的比较稳定和坚固的化学键称为<strong>共价键</strong></p>
+<p>共价键有<strong>方向性</strong>和<strong>饱和性</strong>，原子的配位数由键的数目决定，一般配位数较低，键的方向性决定了晶体结构的空间构型</p>
+<p>由于共价键的结合力比离子键大，所以共价型原子晶体都有较大的硬度和高的熔点，其导电性和导热性较差，但是石墨是个例外</p>
+<h5 id="分子晶体">分子晶体</h5>
+<p>分子晶体内组成晶格的质点是分子，质点间的作用力为分子间作用力，主要是范德华力和氢键</p>
+<p>分子晶体一般熔点沸点较低，硬度较小，导电性较差，并且满足相似相溶原则</p>
+<h5 id="金属晶体">金属晶体</h5>
+<p>金属晶体中，自由电子不专属于某个金属离子而为整个金属晶体所共有</p>
+<p>这些自由电子与全部金属离子相互作用，从而形成某种结合，这种作用称为金属键</p>
+<p>金属件没有饱和性和方向性，因此金属一般有良好的导电性和导热性，并且具有延展性和可锻性</p>
+<p>一般金属的熔点和沸点随着金属键的强度的增加而升高</p>
+<h6 id="金属键的强度">金属键的强度</h6>
+<p>金属键的强度可以用原子化热来度量</p>
+<ul>
+<li>原子化热指的是单位物质的量的金属由结晶态转变为气态自由原子所需要的能量，即拆散金属晶格所需的能量</li>
+</ul>
+<p>影响因素</p>
+<ul>
+<li>价电子数目 参与形成金属间的价电子数越多，则金属键越强</li>
+<li>原子半径大小 原子半径越大，原子核对价电子的吸引力越小，金属键越弱</li>
+</ul>
+<h5 id="john-teller-效应">John-Teller 效应</h5>
+<details closed style="background-color: #f7f7f7; border: 1px solid #eaeaea; border-radius: 8px; padding: 16px; margin-bottom: 1em;">
+<summary>
+Gemini 谈 Jahn-Teller Effect
+</summary>
+<div>
+<pre><code class="hljs">&lt;h3&gt;杨-泰勒效应的核心思想&lt;/h3&gt;
+&lt;p&gt;简单来说，就是：&lt;b&gt;分子为了让自己更稳定，会主动“扭曲”自己的形状。&lt;/b&gt;&lt;/p&gt;
+&lt;p&gt;这个效应解释了为什么某些分子的几何形状并不像理论上那么“完美对称”。&lt;/p
+&lt;hr&gt;
+&lt;h4&gt;一个简单的比喻：选座位&lt;/h4&gt;
+&lt;p&gt;想象一个分子里的电子要去“坐座位”，这些“座位”就是&lt;b&gt;电子轨道&lt;/b&gt;。&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;b&gt;遇到问题：&lt;/b&gt;&lt;br&gt;
+    现在，有两个或多个&lt;b&gt;一模一样舒服&lt;/b&gt;的空座位（这在化学上称为“轨道简并”），让一个电子随便选。对于整个分子来说，这种“选择困难”的状态其实是不稳定的。
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;b&gt;分子的“小聪明”：&lt;/b&gt;&lt;br&gt;
+    为了解决这个问题，分子会自己&lt;b&gt;“变形”&lt;/b&gt;一下。比如，它会把其中一个座位变得&lt;b&gt;更舒服（能量更低）&lt;/b&gt;，同时让另一个座位变得不那么舒服（能量更高）。
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;b&gt;完美解决：&lt;/b&gt;&lt;br&gt;
+    这样一来，电子就不用选择了，它会毫不犹豫地坐到那个&lt;b&gt;更舒服&lt;/b&gt;的座位上。因为电子找到了一个能量更低的位置，所以整个分子的总能量就降低了，变得&lt;b&gt;更稳定&lt;/b&gt;。
+  &lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h4&gt;总结&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;b&gt;触发条件：&lt;/b&gt;一个分子的电子排布不均匀，导致电子面临“选择困难”（轨道简并）。&lt;/li&gt;
+  &lt;li&gt;&lt;b&gt;行为：&lt;/b&gt;分子自发地改变自己的几何形状（发生畸变）。&lt;/li&gt;
+  &lt;li&gt;&lt;b&gt;目的：&lt;/b&gt;消除“选择困难”，让电子进入一个能量更低的位置，从而使整个体系变得更稳定。&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+</div>
+</details>
+<h3 id="能带理论">能带理论</h3>
+<p>四个量子数</p>
+<ul>
+<li><span class="math inline">\(n\)</span>：主量子数，描述电子层数，取值为正整数 <span class="math inline">\(1,2,3,\cdots ,N\)</span></li>
+<li><span class="math inline">\(m\)</span>: 磁量子数，描述电子轨道的空间取向，取值为整数 <span class="math inline">\(0,\pm 1,\pm 2,\cdots,\pm (N-1)\)</span></li>
+<li><span class="math inline">\(m_s\)</span>：自旋量子数，描述电子自旋方向，取值为 <span class="math inline">\(+\frac{1}{2},-\frac{1}{2}\)</span></li>
+<li><span class="math inline">\(l\)</span>：角量子数，描述电子轨道的形状，取值为 <span class="math inline">\(0,1,2,\cdots,(N-1)\)</span></li>
+</ul>
+<p>能带的形成</p>
+<ul>
+<li>单个原子 电子只占据离散能级</li>
+<li>大量原子 原子的能级因为相互作用发生能级分裂，逐渐编程准连续的能带</li>
+</ul>
+<p>原来孤立的原子能级在晶体中会形成价带（Valence Band）和导带（Conduction Band）</p>
+<h4 id="导体半导体和绝缘体">导体、半导体和绝缘体</h4>
+<ul>
+<li><p>能带宽度 最低导带和最高价带之间的宽度</p></li>
+<li><p>导体（Conducor） 带隙比较窄，电子从价带移动到导带需要的能量比较少，导电性能良好</p></li>
+<li><p>绝缘体（Insulator） 带隙比较宽，电子从价带移动到导带需要的能量比较大，导电性能差 一般来说带隙大于 <span class="math inline">\(3\ eV\)</span></p></li>
+<li><p>半导体（Semiconductor） 带隙适中，电子从价带移动到导带需要的能量适中，导电性能介于导体和绝缘体之间 导电性能优于绝缘体，但是不如导体</p></li>
+</ul>
+<h5 id="本征半导体">本征半导体</h5>
+<p>本征半导体（Intrinsic Semiconductor）：<strong>完全不含杂质</strong>且<strong>无晶格缺陷</strong>的纯净半导体</p>
+<p>本征半导体的导电能力主要由材料的本征激发决定的纯净半导体</p>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509271638306.png" srcset="/img/loading.jpeg" lazyload alt="本征激发" /><figcaption aria-hidden="true">本征激发</figcaption>
+</figure>
+<details closed style="background-color: #f7f7f7; border: 1px solid #eaeaea; border-radius: 8px; padding: 16px; margin-bottom: 1em;">
+<summary>
+Gemini 谈本征激发
+</summary>
+<pre><code class="hljs">&lt;strong&gt;导电的原理：本征激发&lt;/strong&gt;
+    &lt;p&gt;当半导体获得能量（例如，通过加热或光照）时，会发生“本征激发”：&lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;b&gt;自由电子的产生&lt;/b&gt;：一些束缚在共价键中的价电子会获得足够的能量，挣脱束缚，变成可以在晶格中自由移动的&lt;b&gt;自由电子&lt;/b&gt;。&lt;/li&gt;
+        &lt;li&gt;&lt;b&gt;空穴的产生&lt;/b&gt;：价电子离开后，在原来的共价键位置上会留下一个空位，这个空位被称为&lt;b&gt;空穴 (Hole)&lt;/b&gt;。空穴可以被邻近的电子填充，效果上等同于一个带正电的粒子在移动。&lt;/li&gt;
+        &lt;li&gt;&lt;b&gt;导电性&lt;/b&gt;：正是由于“本征激发”产生了可以自由移动的&lt;b&gt;自由电子&lt;/b&gt;和&lt;b&gt;空穴&lt;/b&gt;（这两种统称为“载流子”），本征半导体才具备了一定的导电能力。&lt;/li&gt;
+    &lt;/ul&gt;</code></pre>
+</details>
+<h5 id="p-型半导体和-n-型半导体">P 型半导体和 N 型半导体</h5>
+<h6 id="p-型半导体">P 型半导体</h6>
+<p>参杂三价杂质原子（如硼、铝、镓等）的半导体中会出现空穴，由于没有电子而变得非常不稳定，容易吸收电子并中和，从而形成 P 型半导体</p>
+<p>在 P 型半导体中，位于共价键中的空穴只需要很少的外界能量就可以吸引价带中的其他电子来填充它</p>
+<h6 id="n-型半导体">N 型半导体</h6>
+<p>参杂五价杂质原子（如磷、砷、锑等）的半导体中会出现多余的电子，这些电子很容易脱离杂质原子而成为自由电子，从而形成 N 型半导体</p>
+<h6 id="pp-n-结">PP-N 结</h6>
 
                 
               </div>
@@ -535,9 +741,9 @@ S=\frac{Z^+}{CN^+}
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E8%83%BD%E6%BA%90%E5%8C%96%E5%AD%A6/" class="print-no-link">#能源化学</a>
-      
         <a href="/tags/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/" class="print-no-link">#课程笔记</a>
+      
+        <a href="/tags/%E8%83%BD%E6%BA%90%E5%8C%96%E5%AD%A6/" class="print-no-link">#能源化学</a>
       
     </div>
   
