@@ -34,12 +34,25 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509232012869.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509232042644.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509232043602.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509281441930.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509281441692.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509281449832.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509281639037.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509281648696.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509301603886.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509282039348.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509301607505.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509301610913.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509301611130.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509301612676.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509301616439.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509301615439.png">
 <meta property="article:published_time" content="2025-09-18T05:16:59.000Z">
-<meta property="article:modified_time" content="2025-09-28T06:22:34.195Z">
+<meta property="article:modified_time" content="2025-09-30T08:18:29.445Z">
 <meta property="article:author" content="东川路第一寒冰">
+<meta property="article:tag" content="课程笔记">
 <meta property="article:tag" content="电路">
 <meta property="article:tag" content="电路理论">
-<meta property="article:tag" content="课程笔记">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509161514892.png">
   
@@ -236,7 +249,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          4.3k 字
+          4.9k 字
         
       </span>
     
@@ -247,7 +260,7 @@
         
         
         
-          36 分钟
+          41 分钟
         
       </span>
     
@@ -768,6 +781,128 @@ h(u,i)=0
 <img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509232043602.png" srcset="/img/loading.jpeg" lazyload alt="电流源符号" /><figcaption aria-hidden="true">电流源符号</figcaption>
 </figure>
 <p>电流源是可以被看作是一个非线性电阻，其电流是定值但是电压是可以变化的，我们找到了一个 <span class="math inline">\(u\)</span> 时也能确定一个 <span class="math inline">\(i\)</span></p>
+<h5 id="几种典型的独立源信号波形">几种典型的独立源信号波形</h5>
+<h6 id="单位越阶函数-epsilont">单位越阶函数 <span class="math inline">\(\epsilon(t)\)</span></h6>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509281441930.png" srcset="/img/loading.jpeg" lazyload alt="单位越阶函数" /><figcaption aria-hidden="true">单位越阶函数</figcaption>
+</figure>
+<p><span class="math display">\[
+\epsilon(t)=
+\left\{
+    \begin{aligned}
+        &amp;0,&amp;&amp; t&lt;0 \\
+        &amp;1,&amp;&amp; t&gt;0
+    \end{aligned}
+\right.
+\]</span></p>
+<p><strong>延时单位越阶函数</strong></p>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509281441692.png" srcset="/img/loading.jpeg" lazyload alt="延时单位越阶函数" /><figcaption aria-hidden="true">延时单位越阶函数</figcaption>
+</figure>
+<p><span class="math display">\[
+\epsilon(t-t_0)=
+\left\{
+    \begin{aligned}
+        &amp;0,&amp;&amp; t&lt;t_0 \\
+        &amp;1,&amp;&amp; t&gt;t_0
+    \end{aligned}
+\right.
+\]</span></p>
+<h6 id="单位冲激函数-deltat">单位冲激函数 <span class="math inline">\(\delta(t)\)</span></h6>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509281449832.png" srcset="/img/loading.jpeg" lazyload alt="狄拉克函数" /><figcaption aria-hidden="true">狄拉克函数</figcaption>
+</figure>
+<p><span class="math display">\[
+\delta(t)=
+\left\{
+    \begin{aligned}
+        &amp;\delta(t)=0\quad,t \neq 0 \\
+        &amp;\int_{-\infty}^{+\infty} \delta(t) \mathrm{d}t = 1
+    \end{aligned}
+\right.
+\]</span></p>
+<h6 id="正弦波形">正弦波形</h6>
+<p><span class="math display">\[
+f(t)=A_m \sin(\omega t + \varphi)
+\]</span></p>
+<h4 id="受控源">受控源</h4>
+<p>为了电路分析方便，我们构建了受控源元件，包含了两条分路，即控制分录和受控分路，受控分路的电压或电流由控制分路的电压或电流决定</p>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509281639037.png" srcset="/img/loading.jpeg" lazyload alt="ccvs 和 vcvs" /><figcaption aria-hidden="true">ccvs 和 vcvs</figcaption>
+</figure>
+<p>上图中的两个图例</p>
+<ul>
+<li>第一个图例中电阻的电压由电流控制 <span class="math inline">\(u=Ri\)</span></li>
+<li>第二个图例中电阻的电压由另一个电阻的电压控制 <span class="math inline">\(u=\frac{R}{r}u_1\)</span></li>
+</ul>
+<p>根据控制量和被控量的不同，我们将控制源分为四种</p>
+<ul>
+<li>电压控制的电压源（Violtage Controlled Voltage Source, VCVS）</li>
+<li>电压控制的电流源（Violtage Controlled Current Source, VCCS）</li>
+<li>电流控制的电压源（Current Controlled Voltage Source, CCVS）</li>
+<li>电流控制的电流源（Current Controlled Current Source, CCCS）</li>
+</ul>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509281648696.png" srcset="/img/loading.jpeg" lazyload alt="四种控制源" /><figcaption aria-hidden="true">四种控制源</figcaption>
+</figure>
+<h4 id="运算放大器">运算放大器</h4>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509301603886.png" srcset="/img/loading.jpeg" lazyload alt="符号" /><figcaption aria-hidden="true">符号</figcaption>
+</figure>
+<h5 id="符号">符号</h5>
+<h6 id="反相输入端">反相输入端</h6>
+<p>当输入 <span class="math inline">\(u_-\)</span> 单独加于该端时，输入电压和输出电压反相</p>
+<h6 id="同相输入端">同相输入端</h6>
+<p>当输入 <span class="math inline">\(u_+\)</span> 单独加于该端时，输入电压和输出电压同相</p>
+<h6 id="开环增益放大倍数">开环增益（放大倍数）</h6>
+<p>输出电压 <span class="math inline">\(u_0=Au_i=A(u_+-u_-)\)</span>，其中 <span class="math inline">\(A\)</span> 为开环增益，<span class="math inline">\(u_i\)</span> 为输入电压</p>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509282039348.png" srcset="/img/loading.jpeg" lazyload alt="运算放大器的电路符号" /><figcaption aria-hidden="true">运算放大器的电路符号</figcaption>
+</figure>
+<h5 id="输入输出特征">输入输出特征</h5>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509301607505.png" srcset="/img/loading.jpeg" lazyload alt="输入输出特性图" /><figcaption aria-hidden="true">输入输出特性图</figcaption>
+</figure>
+<p>运算放大器的输入输出特性图分为两个区域</p>
+<ol type="1">
+<li><p>线性区</p>
+<p><span class="math display">\[
+u_0 = Au_i=A(u_+-u_-)
+\]</span></p></li>
+<li><p>饱和区(非线性区)</p>
+<p><span class="math display">\[
+u_0 = \pm U_{0(sat)}
+\]</span></p></li>
+</ol>
+<h5 id="电路模型">电路模型</h5>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509301610913.png" srcset="/img/loading.jpeg" lazyload alt="运算放大器电路模型" /><figcaption aria-hidden="true">运算放大器电路模型</figcaption>
+</figure>
+<p><img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509301611130.png" srcset="/img/loading.jpeg" lazyload /></p>
+<h5 id="理想运算放大器">理想运算放大器</h5>
+<p>理想运算放大器满足以下条件</p>
+<ol type="1">
+<li>开环增益 <span class="math inline">\(A \to \infty\)</span></li>
+<li>输入电阻 <span class="math inline">\(R_i \to \infty\)</span></li>
+<li>输出电阻 <span class="math inline">\(R_o = 0\)</span></li>
+</ol>
+<h5 id="输入输出特性">输入输出特性</h5>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509301612676.png" srcset="/img/loading.jpeg" lazyload alt="理想运算放大器的输入输出特性图" /><figcaption aria-hidden="true">理想运算放大器的输入输出特性图</figcaption>
+</figure>
+<h5 id="运算特性">运算特性</h5>
+<ol type="1">
+<li><p>虚断路</p>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509301616439.png" srcset="/img/loading.jpeg" lazyload alt="虚断路" /><figcaption aria-hidden="true">虚断路</figcaption>
+</figure>
+<p>我们认为理想运算放大器的输入端电流为 <span class="math inline">\(0\)</span>，即 <span class="math inline">\(i_+ = i_-\approx 0\)</span></p></li>
+<li><p>虚短路</p>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509301615439.png" srcset="/img/loading.jpeg" lazyload alt="虚短路" /><figcaption aria-hidden="true">虚短路</figcaption>
+</figure>
+<p>我们认为理想运算放大器的两个输入端电压相等，即 <span class="math inline">\(u_+ = u_-\)</span></p></li>
+</ol>
 
                 
               </div>
@@ -808,11 +943,11 @@ h(u,i)=0
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
+        <a href="/tags/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/" class="print-no-link">#课程笔记</a>
+      
         <a href="/tags/%E7%94%B5%E8%B7%AF/" class="print-no-link">#电路</a>
       
         <a href="/tags/%E7%94%B5%E8%B7%AF%E7%90%86%E8%AE%BA/" class="print-no-link">#电路理论</a>
-      
-        <a href="/tags/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/" class="print-no-link">#课程笔记</a>
       
     </div>
   
