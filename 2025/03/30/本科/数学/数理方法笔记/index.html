@@ -27,7 +27,7 @@
 <meta property="og:description" content="几类偏微分方程的导出和定解问题 偏微分方程的基本概念 什么是微分方程 函数 \(u\) 关于 \(t\) 及 \((x,y,z)\) 的各阶偏导数满足的关系式 一般形式： \[ F(x_1,x_2,\ldots,x_n,u,\mathrm{D}u,\mathrm{D}^2u,\ldots,\mathrm{D}^Nu)&#x3D;0 \] 其中  \(\displaystyle(x_1,x">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-03-30T13:39:54.000Z">
-<meta property="article:modified_time" content="2025-09-30T11:09:58.476Z">
+<meta property="article:modified_time" content="2025-10-10T14:16:08.755Z">
 <meta property="article:author" content="东川路第一寒冰">
 <meta property="article:tag" content="课程笔记">
 <meta property="article:tag" content="高数">
@@ -226,7 +226,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.8k 字
+          3.4k 字
         
       </span>
     
@@ -237,7 +237,7 @@
         
         
         
-          24 分钟
+          29 分钟
         
       </span>
     
@@ -713,6 +713,109 @@ class="math inline">\(u_2\)</span> 分别是该问题的两个解，则对于任
 <span class="math inline">\(a\)</span> 和 <span
 class="math inline">\(b\)</span>， <span class="math inline">\(au_1 +
 bu_2\)</span> 也是该问题的解</p>
+<h2 id="分离变量法">分离变量法</h2>
+<h3 id="fourier-级数">Fourier 级数</h3>
+<p>设 <span class="math inline">\(f_T(t)\)</span> 是以 <span
+class="math inline">\(T\)</span> 为周期的实函数，且在 <span
+class="math inline">\([-\frac{T}{2},\frac{T}{2}]\)</span> 上满足
+Dirichlet 条件</p>
+<ol type="1">
+<li><span class="math inline">\(f_T(t)\)</span>
+连续或仅有有限个第一类间断点</li>
+<li><span class="math inline">\(f_T(t)\)</span> 在 <span
+class="math inline">\([-\frac{T}{2},\frac{T}{2}]\)</span>
+上有有限个极值点</li>
+</ol>
+<p>则 <span class="math inline">\(f_T(t)\)</span> 在 <span
+class="math inline">\([-\frac{T}{2},\frac{T}{2}]\)</span> 可展开为
+Fourier 级数，且在连续点 <span class="math inline">\(t\)</span> 处有</p>
+<p><span class="math display">\[
+f_T(t)=\frac{a_0}{2}+\sum_{n=1}^{+\infty}(a_n\cos n\omega t + b_n\sin
+n\omega t)
+\]</span></p>
+<p>其中</p>
+<ul>
+<li><span class="math inline">\(\displaystyle\omega =
+\frac{2\pi}{T}\)</span></li>
+<li><span class="math inline">\(\displaystyle
+a_n=\frac{1}{\pi}\int_{-\pi}^{\pi}f(x)\cos n\omega
+x\,\mathrm{d}x\)</span></li>
+<li><span class="math inline">\(\displaystyle
+b_n=\frac{1}{\pi}\int_{-\pi}^{\pi}f(x)\sin n\omega
+x\,\mathrm{d}x\)</span></li>
+<li><span class="math inline">\(\displaystyle a_0 =
+\frac{1}{\pi}\int_{-\pi}^\pi f(x)\,\mathrm{d}x\)</span></li>
+</ul>
+<p>并且在断点 <span class="math inline">\(t\)</span> 处有</p>
+<p><span class="math display">\[
+\frac{f_T(t-)+f_T(t^+)}{2}=\frac{a_0}{2}+\sum_{n=1}^{+\infty}(a_n\cos
+n\omega t + b_n\sin n\omega t)
+\]</span></p>
+<blockquote>
+<p>定理</p>
+<p>若 <span class="math inline">\(f\)</span> 可积或平方可积，则 Fourier
+展开式的系数满足 Parseval 等式</p>
+<p><span class="math display">\[
+\frac{a_0^2}{2}+\sum_{n=1}^{+\infty}(a_n^2+b_n^2)=\frac{1}{\pi}\int_{-\pi}^{\pi}\vert
+f(x)\vert^2\,\mathrm{d}x
+\]</span></p>
+</blockquote>
+<h4 id="正弦函数与余弦函数">正弦函数与余弦函数</h4>
+<h5 id="正弦级数">正弦级数</h5>
+<p>若 <span class="math inline">\(f(x)\)</span> 是奇函数，则其 Fourier
+级数展开式中</p>
+<p><span class="math display">\[
+a_n=\frac{1}{\pi} \int_{-\pi}^{\pi}f(x)\cos nx\,\mathrm{d}x=0
+\]</span></p>
+<p>则其 Fourier 级数展开式为</p>
+<p><span class="math display">\[
+f(x)=\sum_{n=1}^{+\infty}b_n\sin nx
+\]</span></p>
+<p>对其做周期延拓则变为正弦级数</p>
+<h5 id="余弦级数">余弦级数</h5>
+<p>若 <span class="math inline">\(f(x)\)</span> 是偶函数，则其 Fourier
+级数展开式中</p>
+<p><span class="math display">\[
+b*n=\frac{1}{\pi} \int*{-\pi}^{\pi}f(x)\sin nx\,\mathrm{d}x=0
+\]</span></p>
+<p>则其 Fourier 级数展开式为</p>
+<p><span class="math display">\[
+f(x)=\frac{a*0}{2}+\sum*{n=1}^{+\infty}a_n\cos nx
+\]</span></p>
+<p>对其做周期延拓则变为余弦级数</p>
+<h3 id="弦振动方程初边值问题的求解">弦振动方程初边值问题的求解</h3>
+<h4 id="第一类齐次边界条件">第一类齐次边界条件</h4>
+<p>若弦的两端固定，器自由振动由以下定解问题解决</p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;u_{tt}-a^2u_{xx}=0,&amp;&amp;(0&lt;x&lt;L,t&gt;0)\\
+      &amp;t=0:u=\phi(x),u_t=\psi(x)\\
+      &amp;u\vert_{x=0}=0,u\vert_{x=L}=0
+   \end{aligned}
+\right.
+\]</span></p>
+<p>使用分离变量法进行求解，我们设</p>
+<p><span class="math display">\[
+u(t,x)=X(x)T(t)
+\]</span></p>
+<p>则弦振动方程可化为</p>
+<p><span class="math display">\[
+\begin{aligned}
+   &amp;X(x)T&#39;&#39;(t)-a^2X&#39;&#39;(x)T(t)&amp;=0\\
+   \Rightarrow
+&amp;\frac{T&#39;&#39;(t)}{a^2T(t)}&amp;=\frac{X&#39;&#39;(x)}{X(x)}=-\lambda
+\end{aligned}
+\]</span></p>
+<p>即</p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;X&#39;&#39;(x)+\lambda X(x)=0\\
+      &amp;T&#39;&#39;(t)+a^2\lambda T(t)=0
+   \end{aligned}
+\right.
+\]</span></p>
 
                 
               </div>
