@@ -27,10 +27,10 @@
 <meta property="og:description" content="关键概念 神经网络（Neural Network, NN） 机器学习种类  监督学习（Supervised Learning） 非监督学习（Unsupervised Learning） 强化学习（Reinforcement Learning）  监督学习 监督学习是通过已标注的数据集来训练模型，使其能够预测新的、未见过的数据。常见的监督学习算法包括线性回归、逻辑回归、支持向量机（SVM）、决策树和">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-09-18T05:17:00.000Z">
-<meta property="article:modified_time" content="2025-09-30T08:18:29.443Z">
+<meta property="article:modified_time" content="2025-10-11T00:25:54.929Z">
 <meta property="article:author" content="东川路第一寒冰">
-<meta property="article:tag" content="编程">
 <meta property="article:tag" content="专业课程">
+<meta property="article:tag" content="编程">
 <meta property="article:tag" content="人工智能">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -227,7 +227,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          195 字
+          1.2k 字
         
       </span>
     
@@ -238,7 +238,7 @@
         
         
         
-          2 分钟
+          10 分钟
         
       </span>
     
@@ -308,6 +308,97 @@
 <p>被提供了一组输入数据，但是没有对应的输出</p>
 <p>模型使用相似度度量方法来发现数据的分组/聚类</p>
 <p>比如对数据进行分类</p>
+<h4 id="强化学习">强化学习</h4>
+<p>学习从状态到动作的映射，以最大限度地提高<strong>长期奖励</strong></p>
+<h2 id="传统人工智能技术">传统人工智能技术</h2>
+<h3 id="知识表示">知识表示</h3>
+<p>将显示世界的知识和信息以</p>
+<ol type="1">
+<li>逻辑表示</li>
+<li>语义网络表示</li>
+<li>框架表示</li>
+<li>生产规则</li>
+</ol>
+<h4 id="逻辑表示">逻辑表示</h4>
+<p>逻辑表示氛围两种类型</p>
+<ol type="1">
+<li><p>命题逻辑 以 Bool 值表示对象</p>
+<p><span class="math display">\[
+P\rightarrow Q
+\]</span></p>
+<p>即如果 P 为真，则 Q 也为真</p></li>
+<li><p>一阶逻辑 用量词和谓词来表示对象</p>
+<p><span class="math display">\[
+\forall x(Cat(x) \rightarrow Meows(x))
+\]</span></p>
+<p>所有猫都会叫</p></li>
+</ol>
+<h4 id="语义网络表示">语义网络表示</h4>
+<p>语义网络是谓词逻辑的替代方案，以图结构来表示知识</p>
+<p>节点表示概念，边表示概念之间的语义关系</p>
+<h4 id="框架表示">框架表示</h4>
+<p>框架表示是一种结构化的知识表示方式</p>
+<p>每个框架由多个槽和槽值组成，槽中包含该对象的特征、属性和相关信息</p>
+<h4 id="生产规则">生产规则</h4>
+<p>基于条件-动作来表示知识</p>
+<p>每条规则都有前提（条件）和后果（动作）组成，当条件满足时，系统执行相应的动作</p>
+<p>是专家系统的基础</p>
+<h3 id="推理">推理</h3>
+<p>从已有的知识或数据中推导出新的知识或结论的过程</p>
+<h4 id="演绎推理">演绎推理</h4>
+<p>从一般的规则出发，推到处特定的结论</p>
+<p>只要前提是真的，演绎推理的结论必然为真</p>
+<p>演绎推理的有效性取决于推理过程的正确性</p>
+<h4 id="归纳推理">归纳推理</h4>
+<p>从具体的实例中总结出一般性的结论</p>
+<p>归纳推理得出的结论不一定是真的，而是具有概率性</p>
+<p>归纳推理的强度在于结论是否适当考虑了前提的范围和局限性</p>
+<p>强归纳论证更可信，因为它提供了一个合理且更为可能正确的推论</p>
+<h3 id="专家系统">专家系统</h3>
+<p>专家系统根据用户要求，使用推理规则从知识库中提取知识，进而提供像人类专家一样的决策来解决复杂问题</p>
+<h4 id="构成">构成</h4>
+<ul>
+<li>知识库 存储从特定领域的不同专家出获得的知识的数据库</li>
+<li>推理系统 主要处理单元，使用知识库中的知识来推导结论</li>
+<li>用户界面</li>
+</ul>
+<h4 id="工作流程">工作流程</h4>
+<p>以疾病诊断为例</p>
+<ol type="1">
+<li>专家系统从专家处获得专业知识。例如，专门从事医学领域的人类专家提供有关该领域的原因、症状和其他知识的信息</li>
+<li>知识库更新</li>
+</ol>
+<h4 id="推理方式">推理方式</h4>
+<h5 id="正向链接">正向链接</h5>
+<p>从已有的事实和规则开始，应用推理规则将结论添加到已知事实中</p>
+<p>主要用于预测未来可能出现的结果</p>
+<h5 id="反向链接">反向链接</h5>
+<p>从目标开始，然后逆向进行，寻找支持该目标的事实和规则</p>
+<h3 id="搜索策略">搜索策略</h3>
+<p>搜索是指根据问题的实际情况寻找可利用的知识，从而勾走一条合适的推理路线，使问题得到解决的过程</p>
+<p>搜索中需要解决的基本问题</p>
+<ol type="1">
+<li>是否一定能找到一个解</li>
+<li>找到的解是否为最佳解</li>
+<li>搜索过程的时间与空间复杂性如何</li>
+<li>搜索过程是否能终止运行或是否回陷入一个死循环</li>
+</ol>
+<h4 id="搜索策略-1">搜索策略</h4>
+<p>常见的</p>
+<ol type="1">
+<li>启发式搜索</li>
+<li>无信息搜索</li>
+<li>局部搜索</li>
+<li>对抗性搜索</li>
+</ol>
+<h5 id="无信息搜索">无信息搜索</h5>
+<p>一类通用的搜索算法</p>
+<p>以暴力搜索的方式运行</p>
+<p>也被称为盲目搜索</p>
+<h6 id="广度优先搜索breadth-first-search-bfs">广度优先搜索（Breadth-First Search, BFS）</h6>
+<p>使用队列进行管理遍历节点的顺序，每次从队列头部取出节点进行扩展，并将其子节点添加到队列尾部</p>
+<h6 id="深度优先搜索depth-first-search-dfs">深度优先搜索（Depth-First Search, DFS）</h6>
+<p>使用栈进行管理遍历节点的顺序，每次从栈顶取出节点进行扩展，并将其子节点添加到栈顶</p>
 
                 
               </div>
@@ -326,12 +417,12 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE%E7%A8%8B/" class="category-chain-item">专业课程</a>
+  <a href="/categories/%E6%9C%AC%E7%A7%91%E8%AF%BE%E7%A8%8B/" class="category-chain-item">本科课程</a>
   
   
     <span>></span>
     
-  <a href="/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE%E7%A8%8B/%E7%BC%96%E7%A8%8B/" class="category-chain-item">编程</a>
+  <a href="/categories/%E6%9C%AC%E7%A7%91%E8%AF%BE%E7%A8%8B/%E7%BC%96%E7%A8%8B/" class="category-chain-item">编程</a>
   
   
 
@@ -348,9 +439,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E7%BC%96%E7%A8%8B/" class="print-no-link">#编程</a>
-      
         <a href="/tags/%E4%B8%93%E4%B8%9A%E8%AF%BE%E7%A8%8B/" class="print-no-link">#专业课程</a>
+      
+        <a href="/tags/%E7%BC%96%E7%A8%8B/" class="print-no-link">#编程</a>
       
         <a href="/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" class="print-no-link">#人工智能</a>
       
@@ -376,7 +467,7 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/09/18/%E6%9C%AC%E7%A7%91/%E4%B8%93%E4%B8%9A%E8%AF%BE/%E7%94%B5%E8%B7%AF%E7%90%86%E8%AE%BA/" title="电路理论">
+                      <a href="/2025/09/18/%E6%9C%AC%E7%A7%91/%E7%94%B5%E8%B7%AF/%E7%94%B5%E8%B7%AF%E7%90%86%E8%AE%BA/" title="电路理论">
                         <span class="hidden-mobile">电路理论</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>

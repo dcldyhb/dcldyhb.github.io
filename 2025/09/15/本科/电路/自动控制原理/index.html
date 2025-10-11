@@ -1,0 +1,1102 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/avatar.jpg">
+  <link rel="icon" href="/img/avatar.jpg">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="东川路第一寒冰">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="导论 概述 自动控制的意义  提高了劳动生产率 提高控制的准确性 可用于某些人们不能直接参与工作的场合  判断一个系统是否为自动控制系统的标准：控制过程脱离人的控制 但是，自动控制系统中仍然有人参与，并非脱离人的设置 自动控制理论的发展 胚芽期（1945 年以前）  18 世纪以后，蒸汽机的使用提出了调速稳定等问题  1765 年，俄国人波尔祖诺夫发明了锅炉水位调节器 1784 年，英国人瓦特发明">
+<meta property="og:type" content="article">
+<meta property="og:title" content="自动控制原理B笔记">
+<meta property="og:url" content="http://dcldyhb.github.io/2025/09/15/%E6%9C%AC%E7%A7%91/%E7%94%B5%E8%B7%AF/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86/index.html">
+<meta property="og:site_name" content="东川路第一寒冰的笔记">
+<meta property="og:description" content="导论 概述 自动控制的意义  提高了劳动生产率 提高控制的准确性 可用于某些人们不能直接参与工作的场合  判断一个系统是否为自动控制系统的标准：控制过程脱离人的控制 但是，自动控制系统中仍然有人参与，并非脱离人的设置 自动控制理论的发展 胚芽期（1945 年以前）  18 世纪以后，蒸汽机的使用提出了调速稳定等问题  1765 年，俄国人波尔祖诺夫发明了锅炉水位调节器 1784 年，英国人瓦特发明">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509152359458.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509160009862.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509232158890.png">
+<meta property="article:published_time" content="2025-09-15T10:00:00.000Z">
+<meta property="article:modified_time" content="2025-10-11T00:25:54.928Z">
+<meta property="article:author" content="东川路第一寒冰">
+<meta property="article:tag" content="课程笔记">
+<meta property="article:tag" content="自动控制原理">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509152359458.png">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>自动控制原理B笔记 - 东川路第一寒冰的笔记</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"dcldyhb.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.jpeg","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>哦耶</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="自动控制原理B笔记"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-09-15 18:00" pubdate>
+          2025年9月15日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          3.1k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          27 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">自动控制原理B笔记</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="导论">导论</h2>
+<h3 id="概述">概述</h3>
+<p>自动控制的意义</p>
+<ul>
+<li>提高了劳动生产率</li>
+<li>提高控制的准确性</li>
+<li>可用于某些人们不能直接参与工作的场合</li>
+</ul>
+<p>判断一个系统是否为自动控制系统的标准：控制过程脱离人的控制</p>
+<p>但是，自动控制系统中仍然有人参与，并非脱离人的设置</p>
+<h3 id="自动控制理论的发展">自动控制理论的发展</h3>
+<h4 id="胚芽期1945-年以前">胚芽期（1945 年以前）</h4>
+<ul>
+<li>18 世纪以后，蒸汽机的使用提出了调速稳定等问题
+<ul>
+<li>1765 年，俄国人波尔祖诺夫发明了锅炉水位调节器</li>
+<li>1784 年，英国人瓦特发明了调速器，蒸汽机离心式调速器</li>
+<li>1877 年，产生了古氏判据和劳斯稳定判据</li>
+</ul></li>
+<li>19 世纪前半叶，动力使用了发电机、电动机
+<ul>
+<li>促进了水利、水电站的遥控和程控的发展以及电压、电流的自动调节技术的发展</li>
+</ul></li>
+<li>19 世纪末，20 世纪初，使用内燃机
+<ul>
+<li>促进了飞机、汽车、船舶、机器制造业和石油工业的发展，产生了伺服控制和过程控制</li>
+</ul></li>
+<li>20 世纪初第二次世界大战，军事工业发展很快
+<ul>
+<li>飞机、雷达、火炮上的伺服机构，总结了自动调节技术及反馈放大器技术，搭起了经典控制理论的架子，但还没有形成学科</li>
+</ul></li>
+</ul>
+<h4 id="经典控制理论">经典控制理论</h4>
+<ul>
+<li>1945 年 美国人 Bold 网络分析与放大器的设计 奠定了控制理论的基础</li>
+<li>50 年代 趋于成熟</li>
+<li>研究对象 单输入、单输出系统</li>
+<li>描述方法 传递函数</li>
+<li>研究方法 频率法、根轨迹法</li>
+<li>研究内容 系统稳定性的代数和几何判据以及校正网络等</li>
+<li>举例
+<ul>
+<li>调节电压改变电机的速度</li>
+<li>调整方向盘改变汽车的运动轨迹</li>
+</ul></li>
+</ul>
+<h4 id="现代控制理论">现代控制理论</h4>
+<ul>
+<li>空间技术的发展提出了许多复杂控制问题</li>
+<li>用于导弹、人造卫星和宇宙飞船上</li>
+<li>Kalmann 控制系统一般理论 奠定了现代控制理论的基础</li>
+<li>研究对象
+<ul>
+<li>线性、非线性、定常、时变系统</li>
+<li>多输入、多输出</li>
+</ul></li>
+<li>描述方法
+<ul>
+<li>向量空间（状态空间）</li>
+</ul></li>
+<li>研究方法
+<ul>
+<li>状态空间法</li>
+</ul></li>
+</ul>
+<h4 id="大系统理论">大系统理论</h4>
+<ul>
+<li>一种过程控制与信息处理相结合的动态系统工程理论</li>
+<li>研究对象
+<ul>
+<li>规模庞大、结构复杂、功能综合、目标多样、因素众多</li>
+<li>多输入、多输出、多干扰、多变量的系统</li>
+</ul></li>
+<li>举例
+<ul>
+<li>人体大系统</li>
+<li>三峡水利枢纽</li>
+</ul></li>
+</ul>
+<h4 id="智能控制理论">智能控制理论</h4>
+<ul>
+<li>研究对象 模糊性、不确定性、不完整性、偶然性的系统</li>
+<li>基础 人工智能理论</li>
+<li>指导思想 依据人的思维方式和处理问题的技巧，解决哪些目前需要人的只能才能解决的问题</li>
+</ul>
+<h3 id="自动控制系统的分类">自动控制系统的分类</h3>
+<h4 id="信号的传递路径">信号的传递路径</h4>
+<h5 id="开环系统">开环系统</h5>
+<p>作用信号由输入到输出单方向传递，系统的输出端与输入端不存在反馈回路</p>
+<p>优点：</p>
+<ol type="1">
+<li>结构简单，成本低廉，不存在稳定性问题</li>
+<li>当输入信号和扰动能预先知道时，控制效果较好</li>
+</ol>
+<p>缺点：</p>
+<ol type="1">
+<li>不具备自动修正能力</li>
+<li>系统的元件参数变化以及未来的未知扰动对控制精度影响较大</li>
+</ol>
+<h5 id="闭环系统">闭环系统</h5>
+<p>输出信号通过测量元件反馈到系统的输入端，通过比较、控制来减小系统误差</p>
+<p>优点：</p>
+<ol type="1">
+<li>具有自动修正被控制量出现偏离的能力</li>
+<li>可修正元件参数变化以及外界扰动引起的误差</li>
+<li>控制精度高</li>
+</ol>
+<p>缺点：</p>
+<ul>
+<li>被控量可能出现振荡，甚至发散</li>
+</ul>
+<h4 id="输入量的特点">输入量的特点</h4>
+<h5 id="恒值控制系统">恒值控制系统</h5>
+<p>也叫自动调节系统、自动镇定系统</p>
+<ul>
+<li>输入 恒定数值</li>
+<li>任务 系统在任何扰动作用下，输出量以一定精度接近给定值</li>
+</ul>
+<h5 id="过程控制系统">过程控制系统</h5>
+<p>也叫程序控制系统</p>
+<ul>
+<li>输入 已知函数</li>
+<li>任务 系统的控制过程按预定的程序进行，要求被控量能迅速准确地复现输入</li>
+</ul>
+<h5 id="随动系统">随动系统</h5>
+<p>也叫伺服系统</p>
+<ul>
+<li>输入 未知函数</li>
+<li>任务 控制系统的输出量<strong>跟随</strong>输入信号变化</li>
+</ul>
+<h4 id="信号传输的性质">信号传输的性质</h4>
+<p>分为连续系统和离散系统</p>
+<h4 id="元部件的特性">元部件的特性</h4>
+<p>分为线性系统和非线性系统</p>
+<h3 id="反馈控制系统的基本组成">反馈控制系统的基本组成</h3>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509152359458.png" srcset="/img/loading.jpeg" lazyload alt="基本组成" /><figcaption aria-hidden="true">基本组成</figcaption>
+</figure>
+<p>主要有三个部分</p>
+<ol type="1">
+<li>输入信号 系统控制目标的反映，是人的意志的体现</li>
+<li>控制系统 主要完成对有关信号的变换，处理，发出控制量，驱动执行机构完成控制功能</li>
+<li>输出信号 系统的控制结果，反映了被控对象的运行状况</li>
+</ol>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509160009862.png" srcset="/img/loading.jpeg" lazyload alt="反馈系统组成部分" /><figcaption aria-hidden="true">反馈系统组成部分</figcaption>
+</figure>
+<p>对于其系统来说，有这些部分</p>
+<ul>
+<li>测量元件 用来测量被控量的实际值</li>
+<li>比较元件 用来产生输入信号和主反馈信号的差值信号</li>
+<li>放大元件 把误差信号放大并进行能量形式转换</li>
+<li>执行元件 根据控制信号直接对控制对象进行操纵</li>
+<li>被控对象 控制系统所要操纵的对象</li>
+</ul>
+<h3 id="对控制系统的基本要求">对控制系统的基本要求</h3>
+<ol type="1">
+<li>稳定性
+<ul>
+<li>保证控制系统正常工作的先决条件
+<ul>
+<li>输入激励会使系统偏离平衡状态</li>
+<li>激励消失后，经过一段过程，系统的状态恢复到平衡状态</li>
+</ul></li>
+<li>线性控制系统的稳定性由系统本身的结构与参数所决定的，与外部条件和初始状态无关</li>
+</ul></li>
+<li>稳态特性
+<ul>
+<li>过渡过程结束后，系统的误差值，反映了系统的控制精度</li>
+</ul></li>
+<li>动态特性
+<ul>
+<li>过渡过程 系统状态随时间变化的过程</li>
+<li>产生原因 系统中储能元件的能量不可能突变</li>
+<li>基本要求 时间短、平稳、振荡幅度小</li>
+</ul></li>
+</ol>
+<h3 id="常用的典型测试信号">常用的典型测试信号</h3>
+<p>我们在分析和设计系统时，常常需要一个对各种系统进行比较的基准，但是实际系统的输入信号具有不确定性，其函数形式难以使用解析法表示，所以我们用一些简单的测试信号对齐进行测试</p>
+<p>系统对典型测试信号的相应与实际输入的相应之间应存在一定的关系，实际信号往往是多种典型测试信号的组合，典型测试信号是简单的时间函数</p>
+<h4 id="脉冲信号pulse">脉冲信号（Pulse）</h4>
+<ol type="1">
+<li><p>宽度（持续时间）为 <span class="math inline">\(h\)</span> 的矩形脉冲信号</p>
+<p><span class="math display">\[
+r(t)=
+\left\{
+    \begin{aligned}
+    &amp;\frac{1}{h},\quad 0 \leq t \leq h \\
+    &amp;0, \quad t&lt;0.t&gt;h
+  \end{aligned}
+\right.
+\]</span></p></li>
+<li><p>单位冲激信号（单位脉冲信号），这是宽度趋于零的矩形脉冲信号</p>
+<p><span class="math display">\[
+r(t)=\delta(t)=
+\left\{
+    \begin{aligned}
+    &amp;\infty, \quad t=0 \\
+    &amp;0, \quad t\neq 0
+    \end{aligned}
+\right.
+\]</span></p>
+<p>其中</p>
+<p><span class="math display">\[
+\int_{-\infty}^{\infty} \delta(t) \,\mathrm{d}t = 1
+\]</span></p>
+<p>对单位冲激信号做 Laplace 变换，得到</p>
+<p><span class="math display">\[
+R(s)=\int_{0}^{\infty} \delta(t) e^{-s t} \,\mathrm{d}t=1
+\]</span></p></li>
+</ol>
+<h4 id="阶跃信号step">阶跃信号（Step）</h4>
+<ol type="1">
+<li><p>标准阶跃信号</p>
+<p><span class="math display">\[
+r(t)=R\cdot u(t)=
+\left\{
+    \begin{aligned}
+    &amp;R, \quad t \geq 0 \\
+    &amp;0, \quad t&lt;0
+    \end{aligned}
+\right.
+\]</span></p>
+<p>其中 <span class="math inline">\(u(t)\)</span> 是单位阶跃信号，<span class="math inline">\(R\)</span> 是阶跃高度 这表明在 <span class="math inline">\(t=0\)</span> 时，阶跃信号从 0 突然跃变到 <span class="math inline">\(R\)</span>，并在 <span class="math inline">\(t&gt;0\)</span> 时保持不变</p></li>
+<li><p>延时阶跃信号</p>
+<p><span class="math display">\[
+ r(t)=R\cdot u(t-\tau)=
+ \left\{
+     \begin{aligned}
+     &amp;R, \quad t \geq \tau \\
+     &amp;0, \quad t&lt;\tau
+     \end{aligned}
+ \right.
+\]</span></p>
+<p>其中 <span class="math inline">\(\tau\)</span> 是延时时间</p></li>
+</ol>
+<p>对阶跃信号做 Laplace 变换，得到</p>
+<p><span class="math display">\[
+R(s)=\int_{0}^{\infty} R\cdot u(t) e^{-s t} \,\mathrm{d}t=\frac{R}{s}
+\]</span></p>
+<p>如果对单位阶跃信号做 Laplace 变换，得到</p>
+<p><span class="math display">\[
+R(s)=\int_{0}^{\infty} u(t) e^{-s t} \,\mathrm{d}t=\frac{1}{s}
+\]</span></p>
+<h3 id="斜坡信号ramp">斜坡信号（Ramp）</h3>
+<p>也被称为速度信号</p>
+<p><span class="math display">\[
+r(t)=
+\left\{
+    \begin{aligned}
+    &amp;R\cdot t, \quad t \geq 0 \\
+    &amp;0, \quad t&lt;0
+    \end{aligned}
+\right.
+\]</span></p>
+<p>对其做 Laplace 变换，得到</p>
+<p><span class="math display">\[
+R(s)=\int_{0}^{\infty} R\cdot t e^{-s t} \,\mathrm{d}t=\frac{R}{s^{2}}
+\]</span></p>
+<h3 id="抛物线信号parabolic">抛物线信号（Parabolic）</h3>
+<p>也称匀加速信号</p>
+<p><span class="math display">\[
+r(t)=
+\left\{
+    \begin{aligned}
+    &amp;\frac{1}{2}R\cdot t^2, \quad t \geq 0 \\
+    &amp;0, \quad t&lt;0
+    \end{aligned}
+\right.
+\]</span></p>
+<p>对其做 Laplace 变换，得到</p>
+<p><span class="math display">\[
+R(s)=\int_{0}^{\infty} \frac{1}{2}R\cdot t^2 e^{-s t} \,\mathrm{d}t=\frac{R}{s^{3}}
+\]</span></p>
+<h3 id="正弦信号">正弦信号</h3>
+<p><span class="math display">\[
+r(t)=R\sin(\omega t+\varphi)
+\]</span></p>
+<p>其中</p>
+<ul>
+<li><span class="math inline">\(R\)</span> 是振幅</li>
+<li><span class="math inline">\(\omega\)</span> 是振荡角频率</li>
+<li><span class="math inline">\(\varphi\)</span> 是相位移</li>
+</ul>
+<h3 id="谐波信号">谐波信号</h3>
+<p><span class="math display">\[
+r(t)=R\cos(\omega t+\varphi)
+\]</span></p>
+<h3 id="指数信号">指数信号</h3>
+<p><span class="math display">\[
+r(t)=R e^{a t}
+\]</span></p>
+<h2 id="控制系统的数学模型">控制系统的数学模型</h2>
+<h3 id="概述-1">概述</h3>
+<h4 id="数学模型的定义">数学模型的定义</h4>
+<p>数学模型是定义系统行为的数学表达式，也是系统定量分析和研究的首要条件</p>
+<h5 id="狭义定义">狭义定义</h5>
+<p>是对实际物理系统后的数学抽象</p>
+<h5 id="广义定义">广义定义</h5>
+<p>揭示控制系统各变量内在联系及关系的解析式或图形表示</p>
+<h5 id="分类">分类</h5>
+<ul>
+<li>静态模型
+<ul>
+<li>揭示控制系统各变量内在联系及关系的解析式或图形表示</li>
+<li>静态模型：在静态条件下，描述变量间关系的代数方程
+<ul>
+<li>静态条件：变量各阶导数为零</li>
+</ul></li>
+</ul></li>
+<li>动态模型：用微分方程描述变量在动态过程中的关系</li>
+</ul>
+<h4 id="表现形式">表现形式</h4>
+<h5 id="数学表示">数学表示</h5>
+<p>用于分析研究系统的动态特性</p>
+<p>其基本形式有</p>
+<ul>
+<li>微分方程</li>
+<li>代数方程</li>
+<li>逻辑方程</li>
+</ul>
+<p>数学表示中的传递函数、频率特性等适用于单输入、单输出系统</p>
+<p>状态空间描述：用于多变量系统及最优控制问题</p>
+<h5 id="图形表示">图形表示</h5>
+<p>用于分析研究系统内部的结构和动态特性</p>
+<p>其基本形式有</p>
+<ul>
+<li>信号流图</li>
+<li>方块图</li>
+<li>根轨迹图</li>
+<li>频率特性图</li>
+</ul>
+<p>等</p>
+<p>还有在数字计算机上的程序综合</p>
+<h5 id="建模原则">建模原则</h5>
+<p>要分清主次、合理简化，从而建立适当的数学模型</p>
+<p>要根据选定的系统分析方法建立起相关的数学模型</p>
+<ul>
+<li>时间域：微分方程</li>
+<li>复数域：传递函数</li>
+<li>频率域：频率特性</li>
+</ul>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509232158890.png" srcset="/img/loading.jpeg" lazyload alt="三种数学模型" /><figcaption aria-hidden="true">三种数学模型</figcaption>
+</figure>
+<h5 id="复频域分析法">复频域分析法</h5>
+<p>时域中列出微分方程得到时域的解</p>
+<p>复频域中列出代数方程得到复频域的解</p>
+<p>微分方程通过 Laplace 变换得到代数方程</p>
+<p>代数方程通过 Laplace 逆变换得到微分方程</p>
+<p>通过这个我们可以在复频域中分析时域问题，从而解决时域分析法存在的难点</p>
+<h5 id="建模方法">建模方法</h5>
+<h6 id="数学分析法">数学分析法</h6>
+<p>我们在知道系统的结构和原理的情况下通过数学分析法建立数学模型</p>
+<p>分析元件或者系统的物理化学规律，再通过微分方程求解、分析系统</p>
+<h6 id="工程分析法">工程分析法</h6>
+<p>当我们不知道系统的结构和原理时，我们可以通过工程分析法建立数学模型</p>
+<p>对实际系统贾一定形式的输出信号，求取输出的相应</p>
+<p>使用传递函数、频率特性对系统进行分析、求解</p>
+<p>它比数学分析法更加简单、方便、直观</p>
+<h3 id="微分方程">微分方程</h3>
+<h4 id="建立方法">建立方法</h4>
+<ol type="1">
+<li>明确输入量和输出量</li>
+<li>应用物理规律列出变量的关系是</li>
+<li>划分环节</li>
+<li>写出每个环节的微分方程</li>
+<li>简化微分方程至只含有输入量和输出量</li>
+<li>将微分方程转换为标准形式</li>
+</ol>
+<h4 id="标准形式">标准形式</h4>
+<p><span class="math display">\[
+a_n\frac{\mathrm{d^n c(t)}}{\mathrm{d}t^{n-1}}+a_{n-1}\frac{\mathrm{d^{n-1}c(t)}}{\mathrm{d}t^{n-1}}+\cdots+a_1\frac{\mathrm{d}c(t)}{\mathrm{d}t}+a_0c(t)=b_m\frac{\mathrm{d^m r(t)}}{\mathrm{d}t^m}+b_{m-1}\frac{\mathrm{d^{m-1}r(t)}}{\mathrm{d}t^{m-1}}+\cdots+b_1\frac{\mathrm{d}r(t)}{\mathrm{d}t}+b_0r(t)
+\]</span></p>
+<p>其中</p>
+<ul>
+<li><span class="math inline">\(c(t)\)</span> 是系统的输出量</li>
+<li><span class="math inline">\(r(t)\)</span> 是系统的输入量</li>
+</ul>
+<p>一般来说 <span class="math inline">\(n\geq m\)</span>，因为系统中含有储能元件</p>
+<h3 id="传递函数">传递函数</h3>
+<h4 id="定义">定义</h4>
+<p>线性定常系统在初始条件为零的情况下，输出量的 Laplace 变换和输入量的 Laplace 变换之比，称为系统的传递函数</p>
+<p><span class="math display">\[
+G(s)=\frac{C(s)}{R(s)}
+\]</span></p>
+<p>其中</p>
+<ul>
+<li><span class="math inline">\(G(s)\)</span> 是系统的传递函数</li>
+<li><span class="math inline">\(C(s)=L(c(t))\)</span> 是系统输出量的 Laplace 变换</li>
+<li><span class="math inline">\(R(s)=L(r(t))\)</span> 是系统输入量的 Laplace 变换</li>
+</ul>
+<h2 id="控制系统的时域分析">控制系统的时域分析</h2>
+<h2 id="控制系统的复域分析">控制系统的复域分析</h2>
+<h2 id="控制系统的频域分析">控制系统的频域分析</h2>
+<h2 id="控制系统的设计">控制系统的设计</h2>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%9C%AC%E7%A7%91%E8%AF%BE%E7%A8%8B/" class="category-chain-item">本科课程</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E6%9C%AC%E7%A7%91%E8%AF%BE%E7%A8%8B/%E7%94%B5%E8%B7%AF/" class="category-chain-item">电路</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/" class="print-no-link">#课程笔记</a>
+      
+        <a href="/tags/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86/" class="print-no-link">#自动控制原理</a>
+      
+    </div>
+  
+</div>
+
+
+              
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2025/09/17/%E6%9C%AC%E7%A7%91/%E5%8C%96%E5%AD%A6/%E8%83%BD%E6%BA%90%E5%8C%96%E5%AD%A6/" title="能源化学">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">能源化学</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/09/11/%E4%B8%AA%E4%BA%BA%E5%AD%A6%E4%B9%A0/%E7%BD%91%E9%A1%B5/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" title="个人博客搭建">
+                        <span class="hidden-mobile">个人博客搭建</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
