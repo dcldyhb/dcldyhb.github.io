@@ -29,8 +29,14 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509152359458.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509160009862.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509232158890.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510151542576.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510151543603.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510151543538.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510151549915.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510161421549.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510161424708.png">
 <meta property="article:published_time" content="2025-09-15T10:00:00.000Z">
-<meta property="article:modified_time" content="2025-10-11T00:25:54.928Z">
+<meta property="article:modified_time" content="2025-10-16T06:26:41.692Z">
 <meta property="article:author" content="东川路第一寒冰">
 <meta property="article:tag" content="课程笔记">
 <meta property="article:tag" content="自动控制原理">
@@ -230,7 +236,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3.1k 字
+          4.6k 字
         
       </span>
     
@@ -241,7 +247,7 @@
         
         
         
-          27 分钟
+          39 分钟
         
       </span>
     
@@ -663,6 +669,7 @@ r(t)=R e^{a t}
 <li>将微分方程转换为标准形式</li>
 </ol>
 <h4 id="标准形式">标准形式</h4>
+<p>对于一个线性定常系统，其输入 <span class="math inline">\(r(t)\)</span> 和输出 <span class="math inline">\(c(t)\)</span> 之间的关系通常可以用一个高阶常系数线性微分方程来描述：</p>
 <p><span class="math display">\[
 a_n\frac{\mathrm{d^n c(t)}}{\mathrm{d}t^{n-1}}+a_{n-1}\frac{\mathrm{d^{n-1}c(t)}}{\mathrm{d}t^{n-1}}+\cdots+a_1\frac{\mathrm{d}c(t)}{\mathrm{d}t}+a_0c(t)=b_m\frac{\mathrm{d^m r(t)}}{\mathrm{d}t^m}+b_{m-1}\frac{\mathrm{d^{m-1}r(t)}}{\mathrm{d}t^{m-1}}+\cdots+b_1\frac{\mathrm{d}r(t)}{\mathrm{d}t}+b_0r(t)
 \]</span></p>
@@ -674,15 +681,263 @@ a_n\frac{\mathrm{d^n c(t)}}{\mathrm{d}t^{n-1}}+a_{n-1}\frac{\mathrm{d^{n-1}c(t)}
 <p>一般来说 <span class="math inline">\(n\geq m\)</span>，因为系统中含有储能元件</p>
 <h3 id="传递函数">传递函数</h3>
 <h4 id="定义">定义</h4>
-<p>线性定常系统在初始条件为零的情况下，输出量的 Laplace 变换和输入量的 Laplace 变换之比，称为系统的传递函数</p>
+<p>线性定常系统在<strong>初始条件为零</strong>的情况下，输出量的 Laplace 变换 <span class="math inline">\(C(s)\)</span> 和输入量的 Laplace 变换 <span class="math inline">\(R(s)\)</span> 之比，称为系统的<strong>传递函数</strong></p>
 <p><span class="math display">\[
-G(s)=\frac{C(s)}{R(s)}
+G(s) = \frac{\mathcal{L}[c(t)]}{\mathcal{L}[r(t)]} = \frac{C(s)}{R(s)}
 \]</span></p>
 <p>其中</p>
 <ul>
 <li><span class="math inline">\(G(s)\)</span> 是系统的传递函数</li>
-<li><span class="math inline">\(C(s)=L(c(t))\)</span> 是系统输出量的 Laplace 变换</li>
-<li><span class="math inline">\(R(s)=L(r(t))\)</span> 是系统输入量的 Laplace 变换</li>
+<li><span class="math inline">\(C(s)=\mathcal{L}(c(t))\)</span> 是系统输出量的 Laplace 变换</li>
+<li><span class="math inline">\(R(s)=\mathcal{L}(r(t))\)</span> 是系统输入量的 Laplace 变换</li>
+</ul>
+<h4 id="性质">性质</h4>
+<ol type="1">
+<li><strong>模型描述</strong>：传递函数是系统在复数域中的动态数学模型</li>
+<li><strong>固有特性</strong>：它反映了系统输入量和输出量之间的内在关系，其系数均为实数，仅由系统结构参数决定</li>
+<li><strong>函数形式</strong>：传递函数是复变量 <span class="math inline">\(s\)</span> 的有理真分式函数，即分子的最高阶次 <span class="math inline">\(m\)</span> 小于或等于分母的最高阶次 <span class="math inline">\(n\ (m\leq n)\)</span></li>
+<li><strong>与单位脉冲响应的关系</strong>：系统的单位脉冲响应 <span class="math inline">\(g(t)\)</span> 的 Laplace 变换就是该系统的传递函数 <span class="math inline">\(G(s)\)</span> ，即 <span class="math inline">\(G(s)=\mathcal{L}[g(t)]\)</span></li>
+</ol>
+<h4 id="表达形式">表达形式</h4>
+<table>
+
+<thead>
+<tr class="header">
+<th style="text-align: left;">形式</th>
+<th style="text-align: left;">表达式</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>微分方程</strong></td>
+<td style="text-align: left;"><span class="math inline">\(\displaystyle\sum_{i=0}^{n} a_i\frac{\mathrm{d}^ic(t)}{\mathrm{d}t^i}=\sum_{j=0}^{m}b_j\frac{\mathrm{d}^jr(t)}{\mathrm{d}t^j}\)</span></td>
+<td style="text-align: left;">时域模型</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>标准形式</strong></td>
+<td style="text-align: left;"><span class="math inline">\(\displaystyle G(s)=\frac{C(s)}{R(s)}=\frac{b_ms^m+b_{m-1}s^{m-1}+\dots+b_0}{a_ns^n+a_{n-1}s^{n-1}+\dots+a_0}\)</span></td>
+<td style="text-align: left;">多项式形式</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>时间常数形式</strong></td>
+<td style="text-align: left;"><span class="math inline">\(\displaystyle G(s)=K\frac{(\tau&#39;_1s+1)(\tau&#39;_2s+1)\cdots}{(\mathcal{T}_1s+1)(\mathcal{T}_2s+1)\cdots}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(K\)</span> 为稳态增益</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>零极点形式</strong></td>
+<td style="text-align: left;"><span class="math inline">\(\displaystyle G(s)=K_r\frac{(s+z_1)(s+z_2)\cdots(s+z_m)}{(s+p_1)(s+p_2)\cdots(s+p_n)}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(z_i\)</span> 为零点, <span class="math inline">\(p_j\)</span> 为极点, <span class="math inline">\(K_r\)</span> 为根轨迹增益</td>
+</tr>
+</tbody>
+</table>
+<h4 id="求取方法">求取方法</h4>
+<h4 id="微分方程法">微分方程法</h4>
+<ol type="1">
+<li>列出元件或者系统的微分方程</li>
+<li>在零初始条件下对方程进行 Laplace 变换</li>
+<li>计算 <span class="math inline">\(\frac{C(s)}{R(s)}\)</span> 即为传递函数</li>
+</ol>
+<h4 id="频率特性法">频率特性法</h4>
+<p>通过实验测定</p>
+<h4 id="单位脉冲响应法">单位脉冲响应法</h4>
+<p>测量系统的单位脉冲响应 <span class="math inline">\(g(t)\)</span> ，然后对 <span class="math inline">\(g(t)\)</span> 做 Laplace 变换，得到传递函数</p>
+<p><span class="math display">\[
+G(s)=\frac{\mathcal{L}[c(t)]}{\mathcal{L}[r(t)]}=\frac{\mathcal{L}[g(t)]}{\mathcal{L}[\delta(t)]}=\mathcal{L}[g(t)]
+\]</span></p>
+<h3 id="典型环节">典型环节</h3>
+<p>典型环节总共有<strong>七种</strong></p>
+<ul>
+<li><strong>比例环节</strong></li>
+<li><strong>微分环节</strong>
+<ul>
+<li><strong>典型微分环节</strong></li>
+<li><strong>一阶微分环节</strong></li>
+<li><strong>二阶微分环节</strong></li>
+</ul></li>
+<li><strong>积分环节</strong></li>
+<li><strong>惯性环节</strong></li>
+<li><strong>震荡环节</strong></li>
+</ul>
+<h4 id="比例环节">比例环节</h4>
+<ul>
+<li><strong>特点</strong>：输出量与输入量成正比，无延迟、无失真。</li>
+<li><strong>微分方程</strong>： <span class="math inline">\(c(t)=K\cdot r(t)\)</span></li>
+<li><strong>传递函数</strong>： <span class="math inline">\(G(s)=K\)</span></li>
+</ul>
+<h4 id="微分环节">微分环节</h4>
+<p><strong>特点</strong>：输出量与输入量的变化速度相关</p>
+<h5 id="典型微分环节">典型微分环节</h5>
+<ul>
+<li><strong>特点</strong>： 输出量与输入量的变化速度成正比</li>
+<li><strong>微分方程</strong>： <span class="math inline">\(\displaystyle c(t)=K\frac{\mathrm{d}r(t)}{\mathrm{d}t}\)</span></li>
+<li><strong>传递函数</strong>： <span class="math inline">\(G(s)=K s\)</span></li>
+</ul>
+<h5 id="一阶微分环节">一阶微分环节</h5>
+<ul>
+<li><strong>特点</strong>：输出量与输入量的变化速度成正比，但有一定的延迟</li>
+<li><strong>微分方程</strong>： <span class="math inline">\(\displaystyle c(t)=T\frac{\mathrm{d}c(t)}{\mathrm{d}t}+r(t)\)</span></li>
+<li><strong>传递函数</strong>： <span class="math inline">\(G(s)=\frac{1}{Ts+1}\)</span></li>
+</ul>
+<h5 id="二阶微分环节">二阶微分环节</h5>
+<ul>
+<li><strong>特点</strong>：输出量与输入量及其一、二届导数相关</li>
+<li><strong>微分方程</strong>：<span class="math inline">\(\displaystyle c(t)=T^2\frac{\mathrm{d}^2r(t)}{\mathrm{d}t^2}+2\xi T\frac{\mathrm{d}r(t)}{\mathrm{d}t}+r(t)\)</span></li>
+<li><strong>传递函数</strong>： <span class="math inline">\(G(s)=T^2s^2+2\zeta Ts+1\)</span></li>
+</ul>
+<h4 id="积分环节">积分环节</h4>
+<ul>
+<li><strong>特点</strong>：输出量的变化速度与输入量成正比。</li>
+<li><strong>微分方程</strong>： <span class="math inline">\(\frac{\mathrm{d}c(t)}{\mathrm{d}t} = K\cdot r(t)\)</span></li>
+<li><strong>传递函数</strong>： <span class="math inline">\(G(s) =\frac{K}{s}\)</span></li>
+</ul>
+<h4 id="惯性环节">惯性环节</h4>
+<ul>
+<li><strong>特点</strong>：对突变的输入，输出不能立即复现，而是按指数规律延迟变化。含有一个独立的储能元件。</li>
+<li><strong>微分方程</strong>： <span class="math inline">\(T\frac{\mathrm{d}c(t)}{\mathrm{d}t}+c(t)=K\cdot r(t)\)</span></li>
+<li><strong>传递函数</strong>： <span class="math inline">\(G(s)=\frac{K}{Ts+1}\)</span></li>
+</ul>
+<h4 id="振荡环节二阶">振荡环节（二阶）</h4>
+<ul>
+<li><strong>特点</strong>：当输入信号变化时，两个储能元件能量交换，使输出带有振荡性质。</li>
+<li><strong>微分方程</strong>： <span class="math inline">\(T^2\frac{\mathrm{d}^2c(t)}{\mathrm{d}t^2}+2\zeta T\frac{\mathrm{d}c(t)}{\mathrm{d}t}+c(t)=K\cdot r(t)\)</span></li>
+<li><strong>传递函数</strong>： <span class="math inline">\(G(s)=\frac{K}{T^2s^2+2\zeta Ts +1}\)</span></li>
+</ul>
+<h3 id="方块图">方块图</h3>
+<p>方块图（或结构图）是系统数学模型的图解形式，直观地描述了系统中各元件间的关系以及信号的传递过程</p>
+<h4 id="基本组成">基本组成</h4>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">组件</th>
+<th style="text-align: left;">图示</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>信号线</strong></td>
+<td style="text-align: left;"><span class="math inline">\(\rightarrow\)</span></td>
+<td style="text-align: left;">带箭头的直线，箭头表示信号的传递方向。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>方块（环节）</strong></td>
+<td style="text-align: left;"><img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510151542576.png" srcset="/img/loading.jpeg" lazyload alt="环节" /></td>
+<td style="text-align: left;">输入到输出<strong>单向传递</strong>的函数关系</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>比较点（求和点）</strong></td>
+<td style="text-align: left;"><img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510151543603.png" srcset="/img/loading.jpeg" lazyload alt="比较点" /></td>
+<td style="text-align: left;">对两个或多个信号进行加减运算，必须量纲相同。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>分支点（测量点）</strong></td>
+<td style="text-align: left;"><img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510151543538.png" srcset="/img/loading.jpeg" lazyload alt="分支点" /></td>
+<td style="text-align: left;">表示信号从此处引出，引出后原信号不变。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="绘制方法">绘制方法</h4>
+<ol type="1">
+<li>分解系统各环节</li>
+<li>写出各环节的传递函数</li>
+<li>绘制出各环节的方块图</li>
+<li>根据信号的传递方向将各方块图依次连接起来</li>
+</ol>
+<h4 id="运算法则">运算法则</h4>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">运算类型</th>
+<th style="text-align: left;">图示</th>
+<th style="text-align: left;">公式</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>串联</strong></td>
+<td style="text-align: left;"><img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510151549915.png" srcset="/img/loading.jpeg" lazyload alt="串联" /></td>
+<td style="text-align: left;"><span class="math inline">\(\displaystyle G(s)=\prod G_i(s)\)</span></td>
+<td>各环节传递函数的乘积</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>并联</strong></td>
+<td style="text-align: left;"><img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510161421549.png" srcset="/img/loading.jpeg" lazyload alt="并联" /></td>
+<td style="text-align: left;"><span class="math inline">\(\displaystyle G(s)=\sum \pm G_i(s)\)</span></td>
+<td>各环节传递函数的和</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>反馈</strong></td>
+<td style="text-align: left;"><img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510161424708.png" srcset="/img/loading.jpeg" lazyload alt="反馈" /></td>
+<td style="text-align: left;"><span class="math inline">\(\displaystyle G(s)=\frac{G_1(s)}{1\pm G_1(s)G_2(s)}\)</span></td>
+<td>负反馈分母为加，正反馈分母为减</td>
+</tr>
+</tbody>
+</table>
+<h2 id="matlab-和-simulink">Matlab 和 Simulink</h2>
+<h3 id="matlab-语言基础">Matlab 语言基础</h3>
+<h4 id="变量">变量</h4>
+<ul>
+<li>变量名
+<ul>
+<li>由字母、数字和下划线组成</li>
+<li>以字母开头</li>
+<li>区分大小写</li>
+<li>不得与 Matlab 保留字相同</li>
+</ul></li>
+</ul>
+<h4 id="语句">语句</h4>
+<ul>
+<li>赋值语句
+<ul>
+<li><code>变量名=表达式</code></li>
+</ul></li>
+<li>函数调用语句
+<ul>
+<li><code>[返回值列表]=函数名(参数列表)</code></li>
+</ul></li>
+<li>语句结尾
+<ul>
+<li><code>...</code> ：续行符</li>
+<li><code>;</code> ：抑制输出</li>
+<li><code>,</code> ：不抑制输出</li>
+</ul></li>
+<li>注释语句
+<ul>
+<li><code>%</code> ：单行注释</li>
+<li><code>%&#123; %&#125;</code> ：多行注释</li>
+</ul></li>
+</ul>
+<h4 id="基本数学计算">基本数学计算</h4>
+<h5 id="矩阵输入">矩阵输入</h5>
+<p>输入矩阵</p>
+<p><span class="math display">\[
+A=
+\begin{bmatrix}
+1 &amp; 2 &amp; 3 \\
+ 4 &amp; 5 &amp; 6 \\
+ 7 &amp; 8 &amp; 9
+\end{bmatrix}
+\]</span></p>
+<p>直接输入</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs matlab">A=[<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span>;<span class="hljs-number">4</span> <span class="hljs-number">5</span> <span class="hljs-number">6</span>;<span class="hljs-number">7</span> <span class="hljs-number">8</span> <span class="hljs-number">9</span>]<br></code></pre></td></tr></table></figure>
+<p>全零矩阵</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs matlab">A=<span class="hljs-built_in">zeros</span>(<span class="hljs-number">3</span>) <span class="hljs-comment">% 3x3 全零矩阵</span><br>A=<span class="hljs-built_in">zeros</span>(<span class="hljs-number">2</span>,<span class="hljs-number">3</span>) <span class="hljs-comment">% 2x3 全零矩阵</span><br></code></pre></td></tr></table></figure>
+<p>全一矩阵</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs matlab">A=<span class="hljs-built_in">ones</span>(<span class="hljs-number">3</span>) <span class="hljs-comment">% 3x3 全一矩阵</span><br>A=<span class="hljs-built_in">ones</span>(<span class="hljs-number">2</span>,<span class="hljs-number">3</span>) <span class="hljs-comment">% 2x3 全一矩阵</span><br></code></pre></td></tr></table></figure>
+<p>等</p>
+<h6 id="矩阵运算">矩阵运算</h6>
+<ul>
+<li>元素
+<ul>
+<li>矩阵第 i 行：<code>A(i,:)</code></li>
+<li>矩阵第 j 列：<code>A(:,j)</code></li>
+</ul></li>
+<li>子矩阵
+<ul>
+<li><code>A(i:m,j:n)</code></li>
+</ul></li>
 </ul>
 <h2 id="控制系统的时域分析">控制系统的时域分析</h2>
 <h2 id="控制系统的复域分析">控制系统的复域分析</h2>

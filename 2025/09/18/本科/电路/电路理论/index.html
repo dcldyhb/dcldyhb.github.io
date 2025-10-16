@@ -47,8 +47,25 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509301612676.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509301616439.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509301615439.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510121351055.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510121359212.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510121415625.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510121422226.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510121436901.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510121438101.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510121454488.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510121531031.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/%E7%94%B5%E8%B7%AF%E5%88%86%E7%B1%BB.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510131640951.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510131640923.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510131644307.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510131651915.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510131658545.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510131700677.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510131701575.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510131702125.png">
 <meta property="article:published_time" content="2025-09-18T05:16:59.000Z">
-<meta property="article:modified_time" content="2025-10-11T00:25:54.929Z">
+<meta property="article:modified_time" content="2025-10-16T06:26:41.692Z">
 <meta property="article:author" content="东川路第一寒冰">
 <meta property="article:tag" content="课程笔记">
 <meta property="article:tag" content="电路">
@@ -249,7 +266,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          4.9k 字
+          5.8k 字
         
       </span>
     
@@ -260,7 +277,7 @@
         
         
         
-          41 分钟
+          49 分钟
         
       </span>
     
@@ -903,6 +920,224 @@ u_0 = \pm U_{0(sat)}
 </figure>
 <p>我们认为理想运算放大器的两个输入端电压相等，即 <span class="math inline">\(u_+ = u_-\)</span></p></li>
 </ol>
+<h4 id="理想变压器">理想变压器</h4>
+<p>理想变压器是实际变压器的理想化模型，是双口元件</p>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510121351055.png" srcset="/img/loading.jpeg" lazyload alt="理想变压器符号" /><figcaption aria-hidden="true">理想变压器符号</figcaption>
+</figure>
+<p>其电压电流关系为</p>
+<p><span class="math display">\[
+\left\{
+    \begin{aligned}
+        &amp;u_1=nu_2\\
+        &amp;i_1=-\frac{1}{n}i_2
+    \end{aligned}
+\right.
+\]</span></p>
+<ul>
+<li><span class="math inline">\(n\)</span> 为变比，<span class="math inline">\(n=\frac{N_1}{N_2}\)</span></li>
+</ul>
+<p>当同名端颠倒时</p>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510121359212.png" srcset="/img/loading.jpeg" lazyload alt="同名端颠倒的理想变压器" /><figcaption aria-hidden="true">同名端颠倒的理想变压器</figcaption>
+</figure>
+<p><span class="math display">\[
+\left\{
+    \begin{aligned}
+        &amp;u_1=-nu_2\\
+        &amp;i_1=\frac{1}{n}i_2
+    \end{aligned}
+\right.
+\]</span></p>
+<h5 id="等效模型">等效模型</h5>
+<p>理想变压器可以用受控电源组成的模型来表示</p>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510121415625.png" srcset="/img/loading.jpeg" lazyload alt="理想变压器的等效模型" /><figcaption aria-hidden="true">理想变压器的等效模型</figcaption>
+</figure>
+<h5 id="功率">功率</h5>
+<p>理想变压器时无源元件，它既不储存能量也不消耗能量</p>
+<p><span class="math display">\[
+p=u_1i_1+u_2i_2=nu_2 \cdot \left(-\frac{1}{n}i_2\right)+u_2i_2=0
+\]</span></p>
+<h5 id="阻抗变换性质">阻抗变换性质</h5>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510121422226.png" srcset="/img/loading.jpeg" lazyload alt="阻抗变换图" /><figcaption aria-hidden="true">阻抗变换图</figcaption>
+</figure>
+<p>输出端有一电阻 <span class="math inline">\(R_L\)</span>，则输入端的等效电阻为</p>
+<p><span class="math display">\[
+R_{in}=n^2R_L
+\]</span></p>
+<p>证明：</p>
+<p><span class="math display">\[
+\begin{aligned}
+    &amp;u_2&amp;&amp; =-R_Li_2\\
+    &amp;u_1&amp;&amp; =-nU_2\\
+        &amp;  &amp;&amp; =nR_Li_2\\
+        &amp;  &amp;&amp; =nR_L(ni_1)\\
+        &amp;  &amp;&amp; =n^2R_Li_1
+\end{aligned}
+\]</span></p>
+<h4 id="负回转器">负回转器</h4>
+<p>负回转器时一种双口元件，分为电流反向负回转器（INC）和电压反向负回转器（VNC）</p>
+<h5 id="符号和外特性">符号和外特性</h5>
+<h6 id="电流反向负回转器">电流反向负回转器</h6>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510121436901.png" srcset="/img/loading.jpeg" lazyload alt="电流反向负回转器符号" /><figcaption aria-hidden="true">电流反向负回转器符号</figcaption>
+</figure>
+<p><span class="math display">\[
+\left\{
+    \begin{aligned}
+        &amp;i_1=i_2\\
+        &amp;u_1=u_2
+    \end{aligned}
+\right.
+\]</span></p>
+<ul>
+<li>输出电流方向与输入电流方向相反</li>
+<li>输出电压极性与输入电压极性相同</li>
+</ul>
+<h6 id="电压反向负回转器">电压反向负回转器</h6>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510121438101.png" srcset="/img/loading.jpeg" lazyload alt="电压反向负回转器符号" /><figcaption aria-hidden="true">电压反向负回转器符号</figcaption>
+</figure>
+<p><span class="math display">\[
+\left\{
+\begin{aligned}
+&amp;i_1=-i_2\\
+&amp;u_1=-u_2
+\end{aligned}
+\right.
+\]</span></p>
+<ul>
+<li>输出电流方向与输入电流方向相同</li>
+<li>输出电压极性与输入电压极性相反</li>
+</ul>
+<h5 id="等效模型-1">等效模型</h5>
+<p>我们可以分别使用 CCCS 和 VCVS 来表示 INC 和 VNC</p>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510121454488.png" srcset="/img/loading.jpeg" lazyload alt="INC 和 VNC 的等效模型" /><figcaption aria-hidden="true">INC 和 VNC 的等效模型</figcaption>
+</figure>
+<h5 id="负转换性">负转换性</h5>
+<p>INC 在输出端中有一电阻 <span class="math inline">\(R_L\)</span>，则输入端的等效电阻为</p>
+<p><span class="math display">\[
+R_{in}=-R_L
+\]</span></p>
+<p>证明：</p>
+<p><span class="math display">\[
+u_1=u_2=-i_2R_L=-i_1R_L
+\]</span></p>
+<p>VNC 在输出端中有一电阻 <span class="math inline">\(R_L\)</span>，则输入端的等效电阻为</p>
+<p><span class="math display">\[
+R_{in}=-R_L
+\]</span></p>
+<p>证明：</p>
+<p><span class="math display">\[
+u_1=-u_2=i_2R_L=-i_1R_L
+\]</span></p>
+<h4 id="理想回转器">理想回转器</h4>
+<p>理想回转器是一个双口元件，能够将一个端口的输入电压回转为另一个端口的输出电流</p>
+<h5 id="符号和外特性-1">符号和外特性</h5>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510121531031.png" srcset="/img/loading.jpeg" lazyload alt="理想回转器电路符号" /><figcaption aria-hidden="true">理想回转器电路符号</figcaption>
+</figure>
+<p><span class="math display">\[
+\left\{
+    \begin{aligned}
+        &amp;u_1=-ri_2\\
+        &amp;u_2=ri_1
+    \end{aligned}
+\right.
+\]</span></p>
+<p>或</p>
+<p><span class="math display">\[
+\left\{
+    \begin{aligned}
+        &amp;i_1=gu_2\\
+        &amp;i_2=-gu_1
+    \end{aligned}
+\right.
+\]</span></p>
+<ul>
+<li><span class="math inline">\(r\)</span> 为回转比或回转器电阻</li>
+<li><span class="math inline">\(g\)</span> 为回转器电导</li>
+</ul>
+<h4 id="功率-1">功率</h4>
+<p>理想回转器是无源元件</p>
+<p><span class="math display">\[
+p=u_1i_1+u_2i_2=-ri_2 \cdot gu_2+ri_1 \cdot (-gu_1)=0
+\]</span></p>
+<h2 id="电路分析的基本方法">电路分析的基本方法</h2>
+<p>根据电路所含的元件的性质将电路分类</p>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/%E7%94%B5%E8%B7%AF%E5%88%86%E7%B1%BB.png" srcset="/img/loading.jpeg" lazyload alt="电路分类" /><figcaption aria-hidden="true">电路分类</figcaption>
+</figure>
+<h3 id="电路的等效变换">电路的等效变换</h3>
+<h4 id="等效电路的概念">等效电路的概念</h4>
+<p>如果端钮一一对应的 <span class="math inline">\(n\)</span> 端口电路 <span class="math inline">\(N_1\)</span> 和 <span class="math inline">\(N_2\)</span> 具有相同的端口特性，则两者相互等小，互称等效电路</p>
+<p>等效电路具有以下的性质</p>
+<ul>
+<li>外特性相同 将相同的两组输入电压或者电流分别接入两个电路，则两个电路的输出电压或者电流相同</li>
+<li>内部不同 两个等效电路的内部结构可以完全不同</li>
+</ul>
+<h4 id="常见的等效电路">常见的等效电路</h4>
+<h5 id="电阻串联">电阻串联</h5>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510131640951.png" srcset="/img/loading.jpeg" lazyload alt="串联电阻" /><figcaption aria-hidden="true">串联电阻</figcaption>
+</figure>
+<p><span class="math display">\[
+R=R_1+R_2
+\]</span></p>
+<h5 id="电阻并联">电阻并联</h5>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510131640923.png" srcset="/img/loading.jpeg" lazyload alt="并联电阻" /><figcaption aria-hidden="true">并联电阻</figcaption>
+</figure>
+<p><span class="math display">\[
+G=G_1+G_2
+\]</span></p>
+<p>或</p>
+<p><span class="math display">\[
+\frac{1}{R}=\frac{1}{R_1}+\frac{1}{R_2}
+\]</span></p>
+<h5 id="独立电源串联">独立电源串联</h5>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510131644307.png" srcset="/img/loading.jpeg" lazyload alt="串联独立电压源" /><figcaption aria-hidden="true">串联独立电压源</figcaption>
+</figure>
+<p><span class="math display">\[
+u_s=u_{s_1}+u_{s_2}
+\]</span></p>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510131651915.png" srcset="/img/loading.jpeg" lazyload alt="串联独立电流源" /><figcaption aria-hidden="true">串联独立电流源</figcaption>
+</figure>
+<p><span class="math display">\[
+i&#39;_s=i_{s_1}=i_{s_2}
+\]</span></p>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510131658545.png" srcset="/img/loading.jpeg" lazyload alt="独立电压源与独立电流源串联" /><figcaption aria-hidden="true">独立电压源与独立电流源串联</figcaption>
+</figure>
+<ul>
+<li><span class="math inline">\(u\)</span> 任意</li>
+<li><span class="math inline">\(i&#39;_s=i_s\)</span></li>
+</ul>
+<h5 id="独立电源并联">独立电源并联</h5>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510131700677.png" srcset="/img/loading.jpeg" lazyload alt="并联独立电压源" /><figcaption aria-hidden="true">并联独立电压源</figcaption>
+</figure>
+<p><span class="math display">\[
+u&#39;_s=u_s
+\]</span></p>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510131701575.png" srcset="/img/loading.jpeg" lazyload alt="并联独立电流源" /><figcaption aria-hidden="true">并联独立电流源</figcaption>
+</figure>
+<p><span class="math display">\[
+i_s=i_{s_1}+i_{s_2}
+\]</span></p>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510131702125.png" srcset="/img/loading.jpeg" lazyload alt="独立电压源与独立电流源并联" /><figcaption aria-hidden="true">独立电压源与独立电流源并联</figcaption>
+</figure>
+<ul>
+<li><span class="math inline">\(u&#39;_s=u_s\)</span></li>
+<li><span class="math inline">\(i\)</span> 任意</li>
+</ul>
 
                 
               </div>
