@@ -27,7 +27,7 @@
 <meta property="og:description" content="几类偏微分方程的导出和定解问题 偏微分方程的基本概念 什么是微分方程 函数 \(u\) 关于 \(t\) 及 \((x,y,z)\) 的各阶偏导数满足的关系式 一般形式： \[ F(x_1,x_2,\ldots,x_n,u,\mathrm{D}u,\mathrm{D}^2u,\ldots,\mathrm{D}^Nu)&#x3D;0 \] 其中  \(\displaystyle(x_1,x">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-03-30T13:39:54.000Z">
-<meta property="article:modified_time" content="2025-10-17T15:30:26.471Z">
+<meta property="article:modified_time" content="2025-10-18T06:43:05.292Z">
 <meta property="article:author" content="东川路第一寒冰">
 <meta property="article:tag" content="课程笔记">
 <meta property="article:tag" content="数理方法">
@@ -226,7 +226,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          5.7k 字
+          6.1k 字
         
       </span>
     
@@ -237,7 +237,7 @@
         
         
         
-          48 分钟
+          52 分钟
         
       </span>
     
@@ -1273,6 +1273,74 @@ n\theta\,\mathrm{d}\theta
    \end{aligned}
 \right.
 \]</span></p>
+<h2 id="积分变换法">积分变换法</h2>
+<h3 id="fourier-变换">Fourier 变换</h3>
+<h4 id="fourier-变换的定义">Fourier 变换的定义</h4>
+<blockquote>
+<p>Fourier 积分定理</p>
+<p>设函数 <span class="math inline">\(f(t)\)</span>
+在任意一有限区间上满足 Dirichlet 条件，且在 <span
+class="math inline">\((-\infty,+\infty)\)</span> 上绝对可积，则 <span
+class="math inline">\(f(t)\)</span> 可表示为 Fourier 积分形式</p>
+<p><span class="math display">\[
+\frac{1}{2\pi}\int_{-\infty}^{+\infty}\left[\int_{-\infty}^{+\infty}f(\tau)\mathrm{e}^{-i\omega
+\tau}\,\mathrm{d}\tau\right]\mathrm{e}^{i\omega t}\,&gt;
+\mathrm{d}\omega
+\]</span></p>
+<p>并且当 <span class="math inline">\(f(t)\)</span> 在点 <span
+class="math inline">\(t\)</span> 处连续时，有</p>
+<p><span class="math display">\[
+f(t)=\frac{1}{2\pi}\int_{-\infty}^{+\infty}\left[\int_{-\infty}^{+\infty}f(\tau)\mathrm{e}^{-i\omega
+\tau}\,\mathrm{d}\tau\right]\mathrm{e}^&gt; {i\omega
+t}\,\mathrm{d}\omega
+\]</span></p>
+<p>当 <span class="math inline">\(f(t)\)</span> 在点 <span
+class="math inline">\(t\)</span> 处不连续时，有</p>
+<p><span class="math display">\[
+\frac{f(t^-)+f(t^+)}{2}=\frac{1}{2\pi}\int_{-\infty}^{+\infty}\left[\int_{-\infty}^{+\infty}f(\tau)\mathrm{e}^{-i\omega
+\tau}\,\mathrm{d}\tau\right]&gt; \mathrm{e}^{i\omega
+t}\,\mathrm{d}\omega
+\]</span></p>
+<p>记</p>
+<p><span class="math display">\[
+F(\omega)=\int_{-\infty}^{+\infty}f(t)\mathrm{e}^{-i\omega
+t}\,\mathrm{d}t,\quad\omega\in(-\infty,+\infty)
+\]</span></p>
+<p>在 Fourier 积分公式中，若 <span class="math inline">\(t\)</span> 为
+<span class="math inline">\(f(t)\)</span> 的连续点，则有</p>
+<p><span class="math display">\[
+f(t)=\frac{1}{2\pi}\int_{-\infty}^{+\infty}F(\omega)\mathrm{e}^{i\omega
+t}\,\mathrm{d}\omega
+\]</span></p>
+</blockquote>
+<p>设 <span class="math inline">\(f(t)\)</span> 和 <span
+class="math inline">\(f(\omega)\)</span> 分别为定义在 <span
+class="math inline">\(R\)</span> 上的实值函数和复函数，则称它们为一组
+<strong>Fourier 变换对</strong></p>
+<ul>
+<li><span class="math inline">\(F(\omega)\)</span> 称为 <span
+class="math inline">\(f(t)\)</span> 的<strong>像函数</strong>或
+<strong>Fourier 变换</strong>，记作 <span
+class="math inline">\(\mathcal{F}[f(t)]\)</span> 或 <span
+class="math inline">\(\hat{f}(\omega)\)</span></li>
+<li><span class="math inline">\(f(t)\)</span> 称为 <span
+class="math inline">\(F(\omega)\)</span> 的<strong>原函数</strong>或
+<strong>Fourier 逆变换</strong>，记作 <span
+class="math inline">\(\mathcal{F}^{-1}[F(\omega)]\)</span> 或 <span
+class="math inline">\(\check{F}(t)\)</span></li>
+</ul>
+<p>记</p>
+<p><span class="math display">\[
+\mathcal{D}=\left\{f(t)\vert f(t)=\mathcal{F}^{-1}[F(\omega)]\right\}
+\]</span></p>
+<p><span class="math display">\[
+\mathcal{R}=\left\{F(\omega)\vert F(\omega)=\mathcal{F}[f(t)]\right\}
+\]</span></p>
+<p>称 <span class="math inline">\(\mathcal{D}\)</span>
+为<strong>原像空间</strong>， <span
+class="math inline">\(\mathcal{R}\)</span>
+为<strong>像空间</strong>，Fourier
+变换和逆变换建立了原像空间和像空间之间的对应</p>
 
                 
               </div>
