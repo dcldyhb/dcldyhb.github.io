@@ -28,10 +28,10 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509190831381.png">
 <meta property="article:published_time" content="2025-03-30T13:39:54.000Z">
-<meta property="article:modified_time" content="2025-10-16T16:13:44.443Z">
+<meta property="article:modified_time" content="2025-10-28T02:31:59.844Z">
 <meta property="article:author" content="东川路第一寒冰">
 <meta property="article:tag" content="课程笔记">
-<meta property="article:tag" content="高数">
+<meta property="article:tag" content="数理方法">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509190831381.png">
   
@@ -228,7 +228,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3.4k 字
+          7.9k 字
         
       </span>
     
@@ -239,7 +239,7 @@
         
         
         
-          29 分钟
+          66 分钟
         
       </span>
     
@@ -345,10 +345,10 @@ F(x_1,x_2,\ldots,x_n,u,\mathrm{D}u,\mathrm{D}^2u,\ldots,\mathrm{D}^Nu)=0
 <h3 id="三类偏微分方程的导出和定解问题">三类偏微分方程的导出和定解问题</h3>
 <h4 id="弦振动热传导调和方程的导出定解问题">弦振动、热传导、调和方程的导出，定解问题</h4>
 <h5 id="弦振动方程">弦振动方程</h5>
-<p>一条弦固定在区间 <span class="math inline">\([0,L]\)</span> 上，密度为 <span class="math inline">\(\rho\)</span>，在平衡处附近做微小的振动，记 <span class="math inline">\(u(t,x)\)</span> 为弦在时刻 <span class="math inline">\(t\)</span> 处于位置 <span class="math inline">\(x\)</span> 的位移，满足以下的微分方程</p>
+<p>一条弦固定在区间 <span class="math inline">\([0,l]\)</span> 上，密度为 <span class="math inline">\(\rho\)</span>，在平衡处附近做微小的振动，记 <span class="math inline">\(u(t,x)\)</span> 为弦在时刻 <span class="math inline">\(t\)</span> 处于位置 <span class="math inline">\(x\)</span> 的位移，满足以下的微分方程</p>
 <p><span class="math display">\[
 \begin{equation}
-u_{tt} -a^2u_{xx}=F(t,x), \quad 0 &lt; x &lt; L, \quad t &gt; 0
+u_{tt} -a^2u_{xx}=F(t,x), \quad 0 &lt; x &lt; l, \quad t &gt; 0
 \end{equation}
 \]</span></p>
 <p>其中 <span class="math inline">\(a\)</span> 为待定的弦的波速</p>
@@ -388,7 +388,7 @@ T(x+\Delta x)\cos\beta - T(x)\cos\alpha = 0
 \]</span></p>
 <p>我们令 <span class="math inline">\(a^2 = \frac{T}{\rho},F(t,x)=\frac{f(t,x)}{\rho}\)</span>，并且忽略 <span class="math inline">\(g\)</span> 则得到 <span class="math inline">\(\boxed{弦振动方程}\)</span></p>
 <p><span class="math display">\[
-u_{tt} -a^2u_{xx}=F(t,x), \quad 0 &lt; x &lt; L, \quad t &gt; 0
+u_{tt} -a^2u_{xx}=F(t,x), \quad 0 &lt; x &lt; l, \quad t &gt; 0
 \]</span></p></li>
 </ol>
 <h6 id="弦振动方程的定解问题">弦振动方程的定解问题</h6>
@@ -406,7 +406,7 @@ u_{tt} -a^2u_{xx}=F(t,x), \quad 0 &lt; x &lt; L, \quad t &gt; 0
 <p>这三个条件分别表示了方程本身、初始位移和初始速度</p>
 <p>这个问题被称为弦振动方程的 <strong>初值问题</strong>或者 <strong>Cauchy 问题</strong></p>
 <p><strong>边界条件</strong></p>
-<p>当我们要考虑的弦在一个有限的区间 <span class="math inline">\(I=[0,L]\)</span> 上的振动情况时，需要给出边界条件，即弦在端点处的条件</p>
+<p>当我们要考虑的弦在一个有限的区间 <span class="math inline">\(I=[0,l]\)</span> 上的振动情况时，需要给出边界条件，即弦在端点处的条件</p>
 <p>我们以一个端点 <span class="math inline">\(x=a\)</span> 为例，常见的边界条件有以下三种</p>
 <ol type="1">
 <li><p>Dirichlet 边界条件：</p>
@@ -631,11 +631,11 @@ f(x)=\sum_{n=1}^{+\infty}b_n\sin nx
 <h5 id="余弦级数">余弦级数</h5>
 <p>若 <span class="math inline">\(f(x)\)</span> 是偶函数，则其 Fourier 级数展开式中</p>
 <p><span class="math display">\[
-b*n=\frac{1}{\pi} \int*{-\pi}^{\pi}f(x)\sin nx\,\mathrm{d}x=0
+b_n=\frac{1}{\pi} \int_{-\pi}^{\pi}f(x)\sin nx\,\mathrm{d}x=0
 \]</span></p>
 <p>则其 Fourier 级数展开式为</p>
 <p><span class="math display">\[
-f(x)=\frac{a*0}{2}+\sum*{n=1}^{+\infty}a_n\cos nx
+f(x)=\frac{a_0}{2}+\sum_{n=1}^{+\infty}a_n\cos nx
 \]</span></p>
 <p>对其做周期延拓则变为余弦级数</p>
 <h3 id="弦振动方程初边值问题的求解">弦振动方程初边值问题的求解</h3>
@@ -644,9 +644,9 @@ f(x)=\frac{a*0}{2}+\sum*{n=1}^{+\infty}a_n\cos nx
 <p><span class="math display">\[
 \left\{
    \begin{aligned}
-      &amp;u_{tt}-a^2u_{xx}=0,&amp;&amp;(0&lt;x&lt;L,t&gt;0)\\
+      &amp;u_{tt}-a^2u_{xx}=0,&amp;&amp;(0&lt;x&lt;l,t&gt;0)\\
       &amp;t=0:u=\phi(x),u_t=\psi(x)\\
-      &amp;u\vert_{x=0}=0,u\vert_{x=L}=0
+      &amp;u\vert_{x=0}=0,u\vert_{x=l}=0
    \end{aligned}
 \right.
 \]</span></p>
@@ -657,8 +657,8 @@ u(t,x)=X(x)T(t)
 <p>则弦振动方程可化为</p>
 <p><span class="math display">\[
 \begin{aligned}
-   &amp;X(x)T&#39;&#39;(t)-a^2X&#39;&#39;(x)T(t)&amp;=0\\
-   \Rightarrow &amp;\frac{T&#39;&#39;(t)}{a^2T(t)}&amp;=\frac{X&#39;&#39;(x)}{X(x)}=-\lambda
+   &amp;X(x)T&#39;&#39;(t)-a^2X&#39;&#39;(x)T(t)=0\\
+   \Rightarrow &amp;\frac{T&#39;&#39;(t)}{a^2T(t)}=\frac{X&#39;&#39;(x)}{X(x)}=-\lambda
 \end{aligned}
 \]</span></p>
 <p>即</p>
@@ -669,6 +669,686 @@ u(t,x)=X(x)T(t)
       &amp;T&#39;&#39;(t)+a^2\lambda T(t)=0
    \end{aligned}
 \right.
+\]</span></p>
+<p>由边界条件可得</p>
+<p><span class="math display">\[
+\left\{
+\begin{aligned}
+   &amp;X&#39;&#39;(x)+\lambda X(x)=0\\
+   &amp;X(0)=X(l)=0
+\end{aligned}
+\right.
+\]</span></p>
+<p>这里的 <span class="math inline">\(\lambda\)</span> 称为特征值， <span class="math inline">\(X(x)\)</span> 称为特征函数，这个问题被称为<strong>特征值问题</strong></p>
+<p>其特征方程为</p>
+<p><span class="math display">\[
+\mu^2+\lambda=0
+\]</span></p>
+<ol type="1">
+<li><p><span class="math inline">\(\lambda&lt;0\)</span></p>
+<p><span class="math display">\[
+X(x)=A\mathrm{e}^{\sqrt{-\lambda}x}+B\mathrm{e}^{-\sqrt{-\lambda}x}
+\]</span></p>
+<p>此时若有 <span class="math inline">\(2\)</span> 零点则 <span class="math inline">\(X(x)\equiv 0\)</span>，舍去</p></li>
+<li><p><span class="math inline">\(\lambda=0\)</span></p>
+<p><span class="math display">\[
+X(x)=Ax+B
+\]</span></p>
+<p>此时若有 <span class="math inline">\(2\)</span> 零点则 <span class="math inline">\(X(x)\equiv 0\)</span>，舍去</p></li>
+<li><p><span class="math inline">\(\lambda&gt;0\)</span></p>
+<p><span class="math display">\[
+X(x)=A\cos\sqrt{\lambda}x+B\sin\sqrt{\lambda}x
+\]</span></p></li>
+</ol>
+<p>由边界条件可得</p>
+<p><span class="math display">\[
+X(0)=A=0
+\]</span></p>
+<p><span class="math display">\[
+X(l)=B\sin\sqrt{\lambda}l=0
+\]</span></p>
+<p>当 <span class="math inline">\(B\neq 0\)</span> 时， <span class="math inline">\(\sqrt{\lambda}l=n\pi,n=1,2,3,\ldots\)</span>，则</p>
+<p><span class="math display">\[
+\lambda_n=\left(\frac{n\pi}{l}\right)^2
+\]</span></p>
+<p>这个方程的特征函数系为</p>
+<p><span class="math display">\[
+\left\{\sin{\frac{n\pi}{l}x}\right\}_{n=1}^{\infty}
+\]</span></p>
+<p>为了方便我们令 <span class="math inline">\(B_n=1\)</span> 则我们得到一组特解</p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;X_n(x)=\sin{\frac{n\pi}{l}x}\\
+      &amp;T_n(t)=A_n\cos{\frac{an\pi}{l}t}+B_n\sin{\frac{an\pi}{l}t}
+   \end{aligned}
+\right.
+\]</span></p>
+<p>则方程的通解为</p>
+<p><span class="math display">\[
+u_n(t,x)=\left(A_n\cos{\frac{an\pi}{l}t}+B_n\sin{\frac{an\pi}{l}t}\right)\sin{\frac{n\pi}{l}x}
+\]</span></p>
+<p>叠加得到形式解</p>
+<p><span class="math display">\[
+u(t,x)=\sum_{n=1}^{\infty}\left(A_n\cos{\frac{an\pi}{l}t}+B_n\sin{\frac{an\pi}{l}t}\right)\sin{\frac{n\pi}{l}x}
+\]</span></p>
+<p>接下来使用初值条件对 <span class="math inline">\(A_n\)</span> 和 <span class="math inline">\(B_n\)</span> 进行求解</p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      u(0,x)= &amp;\sum_{n=1}^{\infty}A_n\sin{\frac{n\pi}{l}x}=\phi(x)\\
+      u_t(l,x)= &amp;\sum_{n=1}^{\infty}B_n\frac{an\pi}{l}\sin{\frac{n\pi}{l}x}=\psi(x)
+   \end{aligned}
+\right.
+\]</span></p>
+<p>得到</p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;A_n=\frac{2}{l}\int_0^l\phi(x)\sin{\frac{n\pi}{l}x}\,\mathrm{d}x\\
+      &amp;B_n=\frac{2}{an\pi}\int_0^l\psi(x)\sin{\frac{n\pi}{l}x}\,\mathrm{d}x
+   \end{aligned}
+\right.
+\]</span></p>
+<h4 id="第二类齐次边界条件">第二类齐次边界条件</h4>
+<p>若弦的两端为自由端，器自由振动由以下定解问题解决</p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;u_{tt}-a^2u_{xx}=0,&amp;&amp;(0&lt;x&lt;l,t&gt;0)\\
+      &amp;t=0:u=\phi(x),u_t=\psi(x)\\
+      &amp;u_x\vert_{x=0}=0,u_x\vert_{x=l}=0
+   \end{aligned}
+\right.
+\]</span></p>
+<p>使用分离变量法进行求解，我们设</p>
+<p><span class="math display">\[
+u(t,x)=X(x)T(t)
+\]</span></p>
+<p>则弦振动方程可化为</p>
+<p><span class="math display">\[
+\begin{aligned}
+   &amp;X(x)T&#39;&#39;(t)-a^2X&#39;&#39;(x)T(t)=0\\
+   \Rightarrow &amp;\frac{T&#39;&#39;(t)}{a^2T(t)}=\frac{X&#39;&#39;(x)}{X(x)}=-\lambda
+\end{aligned}
+\]</span></p>
+<p>即</p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;X&#39;&#39;(x)+\lambda X(x)=0\\
+      &amp;T&#39;&#39;(t)+a^2\lambda T(t)=0
+   \end{aligned}
+\right.
+\]</span></p>
+<p>由边界条件可得</p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+   &amp;X&#39;&#39;(x)+\lambda X(x)=0\\
+   &amp;X&#39;(0)=0,X&#39;(l)=0
+   \end{aligned}
+\right.
+\]</span></p>
+<p>同样可以证明 <span class="math inline">\(\displaystyle \lambda &gt;0\)</span></p>
+<p><span class="math display">\[
+X(x)=A\cos\sqrt{\lambda}x+B\sin\sqrt{\lambda}x
+\]</span></p>
+<p>由边界条件可得</p>
+<p><span class="math display">\[
+X&#39;(0)=-A\sqrt{\lambda}=0
+\]</span></p>
+<p>则 <span class="math inline">\(A=0\)</span></p>
+<p><span class="math display">\[
+X&#39;(l)=B\sqrt{\lambda}\cos\sqrt{\lambda}l=0
+\]</span></p>
+<p>当 <span class="math inline">\(B\neq 0\)</span> 时， <span class="math inline">\(\sqrt{\lambda}l=\frac{n\pi}{2},n=0,1,2,3,\ldots\)</span>，则</p>
+<p><span class="math display">\[
+\lambda_n=\left(\frac{n\pi}{l}\right)^2
+\]</span></p>
+<p>这个方程的特征函数系为</p>
+<p><span class="math display">\[
+\left\{\cos{\frac{n\pi}{l}x}\right\}_{n=0}^{\infty}
+\]</span></p>
+<p>为了方便我们令 <span class="math inline">\(B_n=1\)</span> 则我们得到一组特解</p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;X_n(x)=\cos{\frac{n\pi}{l}x}\\
+      &amp;T_n(t)=A_n\cos{\frac{an\pi}{l}t}+B_n\sin{\frac{an\pi}{l}t}
+   \end{aligned}
+\right.
+\]</span></p>
+<p>并且当 <span class="math inline">\(n=0\)</span> 时，有</p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;X_0(x)=B_0\\
+      &amp;T_0(t)=C_0+D_0t
+   \end{aligned}
+\right.
+\]</span></p>
+<p>则方程的形式解为</p>
+<p><span class="math display">\[
+u(t,x)=\frac{a_0+b_0t}{2}+\sum_{n=0}^{\infty}\left(A_n\cos{\frac{an\pi}{l}t}+B_n\sin{\frac{an\pi}{l}t}\right)\cos{\frac{n\pi}{l}x}
+\]</span></p>
+<p>同样通过初值条件可以求得 <span class="math inline">\(A_n\)</span> 和 <span class="math inline">\(B_n\)</span></p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      a_0=&amp;\frac{2}{l}\int_0^l\phi(x)\,\mathrm{d}x\\
+      b_0=&amp;\frac{2}{al}\int_0^l\psi(x)\,\mathrm{d}x\\
+      A_n=&amp;\frac{2}{l}\int_0^l\phi(x)\cos{\frac{n\pi}{l}x}\,\mathrm{d}x\\
+      B_n=&amp;\frac{2}{an\pi}\int_0^l\psi(x)\cos{\frac{n\pi}{l}x}\,\mathrm{d}x
+   \end{aligned}
+\right.
+\]</span></p>
+<h3 id="热传导方程初边值问题的求解">热传导方程初边值问题的求解</h3>
+<h4 id="第一类齐次边界条件-1">第一类齐次边界条件</h4>
+<p>若一杆的两端温度保持为 <span class="math inline">\(0\)</span>，则杆的温度分布由以下定解问题解决</p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      u_t-a^2u_{xx}=0,&amp;&amp;(0&lt;x&lt;l,t&gt;0)\\
+      t=0:u=\varphi(x)\\
+      u\vert_{x=0}=0,u\vert_{x=l}=0
+   \end{aligned}
+\right.
+\]</span></p>
+<p>使用分离变量法进行求解，我们设</p>
+<p><span class="math display">\[
+u(t,x)=X(x)T(t)
+\]</span></p>
+<p>则热传导方程可化为</p>
+<p><span class="math display">\[
+\begin{aligned}
+   &amp;X(x)T&#39;(t)-a^2X&#39;&#39;(x)T(t)=0\\
+   \Rightarrow &amp;\frac{T&#39;(t)}{a^2T(t)}=\frac{X&#39;&#39;(x)}{X(x)}=-\lambda
+\end{aligned}
+\]</span></p>
+<p>即</p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;X&#39;&#39;(x)+\lambda X(x)=0\\
+      &amp;T&#39;(t)+a^2\lambda T(t)=0
+   \end{aligned}
+\right.
+\]</span></p>
+<p>由边界条件可得</p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;X&#39;&#39;(x)+\lambda X(x)=0\\
+      &amp;X(0)=X(l)=0
+   \end{aligned}
+\right.
+\]</span></p>
+<p>可以证明 <span class="math inline">\(\displaystyle \lambda &gt;0\)</span></p>
+<p><span class="math display">\[
+X(x)=A\cos\sqrt{\lambda}x+B\sin\sqrt{\lambda}x
+\]</span></p>
+<p>解得</p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;\lambda_n=\left(\frac{n\pi}{l}\right)^2\\
+      &amp;X_n(x)=A_n\sin{\frac{n\pi}{l}x}\\
+      &amp;T_n(t)=B_n\mathrm{e}^{-\frac{a^2n^2\pi^2}{l^2}t}
+   \end{aligned}
+\right.
+\]</span></p>
+<p>则方程的解为</p>
+<p><span class="math display">\[
+u(t,x)=\sum_{n=1}^{\infty}\varphi_n\mathrm{e}^{-\frac{a^2n^2\pi^2}{l^2}t}\sin{\frac{n\pi}{l}x}
+\]</span></p>
+<p>由初值条件可求得</p>
+<p><span class="math display">\[
+\varphi_n=\frac{2}{l}\int_0^l\varphi(x)\sin{\frac{n\pi}{l}x}\,\mathrm{d}x
+\]</span></p>
+<h3 id="调和方程边值问题的求解">调和方程边值问题的求解</h3>
+<h4 id="矩形域上的分离变量法">矩形域上的分离变量法</h4>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;u_{xx}+u_{yy}=0，&amp;&amp;(0&lt;x&lt;a,0&lt;y&lt;b)\\
+      &amp;u\vert_{x=0}=\varphi_0(y),u\vert_{x=a}=\varphi_1(y)\\
+      &amp;u\vert_{y=0}=\psi_0(x),u\vert_{y=b}=\psi_1(x)
+   \end{aligned}
+\right.
+\]</span></p>
+<p>我们将 <span class="math inline">\(u\)</span> 分解为 <span class="math inline">\(u=v+w\)</span>，其中 <span class="math inline">\(v\)</span> 满足</p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;v_{xx}+v_{yy}=0，&amp;&amp;(0&lt;x&lt;a,0&lt;y&lt;b)\\
+      &amp;v\vert_{x=0}=0,v\vert_{x=a}=0\\
+      &amp;v\vert_{y=0}=\psi_0(x),v\vert_{y=b}=\psi_1(x)
+   \end{aligned}
+\right.
+\]</span></p>
+<p>再使用分离变量法可以求得</p>
+<p><span class="math display">\[
+v(t,x)=\sum_{n=1}^{\infty}\left(A_n\mathrm{e}^{\frac{n\pi}{a}y}+B_n\mathrm{e}^{-\frac{n\pi}{a}y}\right)\sin{\frac{n\pi}{a}x}=\sum_{k=1}^{\infty}(a_k\sinh{\frac{k\pi}{a}y}+b_k\cosh{\frac{k\pi}{a}y})\sin{\frac{k\pi}{a}x}
+\]</span></p>
+<p>其中</p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;a_k=\frac{2}{a}\int_0^a\psi_0(x)\sin{\frac{k\pi}{a}x}\,\mathrm{d}x\\
+      &amp;b_k=\frac{2}{a\sinh{\frac{k\pi}{a}b}}\int_0^a\left[\psi_1(x)-\psi_0(x)\cosh{\frac{k\pi}{a}b}\right]\sin{\frac{k\pi}{a}x}\,\mathrm{d}x
+   \end{aligned}
+\right.
+\]</span></p>
+<p>同理 <span class="math inline">\(w\)</span> 满足</p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;w_{xx}+w_{yy}=0，&amp;&amp;(0&lt;x&lt;a,0&lt;y&lt;b)\\
+      &amp;w\vert_{x=0}=\varphi_0(y),w\vert_{x=a}=\varphi_1(y)\\
+      &amp;w\vert_{y=0}=0,w\vert_{y=b}=0
+   \end{aligned}
+\right.
+\]</span></p>
+<p>使用分离变量法可以求得</p>
+<p><span class="math display">\[
+w(t,x)=\sum_{n=1}^{\infty}\left(C_n\mathrm{e}^{\frac{n\pi}{b}x}+D_n\mathrm{e}^{-\frac{n\pi}{b}x}\right)\sin{\frac{n\pi}{b}y}=\sum_{k=1}^{\infty}(c_k\sinh{\frac{k\pi}{b}x}+d_k\cosh{\frac{k\pi}{b}x})\sin{\frac{k\pi}{b}y}
+\]</span></p>
+<p>其中</p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;c_k=\frac{2}{b}\int_0^b\varphi_0(y)\sin{\frac{k\pi}{b}y}\,\mathrm{d}y\\
+      &amp;d_k=\frac{2}{b\sinh{\frac{k\pi}{b}a}}\int_0^b\left[\varphi_1(y)-\varphi_0(y)\cosh{\frac{k\pi}{b}a}\right]\sin{\frac{k\pi}{b}y}\,\mathrm{d}y
+   \end{aligned}
+\right.
+\]</span></p>
+<h4 id="圆域上的分离变量法">圆域上的分离变量法</h4>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;u_{xx}+u_{yy}=0，&amp;&amp;(x^2+y^2&lt; a^2)\\
+      &amp;u\vert_{x^2+y^2=R^2}=\varphi(x,y)
+   \end{aligned}
+\right.
+\]</span></p>
+<p>引入极坐标</p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;x=r\cos\theta\\
+      &amp;y=r\sin\theta
+   \end{aligned}
+\right.
+\]</span></p>
+<p>则</p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;u_r=u_x\cos\theta+u_y\sin\theta\\
+      &amp;u_\theta=-u_xr\sin\theta+u_yr\cos\theta\\
+      &amp;u_{rr}=u_{xx}\cos^2\theta+2u_{xy}\sin\theta\cos\theta+u_{yy}\sin^2\theta\\
+      &amp;u_{\theta\theta}=u_{xx}r^2\sin^2\theta-2u_{xy}r^2\sin\theta\cos\theta+u_{yy}r^2\cos^2\theta-u_xr\cos\theta-u_yr\sin\theta
+   \end{aligned}
+\right.
+\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+   &amp;u_{rr}+\frac{1}{r^2}u_{\theta\theta}=\frac{-1}{r}u_r\\
+   \Rightarrow &amp;u_{rr}+\frac{1}{r^2}u_{\theta\theta}+\frac{1}{r}u_r=0
+\end{aligned}
+\]</span></p>
+<p>并且</p>
+<p><span class="math display">\[
+\Delta u = u_{xx}+u_{yy}=\frac{1}{r}\frac{\partial}{\partial r}\left(r\frac{\partial u}{\partial r}\right)+\frac{1}{r^2}\frac{\partial^2 u}{\partial \theta^2}=\frac{\partial^2 u}{\partial r^2}+\frac{1}{r}\frac{\partial u}{\partial r}+\frac{1}{r^2}\frac{\partial^2 u}{\partial \theta^2}
+\]</span></p>
+<p>则圆域上的调和方程化为</p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;u_{rr}+\frac{1}{r}u_r+\frac{1}{r^2}u_{\theta\theta}=0，&amp;&amp;(0&lt;r&lt;a,0&lt;\theta&lt;2\pi)\\
+      &amp;u\vert_{r=a}=f(\theta)
+   \end{aligned}
+\right.
+\]</span></p>
+<p>使用分离变量法进行求解，我们设</p>
+<p><span class="math display">\[
+u(r,\theta)=R(r)\Theta(\theta)
+\]</span></p>
+<p>则调和方程可化为</p>
+<p><span class="math display">\[
+\begin{aligned}
+   &amp;R&#39;&#39;(r)\Theta(\theta)+\frac{1}{r}R&#39;(r)\Theta(\theta)+\frac{1}{r^2}R(r)\Theta&#39;&#39;(\theta)=0\\
+   \Rightarrow &amp;-\frac{2R&#39;&#39;(r)+\frac{1}{r}R&#39;(r)}{\frac{1}{r^2}R(r)}=\frac{\Theta&#39;&#39;(\theta)}{\Theta(\theta)}=-\lambda
+\end{aligned}
+\]</span></p>
+<p>即</p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;r^2R&#39;&#39;(r)+rR&#39;(r)-\lambda R(r)=0\\
+      &amp;\Theta&#39;&#39;(\theta)+\lambda\Theta(\theta)=0
+   \end{aligned}
+\right.
+\]</span></p>
+<p>由周期条件 <span class="math inline">\(\displaystyle\Theta(\theta+2\pi)=\Theta(\theta)\)</span> 可得</p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;\lambda_n=n^2,n=0,1,2,3,\ldots\\
+      &amp;\Theta_n(\theta)=A_n\cos n\theta+B_n\sin n\theta
+   \end{aligned}
+\right.
+\]</span></p>
+<p>对于 <span class="math inline">\(R(r)\)</span>，我们需要求解一个 Euler 方程</p>
+<p><span class="math display">\[
+r^2R&#39;&#39;(r)+rR&#39;(r)-n^2R(r)=0
+\]</span></p>
+<p>其特征方程为</p>
+<p><span class="math display">\[
+\begin{aligned}
+   \mu(\mu-1)+\mu - n^2&amp;=0\\
+   \Rightarrow \mu &amp;= \pm n
+\end{aligned}
+\]</span></p>
+<p>则</p>
+<p><span class="math display">\[
+R_n(r)=\left\{
+   \begin{aligned}
+      &amp;C_n r^n + D_n r^{-n},&amp;&amp; n=1,2,3,\ldots\\
+      &amp;C_0 + D_0 \ln r,&amp;&amp; n=0
+   \end{aligned}
+\right.
+\]</span></p>
+<p>由于 <span class="math inline">\(\vert R(0)\vert&lt;+\infty\)</span>，则 <span class="math inline">\(D_n=0\)</span>，并且 <span class="math inline">\(D_0=0\)</span></p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;R_n(r)=C_n r^n,&amp;&amp; n=1,2,3,\ldots\\
+      &amp;R_0(r)=C_0,&amp;&amp; n=0
+   \end{aligned}
+\right.
+\]</span></p>
+<p>则方程的解为</p>
+<p><span class="math display">\[
+u(r,\theta)=\frac{a_0}{2} + \sum_{n=1}^{\infty}\left(\alpha_n\cos n\theta + \beta_n\sin n\theta\right)r^n
+\]</span></p>
+<p>由边界条件可得</p>
+<p><span class="math display">\[
+u(a,\theta)=\frac{a_0}{2} + \sum_{n=1}^{\infty}\left(\alpha_n\cos n\theta + \beta_n\sin n\theta\right)a^n=f(\theta)
+\]</span></p>
+<p>则</p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;a_0=\frac{1}{\pi}\int_0^{2\pi}f(\theta)\,\mathrm{d}\theta\\
+      &amp;\alpha_n=\frac{1}{\pi a^n}\int_0^{2\pi}f(\theta)\cos n\theta\,\mathrm{d}\theta\\
+      &amp;\beta_n=\frac{1}{\pi a^n}\int_0^{2\pi}f(\theta)\sin n\theta\,\mathrm{d}\theta
+   \end{aligned}
+\right.
+\]</span></p>
+<h2 id="积分变换法">积分变换法</h2>
+<h3 id="fourier-变换">Fourier 变换</h3>
+<h4 id="fourier-变换的定义">Fourier 变换的定义</h4>
+<blockquote>
+<p>Fourier 积分定理</p>
+<p>设函数 <span class="math inline">\(f(t)\)</span> 在任意一有限区间上满足 Dirichlet 条件，且在 <span class="math inline">\((-\infty,+\infty)\)</span> 上绝对可积，则 <span class="math inline">\(f(t)\)</span> 可表示为 Fourier 积分形式</p>
+<p><span class="math display">\[
+\frac{1}{2\pi}\int_{-\infty}^{+\infty}\left[\int_{-\infty}^{+\infty}f(\tau)\mathrm{e}^{-i\omega \tau}\,\mathrm{d}\tau\right]\mathrm{e}^{i\omega t}\,&gt; \mathrm{d}\omega
+\]</span></p>
+<p>并且当 <span class="math inline">\(f(t)\)</span> 在点 <span class="math inline">\(t\)</span> 处连续时，有</p>
+<p><span class="math display">\[
+f(t)=\frac{1}{2\pi}\int_{-\infty}^{+\infty}\left[\int_{-\infty}^{+\infty}f(\tau)\mathrm{e}^{-i\omega \tau}\,\mathrm{d}\tau\right]\mathrm{e}^&gt; {i\omega t}\,\mathrm{d}\omega
+\]</span></p>
+<p>当 <span class="math inline">\(f(t)\)</span> 在点 <span class="math inline">\(t\)</span> 处不连续时，有</p>
+<p><span class="math display">\[
+\frac{f(t^-)+f(t^+)}{2}=\frac{1}{2\pi}\int_{-\infty}^{+\infty}\left[\int_{-\infty}^{+\infty}f(\tau)\mathrm{e}^{-i\omega \tau}\,\mathrm{d}\tau\right]&gt; \mathrm{e}^{i\omega t}\,\mathrm{d}\omega
+\]</span></p>
+<p>记</p>
+<p><span class="math display">\[
+F(\omega)=\int_{-\infty}^{+\infty}f(t)\mathrm{e}^{-i\omega t}\,\mathrm{d}t,\quad\omega\in(-\infty,+\infty)
+\]</span></p>
+<p>在 Fourier 积分公式中，若 <span class="math inline">\(t\)</span> 为 <span class="math inline">\(f(t)\)</span> 的连续点，则有</p>
+<p><span class="math display">\[
+f(t)=\frac{1}{2\pi}\int_{-\infty}^{+\infty}F(\omega)\mathrm{e}^{i\omega t}\,\mathrm{d}\omega
+\]</span></p>
+</blockquote>
+<p>设 <span class="math inline">\(f(t)\)</span> 和 <span class="math inline">\(f(\omega)\)</span> 分别为定义在 <span class="math inline">\(R\)</span> 上的实值函数和复函数，则称它们为一组 <strong>Fourier 变换对</strong></p>
+<ul>
+<li><span class="math inline">\(F(\omega)\)</span> 称为 <span class="math inline">\(f(t)\)</span> 的<strong>像函数</strong>或 <strong>Fourier 变换</strong>，记作 <span class="math inline">\(\mathcal{F}[f(t)]\)</span> 或 <span class="math inline">\(\hat{f}(\omega)\)</span></li>
+<li><span class="math inline">\(f(t)\)</span> 称为 <span class="math inline">\(F(\omega)\)</span> 的<strong>原函数</strong>或 <strong>Fourier 逆变换</strong>，记作 <span class="math inline">\(\mathcal{F}^{-1}[F(\omega)]\)</span> 或 <span class="math inline">\(\check{F}(t)\)</span></li>
+</ul>
+<p>记</p>
+<p><span class="math display">\[
+\mathcal{D}=\left\{f(t)\vert f(t)=\mathcal{F}^{-1}[F(\omega)]\right\}
+\]</span></p>
+<p><span class="math display">\[
+\mathcal{R}=\left\{F(\omega)\vert F(\omega)=\mathcal{F}[f(t)]\right\}
+\]</span></p>
+<p>称 <span class="math inline">\(\mathcal{D}\)</span> 为<strong>原像空间</strong>， <span class="math inline">\(\mathcal{R}\)</span> 为<strong>像空间</strong>，Fourier 变换和逆变换建立了原像空间和像空间之间的对应</p>
+<h4 id="余弦与正弦-fourier-变换">余弦与正弦 Fourier 变换</h4>
+<p>当 <span class="math inline">\(f(t)\)</span> 为偶函数时，有</p>
+<p><span class="math display">\[
+f(t)=\frac{2}{\pi}\int_0^{+\infty}\left[\int_0^{+\infty}f(\tau)\cos \omega \tau\,\mathrm{d}\tau\right]\cos \omega t\,\mathrm{d}\omega
+\]</span></p>
+<p>记</p>
+<p><span class="math display">\[
+\mathcal{F}_c[f(t)]=\mathcal{F}_c(\omega)=\int_0^{+\infty}f(t)\cos \omega t\,\mathrm{d}t
+\]</span></p>
+<p>为 <span class="math inline">\(f(t)\)</span> 的<strong>余弦 Fourier 变换</strong></p>
+<p>记</p>
+<p><span class="math display">\[
+\mathcal{F}_c^{-1}[\mathcal{F}_c(\omega)]=f(t)=\frac{2}{\pi}\int_0^{+\infty}\mathcal{F}_c(\omega)\cos \omega t\,\mathrm{d}\omega
+\]</span></p>
+<p>为 <span class="math inline">\(\mathcal{F}_c(\omega)\)</span> 的<strong>余弦 Fourier 逆变换</strong></p>
+<h4 id="fourier-变换与逆变换的性质">Fourier 变换与逆变换的性质</h4>
+<p>为了方便，记 <span class="math inline">\(\mathcal{F}[f(t)]=F(\omega)\)</span>， <span class="math inline">\(\mathcal{F}^{-1}[F(\omega)]=f(t)\)</span>，<span class="math inline">\(\mathcal{F}[G(t)]=g(\omega)\)</span>， <span class="math inline">\(\mathcal{F}^{-1}[g(\omega)]=G(t)\)</span></p>
+<table>
+
+<thead>
+<tr class="header">
+<th style="text-align: left;">性质名称</th>
+<th style="text-align: left;">正变换性质</th>
+<th style="text-align: left;">逆变换性质</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">线性性质</td>
+<td style="text-align: left;"><span class="math inline">\(\displaystyle \mathcal{F}[\alpha f(t)+\beta G(t)]=\alpha F(\omega)+\beta g(\omega)\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\displaystyle \mathcal{F}^{-1}[\alpha F(\omega)+\beta g(\omega)]=\alpha f(t)+\beta G(t)\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">对称性</td>
+<td style="text-align: left;"><span class="math inline">\(\displaystyle \mathcal{F}[F(t)]=2\pi f(-\omega)\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\displaystyle \mathcal{F}^{-1}[f(\omega)]=\frac{1}{2\pi}F(-t)\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">位移性</td>
+<td style="text-align: left;"><span class="math inline">\(\displaystyle \mathcal{F}[f(t-t_0)]=\mathrm{e}^{-i\omega t_0}F(\omega)\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\displaystyle \mathcal{F}^{-1}[\mathrm{e}^{i\omega t_0}F(\omega)]=f(t-t_0)\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">相似性</td>
+<td style="text-align: left;"><span class="math inline">\(\displaystyle \mathcal{F}[f(at)]=\frac{1}{\vert a\vert}F\left(\frac{\omega}{a}\right),\quad (a\neq 0)\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\displaystyle \mathcal{F}^{-1}\left[\frac{1}{\vert a\vert}F(a\omega)\right]=\frac{1}{\vert a\vert}f(\frac{t}{a})\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">微分性（原像函数）</td>
+<td style="text-align: left;"><span class="math inline">\(\displaystyle \mathcal{F}\left[\frac{\mathrm{d}^n f(t)}{\mathrm{d}t^n}\right]=(i\omega)^n F(\omega)\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\displaystyle \mathcal{F}^{-1}[(i\omega)^n F(\omega)]=\frac{\mathrm{d}^n f(t)}{\mathrm{d}t^n}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">微分性（像函数）</td>
+<td style="text-align: left;"><span class="math inline">\(\displaystyle \mathcal{F}[(-it)^n f(t)]=\frac{\mathrm{d}^n F(\omega)}{\mathrm{d}\omega^n}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\displaystyle \mathcal{F}^{-1}\left[\frac{\mathrm{d}^n F(\omega)}{\mathrm{d}\omega^n}\right]=(-it)^n f(t)\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">积分性</td>
+<td style="text-align: left;"><span class="math inline">\(\displaystyle \mathcal{F}\left[\int_{-\infty}^t f(\tau)\,\mathrm{d}\tau\right]=\frac{1}{i\omega}F(\omega)\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\displaystyle \mathcal{F}^{-1}\left[\frac{1}{i\omega}F(\omega)\right]=\int_{-\infty}^t f(\tau)\,\mathrm{d}\tau\)</span></td>
+</tr>
+</tbody>
+</table>
+<h4 id="fourier-变换的卷积和卷积定理">Fourier 变换的卷积和卷积定理</h4>
+<p>设 <span class="math inline">\(f(t)\)</span> 和 <span class="math inline">\(g(t)\)</span> 是定义在 <span class="math inline">\(R\)</span> 上的两个可积函数，则称函数</p>
+<p><span class="math display">\[
+(f*g)(t)=\int_{-\infty}^{+\infty}f(\tau)g(t-\tau)\,\mathrm{d}\tau
+\]</span></p>
+<p>为 <span class="math inline">\(f(t)\)</span> 和 <span class="math inline">\(g(t)\)</span> 的<strong>卷积</strong>，记作 <span class="math inline">\(f(t)*g(t)\)</span></p>
+<h5 id="卷积定理">卷积定理</h5>
+<p>设 <span class="math inline">\(f_1(t)\)</span> 和 <span class="math inline">\(f_2(t)\)</span> 的 Fourier 变换存在，则</p>
+<p><span class="math display">\[
+\mathcal{F}[f_1(t)*f_2(t)]=\mathcal{F}[f_1(t)]\cdot \mathcal{F}[f_2(t)]\Leftrightarrow \mathcal{F}^{-1}[F_1(\omega)\cdot F_2(\omega)]=f_1(t)*f_2(t)
+\]</span></p>
+<p><span class="math display">\[
+\mathcal{F}[f_1(t)\cdot f_2(t)]=\frac{1}{2\pi}\mathcal{F}[f_1(t)]*\mathcal{F}[f_2(t)]\Leftrightarrow \mathcal{F}^{-1}[F_1(\omega)*F_2(\omega)]=2\pi f_1(t)\cdot f_2(t)
+\]</span></p>
+<h3 id="laplace-变换">Laplace 变换</h3>
+<p>Fourier 变换要求函数在 <span class="math inline">\((-\infty,+\infty)\)</span> 上绝对可积，在任意有限区间上满足 Dirichlet 条件，但是很多函数不满足这个条件，并且实际应用中很多问题只涉及 <span class="math inline">\(t\geq 0\)</span> 的情况，因此引入 Laplace 变换</p>
+<p>为了解决定义域以及绝对可积的问题，将 <span class="math inline">\(f(t)\)</span> 乘上单位阶跃函数 <span class="math inline">\(u(t)=\left\{\begin{aligned}&amp;1,&amp;&amp; t\geq 0\\&amp;0,&amp;&amp; t&lt;0\end{aligned}\right.\)</span>，并且引入一个衰减因子 <span class="math inline">\(\mathrm{e}^{-\sigma t}\)</span>， <span class="math inline">\(\sigma&gt;0\)</span>，再对其作 Fourier 变换</p>
+<p><span class="math display">\[
+F(\omega)=\mathcal{F}[f(t)]=\int_{-\infty}^{+\infty}f(t)u(t)\mathrm{e}^{-\sigma t}\mathrm{e}^{-i\omega t}\,\mathrm{d}t=\int_0^{+\infty}f(t)\mathrm{e}^{-(\sigma+i\omega)t}\,\mathrm{d}t
+\]</span></p>
+<p>记 <span class="math inline">\(p=\sigma+i\omega\)</span>，则</p>
+<p><span class="math display">\[
+F(p)=\mathcal{L}[f(t)]=\int_0^{+\infty}f(t)\mathrm{e}^{-pt}\,\mathrm{d}t
+\]</span></p>
+<p>可以看出 Laplace 变换实际上就是 <span class="math inline">\(f(t)u(t)\mathrm{e}^{-\sigma t}\)</span> 的 Fourier 变换，为一种单边的广义 Fourier 变换</p>
+<p>同 Fourier 变换相似</p>
+<p><span class="math display">\[
+\mathcal{D}=\left\{f(t)\vert f(t)=\mathcal{L}^{-1}[F(p)]\right\}
+\]</span></p>
+<p><span class="math display">\[
+\mathcal{R}=\left\{F(p)\vert F(p)=\mathcal{L}[f(t)]\right\}
+\]</span></p>
+<p>称 <span class="math inline">\(\mathcal{D}\)</span> 为<strong>原像空间</strong>， <span class="math inline">\(\mathcal{R}\)</span> 为<strong>像空间</strong></p>
+<h4 id="laplace-变换存在定理">Laplace 变换存在定理</h4>
+<blockquote>
+<p>指数级函数</p>
+<p>对于实变量的实值（或复值）函数 <span class="math inline">\(f(t)\)</span>，存在常数 <span class="math inline">\(M&gt;0\)</span>， <span class="math inline">\(\sigma_0\)</span> 和 <span class="math inline">\(T&gt;0\)</span>，使得</p>
+<p><span class="math display">\[
+\vert f(t)\vert \leq Me^{\sigma_0 t},\quad \forall t&gt;0
+\]</span></p>
+<p>则称 <span class="math inline">\(f(t)\)</span> 为<strong>指数级函数</strong>， <span class="math inline">\(\sigma_0\)</span> 称为 <span class="math inline">\(f(t)\)</span> 的<strong>增长指数</strong></p>
+</blockquote>
+<p>若函数满足</p>
+<ol type="1">
+<li><span class="math inline">\(\displaystyle t\ge 0\)</span> 的任一有限区间内分段连续</li>
+<li><span class="math inline">\(\displaystyle t\ge 0\)</span> 上为指数增长函数</li>
+</ol>
+<p>则其 Laplace 变换存在</p>
+<h4 id="常用函数的-laplace-变换">常用函数的 Laplace 变换</h4>
+<h4 id="单位阶跃函数-ut">单位阶跃函数 <span class="math inline">\(u(t)\)</span></h4>
+<p><span class="math display">\[
+\mathcal{L}u(t)=\int_0^{+\infty}\mathrm{e}^{-pt}\,\mathrm{d}t=-\frac{1}{p}\mathrm{e}^{-pt}\Big\vert_0^{+\infty}
+\]</span></p>
+<p>由于</p>
+<p><span class="math display">\[
+\vert \mathrm{e}^{-pt}\vert=\vert \mathrm{e}^{-(\sigma+i\omega)t}\vert=\mathrm{e}^{-\sigma t}
+\]</span></p>
+<p>当 <span class="math inline">\(\sigma&gt;0\)</span> 时， <span class="math inline">\(\displaystyle \lim_{t\to +\infty}\mathrm{e}^{-pt}=0\)</span>，则</p>
+<p><span class="math display">\[
+\mathcal{L}u(t)=\frac{1}{p},\quad \mathrm{Re}\,p&gt;0
+\]</span></p>
+<p>同样</p>
+<p><span class="math display">\[
+\mathcal{L}[u(t-a)]=\frac{1}{p}\mathrm{e}^{-ap},\quad \mathrm{Re}\,p&gt;0
+\]</span></p>
+<h4 id="指数函数-ekt">指数函数 <span class="math inline">\(e^{kt}\)</span></h4>
+<p><span class="math display">\[
+\mathcal{L}\mathrm{e}^{kt}=\int_0^{+\infty}\mathrm{e}^{(k-p)t}\,\mathrm{d}t=-\frac{1}{k-p}\mathrm{e}^{(k-p)t}\Big\vert_0^{+\infty}=\frac{1}{p-k},\quad \left(\mathrm{Re}\,p&gt;\mathrm{Re}\,k\right)
+\]</span></p>
+<h4 id="正弦函数-sin-omega-t">正弦函数 <span class="math inline">\(\sin \omega t\)</span></h4>
+<p><span class="math display">\[
+\begin{aligned}
+   \mathcal{L}[\sin \omega t]&amp;=\int_0^{+\infty}\sin \omega t\mathrm{e}^{-pt}\,\mathrm{d}t\\
+                             &amp;=\frac{1}{2i}\int_0^{+\infty}\left(\mathrm{e}^{-(p-i\omega)t}-\mathrm{e}^{-(p+i\omega)t}\right)\,\mathrm{d}t\\
+                             &amp;=\frac{1}{2i}\left[\frac{1}{p-i\omega}-\frac{1}{p+i\omega}\right]=\frac{\omega}{p^2+\omega^2},\quad \mathrm{Re}\,p&gt;\vert\mathrm{lm} \, \omega\vert
+\end{aligned}
+\]</span></p>
+<h4 id="余弦函数-cos-omega-t">余弦函数 <span class="math inline">\(\cos \omega t\)</span></h4>
+<p><span class="math display">\[
+\begin{aligned}
+   \mathcal{L}[\cos \omega t]&amp;=\int_0^{+\infty}\cos \omega t\mathrm{e}^{-pt}\,\mathrm{d}t\\
+                             &amp;=\frac{1}{2}\int_0^{+\infty}\left(\mathrm{e}^{-(p-i\omega)t}+\mathrm{e}^{-(p+i\omega)t}\right)\,\mathrm{d}t\\
+                             &amp;=\frac{1}{2}\left[\frac{1}{p-i\omega}+\frac{1}{ p+i\omega}\right]=\frac{p}{p^2+\omega^2},\quad \mathrm{Re}\,p&gt;\vert\mathrm{lm} \, k\vert
+\end{aligned}
+\]</span></p>
+<h4 id="ftt"><span class="math inline">\(f(t)=t\)</span></h4>
+<p><span class="math display">\[
+\mathcal{L}[t]=\int_0^{+\infty}t\mathrm{e}^{-pt}\,\mathrm{d}t=-\frac{t}{p}\mathrm{e}^{-pt}\Big\vert_0^{+\infty}+\frac{1}{p}\int_0^{+\infty}\mathrm{e}^{-pt}\,\mathrm{d}t=\frac{1}{p^2},\quad \mathrm{Re}\,p&gt;0
+\]</span></p>
+<h4 id="fttn-n123ldots"><span class="math inline">\(f(t)=t^n\)</span>， <span class="math inline">\(n=1,2,3,\ldots\)</span></h4>
+<p><span class="math display">\[
+\mathcal{L}[t^n]=\int_0^{+\infty}t^n\mathrm{e}^{-pt}\,\mathrm{d}t=\frac{n}{p}\int_0^{+\infty}t^{n-1}\mathrm{e}^{-pt}\,\mathrm{d}t=\frac{n!}{p^{n+1}},\quad \mathrm{Re}\,p&gt;0
+\]</span></p>
+<h4 id="laplace-变换的性质">Laplace 变换的性质</h4>
+<p>为了方便，记 <span class="math inline">\(\mathcal{L}[f(t)]=F(p)\)</span>， <span class="math inline">\(\mathcal{L}^{-1}[F(p)]=f(t)\)</span>，<span class="math inline">\(\mathcal{L}[G(t)]=G(p)\)</span>， <span class="math inline">\(\mathcal{L}^{-1}[G(p)]=G(t)\)</span></p>
+<table>
+
+<thead>
+<tr class="header">
+<th style="text-align: left;">性质名称</th>
+<th style="text-align: left;">正变换性质</th>
+<th style="text-align: left;">逆变换性质</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">线性性质</td>
+<td style="text-align: left;"><span class="math inline">\(\displaystyle \mathcal{L}[af(t)+\beta G(t)]=aF(p)+bG(p)\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\displaystyle \mathcal{L}^{-1}[aF(p)+bG(p)]=af(t)+bG(t)\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">延迟性</td>
+<td style="text-align: left;"><span class="math inline">\(\displaystyle \mathcal{L}[f(t-t_0)u(t-t_0)]=\mathrm{e}^{-p t_0}F(p)\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\displaystyle \mathcal{L}^{-1}[\mathrm{e}^{-p t_0}F(p)]=f(t-t_0)u(t-t_0)\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">相似性</td>
+<td style="text-align: left;"><span class="math inline">\(\displaystyle \mathcal{L}[f(at)]=\frac{1}{a}F\left(\frac{p}{a}\right),\quad (a&gt;0)\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\displaystyle \mathcal{L}^{-1}\left[F(ap)\right]=\frac{1}{a}f(\frac{t}{a})\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">平移性</td>
+<td style="text-align: left;"><span class="math inline">\(\displaystyle \mathcal{L}[\mathrm{e}^{p_0 t}f(t)]=F(p-p_0)\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\displaystyle \mathcal{L}^{-1}[F(p-p_0)]=\mathrm{e}^{p_0 t}f(t)\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">微分性</td>
+<td style="text-align: left;"><span class="math inline">\(\displaystyle \mathcal{L}\left[\frac{\mathrm{d}^n f(t)}{\mathrm{d}t^n}\right]=p^n F(p)-\sum_{k=0}^{n-1}p^{n-1-k}f^{(k)}(0)\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\displaystyle \mathcal{L}^{-1}\left[p^n F(p)\right]=\frac{\mathrm{d}^n f(t)}{\mathrm{d}t^n}+\sum_{k=0}^{n-1}f^{(k)}(0)\frac{t^{n-1-k}}{(n-1-k)!}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">积分性（原像函数）</td>
+<td style="text-align: left;"><span class="math inline">\(\displaystyle \mathcal{L}\left[\int_0^t f(\tau)\,\mathrm{d}\tau\right]=\frac{1}{p}F(p)\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\displaystyle \mathcal{L}^{-1}\left[\frac{1}{p}F(p)\right]=\int_0^t f(\tau)\,\mathrm{d}\tau\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">积分性（像函数）</td>
+<td style="text-align: left;"><span class="math inline">\(\displaystyle \mathcal{L}[\frac{f(t)}{t}]=\int_p^{+\infty}F(q)\,\mathrm{d}q\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\displaystyle \mathcal{L}^{-1}\left[\int_p^{+\infty}F(q)\,\mathrm{d}q\right]=\frac{f(t)}{t}\)</span></td>
+</tr>
+</tbody>
+</table>
+<h4 id="laplace-变换的卷积性质">Laplace 变换的卷积性质</h4>
+<p>如果 <span class="math inline">\(t&lt;0\)</span> 时， <span class="math inline">\(f(t)=0\)</span>， <span class="math inline">\(g(t)=0\)</span>，此时</p>
+<p><span class="math display">\[
+\begin{aligned}
+   f*g(t)&amp;=\int_{-\infty}^{+\infty}f(\tau)g(t-\tau)\,\mathrm{d}\tau\\
+            &amp;=\int_0^t f(\tau)g(t-\tau)\,\mathrm{d}\tau+\int_t^{+\infty}f(\tau)g(t-\tau)\,\mathrm{d}\tau\\
+            &amp;=\int_0^t f(\tau)g(t-\tau)\,\mathrm{d}\tau
+\end{aligned}
+\]</span></p>
+<p>称</p>
+<p><span class="math display">\[
+(f*g)(t)=\int_0^t f(\tau)g(t-\tau)\,\mathrm{d}\tau
+\]</span></p>
+<p>为 <span class="math inline">\(f(t)\)</span> 和 <span class="math inline">\(g(t)\)</span> 在区间 <span class="math inline">\([0,+\infty)\)</span> 上的卷积</p>
+<p>若 <span class="math inline">\(f(t)\)</span> 和 <span class="math inline">\(g(t)\)</span> 的 Laplace 变换存在，则 <span class="math inline">\(f*g\)</span> 的 Laplace 变换也存在，且有</p>
+<p><span class="math display">\[
+\mathcal{L}[f*g(t)]=\mathcal{L}[f(t)]\cdot \mathcal{L}[g(t)]\Leftrightarrow \mathcal{L}^{-1}[F(p)\cdot G(p)]=f*g(t)
 \]</span></p>
 
                 
@@ -712,7 +1392,7 @@ u(t,x)=X(x)T(t)
       
         <a href="/tags/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/" class="print-no-link">#课程笔记</a>
       
-        <a href="/tags/%E9%AB%98%E6%95%B0/" class="print-no-link">#高数</a>
+        <a href="/tags/%E6%95%B0%E7%90%86%E6%96%B9%E6%B3%95/" class="print-no-link">#数理方法</a>
       
     </div>
   
