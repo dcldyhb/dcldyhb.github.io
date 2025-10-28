@@ -19,15 +19,15 @@
   <meta name="author" content="东川路第一寒冰">
   <meta name="keywords" content="">
   
-    <meta name="description" content="关键概念 神经网络（Neural Network, NN） 机器学习种类  监督学习（Supervised Learning） 非监督学习（Unsupervised Learning） 强化学习（Reinforcement Learning）  监督学习 监督学习是通过已标注的数据集来训练模型，使其能够预测新的、未见过的数据。常见的监督学习算法包括线性回归、逻辑回归、支持向量机（SVM）、决策树和">
+    <meta name="description" content="人工智能的概念 定义与理解 人工智能（Artificial Intelligence, AI）已经深入我们的日常生活。从智能问答、内容推荐到自动驾驶和智能家居，AI 技术无处不在。  艾伦·图灵 对 AI 的定义是：能使计算机完成那些需要人类智力才能完成的工作的科学。  尽管 AI 发展迅速，但智能与智能体的本质，至今仍是哲学家和科学家持续探索的课题。 AI 的类型 AI 可以根据其能力和功能两个">
 <meta property="og:type" content="article">
 <meta property="og:title" content="人工智能导论">
 <meta property="og:url" content="http://dcldyhb.github.io/2025/09/18/%E6%9C%AC%E7%A7%91/%E7%BC%96%E7%A8%8B/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AF%BC%E8%AE%BA/index.html">
 <meta property="og:site_name" content="东川路第一寒冰的笔记">
-<meta property="og:description" content="关键概念 神经网络（Neural Network, NN） 机器学习种类  监督学习（Supervised Learning） 非监督学习（Unsupervised Learning） 强化学习（Reinforcement Learning）  监督学习 监督学习是通过已标注的数据集来训练模型，使其能够预测新的、未见过的数据。常见的监督学习算法包括线性回归、逻辑回归、支持向量机（SVM）、决策树和">
+<meta property="og:description" content="人工智能的概念 定义与理解 人工智能（Artificial Intelligence, AI）已经深入我们的日常生活。从智能问答、内容推荐到自动驾驶和智能家居，AI 技术无处不在。  艾伦·图灵 对 AI 的定义是：能使计算机完成那些需要人类智力才能完成的工作的科学。  尽管 AI 发展迅速，但智能与智能体的本质，至今仍是哲学家和科学家持续探索的课题。 AI 的类型 AI 可以根据其能力和功能两个">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-09-18T05:17:00.000Z">
-<meta property="article:modified_time" content="2025-10-16T06:26:41.693Z">
+<meta property="article:modified_time" content="2025-10-16T16:13:44.444Z">
 <meta property="article:author" content="东川路第一寒冰">
 <meta property="article:tag" content="专业课程">
 <meta property="article:tag" content="编程">
@@ -227,7 +227,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.2k 字
+          2.7k 字
         
       </span>
     
@@ -238,7 +238,7 @@
         
         
         
-          10 分钟
+          23 分钟
         
       </span>
     
@@ -289,27 +289,200 @@
             
               <div class="markdown-body">
                 
-                <h2 id="关键概念">关键概念</h2>
-<h3 id="神经网络neural-network-nn">神经网络（Neural Network, NN）</h3>
-<h3 id="机器学习种类">机器学习种类</h3>
+                <h2 id="人工智能的概念">人工智能的概念</h2>
+<h3 id="定义与理解">定义与理解</h3>
+<p>人工智能（Artificial Intelligence, AI）已经深入我们的日常生活。从智能问答、内容推荐到自动驾驶和智能家居，AI 技术无处不在。</p>
+<blockquote>
+<p><strong>艾伦·图灵</strong> 对 AI 的定义是：<em>能使计算机完成那些需要人类智力才能完成的工作的科学。</em></p>
+</blockquote>
+<p>尽管 AI 发展迅速，但智能与智能体的本质，至今仍是哲学家和科学家持续探索的课题。</p>
+<h3 id="ai-的类型">AI 的类型</h3>
+<p>AI 可以根据其<strong>能力</strong>和<strong>功能</strong>两个维度进行分类。</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">分类维度</th>
+<th style="text-align: left;">类型</th>
+<th style="text-align: left;">功能描述</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>基于能力</strong></td>
+<td style="text-align: left;">狭窄 AI (Narrow AI)</td>
+<td style="text-align: left;">经过训练后可执行特定任务，以目标为导向。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">通用 AI (General AI)</td>
+<td style="text-align: left;">能够像人类一样独立思考的系统（<em>目前尚未实现</em>）。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">超级 AI (Super AI)</td>
+<td style="text-align: left;">超越人类智能，能比人类更好地完成任务（<em>理论概念</em>）。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>基于功能</strong></td>
+<td style="text-align: left;">反应型机器 (Reactive Machines)</td>
+<td style="text-align: left;">专注于当前场景，根据最佳行动做出反应，没有记忆功能。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">有限记忆机器 (Limited Memory)</td>
+<td style="text-align: left;">可以在短时间内存储和使用过去的经验或数据。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">理论型 AI (Theory of Mind AI)</td>
+<td style="text-align: left;">能够理解人类情感并进行社交互动（<em>研发中</em>）。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">自我意识 AI (Self-Awareness AI)</td>
+<td style="text-align: left;">拥有自我意识和自我理解，能独立思考决策（<em>理论概念</em>）。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="第二部分发展简史">第二部分：发展简史</h2>
+<h3 id="早期思想与概念诞生-1921-1956">早期思想与概念诞生 (1921-1956)</h3>
 <ul>
-<li>监督学习（Supervised Learning）</li>
-<li>非监督学习（Unsupervised Learning）</li>
-<li>强化学习（Reinforcement Learning）</li>
+<li><strong>1921 年</strong>：捷克作家卡雷尔·恰佩克在其科幻剧中首次提出 <strong>“机器人”</strong> (Robot) 的概念。</li>
+<li><strong>1949 年</strong>：信息论之父 <strong>克劳德·香农</strong> 发表《编写计算机下棋程序》，表明计算机可用于复杂的逻辑推理。</li>
+<li><strong>1950 年</strong>：<strong>艾伦·图灵</strong> 发表《计算机与智能》，提出 <strong>“模仿游戏”</strong>，即后来的 <strong>“图灵测试”</strong>，用以判断机器是否能够思考。</li>
+<li><strong>1956 年</strong>：在达特茅斯夏季会议上，<strong>约翰·麦卡锡</strong> 首次提出 <strong>“人工智能”</strong> 这一术语，标志着 AI 作为一个独立研究领域的诞生。</li>
 </ul>
-<h4 id="监督学习">监督学习</h4>
-<p>监督学习是通过已标注的数据集来训练模型，使其能够预测新的、未见过的数据。常见的监督学习算法包括线性回归、逻辑回归、支持向量机（SVM）、决策树和随机森林等。</p>
-<h5 id="分类问题">分类问题</h5>
-<p>给很多样本，输出类别标签</p>
-<p>比如识别水果</p>
-<h4 id="回归问题">回归问题</h4>
-<p>输出的是连续值，比如股票预测</p>
-<h4 id="非监督学习">非监督学习</h4>
-<p>被提供了一组输入数据，但是没有对应的输出</p>
-<p>模型使用相似度度量方法来发现数据的分组/聚类</p>
-<p>比如对数据进行分类</p>
-<h4 id="强化学习">强化学习</h4>
-<p>学习从状态到动作的映射，以最大限度地提高<strong>长期奖励</strong></p>
+<h3 id="第一个夏天与寒冬-1957-1980s">第一个夏天与寒冬 (1957-1980s)</h3>
+<ul>
+<li><strong>AI 的第一个夏天 (1957-1973)</strong>：
+<ul>
+<li><strong>1957 年</strong>：弗兰克·罗森布拉特制造了 <strong>Mark I 感知器</strong>，这是最早的模拟神经网络之一，为现代神经网络奠定了基础。</li>
+<li><strong>1958 年</strong>：约翰·麦卡锡开发了 AI 研究的高级编程语言 <strong>Lisp</strong>。</li>
+<li><strong>1965 年</strong>：诞生了历史上第一个对话模型 <strong>ELIZA</strong>，可以模仿心理治疗师与人对话。</li>
+</ul></li>
+<li><strong>AI 的第一个寒冬 (1970 年代)</strong>：
+<ul>
+<li>由于 <strong>计算能力不足</strong> 和 <strong>数据存储限制</strong>，AI 研究进展缓慢，经费被削减，发展陷入停滞。</li>
+</ul></li>
+</ul>
+<h3 id="复苏与第二个寒冬-1980s-1990s">复苏与第二个寒冬 (1980s-1990s)</h3>
+<ul>
+<li><strong>专家系统的兴起 (1980 年代初)</strong>：爱德华·费根鲍姆引入了 <strong>专家系统</strong>，它能模仿人类专家的决策过程，在商业上取得成功，推动了 AI 的再次发展。</li>
+<li><strong>AI 的第二个寒冬 (1987-1990 年代中期)</strong>：专家系统维护成本高昂且无法“学习”，市场最终崩溃。“人工智能”一词成为禁忌，研究者转向使用 <strong>“机器学习”</strong> 等术语。</li>
+</ul>
+<h3 id="现代-ai-的崛起-1997-至今">现代 AI 的崛起 (1997-至今)</h3>
+<ul>
+<li><strong>1997 年</strong>：IBM 的 <strong>“深蓝”</strong> (Deep Blue) 计算机击败国际象棋世界冠军卡斯帕罗夫，展示了强大的计算能力。</li>
+<li><strong>2006 年</strong>：杰弗里·辛顿提出 <strong>“深度置信网络”</strong>，解决了神经网络训练中的梯度消失问题，开启了现代深度学习的时代。</li>
+<li><strong>2012 年</strong>：<strong>AlexNet</strong> 在 ImageNet 图像识别竞赛中取得压倒性胜利，标志着深度学习开始广泛进入人们的视野。</li>
+<li><strong>2016 年</strong>：DeepMind 开发的 <strong>AlphaGo</strong> 击败世界围棋冠军李世石，证明了 AI 在复杂决策任务上的巨大潜力。</li>
+<li><strong>2022 年</strong>：OpenAI 发布 <strong>ChatGPT</strong>，引发了全球对生成式 AI 的关注。</li>
+<li><strong>未来展望</strong>：
+<ol type="1">
+<li>从 AI 大模型迈向通用人工智能 (AGI)。</li>
+<li>利用合成数据打破训练数据瓶颈。</li>
+<li>量子计算机与 AI 的结合。</li>
+<li>提升 AI 在关键场景下的可靠性与可解释性。</li>
+<li>重视 AI 带来的伦理问题。</li>
+</ol></li>
+</ul>
+<h2 id="第三部分重要概念">第三部分：重要概念</h2>
+<h3 id="ai-领域的核心组成部分">AI 领域的核心组成部分</h3>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">组成部分</th>
+<th style="text-align: left;">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>神经网络</strong></td>
+<td style="text-align: left;">利用多层结构进行数据分析。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>机器学习</strong></td>
+<td style="text-align: left;">让计算机从数据中学习和改进。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>深度学习</strong></td>
+<td style="text-align: left;">模仿人脑结构的计算模型，是机器学习的高级分支。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>认知计算</strong></td>
+<td style="text-align: left;">模拟人类思维进行交互。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>计算机视觉</strong></td>
+<td style="text-align: left;">使计算机理解和解释视觉信息。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>自然语言处理</strong></td>
+<td style="text-align: left;">理解和生成人类语言文本。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="神经网络-neural-network-nn">神经网络 (Neural Network, NN)</h3>
+<p>神经网络通过模仿人类大脑的结构和特征来进行计算。</p>
+<ul>
+<li><strong>单个神经元</strong>：是神经网络的基本单元。它接收多个输入信号，通过加权求和与激活函数处理后，产生一个输出信号。 <span class="math display">\[
+a = \sum w_i x_i, \quad y = \sigma(a)
+\]</span></li>
+<li><strong>网络结构</strong>：一个完整的神经网络由许多神经元在不同的层次（输入层、隐藏层、输出层）上相互连接而成，能够执行复杂的任务。</li>
+<li><strong>通用近似定理</strong>：理论上，一个具有足够层数和神经元的神经网络，可以逼近任意给定的连续函数。</li>
+</ul>
+<h3 id="机器学习-machine-learning-ml">机器学习 (Machine Learning, ML)</h3>
+<p>机器学习是实现人工智能的一种核心方法，其本质是让机器具备<strong>寻找一个函数</strong>的能力，“学习”的过程就是确定这个函数中待定系数的过程。</p>
+<h4 id="机器学习的类别">机器学习的类别</h4>
+<ol type="1">
+<li><strong>监督学习 (Supervised Learning)</strong></li>
+<li><strong>非监督学习 (Unsupervised Learning)</strong></li>
+<li><strong>强化学习 (Reinforcement Learning)</strong></li>
+</ol>
+<h4 id="监督学习-vs.-非监督学习">监督学习 vs. 非监督学习</h4>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">特征</th>
+<th style="text-align: left;">监督学习 (Supervised Learning)</th>
+<th style="text-align: left;">非监督学习 (Unsupervised Learning)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>数据</strong></td>
+<td style="text-align: left;">包含输入 <code>x</code> 和对应的标签 <code>y</code>，即 <span class="math inline">\((x, y)\)</span></td>
+<td style="text-align: left;">只包含输入 <code>x</code>，没有标签</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>目标</strong></td>
+<td style="text-align: left;">学习一个从输入到输出的映射函数 <span class="math inline">\(x \to y\)</span></td>
+<td style="text-align: left;">学习数据潜在的分布和特征</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>示例</strong></td>
+<td style="text-align: left;"><strong>分类</strong>（如水果识别）、<strong>回归</strong>（如房价预测）</td>
+<td style="text-align: left;"><strong>聚类</strong>（如客户分群）、<strong>降维</strong>（如特征提取）</td>
+</tr>
+</tbody>
+</table>
+<h4 id="强化学习-reinforcement-learning">强化学习 (Reinforcement Learning)</h4>
+<p>强化学习是一种<strong>从与环境的互动中学习</strong>的范式。</p>
+<ul>
+<li>智能体 (Agent) 在特定状态 (State) 下采取行动 (Action)。</li>
+<li>环境 (Environment) 根据行动给予奖励 (Reward)。</li>
+<li>智能体的目标是学习一个策略，以<strong>最大化长期累积奖励</strong>。</li>
+<li><em>AlphaGo</em> 就是强化学习的经典应用案例。</li>
+</ul>
+<h3 id="深度学习-deep-learning-dl">深度学习 (Deep Learning, DL)</h3>
+<p>深度学习是机器学习的一个高级分支，它利用<strong>深层神经网络</strong>（包含多个隐藏层）来处理数据和任务。</p>
+<ul>
+<li><strong>与传统机器学习的区别</strong>：
+<ul>
+<li><strong>传统机器学习</strong>：特征提取和分类是独立的步骤，通常需要人为干预和设计。</li>
+<li><strong>深度学习</strong>：特征提取和分类是一个集成的过程，由深层神经网络自动完成，特别适合处理大规模、高维度的数据。</li>
+</ul></li>
+</ul>
 <h2 id="传统人工智能技术">传统人工智能技术</h2>
 <h3 id="知识表示">知识表示</h3>
 <p>将显示世界的知识和信息以</p>
