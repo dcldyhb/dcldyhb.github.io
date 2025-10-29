@@ -45,7 +45,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509262128874.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509271638306.png">
 <meta property="article:published_time" content="2025-09-17T00:01:00.000Z">
-<meta property="article:modified_time" content="2025-10-28T03:06:07.588Z">
+<meta property="article:modified_time" content="2025-10-29T00:21:45.657Z">
 <meta property="article:author" content="东川路第一寒冰">
 <meta property="article:tag" content="能源化学">
 <meta property="article:tag" content="课程笔记">
@@ -245,7 +245,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          5.9k 字
+          6.7k 字
         
       </span>
     
@@ -256,7 +256,7 @@
         
         
         
-          50 分钟
+          56 分钟
         
       </span>
     
@@ -788,12 +788,82 @@ Gemini 谈本征激发
 <h4 id="化学平衡常数">化学平衡常数</h4>
 <p>在<strong>等温等压、无非膨胀功</strong>的条件下，反应方向由 <span class="math inline">\((\Delta_r G_m)_{T,p}\)</span> 决定：</p>
 <ul>
-<li><span class="math inline">\((\Delta_r G_m)_{T,p} &lt; 0\)</span> ：反应自发正向进行。</li>
-<li><span class="math inline">\((\Delta_r G_m)_{T,p} = 0\)</span> ：反应达到平衡，达到反应的最大限度。</li>
-<li><span class="math inline">\((\Delta_r G_m)_{T,p} &gt; 0\)</span> ：逆反应是自发的。</li>
+<li><span class="math inline">\((\Delta_r G_m)_{T,p} &lt; 0\)</span> ：反应自发正向进行</li>
+<li><span class="math inline">\((\Delta_r G_m)_{T,p} = 0\)</span> ：反应达到平衡，达到反应的最大限度</li>
+<li><span class="math inline">\((\Delta_r G_m)_{T,p} &gt; 0\)</span> ：逆反应是自发的</li>
+</ul>
+<h3 id="多组分系统的化学势">多组分系统的化学势</h3>
+<h4 id="多组分系统的热力学和化学势">多组分系统的热力学和化学势</h4>
+<h5 id="偏摩尔量">偏摩尔量：</h5>
+<p>对于一多组分均相体系 <span class="math inline">\(Z=Z(T,p,n_1,n_2,\ldots , n_k)\)</span></p>
+<p><span class="math display">\[
+\mathrm{d}Z=\left(\frac{\partial Z}{\partial T}\right)_{P,n}\ \mathrm{d}T + \left(\frac{\partial Z}{\partial p}\right)_{T,n}\ \mathrm{d}p+\sum_{B=1}^k\left(\frac{\partial Z}{\partial n_B}\right)_{T,p,n_c(C\neq B)}\ \mathrm{d} n_B
+\]</span></p>
+<p>令 <span class="math inline">\(\displaystyle Z_{B,M}=\left(\frac{\partial Z}{\partial n_B}\right)_{T,p,n_c(C\neq B)}\)</span>，则其表示在恒温恒压条件下体系组成不变时，加入 <span class="math inline">\(1\ \text{mol}\)</span> 物质 B 引发体系某一容量性质 <span class="math inline">\(Z\)</span> 的改变</p>
+<p>根据偏摩尔量的定义，我们可以得到偏摩尔吉布斯自由能</p>
+<p><span class="math display">\[
+\left( \frac{\partial G}{\partial n_B} \right)_{T,p,n_c(C \neq B)} = \left( \frac{\partial H}{\partial n_B} \right)_{T,p,n_c(C \neq B)} - T \left( \frac{\partial S}{\partial n_B} \right)_{T,p,n_c(C \neq B)}
+\]</span></p>
+<p>即</p>
+<p><span class="math display">\[
+G_{B,m} = H_{B,m} - TS_{B,m}
+\]</span></p>
+<h5 id="吉布斯-杜亥姆公式">吉布斯-杜亥姆公式</h5>
+<p>对于一个多组分系统，其<strong>总的容量性质</strong>（如体积 <span class="math inline">\(V\)</span>、内能 <span class="math inline">\(U\)</span>、焓 <span class="math inline">\(H\)</span>、吉布斯自由能 <span class="math inline">\(G\)</span>）是系统中<strong>各个组分的偏摩尔量之和</strong></p>
+<p>以系统的内能和焓为例</p>
+<p><span class="math display">\[
+\begin{aligned}
+U=\sum_Bn_BU_{B,m}\\
+H=\sum_Bn_BH_{B,m}
+\end{aligned}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(U_{B,m}\)</span> 和 <span class="math inline">\(H_{B,m}\)</span> 分别为溶液中组分的偏摩尔内能和偏摩尔焓</li>
+</ul>
+<p>吉布斯-杜亥姆公式指明了不同组分间的关系</p>
+<p><span class="math display">\[
+\begin{aligned}
+0 = \sum_{B} n_B \mathrm{d}V_B\\
+0 = \sum_{B} n_B \mathrm{d}X_B
+\end{aligned}
+\]</span></p>
+<p>表明在恒温、恒压下，溶液中各组分的偏摩尔量（如偏摩尔体积 <span class="math inline">\(V_B\)</span> 或任意偏摩尔量 <span class="math inline">\(X_B\)</span>）的变化不是相互独立的。如果一个组分的偏摩尔量发生变化，其他组分的偏摩尔量也必须相应地变化，以保持总和关系为零</p>
+<h4 id="化学势">化学势</h4>
+<p><span class="math display">\[
+\mu_B=\left( \frac{\partial U}{\partial n_B} \right)_{S,V,n_c(C \neq B)}
+\]</span></p>
+<p>化学势为保持体系熵、提及及其他组分物质的量不变的条件下，向体系中加入 <span class="math inline">\(1\ \text{mol}\)</span> 组分 B 时所引起的内能变化</p>
+<p>揭示了化学势的本质为物质增加导致系统能量变化的趋势</p>
+<p>并且通过定义可以得到化学势的等效表达</p>
+<p><span class="math display">\[
+\mu_B = \left(\frac{\partial U}{\partial n_B}\right)_{S,V,n_c} = \left(\frac{\partial H}{\partial n_B}\right)_{S,p,n_c} = \left(\frac{\partial A}{\partial n_B}\right)_{T,V,n_c} = \left(\frac{\partial G}{\partial n_B}\right)_{T,p,n_c}
+\]</span></p>
+<h5 id="多相系统中">多相系统中</h5>
+<p>对于包含多个相（例如，固相、液相、气相，用 <span class="math inline">\(\alpha\)</span> 表示）的系统，热力学基本方程需要对所有组分 B 在所有相 <span class="math inline">\(\alpha\)</span> 中进行求和</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;\mathrm{d}U=T\ \mathrm{d}S-p\ \mathrm{d}V\\
+&amp;\mathrm{d}H=T\ \mathrm{d}S+V\ \mathrm{d}p\\
+&amp;\mathrm{d}A=-S\ \mathrm{d}T-p\ \mathrm{d}V\\
+&amp;\mathrm{d}G=-S\ \mathrm{d}T+V\ \mathrm{d}p
+\end{aligned}
++\sum_\alpha\sum_B\mu_B(\alpha)\ \mathrm{d}{n_B(\alpha)}
+\]</span></p>
+<p>则多个相中的化学势为</p>
+<p><span class="math display">\[
+\mu_B = \left(\frac{\partial G}{\partial n_B}\right)_{T,p,n_c} = G_{B,m} \quad (J \cdot mol^{-1})
+\]</span></p>
+<p>恒温恒压下，组分 B 的化学势等于其偏吉布斯自由能</p>
+<h3 id="相平衡">相平衡</h3>
+<h4 id="相基本概念">相基本概念</h4>
+<ul>
+<li>系统中宏观上化学组成、物理和化学性质完全均匀的部分</li>
+<li>相之间有明显的界面，界面上宏观性质改变巨大</li>
+<li>相数：<span class="math inline">\(\Phi\)</span></li>
 </ul>
 <h2 id="能源化学动力学">能源化学动力学</h2>
-<h3 id="化学动力学基础">化学动力学基础</h3>
+<h3 id="化学">化学</h3>
+<h3 id="动力学基础">动力学基础</h3>
 <p>将时间作为变量之一，考察化学反应随时间的变化过程和其中的规律</p>
 <p>任务</p>
 <ol type="1">
