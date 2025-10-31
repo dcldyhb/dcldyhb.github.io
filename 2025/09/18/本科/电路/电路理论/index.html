@@ -1,0 +1,1554 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/avatar.jpg">
+  <link rel="icon" href="/img/avatar.jpg">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="东川路第一寒冰">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="基本概念和基本规律 电路和电路模型 实际电路与电路模型 电路：由电的器件相互联接所构成的电流的通路复杂的电路又称网络  实际电路在数学上难以精确描述 在电路理论中通过对实际电路进行建模来研究，称为电路（模型）  实际电路的符号表示 在电路理论中将电阻器、电容器、灯泡、晶体管、变压器等实际器件用理想的模型符号表示  电路模型图 将实际电路中各个部件用其模型符号表示而画出的图形，也简称为电路 集中参数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="电路理论">
+<meta property="og:url" content="http://dcldyhb.github.io/2025/09/18/%E6%9C%AC%E7%A7%91/%E7%94%B5%E8%B7%AF/%E7%94%B5%E8%B7%AF%E7%90%86%E8%AE%BA/index.html">
+<meta property="og:site_name" content="东川路第一寒冰的笔记">
+<meta property="og:description" content="基本概念和基本规律 电路和电路模型 实际电路与电路模型 电路：由电的器件相互联接所构成的电流的通路复杂的电路又称网络  实际电路在数学上难以精确描述 在电路理论中通过对实际电路进行建模来研究，称为电路（模型）  实际电路的符号表示 在电路理论中将电阻器、电容器、灯泡、晶体管、变压器等实际器件用理想的模型符号表示  电路模型图 将实际电路中各个部件用其模型符号表示而画出的图形，也简称为电路 集中参数">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509161514892.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509181637685.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509181637170.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509182234452.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509231617221.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509232012869.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509232042644.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509232043602.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509281441930.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509281441692.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509281449832.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509281639037.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509281648696.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509301603886.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509282039348.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509301607505.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509301610913.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509301611130.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509301612676.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509301616439.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509301615439.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510121351055.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510121359212.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510121415625.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510121422226.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510121436901.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510121438101.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510121454488.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510121531031.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/%E7%94%B5%E8%B7%AF%E5%88%86%E7%B1%BB.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510131640951.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510131640923.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510131644307.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510131651915.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510131658545.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510131700677.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510131701575.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510131702125.png">
+<meta property="article:published_time" content="2025-09-18T05:16:59.000Z">
+<meta property="article:modified_time" content="2025-10-31T03:58:24.099Z">
+<meta property="article:author" content="东川路第一寒冰">
+<meta property="article:tag" content="课程笔记">
+<meta property="article:tag" content="电路">
+<meta property="article:tag" content="电路理论">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509161514892.png">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>电路理论 - 东川路第一寒冰的笔记</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"dcldyhb.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.jpeg","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>哦耶</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="电路理论"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-09-18 13:16" pubdate>
+          2025年9月18日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          5.8k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          49 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">电路理论</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="基本概念和基本规律">基本概念和基本规律</h2>
+<h3 id="电路和电路模型">电路和电路模型</h3>
+<h4 id="实际电路与电路模型">实际电路与电路模型</h4>
+<p>电路：由电的器件相互联接所构成的电流的通路复杂的电路又称<strong>网络</strong></p>
+<ul>
+<li>实际电路在数学上难以精确描述</li>
+<li>在电路理论中通过对实际电路进行建模来研究，称为<strong>电路（模型）</strong></li>
+</ul>
+<h5 id="实际电路的符号表示">实际电路的符号表示</h5>
+<p>在电路理论中将电阻器、电容器、灯泡、晶体管、变压器等实际器件用理想的模型符号表示</p>
+<p><img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509161514892.png" srcset="/img/loading.jpeg" lazyload /></p>
+<h5 id="电路模型图">电路模型图</h5>
+<p>将实际电路中各个部件用其模型符号表示而画出的图形，也简称为电路</p>
+<h4 id="集中参数电路">集中参数电路</h4>
+<p>集中参数元件：当实际电路的尺寸远小于其使用时电磁量的最高工作频率所对应的波长时，可以不必考虑电磁量的空间分布，相应的电路元件称为<strong>集中参数元件</strong></p>
+<p>集中参数电路：由集中参数元件组成的电路集中参数电路可以看成电磁空间的一个点，电路变量是时间的函数</p>
+<p>分布参数电路：电路变量是时间、空间的函数</p>
+<p>我们在分析分布参数电路时，可以将其拆分为多个集中参数电路来分析</p>
+<h5 id="满足集中化条件的电路的性质">满足集中化条件的电路的性质</h5>
+<ol type="1">
+<li><span class="math inline">\(\forall t\)</span>，流入二端集中参数元件任一端的电流等于从另一端流出的电流，且该元件两个端点上的电位均为确定值（对选定的基准点或称参考点而言）</li>
+<li><span class="math inline">\(\forall t\)</span>，流入多端集中参数元件任一端点的电流等于从其他端点流出电流之和，且其任一端点上的电位均为确定值（对选定的基准点而言）</li>
+</ol>
+<h3 id="电路变量">电路变量</h3>
+<p>电路分析中最常用的电路变量为电流、电压及功率</p>
+<h4 id="电流及其参考方向">电流及其参考方向</h4>
+<h5 id="电流">电流</h5>
+<p>电流即电流强度</p>
+<p><span class="math display">\[
+i(t)=\frac{\mathrm{d}q}{\mathrm{d}t}
+\]</span></p>
+<p>直流：若 <span class="math inline">\(i(t)\)</span> 恒为常数，称为恒定（直流）电流，常用 <span class="math inline">\(I\)</span> 表示</p>
+<ul>
+<li>广义的直流指的是单向流动的电流</li>
+</ul>
+<p>单位：安培 <span class="math inline">\(A\)</span>，<span class="math inline">\(1A = 1C/s\)</span></p>
+<h5 id="电流参考方向">电流参考方向</h5>
+<p>实际方向：正电荷运动的方向</p>
+<p>参考方向：假定为正电荷运动的方向</p>
+<p>我们规定：若两者方向一致，电流为正，反之电流为负</p>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509181637685.png" srcset="/img/loading.jpeg" lazyload alt="正电流" /><figcaption aria-hidden="true">正电流</figcaption>
+</figure>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509181637170.png" srcset="/img/loading.jpeg" lazyload alt="负电流" /><figcaption aria-hidden="true">负电流</figcaption>
+</figure>
+<h4 id="电压及其参考方向">电压及其参考方向</h4>
+<p>电压是电路之中两点的电位差，用 <span class="math inline">\(u\)</span> 表示</p>
+<p><span class="math display">\[
+u(t)=\frac{\mathrm{d}w}{\mathrm{q}}
+\]</span></p>
+<p>单位为伏特 <span class="math inline">\(V\)</span>，<span class="math inline">\(1V=1J/C\)</span></p>
+<p>电压的实际方向为电位实际降低的方向 电压的参考方向为电位假定降低的方向</p>
+<p>关联参考方向：电流的流向是从电压的“+”极流向 “-” 极为关联参考方向</p>
+<h4 id="功率和能量">功率和能量</h4>
+<p>定义：电场力做功的速率，取关联参考方向，一段支路吸收的功率为</p>
+<p><span class="math display">\[
+p = \frac{\mathrm{d}w}{\mathrm{d}t}=\frac{\mathrm{d}w}{\mathrm{d}q}\cdot \frac{\mathrm{d}q}{\mathrm{d}t}=u\cdot i
+\]</span></p>
+<p>非关联参考方向时</p>
+<p><span class="math display">\[
+p = -u\cdot i
+\]</span></p>
+<p>功率是标量</p>
+<ul>
+<li><span class="math inline">\(p&gt;0\)</span>，支路吸收功率</li>
+<li><span class="math inline">\(p&lt;0\)</span>，支路输出功率</li>
+</ul>
+<p>这里的吸收和输出是相对于电路中的正电荷而言的</p>
+<h3 id="拓扑约束关系">拓扑约束关系</h3>
+<h4 id="图论基础知识">图论基础知识</h4>
+<h5 id="图">图</h5>
+<ul>
+<li>一组节点和一组支路的集合，且每条支路的两端终止在两个节点上网络图通常用符号 G 记之</li>
+<li>画图：将网络转化为图时，将支路用线段表示，支路间的连接用点表示</li>
+</ul>
+<h6 id="连通图">连通图</h6>
+<p>在图 G 中的任意两节点之间至少存在一条由支路构成的路径，则称该图为连通图，否则为非连通图</p>
+<h6 id="有向图">有向图</h6>
+<p>图中的每一条支路规定一个方向所得到的图</p>
+<h6 id="子图">子图</h6>
+<p>设有一图 <span class="math inline">\(G\)</span>，又有一图 <span class="math inline">\(G_i\)</span>，其每个节点都是 <span class="math inline">\(G\)</span> 中的节点，每条支路是 <span class="math inline">\(G\)</span> 中的支路，则称 <span class="math inline">\(G_i\)</span> 是 <span class="math inline">\(G\)</span> 的子图</p>
+<h6 id="回路">回路</h6>
+<p>回路是一条闭合的路经图 <span class="math inline">\(G\)</span> 的子图 <span class="math inline">\(G_1\)</span> 是回路，则有</p>
+<ol type="1">
+<li><span class="math inline">\(G_1\)</span> 是联通的</li>
+<li><span class="math inline">\(G_1\)</span> 中与每个节点关联的支路数都是 <span class="math inline">\(2\)</span></li>
+</ol>
+<h6 id="网孔">网孔</h6>
+<p>网孔是图中不包含其他回路的最小回路</p>
+<h6 id="树">树</h6>
+<p>树是图的一个子图，满足</p>
+<ol type="1">
+<li>包含图中所有节点</li>
+<li>是联通的</li>
+<li>不包含回路</li>
+</ol>
+<p>构成树的各支路称为树支，数量为 <span class="math inline">\(N-1\)</span>，其中 <span class="math inline">\(N\)</span> 为图中节点数</p>
+<p>其余的支路为连支</p>
+<p>连支的集合为余树或者补树</p>
+<h6 id="基本回路">基本回路</h6>
+<p>在图 <span class="math inline">\(G\)</span> 中，任选一棵树 <span class="math inline">\(T\)</span>，则每一条连枝与树 <span class="math inline">\(T\)</span> 中的某些树支一起构成一个回路，这个回路称为<strong>基本回路</strong></p>
+<p>基本回路数 <span class="math inline">\(=b-n+1\)</span>，其中 <span class="math inline">\(b\)</span> 为图中支路数，<span class="math inline">\(n\)</span> 为图中节点数</p>
+<h6 id="平面图">平面图</h6>
+<p><img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509182234452.png" srcset="/img/loading.jpeg" lazyload /></p>
+<p>设一图 <span class="math inline">\(G\)</span>，若将其花在平面上，且各支路仅在节点处相交，则称该图为平面图</p>
+<details closed>
+<summary>
+看看 Gemimi 给出的解释？
+</summary>
+<p>
+<strong>生成树的概念</strong>
+</p>
+<p>
+我们将图想象为一个地图，地图上有多个村庄（节点）
+</p>
+<p>
+现在，想象一下你要为这张城市地图规划一个紧急电话网络，你需要用最少的电话线连接所有的城市，并且不能形成任何的闭合环路（否则会造成信号干扰）这个只包含必要线路、连接了所有城市且没有环路的网络，就是这张图的一棵“生成树”
+</p>
+<p>
+<strong>什么是基本回路？</strong>
+</p>
+<p>
+理解了生成树之后，基本回路就很容易明白了
+</p>
+<ol>
+<li>
+<strong>选择一棵生成树</strong>： 对于一个图，我们先选定一棵生成树。这棵树连接了所有的顶点，但自身没有任何环路
+</li>
+<li>
+<strong>添加“冗余”的边</strong>： 图中除了生成树包含的边之外，通常还会有一些其他的“冗余”边
+</li>
+<li>
+<strong>形成唯一的环路</strong>： 当你从这些“冗余”边中任意选择一条，并把它添加回生成树中时，必然会形成一个且仅有一个闭合的环路
+</li>
+</details>
+<h6 id="割集和基本割集">割集和基本割集</h6>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/orzlsw/p/18561798">相关资料</a></p>
+<p>连通图 <span class="math inline">\(G\)</span> 的割集是一组不包括节点的支路集合，其满足</p>
+<ol type="1">
+<li>若移去该集的所有支路，则 G 成为两个独立的部分</li>
+<li>若保留其中任一支路不去掉，剩下的图仍是连通的</li>
+</ol>
+<p>基本割集：</p>
+<ul>
+<li>对于任意连通图 <span class="math inline">\(G\)</span>，选定一个树，将仅包含一条树支的割集称为基本割集</li>
+<li>基本割集数为 <span class="math inline">\(𝑛−1\)</span></li>
+</ul>
+<details>
+<summary>
+看看 Gemimi 给出的解释？
+</summary>
+<p>
+<strong>什么是割集？</strong>
+</p>
+<p>
+想象一下，为了进行道路维护，你需要临时封闭一些道路，目的是把一个由村庄和道路组成的网络<b>分割成两个独立的区域</b>，让这两个区域的村民暂时无法互相往来
+</p>
+<p>
+<b>割集</b>就是能达到这个目的的一组道路这组道路需要满足两个条件：
+</p>
+<ol>
+<li>
+<b>分割网络</b>：当你封闭了这组道路后，整个网络被分成了两个部分
+</li>
+<li>
+<b>最小性</b>：在这组封闭的道路里，任何一条道路重新开放，都会让这两个区域重新连接起来也就是说，你封闭的道路数量不多不少，恰好能完成分割任务
+</li>
+</ol>
+<p>
+<b>通俗比喻：</b><br> 假设你要把村庄分成“山南”和“山北”两个区域所有直接连接山南和山北的道路集合，就是一个割集移走这个集合里的所有道路，两个区域就彻底分开了但只要有一条路没被移走，两个区域之间就还能通行
+</p>
+<hr>
+<p>
+<strong>什么是基本割集？</strong>
+<p>
+要理解基本割集，我们首先需要一个“骨干网络”的概念，在图论里，这叫做<b>“生成树” (Spanning Tree)</b>
+</p>
+<ul>
+<li>
+<b>生成树</b>：你可以把它想象成连接所有村庄的<b>最核心、<a title="这个似乎是最小生成树的概念？编者注">最经济</a></b>的道路网络这个网络能确保每个村庄都能到达其他任何村庄，但又<b>没有任何多余的环路</b>那些不属于这个骨干网络的道路，我们可以称之为“乡间小道”（在图论里叫<b>弦</b>）
+</li>
+</ul>
+<p>
+现在，<b>基本割集</b>就是一种特殊的割集，它是<b>围绕骨干网络的一条核心道路</b>来定义的它的构成如下：
+</p>
+<ul>
+<li>
+从你的“骨干网络”（生成树）里，<b>任选一条核心道路</b>
+</li>
+<li>
+这个基本割集就由这条<b>核心道路</b>和所有能够<b>“跨接”</b>这条核心道路被切断后所形成的两个区域的<b>“乡间小道”</b>（弦）组成
+</li>
+</ul>
+<p>
+<b>通俗比喻：</b>
+</p>
+<ol>
+<li>
+你先规划出一个连接所有村庄的骨干路网（生成树），确保没有环路
+</li>
+<li>
+现在，你选择骨干路网中的<b>一条路</b>（比如连接村A和村B的主干道）进行封闭
+</li>
+<li>
+这一下，村庄网络被分成了两部分（一部分包含村A，另一部分包含村B）
+</li>
+<li>
+除了你刚才封闭的那条主干道，可能还有一些“乡间小道”也连接着这两部分
+</li>
+<li>
+那么，<b>刚才那条主干道</b> + <b>所有连接这两部分的乡间小道</b>，就共同组成了一个“基本割集”
+</li>
+</ol>
+<p>
+这个基本割集的特点是，它<b>有且仅有一条来自骨干网络的道路</b>
+</p>
+<hr>
+<strong>两者总结与区别</strong>
+<table border="1" style="width:100%; border-collapse: collapse;">
+<thead>
+<tr>
+<th style="padding: 8px; text-align: left; background-color: #f2f2f2;">
+特性
+</th>
+<th style="padding: 8px; text-align: left; background-color: #f2f2f2;">
+割集 (Cut Set)
+</th>
+<th style="padding: 8px; text-align: left; background-color: #f2f2f2;">
+基本割集 (Fundamental Cut Set)
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="padding: 8px;">
+<b>定义</b>
+</td>
+<td style="padding: 8px;">
+任何能将网络分成两部分，且自身是最小的道路集合
+</td>
+<td style="padding: 8px;">
+一种特殊的割集，它与一个预先定义的“骨干网络”（生成树）相关
+</td>
+</tr>
+<tr>
+<td style="padding: 8px;">
+<b>核心</b>
+</td>
+<td style="padding: 8px;">
+重点在于“<b>分割</b>”这个行为本身
+</td>
+<td style="padding: 8px;">
+重点在于“<b>基于一条骨干道路</b>”的分割
+</td>
+</tr>
+<tr>
+<td style="padding: 8px;">
+<b>数量</b>
+</td>
+<td style="padding: 8px;">
+一个网络中可以有很多个不同的割集
+</td>
+<td style="padding: 8px;">
+数量是确定的，等于你“骨干网络”里道路的数量每一条骨干道路都对应一个唯一的基本割集
+</td>
+</tr>
+</tbody>
+</table>
+<p>
+总而言之，<b>割集</b>是一个更宽泛的概念，就像是说“所有能把村庄分开的封路方案”，而<b>基本割集</b>是一系列更具体、更有规律的“封路方案”，这些方案都是围绕着一个核心的骨干路网来制定的
+</p>
+</details>
+<p>基本割集是单树枝割集，也就是说给定了树的前提下，任何一个基本割集的组成都为一条树支和若干连枝，将树分为互不连通的两部分；确定了删除的树支后所得到的割集是一定的</p>
+<p>基本割集能够保证所取剩下的两块区域都是联通的</p>
+<h4 id="基尔霍夫定律">基尔霍夫定律</h4>
+<h5 id="基尔霍夫电流定律kcl">基尔霍夫电流定律（KCL）</h5>
+<p>对于集总电路的任一节点，在任一时刻流入该节点的电流之和等于流出该节点的电流之和</p>
+<p><span class="math display">\[
+\sum i(t)=0
+\]</span></p>
+<p>对电路的任一割集，KCL 也成立</p>
+<p>对于电路的任意闭合面，KCL 也成立</p>
+<h5 id="基尔霍夫电压定律kvl">基尔霍夫电压定律（KVL）</h5>
+<p>对于集总电路的任一回路，在任一时刻，沿回路的各支路电压的代数和为 <span class="math inline">\(0\)</span></p>
+<p><span class="math display">\[
+\sum u(t)=0
+\]</span></p>
+<h5 id="图论在基尔霍夫定律中的应用">图论在基尔霍夫定律中的应用</h5>
+<p>对于节点数为 <span class="math inline">\(n\)</span>，支路数为 <span class="math inline">\(b\)</span> 的电路，有</p>
+<ol type="1">
+<li>独立的 KCL 方程数为 <span class="math inline">\(n-1\)</span>，即为基本割集数</li>
+<li>独立的 KVL 方程数为 <span class="math inline">\(b-n+1\)</span>，即为基本回路数</li>
+<li>总的独立方程数为 <span class="math inline">\(b\)</span>，等于支路数</li>
+</ol>
+<h5 id="电路方程的独立性和完备性">电路方程的独立性和完备性</h5>
+<h6 id="两类约束">两类约束</h6>
+<ul>
+<li><p>拓扑约束 取决于元件的相互连接方式</p>
+<ul>
+<li>节点电流受 KCL 约束</li>
+<li>回路电压受 KVL 约束</li>
+</ul></li>
+<li><p>元件约束 取决于元件本身的特性 对于有 <span class="math inline">\(b\)</span> 条支路的电路，共有 <span class="math inline">\(2b\)</span> 个电压、电流变量</p>
+<ul>
+<li>VCR 可以得到 <span class="math inline">\(b\)</span> 个方程</li>
+<li>KCL 和 KVL 可以得到 <span class="math inline">\(b\)</span> 个方程</li>
+</ul></li>
+</ul>
+<h4 id="关联矩阵和基尔霍夫定律的矩阵形式">关联矩阵和基尔霍夫定律的矩阵形式</h4>
+<h5 id="关联矩阵">关联矩阵</h5>
+<p>描述电路节点对支路的关联关系的矩阵，为 一个 <span class="math inline">\(n \times b\)</span> 矩阵，记为 <span class="math inline">\(A_a\)</span></p>
+<p>其中</p>
+<p><span class="math display">\[
+a_{ik}=
+\left\{
+    \begin{aligned}
+        &amp;1,&amp;&amp; \text{节点} n_i \text{支路} b_k \text{关联，且电流流出节点} n_i \\
+        &amp;-1,&amp;&amp; \text{节点} n_i \text{支路} b_k \text{关联，且电流流入节点} n_i \\
+        &amp;0,&amp;&amp; \text{节点} n_i \text{支路} b_k \text{不关联}
+    \end{aligned}
+\right.
+\]</span></p>
+<p>举例，下图的关联矩阵为</p>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509231617221.png" srcset="/img/loading.jpeg" lazyload alt="一个电路举例" /><figcaption aria-hidden="true">一个电路举例</figcaption>
+</figure>
+<p><span class="math display">\[
+A_a=
+\begin{bmatrix}
+1 &amp; 1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; -1 &amp; 1 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; -1 &amp; 1 \\
+-1 &amp; 0 &amp; -1 &amp; 0 &amp; -1
+\end{bmatrix}
+\]</span></p>
+<p>可以看出，行对应的是节点，列对应的是支路</p>
+<ul>
+<li><span class="math inline">\(a_{11}=1\)</span>，支路 <span class="math inline">\(1\)</span> 流出节点 <span class="math inline">\(1\)</span></li>
+<li><span class="math inline">\(a_{34}=-1\)</span>，支路 <span class="math inline">\(4\)</span> 流入节点 <span class="math inline">\(3\)</span></li>
+<li><span class="math inline">\(a_{25}=0\)</span>，支路 <span class="math inline">\(5\)</span> 不关联节点 <span class="math inline">\(2\)</span></li>
+</ul>
+<h5 id="基尔霍夫定律的矩阵形式">基尔霍夫定律的矩阵形式</h5>
+<h6 id="kcl-的矩阵形式">KCL 的矩阵形式</h6>
+<p><span class="math display">\[
+A_ai_b=0
+\]</span></p>
+<p>其中 <span class="math inline">\(i_b\)</span> 为支路电流列向量，为一个 <span class="math inline">\(b \times 1\)</span> 矩阵</p>
+<p>矩阵 <span class="math inline">\(A_a\)</span> 的秩为 <span class="math inline">\(n-1\)</span>，即为基本割集数，所以我们将上述 KCL 方程划掉一个，可以得到线性独立的 KCL 方程组，和线性独立的关联矩阵</p>
+<p>我们计划掉任意一行后的矩阵为 <span class="math inline">\(A\)</span>，称为降阶关联矩阵</p>
+<h6 id="kvl-的矩阵形式">KVL 的矩阵形式</h6>
+<p>我们在上图中取节点 <span class="math inline">\(4\)</span> 为参考节点，设 <span class="math inline">\(u_{n_1}\)</span>、<span class="math inline">\(u_{n_2}\)</span>、<span class="math inline">\(u_{n_3}\)</span> 为其他节点电位，<span class="math inline">\(u_1\)</span>、<span class="math inline">\(u_2\)</span>、<span class="math inline">\(u_3\)</span>、<span class="math inline">\(u_4\)</span>、<span class="math inline">\(u_5\)</span> 为各支路电压，则</p>
+<p><span class="math display">\[
+\left\{
+    \begin{aligned}
+        &amp;u_1 = u_{n_1} - 0 \\
+        &amp;u_2 = u_{n_1} - u_{n_2} \\
+        &amp;u_3 = u_{n_2} - 0 \\
+        &amp;u_4 = u_{n_2} - u_{n_3} \\
+        &amp;u_5 = u_{n_3} - 0
+    \end{aligned}
+\right.
+\]</span></p>
+<p>写成矩阵的形式</p>
+<p><span class="math display">\[
+\begin{bmatrix}
+u_1 \\
+u_2 \\
+u_3 \\
+u_4 \\
+u_5
+\end{bmatrix}=
+\begin{bmatrix}
+1 &amp; 0 &amp; 0 \\
+1 &amp; -1 &amp; 0 \\
+0 &amp; 1 &amp; 0 \\
+0 &amp; 1 &amp; -1 \\
+0 &amp; 0 &amp; 1
+\end{bmatrix}
+\begin{bmatrix}
+u_{n_1} \\
+u_{n_2} \\
+u_{n_3}
+\end{bmatrix}
+\]</span></p>
+<p>即</p>
+<p><span class="math display">\[
+u_b = A^Tu_n
+\]</span></p>
+<p><span class="math inline">\(A^T\)</span> 为删除节点 <span class="math inline">\(4\)</span> 得到的降阶关联矩阵的转置</p>
+<h4 id="特勒根定律">特勒根定律</h4>
+<h5 id="形式一功率定理">形式一（功率定理）</h5>
+<p>设集总电路有 <span class="math inline">\(b\)</span> 个元件，<span class="math inline">\(n\)</span> 个节点，并设 <span class="math inline">\(u_1\)</span>, <span class="math inline">\(u_2\)</span>,…, <span class="math inline">\(u_b\)</span> 和 <span class="math inline">\(i_1\)</span>, <span class="math inline">\(i_2\)</span>,…, <span class="math inline">\(i_b\)</span> 为满足 KCL 和 KVL 的支路电压和电流，各元件的电压、电流为关联参考方向，则</p>
+<p><span class="math display">\[
+\sum_{k=1}^b u_ki_k = 0
+\]</span></p>
+<p>电路各元件吸收功率的代数和为 <span class="math inline">\(0\)</span>，即功率守恒</p>
+<h5 id="形式二似功率定理">形式二（似功率定理）</h5>
+<p>设两个结构完全相同的集总电路，它们有 <span class="math inline">\(b\)</span> 个元件，<span class="math inline">\(n\)</span> 个节点，并设 <span class="math inline">\(u_1\)</span>, <span class="math inline">\(u_2\)</span>,…, <span class="math inline">\(u_b\)</span> 和 <span class="math inline">\(i_1\)</span>, <span class="math inline">\(i_2\)</span>,…, <span class="math inline">\(i_b\)</span> 为第一个电路的支路电压和电流，<span class="math inline">\(\hat{u}_1\)</span>, <span class="math inline">\(\hat{u}_2\)</span>,…, <span class="math inline">\(\hat{u}_b\)</span> 和 <span class="math inline">\(\hat{i}_1\)</span>, <span class="math inline">\(\hat{i}_2\)</span>,…, <span class="math inline">\(\hat{i}_b\)</span> 为第二个电路的支路电压和电流，各元件的电压、电流为关联参考方向，则</p>
+<p><span class="math display">\[
+\begin{aligned}
+    &amp; \sum_{k=1}^b u_k(t) \hat{i}_k(t)  = 0 \\
+    &amp; \sum_{k=1}^b u_k(t) \hat{i}_k(t)  = 0 \\
+    &amp; \sum_{k=1}^b u_k(t_1) i_k(t_2)  = 0
+\end{aligned}
+\]</span></p>
+<h3 id="元件约束关系">元件约束关系</h3>
+<p>基本电路变量</p>
+<ul>
+<li>电压 <span class="math inline">\(u\)</span></li>
+<li>电流 <span class="math inline">\(i\)</span></li>
+<li>电荷 <span class="math inline">\(q\)</span></li>
+<li>磁链（或者叫磁通量？） <span class="math inline">\(\psi\)</span></li>
+</ul>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509232012869.png" srcset="/img/loading.jpeg" lazyload alt="基本电路变量之间的转化关系图" /><figcaption aria-hidden="true">基本电路变量之间的转化关系图</figcaption>
+</figure>
+<p>在四个基本变量中任意取两个互相转换可以得到六种关系</p>
+<ul>
+<li><span class="math inline">\(\displaystyle i=\frac{\mathrm{d}q}{\mathrm{d}t}\)</span></li>
+<li><span class="math inline">\(\displaystyle u=\frac{\mathrm{d}\psi}{\mathrm{d}t}\)</span></li>
+<li><span class="math inline">\(\displaystyle u=iR\)</span></li>
+<li><span class="math inline">\(\displaystyle q=C u\)</span></li>
+<li><span class="math inline">\(\displaystyle \psi=Li\)</span></li>
+<li><span class="math inline">\(\displaystyle \psi=qM\)</span></li>
+</ul>
+<p>其中直接关联电荷和磁链的第四类无源电路元件被称为忆阻元件</p>
+<h4 id="电阻元件">电阻元件</h4>
+<p>一个二端元件，若 <span class="math inline">\(\forall t\)</span>，其电压电流关系（Voltage Current Relation, VCR）可唯一地用 <span class="math inline">\(u-i\)</span> 平面上的一条曲线表示出来，该二端元件称为<strong>电阻元件</strong></p>
+<p>由欧姆定律 <span class="math inline">\(u(t)=Ri(t)\)</span> 或者 <span class="math inline">\(i(t)=Gu(t)\)</span> 定义的电阻元件称为线性电阻</p>
+<p>电阻 <span class="math inline">\(R\)</span> 的单位为欧姆 <span class="math inline">\(\Omega\)</span>，<span class="math inline">\(1\Omega = 1V/A\)</span></p>
+<p>电导 <span class="math inline">\(G\)</span> 的单位为西门子 <span class="math inline">\(S\)</span>，<span class="math inline">\(1S = 1\Omega^{-1}\)</span></p>
+<p>对于非线性电阻元件，其 VCR 为非线性曲线</p>
+<p><span class="math display">\[
+\left\{
+    \begin{aligned}
+        u(t) &amp;= f(i(t)) \\
+        i(t) &amp;= g(u(t))
+    \end{aligned}
+\right.
+\]</span></p>
+<p>非线性电阻元件的电阻有<strong>静态电阻</strong>和<strong>动态电阻</strong>两种</p>
+<p>我们可以将非线性电阻的 VCR 处理得到方程</p>
+<p><span class="math display">\[
+h(u,i)=0
+\]</span></p>
+<p>对其作 <span class="math inline">\(t\)</span> 的微分可以得到</p>
+<p><span class="math display">\[
+\left\{
+    \begin{aligned}
+        R=\frac{u}{i}\\
+        R_d=\frac{\mathrm{d}u}{\mathrm{d}i}
+    \end{aligned}
+\right.
+\]</span></p>
+<h4 id="独立电源">独立电源</h4>
+<p>独立电源简称为电源，是电路能量的提供者。特点是端电压或电流不受其他电压或电流的影响</p>
+<h5 id="电压源">电压源</h5>
+<p>为二端元件，其两端电压保持一定的时间函数 <span class="math inline">\(u=u_s\)</span>，称为理想电压源，简称电压源</p>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509232042644.png" srcset="/img/loading.jpeg" lazyload alt="电压源符号" /><figcaption aria-hidden="true">电压源符号</figcaption>
+</figure>
+<p>电压源不可以被看作是一个非线性电阻，其电压是定值但是电流是可以变化的，即 <span class="math inline">\(i\)</span> 可以为任意值</p>
+<p>电压源技术上是可以短路的，但是千万不要这样做</p>
+<h5 id="电流源">电流源</h5>
+<p>为二端元件，其两端电流保持一定的时间函数 <span class="math inline">\(i=i_s\)</span>，称为理想电流源，简称电流源</p>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509232043602.png" srcset="/img/loading.jpeg" lazyload alt="电流源符号" /><figcaption aria-hidden="true">电流源符号</figcaption>
+</figure>
+<p>电流源是可以被看作是一个非线性电阻，其电流是定值但是电压是可以变化的，我们找到了一个 <span class="math inline">\(u\)</span> 时也能确定一个 <span class="math inline">\(i\)</span></p>
+<h5 id="几种典型的独立源信号波形">几种典型的独立源信号波形</h5>
+<h6 id="单位越阶函数-epsilont">单位越阶函数 <span class="math inline">\(\epsilon(t)\)</span></h6>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509281441930.png" srcset="/img/loading.jpeg" lazyload alt="单位越阶函数" /><figcaption aria-hidden="true">单位越阶函数</figcaption>
+</figure>
+<p><span class="math display">\[
+\epsilon(t)=
+\left\{
+    \begin{aligned}
+        &amp;0,&amp;&amp; t&lt;0 \\
+        &amp;1,&amp;&amp; t&gt;0
+    \end{aligned}
+\right.
+\]</span></p>
+<p><strong>延时单位越阶函数</strong></p>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509281441692.png" srcset="/img/loading.jpeg" lazyload alt="延时单位越阶函数" /><figcaption aria-hidden="true">延时单位越阶函数</figcaption>
+</figure>
+<p><span class="math display">\[
+\epsilon(t-t_0)=
+\left\{
+    \begin{aligned}
+        &amp;0,&amp;&amp; t&lt;t_0 \\
+        &amp;1,&amp;&amp; t&gt;t_0
+    \end{aligned}
+\right.
+\]</span></p>
+<h6 id="单位冲激函数-deltat">单位冲激函数 <span class="math inline">\(\delta(t)\)</span></h6>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509281449832.png" srcset="/img/loading.jpeg" lazyload alt="狄拉克函数" /><figcaption aria-hidden="true">狄拉克函数</figcaption>
+</figure>
+<p><span class="math display">\[
+\delta(t)=
+\left\{
+    \begin{aligned}
+        &amp;\delta(t)=0\quad,t \neq 0 \\
+        &amp;\int_{-\infty}^{+\infty} \delta(t) \mathrm{d}t = 1
+    \end{aligned}
+\right.
+\]</span></p>
+<h6 id="正弦波形">正弦波形</h6>
+<p><span class="math display">\[
+f(t)=A_m \sin(\omega t + \varphi)
+\]</span></p>
+<h4 id="受控源">受控源</h4>
+<p>为了电路分析方便，我们构建了受控源元件，包含了两条分路，即控制分录和受控分路，受控分路的电压或电流由控制分路的电压或电流决定</p>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509281639037.png" srcset="/img/loading.jpeg" lazyload alt="ccvs 和 vcvs" /><figcaption aria-hidden="true">ccvs 和 vcvs</figcaption>
+</figure>
+<p>上图中的两个图例</p>
+<ul>
+<li>第一个图例中电阻的电压由电流控制 <span class="math inline">\(u=Ri\)</span></li>
+<li>第二个图例中电阻的电压由另一个电阻的电压控制 <span class="math inline">\(u=\frac{R}{r}u_1\)</span></li>
+</ul>
+<p>根据控制量和被控量的不同，我们将控制源分为四种</p>
+<ul>
+<li>电压控制的电压源（Violtage Controlled Voltage Source, VCVS）</li>
+<li>电压控制的电流源（Violtage Controlled Current Source, VCCS）</li>
+<li>电流控制的电压源（Current Controlled Voltage Source, CCVS）</li>
+<li>电流控制的电流源（Current Controlled Current Source, CCCS）</li>
+</ul>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509281648696.png" srcset="/img/loading.jpeg" lazyload alt="四种控制源" /><figcaption aria-hidden="true">四种控制源</figcaption>
+</figure>
+<h4 id="运算放大器">运算放大器</h4>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509301603886.png" srcset="/img/loading.jpeg" lazyload alt="符号" /><figcaption aria-hidden="true">符号</figcaption>
+</figure>
+<h5 id="符号">符号</h5>
+<h6 id="反相输入端">反相输入端</h6>
+<p>当输入 <span class="math inline">\(u_-\)</span> 单独加于该端时，输入电压和输出电压反相</p>
+<h6 id="同相输入端">同相输入端</h6>
+<p>当输入 <span class="math inline">\(u_+\)</span> 单独加于该端时，输入电压和输出电压同相</p>
+<h6 id="开环增益放大倍数">开环增益（放大倍数）</h6>
+<p>输出电压 <span class="math inline">\(u_0=Au_i=A(u_+-u_-)\)</span>，其中 <span class="math inline">\(A\)</span> 为开环增益，<span class="math inline">\(u_i\)</span> 为输入电压</p>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509282039348.png" srcset="/img/loading.jpeg" lazyload alt="运算放大器的电路符号" /><figcaption aria-hidden="true">运算放大器的电路符号</figcaption>
+</figure>
+<h5 id="输入输出特征">输入输出特征</h5>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509301607505.png" srcset="/img/loading.jpeg" lazyload alt="输入输出特性图" /><figcaption aria-hidden="true">输入输出特性图</figcaption>
+</figure>
+<p>运算放大器的输入输出特性图分为两个区域</p>
+<ol type="1">
+<li><p>线性区</p>
+<p><span class="math display">\[
+u_0 = Au_i=A(u_+-u_-)
+\]</span></p></li>
+<li><p>饱和区(非线性区)</p>
+<p><span class="math display">\[
+u_0 = \pm U_{0(sat)}
+\]</span></p></li>
+</ol>
+<h5 id="电路模型">电路模型</h5>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509301610913.png" srcset="/img/loading.jpeg" lazyload alt="运算放大器电路模型" /><figcaption aria-hidden="true">运算放大器电路模型</figcaption>
+</figure>
+<p><img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509301611130.png" srcset="/img/loading.jpeg" lazyload /></p>
+<h5 id="理想运算放大器">理想运算放大器</h5>
+<p>理想运算放大器满足以下条件</p>
+<ol type="1">
+<li>开环增益 <span class="math inline">\(A \to \infty\)</span></li>
+<li>输入电阻 <span class="math inline">\(R_i \to \infty\)</span></li>
+<li>输出电阻 <span class="math inline">\(R_o = 0\)</span></li>
+</ol>
+<h5 id="输入输出特性">输入输出特性</h5>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509301612676.png" srcset="/img/loading.jpeg" lazyload alt="理想运算放大器的输入输出特性图" /><figcaption aria-hidden="true">理想运算放大器的输入输出特性图</figcaption>
+</figure>
+<h5 id="运算特性">运算特性</h5>
+<ol type="1">
+<li><p>虚断路</p>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509301616439.png" srcset="/img/loading.jpeg" lazyload alt="虚断路" /><figcaption aria-hidden="true">虚断路</figcaption>
+</figure>
+<p>我们认为理想运算放大器的输入端电流为 <span class="math inline">\(0\)</span>，即 <span class="math inline">\(i_+ = i_-\approx 0\)</span></p></li>
+<li><p>虚短路</p>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202509301615439.png" srcset="/img/loading.jpeg" lazyload alt="虚短路" /><figcaption aria-hidden="true">虚短路</figcaption>
+</figure>
+<p>我们认为理想运算放大器的两个输入端电压相等，即 <span class="math inline">\(u_+ = u_-\)</span></p></li>
+</ol>
+<h4 id="理想变压器">理想变压器</h4>
+<p>理想变压器是实际变压器的理想化模型，是双口元件</p>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510121351055.png" srcset="/img/loading.jpeg" lazyload alt="理想变压器符号" /><figcaption aria-hidden="true">理想变压器符号</figcaption>
+</figure>
+<p>其电压电流关系为</p>
+<p><span class="math display">\[
+\left\{
+    \begin{aligned}
+        &amp;u_1=nu_2\\
+        &amp;i_1=-\frac{1}{n}i_2
+    \end{aligned}
+\right.
+\]</span></p>
+<ul>
+<li><span class="math inline">\(n\)</span> 为变比，<span class="math inline">\(n=\frac{N_1}{N_2}\)</span></li>
+</ul>
+<p>当同名端颠倒时</p>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510121359212.png" srcset="/img/loading.jpeg" lazyload alt="同名端颠倒的理想变压器" /><figcaption aria-hidden="true">同名端颠倒的理想变压器</figcaption>
+</figure>
+<p><span class="math display">\[
+\left\{
+    \begin{aligned}
+        &amp;u_1=-nu_2\\
+        &amp;i_1=\frac{1}{n}i_2
+    \end{aligned}
+\right.
+\]</span></p>
+<h5 id="等效模型">等效模型</h5>
+<p>理想变压器可以用受控电源组成的模型来表示</p>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510121415625.png" srcset="/img/loading.jpeg" lazyload alt="理想变压器的等效模型" /><figcaption aria-hidden="true">理想变压器的等效模型</figcaption>
+</figure>
+<h5 id="功率">功率</h5>
+<p>理想变压器时无源元件，它既不储存能量也不消耗能量</p>
+<p><span class="math display">\[
+p=u_1i_1+u_2i_2=nu_2 \cdot \left(-\frac{1}{n}i_2\right)+u_2i_2=0
+\]</span></p>
+<h5 id="阻抗变换性质">阻抗变换性质</h5>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510121422226.png" srcset="/img/loading.jpeg" lazyload alt="阻抗变换图" /><figcaption aria-hidden="true">阻抗变换图</figcaption>
+</figure>
+<p>输出端有一电阻 <span class="math inline">\(R_L\)</span>，则输入端的等效电阻为</p>
+<p><span class="math display">\[
+R_{in}=n^2R_L
+\]</span></p>
+<p>证明：</p>
+<p><span class="math display">\[
+\begin{aligned}
+    &amp;u_2&amp;&amp; =-R_Li_2\\
+    &amp;u_1&amp;&amp; =-nU_2\\
+        &amp;  &amp;&amp; =nR_Li_2\\
+        &amp;  &amp;&amp; =nR_L(ni_1)\\
+        &amp;  &amp;&amp; =n^2R_Li_1
+\end{aligned}
+\]</span></p>
+<h4 id="负回转器">负回转器</h4>
+<p>负回转器时一种双口元件，分为电流反向负回转器（INC）和电压反向负回转器（VNC）</p>
+<h5 id="符号和外特性">符号和外特性</h5>
+<h6 id="电流反向负回转器">电流反向负回转器</h6>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510121436901.png" srcset="/img/loading.jpeg" lazyload alt="电流反向负回转器符号" /><figcaption aria-hidden="true">电流反向负回转器符号</figcaption>
+</figure>
+<p><span class="math display">\[
+\left\{
+    \begin{aligned}
+        &amp;i_1=i_2\\
+        &amp;u_1=u_2
+    \end{aligned}
+\right.
+\]</span></p>
+<ul>
+<li>输出电流方向与输入电流方向相反</li>
+<li>输出电压极性与输入电压极性相同</li>
+</ul>
+<h6 id="电压反向负回转器">电压反向负回转器</h6>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510121438101.png" srcset="/img/loading.jpeg" lazyload alt="电压反向负回转器符号" /><figcaption aria-hidden="true">电压反向负回转器符号</figcaption>
+</figure>
+<p><span class="math display">\[
+\left\{
+\begin{aligned}
+&amp;i_1=-i_2\\
+&amp;u_1=-u_2
+\end{aligned}
+\right.
+\]</span></p>
+<ul>
+<li>输出电流方向与输入电流方向相同</li>
+<li>输出电压极性与输入电压极性相反</li>
+</ul>
+<h5 id="等效模型-1">等效模型</h5>
+<p>我们可以分别使用 CCCS 和 VCVS 来表示 INC 和 VNC</p>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510121454488.png" srcset="/img/loading.jpeg" lazyload alt="INC 和 VNC 的等效模型" /><figcaption aria-hidden="true">INC 和 VNC 的等效模型</figcaption>
+</figure>
+<h5 id="负转换性">负转换性</h5>
+<p>INC 在输出端中有一电阻 <span class="math inline">\(R_L\)</span>，则输入端的等效电阻为</p>
+<p><span class="math display">\[
+R_{in}=-R_L
+\]</span></p>
+<p>证明：</p>
+<p><span class="math display">\[
+u_1=u_2=-i_2R_L=-i_1R_L
+\]</span></p>
+<p>VNC 在输出端中有一电阻 <span class="math inline">\(R_L\)</span>，则输入端的等效电阻为</p>
+<p><span class="math display">\[
+R_{in}=-R_L
+\]</span></p>
+<p>证明：</p>
+<p><span class="math display">\[
+u_1=-u_2=i_2R_L=-i_1R_L
+\]</span></p>
+<h4 id="理想回转器">理想回转器</h4>
+<p>理想回转器是一个双口元件，能够将一个端口的输入电压回转为另一个端口的输出电流</p>
+<h5 id="符号和外特性-1">符号和外特性</h5>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510121531031.png" srcset="/img/loading.jpeg" lazyload alt="理想回转器电路符号" /><figcaption aria-hidden="true">理想回转器电路符号</figcaption>
+</figure>
+<p><span class="math display">\[
+\left\{
+    \begin{aligned}
+        &amp;u_1=-ri_2\\
+        &amp;u_2=ri_1
+    \end{aligned}
+\right.
+\]</span></p>
+<p>或</p>
+<p><span class="math display">\[
+\left\{
+    \begin{aligned}
+        &amp;i_1=gu_2\\
+        &amp;i_2=-gu_1
+    \end{aligned}
+\right.
+\]</span></p>
+<ul>
+<li><span class="math inline">\(r\)</span> 为回转比或回转器电阻</li>
+<li><span class="math inline">\(g\)</span> 为回转器电导</li>
+</ul>
+<h4 id="功率-1">功率</h4>
+<p>理想回转器是无源元件</p>
+<p><span class="math display">\[
+p=u_1i_1+u_2i_2=-ri_2 \cdot gu_2+ri_1 \cdot (-gu_1)=0
+\]</span></p>
+<h2 id="电路分析的基本方法">电路分析的基本方法</h2>
+<p>根据电路所含的元件的性质将电路分类</p>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/%E7%94%B5%E8%B7%AF%E5%88%86%E7%B1%BB.png" srcset="/img/loading.jpeg" lazyload alt="电路分类" /><figcaption aria-hidden="true">电路分类</figcaption>
+</figure>
+<h3 id="电路的等效变换">电路的等效变换</h3>
+<h4 id="等效电路的概念">等效电路的概念</h4>
+<p>如果端钮一一对应的 <span class="math inline">\(n\)</span> 端口电路 <span class="math inline">\(N_1\)</span> 和 <span class="math inline">\(N_2\)</span> 具有相同的端口特性，则两者相互等小，互称等效电路</p>
+<p>等效电路具有以下的性质</p>
+<ul>
+<li>外特性相同 将相同的两组输入电压或者电流分别接入两个电路，则两个电路的输出电压或者电流相同</li>
+<li>内部不同 两个等效电路的内部结构可以完全不同</li>
+</ul>
+<h4 id="常见的等效电路">常见的等效电路</h4>
+<h5 id="电阻串联">电阻串联</h5>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510131640951.png" srcset="/img/loading.jpeg" lazyload alt="串联电阻" /><figcaption aria-hidden="true">串联电阻</figcaption>
+</figure>
+<p><span class="math display">\[
+R=R_1+R_2
+\]</span></p>
+<h5 id="电阻并联">电阻并联</h5>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510131640923.png" srcset="/img/loading.jpeg" lazyload alt="并联电阻" /><figcaption aria-hidden="true">并联电阻</figcaption>
+</figure>
+<p><span class="math display">\[
+G=G_1+G_2
+\]</span></p>
+<p>或</p>
+<p><span class="math display">\[
+\frac{1}{R}=\frac{1}{R_1}+\frac{1}{R_2}
+\]</span></p>
+<h5 id="独立电源串联">独立电源串联</h5>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510131644307.png" srcset="/img/loading.jpeg" lazyload alt="串联独立电压源" /><figcaption aria-hidden="true">串联独立电压源</figcaption>
+</figure>
+<p><span class="math display">\[
+u_s=u_{s_1}+u_{s_2}
+\]</span></p>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510131651915.png" srcset="/img/loading.jpeg" lazyload alt="串联独立电流源" /><figcaption aria-hidden="true">串联独立电流源</figcaption>
+</figure>
+<p><span class="math display">\[
+i&#39;_s=i_{s_1}=i_{s_2}
+\]</span></p>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510131658545.png" srcset="/img/loading.jpeg" lazyload alt="独立电压源与独立电流源串联" /><figcaption aria-hidden="true">独立电压源与独立电流源串联</figcaption>
+</figure>
+<ul>
+<li><span class="math inline">\(u\)</span> 任意</li>
+<li><span class="math inline">\(i&#39;_s=i_s\)</span></li>
+</ul>
+<h5 id="独立电源并联">独立电源并联</h5>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510131700677.png" srcset="/img/loading.jpeg" lazyload alt="并联独立电压源" /><figcaption aria-hidden="true">并联独立电压源</figcaption>
+</figure>
+<p><span class="math display">\[
+u&#39;_s=u_s
+\]</span></p>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510131701575.png" srcset="/img/loading.jpeg" lazyload alt="并联独立电流源" /><figcaption aria-hidden="true">并联独立电流源</figcaption>
+</figure>
+<p><span class="math display">\[
+i_s=i_{s_1}+i_{s_2}
+\]</span></p>
+<figure>
+<img src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202510131702125.png" srcset="/img/loading.jpeg" lazyload alt="独立电压源与独立电流源并联" /><figcaption aria-hidden="true">独立电压源与独立电流源并联</figcaption>
+</figure>
+<ul>
+<li><span class="math inline">\(u&#39;_s=u_s\)</span></li>
+<li><span class="math inline">\(i\)</span> 任意</li>
+</ul>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%9C%AC%E7%A7%91%E8%AF%BE%E7%A8%8B/" class="category-chain-item">本科课程</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E6%9C%AC%E7%A7%91%E8%AF%BE%E7%A8%8B/%E7%94%B5%E8%B7%AF/" class="category-chain-item">电路</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/" class="print-no-link">#课程笔记</a>
+      
+        <a href="/tags/%E7%94%B5%E8%B7%AF/" class="print-no-link">#电路</a>
+      
+        <a href="/tags/%E7%94%B5%E8%B7%AF%E7%90%86%E8%AE%BA/" class="print-no-link">#电路理论</a>
+      
+    </div>
+  
+</div>
+
+
+              
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2025/09/18/%E6%9C%AC%E7%A7%91/%E7%BC%96%E7%A8%8B/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AF%BC%E8%AE%BA/" title="人工智能导论">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">人工智能导论</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/09/17/%E6%9C%AC%E7%A7%91/%E5%8C%96%E5%AD%A6/%E8%83%BD%E6%BA%90%E5%8C%96%E5%AD%A6/" title="能源化学">
+                        <span class="hidden-mobile">能源化学</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
