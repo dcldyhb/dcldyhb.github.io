@@ -27,7 +27,7 @@
 <meta property="og:description" content="自动控制原理 B 导论 概述 自动控制的意义  提高了劳动生产率 提高控制的准确性 可用于某些人们不能直接参与工作的场合  判断一个系统是否为自动控制系统的标准：控制过程脱离人的控制 但是，自动控制系统中仍然有人参与，并非脱离人的设置 自动控制理论的发展 胚芽期（1945 年以前）  18 世纪以后，蒸汽机的使用提出了调速稳定等问题  1765 年，俄国人波尔祖诺夫发明了锅炉水位调节器 1784">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-09-15T10:00:00.000Z">
-<meta property="article:modified_time" content="2025-11-04T12:43:56.043Z">
+<meta property="article:modified_time" content="2025-11-11T02:01:56.266Z">
 <meta property="article:author" content="东川路第一寒冰">
 <meta property="article:tag" content="课程笔记">
 <meta property="article:tag" content="自动控制原理">
@@ -226,7 +226,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          8k 字
+          10k 字
         
       </span>
     
@@ -237,7 +237,7 @@
         
         
         
-          67 分钟
+          87 分钟
         
       </span>
     
@@ -1576,9 +1576,539 @@ e_{ss}=\lim_{s\to 0}sE(s)=\lim_{s\to 0}\frac{s}{1+G(s)H(s)}\cdot
 0}\frac{1}{s^2(1+G(s)H(s))}=\frac{1}{K_a}=\begin{cases}\infty,&amp;N=0\\\infty,&amp;N=1\\\frac{1}{K},&amp;N=2\\0,&amp;N\ge
 3\end{cases}
 \]</span></p>
+<p>稳态误差系数 <span class="math inline">\(\displaystyle K_a=\lim_{s\to
+0}s^2 G(s)H(s)\)</span>（加速度误差系数）</p>
 <ul>
-<li>稳态误差系数 <span class="math inline">\(\displaystyle
-K_a=\lim_{s\to 0}s^2 G(s)H(s)\)</span>（加速度误差系数）</li>
+<li>0 型系统：<span class="math inline">\(K_a=0\)</span></li>
+<li>1 型系统：<span class="math inline">\(K_a=0\)</span></li>
+<li>2 型系统：<span class="math inline">\(K_a=K\)</span>
+<ul>
+<li>输出能跟踪输入加速度信号的变化</li>
+<li>稳态误差大小与开环放大系数 <span class="math inline">\(K\)</span>
+有关</li>
+</ul></li>
+<li>3 型及以上系统：<span class="math inline">\(K_a=\infty\)</span></li>
+</ul>
+<h4 id="总结">总结</h4>
+<table>
+
+<thead>
+<tr>
+<th style="text-align: left;">系统型号</th>
+<th style="text-align: left;">误差 <span
+class="math inline">\(K_p\)</span></th>
+<th style="text-align: left;">$K_v</th>
+<th style="text-align: left;">系数 <span
+class="math inline">\(K_a\)</span></th>
+<th style="text-align: left;">阶跃输入 <span
+class="math inline">\(r(t)=u(t)\)</span></th>
+<th style="text-align: left;">速度输入 <span
+class="math inline">\(r(t)=t\)</span></th>
+<th style="text-align: left;">加速度输入 <span
+class="math inline">\(r(t)=\frac{1}{2}t^2\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">0 型</td>
+<td style="text-align: left;"><span
+class="math inline">\(K\)</span></td>
+<td style="text-align: left;"><span
+class="math inline">\(0\)</span></td>
+<td style="text-align: left;"><span
+class="math inline">\(0\)</span></td>
+<td style="text-align: left;"><span
+class="math inline">\(\frac{1}{1+K}\)</span></td>
+<td style="text-align: left;"><span
+class="math inline">\(\infty\)</span></td>
+<td style="text-align: left;"><span
+class="math inline">\(\infty\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">1 型</td>
+<td style="text-align: left;"><span
+class="math inline">\(\infty\)</span></td>
+<td style="text-align: left;"><span
+class="math inline">\(K\)</span></td>
+<td style="text-align: left;"><span
+class="math inline">\(0\)</span></td>
+<td style="text-align: left;"><span
+class="math inline">\(0\)</span></td>
+<td style="text-align: left;"><span
+class="math inline">\(\frac{1}{K}\)</span></td>
+<td style="text-align: left;"><span
+class="math inline">\(\infty\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">2 型</td>
+<td style="text-align: left;"><span
+class="math inline">\(\infty\)</span></td>
+<td style="text-align: left;"><span
+class="math inline">\(\infty\)</span></td>
+<td style="text-align: left;"><span
+class="math inline">\(K\)</span></td>
+<td style="text-align: left;"><span
+class="math inline">\(0\)</span></td>
+<td style="text-align: left;"><span
+class="math inline">\(0\)</span></td>
+<td style="text-align: left;"><span
+class="math inline">\(\frac{1}{K}\)</span></td>
+</tr>
+</tbody>
+</table>
+<h4 id="减小稳态误差的方法">减小稳态误差的方法</h4>
+<ul>
+<li>提高开环增益 <span class="math inline">\(K\)</span>
+<ul>
+<li>增大 <span class="math inline">\(K\)</span>
+可减小稳态误差，但会影响系统稳定性</li>
+</ul></li>
+<li>提高开环传递函数中串联积分环节的个数 <span
+class="math inline">\(N\)</span>
+<ul>
+<li>增加积分环节可提高系统类型，从而减小稳态误差</li>
+<li>但会影响系统的动态性能，可能引起系统振荡</li>
+<li><span class="math inline">\(N\)</span> 一般不超过 <span
+class="math inline">\(2\)</span></li>
+</ul></li>
+<li>补偿法</li>
+</ul>
+<h3 id="动态特性分析">动态特性分析</h3>
+<h4 id="概念">概念</h4>
+<p>控制系统的输出为</p>
+<p><span class="math display">\[
+c(t)=c_s(t)+c_t(t)
+\]</span></p>
+<ul>
+<li><span class="math inline">\(\displaystyle
+c_s(t)\)</span>：稳态部分</li>
+<li><span class="math inline">\(\displaystyle c_t(t)\)</span></li>
+</ul>
+<p>动态相应也叫瞬态响应</p>
+<ul>
+<li>对应系统从初始状态到接近稳定状态的相应
+<ul>
+<li>通常使用零初始状态条件下的单位阶跃响应的动态特性衡量</li>
+<li>输入只会影响稳态分量</li>
+<li>系统分析的准确度取决于数学模型描述的真实程度</li>
+<li>希望系统有很快的响应速度
+<ul>
+<li>即在控制信号的作用下，系统的输出能很快地随控制信号变化</li>
+</ul></li>
+<li>与稳定性的关系
+<ul>
+<li>动态响应对稳定系统才有意义</li>
+<li>不稳定系统的动态响应是发散的</li>
+</ul></li>
+</ul></li>
+</ul>
+<h4 id="动态性能指标">动态性能指标</h4>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202511101440702.png" srcset="/img/loading.jpeg" lazyload
+alt="动态性能指标合集" />
+<figcaption aria-hidden="true">动态性能指标合集</figcaption>
+</figure>
+<ul>
+<li>延迟时间 <span class="math inline">\(t_d\)</span>
+<ul>
+<li>输出达到稳态值的 <span class="math inline">\(50\%\)</span>
+所需的时间</li>
+</ul></li>
+<li>上升时间 <span class="math inline">\(t_r\)</span>
+<ul>
+<li>有振荡系统输出从 <span class="math inline">\(0\)</span>
+到首次达到稳态值的时间</li>
+<li>无振荡系统输出从 <span class="math inline">\(10\%\)</span> 到 <span
+class="math inline">\(90\%\)</span> 稳态值的时间</li>
+</ul></li>
+<li>峰值时间 <span class="math inline">\(t_p\)</span>
+<ul>
+<li>输出首次达到峰值所需的时间</li>
+</ul></li>
+<li>超调量 <span class="math inline">\(\sigma_p\)</span>
+<ul>
+<li><span class="math inline">\(\displaystyle
+\sigma_p=\frac{c(t_p)-c_\infty}{c_\infty}\times 100 \%\)</span></li>
+</ul></li>
+<li>调整时间 <span class="math inline">\(t_s\)</span>
+<ul>
+<li>输出进入并保持在稳态值的预定范围 <span
+class="math inline">\(\Delta\)</span> 内所需的时间</li>
+</ul></li>
+<li>误差范围 <span class="math inline">\(\Delta\)</span>
+<ul>
+<li>一般取稳态值的 <span class="math inline">\(\pm 2\%\)</span> 或 <span
+class="math inline">\(\pm 5\%\)</span></li>
+</ul></li>
+</ul>
+<h4 id="一阶系统动态特性">一阶系统动态特性</h4>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/%E4%B8%80%E9%98%B6%E7%B3%BB%E7%BB%9F.png" srcset="/img/loading.jpeg" lazyload
+alt="一阶系统" />
+<figcaption aria-hidden="true">一阶系统</figcaption>
+</figure>
+<p>一阶系统闭环传递函数为</p>
+<p><span class="math display">\[
+\frac{C(s)}{R(s)}=\frac{1}{1+Ts}
+\]</span></p>
+<h5 id="单位阶跃响应">单位阶跃响应</h5>
+<p><span class="math display">\[
+C(s)=\frac{1}{Ts+1}\cdot \frac{1}{s}=\frac{1}{s}-\frac{T}{Ts+1}
+\]</span></p>
+<p>对其做 Laplace 逆变换，得到单位阶跃响应输出</p>
+<p><span class="math display">\[
+c(t)=1-e^{-\frac{t}{T}}
+\]</span></p>
+<ul>
+<li>无振荡、按照指数规律单调上升</li>
+<li>延迟时间 <span class="math inline">\(t_d=0.69T\)</span></li>
+<li>上升时间 <span class="math inline">\(t_r=2.2T\)</span></li>
+<li>调整时间
+<ul>
+<li><span class="math inline">\(t_s=4T\)</span>（<span
+class="math inline">\(\Delta=\pm 2\%\)</span>）</li>
+<li><span class="math inline">\(t_s=3T\)</span>（<span
+class="math inline">\(\Delta=\pm 5\%\)</span>）</li>
+</ul></li>
+<li>特征根
+<ul>
+<li><span class="math inline">\(s=-\frac{1}{T}\)</span></li>
+<li>为 <span class="math inline">\(\displaystyle
+-\frac{\mathrm{d}c(t)}{\mathrm{d}t}|_{t=0}\)</span>，可以通过实验得到</li>
+</ul></li>
+</ul>
+<h5 id="单位脉冲响应">单位脉冲响应</h5>
+<p><span class="math display">\[
+C(s)=\frac{1}{1+Ts}\cdot 1=\frac{1}{Ts+1}
+\]</span></p>
+<p>对其做 Laplace 逆变换，得到单位脉冲响应输出</p>
+<p><span class="math display">\[
+c(t)=\frac{1}{T}e^{-\frac{t}{T}}
+\]</span></p>
+<h5 id="单位速度响应">单位速度响应</h5>
+<p><span class="math display">\[
+C(s)=\frac{1}{1+Ts}\cdot
+\frac{1}{s^2}=\frac{1}{s^2}-\frac{T}{s}+\frac{T^2}{Ts+1}
+\]</span></p>
+<p>对其做 Laplace 逆变换，得到单位速度响应输出</p>
+<p><span class="math display">\[
+c(t)=t-T+Te^{-\frac{t}{T}}
+\]</span></p>
+<ul>
+<li>稳态分量 <span class="math inline">\(\displaystyle
+c_s(t)=t-T\)</span></li>
+<li>稳态误差 <span class="math inline">\(e_{ss}=T\)</span></li>
+<li>瞬态分量 <span class="math inline">\(\displaystyle
+c_t(t)=Te^{-\frac{t}{T}}\)</span></li>
+</ul>
+<h5 id="单位加速度响应">单位加速度响应</h5>
+<p><span class="math display">\[
+C(s)=\frac{1}{1+Ts}\cdot
+\frac{1}{s^3}=\frac{1}{s^3}-\frac{T}{s^2}+\frac{T^2}{s}-\frac{T^3}{Ts+1}
+\]</span></p>
+<p>对其做 Laplace 逆变换，得到单位加速度响应输出</p>
+<p><span class="math display">\[
+c(t)=\frac{1}{2}t^2-Tt+T^2-T^2e^{-\frac{t}{T}}
+\]</span></p>
+<h4 id="二阶系统动态特性">二阶系统动态特性</h4>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/%E4%BA%8C%E9%98%B6%E7%B3%BB%E7%BB%9F.png" srcset="/img/loading.jpeg" lazyload
+alt="二阶系统" />
+<figcaption aria-hidden="true">二阶系统</figcaption>
+</figure>
+<p>二阶系统闭环传递函数为</p>
+<p><span class="math display">\[
+\Phi(S)=\frac{C(s)}{R(s)}=\frac{K}{Ts^2+s+K}=\frac{\frac{K}{T}}{s^2+\frac{1}{T}s+\frac{K}{T}}
+\]</span></p>
+<p>记</p>
+<ul>
+<li>无阻尼（自然）振荡角频率 <span class="math inline">\(\displaystyle
+\omega_n=\sqrt{\frac{K}{T}}\)</span></li>
+<li>阻尼比 <span class="math inline">\(\displaystyle
+\xi=\frac{1}{2\sqrt{K T}}\)</span></li>
+</ul>
+<p>传递函数可写为</p>
+<p><span class="math display">\[
+\Phi(S)=\frac{\omega_n^2}{s^2+2\xi \omega_n s+\omega_n^2}
+\]</span></p>
+<p>按照阻尼比 <span class="math inline">\(\xi\)</span>
+的不同，二阶系统可分为三种类型</p>
+<ul>
+<li>欠阻尼系统：<span class="math inline">\(0&lt;\xi&lt;1\)</span></li>
+<li>临界阻尼系统：<span class="math inline">\(\xi=1\)</span></li>
+<li>过阻尼系统：<span class="math inline">\(\xi&gt;1\)</span></li>
+</ul>
+<h5 id="二阶系统的特征方程">二阶系统的特征方程</h5>
+<p><span class="math display">\[
+s^2+2\xi \omega_n s+\omega_n^2=0
+\]</span></p>
+<ul>
+<li><p>两个特征根</p>
+<p><span class="math display">\[
+s_{1,2}=-\xi \omega_n \pm \omega_n \sqrt{\xi^2-1}
+\]</span></p></li>
+</ul>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202511101730974.png" srcset="/img/loading.jpeg" lazyload
+alt="根的分布情况" />
+<figcaption aria-hidden="true">根的分布情况</figcaption>
+</figure>
+<h5 id="欠阻尼">欠阻尼</h5>
+<p>有一对共轭复根</p>
+<p><span class="math display">\[
+s_{1,2}=-\xi\omega_n\pm j\omega_n\sqrt{1-\xi^2}=-\sigma\pm j\omega_d
+\]</span></p>
+<ul>
+<li>衰减系数 <span class="math inline">\(\displaystyle \sigma=\xi
+\omega_n\)</span></li>
+<li>阻尼振荡角频率 <span class="math inline">\(\displaystyle
+\omega_d=\omega_n \sqrt{1-\xi^2}\)</span></li>
+<li>记 <span class="math inline">\(\cos\theta=\xi\)</span>，则 <span
+class="math inline">\(\sin\theta=\sqrt{1-\xi^2}\)</span>，<span
+class="math inline">\(\displaystyle
+\tan\theta=\frac{\sqrt{1-\xi^2}}{\xi}\)</span></li>
+</ul>
+<p>以阶跃响应为例</p>
+<p><span class="math display">\[
+\begin{aligned}
+  C(s)&amp;=\frac{\omega_n^2}{s^2+2\xi \omega_n
+s+\omega_n^2}\cdot\frac{1}{s}\\
+      &amp;=\frac{1}{s}-\frac{s+\xi\omega_n}{(s+\xi\omega_n^2)+\omega_d^2}-\frac{\xi\omega_n}{(s+\xi\omega_n)^2+\omega_d^2}
+\end{aligned}
+\]</span></p>
+<p>对其做 Laplace 逆变换，得到单位阶跃响应输出</p>
+<p><span class="math display">\[
+c(t)=1-\frac{e^{-\xi \omega_n t}}{\sqrt{1-\xi^2}}\sin(\omega_d t+\theta)
+\]</span></p>
+<p>为振荡衰减曲线，振荡频率为 <span
+class="math inline">\(\displaystyle\omega_d\)</span></p>
+<p>包络线为</p>
+<p><span class="math display">\[
+1 \pm \frac{1}{\sqrt{1-\xi^2}} e^{-\xi\omega_n t}
+\]</span></p>
+<ul>
+<li>时间常数 <span class="math inline">\(\xi\omega_n\)</span></li>
+<li>衰减系数 <span
+class="math inline">\(\frac{1}{\xi\omega_n}\)</span></li>
+</ul>
+<h6 id="阻尼比系数-xi">阻尼比系数 <span
+class="math inline">\(\xi\)</span></h6>
+<ul>
+<li>阻尼比系数小
+<ul>
+<li>震荡强</li>
+<li>上升时间短</li>
+<li>超调量大</li>
+<li>调整时间长</li>
+<li>稳态误差增加</li>
+</ul></li>
+<li>阻尼比系数大
+<ul>
+<li>上升时间长</li>
+</ul></li>
+</ul>
+<p>所以一般选取 <span class="math inline">\(0.5\le \xi \le
+0.8\)</span></p>
+<p>最佳的阻尼比为 <span class="math inline">\(0.707\)</span></p>
+<h6 id="峰值时间-t_p">峰值时间 <span
+class="math inline">\(t_p\)</span></h6>
+<p><span class="math display">\[
+\frac{\mathrm{d}c(t)}{\mathrm{d}t}\vert_{t=t_p}=0
+\]</span></p>
+<p>整理得到</p>
+<p><span class="math display">\[
+\omega_dt_p=0,\pi,2\pi,3\pi,\dots
+\]</span></p>
+<p>取第一个正根，得到</p>
+<p><span class="math display">\[
+t_p=\frac{\pi}{\omega_d}=\frac{\pi}{\omega_n \sqrt{1-\xi^2}}
+\]</span></p>
+<p>峰值时间 <span class="math inline">\(t_p\)</span> 与极点虚部 <span
+class="math inline">\(\omega_d\)</span> 成反比，并且当 <span
+class="math inline">\(\xi\)</span> 一定时，极点离实轴越远，<span
+class="math inline">\(t_p\)</span> 越小</p>
+<h6 id="超调量-sigma_p">超调量 <span
+class="math inline">\(\sigma_p\)</span></h6>
+<p><span class="math display">\[
+\sigma_p=c(t_p)-1=e^{-\frac{\xi \pi}{\sqrt{1-\xi^2}}}\times 100\%
+\]</span></p>
+<p>超调量 <span class="math inline">\(\sigma_p\)</span> 仅与阻尼比 <span
+class="math inline">\(\xi\)</span> 有关</p>
+<ul>
+<li>阻尼比 <span class="math inline">\(\xi\)</span> 越大，超调量 <span
+class="math inline">\(\sigma_p\)</span> 越小</li>
+<li>当 <span class="math inline">\(\xi\to 0\)</span> 时，<span
+class="math inline">\(\sigma_p\to 100\%\)</span></li>
+<li>当 <span class="math inline">\(\xi\ge 0.69\)</span> 时，<span
+class="math inline">\(\sigma_p\le 5\%\)</span></li>
+</ul>
+<h6 id="上升时间-t_r">上升时间 <span
+class="math inline">\(t_r\)</span></h6>
+<p><span class="math display">\[
+c(t_r)=1-\frac{e^{-\xi \omega_n t_r}}{\sqrt{1-\xi^2}}\sin(\omega_d
+t_r+\theta)=1
+\]</span></p>
+<p><span class="math display">\[
+t_r=\frac{\pi-\theta}{\omega_d}=\frac{\pi-\arccos\xi}{\omega_n
+\sqrt{1-\xi^2}}
+\]</span></p>
+<ul>
+<li>当 <span class="math inline">\(\xi\)</span> 一定，<span
+class="math inline">\(\omega_n\)</span> 越大，<span
+class="math inline">\(t_r\)</span> 越小</li>
+<li>当 <span class="math inline">\(\omega_n\)</span> 一定，<span
+class="math inline">\(\xi\)</span> 越大，<span
+class="math inline">\(t_r\)</span> 越大</li>
+</ul>
+<h6 id="调整时间-t_s">调整时间 <span
+class="math inline">\(t_s\)</span></h6>
+<p>定义为从系统开始响应起，直到响应曲线 <span
+class="math inline">\(c(t)\)</span> 进入并永久保持在终值 <span
+class="math inline">\(1\)</span> 的一个小的误差带 <span
+class="math inline">\(\Delta\)</span> （例如 <span
+class="math inline">\(5\%\)</span> 或 <span
+class="math inline">\(3\%\)</span>）之内所需的最短时间</p>
+<p>以包络线来近似研究调整时间问题</p>
+<p><span class="math display">\[
+\left\vert 1-c(s)\right\vert \approx \frac{e^{-\xi\omega_n
+t_s}}{\sqrt{1-\xi^2}}=\Delta
+\]</span></p>
+<p><span class="math display">\[
+t_s=-\frac{\ln(\Delta \sqrt{1-\xi^2})}{\xi \omega_n}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(\Delta=5\%\)</span> 时，<span
+class="math inline">\(t_s\approx \frac{3}{\xi \omega_n}\)</span></li>
+<li><span class="math inline">\(\Delta=2\%\)</span> 时，<span
+class="math inline">\(t_s\approx \frac{4}{\xi \omega_n}\)</span></li>
+</ul>
+<p>调整时间 <span class="math inline">\(t_s\)</span> 与极点实部 <span
+class="math inline">\(\sigma=\xi \omega_n\)</span> 成反比，并且当 <span
+class="math inline">\(\xi\)</span> 一定时，极点离虚轴越远，<span
+class="math inline">\(t_s\)</span> 越小</p>
+<p>超调量 <span class="math inline">\(\sigma_p\)</span> 的值由 <span
+class="math inline">\(\xi\)</span> 决定，若 <span
+class="math inline">\(\xi\)</span> 不变，通过调整 <span
+class="math inline">\(\omega_n\)</span> 可以做到在不影响 <span
+class="math inline">\(\sigma_p\)</span> 的前提下，减小 <span
+class="math inline">\(t_s\)</span>，加快系统的响应速度</p>
+<h6 id="总结-1">总结</h6>
+<p>二阶系统单位阶跃响应</p>
+<p><span class="math display">\[
+c(t)=1-\frac{e^{-\xi \omega_n t}}{\sqrt{1-\xi^2}}\sin(\omega_d
+t+\theta)s
+\]</span></p>
+<ul>
+<li><p>上升时间</p>
+<p><span class="math display">\[
+t_r=\frac{\pi-\arccos\xi}{\omega_n \sqrt{1-\xi^2}}
+\]</span></p></li>
+<li><p>峰值时间</p>
+<p><span class="math display">\[
+t_p=\frac{\pi}{\omega_n \sqrt{1-\xi^2}}
+\]</span></p></li>
+<li><p>超调量</p>
+<p><span class="math display">\[
+\sigma_p=e^{-\frac{\xi \pi}{\sqrt{1-\xi^2}}}\times 100\%
+\]</span></p></li>
+<li><p>调整时间</p>
+<p><span class="math display">\[
+t_s=-\frac{\ln(\Delta \sqrt{1-\xi^2})}{\xi \omega_n}
+\]</span></p></li>
+</ul>
+<h5 id="临界阻尼">临界阻尼</h5>
+<p>特征根为两个相等的实根</p>
+<p><span class="math display">\[
+s_{1,2}=-\omega_n
+\]</span></p>
+<p><span class="math display">\[
+C(s)=\frac{\omega_n^2}{(s+\omega_n)^2}\cdot
+\frac{1}{s}=\frac{1}{s}-\frac{1}{s+\omega_n}-\frac{\omega_n}{(s+\omega_n)^2}
+\]</span></p>
+<p>对其做 Laplace 逆变换，得到单位阶跃响应输出</p>
+<p><span class="math display">\[
+c(t)=1-(1+\omega_n t)e^{-\omega_n t}
+\]</span></p>
+<h5 id="过阻尼">过阻尼</h5>
+<p>特征根为两个不等的实根</p>
+<p><span class="math display">\[
+s_{1,2}=-\xi \omega_n \pm \omega_n \sqrt{\xi^2-1}
+\]</span></p>
+<p><span class="math display">\[
+c(s)=\frac{\omega_n^2}{s(s+\frac{1}{T_1})(s+\frac{1}{T_2})}
+\]</span></p>
+<p><span class="math display">\[
+c(t)=1+\frac{1}{\frac{T_2}{T_1}-1}e^{-\frac{t}{T_1}}-\frac{1}{\frac{T_2}{T_1}-1}e^{-\frac{t}{T_2}}
+\]</span></p>
+<p>单调增加的曲线，没有超调和振荡，调节时间较长，系统反应迟缓</p>
+<h6 id="无阻尼">无阻尼</h6>
+<p>特征根为两个共轭虚根</p>
+<p><span class="math display">\[
+s_{1,2}=\pm j \omega_n
+\]</span></p>
+<p><span class="math display">\[
+c(t)=1-\cos \omega_n t
+\]</span></p>
+<p>为振荡频率为 <span class="math inline">\(\displaystyle
+\omega_n\)</span> 的等幅振荡曲线，不能达到稳态</p>
+<h4 id="高阶系统的动态响应">高阶系统的动态响应</h4>
+<p>高阶系统指的是三阶以上的系统</p>
+<p>使用计算机仿真或者近似降阶为二阶系统来处理</p>
+<p>控制系统的闭环传递函数为</p>
+<p><span class="math display">\[
+\frac{C(s)}{R(s)}=\frac{b_ms^m+b_{m-1}s^{m-1}+\dots+b_1
+s+b_0}{a_ns^n+a_{n-1}s^{n-1}+\dots+a_1 s+a_0}
+\]</span></p>
+<p>其阶跃响应为</p>
+<p><span class="math display">\[
+C(s)=\frac{K\prod(s+z_i)}{\prod(s+p_j)\prod(s^2+2\xi_k
+\omega_{nk}s+\omega_{nk}^2)}\cdot \frac{1}{s}
+\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+  c(t)&amp;=a_0+\sum_{j=1}^q a_je^{-p_jt}+\sum_{i=1}^r
+e^-\xi_k\omega_kt(B_k\cos\omega_kt\sqrt{1-\xi_k^2}+C_k\sin\omega_kt\sqrt{1-\xi_k^2})\\
+      &amp;=a_0+\sum_{J=1}^q a_je^{-p_jt}+\sum_{i=1}^r
+D_ke^{-\xi_k\omega_kt}\sin(\omega_kt\sqrt{1-\xi_k^2}+\varphi_k)
+\end{aligned}
+\]</span></p>
+<ul>
+<li><p><strong>主导极点</strong></p>
+<ul>
+<li>距离虚轴最近的极点，比其它极点到虚轴的距离小 5
+倍以上，且附近无零点</li>
+<li>系统的动态响应将由主导极点决定</li>
+<li>高阶系统的主导极点通常为一对共轭复极点</li>
+</ul></li>
+<li><p><strong>附加零点、极点</strong></p>
+<ul>
+<li>零点或极点距离虚轴的距离是主导极点的两倍以上</li>
+<li>对动态响应的影响可以忽略不计</li>
+</ul></li>
+<li><p><strong>偶极子</strong></p>
+<ul>
+<li>同一位置或相距很近的闭环零极点
+<ul>
+<li>它们之间的距离是它们到主导极点距离的 <span
+class="math inline">\(\frac{1}{10}\)</span> 或更小</li>
+</ul></li>
+<li>对系统的动态响应影响很小</li>
+</ul></li>
+<li><p><strong>响应曲线</strong></p>
+<ul>
+<li>由小振荡曲线、大振荡曲线、指数曲线叠加而成</li>
+<li>形状取决于闭环零点：各分量幅值大小</li>
+</ul></li>
+<li><p><strong>动态响应</strong></p>
+<ul>
+<li>稳态分量的类型取决于输入函数的极点</li>
+<li>动态分量取决于系统闭环传递函数的极点</li>
+<li>类型取决于闭环极点：指数型、正弦振荡型</li>
+</ul></li>
 </ul>
 <h2 id="控制系统的复域分析">控制系统的复域分析</h2>
 <h2 id="控制系统的频域分析">控制系统的频域分析</h2>

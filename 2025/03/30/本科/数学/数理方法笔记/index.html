@@ -27,7 +27,7 @@
 <meta property="og:description" content="数理方法笔记 几类偏微分方程的导出和定解问题 偏微分方程的基本概念 什么是微分方程 函数 \(u\) 关于 \(t\) 及 \((x,y,z)\) 的各阶偏导数满足的关系式 一般形式： \[ F(x_1,x_2,\ldots,x_n,u,\mathrm{D}u,\mathrm{D}^2u,\ldots,\mathrm{D}^Nu)&#x3D;0 \] 其中  \(\displaystyle(x_1,x_2,">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-03-30T13:39:54.000Z">
-<meta property="article:modified_time" content="2025-11-04T12:43:56.037Z">
+<meta property="article:modified_time" content="2025-11-14T01:41:10.865Z">
 <meta property="article:author" content="东川路第一寒冰">
 <meta property="article:tag" content="课程笔记">
 <meta property="article:tag" content="数理方法">
@@ -226,7 +226,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          9.2k 字
+          11k 字
         
       </span>
     
@@ -237,7 +237,7 @@
         
         
         
-          77 分钟
+          90 分钟
         
       </span>
     
@@ -1931,6 +1931,305 @@ alt="决定区域" />
 \]</span></p>
 <p>这个区域称为点 <span class="math inline">\(x_0\)</span> 的
 <strong>影响区域</strong></p>
+<h4 id="齐次化原理">齐次化原理</h4>
+<p>对于非齐次弦振动方程的 Cauchy 问题</p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;u_{tt}-a^2u_{xx}=f(x,t),&amp;&amp;(-\infty&lt;x&lt;+\infty,t&gt;0)\\
+      &amp;t=0:u=\varphi(x),u_t=\psi(x)\\
+   \end{aligned}
+\right.
+\]</span></p>
+<p>可以将其转化为两个 Cauchy 问题的叠加</p>
+$$ {
+<span class="math display">\[\begin{aligned}
+      &amp;u_{tt}-a^2u_{xx}=0\\
+      &amp;t=0:u=\varphi(x),u_t=\psi(x)\\
+   \end{aligned}\]</span>
+<p>.</p>
+{
+<span class="math display">\[\begin{aligned}
+      &amp;u_{tt}-a^2u_{xx}=f(x,t)\\
+      &amp;t=0:u=0,u_t=0\\
+   \end{aligned}\]</span>
+<p>. $$</p>
+<p>第一个问题已经有 D’Alembert 公式的解</p>
+<p><span class="math display">\[
+u_1(x,t)=\frac{1}{2}[\varphi(x-at)+\varphi(x+at)]+\frac{1}{2a}\int_{x-at}^{x+at}\psi(\tau)\,\mathrm{d}\tau
+\]</span></p>
+<p>第二个问题可以用变分法求解</p>
+<p><span class="math display">\[
+u_2(x,t)=\int_0^tw(x,t;\tau)\,\mathrm{d}\tau=\frac{1}{2a}\int_0^t\int_{x-a(t-\tau)}^{x+a(t-\tau)}f(\xi,\tau)\,\mathrm{d}\xi
+\,\mathrm{d}\tau
+\]</span></p>
+<p>其中</p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;w_{tt}-a^2w_{xx}=0,&amp;&amp;(-\infty&lt;x&lt;+\infty,t&gt;\tau)\\
+      &amp;t=\tau:w=0,w_t=f(x,\tau)\\
+   \end{aligned}
+\right.
+\]</span></p>
+<p>则非齐次问题的解为</p>
+<p><span class="math display">\[
+\begin{aligned}
+   u(x,t)=&amp;u_1(x,t)+u_2(x,t)\\
+         =&amp;\frac{1}{2}[\varphi(x-at)+\varphi(x+at)]+\frac{1}{2a}\int_{x-at}^{x+at}\psi(\tau)\,\mathrm{d}\tau+\frac{1}{2a}\int_0^t\int_{x-a(t-\tau)}^{x+a(t-\tau)}f(\xi,\tau)\,\mathrm{d}\xi
+\,\mathrm{d}\tau
+\end{aligned}
+\]</span></p>
+<h5 id="非齐次边界情形">非齐次边界情形</h5>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;u_{tt}-a^2u_{xx}=f(x,t),&amp;&amp;(-\infty&lt;x&lt;+\infty,t&gt;0)\\
+      &amp;t=0:u=\varphi(x),u_t=\psi(x)\\
+      &amp;u(0,t)=\lambda(t),u(l,t)=\mu(t)\\
+   \end{aligned}
+\right.
+\]</span></p>
+<p>接下来想办法消除边界条件中的非齐次项 <span
+class="math inline">\(\lambda(t)\)</span> 和 <span
+class="math inline">\(\mu(t)\)</span></p>
+<p>我们构建一个关于 <span class="math inline">\(x\)</span>
+的一次多项函数</p>
+<p><span class="math display">\[
+h(x,t)=\frac{\mu(t)-\lambda(t)}{l}x+\lambda(t)
+\]</span></p>
+<p>则 <span class="math inline">\(h(x,t)\)</span> 满足边界条件</p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;h(0,t)=\lambda(t)\\
+      &amp;h(l,t)=\mu(t)\\
+   \end{aligned}
+\right.
+\]</span></p>
+<p>设</p>
+<p><span class="math display">\[
+v(x,t)=u(x,t)-h(x,t)
+\]</span></p>
+<p>则</p>
+<p><span class="math display">\[
+u(x,t)=v(x,t)+h(x,t)
+\]</span></p>
+<p>将其带入原定解问题中</p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;v_{tt}-a^2v_{xx}=f(x,t)-h_{tt}\\
+      &amp;t=0:v=\varphi(x)-h(x,0),v_t=\psi(x)-h_t(x,0)\\
+      &amp;v(0,t)=0,v(l,t)=0\\
+   \end{aligned}
+\right.
+\]</span></p>
+<p>我们成功将原问题转换为一个关于 <span
+class="math inline">\(v(t,x)\)</span> 的齐次边界问题</p>
+<p>可以用叠加原理将其分解为两个问题的叠加求解</p>
+<h3 id="热传导方程的初值问题">热传导方程的初值问题</h3>
+<h4 id="一维齐次热传导方程的-cauchy-问题">一维齐次热传导方程的 Cauchy
+问题</h4>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;u_t-a^2u_{xx}=0,&amp;&amp;(-\infty&lt;x&lt;+\infty,t&gt;0)\\
+      &amp;t=0:u=\varphi(x)\\
+   \end{aligned}
+\right.
+\]</span></p>
+<p>对方程对 <span class="math inline">\(x\)</span> 做 Fourier 变换</p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;\hat{u}_t+a^2\xi^2\hat{u}=0,\\
+      &amp;t=0:\hat{u}=\hat{\varphi}(\xi)
+   \end{aligned}
+\right.
+\]</span></p>
+<p>解得</p>
+<p><span class="math display">\[
+\hat{u}=\hat{\varphi(\xi)}e^{-a^2\xi^2 t}
+\]</span></p>
+<p><span class="math display">\[
+u(t,x)=\mathcal{F}^{-1}[\hat{u(t,\xi)}]=\mathcal{F}^{-1}[\hat{\varphi}(\xi)e^{-a^2\xi^2
+t}]=\mathcal{F}^{-1}[\hat{\xi}]*\mathcal{F}^{-1}[e^{-a^2\xi^2
+t}]=\frac{1}{2a\sqrt{\pi
+t}}\int_{-\infty}^{+\infty}e^{-\frac{(\xi-x)^2}{4a^2
+t}}\varphi(\tau)\,\mathrm{d}\tau
+\]</span></p>
+<p>称为齐次方程的 Poisson 公式</p>
+<h4 id="一维非齐次热传导方程的-cauchy-问题">一维非齐次热传导方程的
+Cauchy 问题</h4>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;u_t-a^2u_{xx}=f(x,t),&amp;&amp;(-\infty&lt;x&lt;+\infty,t&gt;0)\\
+      &amp;t=0:u=\varphi(x)\\
+   \end{aligned}
+\right.
+\]</span></p>
+<p>可以将其转化为两个 Cauchy 问题的叠加</p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;u_t-a^2u_{xx}=0\\
+      &amp;t=0:u=\varphi(x)\\
+   \end{aligned}
+\right.
+\oplus
+\left\{
+   \begin{aligned}
+      &amp;u_t-a^2u_{xx}=f(x,t)\\
+      &amp;t=0:u=0\\
+   \end{aligned}
+\right.
+\]</span></p>
+<p>解得</p>
+<p><span class="math display">\[
+u(t,x)=\frac{1}{2a\sqrt{\pi
+t}}\int_{-\infty}^{+\infty}e^{-\frac{(x-\xi)^2}{4a^2
+t}}\varphi(\xi)\,\mathrm{d}\xi+\int_0^t\int_{-\infty}^{+\infty}\frac{1}{2a\sqrt{\pi
+(t-\tau)}}e^{-\frac{(x-\xi)^2}{4a^2 (t-\tau)}}f(\xi,\tau)\,\mathrm{d}\xi
+\,\mathrm{d}\tau
+\]</span></p>
+<h4 id="用-fourier-变换求解-laplce-方程">用 Fourier 变换求解 Laplce
+方程</h4>
+<p>求半平面 Laplacec 方程边界问题的有界解</p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      u_{xx}+u_{yy}=0(x\in \mathbf{R},y&gt;0)\\
+      y=0:u=f(x)\\
+   \end{aligned}
+\right.
+\]</span></p>
+<p>对 <span class="math inline">\(x\)</span> 做 Fourier 变换</p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;-\xi^2\hat{u}+\hat{u}_{yy}=0,\\
+      &amp;y=0:\hat{u}=\hat{f}(\xi)\\
+   \end{aligned}
+\right.
+\]</span></p>
+<p>解得</p>
+<p><span class="math display">\[
+\hat{u}(\xi,y)=C_1e^{-\vert \xi \vert y}+C_2e^{\vert \xi \vert y}
+\]</span></p>
+<p><span class="math inline">\(u\)</span> 有界则 <span
+class="math inline">\(C_2=0\)</span>，由边界条件可得 <span
+class="math inline">\(C_1=\hat{f}(\xi)\)</span>，则</p>
+<p><span class="math display">\[
+\hat{u}(\xi,y)=\hat{f}(\xi)e^{-\vert \xi \vert y}
+\]</span></p>
+<p>对其做逆变换</p>
+<p><span class="math display">\[
+u(x,y)=\mathcal{F}^{-1}[\hat{u}(\xi,y)]=\mathcal{F}^{-1}[\hat{f}(\xi)e^{-\vert
+\xi \vert y}]=\mathcal{F}^{-1}[\hat{f}(\xi)]*\mathcal{F}^{-1}[e^{-\vert
+\xi \vert
+y}]=\frac{y}{\pi}\int_{-\infty}^{+\infty}\frac{f(\tau)}{(x-\tau)^2+y^2}\,\mathrm{d}\tau
+\]</span></p>
+<h3 id="半空间上的初边值问题">半空间上的初边值问题</h3>
+<h4 id="一维齐次波动方程的初边界问题">一维齐次波动方程的初边界问题</h4>
+<p>考虑初边值问题，这里假设 <span class="math inline">\(b\)</span>
+为常数</p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;u_{tt}-a^2u_{xx}=0,&amp;&amp;(x&gt;0,t&gt;0)\\
+      &amp;u(t,0)=0,&amp;&amp;(t&gt;0)\\
+      &amp;u(0,x)=0,u_t(0,x)=b,&amp;&amp;(x&gt;0)\\
+   \end{aligned}
+\right.
+\]</span></p>
+<p>对 <span class="math inline">\(t\)</span> 进行 Laplace 变换</p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;a^2p^2\bar{u}(p,x)-b-a^2\frac{\mathrm{d}^2
+\bar{u}(p,x)}{\mathrm{d} x^2}=0,&amp;&amp;(x&gt;0)\\
+      &amp;\bar{u}(p,0)=0\\
+      &amp;\bar{u}(0,x)=0,p\bar{u}(0,x)=b,&amp;&amp;(x&gt;0)\\
+   \end{aligned}
+\right.
+\]</span></p>
+<p>对弦振动方程求解得到</p>
+<p><span class="math display">\[
+\bar{u}(p,x)=C_1e^{-\frac{p}{a}x}+C_2e^{\frac{p}{a}x}+\frac{b}{p^2}
+\]</span></p>
+<p><span class="math inline">\(u\)</span> 有界则 <span
+class="math inline">\(C_2=0\)</span>，由边界条件可得 <span
+class="math inline">\(C_1=-\frac{b}{p^2}\)</span>，则</p>
+<p><span class="math display">\[
+\bar{u}(p,x)=-\frac{b}{p^2}e^{-\frac{p}{a}x}+\frac{b}{p^2}
+\]</span></p>
+<p>对其做逆变换</p>
+<p><span class="math display">\[
+u(t,x)=\mathcal{L}^{-1}[\bar{u}(p,x)]=\mathcal{L}^{-1}\left[-\frac{b}{p^2}e^{-\frac{p}{a}x}+\frac{b}{p^2}\right]=-b\left(t-\frac{x}{a}\right)H\left(t-\frac{x}{a}\right)+bt
+\]</span></p>
+<h2
+id="二阶线性偏微分方程的分类和总结">二阶线性偏微分方程的分类和总结</h2>
+<h3 id="两个自变量的情形的分类">两个自变量的情形的分类</h3>
+<p><span class="math display">\[
+a_{11}u_{xx}+2a_{12}u_{xy}+a_{22}u_{yy}+b_1u_x+b_2u_y+cu=f
+\]</span></p>
+<p>其中的 <span class="math inline">\(a_{ij},b_i,c,f\)</span> 均为自变量
+<span class="math inline">\(x,y\)</span> 的连续可微函数，并且 <span
+class="math inline">\(\displaystyle a_{11}^2+a_{12}^2+a_{22}^2\neq
+0\)</span></p>
+<p>判别式</p>
+<p><span class="math display">\[
+\Delta =a_{12}^2-a_{11}a_{22}:
+\left\{
+   \begin{aligned}
+      &amp;\Delta &gt; 0\text{：双曲型(Hyperbolic)}\\
+      &amp;\Delta = 0\text{：抛物型(Parabolic)}\\
+      &amp;\Delta &lt; 0\text{：椭圆型(Elliptic)}
+   \end{aligned}
+\right.
+\]</span></p>
+<p>同样的对于二次曲线也有类似的分类</p>
+<p><span class="math display">\[
+a_{11}x^2+2a_{12}xy+a_{22}y^2+2b_1x+2b_2y+c=0
+\]</span></p>
+<p><span class="math display">\[
+\Delta =a_{12}^2-a_{11}a_{22}:
+\left\{
+   \begin{aligned}
+      &amp;\Delta &gt; 0\text{：双曲型曲线}\\
+      &amp;\Delta = 0\text{：抛物线}\\
+      &amp;\Delta &lt; 0\text{：椭圆}
+   \end{aligned}
+\right.
+\]</span></p>
+<h3 id="两个自变量情形的化简">两个自变量情形的化简</h3>
+<p>目标为通过自变量变换，使得方程的形式化简，有时甚至可以求出其通解</p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;\xi=\xi(x,y)\\
+      &amp;\eta=\eta(x,y)
+   \end{aligned}
+\right.
+\]</span></p>
+<p>可逆要求其 Jacobbi 行列式不为 <span
+class="math inline">\(0\)</span></p>
+<p><span class="math display">\[
+J=\frac{\partial(\xi,\eta)}{\partial(x,y)}=
+\left|
+   \begin{array}{cc}
+      \xi_x &amp; \xi_y\\
+      \eta_x &amp; \eta_y\\
+   \end{array}
+\right|
+\neq 0
+\]</span></p>
+<p>对其变换前后的方程类型不变，并且</p>
+<p><span class="math display">\[
+\bar{\Delta}=J^2\Delta
+\]</span></p>
 
                 
               </div>
