@@ -27,7 +27,7 @@
 <meta property="og:description" content="自动控制原理 B 导论 概述 自动控制的意义  提高了劳动生产率 提高控制的准确性 可用于某些人们不能直接参与工作的场合  判断一个系统是否为自动控制系统的标准：控制过程脱离人的控制 但是，自动控制系统中仍然有人参与，并非脱离人的设置 自动控制理论的发展 胚芽期（1945 年以前）  18 世纪以后，蒸汽机的使用提出了调速稳定等问题  1765 年，俄国人波尔祖诺夫发明了锅炉水位调节器 1784">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-09-15T10:00:00.000Z">
-<meta property="article:modified_time" content="2025-11-11T02:01:56.266Z">
+<meta property="article:modified_time" content="2025-11-22T12:28:39.334Z">
 <meta property="article:author" content="东川路第一寒冰">
 <meta property="article:tag" content="课程笔记">
 <meta property="article:tag" content="自动控制原理">
@@ -226,7 +226,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          10k 字
+          13k 字
         
       </span>
     
@@ -237,7 +237,7 @@
         
         
         
-          87 分钟
+          107 分钟
         
       </span>
     
@@ -2109,6 +2109,433 @@ class="math inline">\(\frac{1}{10}\)</span> 或更小</li>
 <li>动态分量取决于系统闭环传递函数的极点</li>
 <li>类型取决于闭环极点：指数型、正弦振荡型</li>
 </ul></li>
+</ul>
+<h2 id="根轨迹法">根轨迹法</h2>
+<h3 id="根轨迹法的概念">根轨迹法的概念</h3>
+<p>根轨迹法是通过绘制闭环极点随开环某参数变化的轨迹来判断闭环系统稳定性的一种图解方法，其参变量为系统增益
+<span class="math inline">\(K_1\)</span></p>
+<p>描述的是当 <span class="math inline">\(K_1\)</span> 从 <span
+class="math inline">\(0\)</span> 变化到 <span
+class="math inline">\(\infty\)</span>
+时，闭环系统极点在复平面上的运动轨迹</p>
+<ul>
+<li>常规根轨迹：<span class="math inline">\(0\le K_1
+&lt;+\infty\)</span> 时的根轨迹，简称为根轨迹</li>
+<li>补根轨迹（余根轨迹）：<span
+class="math inline">\(-\infty&lt;K_1&lt;0\)</span> 时的根轨迹</li>
+<li>完全根轨迹（全根轨迹）：<span
+class="math inline">\(-\infty&lt;K_1&lt;+\infty\)</span> 时的根轨迹</li>
+</ul>
+<h3 id="根轨迹的幅相条件">根轨迹的幅相条件</h3>
+<p>闭环系统的特征方程为</p>
+<p><span class="math display">\[
+1+G(s)H(s)=0
+\]</span></p>
+<p>其中</p>
+<p><span class="math display">\[
+G(s)H(s)=\frac{K_1\prod_{i=1}^m (s+z_i)}{\prod_{j=1}^n (s+p_j)}\quad
+(n\ge m)
+\]</span></p>
+<p>根轨迹上的点均满足幅角条件和幅值条件，满足幅角条件的点都在根轨迹上</p>
+<ul>
+<li>通过寻找满足幅角条件的所有 <span class="math inline">\(s\)</span>
+点，由这些点组成根轨迹</li>
+<li>根据幅值条件计算出对应点的 <span class="math inline">\(K_1\)</span>
+值</li>
+</ul>
+<h4 id="幅角条件">幅角条件</h4>
+<p><span class="math display">\[
+\angle G(s)H(s)=\sum_{i=1}^m\angle (s+z_i)-\sum_{j=1}^n \angle
+(s+p_j)=\pi\pm 2k\pi,\quad k=0,1,2,\dots
+\]</span></p>
+<h4 id="幅值条件">幅值条件</h4>
+<p><span class="math display">\[
+\vert G(s)H(s)\vert =\frac{K_1\prod_{i=1}^m \vert
+s+z_i\vert}{\prod_{j=1}^n \vert s+p_j\vert}=1
+\]</span></p>
+<h3 id="根轨迹图的绘制">根轨迹图的绘制</h3>
+<p>主要有两种方法</p>
+<ol type="1">
+<li>试探法
+<ol type="1">
+<li>找到尽量多的满足相角条件的点</li>
+<li>连接成光滑曲线</li>
+<li>用幅值条件计算根轨迹上点的 <span class="math inline">\(K_1\)</span>
+值</li>
+</ol></li>
+<li>规则法
+<ol type="1">
+<li>计算出 <span class="math inline">\(K_1=0\)</span>
+时的特征根（开环极点）和 <span class="math inline">\(K_1\to
+\infty\)</span> 时的特征根（开环零点或无穷远）</li>
+<li>根据绘制法大致画出 <span
+class="math inline">\(0&lt;K_1&lt;\infty\)</span> 时的根轨迹草图</li>
+<li>使用幅角条件修正重要部分</li>
+</ol></li>
+</ol>
+<h4 id="根轨迹绘制的十条规则">根轨迹绘制的十条规则</h4>
+<h5 id="根轨迹的起点和终点">根轨迹的起点和终点</h5>
+<ul>
+<li><span class="math inline">\(n\)</span> 个起点（<span
+class="math inline">\(K_1=0\)</span>）：开环极点</li>
+<li><span class="math inline">\(n\)</span> 个终点（<span
+class="math inline">\(K_1\to \infty\)</span>）：开环零点
+<ul>
+<li><span class="math inline">\(m\)</span> 个有限零点</li>
+<li><span class="math inline">\(n-m\)</span> 个无穷远零点</li>
+</ul></li>
+</ul>
+<p>当 <span class="math inline">\(K_1\)</span> 从 <span
+class="math inline">\(0\)</span> 增加到 <span
+class="math inline">\(\infty\)</span>
+时，根轨迹从开环极点出发，终止于开环零点</p>
+<h5 id="根轨迹的分支数">根轨迹的分支数</h5>
+<ul>
+<li>一条完整的根轨迹为一条分支</li>
+<li>根轨迹的分支数等于开环极点数 <span
+class="math inline">\(n\)</span></li>
+</ul>
+<h5 id="根轨迹对称性">根轨迹对称性</h5>
+<ul>
+<li>根轨迹对称于实轴</li>
+</ul>
+<h5 id="根轨迹的渐近线">根轨迹的渐近线</h5>
+<p>渐近线有 <span class="math inline">\(n-m\)</span> 条</p>
+<ul>
+<li><p>渐近线与实轴交点（渐近点）</p>
+<p><span class="math display">\[
+-\lambda=-\frac{\sum_{j=1}^n p_j-\sum_{i=1}^m z_i}{n-m}
+\]</span></p></li>
+<li><p>渐近线与实轴的夹角</p>
+<p><span class="math display">\[
+\theta_k=\frac{\pi\pm 2k\pi}{n-m},\quad k=0,1,2,\ldots
+\]</span></p></li>
+</ul>
+<h5 id="根轨迹在实轴上的分布">根轨迹在实轴上的分布</h5>
+<p>实轴上凡是有根轨迹的线段，其右侧（包含右端）的开环零点、极点个数之和为奇数</p>
+<h5 id="根轨迹的分离点">根轨迹的分离点</h5>
+<p>分离点</p>
+<ul>
+<li>为特征方程的重根点</li>
+<li>不一定在实轴上</li>
+</ul>
+<p>分离点满足</p>
+<p><span class="math display">\[
+\frac{\mathrm{d}G_1(s)H_1(s)}{\mathrm{d}s}=0
+\]</span></p>
+<p>其中</p>
+<p><span class="math display">\[
+G_1(s)G_2(s)=\frac{G(s)H(s)}{K_1}
+\]</span></p>
+<p>分离点处的分离的根轨迹切线斜率为</p>
+<p><span class="math display">\[
+\frac{1}{N}(\pi+2k\pi),\quad k=0,1,2,\ldots ,N-1
+\]</span></p>
+<p>几个经验法则</p>
+<ol type="1">
+<li>如果实轴上开环极点间存在根轨迹，则存在分离点</li>
+<li>如果实轴上开环零点间存在根轨迹，则存在会合点</li>
+<li>如果实轴上开环极点与开环零点间存在根轨迹
+<ul>
+<li>要么既存在分离点又存在会合点</li>
+<li>要么二者都不存在</li>
+</ul></li>
+</ol>
+<p>分离点的必要条件等价表达式</p>
+<p><span class="math display">\[
+\frac{\mathrm{d}}{\mathrm{d}s}[G_1(s)H_1(s)]=0
+\]</span></p>
+<ul>
+<li><span class="math inline">\(\displaystyle
+\frac{\mathrm{d}K_1}{\mathrm{d}s}=0\)</span></li>
+<li><span class="math inline">\(\displaystyle
+\sum_{i=1}^{m}\frac{1}{s+z_i}=
+\sum_{i=1}^{n}\frac{1}{s+p_i}\)</span></li>
+</ul>
+<h5 id="根轨迹入射角和出射角">根轨迹入射角和出射角</h5>
+<p>出射角（或入射角）：根轨迹离开复极点（或终止复零点）处切线的倾角</p>
+<ul>
+<li><p>若根轨迹一个分支离开复极点 <span
+class="math inline">\(-p_a\)</span> 的出射角为 <span
+class="math inline">\(\theta_a\)</span>，则</p>
+<p><span class="math display">\[
+\theta_a=\pi-\left[\sum_{i=1,i\ne
+a}^{n}\angle(-p_a+p_i)-\sum_{j=1}^{m}\angle(-p_a+z_j)\right]+2k\pi,\quad
+k=0,1,2,\ldots
+\]</span></p></li>
+<li><p>若根轨迹一个分支终止于复零点 <span
+class="math inline">\(-z_b\)</span> 的入射角为 <span
+class="math inline">\(\phi_b\)</span>，则</p>
+<p><span class="math display">\[
+\phi_b=\pi+\left[\sum_{i=1}^{n}\angle(-z_b+p_i)-\sum_{j=1,j\ne
+b}^{m}\angle(-z_b+z_j)\right]+2k\pi,\quad k=0,1,2,\ldots
+\]</span></p></li>
+</ul>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202511221835529.png" srcset="/img/loading.jpeg" lazyload
+alt="入射角例子" />
+<figcaption aria-hidden="true">入射角例子</figcaption>
+</figure>
+<p>其中</p>
+<p><span class="math display">\[
+\theta_a=\pi+2k\pi+\varphi_1-(\theta_1+\theta_2+\theta_3)
+\]</span></p>
+<h5 id="根轨迹与虚轴的焦点">根轨迹与虚轴的焦点</h5>
+<p>根轨迹与虚轴交点纵坐标为</p>
+<p><span class="math display">\[
+1+G(j\omega)H(j\omega)=0
+\]</span></p>
+<p>的解 <span class="math inline">\(\omega\)</span></p>
+<p>此时系统处于临界稳定状态</p>
+<h5 id="根轨迹的走向">根轨迹的走向</h5>
+<p>当 <span class="math inline">\(n-m\ge 2\)</span> 时，随着 <span
+class="math inline">\(K_1\)</span>
+的增加，一些根轨迹分支向左方移动，另一些根轨迹分支向右方移动</p>
+<p><span class="math display">\[
+G(s)H(s)=\frac{K_1(s+z_1)\cdots(s+z_m)}{(s+p_1)\cdots(s+p_n)}=\frac{K_1(s^m+\sum_{i=1}^mz_is^{m-1}+\cdots\cdots+\prod_{i=1}^mz_m)}{s^n+\sum_{j=1}^np_js^{n-1}+\cdots\cdots+\prod_{j=1}^np_j}
+\]</span></p>
+<p><span class="math display">\[
+1+G(s)H(s)=s^n+\sum_{j=1}^n p_j
+s^{n-1}+\cdots+\prod_{j=1}^np_j+K_1s^m+K_1\sum_{i=1}^m z_i
+s^{m-1}+\cdots+K_1\prod_{i=1}^mz_i
+\]</span></p>
+<ul>
+<li>当满足 <span class="math inline">\(m-n\ge 2\)</span> 时，上式中
+<span class="math inline">\(s^{n-1}\)</span>
+项没有同类项可以合并，通常将其称为极点的重心</li>
+<li>当 <span class="math inline">\(K_1\)</span>
+保持不变时，极点的重心保持不变，为 <span
+class="math inline">\(\displaystyle -
+\sum_{j=1}^{n}\frac{p_i}{n}\)</span></li>
+</ul>
+<h5 id="根轨迹上-k_1-的计算">根轨迹上 <span
+class="math inline">\(K_1\)</span> 的计算</h5>
+<p><span class="math display">\[
+K_1=\frac{\prod_{j=1}^n \vert s+p_j\vert}{\prod_{i=1}^m \vert
+s+z_i\vert}=\frac{G_1(s_1)H_1(s_1)\text{极点至}s_1\text{向量长度的乘积}}{G_1(s_1)H_1(s_1)\text{零点至}s_1\text{向量长度的乘积}}
+\]</span></p>
+<h5 id="总结-2">总结</h5>
+<table>
+
+<thead>
+<tr>
+<th style="text-align: left;">序</th>
+<th style="text-align: left;">内容</th>
+<th style="text-align: left;">规则</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">起点<br>终点</td>
+<td
+style="text-align: left;">起始于开环极点<br>终止于开环零点（包括无限零点）</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">分支数</td>
+<td style="text-align: left;">等于开环传递函数的极点数（ <span
+class="math inline">\(n \ge m\)</span> ）</td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">对称性</td>
+<td style="text-align: left;">对称于实轴</td>
+</tr>
+<tr>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">渐近线</td>
+<td style="text-align: left;">相交于实轴上的同一点：<br></td>
+</tr>
+<tr>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">实轴上分布</td>
+<td
+style="text-align: left;">实轴上的根轨迹，其右边开环传递函数的零点、极点数之和必为奇数</td>
+</tr>
+<tr>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">分离点 /<br>会合点</td>
+<td style="text-align: left;">实轴上的分离（会合）点（必要条件）<br>
+<span class="math inline">\(\frac{\mathrm{d}[G_1(s)H_1(s)]}{\mathrm{d}s}
+= 0\)</span> 或 <span
+class="math inline">\(\frac{\mathrm{d}K_1}{\mathrm{d}s} =
+0\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">出射角<br>入射角</td>
+<td style="text-align: left;">复极点处的出射角：<br> <span
+class="math inline">\(\theta_a = \pi \pm 2k\pi + \sum_{i=1}^m \angle(P_a
+- Z_i) - \sum_{j=1, j \neq a}^n \angle(P_a - P_j)\)</span>
+<br>复零点处的入射角：<br> <span class="math inline">\(\varphi_b = \pi
+\pm 2k\pi + \sum_{j=1}^n \angle(Z_b - P_j) - \sum_{i=1, i \neq b}^m
+\angle(Z_b - Z_i)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">虚轴交点</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">9</td>
+<td style="text-align: left;">走向</td>
+<td style="text-align: left;">当 <span class="math inline">\(n - m \ge
+2\)</span> ， <span class="math inline">\(K_1 \to \infty\)</span>
+时，一些轨迹向右，则另一些将向左</td>
+</tr>
+<tr>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;"><span class="math inline">\(K_1\)</span>
+计算</td>
+<td style="text-align: left;">根轨迹上任一点处的 <span
+class="math inline">\(K_1\)</span> ：<br> <span
+class="math inline">\(\vert K_1 \vert = \frac{1}{\vert G_1(s_1)H_1(s_1)
+\vert} =
+\frac{G_1(s_1)H_1(s_1)\text{极点至}s_1\text{向量长度的乘积}}{G_1(s_1)H_1(s_1)\text{零点至}s_1\text{向量长度的乘积}}\)</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="系统性能分析">系统性能分析</h3>
+<h4 id="根轨迹分析系统性能">根轨迹分析系统性能</h4>
+<p>控制系统的性功能由闭环零点、极点位置决定</p>
+<ul>
+<li>定性分析
+<ul>
+<li>稳定性分析</li>
+</ul></li>
+<li>定量分析
+<ul>
+<li>暂态响应分析</li>
+<li>定量计算性能指标</li>
+</ul></li>
+</ul>
+<h4 id="稳定性分析-1">稳定性分析</h4>
+<p>主要通过根轨迹图上点的分布来判断系统的稳定性</p>
+<ul>
+<li>稳定系统
+<ul>
+<li>所有闭环极点均在复平面左半部</li>
+</ul></li>
+<li>临界稳定系统
+<ul>
+<li>有闭环极点在虚轴上，其余闭环极点在复平面左半部</li>
+</ul></li>
+<li>不稳定系统
+<ul>
+<li>有闭环极点在复平面右半部</li>
+</ul></li>
+</ul>
+<h4 id="稳态性能分析">稳态性能分析</h4>
+<p>一般来说，开环增益 <span class="math inline">\(K_1\)</span>
+越大，系统的稳态误差越小</p>
+<p>但是随着 <span class="math inline">\(K_1\)</span>
+的增大，根轨迹向右移动，可能导致系统不稳定，并且阻尼比 <span
+class="math inline">\(\xi\)</span>
+变小，振荡变强，超调量增大，动态性能变差</p>
+<h4 id="动态性能分析">动态性能分析</h4>
+<p>通过根轨迹图可以分析系统的动态性能</p>
+<ul>
+<li><p>实部 <span class="math inline">\(\sigma\)</span> 决定收敛速度</p>
+<ul>
+<li>实部离虚轴越远，系统调节时间 <span
+class="math inline">\(t_s\)</span> 越短，响应越快</li>
+</ul>
+<p><span class="math display">\[
+t_s \approx \frac{4}{\vert\sigma\vert} \text{或} t_s \approx
+\frac{3}{\vert\sigma\vert}
+\]</span></p></li>
+<li><p>虚部 <span class="math inline">\(\omega_d\)</span>
+决定振荡频率</p>
+<ul>
+<li>离实轴越远，振荡频率越高</li>
+</ul></li>
+<li><p>与负实轴夹角 <span class="math inline">\(\theta\)</span>
+决定阻尼比 <span class="math inline">\(\xi\)</span></p>
+<ul>
+<li>夹角越远离 <span
+class="math inline">\(\frac{\pi}{2}\)</span>，阻尼比越大，超调量越小</li>
+</ul>
+<p><span class="math display">\[
+\xi=\cos\theta
+\]</span></p></li>
+</ul>
+<h4 id="闭环零极点与系统性能">闭环零极点与系统性能</h4>
+<h5 id="零极点的功能">零极点的功能</h5>
+<ul>
+<li>闭环极点分布
+<ul>
+<li>决定动态响应类型
+<ul>
+<li>极点为实数
+<ul>
+<li>单调的指数响应，不振荡</li>
+</ul></li>
+<li>极点为复数
+<ul>
+<li>振荡响应</li>
+</ul></li>
+<li>极点在右半平面
+<ul>
+<li>系统不稳定</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>闭环零点分布
+<ul>
+<li>决定瞬态响应曲线的形态和指标</li>
+</ul></li>
+</ul>
+<h5
+id="零极点对系统动态性能的影响及其化简">零极点对系统动态性能的影响及其化简</h5>
+<ul>
+<li>主导极点
+<ul>
+<li>决定系统的动态性能</li>
+<li>主导极点一般为一对共轭复极点</li>
+<li>主导极点位置越靠近虚轴，系统响应越慢</li>
+<li>过于远离虚轴的主导极点忽略不计（<span
+class="math inline">\(e^{-\sigma t}\)</span> 衰减过快）</li>
+</ul></li>
+<li>偶极子
+<ul>
+<li>对系统动态性能影响较小，可忽略不计</li>
+</ul></li>
+</ul>
+<h5 id="增加零极点的影响">增加零极点的影响</h5>
+<ul>
+<li>闭环实数零点
+<ul>
+<li>减小系统阻尼比，超调量增大，峰值时间提前</li>
+</ul></li>
+<li>闭环实数极点
+<ul>
+<li>较小系统超调量，峰值时间延后</li>
+</ul></li>
+<li>两个复极点
+<ul>
+<li>暂态过程主要决定于离虚轴较近的极点</li>
+</ul></li>
+</ul>
+<h5 id="复极点的几何意义">复极点的几何意义</h5>
+<p>当闭环极点是共轭复数 <span class="math inline">\(s=-\sigma\pm
+j\omega_d\)</span> 时</p>
+<ul>
+<li>阻尼比 <span
+class="math inline">\(\xi=\frac{\sigma}{\sqrt{\sigma^2+\omega_d^2}}=\cos\theta\)</span></li>
+<li>极点到原点的距离 <span class="math inline">\(\omega_n
+=\sqrt{\sigma^2+\omega_d^2}\)</span>，也是自然频率</li>
+<li>若控制 <span class="math inline">\(\omega_n\)</span> 不变，改变
+<span class="math inline">\(\xi\)</span>，则极点在以原点为中心，<span
+class="math inline">\(\omega_n\)</span> 为半径的圆弧上移动</li>
+<li>若控制 <span class="math inline">\(\xi\)</span> 不变，改变 <span
+class="math inline">\(\omega_n\)</span>，则极点在以原点为中心，倾角为
+<span class="math inline">\(\theta\)</span> 的直线上移动，随着 <span
+class="math inline">\(\omega_n\)</span>
+的增大，极点沿着矢量方向延伸，系统响应速度加快</li>
+<li><span class="math inline">\(\sigma=\xi \omega_n\)</span>
+决定系统响应速度</li>
 </ul>
 <h2 id="控制系统的复域分析">控制系统的复域分析</h2>
 <h2 id="控制系统的频域分析">控制系统的频域分析</h2>
