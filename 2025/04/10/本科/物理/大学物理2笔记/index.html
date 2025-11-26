@@ -27,7 +27,7 @@
 <meta property="og:description" content="大学物理 2 笔记 真空中的静电场 电学基本概念 电荷  代表物质间发生电离相互作用的物质的一种属性 一般用 \(q\) 表示  电荷的单位为 库伦 \(C\)，\(1C &#x3D; 1A\cdot s\) 电荷的基本性质 电荷的正负性  电荷有正负两种性质 同种电荷相互排斥，异种电荷相互吸引  电荷的量子化 任何带电体的电量都是电子电量的整数倍 \[ q &#x3D; N\cdot e\quad (N&#x3D;0,\pm">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-04-10T06:55:56.000Z">
-<meta property="article:modified_time" content="2025-11-18T05:59:51.404Z">
+<meta property="article:modified_time" content="2025-11-26T11:39:10.606Z">
 <meta property="article:author" content="东川路第一寒冰">
 <meta property="article:tag" content="课程笔记">
 <meta property="article:tag" content="物理">
@@ -228,7 +228,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          9.8k 字
+          11k 字
         
       </span>
     
@@ -239,7 +239,7 @@
         
         
         
-          82 分钟
+          96 分钟
         
       </span>
     
@@ -1654,6 +1654,311 @@ W_m = \frac{1}{2}L_1 I_1^2 + \frac{1}{2}L_2 I_2^2 \pm M I_1 I_2
 <p><span class="math display">\[
 w_m = \frac{1}{2}\vec{B} \cdot \vec{H} = \frac{1}{2\mu}B^2
 \]</span></p>
+<h2 id="电磁场与电磁波">电磁场与电磁波</h2>
+<h3 id="麦克斯韦电磁理论">麦克斯韦电磁理论</h3>
+<h4 id="位移电流">位移电流</h4>
+<p>考虑安培环路定律</p>
+<p>对于恒稳电流</p>
+<p><span class="math display">\[
+\oint_L \vec{B} \cdot \mathrm{d}\vec{l} = I_c=\iint_S \vec{J} \cdot
+\mathrm{d}\vec{S}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(I_c\)</span> 为穿过面积 <span
+class="math inline">\(S\)</span> 的电流</li>
+</ul>
+<p>对于闭合曲面</p>
+<p><span class="math display">\[
+\oiint_S j_c\cdot\mathrm{d}\vec{S}=0
+\]</span></p>
+<p>考虑非温衡电流（如电容器的极板一段）</p>
+<p><span class="math display">\[
+I=\oiint_S \vec{j}_c\cdot \mathrm{d}\vec{S}=-
+\frac{\mathrm{d}q}{\mathrm{d}t}
+\]</span></p>
+<p>由于</p>
+<p><span class="math display">\[
+q=\iint_S \vec{D} \cdot \mathrm{d}\vec{S}
+\]</span></p>
+<p>则可修正为</p>
+<p><span class="math display">\[
+\oiint_S (\vec{j}_c+ \frac{\partial \vec{D}}{\partial t})\cdot
+\mathrm{d}\vec{S}=0
+\]</span></p>
+<ul>
+<li><span class="math inline">\(\displaystyle
+\iint_D\vec{D}\cdot\mathrm{d}\vec{S}\)</span>
+被麦克斯韦称为位移电流</li>
+<li><span class="math inline">\(\displaystyle
+\frac{\mathrm{d}\vec{D}}{\mathrm{d}t}=\vec{j}_d\)</span>
+称为位移电流密度</li>
+</ul>
+<h4 id="全电流">全电流</h4>
+<p>将传导电流 <span class="math inline">\(\vec{I}_c\)</span> 和位移电流
+<span class="math inline">\(\vec{I}_d\)</span> 和在一起称为全电流 <span
+class="math inline">\(\vec{I}_c+\vec{I}_d\)</span></p>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202511251021366.png" srcset="/img/loading.jpeg" lazyload
+alt="电容器全电流" />
+<figcaption aria-hidden="true">电容器全电流</figcaption>
+</figure>
+<p>在电容器极板表面中断的传导电流被间隙中的位移电流接替下去，两者一起保持了电流的连续性</p>
+<h4 id="麦克斯韦方程组">麦克斯韦方程组</h4>
+<p>麦克斯韦方程组是描述电磁场的四个基本方程，包含了电场 <span
+class="math inline">\(\vec{E}\)</span>、磁场 <span
+class="math inline">\(\vec{B}\)</span>、电位移场 <span
+class="math inline">\(\vec{D}\)</span> 和磁场强度 <span
+class="math inline">\(\vec{H}\)</span> 之间的关系</p>
+<ul>
+<li><p>静电场的高斯定律</p>
+<p><span class="math display">\[
+\oiint_S \vec{D} \cdot \mathrm{d}\vec{S} = q_0
+\]</span></p></li>
+<li><p>磁场的高斯定律</p>
+<p><span class="math display">\[
+\oiint_S \vec{B} \cdot \mathrm{d}\vec{S} = 0
+\]</span></p></li>
+<li><p>法拉第电磁感应定律</p>
+<p><span class="math display">\[
+\oint_L \vec{E} \cdot \mathrm{d}\vec{l} = -\iint_S \frac{\partial
+\vec{B}}{\partial t} \cdot \mathrm{d}\vec{S}
+\]</span></p></li>
+<li><p>安培环路定律（包含位移电流）</p>
+<p><span class="math display">\[
+\oint_L \vec{H} \cdot \mathrm{d}\vec{l} = I +\iint_S \frac{\partial
+\vec{D}}{\partial t} \cdot \mathrm{d}\vec{S}
+\]</span></p></li>
+</ul>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;\oiint_S \vec{D} \cdot \mathrm{d}\vec{S} = q_0\\
+      &amp;\oiint_S \vec{B} \cdot \mathrm{d}\vec{S} = 0\\
+      &amp;\oint_L \vec{E} \cdot \mathrm{d}\vec{l} = -\iint_S
+\frac{\partial \vec{B}}{\partial t} \cdot \mathrm{d}\vec{S}\\
+      &amp;\oint_L \vec{H} \cdot \mathrm{d}\vec{l} = I +\iint_S
+\frac{\partial \vec{D}}{\partial t} \cdot \mathrm{d}\vec{S}
+   \end{aligned}
+\right.
+\]</span></p>
+<p>微分形式</p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;\nabla \cdot \vec{D} = \rho\\
+      &amp;\nabla \cdot \vec{B} = 0\\
+      &amp;\nabla \times \vec{E} = -\frac{\partial \vec{B}}{\partial
+t}\\
+      &amp;\nabla \times \vec{H} = \vec{j}_c + \frac{\partial
+\vec{D}}{\partial t}
+   \end{aligned}
+\right.
+\]</span></p>
+<h3 id="电磁波">电磁波</h3>
+<h4 id="电磁波波动方程">电磁波波动方程</h4>
+<p>真空中，当 <span class="math inline">\(q=0\)</span>，<span
+class="math inline">\(I=0\)</span> 时的麦克斯韦方程</p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;\oint_S \vec{D} \cdot \mathrm{d}\vec{S} = 0\\
+      &amp;\oint_S \vec{B} \cdot \mathrm{d}\vec{S} = 0\\
+      &amp;\oint_L \vec{E} \cdot \mathrm{d}\vec{l} = -\iint_S
+\frac{\partial \vec{B}}{\partial t} \cdot \mathrm{d}\vec{S}\\
+      &amp;\oint_L \vec{H} \cdot \mathrm{d}\vec{l} = \iint_S
+\frac{\partial \vec{D}}{\partial t} \cdot \mathrm{d}\vec{S}
+   \end{aligned}
+\right.
+\text{（积分形式）}\quad
+\left\{
+   \begin{aligned}
+      &amp;\nabla \cdot \vec{D} = 0\\
+      &amp;\nabla \cdot \vec{B} = 0\\
+      &amp;\nabla \times \vec{E} = -\frac{\partial \vec{B}}{\partial
+t}\\
+      &amp;\nabla \times \vec{H} = \frac{\partial \vec{D}}{\partial t}
+   \end{aligned}
+\right.
+\text{（微分形式）}
+\]</span></p>
+<p>通过化简得到最终的波动方程（假设波沿 <span
+class="math inline">\(x\)</span> 轴传播）</p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;\frac{\partial^2 \vec{E}}{\partial x^2} =
+\varepsilon_r\varepsilon_0\mu_r\mu_0\frac{\partial^2 \vec{E}}{\partial
+t^2}\\
+      &amp;\frac{\partial^2 \vec{B}}{\partial x^2} =
+\varepsilon_r\varepsilon_0\mu_r\mu_0\frac{\partial^2 \vec{B}}{\partial
+t^2}
+   \end{aligned}
+\right.
+\]</span></p>
+<ul>
+<li>其中 <span class="math inline">\(\varepsilon_0\)</span> 和 <span
+class="math inline">\(\mu_0\)</span> 分别是真空的介电常数和磁导率</li>
+</ul>
+<p>则可以得到电磁波的传播速度</p>
+<p><span class="math display">\[
+\nu = \frac{1}{\sqrt{\varepsilon_r\varepsilon_0\mu_r\mu_0}}
+\]</span></p>
+<p>真空中</p>
+<p><span class="math display">\[
+u = \frac{1}{\sqrt{\varepsilon_0\mu_0}} \approx 3 \times 10^8 \
+\text{m/s}=c
+\]</span></p>
+<p>介质中</p>
+<p><span class="math display">\[
+\nu = \frac{1}{\sqrt{\varepsilon\mu}} =
+\frac{c}{\sqrt{\varepsilon_r\mu_r}}=\frac{c}{n}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(\displaystyle
+n=\sqrt{\mu_r\varepsilon_r}\)</span> 为介质的折射率</li>
+<li>在光波段中 <span class="math inline">\(\mu_r \approx 1\)</span>，则
+<span class="math inline">\(\displaystyle n \approx
+\sqrt{\varepsilon_r}\)</span>，与物质作用的主要是 <span
+class="math inline">\(\vec{E}\)</span> 矢量，所以 <span
+class="math inline">\(\vec{E}\)</span> 通常被称为光矢量</li>
+</ul>
+<h5 id="平面简谐电磁波">平面简谐电磁波</h5>
+<ul>
+<li><p>横波性</p>
+<ul>
+<li>各同向性介质中，平面电磁波的 <span
+class="math inline">\(\vec{E}\)</span> 方向与传播方向垂直</li>
+<li>各向同性介质中，平面电磁波的 <span
+class="math inline">\(\vec{H}\)</span> 方向与传播方向垂直</li>
+</ul></li>
+<li><p>偏振性</p>
+<ul>
+<li>各同向性介质中，平面电磁波的 <span
+class="math inline">\(\vec{H}\)</span> 方向与 <span
+class="math inline">\(\vec{E}\)</span> 方向垂直，电磁波的 <span
+class="math inline">\(\vec{E}\times \vec{H}\)</span>
+方向与传播方向相同</li>
+</ul></li>
+<li><p><span class="math inline">\(\vec{E}\)</span>，<span
+class="math inline">\(\vec{H}\)</span> 同周相</p>
+<p><span class="math display">\[
+\vert H\vert = \sqrt{\frac{\varepsilon_0}{\mu_0}}\vert E\vert
+\]</span></p>
+<p><span class="math display">\[
+\vert B\vert =\frac{1}{c}\vert E\vert
+\]</span></p></li>
+</ul>
+<h3 id="poynting-矢量">Poynting 矢量</h3>
+<p>电磁波的能流密度为单位时间通过垂直于传播方向单位面积的能量</p>
+<p><span class="math display">\[
+S=\frac{W}{\Delta t\Delta S}=\frac{w\Delta S\Delta x}{\Delta t\Delta
+S}=wu
+\]</span></p>
+<p>将 <span class="math inline">\(w=\frac{1}{2}\varepsilon
+E^2+\frac{1}{2}\mu H^2\)</span> 和 <span
+class="math inline">\(u=\frac{1}{\sqrt{\varepsilon\mu}}\)</span>
+代入上式，并且 <span
+class="math inline">\(\sqrt{\varepsilon}E=\sqrt{\mu}H\)</span>，则有</p>
+<p><span class="math display">\[
+\begin{aligned}
+  w=&amp;\frac{1}{2}\sqrt{\varepsilon}E\sqrt{\mu}H+\frac{1}{2}\sqrt{\varepsilon}E\sqrt{\mu}H\\
+  =&amp;\sqrt{\varepsilon}E\sqrt{\mu}H\\
+  =&amp;\frac{1}{u}EH
+\end{aligned}
+\]</span></p>
+<p>则能流密度为</p>
+<p><span class="math display">\[
+S=EH
+\]</span></p>
+<h4 id="矢量表达">矢量表达</h4>
+<p>电磁波能量的传播方向就是电磁波的传播方向，因此定义 Poynting
+矢量为</p>
+<p><span class="math display">\[
+\vec{E}= \vec{E} \times \vec{H}
+\]</span></p>
+<h4 id="电磁波强度">电磁波强度</h4>
+<p><span class="math display">\[
+I=\langle S \rangle = \frac{E_0 H_0}{2} =
+\frac{E_0^2}{2}\sqrt{\frac{\varepsilon}{\mu}}
+\]</span></p>
+<h4 id="辐射压强">辐射压强</h4>
+<p>由质能关系</p>
+<p>质量密度为</p>
+<p><span class="math display">\[
+m=\frac{w}{c^2}
+\]</span></p>
+<p>动量密度为</p>
+<p><span class="math display">\[
+g=\frac{w}{c} = \frac{S}{c^2}
+\]</span></p>
+<p>辐射压强为</p>
+<p><span class="math display">\[
+p=w=\frac{S}{C^2}
+\]</span></p>
+<p>平均辐射压强为</p>
+<p><span class="math display">\[
+\langle p \rangle = \frac{1}{c^2}\langle S \rangle = \frac{I}{c^2}
+\]</span></p>
+<h2 id="电磁波的产生">电磁波的产生</h2>
+<h3 id="振荡电偶极子的电磁场">振荡电偶极子的电磁场</h3>
+<p>电矩为 <span class="math inline">\(\displaystyle p = p_0 \cos \omega
+t\)</span> 的振荡电偶极子在远场区产生的电磁场为</p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;E=-\frac{\omega^2p_0\sin\theta}{4\pi\varepsilon_0c^2r}\cos\left[\omega(t-\frac{r}{c})\right]\\
+      &amp;H=-\frac{\omega^2p_0\sin\theta}{4\pi
+cr}\cos\left[\omega(t-\frac{r}{c})\right]\\
+      &amp;S=EH=\frac{\omega^4p_0^2\sin^2\theta}{16\pi^2\varepsilon_0c^3r^2}\cos^2\left[\omega(t-\frac{r}{c})\right]
+   \end{aligned}
+\right.
+\]</span></p>
+<p>总辐射功率为</p>
+<p><span class="math display">\[
+p=\iint_\text{球面}Sr^2\sin\theta\ \mathrm{d}\mathrm{d}\theta
+\]</span></p>
+<p><span class="math display">\[
+\langle p \rangle = \frac{\omega^4p_0^2}{12\pi\varepsilon_0c^3}
+\]</span></p>
+<ul>
+<li>辐射能量与频率的四次方成正比</li>
+<li>辐射能量与距离的平方成反比，是球面波的特点</li>
+<li>有很强的方向性，在垂直于轴线方向上的辐射最强，在沿轴线方向上没有辐射</li>
+</ul>
+<h3 id="电磁波的发射">电磁波的发射</h3>
+<p>电容（L）- 电感（C）振荡电路（LC
+电路）中，电荷和电流会发生周期性变化，从而产生变化的电场和磁场，进而发射电磁波</p>
+<p>LC 电路的频率为</p>
+<p><span class="math display">\[
+\nu = \frac{1}{2\pi\sqrt{LC}}
+\]</span></p>
+<p>通过提高振荡电路的频率，可以发射不同频率的电磁波，从而实现无线电通信等应用</p>
+<ul>
+<li>缩小电容器极板面积，拉开电容器极板间距</li>
+<li>减小线圈匝数，并逐渐拉直，简化为一条直线</li>
+</ul>
+<h3 id="赫兹实验">赫兹实验</h3>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202511251643641.png" srcset="/img/loading.jpeg" lazyload
+alt="赫兹实验" />
+<figcaption aria-hidden="true">赫兹实验</figcaption>
+</figure>
+<p>赫兹实验在人类历史上首次玩笑哼了发射和接受电磁波，验证了麦克斯韦预言，解释了光的电磁本质，将光学与电磁学统一起来</p>
+<h3 id="电磁波谱">电磁波谱</h3>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202511251700380.png" srcset="/img/loading.jpeg" lazyload
+alt="电磁波谱" />
+<figcaption aria-hidden="true">电磁波谱</figcaption>
+</figure>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202511251700806.png" srcset="/img/loading.jpeg" lazyload
+alt="应用" />
+<figcaption aria-hidden="true">应用</figcaption>
+</figure>
 
                 
               </div>
