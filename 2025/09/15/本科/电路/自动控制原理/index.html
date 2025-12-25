@@ -27,7 +27,7 @@
 <meta property="og:description" content="自动控制原理 B 导论 概述 自动控制的意义  提高了劳动生产率 提高控制的准确性 可用于某些人们不能直接参与工作的场合  判断一个系统是否为自动控制系统的标准：控制过程脱离人的控制 但是，自动控制系统中仍然有人参与，并非脱离人的设置 自动控制理论的发展 胚芽期（1945 年以前）  18 世纪以后，蒸汽机的使用提出了调速稳定等问题  1765 年，俄国人波尔祖诺夫发明了锅炉水位调节器 1784">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-09-15T10:00:00.000Z">
-<meta property="article:modified_time" content="2025-11-22T12:36:14.134Z">
+<meta property="article:modified_time" content="2025-12-24T23:59:54.434Z">
 <meta property="article:author" content="东川路第一寒冰">
 <meta property="article:tag" content="课程笔记">
 <meta property="article:tag" content="自动控制原理">
@@ -226,7 +226,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          13k 字
+          16k 字
         
       </span>
     
@@ -237,7 +237,7 @@
         
         
         
-          108 分钟
+          130 分钟
         
       </span>
     
@@ -547,7 +547,7 @@ R(s)=\int_{0}^{\infty} R\cdot u(t) e^{-s t} \,\mathrm{d}t=\frac{R}{s}
 <p><span class="math display">\[
 R(s)=\int_{0}^{\infty} u(t) e^{-s t} \,\mathrm{d}t=\frac{1}{s}
 \]</span></p>
-<h3 id="斜坡信号ramp">斜坡信号（Ramp）</h3>
+<h4 id="斜坡信号ramp">斜坡信号（Ramp）</h4>
 <p>也被称为速度信号</p>
 <p><span class="math display">\[
 r(t)=
@@ -562,7 +562,7 @@ r(t)=
 <p><span class="math display">\[
 R(s)=\int_{0}^{\infty} R\cdot t e^{-s t} \,\mathrm{d}t=\frac{R}{s^{2}}
 \]</span></p>
-<h3 id="抛物线信号parabolic">抛物线信号（Parabolic）</h3>
+<h4 id="抛物线信号parabolic">抛物线信号（Parabolic）</h4>
 <p>也称匀加速信号</p>
 <p><span class="math display">\[
 r(t)=
@@ -578,7 +578,7 @@ r(t)=
 R(s)=\int_{0}^{\infty} \frac{1}{2}R\cdot t^2 e^{-s t}
 \,\mathrm{d}t=\frac{R}{s^{3}}
 \]</span></p>
-<h3 id="正弦信号">正弦信号</h3>
+<h4 id="正弦信号">正弦信号</h4>
 <p><span class="math display">\[
 r(t)=R\sin(\omega t+\varphi)
 \]</span></p>
@@ -588,11 +588,11 @@ r(t)=R\sin(\omega t+\varphi)
 <li><span class="math inline">\(\omega\)</span> 是振荡角频率</li>
 <li><span class="math inline">\(\varphi\)</span> 是相位移</li>
 </ul>
-<h3 id="谐波信号">谐波信号</h3>
+<h4 id="谐波信号">谐波信号</h4>
 <p><span class="math display">\[
 r(t)=R\cos(\omega t+\varphi)
 \]</span></p>
-<h3 id="指数信号">指数信号</h3>
+<h4 id="指数信号">指数信号</h4>
 <p><span class="math display">\[
 r(t)=R e^{a t}
 \]</span></p>
@@ -1237,7 +1237,7 @@ c(t)=\sum_{i=1}^{k}c_ie^{p_it}+\sum_{j=1}^{r}e^{\sigma_j t}(\alpha_j
 \cos\omega_j t+\beta_j sin\omega_j t)
 \]</span></p>
 <blockquote>
-<p>注意，次形式仅适用于没有重根的情况，在有重根时部分系数带有 <span
+<p>注意，此形式仅适用于没有重根的情况，在有重根时部分系数带有 <span
 class="math inline">\(t\)</span> 的幂次</p>
 </blockquote></li>
 </ul>
@@ -1597,7 +1597,8 @@ e_{ss}=\lim_{s\to 0}sE(s)=\lim_{s\to 0}\frac{s}{1+G(s)H(s)}\cdot
 <th style="text-align: left;">系统型号</th>
 <th style="text-align: left;">误差 <span
 class="math inline">\(K_p\)</span></th>
-<th style="text-align: left;">$K_v</th>
+<th style="text-align: left;"><span
+class="math inline">\(K_v\)</span></th>
 <th style="text-align: left;">系数 <span
 class="math inline">\(K_a\)</span></th>
 <th style="text-align: left;">阶跃输入 <span
@@ -2110,7 +2111,7 @@ class="math inline">\(\frac{1}{10}\)</span> 或更小</li>
 <li>类型取决于闭环极点：指数型、正弦振荡型</li>
 </ul></li>
 </ul>
-<h2 id="根轨迹法">根轨迹法</h2>
+<h2 id="控制系统的复域分析">控制系统的复域分析</h2>
 <h3 id="根轨迹法的概念">根轨迹法的概念</h3>
 <p>根轨迹法是通过绘制闭环极点随开环某参数变化的轨迹来判断闭环系统稳定性的一种图解方法，其参变量为系统增益
 <span class="math inline">\(K_1\)</span></p>
@@ -2543,9 +2544,566 @@ class="math inline">\(\omega_n\)</span>
 <li><span class="math inline">\(\sigma=\xi \omega_n\)</span>
 决定系统响应速度</li>
 </ul>
-<h2 id="控制系统的复域分析">控制系统的复域分析</h2>
 <h2 id="控制系统的频域分析">控制系统的频域分析</h2>
-<h2 id="控制系统的设计">控制系统的设计</h2>
+<h3 id="频率特性">频率特性</h3>
+<p>当一个线性系统输入一个正弦信号 <span class="math inline">\(r(t) = A
+\sin(\omega t)\)</span> 时，其稳态输出 <span
+class="math inline">\(c(t)\)</span>
+必定是与输入信号<strong>同频率</strong>的正弦信号，但其幅值和相位会发生变化，即
+<span class="math inline">\(c(t) = B \sin(\omega t + \phi)\)</span></p>
+<p>系统的频率特性 <span class="math inline">\(G(j\omega)\)</span>
+定义为在任意角频率 <span class="math inline">\(\omega\)</span>
+下，系统稳态输出信号的复数表示（相量）与输入信号的复数表示（相量）之比</p>
+<h3 id="nyquest-图">Nyquest 图</h3>
+<ul>
+<li><strong>坐标轴</strong>: 横轴为实部 <span
+class="math inline">\(\text{Re}[G(j\omega)H(j\omega)]\)</span>，纵轴为虚部
+<span
+class="math inline">\(\text{Im}[G(j\omega)H(j\omega)]\)</span></li>
+<li><strong>曲线</strong>: 当角频率 <span
+class="math inline">\(\omega\)</span> 从 <span
+class="math inline">\(0\)</span> 变化到 <span
+class="math inline">\(+\infty\)</span> 时，复数量 <span
+class="math inline">\(G(j\omega)H(j\omega)\)</span>
+在复平面上描绘出的完整轨迹</li>
+</ul>
+<h3 id="bode-图">Bode 图</h3>
+<h4 id="bode-图的构成">Bode 图的构成</h4>
+<ul>
+<li>对数幅频曲线
+<ul>
+<li><strong>纵坐标</strong>: 采用对数单位<strong>分贝 (dB)</strong>
+来表示幅值，计算公式为 <span class="math inline">\(L(\omega) =
+20\log_{10}\left\vert G(j\omega) \right\vert\)</span></li>
+<li><strong>横坐标</strong>: 采用对数刻度表示角频率 <span
+class="math inline">\(\omega\)</span> （常用 <span
+class="math inline">\(\log_{10}\omega\)</span>）</li>
+<li>幅频曲线可以使用直线段折线来近似</li>
+</ul></li>
+<li>对数相频曲线
+<ul>
+<li><strong>纵坐标</strong>:
+采用线性刻度的角度（<strong>°</strong>）来表示相位 <span
+class="math inline">\(\phi(\omega) = \angle G(j\omega)\)</span></li>
+<li><strong>横坐标</strong>: 同样采用对数刻度的角频率 <span
+class="math inline">\(\omega\)</span></li>
+</ul></li>
+</ul>
+<h4 id="典型环节的-bode-图">典型环节的 Bode 图</h4>
+<h5 id="放大环节-gjomegak">放大环节 <span
+class="math inline">\(G(j\omega)=K\)</span></h5>
+<ul>
+<li><p>幅频特性</p>
+<p><span class="math display">\[
+L(\omega)=20\log_{10}\vert K\vert
+\]</span></p>
+<ul>
+<li>幅值为 <span class="math inline">\(20\lg K\)</span> 分贝</li>
+</ul></li>
+<li><p>相频特性</p>
+<p><span class="math display">\[
+\phi(\omega)=0^\circ
+\]</span></p></li>
+</ul>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202512171712892.png" srcset="/img/loading.jpeg" lazyload
+alt="放大环节 Bode 图" />
+<figcaption aria-hidden="true">放大环节 Bode 图</figcaption>
+</figure>
+<h5 id="积分环节-gjomegafrac1jomega">积分环节 <span
+class="math inline">\(G(j\omega)=\frac{1}{j\omega}\)</span></h5>
+<ul>
+<li><p>幅频特性</p>
+<p><span class="math display">\[
+L(\omega)=20\log_{10}\left\vert \frac{1}{j\omega}\right\vert
+=-20\log_{10}\omega
+\]</span></p>
+<ul>
+<li>斜率为 <span class="math inline">\(-20\)</span> dB/十倍频程，即
+<span class="math inline">\(20 \text{ dB/dec}\)</span></li>
+<li>经过横轴 <span class="math inline">\(\omega=1\)</span> 处，斜率为
+<span class="math inline">\(-20 \text{ dB/dec}\)</span> 的直线</li>
+</ul></li>
+<li><p>相频特性</p>
+<p><span class="math display">\[
+\phi(\omega)=\angle \frac{1}{j\omega}=-90^\circ
+\]</span></p></li>
+</ul>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202512171715257.png" srcset="/img/loading.jpeg" lazyload
+alt="积分环节的 Bode 图" />
+<figcaption aria-hidden="true">积分环节的 Bode 图</figcaption>
+</figure>
+<h5 id="微分环节-gjomegajomega">微分环节 <span
+class="math inline">\(G(j\omega)=j\omega\)</span></h5>
+<ul>
+<li><p>幅频特性</p>
+<p><span class="math display">\[
+L(\omega)=20\log_{10}\left\vert j\omega\right\vert =20\log_{10}\omega
+\]</span></p>
+<ul>
+<li>斜率为 <span class="math inline">\(20\)</span> dB/十倍频程，即 <span
+class="math inline">\(20 \text{ dB/dec}\)</span></li>
+<li>经过横轴 <span class="math inline">\(\omega=1\)</span> 处，斜率为
+<span class="math inline">\(20 \text{ dB/dec}\)</span> 的直线</li>
+</ul></li>
+<li><p>相频特性</p>
+<p><span class="math display">\[
+\phi(\omega)=\angle j\omega=90^\circ
+\]</span></p></li>
+</ul>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202512171716048.png" srcset="/img/loading.jpeg" lazyload
+alt="微分环节的 Bode 图" />
+<figcaption aria-hidden="true">微分环节的 Bode 图</figcaption>
+</figure>
+<h5 id="惯性环节-gjomegafrac11jomega-t">惯性环节 <span
+class="math inline">\(G(j\omega)=\frac{1}{1+j\omega T}\)</span></h5>
+<ul>
+<li><p>幅频特性</p>
+<p><span class="math display">\[
+L(\omega)=20\log_{10}\left\vert \frac{1}{1+j\omega T}\right\vert
+=-10\log_{10}(1+(\omega T)^2)
+\]</span></p>
+<ul>
+<li>低频段 <span class="math inline">\((\omega \ll
+\frac{1}{T})\)</span>：幅值近似为 <span class="math inline">\(0\)</span>
+dB</li>
+<li>高频段 <span class="math inline">\((\omega \gg
+\frac{1}{T})\)</span>：幅值近似为 <span
+class="math inline">\(-20\log_{10}\omega T\)</span>，斜率为 <span
+class="math inline">\(-20\)</span> dB/十倍频程</li>
+<li>截止频率 <span class="math inline">\(\omega_c=\frac{1}{T}\)</span>
+处，幅值为 <span class="math inline">\(-3\)</span> dB</li>
+</ul></li>
+<li><p>相频特性</p>
+<p><span class="math display">\[
+\phi(\omega)=\angle \frac{1}{1+j\omega T}=-\arctan(\omega T)
+\]</span></p>
+<ul>
+<li>低频段 <span class="math inline">\((\omega \ll
+\frac{1}{T})\)</span>：相位近似为 <span
+class="math inline">\(0^\circ\)</span></li>
+<li>高频段 <span class="math inline">\((\omega \gg
+\frac{1}{T})\)</span>：相位近似为 <span
+class="math inline">\(-90^\circ\)</span></li>
+<li>截止频率 <span class="math inline">\(\omega_c=\frac{1}{T}\)</span>
+处，相位为 <span class="math inline">\(-45^\circ\)</span></li>
+</ul></li>
+</ul>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202512171721719.png" srcset="/img/loading.jpeg" lazyload
+alt="惯性环节的 Bode 图" />
+<figcaption aria-hidden="true">惯性环节的 Bode 图</figcaption>
+</figure>
+<h5 id="一阶微分环节-gjomegafracjomega-t1jomega-t">一阶微分环节 <span
+class="math inline">\(G(j\omega)=\frac{j\omega T}{1+j\omega
+T}\)</span></h5>
+<ul>
+<li><p>幅频特性</p>
+<p><span class="math display">\[
+L(\omega)=20\log_{10}\left\vert \frac{j\omega T}{1+j\omega T}\right\vert
+=20\log_{10}\omega T -10\log_{10}(1+(\omega T)^2)
+\]</span></p>
+<ul>
+<li>低频段 <span class="math inline">\((\omega \ll
+\frac{1}{T})\)</span>：幅值近似为 <span
+class="math inline">\(20\log_{10}\omega T\)</span>，斜率为 <span
+class="math inline">\(20\)</span> dB/十倍频程</li>
+<li>高频段 <span class="math inline">\((\omega \gg
+\frac{1}{T})\)</span>：幅值近似为 <span class="math inline">\(0\)</span>
+dB</li>
+<li>截止频率 <span class="math inline">\(\omega_c=\frac{1}{T}\)</span>
+处，幅值为 <span class="math inline">\(-3\)</span> dB</li>
+</ul></li>
+<li><p>相频特性</p>
+<p><span class="math display">\[
+\phi(\omega)=\angle \frac{j\omega T}{1+j\omega T}=90^\circ
+-\arctan(\omega T)
+\]</span></p>
+<ul>
+<li>低频段 <span class="math inline">\((\omega \ll
+\frac{1}{T})\)</span>：相位近似为 <span
+class="math inline">\(0^\circ\)</span></li>
+<li>高频段 <span class="math inline">\((\omega \gg
+\frac{1}{T})\)</span>：相位近似为 <span class="math inline">\(90^\circ
+-90^\circ=0^\circ\)</span></li>
+<li>截止频率 <span class="math inline">\(\omega_c=\frac{1}{T}\)</span>
+处，相位为 <span class="math inline">\(45^\circ\)</span></li>
+</ul></li>
+</ul>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202512171728308.png" srcset="/img/loading.jpeg" lazyload
+alt="一阶微分环节的 Bode 图" />
+<figcaption aria-hidden="true">一阶微分环节的 Bode 图</figcaption>
+</figure>
+<h5 id="震荡环节-gjomegafrac1t2-jomega22xi-t-jomega-1">震荡环节 <span
+class="math inline">\(G(j\omega)=\frac{1}{T^2 j\omega^2+2\xi T j\omega
++1}\)</span></h5>
+<ul>
+<li><p>幅频特性</p>
+<p><span class="math display">\[
+L(\omega)=20\log_{10}\left\vert \frac{1}{T^2 j\omega^2+2\xi T j\omega
++1}\right\vert =-10\log_{10}[(1-T^2\omega^2)^2+(2\xi T \omega)^2]
+\]</span></p>
+<ul>
+<li>低频段 <span class="math inline">\((\omega \ll
+\frac{1}{T})\)</span>：幅值近似为 <span class="math inline">\(0\)</span>
+dB</li>
+<li>高频段 <span class="math inline">\((\omega \gg
+\frac{1}{T})\)</span>：幅值近似为 <span
+class="math inline">\(-40\log_{10}\omega T\)</span>，斜率为 <span
+class="math inline">\(-40\)</span> dB/十倍频程</li>
+<li>截止频率 <span class="math inline">\(\omega_n=\frac{1}{T}\)</span>
+处，幅值为 <span class="math inline">\(-20\log_{10}(2\xi)\)</span>
+dB</li>
+</ul></li>
+<li><p>相频特性</p>
+<p><span class="math display">\[
+\phi(\omega)=\angle \frac{1}{T^2 j\omega^2+2\xi T j\omega
++1}=-\arctan\frac{2\xi T \omega}{1-T^2\omega^2}
+\]</span></p>
+<ul>
+<li>低频段 <span class="math inline">\((\omega \ll
+\frac{1}{T})\)</span>：相位近似为 <span
+class="math inline">\(0^\circ\)</span></li>
+<li>高频段 <span class="math inline">\((\omega \gg
+\frac{1}{T})\)</span>：相位近似为 <span
+class="math inline">\(-180^\circ\)</span></li>
+<li>截止频率 <span class="math inline">\(\omega_n=\frac{1}{T}\)</span>
+处，相位为 <span class="math inline">\(-90^\circ\)</span></li>
+</ul></li>
+</ul>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202512171733334.png" srcset="/img/loading.jpeg" lazyload
+alt="震荡环节的 Bode 图" />
+<figcaption aria-hidden="true">震荡环节的 Bode 图</figcaption>
+</figure>
+<h4 id="绘制-bode-图的方法">绘制 Bode 图的方法</h4>
+<h5 id="直接计算法">直接计算法</h5>
+<p>将各个基本环节的 Bode 图叠加起来，得到系统的 Bode 图</p>
+<h5 id="近似折线叠加法">近似折线叠加法</h5>
+<ol type="1">
+<li>将系统开环传递函数 <span class="math inline">\(G(s)H(s)\)</span>
+分解为各个基本环节的乘积形式，并且整理为<strong>时间常数形式</strong></li>
+<li>求出所有典型环节的转折频率，并在图上标注出来</li>
+<li>在 <span class="math inline">\(\omega=1\)</span> 量出幅值 <span
+class="math inline">\(20\lg K\)</span></li>
+<li>在该点做一条斜率为 <span class="math inline">\(-20 N\)</span>
+的直线，直到第一个转折频率</li>
+<li>每个转折处改变一次渐近线的斜率
+<ol type="1">
+<li>每遇到一个一阶惯性环节，斜率改变 <span
+class="math inline">\(-20\)</span> dB/十倍频程</li>
+<li>每遇到一个一阶微分环节，斜率改变 <span
+class="math inline">\(+20\)</span> dB/十倍频程</li>
+<li>每遇到一个二阶振荡环节，斜率改变 <span
+class="math inline">\(-40\)</span> dB/十倍频程</li>
+</ol></li>
+<li>根据各个转折频率处的实际幅值，修正曲线（可选）</li>
+</ol>
+<h4 id="最小相位系统">最小相位系统</h4>
+<p>系统<strong>开环传递函数</strong>中，没有位于 <span
+class="math inline">\(S\)</span>
+右半平面的零点和极点，没有纯时间延迟环节的系统</p>
+<h3 id="奈氏判据">奈氏判据</h3>
+<p>使用开环频率特性判断闭环系统的稳定性</p>
+<p>特点</p>
+<ul>
+<li>可以判断系统的稳定发行
+<ul>
+<li>求出右半复平面内闭环系统特征根的数目</li>
+</ul></li>
+<li>可以计算稳定系统的稳定程度，即相对稳定性
+<ul>
+<li>可以用来计算改善系统稳定程度的方案</li>
+</ul></li>
+</ul>
+<h4 id="辐角定理">辐角定理</h4>
+<p><span class="math inline">\(F(s)\)</span> 是 <span
+class="math inline">\(s\)</span> 的单值有理函数，在 <span
+class="math inline">\(s\)</span> 平面上的任意闭合路径 <span
+class="math inline">\(\Tau_s\)</span> 包含了 <span
+class="math inline">\(F(s)\)</span> 的 <span
+class="math inline">\(P\)</span> 个极点和 <span
+class="math inline">\(Z\)</span> 个零点，当 <span
+class="math inline">\(s\)</span> 沿着 <span
+class="math inline">\(\Tau_s\)</span> 逆时针方向运动一周时，<span
+class="math inline">\(F(s)\)</span> 在复平面上所围绕原点的次数 <span
+class="math inline">\(N\)</span> 满足</p>
+<p><span class="math display">\[
+N=Z-P
+\]</span></p>
+<p>顺时针为正方向</p>
+<h4 id="nyquist-路径">Nyquist 路径</h4>
+<p><span class="math display">\[
+s=-j\infty \to -j0 \to +j0 \to +j\infty \to -j\infty
+\]</span></p>
+<ul>
+<li>沿着顺时针方向包围了整个 <span class="math inline">\(s\)</span>
+右半平面</li>
+<li>不能经过 <span class="math inline">\(F(s)\)</span> 的任何零点、极点
+<ul>
+<li>若 <span class="math inline">\(F(s)\)</span> 在虚轴上有极点，则在
+Nyquist
+路径上绕过该极点一个小半径的半圆，按照逆时针方向绕过这些极点</li>
+</ul></li>
+</ul>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202512221449207.png" srcset="/img/loading.jpeg" lazyload
+alt="Nyquest 路径" />
+<figcaption aria-hidden="true">Nyquest 路径</figcaption>
+</figure>
+<h4 id="稳定性分析-2">稳定性分析</h4>
+<ol type="1">
+<li><p>目标 判断闭环传递函数 <span
+class="math inline">\(\Phi(s)\)</span> 在 <span
+class="math inline">\(s\)</span> 右半平面有无极点</p></li>
+<li><p>转化 问题转化为判断闭环特征方程 <span
+class="math inline">\(F(s)\)</span> 在 <span
+class="math inline">\(s\)</span> 右半平面有无零点 若能够求出 <span
+class="math inline">\(Z\)</span> 并且 <span
+class="math inline">\(Z=0\)</span>，则系统稳定；否则系统不稳定</p></li>
+<li><p>工具 引入辐角原理 <span
+class="math inline">\(N=Z-P\)</span></p></li>
+<li><p>求解 <span class="math inline">\(P\)</span>
+通过分析已知的开环传递函数 <span
+class="math inline">\(G(s)H(s)\)</span>，求出 <span
+class="math inline">\(F(s)\)</span> 在 <span
+class="math inline">\(s\)</span> 右半平面的极点个数 <span
+class="math inline">\(P\)</span></p></li>
+<li><p>求解 <span class="math inline">\(N\)</span> <span
+class="math inline">\(N\)</span> 为当 <span
+class="math inline">\(s\)</span> 沿着包围整 <span
+class="math inline">\(s\)</span> 右半平面的 Nyquist 路径 <span
+class="math inline">\(\Tau_s\)</span> 逆时针运动一周时，<span
+class="math inline">\(F(s)\)</span> 在复平面上所围绕原点的次数
+等价于开环传递函数 <span class="math inline">\(G(s)H(s)\)</span> 的
+Nyquist 图绕点 <span class="math inline">\((-1,0j)\)</span>
+的次数</p></li>
+<li><p>求解 <span class="math inline">\(Z\)</span></p>
+<p><span class="math display">\[
+Z=N+P
+\]</span></p></li>
+</ol>
+<h4 id="简易方法">简易方法</h4>
+<p>利用 Nyquist 图的对称性，只判断 <span
+class="math inline">\(\omega\)</span> 从 <span
+class="math inline">\(0\)</span> 变化到 <span
+class="math inline">\(+\infty\)</span>
+时其穿越行为来判断整体环绕情况</p>
+<h5 id="穿越的定义">穿越的定义</h5>
+<ul>
+<li>对象 Nyquist 图与负实轴上 <span
+class="math inline">\((-1,j0)\)</span> 左侧的相交情况</li>
+<li>分类
+<ul>
+<li>正穿越
+<ul>
+<li>方向 从上往下穿过</li>
+<li>物理意义 在穿越点附近，系统的相位正在增加，滞后减小</li>
+<li>使用 <span class="math inline">\(N_+\)</span>
+来表示正穿越总次数</li>
+</ul></li>
+<li>负穿越
+<ul>
+<li>方向 从下往上穿过</li>
+<li>物理意义 在穿越点附近，系统的相位正在减小，滞后增加</li>
+<li>使用 <span class="math inline">\(N_-\)</span>
+来表示负穿越总次数</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>如果起始点或种植点恰好在 <span class="math inline">\((-1,j0)\)</span>
+左侧，则记为 <span class="math inline">\(\frac{1}{2}\)</span> 次穿越</p>
+<h5 id="计算方法">计算方法</h5>
+<p>完整 Nyquist 图绕点 <span class="math inline">\((-1,j0)\)</span>
+的次数 <span class="math inline">\(N\)</span></p>
+<p><span class="math display">\[
+N=N_+-N_-
+\]</span></p>
+<h5 id="闭环系统稳定的充要条件">闭环系统稳定的充要条件</h5>
+<p>当 <span class="math inline">\(\omega\)</span> 从 <span
+class="math inline">\(0\)</span> 变化到 <span
+class="math inline">\(+\infty\)</span> 时，Nyquist 图与负实轴上 <span
+class="math inline">\((-1,j0)\)</span> 左侧的穿越次数满足</p>
+<p><span class="math display">\[
+N_+-N_-=\frac{P}{2}
+\]</span></p>
+<h4 id="nyquist-图与-bode-图之间的关系">Nyquist 图与 Bode
+图之间的关系</h4>
+<h5 id="幅频特性的对应">幅频特性的对应</h5>
+<ul>
+<li><p>单位圆 <span class="math inline">\(\Leftrightarrow\)</span> <span
+class="math inline">\(0\text{ dB}\)</span> 直线</p>
+<ul>
+<li><p>在 Nyquist 图上，模长为 <span class="math inline">\(1\)</span>
+的点组成单位圆</p>
+<p><span class="math display">\[
+L(\omega)=20\log_{10}\vert G(j\omega)H(j\omega)\vert =0\text{ dB}
+\]</span></p></li>
+</ul></li>
+<li><p>单位圆以内的点 <span
+class="math inline">\(\Leftrightarrow\)</span> <span
+class="math inline">\(0\text{ dB}\)</span> 以下区域</p></li>
+<li><p>单位圆以外的点 <span
+class="math inline">\(\Leftrightarrow\)</span> <span
+class="math inline">\(0\text{ dB}\)</span> 以上区域</p></li>
+</ul>
+<h5 id="相频特性的对应">相频特性的对应</h5>
+<ul>
+<li><p>负实轴 <span class="math inline">\(\Leftrightarrow\)</span> <span
+class="math inline">\(180^\circ\)</span> 相位线</p>
+<ul>
+<li><p>在 Nyquist 图上，负实轴上的点对应相位为 <span
+class="math inline">\(\pm 180^\circ\)</span> 的点</p>
+<p><span class="math display">\[
+\phi(\omega)=\angle G(j\omega)H(j\omega)=\pm 180^\circ
+\]</span></p></li>
+</ul></li>
+</ul>
+<h5 id="穿越行为的等价">穿越行为的等价</h5>
+<ul>
+<li>Nyquist 图中的穿越
+<ul>
+<li>穿过临界点 <span class="math inline">\((-1,j0)\)</span>
+左侧的负实轴</li>
+<li>条件
+<ol type="1">
+<li>相角为 <span class="math inline">\(-180^\circ\)</span></li>
+<li>幅值大于 <span class="math inline">\(1\)</span></li>
+</ol></li>
+</ul></li>
+<li>Bode 图中的等价穿越
+<ul>
+<li>条件
+<ol type="1">
+<li>相频曲线 <span class="math inline">\(\phi(\omega)\)</span> 穿过了
+<span class="math inline">\(-180^\circ\)</span> 相位线</li>
+<li>在同一频率点，幅频曲线 <span
+class="math inline">\(L(\omega)\)</span> 位于 <span
+class="math inline">\(0\text{ dB}\)</span> 直线以上</li>
+</ol></li>
+<li>结论
+<ul>
+<li>Nyquist 图中的每一次穿越行为，都对应着 Bode 图中幅频曲线位于 <span
+class="math inline">\(0\text{ dB}\)</span> 直线以上时，相频曲线穿过
+<span class="math inline">\(-180^\circ\)</span> 相位线</li>
+</ul></li>
+</ul></li>
+<li>穿越方向的对应
+<ul>
+<li>正穿越
+<ul>
+<li>相频曲线 <span class="math inline">\(\phi(\omega)\)</span>
+由下向上穿过 <span class="math inline">\(-180^\circ\)</span> 相位线</li>
+</ul></li>
+<li>负穿越
+<ul>
+<li>相频曲线 <span class="math inline">\(\phi(\omega)\)</span>
+由上向下穿过 <span class="math inline">\(-180^\circ\)</span> 相位线</li>
+</ul></li>
+</ul></li>
+</ul>
+<h4 id="基于-bode-图的-nyquist-判据">基于 Bode 图的 Nyquist 判据</h4>
+<p>当 <span class="math inline">\(\omega\)</span> 从 <span
+class="math inline">\(0\)</span> 变化到 <span
+class="math inline">\(+\infty\)</span> 时，在开环对数幅频特性 <span
+class="math inline">\(L(\omega)\ge 0\)</span> 的频段内</p>
+<p><span class="math display">\[
+N_+-N_-=\frac{P}{2}
+\]</span></p>
+<h4 id="稳定裕度">稳定裕度</h4>
+<ul>
+<li><p>闭环系统的稳定程度</p>
+<ul>
+<li>开环频率特性 <span
+class="math inline">\(G(j\omega)H(j\omega)\)</span> 离临界点 <span
+class="math inline">\((-1,j0)\)</span> 的远近程度</li>
+<li>离 <span class="math inline">\((-1,j0)\)</span>
+越远，系统越稳定</li>
+</ul></li>
+<li><p>增益剪切频率 <span class="math inline">\(\omega_c\)</span></p>
+<ul>
+<li><p>开环频率特性 <span
+class="math inline">\(G(j\omega)H(j\omega)\)</span> 的幅值等于 <span
+class="math inline">\(1\)</span> 时的频率</p>
+<p><span class="math display">\[
+\vert G(j\omega_c)H(j\omega_c)\vert =1
+\]</span></p></li>
+</ul></li>
+<li><p>相位裕量 <span class="math inline">\(\gamma\)</span></p>
+<ul>
+<li><p>在控制系统的增益剪切频率 <span
+class="math inline">\(\omega_c\)</span>
+上，使得闭环系统达到临界稳定状态所需要附加的相移（超前或滞后）</p>
+<p><span class="math display">\[
+\gamma=180^\circ +\phi(\omega_c)
+\]</span></p></li>
+</ul></li>
+<li><p>相位剪切频率 <span class="math inline">\(\omega_g\)</span></p>
+<ul>
+<li><p>开环频率特性 <span
+class="math inline">\(G(j\omega)H(j\omega)\)</span> 的相位等于 <span
+class="math inline">\(-180^\circ\)</span> 时的频率</p>
+<p><span class="math display">\[
+\phi(\omega_g)=-180^\circ
+\]</span></p></li>
+</ul></li>
+<li><p>增益裕量 <span class="math inline">\(K_g\)</span></p>
+<ul>
+<li>在系统的相位剪切频率 <span class="math inline">\(\omega_g\)</span>
+上，开环频率特性的倒数</li>
+</ul>
+<p><span class="math display">\[
+K_g=\frac{1}{\vert G(j\omega_g)H(j\omega_g)\vert}
+\]</span></p>
+<p><span class="math display">\[
+K_g(dB)=20\log_{10}K_g=-20\log_{10}\vert
+G(j\omega_g)H(j\omega_g)\vert\text{ dB}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(K_g&gt;1\)</span> 或 <span
+class="math inline">\(K_g(dB)&gt;0\)</span>，系统稳定</li>
+</ul></li>
+</ul>
+<h2 id="自动控制系统的校正">自动控制系统的校正</h2>
+<h3 id="概述-2">概述</h3>
+<ul>
+<li>系统校正的概念
+<ul>
+<li>在系统结构和参数已知的基础上，引入辅助装置（校正装置）来改善系统的性能，使其满足预定的稳态和动态指标。</li>
+</ul></li>
+<li>校正装置分类：
+<ul>
+<li>按结构分
+<ul>
+<li>串联校正</li>
+<li>反馈校正</li>
+<li>前馈校正</li>
+<li>复合校正</li>
+</ul></li>
+<li>按有无放大能力分
+<ul>
+<li>有源校正</li>
+<li>无源校正</li>
+</ul></li>
+</ul></li>
+</ul>
+<h4 id="串联校正">串联校正</h4>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202512221717032.png" srcset="/img/loading.jpeg" lazyload
+alt="串联校正" />
+<figcaption aria-hidden="true">串联校正</figcaption>
+</figure>
 
                 
               </div>

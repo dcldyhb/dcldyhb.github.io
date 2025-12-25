@@ -27,7 +27,7 @@
 <meta property="og:description" content="数理方法笔记 几类偏微分方程的导出和定解问题 偏微分方程的基本概念 什么是微分方程 函数 \(u\) 关于 \(t\) 及 \((x,y,z)\) 的各阶偏导数满足的关系式 一般形式： \[ F(x_1,x_2,\ldots,x_n,u,\mathrm{D}u,\mathrm{D}^2u,\ldots,\mathrm{D}^Nu)&#x3D;0 \] 其中  \(\displaystyle(x_1,x_2,">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-03-30T13:39:54.000Z">
-<meta property="article:modified_time" content="2025-11-22T12:38:05.936Z">
+<meta property="article:modified_time" content="2025-12-25T00:24:23.617Z">
 <meta property="article:author" content="东川路第一寒冰">
 <meta property="article:tag" content="课程笔记">
 <meta property="article:tag" content="数理方法">
@@ -226,7 +226,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          12k 字
+          19k 字
         
       </span>
     
@@ -237,7 +237,7 @@
         
         
         
-          97 分钟
+          159 分钟
         
       </span>
     
@@ -479,7 +479,7 @@ u(t,a)=\varphi(t),\forall t&gt; 0
 <p><span class="math display">\[
 u_x(t,a)=\mu(t),\forall t&gt; 0
 \]</span></p>
-<p>这表示了端点处的力。特别的，当 <span class="math inline">\(\mu(t)=
+<p>这表示了端点处的力特别的，当 <span class="math inline">\(\mu(t)=
 0\)</span> 时，表示端点处没有力的作用，称为自由条件</p></li>
 <li><p>Robin 边界条件：</p>
 <p><span class="math display">\[
@@ -503,7 +503,7 @@ u\right)|_{x=a}=h(t)
 边界条件退化为 Dirichlet 边界条件</p></li>
 </ol>
 <h5 id="热传导方程">热传导方程</h5>
-<p>温度分布与时间的关系为热传导方程，同样的物质的浓度分布与时间的关系也满足热传导方程。</p>
+<p>温度分布与时间的关系为热传导方程，同样的物质的浓度分布与时间的关系也满足热传导方程</p>
 <p>物体的温度为 <span
 class="math inline">\(u(t,x)\)</span>，则热传导方程为：</p>
 <p><span class="math display">\[
@@ -2233,6 +2233,168 @@ J=\frac{\partial(\xi,\eta)}{\partial(x,y)}=
 <p><span class="math display">\[
 \bar{\Delta}=J^2\Delta
 \]</span></p>
+<p>特征方程：</p>
+<p>若 <span class="math inline">\(\phi(x,y)\)</span>
+是方程的一个特解，且 <span class="math inline">\(\phi_x^2+\phi_y^2\neq
+0\)</span>，则特征方程为</p>
+<p><span class="math display">\[
+a_{11}(\mathrm{d}y)^2-2a_{12}\mathrm{d}x\mathrm{d}y+a_{22}(\mathrm{d}x)^2=0
+\]</span></p>
+<h4 id="双曲型方程的化简">双曲型方程的化简</h4>
+<p><strong><span class="math inline">\(a_{11}\neq 0\)</span>
+时</strong></p>
+<p><span class="math display">\[
+\frac{\mathrm{d}y}{\mathrm{d}x}=\frac{a_{12}+\sqrt{\Delta}}{a_{11}}=\lambda_1,\quad
+\frac{\mathrm{d}y}{\mathrm{d}x}=\frac{a_{12}-\sqrt{\Delta}}{a_{11}}=\lambda_2
+\]</span></p>
+<p>特征线为直线</p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;y-\lambda_1 x=C_1\\
+      &amp;y-\lambda_2 x=C_2
+   \end{aligned}
+\right.
+\]</span></p>
+<p>取</p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;\xi=y-\lambda_1 x\\
+      &amp;\eta=y-\lambda_2 x
+   \end{aligned}
+\right.
+\]</span></p>
+<p><strong><span class="math inline">\(a_{11}=0\)</span> 时</strong></p>
+<p>特征线为直线</p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;x=C_1\\
+      &amp;y-\frac{a_{22}}{2a_{12}}x=C_2
+   \end{aligned}
+\right.
+\]</span></p>
+<p>取</p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;\xi=x\\
+      &amp;\eta=y-\frac{a_{22}}{2a_{12}}x
+   \end{aligned}
+\right.
+\]</span></p>
+<p>得到双曲型方程的第一标准型</p>
+<p><span class="math display">\[
+u_{\xi\eta}=A_1u_\xi +B_1u_\eta +C_1u+D_1
+\]</span></p>
+<p>再令</p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;r=\xi+\eta\\
+      &amp;s=\xi-\eta
+   \end{aligned}
+\right.
+\]</span></p>
+<p>得到双曲型方程的第二标准型</p>
+<p><span class="math display">\[
+u_{rr}-u_{ss}=A_1^*u_r +B_1^*u_s +C_1^*u+D_1^*
+\]</span></p>
+<h4 id="抛物型方程的化简">抛物型方程的化简</h4>
+<p><span class="math inline">\(a_{11}=0\)</span> 时 <span
+class="math inline">\(a_{12}=0\)</span></p>
+<p><span class="math inline">\(a_{11}\neq 0\)</span> 时</p>
+<p><span class="math display">\[
+\lambda_1=\lambda_2=\frac{a_{12}}{a_{11}}
+\]</span></p>
+<p>特征线为直线</p>
+<p><span class="math display">\[
+\xi=y-\lambda_1 x=C
+\]</span></p>
+<p><span class="math inline">\(\eta\)</span> 任意</p>
+<p>得到抛物型方程的标准型</p>
+<p><span class="math display">\[
+u_{\eta\eta}=A_2u_\xi+B_2u_\eta +C_2u+D_2
+\]</span></p>
+<h4 id="椭圆型方程的化简">椭圆型方程的化简</h4>
+<p><span class="math display">\[
+\lambda_{1,2}=\frac{a_{12}\pm i\sqrt{-\Delta}}{a_{11}}=a\pm ib
+\]</span></p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;\xi=y-(a+ib)x\\
+      &amp;\eta=y-(a-ib)x
+   \end{aligned}
+\right.
+\]</span></p>
+<p>引入实变量</p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;r =\frac{\eta+\xi}{2}=y-ax\\
+      &amp;s =\frac{\eta-\xi}{2i}=-bx
+   \end{aligned}
+\right.
+\]</span></p>
+<p>得到椭圆方程的标准型</p>
+<p><span class="math display">\[
+u_{rr}+u_{ss}=A_3u_r +B_3u_s +C_3u+D_3
+\]</span></p>
+<h3 id="多自变量的情形">多自变量的情形</h3>
+<p>多个自变量的二阶微分方程的基本形式为</p>
+<p><span class="math display">\[
+\sum_{i,j=1}^n a_{ij} \frac{\partial^2 u}{\partial x_i \partial x_j} +
+\sum_{j=1}^n b_j \frac{\partial u}{\partial x_j} + cu = f
+\]</span></p>
+<p>使用二阶导数的系数 <span class="math inline">\(a_{ij}\)</span>
+构成的矩阵 <span class="math inline">\(A=(a_{ij})\)</span>
+的正负惯性指数对方程进行分类</p>
+<p><span class="math display">\[
+A=
+\begin{pmatrix}
+   a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} \\
+   a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} \\
+   \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+   a_{n1} &amp; a_{n2} &amp; \cdots &amp; a_{nn}
+\end{pmatrix}
+\]</span></p>
+<ul>
+<li>该矩阵为对称矩阵</li>
+<li>我们要求该矩阵的 <span class="math inline">\(n\)</span> 个特征值
+<span
+class="math inline">\(\lambda_1,\lambda_2,\cdots,\lambda_n\)</span></li>
+</ul>
+<p>根据特征值的正负性将方程主要分为三类（不包含所有类型）</p>
+<h4 id="双曲型">双曲型</h4>
+<p>所有特征值不均为 <span class="math inline">\(0\)</span>，<span
+class="math inline">\(n-1\)</span> 个特征值符号相同，另有 <span
+class="math inline">\(1\)</span> 个特征值符号相反，行列式非零</p>
+<p>如波动方程</p>
+<p><span class="math display">\[
+\frac{\partial^2 u}{\partial t^2} = a^2 \left( \frac{\partial^2
+u}{\partial x_1^2} + \dots + \frac{\partial^2 u}{\partial x_n^2} \right)
+\]</span></p>
+<h4 id="抛物型">抛物型</h4>
+<p>有且仅有一个特征值为 <span
+class="math inline">\(0\)</span>，其余特征值符号相同且不为 <span
+class="math inline">\(0\)</span>，行列式为 <span
+class="math inline">\(0\)</span></p>
+<p>如热传导方程</p>
+<p><span class="math display">\[
+\frac{\partial u}{\partial t} = a^2 \left( \frac{\partial^2 u}{\partial
+x_1^2} + \dots + \frac{\partial^2 u}{\partial x_n^2} \right)
+\]</span></p>
+<h4 id="椭圆型">椭圆型</h4>
+<p>所有特征值符号相同且不为 <span
+class="math inline">\(0\)</span>，行列式非零</p>
+<p>如 Laplace 方程</p>
+<p><span class="math display">\[
+\frac{\partial^2 u}{\partial x_1^2} + \frac{\partial^2 u}{\partial
+x_2^2} + \dots + \frac{\partial^2 u}{\partial x_n^2} = 0
+\]</span></p>
+<p>其特征值全为 <span class="math inline">\(1\)</span></p>
 <h2 id="解析函数">解析函数</h2>
 <h3 id="复数及其表示">复数及其表示</h3>
 <h4 id="复数的定义">复数的定义</h4>
@@ -2240,7 +2402,7 @@ J=\frac{\partial(\xi,\eta)}{\partial(x,y)}=
 <p><span class="math display">\[
 x+iy\quad (x,y\in\mathbf{R})
 \]</span></p>
-<p>的数称为复数， <span class="math inline">\(\displaystyle
+<p>的数称为复数，<span class="math inline">\(\displaystyle
 i=\sqrt{-1}\)</span> 为虚数单位</p>
 <ul>
 <li><span class="math inline">\(x\)</span> 称为复数的实部，记为 <span
@@ -2260,38 +2422,40 @@ class="math inline">\(z=x+iy\)</span> 看作平面上点 <span
 class="math inline">\((x,y)\)</span> 或向量 <span
 class="math inline">\(\vec{OP}\)</span>，从而复数与复平面上的向量一一对应</p>
 <ul>
-<li><p>向量 <span class="math inline">\(\vec{OP}\)</span> 的模</p>
+<li>向量 <span class="math inline">\(\vec{OP}\)</span> 的模</li>
+</ul>
 <p><span class="math display">\[
 \vert z \vert =\sqrt{x^2+y^2}
-\]</span></p></li>
-<li><p>向量 <span class="math inline">\(\vec{OP}\)</span> 与 <span
+\]</span></p>
+<ul>
+<li>向量 <span class="math inline">\(\vec{OP}\)</span> 与 <span
 class="math inline">\(x\)</span> 轴的夹角称为幅角，记为 <span
 class="math inline">\(\theta=\arg z\)</span>，当 <span
 class="math inline">\(z=0\)</span> 时， <span
 class="math inline">\(\theta\)</span> 未定义，当 <span
 class="math inline">\(z\neq 0\)</span> 时， <span
-class="math inline">\(\theta\)</span> 为</p>
+class="math inline">\(\theta\)</span> 为</li>
+</ul>
 <p><span class="math display">\[
 \arg z=
 \left\{
-   \begin{aligned}
-       &amp;\arctan \frac{y}{x},&amp;&amp;(x&gt;0)\\
-       &amp;\arctan \frac{y}{x}+\pi,&amp;&amp;(x&lt;0,y\ge 0)\\
-       &amp;\arctan \frac{y}{x}-\pi,&amp;&amp;(x&lt;0,y&lt;0)\\
-       &amp;\frac{\pi}{2},&amp;&amp;(x=0,y&gt;0)\\
-       &amp;-\frac{\pi}{2},&amp;&amp;(x=0,y&lt;0)\\
-   \end{aligned}
+\begin{aligned}
+&amp;\arctan \frac{y}{x},&amp;&amp;(x&gt;0)\\
+&amp;\arctan \frac{y}{x}+\pi,&amp;&amp;(x&lt;0,y\ge 0)\\
+&amp;\arctan \frac{y}{x}-\pi,&amp;&amp;(x&lt;0,y&lt;0)\\
+&amp;\frac{\pi}{2},&amp;&amp;(x=0,y&gt;0)\\
+&amp;-\frac{\pi}{2},&amp;&amp;(x=0,y&lt;0)\\
+\end{aligned}
 \right.
-\]</span></p></li>
-</ul>
+\]</span></p>
 <h5 id="三角表示与指数表示">三角表示与指数表示</h5>
 <p>直角坐标和极坐标的关系</p>
 <p><span class="math display">\[
 \left\{
-   \begin{aligned}
-      &amp;x=r\cos \theta\\
-      &amp;y=r\sin \theta
-   \end{aligned}
+\begin{aligned}
+&amp;x=r\cos \theta\\
+&amp;y=r\sin \theta
+\end{aligned}
 \right.
 \]</span></p>
 <p>则复数 <span class="math inline">\(z=x+iy\)</span>
@@ -2327,19 +2491,19 @@ class="math inline">\(z_1=r_1(\cos\theta_1+i\sin\theta_1)\)</span>，
 class="math inline">\(z_2=r_2(\cos\theta_2+i\sin\theta_2)\)</span>，则</p>
 <p><span class="math display">\[
 \left\{
-   \begin{aligned}
-      &amp;z_1z_2=r_1r_2[\cos(\theta_1+\theta_2)+i\sin(\theta_1+\theta_2)]\\
-      &amp;\frac{z_1}{z_2}=\frac{r_1}{r_2}[\cos(\theta_1-\theta_2)+i\sin(\theta_1-\theta_2)]
-   \end{aligned}
+\begin{aligned}
+&amp;z_1z_2=r_1r_2[\cos(\theta_1+\theta_2)+i\sin(\theta_1+\theta_2)]\\
+&amp;\frac{z_1}{z_2}=\frac{r_1}{r_2}[\cos(\theta_1-\theta_2)+i\sin(\theta_1-\theta_2)]
+\end{aligned}
 \right.
 \]</span></p>
 <p>即</p>
 <p><span class="math display">\[
 \left\{
-   \begin{aligned}
-      &amp;|z_1z_2|=|z_1|\cdot |z_2|\\
-      &amp;\arg(z_1z_2)=\arg z_1+\arg z_2
-   \end{aligned}
+\begin{aligned}
+&amp;|z_1z_2|=|z_1|\cdot |z_2|\\
+&amp;\arg(z_1z_2)=\arg z_1+\arg z_2
+\end{aligned}
 \right.
 \]</span></p>
 <p>由于幅角的多值性，我们将幅角的规则理解为：对于任意一个幅角 <span
@@ -2377,21 +2541,1142 @@ class="math inline">\(\varepsilon_0\)</span> 邻域，记为 <span
 class="math inline">\(N(z_0,\varepsilon_0)\)</span></p>
 <p>设 <span class="math inline">\(E\)</span> 为一点集，<span
 class="math inline">\(z_0\)</span> 为复平面上的一点，且 <span
-class="math inline">\(z_0\in E\)</span>，如果 $ _0&gt;0$，使得 <span
+class="math inline">\(z_0\in E\)</span></p>
+<ul>
+<li><p>如果 <span
+class="math inline">\(\exists\varepsilon_0&gt;0\)</span>，使得 <span
 class="math inline">\(N(z_0,\varepsilon_0)\subset E\)</span>，则称 <span
 class="math inline">\(z_0\)</span> 为点集 <span
-class="math inline">\(E\)</span> 的内点；如果 <span
+class="math inline">\(E\)</span> 的内点</p></li>
+<li><p>如果 <span
 class="math inline">\(\exists\varepsilon_0&gt;0\)</span>，使得 <span
 class="math inline">\(N(z_0,\varepsilon_0)\)</span> 中的点都不属于 <span
 class="math inline">\(E\)</span>，则称 <span
 class="math inline">\(z_0\)</span> 为点集 <span
-class="math inline">\(E\)</span> 的外点；如果对于任意 <span
+class="math inline">\(E\)</span> 的外点</p></li>
+<li><p>如果对于任意 <span
 class="math inline">\(\varepsilon&gt;0\)</span>， <span
 class="math inline">\(N(z_0,\varepsilon)\)</span> 中既有属于 <span
 class="math inline">\(E\)</span> 的点，又有不属于 <span
 class="math inline">\(E\)</span> 的点，则称 <span
 class="math inline">\(z_0\)</span> 为点集 <span
-class="math inline">\(E\)</span> 的边界点</p>
+class="math inline">\(E\)</span> 的边界点</p></li>
+<li><p><span class="math inline">\(E\)</span>
+的全部边界点所组成的点集称为点集 <span class="math inline">\(E\)</span>
+的边界，记为 <span class="math inline">\(\partial E\)</span></p></li>
+<li><p>若 <span class="math inline">\(E\)</span>
+内的点都为内点，则为开集</p></li>
+<li><p>若其补集为开集，则为闭集</p></li>
+<li><p>若点集能完全包含在以原点为圆心，以某一正数 <span
+class="math inline">\(R\)</span> 为半径的圆域内，则称 <span
+class="math inline">\(E\)</span> 为一个有界点集</p></li>
+</ul>
+<h4 id="区域与简单曲线">区域与简单曲线</h4>
+<p>非空点集 <span class="math inline">\(D\)</span>
+满足以下两个条件时，称为区域</p>
+<ol type="1">
+<li><span class="math inline">\(D\)</span> 为开集</li>
+<li><span class="math inline">\(D\)</span> 内任意两点间都存在一条仅由
+<span class="math inline">\(D\)</span> 内点组成的曲线将其连接起来，即
+<span class="math inline">\(D\)</span> 为连通集</li>
+</ol>
+<p>区域 <span class="math inline">\(D\)</span> 加上其边界 <span
+class="math inline">\(\partial D\)</span> 称为闭区域，记为 <span
+class="math inline">\(\bar{D}=D\cup \partial D\)</span></p>
+<p>如果一个区域可以被包含在一个以原点为圆心，以某一正数 <span
+class="math inline">\(R\)</span>
+为半径的圆域内，则称该区域为有界区域</p>
+<p>若 <span class="math inline">\(x=x(t)\)</span>， <span
+class="math inline">\(y=y(t)\)</span>， <span class="math inline">\(t\in
+[\alpha,\beta]\)</span> 是两个连续实变函数，则由方程</p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;x=x(t)\\
+      &amp;y=y(t)\\
+   \end{aligned}
+\right.
+\]</span></p>
+<p>或由复数方程</p>
+<p><span class="math display">\[
+z=x(t)+iy(t),\quad t\in [\alpha,\beta]
+\]</span></p>
+<p>所决定的点集 <span class="math inline">\(C\)</span>
+为平面上的一条连续曲线</p>
+<h4 id="曲线的分类">曲线的分类</h4>
+<p>重点：对 <span class="math inline">\(\alpha\le t_1 \le \beta\)</span>
+和 <span class="math inline">\(\alpha\le t_2 \le \beta\)</span>，如果
+<span class="math inline">\(t_1\neq t_2\)</span>，且 <span
+class="math inline">\(z(t_1)=z(t_2)\)</span>，则称 <span
+class="math inline">\(z(t_1)\)</span> 称为这条曲线的重点</p>
+<ul>
+<li>无重点的连续曲线称为简单曲线或者 Jordan 曲线</li>
+<li>满足 <span class="math inline">\(z(\alpha)=z(\beta)\)</span>
+的简单曲线称为闭合简单曲线或 Jordan 闭曲线</li>
+</ul>
+<h4 id="曲线的方向">曲线的方向</h4>
+<ul>
+<li><strong>正方向</strong>：沿曲线行进时，内部始终在<strong>左侧</strong>（通常是逆时针）</li>
+<li><strong>负方向</strong>：沿曲线行进时，内部始终在<strong>右侧</strong>（通常是顺时针）</li>
+</ul>
+<h4 id="光滑曲线">光滑曲线</h4>
+<p>设 <span class="math inline">\(z=x(t)+iy(t)\)</span>， <span
+class="math inline">\(t\in [\alpha,\beta]\)</span> 是一条简单曲线，若
+<span class="math inline">\(z(t)\)</span> 在 <span
+class="math inline">\([\alpha,\beta]\)</span> 上有连续导数</p>
+<p><span class="math display">\[
+z&#39;(t)=x&#39;(t)+iy&#39;(t)\neq 0,\quad t\in [\alpha,\beta]
+\]</span></p>
+<p>则称这条曲线为<strong>光滑曲线</strong></p>
+<ul>
+<li><strong>分段光滑</strong>：由若干段光滑曲线组成的曲线段称为分段光滑曲线</li>
+</ul>
+<h4 id="区域的连通性">区域的连通性</h4>
+<h5 id="单连通区域">单连通区域</h5>
+<ul>
+<li><strong>定义</strong>：在区域 <span class="math inline">\(D\)</span>
+内任作一条简单闭曲线，曲线的<strong>内部总属于 <span
+class="math inline">\(D\)</span></strong></li>
+<li><strong>直观理解</strong>：区域内没有“洞”</li>
+</ul>
+<h5 id="多连通区域">多连通区域</h5>
+<ul>
+<li><strong>定义</strong>：在区域 <span class="math inline">\(D\)</span>
+内存在一条简单闭曲线，曲线的<strong>内部不完全属于 <span
+class="math inline">\(D\)</span></strong></li>
+<li><strong>直观理解</strong>：区域内有“洞”</li>
+</ul>
+<h3 id="复变函数">复变函数</h3>
+<h4 id="复变函数的定义">复变函数的定义</h4>
+<p>设在复平面上有<strong>点集 <span
+class="math inline">\(D\)</span></strong>，若对 <span
+class="math inline">\(D\)</span> 内每一点 <span
+class="math inline">\(z\)</span>，按照某一法则，有<strong>确定的复数
+<span class="math inline">\(w\)</span></strong> 与之对应，则称 <span
+class="math inline">\(w\)</span> 为 <span
+class="math inline">\(z\)</span> 的<strong>复变函数</strong>，记为：</p>
+<p><span class="math display">\[
+w = f(z)
+\]</span></p>
+<ul>
+<li><span class="math inline">\(D\)</span> 称为函数 <span
+class="math inline">\(w = f(z)\)</span> 的<strong>定义域</strong></li>
+<li><span class="math inline">\(G = \{f(z) \mid z \in D\}\)</span>
+称为函数的<strong>值域</strong></li>
+</ul>
+<h5 id="单值与多值函数">单值与多值函数</h5>
+<ul>
+<li><strong>单值函数</strong>：若 <span class="math inline">\(D\)</span>
+内每一复数 <span
+class="math inline">\(z\)</span>，有<strong>唯一确定</strong>的复数
+<span class="math inline">\(w\)</span> 与之对应
+<ul>
+<li><span class="math inline">\(w = |z|\)</span>， <span
+class="math inline">\(w = z^2\)</span></li>
+</ul></li>
+<li><strong>多值函数</strong>：若 <span class="math inline">\(z\)</span>
+的一个值对应着 <span class="math inline">\(w\)</span>
+<strong>几个或无穷多个</strong>值
+<ul>
+<li><span class="math inline">\(w = Arg z\)</span>， <span
+class="math inline">\(w = \sqrt[4]{z}\)</span></li>
+</ul></li>
+</ul>
+<h5 id="反函数">反函数</h5>
+<p>设 <span class="math inline">\(G\)</span> 是 <span
+class="math inline">\(W\)</span> 平面上与 <span
+class="math inline">\(Z\)</span> 平面的点集 <span
+class="math inline">\(D\)</span> 通过函数 <span class="math inline">\(w
+= f(z)\)</span> 相对应的点集，若对于 <span
+class="math inline">\(G\)</span> 中任一点 <span
+class="math inline">\(w\)</span>，按照 <span class="math inline">\(w =
+f(z)\)</span> 的对应规则，在 <span class="math inline">\(D\)</span>
+中有一个或多个（有限个或无限个）点 <span
+class="math inline">\(z\)</span> 与之对应，则得到的 <span
+class="math inline">\(z\)</span> 是 <span
+class="math inline">\(w\)</span> 的函数，记为</p>
+<p><span class="math display">\[
+z = g(w)
+\]</span></p>
+<p>称 <span class="math inline">\(z = g(w)\)</span> 为函数 <span
+class="math inline">\(w = f(z)\)</span> 的<strong>反函数</strong></p>
+<h4 id="映射">映射</h4>
+<p>记 <span class="math inline">\(z = x + iy\)</span>， <span
+class="math inline">\(w = u + iv\)</span>，则复变函数 <span
+class="math inline">\(w = f(z)\)</span> 可表示为</p>
+<p><span class="math display">\[
+w=f(z)=u(x,y)+iv(x,y)
+\]</span></p>
+<p>一个复变函数 <span class="math inline">\(w =
+f(z)\)</span>，相当于给出了两个二元实变量函数 <span
+class="math inline">\(u = u(x, y)\)</span> 和 <span
+class="math inline">\(v = v(x, y)\)</span>。它给出了 <strong><span
+class="math inline">\(z\)</span> 平面到 <span
+class="math inline">\(w\)</span> 平面的一个映射或变换</strong></p>
+<p><strong>性质</strong></p>
+<ul>
+<li>对于点集 <span class="math inline">\(D\)</span> 中的每一点 <span
+class="math inline">\(z\)</span>，相应的点 <span class="math inline">\(w
+= f(z)\)</span> 是点集 <span class="math inline">\(G\)</span>
+中的一个点</li>
+<li>对于点集 <span class="math inline">\(G\)</span> 中的每一点 <span
+class="math inline">\(w\)</span>，在点集 <span
+class="math inline">\(D\)</span> 中至少有一点 <span
+class="math inline">\(z\)</span>，满足 <span class="math inline">\(w =
+f(z)\)</span></li>
+</ul>
+<p>常称点集 <span class="math inline">\(G\)</span> 为点集 <span
+class="math inline">\(D\)</span> 被函数 <span class="math inline">\(w =
+f(z)\)</span> 映射的<strong>像 (Image)</strong>，而点集 <span
+class="math inline">\(D\)</span> 称为点集 <span
+class="math inline">\(G\)</span> 的<strong>原像 (Pre-image)</strong></p>
+<h4 id="欧拉公式的推广">欧拉公式的推广</h4>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;e^z=e^{x+iy}=e^x(\cos y +i\sin y)\\
+      &amp;e^{iz}=e^{i(x+iy)}=e^{-y}(\cos x +i\sin x)\\
+   \end{aligned}
+\right.
+\]</span></p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;\vert e^z \vert =e^x\\
+      &amp;\arg e^z =y+2k\pi,k\in \mathbf{Z}\\
+   \end{aligned}
+\right.
+\]</span></p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;\cos z=\frac{e^{iz}+e^{-iz}}{2}\\
+      &amp;\sin z=\frac{e^{iz}-e^{-iz}}{2i}\\
+   \end{aligned}
+\right.
+\]</span></p>
+<h3 id="复变函数的极限和连续">复变函数的极限和连续</h3>
+<h4 id="复变函数的极限">复变函数的极限</h4>
+<p>设函数 <span class="math inline">\(w = f(z)\)</span> 在点 <span
+class="math inline">\(z_0\)</span> 的某个邻域内有定义，若存在复数 <span
+class="math inline">\(w_0\)</span>，使得对于任意给定的正数 <span
+class="math inline">\(\varepsilon &gt; 0\)</span>，都存在正数 <span
+class="math inline">\(\delta &gt; 0\)</span>，当 <span
+class="math inline">\(0 &lt; |z - z_0| &lt; \delta\)</span> 时，都有</p>
+<p><span class="math display">\[
+|f(z) - w_0| &lt; \varepsilon
+\]</span></p>
+<p>则称 <span class="math inline">\(w_0\)</span> 为函数 <span
+class="math inline">\(w = f(z)\)</span> 在点 <span
+class="math inline">\(z_0\)</span> 处的<strong>极限</strong>，记为</p>
+<p><span class="math display">\[
+\lim_{z \to z_0} f(z) = w_0
+\]</span></p>
+<p>在复平面上，趋近于 <span class="math inline">\(z_0\)</span>
+的方式有无穷多种，即当 <span class="math inline">\(z\)</span>
+沿着任意方向、路径向 <span class="math inline">\(z_0\)</span>
+趋近时，函数值 <span class="math inline">\(f(z)\)</span>
+都趋近于同一复数 <span
+class="math inline">\(w_0\)</span>，则极限存在且等于 <span
+class="math inline">\(w_0\)</span></p>
+<blockquote>
+<p>定理</p>
+<p>设 <span class="math inline">\(w=f(z)=u(x,y)+iv(x,y)\)</span>， <span
+class="math inline">\(z = x + iy\)</span>，则极限 <span
+class="math inline">\(\lim_{z \to z_0} f(z) = w_0 = u_0 + iv_0\)</span>
+存在的充分必要条件是</p>
+<p><span class="math display">\[
+\lim_{(x,y) \to (x_0,y_0)} u(x,y) = u_0,\quad \lim_{(x,y) \to (x_0,y_0)}
+v(x,y) = v_0
+\]</span></p>
+</blockquote>
+<p>设复变函数 <span class="math inline">\(f(z),g(z)\)</span> 当 <span
+class="math inline">\(z\to z_0\)</span> 时极限存在，且 <span
+class="math inline">\(\lim_{z \to z_0} f(z) = w_1\)</span>， <span
+class="math inline">\(\lim_{z \to z_0} g(z) = w_2\)</span>，则有</p>
+<ol type="1">
+<li><span class="math inline">\(\displaystyle \lim_{z \to z_0} [f(z) \pm
+g(z)] = w_1 \pm w_2\)</span></li>
+<li><span class="math inline">\(\displaystyle \lim\_{z \to z_0} [f(z)
+g(z)] = w_1 w_2\)</span></li>
+<li><span class="math inline">\(\displaystyle \lim_{z \to z_0}
+\left[\frac{f(z)}{g(z)}\right] = \frac{w_1}{w_2}\)</span>，当且仅当
+<span class="math inline">\(w_2 \neq 0\)</span></li>
+<li><span class="math inline">\(\displaystyle \lim_{z \to z_0} [cf(z)] =
+c w_1\)</span>，其中 <span class="math inline">\(c\)</span> 为常数</li>
+<li><span class="math inline">\(\displaystyle \lim_{z\to
+z_0}f^n(z)=w_1^n\)</span>，其中 <span class="math inline">\(n\)</span>
+为整数</li>
+</ol>
+<h4 id="复变函数的连续性">复变函数的连续性</h4>
+<p>设函数 <span class="math inline">\(w = f(z)\)</span> 在点 <span
+class="math inline">\(z_0\)</span> 的某个邻域内有定义，若</p>
+<p><span class="math display">\[
+\lim_{z \to z_0} f(z) = f(z_0)
+\]</span></p>
+<p>则称函数 <span class="math inline">\(w = f(z)\)</span> 在点 <span
+class="math inline">\(z_0\)</span> 处<strong>连续</strong></p>
+<p>若函数 <span class="math inline">\(w = f(z)\)</span> 在点集 <span
+class="math inline">\(D\)</span> 内的每一点都连续，则称函数 <span
+class="math inline">\(w = f(z)\)</span> 在点集 <span
+class="math inline">\(D\)</span> 上<strong>连续</strong></p>
+<p>推论</p>
+<p>函数 <span class="math inline">\(f(z)=u(x,y)+iv(x,y)\)</span> 在点
+<span class="math inline">\(z_0=x_0+iy_0\)</span>
+处连续的充分必要条件是实函数 <span class="math inline">\(u(x,y)\)</span>
+和 <span class="math inline">\(v(x,y)\)</span> 在点 <span
+class="math inline">\((x_0,y_0)\)</span> 处连续</p>
+<p>连续函数的四则运算仍为连续函数，连续函数的复合函数仍为连续函数</p>
+<p>若 <span class="math inline">\(f(z)\)</span> 是点集 <span
+class="math inline">\(D\)</span> 上的连续函数，且 <span
+class="math inline">\(D\)</span> 为有界闭区域，则 <span
+class="math inline">\(f(z)\)</span> 在 <span
+class="math inline">\(D\)</span> 上有界且能取到最大值和最小值</p>
+<h3 id="解析函数的概念">解析函数的概念</h3>
+<h4 id="复变函数的导数和积分">复变函数的导数和积分</h4>
+<h5 id="复变函数的导数">复变函数的导数</h5>
+<p>设函数 <span class="math inline">\(w=f(z)\)</span> 定义域为 <span
+class="math inline">\(D\)</span>，<span
+class="math inline">\(z_0\)</span> 和 <span
+class="math inline">\(z_0+\Delta z\)</span> 为 <span
+class="math inline">\(D\)</span> 内的点，若极限</p>
+<p><span class="math display">\[
+\lim_{\Delta z \to 0} \frac{f(z_0+\Delta z)-f(z_0)}{\Delta z}
+\]</span></p>
+<p>存在，则称该极限为函数 <span class="math inline">\(w=f(z)\)</span>
+在点 <span class="math inline">\(z_0\)</span>
+处的<strong>导数</strong>，记为 <span
+class="math inline">\(f&#39;(z_0)\)</span> 或 <span
+class="math inline">\(\frac{\mathrm{d}f}{\mathrm{d}z}\big|_{z=z_0}\)</span></p>
+<p>设函数 <span class="math inline">\(w=f(z)\)</span> 在区域 <span
+class="math inline">\(D\)</span> 内处处有导数，则称函数 <span
+class="math inline">\(w=f(z)\)</span> 在区域 <span
+class="math inline">\(D\)</span> 内<strong>可导</strong></p>
+<p>复变函数可导比实变函数更加严格，因为，复变函数的增量 <span
+class="math inline">\(\Delta z\)</span> 可以沿任意方向趋近于 <span
+class="math inline">\(0\)</span>，而实变函数的增量只能沿一条直线趋近于
+<span
+class="math inline">\(0\)</span>，并且由于复变函数的导数为复数，不能用来描述变化的快慢</p>
+<p>可导的复变函数的求导法则与实函数类似</p>
+<ol type="1">
+<li><p><span class="math inline">\(C&#39;=0\)</span>，其中 <span
+class="math inline">\(C\)</span> 为常数</p></li>
+<li><p><span class="math inline">\((z^n)&#39;=nz^{n-1}\)</span>，其中
+<span class="math inline">\(n\)</span> 为正整数</p></li>
+<li><p><span class="math inline">\((f(z)\pm g(z))&#39;=f&#39;(z)\pm
+g&#39;(z)\)</span></p></li>
+<li><p><span
+class="math inline">\((f(z)g(z))&#39;=f&#39;(z)g(z)+f(z)g&#39;(z)\)</span></p></li>
+<li><p><span class="math inline">\(\displaystyle
+\left(\frac{f(z)}{g(z)}\right)&#39;=\frac{f&#39;(z)g(z)-f(z)g&#39;(z)}{[g(z)]^2}\)</span>，当且仅当
+<span class="math inline">\(g(z)\neq 0\)</span></p></li>
+<li><p>若 <span class="math inline">\(w=f(z)\)</span> 在 <span
+class="math inline">\(z=z_0\)</span> 处可导，且 <span
+class="math inline">\(u=\varphi(w)\)</span> 在 <span
+class="math inline">\(w=f(z_0)\)</span> 处可导，则复合函数 <span
+class="math inline">\(u=\varphi[f(z)]\)</span> 在 <span
+class="math inline">\(z=z_0\)</span> 处可导，且</p>
+<p><span class="math display">\[
+\frac{\mathrm{d}u}{\mathrm{d}z}\bigg|_{z=z_0}=\frac{\mathrm{d}\varphi}{\mathrm{d}w}\bigg|_{w=f(z_0)}\cdot
+\frac{\mathrm{d}f}{\mathrm{d}z}\bigg|_{z=z_0}
+\]</span></p></li>
+<li><p><span
+class="math inline">\(f&#39;(z)=\frac{1}{\phi&#39;(w)}\)</span>，其中
+<span class="math inline">\(z=\phi(w)\)</span> 为 <span
+class="math inline">\(w=f(z)\)</span> 的反函数，且 <span
+class="math inline">\(\phi&#39;(w)\neq 0\)</span></p></li>
+</ol>
+<h5 id="复变函数的微分">复变函数的微分</h5>
+<p>若复变函数 <span class="math inline">\(w=f(z)\)</span> 在 <span
+class="math inline">\(z\)</span> 处的增量满足</p>
+<p><span class="math display">\[
+\Delta w=A\Delta z + o(\Delta z)
+\]</span></p>
+<p>其中 <span class="math inline">\(A\)</span> 与 <span
+class="math inline">\(z\)</span> 有关，与 <span
+class="math inline">\(\Delta z\)</span> 无关，则称 <span
+class="math inline">\(f(z)\)</span> 在点 <span
+class="math inline">\(z\)</span> 处<strong>可微</strong>，并称 <span
+class="math inline">\(A\Delta z\)</span> 为函数 <span
+class="math inline">\(f(z)\)</span> 在点 <span
+class="math inline">\(z\)</span> 处的<strong>微分</strong>，记为 <span
+class="math inline">\(\mathrm{d}w\)</span> 或 <span
+class="math inline">\(\mathrm{d}f\)</span>，即</p>
+<p>函数在 <span class="math inline">\(z\)</span>
+处可微的充要条件为函数在 <span class="math inline">\(z\)</span>
+处可导</p>
+<p><span class="math display">\[
+f(z+\Delta z)-f(z)=f&#39;(z)\Delta z + o(\Delta z)
+\]</span></p>
+<h4 id="解析函数的概念-1">解析函数的概念</h4>
+<p>如果函数 <span class="math inline">\(f(z)\)</span> 在 <span
+class="math inline">\(z_0\)</span> 及 <span
+class="math inline">\(z_0\)</span> 的邻域内处处可导，则称函数 <span
+class="math inline">\(f(z)\)</span> 在点 <span
+class="math inline">\(z_0\)</span> 处<strong>解析</strong>，如果函数
+<span class="math inline">\(f(z)\)</span> 在区域 <span
+class="math inline">\(D\)</span> 内的每一点都解析，则称函数 <span
+class="math inline">\(f(z)\)</span> 在区域 <span
+class="math inline">\(D\)</span> 内<strong>解析</strong>，或称 <span
+class="math inline">\(f(z)\)</span> 为区域 <span
+class="math inline">\(D\)</span>
+内的<strong>解析函数</strong>（全纯函数或正则函数）</p>
+<p>函数在区域内可导与区域内解析是等价的，但是在某点可导和在某点解析不等价</p>
+<p>在区域解析的两个函数 <span class="math inline">\(f(z)\)</span> 和
+<span class="math inline">\(g(z)\)</span>，其和、差、积、商（分母不为
+<span class="math inline">\(0\)</span>）仍为在该区域解析的函数</p>
+<p>设函数 <span class="math inline">\(\xi=g(z)\)</span> 在 <span
+class="math inline">\(z\)</span> 平面上的区域 <span
+class="math inline">\(D\)</span> 内解析，函数 <span
+class="math inline">\(w=f(\xi)\)</span> 在 <span
+class="math inline">\(\xi\)</span> 平面上的区域 <span
+class="math inline">\(G\)</span> 内解析，且 <span
+class="math inline">\(g(D)\subset G\)</span>，则复合函数 <span
+class="math inline">\(w=f[g(z)]\)</span> 在区域 <span
+class="math inline">\(D\)</span> 内解析</p>
+<h3 id="函数解析的充要条件">函数解析的充要条件</h3>
+<h4 id="柯西-黎曼条件">柯西-黎曼条件</h4>
+<p>设函数 <span class="math inline">\(w=f(z)=u(x,y)+iv(x,y)\)</span>
+在区域 <span class="math inline">\(D\)</span> 内有定义，<span
+class="math inline">\(z=x+iy\)</span> 是 <span
+class="math inline">\(D\)</span> 内的任意一点，若 <span
+class="math inline">\(f(z)\)</span> 在 <span
+class="math inline">\(z\)</span> 点可导，则 <span
+class="math inline">\(u(x,y)\)</span> 和 <span
+class="math inline">\(v(x,y)\)</span> 在点 <span
+class="math inline">\((x,y)\)</span>
+处均可导，且满足<strong>柯西-黎曼（Cauchy-Riemann,
+C-R）条件</strong></p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;u_x=v_y\\
+      &amp;u_y=-v_x\\
+   \end{aligned}
+\right.
+\]</span></p>
+<p>并且 <span class="math inline">\(f(z)\)</span> 的导数可表示为</p>
+<p><span class="math display">\[
+f&#39;(z)=u_x+iv_x=v_y - iu_y
+\]</span></p>
+<p>Cauchy-Riemann 条件是复变函数在某点可导的必要条件</p>
+<h4 id="可导的充要条件">可导的充要条件</h4>
+<p>将 Cauchy-Riemann 条件加强，得到<strong>充要条件</strong></p>
+<p>设函数 <span class="math inline">\(f(z)=u(x,y)+iv(x,y)\)</span>
+在区域 <span class="math inline">\(D\)</span> 内有定义，若 <span
+class="math inline">\(u(x,y)\)</span> 与 <span
+class="math inline">\(v(x,y)\)</span> 在点 <span
+class="math inline">\((x,y)\)</span>
+<strong>可微</strong>，并且在该点<strong>满足 C-R 条件</strong>，则
+<span class="math inline">\(f(z)\)</span> 在点 <span
+class="math inline">\(z=x+iy\)</span> 处可导</p>
+<h3 id="初等解析函数">初等解析函数</h3>
+<h4 id="指数函数">指数函数</h4>
+<p>复变函数 <span class="math inline">\(w=e^z\)</span>
+称为复指数函数，<span class="math inline">\(z=x+iy\)</span>，则</p>
+<p><span class="math display">\[
+e^z=e^{x+iy}=e^x(\cos y +i\sin y)
+\]</span></p>
+<h4 id="对数函数">对数函数</h4>
+<p>设 <span class="math inline">\(z\neq 0,\infty\)</span>，称满足 <span
+class="math inline">\(e^w=z\)</span> 的复变函数 <span
+class="math inline">\(w\)</span> 为复对数函数</p>
+<p>假设 <span class="math inline">\(z=r(\cos\theta
++i\sin\theta)\)</span>，则</p>
+<p><span class="math display">\[
+w=\ln r + i(\theta + 2k\pi),\quad k\in \mathbf{Z}
+\]</span></p>
+<p>在复平面上，复对数函数是多值函数</p>
+<p>有这样的性质</p>
+<p><span class="math display">\[
+\ln z^n \neq n \ln z
+\]</span></p>
+<p>这是由于复对数函数的多值性</p>
+<h4 id="幂函数">幂函数</h4>
+<p>设 <span class="math inline">\(\alpha,z(z\neq 0)\)</span> 为复数</p>
+<p><span class="math display">\[
+w=z^\alpha = e^{\alpha \ln z}
+\]</span></p>
+<p>为靡函数</p>
+<h4 id="三角函数与双曲函数">三角函数与双曲函数</h4>
+<p>对任意复数 <span class="math inline">\(z\)</span>，定义</p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;\sin z=\frac{e^{iz}-e^{-iz}}{2i}\\
+      &amp;\cos z=\frac{e^{iz}+e^{-iz}}{2}
+   \end{aligned}
+\right.
+\]</span></p>
+<p>分别为正弦函数和余弦函数</p>
+<blockquote>
+<p>注意，还是先有三角函数的定义再有这个公式的</p>
+</blockquote>
+<p>$z $ 和 $z $ 在复平面上无界</p>
+<p>双曲函数定义为</p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;\sinh z=\frac{e^z - e^{-z}}{2}\\
+      &amp;\cosh z=\frac{e^z + e^{-z}}{2}\\
+      &amp;\tanh z=\frac{\sinh z}{\cosh z}=\frac{e^z - e^{-z}}{e^z +
+e^{-z}}
+   \end{aligned}
+\right.
+\]</span></p>
+<p>分别为双曲正弦函数、双曲余弦函数和双曲正切函数</p>
+<h4 id="反三角函数与反双曲函数">反三角函数与反双曲函数</h4>
+<p>设 <span class="math inline">\(z=\sin
+w\)</span>，则称满足该方程的复变函数 <span
+class="math inline">\(w\)</span> 为反正弦函数，记为 <span
+class="math inline">\(w=\arcsin z\)</span></p>
+<p><span class="math display">\[
+z=\sin w = \frac{e^{iw} - e^{-iw}}{2i}\Rightarrow w= -i \ln \left( iz +
+\sqrt{1 - z^2} \right)
+\]</span></p>
+<p>其他反三角函数类似</p>
+<p><span class="math display">\[
+w = \arccos z = -i \ln \left( z + \sqrt{z^2 - 1} \right)
+\]</span></p>
+<h3 id="复变函数的积分">复变函数的积分</h3>
+<p>设 <span class="math inline">\(C\)</span> 为一条以 <span
+class="math inline">\(A\)</span> 为起点，<span
+class="math inline">\(B\)</span> 为终点的有向光滑曲线，方程为</p>
+<p><span class="math display">\[
+z=z(t)=x(t)+iy(t),\quad t\in [\alpha,\beta]
+\]</span></p>
+<p>函数 <span class="math inline">\(f(z)\)</span> 定义在曲线 <span
+class="math inline">\(C\)</span> 上，复变函数 <span
+class="math inline">\(f(z)\)</span> 沿曲线 <span
+class="math inline">\(C\)</span> 从点 <span
+class="math inline">\(A\)</span> 到点 <span
+class="math inline">\(B\)</span> 的<strong>曲线积分</strong>定义为</p>
+<p><span class="math display">\[
+\int_C f(z)\, \mathrm{d}z=\lim_{n\to\infty} \sum_{k=1}^n
+f(\zeta_k)\Delta z_k
+\]</span></p>
+<h4 id="复变函数积分的计算">复变函数积分的计算</h4>
+<p>设 <span class="math inline">\(f(z)=u(x,y)+iv(x,y)\)</span>
+在逐段光滑的曲线 <span class="math inline">\(C\)</span> 上连续，则 <span
+class="math inline">\(f(z)\)</span> 沿曲线 <span
+class="math inline">\(C\)</span> 的积分存在，且有</p>
+<p><span class="math display">\[
+\int_Cf(z)\, \mathrm{d}z=\int_C u(x,y) \, \mathrm{d}x-v(x,y) \,
+\mathrm{d}y + i \int_C v(x,y) \, \mathrm{d}x + u(x,y) \, \mathrm{d}y
+\]</span></p>
+<h3 id="柯西定理">柯西定理</h3>
+<h4 id="单连通区域的柯西定理">单连通区域的柯西定理</h4>
+<p>设函数 <span class="math inline">\(f(z)\)</span> 在单连通区域 <span
+class="math inline">\(D\)</span> 内解析，<span
+class="math inline">\(C\)</span> 为 <span
+class="math inline">\(D\)</span> 内的任意一条比曲线，则</p>
+<p><span class="math display">\[
+\int_C f(z)\, \mathrm{d}z = 0
+\]</span></p>
+<p>可得到这样的推论</p>
+<p>设函数 <span class="math inline">\(f(z)\)</span> 在单连通区域 <span
+class="math inline">\(D\)</span> 内解析，则积分 <span
+class="math inline">\(\displaystyle \int_C f(z) \, \mathrm{d}z\)</span>
+只与曲线 <span class="math inline">\(C\)</span>
+的起点和终点有关，而与曲线的路径无关</p>
+<h4 id="柯西定理的推广">柯西定理的推广</h4>
+<p>设 <span class="math inline">\(D\)</span> 是边界曲线 <span
+class="math inline">\(\tau=C+C_1^-+C_2^-+\ldots +C_n^-\)</span>
+所围成的多连通区域，其中简单闭曲线 <span
+class="math inline">\(C_1,C_2,\ldots,C_n\)</span> 均在 <span
+class="math inline">\(C\)</span> 内部，互不包含也互不相交，若 <span
+class="math inline">\(f(z)\)</span> 在 <span
+class="math inline">\(D\)</span> 内解析，在 <span
+class="math inline">\(\\tau\)</span> 上连续，则</p>
+<p><span class="math display">\[
+\oint _\tau f(z) \, \mathrm{d}z=0
+\]</span></p>
+<p><span class="math display">\[
+\int _Cf(z) \, \mathrm{d}z = \sum_{k=1}^{n}\oint _{C_k} f(z) \,
+\mathrm{d}z
+\]</span></p>
+<p>可得推论</p>
+<p>若函数 <span class="math inline">\(f(z)\)</span> 在区域 <span
+class="math inline">\(D\)</span> 内除了点 <span
+class="math inline">\(z_0\)</span> 外解析，那么在 <span
+class="math inline">\(D\)</span> 内沿着任意一条围绕 <span
+class="math inline">\(z_0\)</span> 的正向闭曲线积分都相等</p>
+<p>若函数 <span class="math inline">\(f(z)\)</span> 在区域 <span
+class="math inline">\(D\)</span> 内除了 <span
+class="math inline">\(z_1,z_2,\ldots ,z_n\)</span> 外都解析，<span
+class="math inline">\(C\)</span> 为 <span
+class="math inline">\(D\)</span> 内任何一条将 <span
+class="math inline">\(z_1,z_2,\ldots ,z_n\)</span>
+包含在内的正向闭曲线，则有</p>
+<p><span class="math display">\[
+\int_C f(z) \, \mathrm{d}z = \sum_{k=1}^{n} \oint_{C_k} f(z) \,
+\mathrm{d}z_0
+\]</span></p>
+<h3 id="柯西积分公式和高阶导数公式">柯西积分公式和高阶导数公式</h3>
+<p>设 <span class="math inline">\(D\)</span> 为一单连通区域，<span
+class="math inline">\(z_0\)</span> 为 <span
+class="math inline">\(D\)</span> 中的一点，如果 <span
+class="math inline">\(f(z)\)</span> 在区域 <span
+class="math inline">\(D\)</span> 内解析，则称 <span
+class="math inline">\(z_0\)</span> 为函数 <span
+class="math inline">\(\frac{f(z)}{z-z_0}\)</span> 的奇点</p>
+<h4 id="柯西积分公式">柯西积分公式</h4>
+<p>设闭曲线 <span class="math inline">\(C\)</span> 是单连通区域 <span
+class="math inline">\(D\)</span> 的边界，若函数 <span
+class="math inline">\(f(z)\)</span> 在 <span
+class="math inline">\(D\)</span> 上解析，在 <span
+class="math inline">\(C\)</span> 上连续，则对 <span
+class="math inline">\(D\)</span> 内的任意一点 <span
+class="math inline">\(z\)</span> 有</p>
+<p><span class="math display">\[
+f(z)=\frac{1}{2\pi i}\oint _C \frac{f(\eta)}{\eta -z} \, \mathrm{d}z
+\]</span></p>
+<h4 id="解析函数的高阶导数公式">解析函数的高阶导数公式</h4>
+<p>设函数 <span class="math inline">\(f(z)\)</span> 在闭曲线 <span
+class="math inline">\(C\)</span> 所围城的区域 <span
+class="math inline">\(D\)</span> 上解析，在 <span
+class="math inline">\(C\)</span> 上连续，则函数 <span
+class="math inline">\(f(z)\)</span> 在 <span
+class="math inline">\(D\)</span> 内有各阶导数，在 <span
+class="math inline">\(D\)</span> 都是解析函数，且对 <span
+class="math inline">\(D\)</span> 内的任意一点 <span
+class="math inline">\(z\)</span> 和任意正整数 <span
+class="math inline">\(n\)</span> 有</p>
+<p><span class="math display">\[
+f^{(n)}(z)=\frac{n!}{2\pi i}\oint _C \frac{f(\eta)}{(\eta -z)^{n+1}} \,
+\mathrm{d}\eta
+\]</span></p>
+<p>则可通过该公式计算闭曲线的积分</p>
+<p><span class="math display">\[
+\oint _C\frac{f(\eta)}{(\eta -z)^{n+1}}\, \mathrm{d}\eta = \frac{2\pi
+i}{n!} f^{(n)}(z)
+\]</span></p>
+<h3 id="解析函数的等价描述">解析函数的等价描述</h3>
+<p>假设 <span class="math inline">\(f(z):\Omega \rightarrow
+\mathcal{C}\)</span> 是一个连续的复变函数，<span
+class="math inline">\(z_0\in \Omega\)</span> 是一个点。我们称 <span
+class="math inline">\(f\)</span> 在 <span
+class="math inline">\(z_0\)</span> 附近解析，如果存在正实数 <span
+class="math inline">\(r&gt;0\)</span>，以及复数序列 <span
+class="math inline">\(\{a_n\}^\infty_{n=0}\)</span> 使得对于任意 <span
+class="math inline">\(z\)</span> 满足 <span class="math inline">\(\vert
+z-z_0 \vert &lt; r\)</span>，级数 <span
+class="math inline">\(\displaystyle \sum_{n=0}^{+\infty} a_n
+(z-z_0)^n\)</span> 收敛且等于 <span
+class="math inline">\(f(z)\)</span></p>
+<h3 id="解析函数的泰勒展开">解析函数的泰勒展开</h3>
+<h4 id="解析函数的泰勒展开式">解析函数的泰勒展开式</h4>
+<p>设函数 <span class="math inline">\(f(z)\)</span> 在圆域 <span
+class="math inline">\(D:\vert z-z_0\vert &lt;R\)</span> 内解析，则 <span
+class="math inline">\(D\)</span> 内可展开为幂级数</p>
+<p><span class="math display">\[
+f(z)=\sum_{n=0}^{\infty} c_n (z-z_0)^n
+\]</span></p>
+<p>其中</p>
+<p><span class="math display">\[
+c_n=\frac{1}{2\pi i}\oint _C \frac{f(\eta)}{(\eta -z_0)^{n+1}} \,
+\mathrm{d}\eta =\frac{f^{(n)}(z_0)}{n!}
+\]</span></p>
+<p><span class="math inline">\(C\)</span> 为任意圆周 <span
+class="math inline">\(\vert \eta -z_0\vert =\rho &lt;R\)</span></p>
+<h3 id="解析函数的罗朗级数展开">解析函数的罗朗级数展开</h3>
+<h4 id="罗朗级数的概念">罗朗级数的概念</h4>
+<p>既有正幂项和负幂项的双边幂级数</p>
+<p><span class="math display">\[
+\sum_{n=0}^{\infty} c_n (z-z_0)^n + \sum_{n=1}^{\infty} c_{-n}
+(z-z_0)^{-n}
+\]</span></p>
+<p>成为<strong>罗朗级数</strong></p>
+<p>如果两幂级数均收敛，则称罗朗级数收敛</p>
+<p>对于幂级数 <span class="math inline">\(\displaystyle
+\sum_{n=0}^{\infty} c_n (z-z_0)^n\)</span>，其收敛域为半径为 <span
+class="math inline">\(R\)</span> 的圆域，其中 <span
+class="math inline">\(\displaystyle R= \frac{1}{\limsup_{n\to\infty}
+\sqrt[n]{\vert c_n \vert}}\)</span></p>
+<p>对于幂级数 <span class="math inline">\(\displaystyle
+\sum_{n=1}^{\infty} c_{-n} (z-z_0)^{-n}\)</span>，其收敛域为半径为 <span
+class="math inline">\(R_1\)</span> 的外部区域，其中 <span
+class="math inline">\(\displaystyle R_1= \limsup_{n\to\infty}
+\sqrt[n]{\vert c_n \vert}\)</span></p>
+<p>罗朗级数在 <span class="math inline">\(R_1&lt;\vert z-z_0 \vert
+&lt;R\)</span> 内收敛，边界上可能收敛也可能发散</p>
+<h4 id="函数的罗朗展开式">函数的罗朗展开式</h4>
+<p>设函数 <span class="math inline">\(f(x)\)</span> 在圆环域 <span
+class="math inline">\(D:R_1&lt;\vert z-z_0 \vert &lt;R\)</span>
+内解析，则在该圆环域内，函数 <span class="math inline">\(f(z)\)</span>
+可展开为罗朗级数</p>
+<p><span class="math display">\[
+f(z)=\sum_{n=-\infty}^{\infty} c_n (z-z_0)^n
+\]</span></p>
+<p>其中</p>
+<p><span class="math display">\[
+c_n=\frac{1}{2\pi i}\oint _C \frac{f(\eta)}{(\eta -z_0)^{n+1}} \,
+\mathrm{d}\eta
+\]</span></p>
+<h3 id="孤立奇点与分类">孤立奇点与分类</h3>
+<h4 id="孤立奇点">孤立奇点</h4>
+<p>在函数 <span class="math inline">\(f(z)\)</span> 的罗朗展开式</p>
+<p><span class="math display">\[
+f(z)=\sum_{n=-\infty}^{\infty} c_n (z-z_0)^n
+\]</span></p>
+<p>中，称 <span class="math inline">\(\displaystyle
+\varphi(z)=\sum_{n=0}^{\infty} c_{n} (z-z_0)^{n}\)</span> 为函数 <span
+class="math inline">\(f(z)\)</span> 的<strong>解析部分</strong>，称
+<span class="math inline">\(\displaystyle \psi(z)=\sum_{n=-\infty}^{-1}
+c_{n} (z-z_0)^{n}\)</span> 为函数 <span
+class="math inline">\(f(z)\)</span> 的<strong>主部</strong></p>
+<p>如果 <span class="math inline">\(f(z)\)</span> 在奇点 <span
+class="math inline">\(z=z_0\)</span> 的某去心邻域 <span
+class="math inline">\(0&lt;\vert z-z_0 \vert &lt;r\)</span> 内解析，则称
+<span class="math inline">\(z_0\)</span> 为函数 <span
+class="math inline">\(f(z)\)</span> 的<strong>孤立奇点</strong></p>
+<p>设点 <span class="math inline">\(z_0\)</span> 是函数 <span
+class="math inline">\(f(z)\)</span> 的孤立极点</p>
+<ol type="1">
+<li><p>若 <span class="math inline">\(f(z)\)</span> 在点 <span
+class="math inline">\(z_0\)</span> 的罗朗级数的主要部分 <span
+class="math inline">\(\psi(z)\)</span> 为 <span
+class="math inline">\(0\)</span>，则称点 <span
+class="math inline">\(z_0\)</span> 为函数 <span
+class="math inline">\(f(z)\)</span> 的<strong>可去奇点</strong></p></li>
+<li><p>若 <span class="math inline">\(f(z)\)</span> 在点 <span
+class="math inline">\(z_0\)</span> 的罗朗级数的主要部分 <span
+class="math inline">\(\psi(z)\)</span> 有有限多项项</p>
+<p><span class="math display">\[
+\psi(z)=\frac{c_{-m}}{(z-z_0)^m}+\frac{c_{-m+1}}{(z-z_0)^{m-1}}+\ldots
++\frac{c_{-1}}{z-z_0},\quad c_{-m}\neq 0
+\]</span></p>
+<p>称 <span class="math inline">\(z_0\)</span> 为 <span
+class="math inline">\(f(z)\)</span> 的 <span
+class="math inline">\(m\)</span> 阶奇点</p></li>
+<li><p>若 <span class="math inline">\(f(z)\)</span> 在点 <span
+class="math inline">\(z_0\)</span> 的罗朗级数的主要部分 <span
+class="math inline">\(\psi(z)\)</span> 有无穷多项，则称点 <span
+class="math inline">\(z_0\)</span> 为函数 <span
+class="math inline">\(f(z)\)</span> 的<strong>本性奇点</strong></p></li>
+</ol>
+<h4 id="可去奇点">可去奇点</h4>
+<p>若 <span class="math inline">\(z_0\)</span> 为 <span
+class="math inline">\(f(z)\)</span> 的孤立奇点，则一下三个条件等价</p>
+<ol type="1">
+<li><span class="math inline">\(z_0\)</span> 为 <span
+class="math inline">\(f(z)\)</span> 的可去奇点</li>
+<li><span class="math inline">\(\displaystyle \lim_{z\to z_0}
+f(z)\)</span> 存在且有限</li>
+<li><span class="math inline">\(f(z)\)</span> 在点 <span
+class="math inline">\(z_0\)</span> 的某个去心邻域内有界</li>
+</ol>
+<h3 id="极点">极点</h3>
+<p>给出零点的定义</p>
+<p>若不恒为 <span class="math inline">\(0\)</span> 的解析函数 <span
+class="math inline">\(f(z)\)</span> 能够表示为</p>
+<p><span class="math display">\[
+f(z)=(z-z_0)^m g(z)
+\]</span></p>
+<p>其中 <span class="math inline">\(g(z)\)</span> 在点 <span
+class="math inline">\(z_0\)</span> 处解析，且 <span
+class="math inline">\(g(z_0)\neq 0\)</span>，则称点 <span
+class="math inline">\(z_0\)</span> 为函数 <span
+class="math inline">\(f(z)\)</span> 的 <span
+class="math inline">\(m\)</span> 阶零点</p>
+<p>设 <span class="math inline">\(f(z)\)</span> 在点 <span
+class="math inline">\(z_0\)</span> 处解析，则 <span
+class="math inline">\(z_0\)</span> 为 <span
+class="math inline">\(f(z)\)</span> 的 <span
+class="math inline">\(m\)</span> 阶零点的充要条件为</p>
+<p><span class="math display">\[
+f(z_0) = f&#39;(z_0) = \ldots = f^{(m-1)}(z_0) = 0,\quad f^{(m)}(z_0)
+\neq 0
+\]</span></p>
+<p>并且以下两个条件等价</p>
+<ol type="1">
+<li><span class="math inline">\(f(z)\)</span> 在 <span
+class="math inline">\(z_0\)</span> 处的罗朗展开式主要部分只有有限项</li>
+<li><span class="math inline">\(\displaystyle \lim_{z\to z_0}f(z) =
+\infty\)</span></li>
+</ol>
+<p>以下两个条件也等价</p>
+<ol type="1">
+<li><span class="math inline">\(z=z_0\)</span> 为 <span
+class="math inline">\(f(z)\)</span> 的 <span
+class="math inline">\(m\)</span> 阶极点</li>
+<li><span class="math inline">\(z=z_0\)</span> 为 <span
+class="math inline">\(\frac{1}{f(z)}\)</span> 的 <span
+class="math inline">\(m\)</span> 阶零点</li>
+</ol>
+<h4 id="本性奇点">本性奇点</h4>
+<p>若 <span class="math inline">\(z_0\)</span> 为 <span
+class="math inline">\(f(z)\)</span> 的孤立极点，则一下两个条件等价</p>
+<ol type="1">
+<li><span class="math inline">\(z_0\)</span> 为 <span
+class="math inline">\(f(z)\)</span> 的本性奇点</li>
+<li><span class="math inline">\(\displaystyle \lim_{z\to z_0}
+f(z)\)</span> 不存在</li>
+</ol>
+<h3 id="留数的定义及其运算">留数的定义及其运算</h3>
+<h4 id="留数的概念及留数定理">留数的概念及留数定理</h4>
+<p>设函数 <span class="math inline">\(f(z)\)</span> 在 <span
+class="math inline">\(0&lt;\vert z-z_0\vert&lt;R\)</span> 内解析，<span
+class="math inline">\(z_0\)</span> 为 <span
+class="math inline">\(f(z)\)</span> 的一个孤立奇点，<span
+class="math inline">\(C\)</span> 是任意正向圆周 <span
+class="math inline">\(\vert z-z_0\vert =\rho
+&lt;R\)</span>，则称积分</p>
+<p><span class="math display">\[
+\frac{1}{2\pi i}\oint _C f(z) \, \mathrm{d}z
+\]</span></p>
+<p>的值称为 <span class="math inline">\(f(z)\)</span> 在点 <span
+class="math inline">\(z_0\)</span> 处的留数，记为 <span
+class="math inline">\(\operatorname{Res}[f(z),z_0]\)</span></p>
+<p>根据 Cauchy 积分公式可知，留数等于函数 <span
+class="math inline">\(f(z)\)</span> 在点 <span
+class="math inline">\(z_0\)</span> 处的罗朗展开式中 <span
+class="math inline">\((z-z_0)^{-1}\)</span> 项的系数</p>
+<p><span class="math display">\[
+\operatorname{Res}[f(z),z_0]=\frac{1}{2\pi i} \oint _C f(z) \,
+\mathrm{d}z = c_{-1}
+\]</span></p>
+<h5 id="留数定理">留数定理</h5>
+<p>设 <span class="math inline">\(C\)</span> 为一条正向简单曲线，若函数
+<span class="math inline">\(f(z)\)</span> 在 <span
+class="math inline">\(C\)</span> 上连续，在 <span
+class="math inline">\(C\)</span> 所围的区域 <span
+class="math inline">\(D\)</span> 内除去有限个奇点 <span
+class="math inline">\(z_1,z_2,\cdots,z_n\)</span> 外均解析，则</p>
+<p><span class="math display">\[
+\oint _C f(z) \, \mathrm{d}z = 2\pi i \sum_{k=1}^{n}
+\operatorname{Res}\left[f(z), z_k\right]
+\]</span></p>
+<h4 id="留数的计算">留数的计算</h4>
+<h5 id="可去奇点-1">可去奇点</h5>
+<p><span class="math display">\[
+\operatorname{Res}\left[f(z), z_0\right]=0
+\]</span></p>
+<h5 id="m-阶极点"><span class="math inline">\(m\)</span> 阶极点</h5>
+<p><span class="math display">\[
+\operatorname{Res}\left[f(z), z_0\right]=\frac{1}{(m-1)!}\lim_{z\to z_0}
+\frac{\mathrm{d}^{m-1}}{\mathrm{d}z^{m-1}}\left[(z-z_0)^m f(z)\right]
+\]</span></p>
+<p>一阶极点</p>
+<p><span class="math display">\[
+\operatorname{Res}\left[f(z), z_0\right]=(z-z_0)f(z)
+\]</span></p>
+<p>若 <span class="math inline">\(f(z)\)</span></p>
+<h4 id="留数在某些定积分计算中的应用">留数在某些定积分计算中的应用</h4>
+<h5 id="int-_02pi-rcosthetasintheta-mathrmdtheta-型定积分"><span
+class="math inline">\(\int _0^{2\pi} R(\cos\theta,\sin\theta) \,
+\mathrm{d}\theta\)</span> 型定积分</h5>
+<p>被积分函数 <span
+class="math inline">\(R(\cos\theta,\sin\theta)\)</span> 为 <span
+class="math inline">\(\cos\theta\)</span> 和 <span
+class="math inline">\(\sin\theta\)</span> 的有理函数，且在 <span
+class="math inline">\([0,2\pi]\)</span> 上连续</p>
+<p>令</p>
+<p><span class="math display">\[
+z=e^{i\theta}=\cos\theta + i\sin\theta
+\]</span></p>
+<p>则</p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;\cos\theta =\frac{1}{2}\left(z+\frac{1}{z}\right)\\
+      &amp;\sin\theta =\frac{1}{2i}\left(z-\frac{1}{z}\right)\\
+      &amp;\mathrm{d}\theta =\frac{1}{iz} \, \mathrm{d}z\\
+   \end{aligned}
+\right.
+\]</span></p>
+<p>则</p>
+<p><span class="math display">\[
+\begin{aligned}
+   \int_0^{2\pi} R(\cos\theta,\sin\theta) \, \mathrm{d}\theta &amp;=
+\oint _{\vert z \vert =1} R\left(\frac{1}{2}\left(z+\frac{1}{z}\right),
+\frac{1}{2i}\left(z-\frac{1}{z}\right)\right) \frac{1}{iz} \,
+\mathrm{d}z\\
+   &amp;=2\pi i \sum_{k=1}^n
+\operatorname{Res}\left[\frac{1}{iz}R\left(\frac{1}{2}\left(z+\frac{1}{z}\right),
+\frac{1}{2i}\left(z-\frac{1}{z}\right)\right),z_k \right]
+\end{aligned}
+\]</span></p>
+<h5 id="int_-inftyinfty-fracpxqx-mathrmdx-型定积分"><span
+class="math inline">\(\int_{-\infty}^{+\infty} \frac{P(x)}{Q(x)} \,
+\mathrm{d}x\)</span> 型定积分</h5>
+<h6 id="大圆弧引理">大圆弧引理</h6>
+<p>如果存在 <span class="math inline">\(\alpha &gt; 1\)</span>，<span
+class="math inline">\(M&gt;0\)</span>,<span
+class="math inline">\(R&gt;0\)</span>，使得当 <span
+class="math inline">\(\vert x \vert &gt; R\)</span> 时，<span
+class="math inline">\(f(z)\)</span> 解析，且 <span
+class="math inline">\(\vert f(z) \vert \leq \frac{M}{\vert z \vert
+^\alpha}\)</span>，则</p>
+<p><span class="math display">\[
+\lim_{R\to \infty} \int_{\vert z \vert =R} f(z) \, \mathrm{d}z = 0
+\]</span></p>
+<p>实际计算中通常取上半平面半圆弧</p>
+<h6 id="积分计算">积分计算</h6>
+<p>设 <span class="math inline">\(P(x), Q(x)\)</span> 为多项式，方程
+<span class="math inline">\(Q(x)=0\)</span> 无实根（极点不在实轴上），且
+<span class="math inline">\(Q(x)\)</span> 的次数比 <span
+class="math inline">\(P(x)\)</span> 的次数高至少 <span
+class="math inline">\(2\)</span>，令 <span
+class="math inline">\(f(z)=\frac{P(z)}{Q(z)}\)</span>，则</p>
+<p><span class="math display">\[
+\int_{-\infty}^{+\infty} \frac{P(x)}{Q(x)} \, \mathrm{d}x = 2\pi i
+\sum_{k=1}^n \operatorname{Res}\left[f(z), z_k\right]
+\]</span></p>
+<p>其中 <span class="math inline">\(z_1,z_2,\ldots,z_n\)</span> 为方程
+<span class="math inline">\(Q(z)=0\)</span> 在上半平面内的根</p>
+<h5 id="int_-inftyinfty-fxeilambda-x-mathrmdx-型定积分"><span
+class="math inline">\(\int_{-\infty}^{+\infty} f(x)e^{i\lambda x} \,
+\mathrm{d}x\)</span> 型定积分</h5>
+<h6 id="jordan-引理">Jordan 引理</h6>
+<p><span class="math inline">\(C_R\)</span> 是上半平面的半圆弧，<span
+class="math inline">\(R\to\infty\)</span>，若 <span
+class="math inline">\(z\)</span> 是这个半圆弧上的点，且 <span
+class="math inline">\(\vert f(z) \vert \to 0\)</span> 当 <span
+class="math inline">\(R\to \infty\)</span>，则对于任意正数 <span
+class="math inline">\(\lambda\)</span>，都有</p>
+<p><span class="math display">\[
+\lim_{R\to \infty} \int_{C_R} f(z)e^{i\lambda z} \, \mathrm{d}z = 0
+\]</span></p>
+<h6 id="积分计算-1">积分计算</h6>
+<p>设 <span class="math inline">\(P(x), Q(x)\)</span> 为多项式，且 <span
+class="math inline">\(Q(x)\)</span> 的次数比 <span
+class="math inline">\(P(x)\)</span> 的次数高至少 <span
+class="math inline">\(1\)</span>，令 <span
+class="math inline">\(f(z)=\frac{P(z)}{Q(z)}\)</span>，则</p>
+<p><span class="math display">\[
+\int_{-\infty}^{+\infty} f(x)e^{i\lambda x} \, \mathrm{d}x = 2\pi i
+\sum_{k=1}^n \operatorname{Res}\left[f(z)e^{i\lambda z}, z_k\right]
+\]</span></p>
+<p>其中 <span class="math inline">\(z_1,z_2,\ldots,z_n\)</span> 为方程
+<span class="math inline">\(Q(z)=0\)</span> 在上半平面内的根，<span
+class="math inline">\(\lambda &gt;0\)</span></p>
+<h2 id="共形变换及其应用">共形变换及其应用</h2>
+<h3 id="导数的几何意义">导数的几何意义</h3>
+<p>先讨论切线倾角的复数表示</p>
+<p>若 <span class="math inline">\(z&#39;(t_0)\neq 0\)</span>，则</p>
+<p><span class="math display">\[
+\lim_{t\to t_0} \arg\frac{z(t)-z(t_0)}{t-t_0} = \arg z&#39;(t_0)
+\]</span></p>
+<p>我们设函数 <span class="math inline">\(w=f(z)\)</span> 将 <span
+class="math inline">\(Z\)</span> 平面上的曲线 <span
+class="math inline">\(C\)</span> 映射为 <span
+class="math inline">\(W\)</span> 平面上的曲线 <span
+class="math inline">\(\Gamma\)</span></p>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202512231623809.png" srcset="/img/loading.jpeg" lazyload
+alt="导数的几何意义" />
+<figcaption aria-hidden="true">导数的几何意义</figcaption>
+</figure>
+<p><span class="math display">\[
+\Delta z=z-z_0=\vert \Delta z\vert e^{i\theta}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(\vert \Delta z \vert\)</span> 表示点
+<span class="math inline">\(z\)</span> 到点 <span
+class="math inline">\(z_0\)</span> 的距离</li>
+<li><span class="math inline">\(\theta\)</span> 表示点 <span
+class="math inline">\(z\)</span> 到点 <span
+class="math inline">\(z_0\)</span> 的连线与实轴的夹角</li>
+</ul>
+<p>同样的</p>
+<p><span class="math display">\[
+\Delta w=w-w_0=\vert \Delta w\vert e^{i\varphi}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(\vert \Delta w \vert\)</span> 表示点
+<span class="math inline">\(w\)</span> 到点 <span
+class="math inline">\(w_0\)</span> 的距离</li>
+<li><span class="math inline">\(\varphi\)</span> 表示点 <span
+class="math inline">\(w\)</span> 到点 <span
+class="math inline">\(w_0\)</span> 的连线与实轴的夹角</li>
+</ul>
+<p>则</p>
+<p><span class="math display">\[
+f&#39;(z_0)=\lim_{\Delta z \to 0} \frac{\Delta w}{\Delta z}
+=\lim_{\Delta z \to 0} \frac{\vert \Delta w \vert}{\vert \Delta z \vert}
+e^{i(\varphi -\theta)}
+\]</span></p>
+<h4 id="模的几何意义">模的几何意义</h4>
+<p><span class="math display">\[
+\vert f&#39;(z_0) \vert =\lim_{\Delta z \to 0} \frac{\vert \Delta w
+\vert}{\vert \Delta z \vert}= \frac{\Delta s}{\Delta \sigma}=
+\frac{\mathrm{d}s}{\mathrm{d}\sigma}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(\Delta \sigma\)</span> 表示点 <span
+class="math inline">\(z\)</span> 在曲线 <span
+class="math inline">\(C\)</span> 上到点 <span
+class="math inline">\(z_0\)</span> 的距离</li>
+<li><span class="math inline">\(\Delta s\)</span> 表示点 <span
+class="math inline">\(w\)</span> 在曲线 <span
+class="math inline">\(\Gamma\)</span> 上到点 <span
+class="math inline">\(w_0\)</span> 的距离</li>
+</ul>
+<p>即</p>
+<p><span class="math display">\[
+\mathrm{d}s=\vert f&#39;(z_0) \vert \mathrm{d}\sigma
+\]</span></p>
+<p>这说明了曲线 <span class="math inline">\(\Gamma\)</span> 上过点 <span
+class="math inline">\(w_0\)</span> 的无穷小弧长 <span
+class="math inline">\(\Delta s\)</span> 与曲线 <span
+class="math inline">\(C\)</span> 上过点 <span
+class="math inline">\(z_0\)</span> 的无穷小弧长 <span
+class="math inline">\(\Delta \sigma\)</span> 的比的极限是定值 <span
+class="math inline">\(\vert f&#39;(z_0) \vert\)</span></p>
+<p>反映了在映射 <span class="math inline">\(f(z)\)</span> 下，曲线 <span
+class="math inline">\(C\)</span> 上过点 <span
+class="math inline">\(z_0\)</span>
+的无穷小线段被放大（或缩小）的程度，并且伸缩率只与点 <span
+class="math inline">\(z_0\)</span> 有关，而与曲线 <span
+class="math inline">\(C\)</span> 的形状无关</p>
+<p>这个性质被称为<strong>伸缩率的不变形</strong></p>
+<h5 id="辐角的几何意义">辐角的几何意义</h5>
+<p><span class="math display">\[
+\arg f&#39;(z_0) =\lim_{\Delta z \to 0} (\varphi -\theta) = \lim_{\Delta
+z \to 0} \arg \frac{\Delta w}{\Delta z}=\varphi_* -\theta_*
+\]</span></p>
+<ul>
+<li><span class="math inline">\(\theta_*\)</span> 表示曲线 <span
+class="math inline">\(C\)</span> 在点 <span
+class="math inline">\(z_0\)</span> 处的切线与实轴的夹角</li>
+<li><span class="math inline">\(\varphi_*\)</span> 表示曲线 <span
+class="math inline">\(\Gamma\)</span> 在点 <span
+class="math inline">\(w_0\)</span> 处的切线与实轴的夹角</li>
+</ul>
+<p>这说明了在映射 <span class="math inline">\(f(z)\)</span> 下，曲线
+<span class="math inline">\(C\)</span> 在点 <span
+class="math inline">\(z_0\)</span> 处的切线与曲线 <span
+class="math inline">\(\Gamma\)</span> 在点 <span
+class="math inline">\(w_0\)</span> 处的切线之间的夹角等于 <span
+class="math inline">\(\arg f&#39;(z_0)\)</span>，并且这个夹角只与点
+<span class="math inline">\(z_0\)</span> 有关，而与曲线 <span
+class="math inline">\(C\)</span> 的形状无关</p>
+<p>这个性质被称为<strong>旋转角不变性</strong></p>
+<p>设从点 <span class="math inline">\(z_0\)</span> 出发有两条连续曲线
+<span class="math inline">\(C_1\)</span> 和 <span
+class="math inline">\(C_2\)</span> ，它们在点 <span
+class="math inline">\(z_0\)</span> 的切线倾角分别为 <span
+class="math inline">\(\theta_1\)</span> 和 <span
+class="math inline">\(\theta_2\)</span>，在映射 <span
+class="math inline">\(w=f(z)\)</span> 下，它们分别被映射为曲线 <span
+class="math inline">\(\Gamma_1\)</span> 和 <span
+class="math inline">\(\Gamma_2\)</span>，它们在点 <span
+class="math inline">\(w_0\)</span> 处的切线倾角分别为 <span
+class="math inline">\(\varphi_1\)</span> 和 <span
+class="math inline">\(\varphi_2\)</span>，则</p>
+<p><span class="math display">\[
+\varphi_2 - \varphi_1 = \theta_2 - \theta_1=\arg f&#39;(z_0)
+\]</span></p>
+<h5 id="总结">总结</h5>
+<p>设函数 <span class="math inline">\(w=f(z)\)</span> 在区域 <span
+class="math inline">\(D\)</span> 内解析，<span
+class="math inline">\(z_0\)</span> 为 <span
+class="math inline">\(D\)</span> 内一点，且 <span
+class="math inline">\(f&#39;(z_0)\neq 0\)</span>，则映射 <span
+class="math inline">\(w=f(z)\)</span> 在点 <span
+class="math inline">\(z_0\)</span> 处具有如下性质</p>
+<ol type="1">
+<li>伸缩率不变性 通过点 <span class="math inline">\(z_0\)</span>
+的任何一条曲线的伸缩率均为 <span class="math inline">\(\vert f&#39;(z_0)
+\vert\)</span>，与曲线的形状无关</li>
+<li>保角性 通过点 <span class="math inline">\(z_0\)</span>
+的任何两条曲线的夹角均被保持不变，等于 <span class="math inline">\(\arg
+f&#39;(z_0)\)</span>，与曲线的形状无关</li>
+</ol>
+<h4 id="保角映射和共形变换的定义">保角映射和共形变换的定义</h4>
+<p>设函数 <span class="math inline">\(w=f(z)\)</span> 定义在点 <span
+class="math inline">\(z_0\)</span> 的邻域内，若它在点 <span
+class="math inline">\(z_0\)</span> 具有保角性和伸缩率不变性，则称映射
+<span class="math inline">\(w=f(z)\)</span> 在点 <span
+class="math inline">\(z_0\)</span> 处为保角</p>
+<p>若 <span class="math inline">\(w=f(z)\)</span> 在区域 <span
+class="math inline">\(D\)</span> 内的每一点都是保角的，则称 <span
+class="math inline">\(w=f(z)\)</span> 是区域 <span
+class="math inline">\(D\)</span> 上的保角映射（第一类保角映射）</p>
+<p>若仅保持夹角大小不变，但是方向相反，则称为第二类保角映射</p>
+<p>一般的，若 <span class="math inline">\(w=f(z)\)</span>
+为第一类保角映射，则其共轭函数 <span
+class="math inline">\(\overline{w}=\overline{f(z)}\)</span>
+为第二类保角映射</p>
+<p>若对区域 <span class="math inline">\(D\)</span> 内的任意不同两点
+<span class="math inline">\(z_1\neq z_2\)</span>，都有 <span
+class="math inline">\(f(z_1)\neq f(z_2)\)</span>，则称 <span
+class="math inline">\(w=f(z)\)</span> 是 <span
+class="math inline">\(D\)</span> 内的单叶映射</p>
+<p>若 <span class="math inline">\(w=f(z)\)</span> 在区域 <span
+class="math inline">\(D\)</span> 内的单叶的保角映射，则称 <span
+class="math inline">\(w=f(z)\)</span> 是 <span
+class="math inline">\(D\)</span> 内的共形变换（或共形映射）</p>
+<p><strong>总结</strong></p>
+<p>若函数 <span class="math inline">\(w=f(z)\)</span> 在区域 <span
+class="math inline">\(D\)</span> 内解析，<span
+class="math inline">\(z_0\)</span> 为区域 <span
+class="math inline">\(D\)</span> 内一点</p>
+<ol type="1">
+<li>若 <span class="math inline">\(f&#39;(z_0)\neq 0\)</span>，则 <span
+class="math inline">\(w=f(z)\)</span> 在点 <span
+class="math inline">\(z_0\)</span> 处为保角映射</li>
+<li>若 <span class="math inline">\(w=f(z)\)</span> 在 <span
+class="math inline">\(D\)</span> 内是单叶的，则 <span
+class="math inline">\(w=f(z)\)</span> 将区域 <span
+class="math inline">\(D\)</span> 共形变换为区域 <span
+class="math inline">\(\displaystyle G=\left\{w\vert w=f(z),z\in
+D\right\}\)</span>，且它的反函数 <span
+class="math inline">\(z=f^{-1}(w)\)</span> 在 <span
+class="math inline">\(G\)</span> 内是单叶的解析函数</li>
+</ol>
+<h4 id="关于共形变换的几个一般性定理">关于共形变换的几个一般性定理</h4>
+<h5 id="共形变换的必要条件">共形变换的必要条件</h5>
+<p>若函数 <span class="math inline">\(w=f(z)\)</span> 把共形变换为区域
+<span class="math inline">\(D\)</span> 共形变换成区域 <span
+class="math inline">\(G\)</span>，则 <span
+class="math inline">\(w=f(z)\)</span> 在 <span
+class="math inline">\(D\)</span> 上是单值且解析的函数，其导数在 <span
+class="math inline">\(D\)</span> 上必不为 <span
+class="math inline">\(0\)</span>，且其反函数在 <span
+class="math inline">\(G\)</span> 上也是单值且解析的函数，将 <span
+class="math inline">\(G\)</span> 共形变换成 <span
+class="math inline">\(D\)</span></p>
+<h5 id="黎曼定理">黎曼定理</h5>
+<p>设有两个单连通区域 <span class="math inline">\(D\)</span> 和 <span
+class="math inline">\(G\)</span>，且它们的边界至少包含两点，<span
+class="math inline">\(z_0\)</span> 和 <span
+class="math inline">\(w_0\)</span> 分别是 <span
+class="math inline">\(D\)</span> 和 <span
+class="math inline">\(G\)</span> 中的任意两点，<span
+class="math inline">\(\theta_0\)</span> 是任一实数（ <span
+class="math inline">\(0\le\theta_0\le 2\pi\)</span> ），则总存在一个函数
+<span class="math inline">\(w=f(z)\)</span>，将 <span
+class="math inline">\(D\)</span> 一一对应地保角映射成 <span
+class="math inline">\(G\)</span>，使得</p>
+<p><span class="math display">\[
+f(z_0)=w_0,\quad \arg f&#39;(z_0)=\theta_0
+\]</span></p>
+<p>并且这样的共形变换是唯一的</p>
+<h5 id="边界对应原理">边界对应原理</h5>
+<p>设有两个单连通区域 <span class="math inline">\(D\)</span> 和 <span
+class="math inline">\(G\)</span> 的边界分别为简单闭曲线 <span
+class="math inline">\(C\)</span> 和 <span
+class="math inline">\(\Gamma\)</span>，若能找到一个在 <span
+class="math inline">\(D\)</span> 内解析、在 <span
+class="math inline">\(C\)</span> 上连续的函数，将 <span
+class="math inline">\(C\)</span> 一一对应地映射成 <span
+class="math inline">\(\Gamma\)</span>，且当原像点 <span
+class="math inline">\(z\)</span> 和像点 <span
+class="math inline">\(w\)</span> 在边界上绕行方向一致时，<span
+class="math inline">\(D\)</span> 和 <span
+class="math inline">\(G\)</span> 在边界地同一侧，则 <span
+class="math inline">\(w=f(z)\)</span> 将 <span
+class="math inline">\(D\)</span> 一一对应地共形变换成 <span
+class="math inline">\(G\)</span></p>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202512231956959.png" srcset="/img/loading.jpeg" lazyload
+alt="边界对应原理" />
+<figcaption aria-hidden="true">边界对应原理</figcaption>
+</figure>
 
                 
               </div>
