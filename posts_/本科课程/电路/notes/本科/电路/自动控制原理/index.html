@@ -27,7 +27,7 @@
 <meta property="og:description" content="自动控制原理 B 导论 概述 自动控制的意义  提高了劳动生产率 提高控制的准确性 可用于某些人们不能直接参与工作的场合  判断一个系统是否为自动控制系统的标准：控制过程脱离人的控制 但是，自动控制系统中仍然有人参与，并非脱离人的设置 自动控制理论的发展 胚芽期（1945 年以前）  18 世纪以后，蒸汽机的使用提出了调速稳定等问题  1765 年，俄国人波尔祖诺夫发明了锅炉水位调节器 1784">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-09-15T10:00:00.000Z">
-<meta property="article:modified_time" content="2026-01-07T09:15:00.000Z">
+<meta property="article:modified_time" content="2026-01-07T13:30:59.000Z">
 <meta property="article:author" content="dcldyhb">
 <meta property="article:tag" content="课程笔记">
 <meta property="article:tag" content="自动控制原理">
@@ -226,7 +226,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          18k 字
+          19k 字
         
       </span>
     
@@ -237,7 +237,7 @@
         
         
         
-          150 分钟
+          160 分钟
         
       </span>
     
@@ -3671,15 +3671,249 @@ H=20\lg\frac{\frac{1}{\beta T}}{\frac{1}{T}}=-20\lg \beta
 class="math inline">\(\omega_c&#39;\)</span>，<span
 class="math inline">\(\gamma&#39;\)</span></p>
 <ol type="1">
-<li>由 <span class="math inline">\(e_{ss}&#39;\)</span> 得到 <span
-class="math inline">\(K\)</span></li>
-<li>由 <span class="math inline">\(G_0(s)\)</span> 得到 <span
+<li><p>由 <span class="math inline">\(e_{ss}&#39;\)</span> 得到 <span
+class="math inline">\(K\)</span></p></li>
+<li><p>由 <span class="math inline">\(G_0(s)\)</span> 得到 <span
 class="math inline">\(L_0(\omega)\)</span>，再得到 <span
 class="math inline">\(\omega_{c0}\)</span>，再得到 <span
 class="math inline">\(\gamma_0\)</span>，若 <span
-class="math inline">\(e_{ss}&#39;\)</span> 不足</li>
-<li>确定最大滞后相角</li>
+class="math inline">\(\gamma&#39;\)</span> 不足 注意，当 <span
+class="math inline">\(\omega_{c0}&gt;\omega_c&#39;\)</span> 并且 <span
+class="math inline">\(\gamma_0\)</span> 远小于 <span
+class="math inline">\(\gamma&#39;\)</span>
+时，才能通过滞后校正改善系统</p></li>
+<li><p>确定校正后系统的增益剪切频率 <span
+class="math inline">\(\omega_{c1}\)</span>，使得</p>
+<p><span class="math display">\[
+\gamma(\omega_{c1})=180^\circ
++\varphi(\omega_{c1})=\gamma&#39;+\epsilon\quad(\epsilon=5^\circ \sim
+12^\circ)
+\]</span></p>
+<p>将求得的 <span class="math inline">\(\varphi(\omega_{c1})\)</span>
+代入上式，解出 <span
+class="math inline">\(\omega_{c1}\)</span>，作为校正后系统的增益剪切频率</p></li>
+<li><p>由 <span class="math inline">\(\omega_{c1}\)</span>
+求出滞后校正网络的最大衰减量，计算得到 <span
+class="math inline">\(\beta\)</span></p>
+<p><span class="math display">\[
+L(\omega_{c1})=20\lg\beta
+\]</span></p>
+<p>这里的 <span class="math inline">\(L(\omega_{c1})\)</span>
+为校正前系统在 <span class="math inline">\(\omega_{c1}\)</span>
+处的幅值</p></li>
+<li><p>确定 <span class="math inline">\(T\)</span> 值</p>
+<p><span class="math display">\[
+\omega_c=\frac{5}{T}\sim\frac{10}{T}
+\]</span></p></li>
+<li><p>计算滞后矫正网络的开环零点和开环极点</p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;\omega_z=\frac{1}{T}&amp;&amp;\text{滞后开环零点}\\
+      &amp;\omega_p=\frac{1}{\beta T}&amp;&amp;\text{滞后开环极点}
+   \end{aligned}
+\right.
+\]</span></p></li>
+<li><p>通过滞后校正网络的开环零点和极点求得</p>
+<p><span class="math display">\[
+G_c(s)=\frac{Ts+1}{\beta Ts+1}
+\]</span></p></li>
+<li><p>画出校正后系统的 Bode 图，验证指标是否满足要求</p></li>
 </ol>
+<h3 id="pid-调节器">PID 调节器</h3>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202601072106101.png" srcset="/img/loading.jpeg" lazyload
+alt="PID 调节器系统框图" />
+<figcaption aria-hidden="true">PID 调节器系统框图</figcaption>
+</figure>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;m(t)=K_pe(t)+K_I\int e(t)\ \mathrm{d}t +K_D
+\frac{\mathrm{d}e(t)}{\mathrm{d}t}\\
+      &amp;G_e(s)=\frac{M(s)}{E(s)}=K_p+\frac{K_I}{s}+K_D
+s=\frac{K_D\left(s+\frac{K_p+\sqrt{K_p^2+4K_I/K_D}}{2K_D}\right)\left(s+\frac{K_p-\sqrt{K_p^2+4K_I/K_D}}{2K_D}\right)}{s}
+   \end{aligned}
+\right.
+\]</span></p>
+<h4 id="三种基本调节作用详解">三种基本调节作用详解</h4>
+<h5 id="p-调节器-proportional---比例">P 调节器 (Proportional -
+比例)</h5>
+<ul>
+<li>传递函数：<span class="math inline">\(G_c(s) = K_p\)</span></li>
+<li>作用：
+<ul>
+<li>响应速度：<span class="math inline">\(K_p\)</span>
+增大，系统频带变宽，反应速度变快</li>
+<li>稳态误差：<span class="math inline">\(K_p\)</span>
+增大，开环增益增大，稳态误差减小（但不能消除，除非系统本身含积分环节）</li>
+<li>稳定性：<span class="math inline">\(K_p\)</span>
+过大，会导致超调量增大，系统稳定性变差，甚至不稳定</li>
+</ul></li>
+<li>电路实现：反相放大器</li>
+</ul>
+<h5 id="i-调节器-integral---积分">I 调节器 (Integral - 积分)</h5>
+<ul>
+<li>传递函数：<span class="math inline">\(G_c(s) = \frac{K_I}{s} =
+\frac{1}{T_I s}\)</span></li>
+<li>特点：
+<ul>
+<li>消除静差：积分环节能积累误差，只要偏差不为零，输出就会变化，直到偏差消除</li>
+<li>提高型别：引入一个积分环节，系统型别加 1（如 0 型 <span
+class="math inline">\(\to\)</span> I 型）</li>
+</ul></li>
+<li>缺点：
+<ul>
+<li>相位滞后：引入 <span class="math inline">\(-90^\circ\)</span>
+的相位滞后，减少了相位裕量，降低系统稳定性</li>
+<li>响应变慢：使系统带宽变窄，调节时间变长</li>
+</ul></li>
+<li>注意：通常不单独使用，需配合 P 或 D</li>
+</ul>
+<h5 id="d-调节器-derivative---微分">D 调节器 (Derivative - 微分)</h5>
+<ul>
+<li>传递函数：<span class="math inline">\(G_c(s) = K_D s\)</span>
+(理想微分)</li>
+<li>特点：
+<ul>
+<li>预见性控制：反映偏差的变化趋势（变化率），在偏差变大之前提前产生修正作用</li>
+<li>相位超前：引入 <span class="math inline">\(+90^\circ\)</span>
+的相位超前，增加系统阻尼，抑制振荡</li>
+</ul></li>
+<li>缺点：
+<ul>
+<li>放大噪声：对高频干扰非常敏感，会放大高频噪声</li>
+<li>突变失效：如果偏差是常数（变化率为 0），微分作用为
+0，无法消除稳态误差</li>
+</ul></li>
+<li>注意：通常不单独使用</li>
+</ul>
+<h4 id="常用组合控制规律">常用组合控制规律</h4>
+<h5 id="pd-控制-比例-微分">PD 控制 (比例 + 微分)</h5>
+<ul>
+<li><p>传递函数：</p>
+<p><span class="math display">\[
+G_c(s) = K_p (1 + \tau s)
+\]</span></p></li>
+<li><p>频率特性：相当于一个高通滤波器</p></li>
+<li><p>本质：</p>
+<ul>
+<li>相当于串联超前校正（但在高频段增益无限大，抗干扰不如超前校正）</li>
+<li>引入一个负实轴的零点 <span class="math inline">\(z =
+-1/\tau\)</span></li>
+</ul></li>
+<li><p>作用：</p>
+<ul>
+<li>改善动态性能：增加相位裕量，减小超调量，缩短调节时间</li>
+<li>增加带宽：提高系统快速性</li>
+<li>稳态影响：对稳态精度无直接改善（除非 <span
+class="math inline">\(K_p\)</span> 很大）</li>
+</ul></li>
+<li><p>适用场景：系统本身稳定性差、阻尼小、需要加快响应速度</p></li>
+</ul>
+<h5 id="pi-控制-比例-积分">PI 控制 (比例 + 积分)</h5>
+<ul>
+<li><p>传递函数：</p>
+<p><span class="math display">\[
+G_c(s) = K_p \left( 1 + \frac{1}{T_I s} \right) = K_p \frac{T_I s +
+1}{T_I s}
+\]</span></p></li>
+<li><p>频率特性：相当于一个低通滤波器</p></li>
+<li><p>本质：</p>
+<ul>
+<li>相当于串联滞后校正</li>
+<li>引入一个原点极点（积分）和一个负实轴零点</li>
+</ul></li>
+<li><p>作用：</p>
+<ul>
+<li>改善稳态性能：提高系统型别，消除稳态误差</li>
+<li>抑制噪声：高频增益衰减，抗干扰能力强</li>
+</ul></li>
+<li><p>副作用：</p>
+<ul>
+<li>引入相位滞后，降低稳定性（需保证 <span
+class="math inline">\(T_I\)</span>
+足够大，使零点靠近原点，利用偶极子对消原理）</li>
+<li>带宽减小，系统响应变慢</li>
+</ul></li>
+<li><p>稳定性条件：<span class="math inline">\(T_I &gt;
+T\)</span>（积分时间常数应大于对象的时间常数）</p></li>
+</ul>
+<h5 id="pid-控制-比例-积分-微分">PID 控制 (比例 + 积分 + 微分)</h5>
+<ul>
+<li><p>传递函数：</p>
+<p><span class="math display">\[
+G_c(s) = K_p + \frac{K_I}{s} + K_D s = \frac{K_D s^2 + K_p s + K_I}{s}
+\]</span></p></li>
+<li><p>零极点分布：</p>
+<ul>
+<li>提供 1 个原点极点（消除静差）</li>
+<li>提供 2 个负实轴零点（改善动态性能）</li>
+</ul></li>
+<li><p>综合作用：</p>
+<ul>
+<li>集成了 PI 的消除误差能力和 PD 的加速/稳定能力</li>
+<li>既能提高稳态精度，又能改善动态响应，是最理想的控制方式</li>
+</ul></li>
+</ul>
+<h4 id="pid-与-频率法校正的对应关系">PID 与 频率法校正的对应关系</h4>
+<table>
+
+<thead>
+<tr>
+<th style="text-align: left;">控制器类型</th>
+<th style="text-align: left;">对应校正方法</th>
+<th style="text-align: left;">核心作用</th>
+<th style="text-align: left;">优点</th>
+<th style="text-align: left;">缺点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">P (比例)</td>
+<td style="text-align: left;">增益调整</td>
+<td style="text-align: left;">简单放大</td>
+<td style="text-align: left;">减小误差，加快速度</td>
+<td style="text-align: left;">降低稳定性，有静差</td>
+</tr>
+<tr>
+<td style="text-align: left;">I (积分)</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">消除静差</td>
+<td style="text-align: left;">无静差</td>
+<td style="text-align: left;">降低稳定性，响应慢</td>
+</tr>
+<tr>
+<td style="text-align: left;">D (微分)</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">增加阻尼</td>
+<td style="text-align: left;">抑制超调，预测变化</td>
+<td style="text-align: left;">放大噪声</td>
+</tr>
+<tr>
+<td style="text-align: left;">PD</td>
+<td style="text-align: left;">超前校正</td>
+<td style="text-align: left;">改善动态</td>
+<td style="text-align: left;">速度快，超调小</td>
+<td style="text-align: left;">抗干扰差</td>
+</tr>
+<tr>
+<td style="text-align: left;">PI</td>
+<td style="text-align: left;">滞后校正</td>
+<td style="text-align: left;">改善稳态</td>
+<td style="text-align: left;">精度高，抗干扰</td>
+<td style="text-align: left;">速度慢，稳定性降</td>
+</tr>
+<tr>
+<td style="text-align: left;">PID</td>
+<td style="text-align: left;">滞后-超前</td>
+<td style="text-align: left;">全面改善</td>
+<td style="text-align: left;">精度高，动态好</td>
+<td style="text-align: left;">参数整定复杂</td>
+</tr>
+</tbody>
+</table>
 
                 
               </div>
