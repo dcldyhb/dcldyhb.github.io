@@ -27,7 +27,7 @@
 <meta property="og:description" content="数理方法笔记 几类偏微分方程的导出和定解问题 偏微分方程的基本概念 什么是微分方程 函数 \(u\) 关于 \(t\) 及 \((x,y,z)\) 的各阶偏导数满足的关系式 一般形式： \[ F(x_1,x_2,\ldots,x_n,u,\mathrm{D}u,\mathrm{D}^2u,\ldots,\mathrm{D}^Nu)&#x3D;0 \] 其中  \(\displaystyle(x_1,x_2,">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-03-30T13:39:54.000Z">
-<meta property="article:modified_time" content="2026-01-07T04:15:16.000Z">
+<meta property="article:modified_time" content="2026-01-12T07:21:04.000Z">
 <meta property="article:author" content="dcldyhb">
 <meta property="article:tag" content="课程笔记">
 <meta property="article:tag" content="数理方法">
@@ -237,7 +237,7 @@
         
         
         
-          167 分钟
+          168 分钟
         
       </span>
     
@@ -1403,6 +1403,15 @@ G(t)\)</span></td>
 t_0}F(\omega)]=f(t-t_0)\)</span></td>
 </tr>
 <tr>
+<td style="text-align: left;">频移性</td>
+<td style="text-align: left;"><span class="math inline">\(\displaystyle
+\mathcal{F}[\mathrm{e}^{i\omega_0
+t}f(t)]=F(\omega-\omega_0)\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\displaystyle
+\mathcal{F}^{-1}[F(\omega-\omega_0)]=\mathrm{e}^{i\omega_0
+t}f(t)\)</span></td>
+</tr>
+<tr>
 <td style="text-align: left;">相似性</td>
 <td style="text-align: left;"><span class="math inline">\(\displaystyle
 \mathcal{F}[f(at)]=\frac{1}{\vert
@@ -1438,6 +1447,15 @@ f(\tau)\,\mathrm{d}\tau\right]=\frac{1}{i\omega}F(\omega)\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(\displaystyle
 \mathcal{F}^{-1}\left[\frac{1}{i\omega}F(\omega)\right]=\int_{-\infty}^t
 f(\tau)\,\mathrm{d}\tau\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">频域积分性</td>
+<td style="text-align: left;"><span class="math inline">\(\displaystyle
+\mathcal{F}\left[ \frac{f(t)}{t} \right] = -i \int_{-\infty}^{\omega}
+F(\lambda) \,\mathrm{d}\lambda\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\displaystyle
+\mathcal{F}^{-1}\left[ -i \int_{-\infty}^{\omega} F(\lambda)
+\,\mathrm{d}\lambda \right] = \frac{f(t)}{t}\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -1654,6 +1672,15 @@ f(\tau)\,\mathrm{d}\tau\)</span></td>
 \mathcal{L}[\frac{f(t)}{t}]=\int_p^{+\infty}F(q)\,\mathrm{d}q\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(\displaystyle
 \mathcal{L}^{-1}\left[\int_p^{+\infty}F(q)\,\mathrm{d}q\right]=\frac{f(t)}{t}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">频域微分性</td>
+<td style="text-align: left;"><span class="math inline">\(\displaystyle
+\mathcal{L}[(-t)^n f(t)]=\frac{\mathrm{d}^n
+F(p)}{\mathrm{d}p^n}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\displaystyle
+\mathcal{L}^{-1}\left[\frac{\mathrm{d}^n
+F(p)}{\mathrm{d}p^n}\right]=(-t)^n f(t)\)</span></td>
 </tr>
 </tbody>
 </table>
