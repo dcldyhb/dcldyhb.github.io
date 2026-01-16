@@ -27,10 +27,10 @@
 <meta property="og:description" content="人工智能导论 导论 什么是人工智能 关于什么是人工智能没有一个统一的定义 人工智能的分类    类型 功能     狭窄 AI 以目标为导向的 AI，经过训练后可执行特定任务   通用 AI (？) 能够像人类一样独立思考的系统   超级 AI (!) 超越人类智能，可以比人类更好地完成任务   反应型机器 专注于当前场景，并根据最佳行动做出反应   有限记忆机器 可以在短时间内存储和使用过去的经">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-09-18T05:17:00.000Z">
-<meta property="article:modified_time" content="2026-01-15T15:17:17.000Z">
+<meta property="article:modified_time" content="2026-01-16T04:18:19.000Z">
 <meta property="article:author" content="dcldyhb">
-<meta property="article:tag" content="专业课程">
 <meta property="article:tag" content="编程">
+<meta property="article:tag" content="专业课程">
 <meta property="article:tag" content="人工智能">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -227,7 +227,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.8k 字
+          8.1k 字
         
       </span>
     
@@ -238,7 +238,7 @@
         
         
         
-          15 分钟
+          68 分钟
         
       </span>
     
@@ -449,16 +449,22 @@ alt="机器学习和深度学习" />
 <h4 id="逻辑表示">==逻辑表示==</h4>
 <p>分为两种类型</p>
 <ol type="1">
-<li><p>命题逻辑 以 Bool 值表示对象</p>
+<li><p>命题逻辑</p>
+<ul>
+<li><p>以 Bool 值表示对象</p>
 <p><span class="math display">\[
 \text{P}\rightarrow\text{Q}
 \]</span></p>
 <p>(如果 P 为真则 Q 为真)</p></li>
-<li><p>一阶逻辑 使用量词和谓词来表示对象</p>
+</ul></li>
+<li><p>一阶逻辑</p>
+<ul>
+<li><p>使用量词和谓词来表示对象</p>
 <p><span class="math display">\[
 \forall x(\text{Cat}(x)\rightarrow \text{Meows}(x))
 \]</span></p>
 <p>所有猫都会叫</p></li>
+</ul></li>
 </ol>
 <h4 id="语义网络表示">语义网络表示</h4>
 <p>使用谓词逻辑的代替方案,使用==图结构==表示知识</p>
@@ -481,6 +487,936 @@ alt="框架表示" />
 </figure>
 <h3 id="推理">推理</h3>
 <h4 id="演绎推理">演绎推理</h4>
+<ul>
+<li>从一般的规则出发推导出特定的结论</li>
+<li>只要前提为真那么结论必然为真</li>
+</ul>
+<h4 id="归纳推理">归纳推理</h4>
+<ul>
+<li>从具体的实例中总结出一般的规则</li>
+<li>结论不一定为真，具有概率性</li>
+</ul>
+<h3 id="专家系统">专家系统</h3>
+<p>专家系统根据用户要求，使用推理规则从知识库中提取知识，进而提供像人类专家一样的决策来解决复杂问题</p>
+<p>==三个组成部分==</p>
+<ul>
+<li>知识库
+<ul>
+<li>存储从特定领域的不同专家处获得的知识的数据库</li>
+</ul></li>
+<li>推理系统
+<ul>
+<li>系统的主要处理单元。它将推理规则应用于知识库以得出结论或推断新信息</li>
+</ul></li>
+<li>用户界面
+<ul>
+<li>用户将查询以可读格式作为输入，并将其传递给推理系统。在从推理引擎获得响应后，将输出显示给用户</li>
+</ul></li>
+</ul>
+<h3 id="搜索策略">搜索策略</h3>
+<h4 id="无信息搜索">无信息搜索</h4>
+<p>以暴力搜索的方式运行，也称为盲目搜索，不具备关于状态或搜索空间的额外信息，仅依赖于遍历树结构</p>
+<ul>
+<li>广度优先搜索（BFS）
+<ul>
+<li>逐层遍历，使用先进先出队列，先遍历离根节点近的节点</li>
+</ul></li>
+<li>深度优先搜索（DFS）
+<ul>
+<li>逐路径遍历，使用后进先出栈，先遍历离根节点远的节点</li>
+<li>或者使用递归实现（隐式栈）</li>
+</ul></li>
+<li>深度限制搜索
+<ul>
+<li>通过仅执行到预定义的级别的 DFS 来限制搜索的深度</li>
+</ul></li>
+<li>均匀代价搜索（UCS）
+<ul>
+<li>定义成本函数 <span
+class="math inline">\(f(n)\)</span>，给出了从初始步骤到每个节点 <span
+class="math inline">\(n\)</span> 的路径的成本</li>
+<li>在探索所有可能的路径后，选择成本最低的路径</li>
+</ul></li>
+</ul>
+<h4 id="启发式搜索">启发式搜索</h4>
+<p>利用问题领域的知识（启发式信息）来引导搜索方向，从而寻找最优路径</p>
+<p>可能并不总是提供最佳解决方案，但它保证在相当长的时间内找到一个好的解决方案</p>
+<p>启发式函数确定状态与期望结果的接近程度，计算两个状态之间理想路径的成本，用
+<span class="math inline">\(h(n)\)</span> 表示</p>
+<ul>
+<li>最佳优先搜索
+<ul>
+<li>利用了启发式函数 <span
+class="math inline">\(h(n)\)</span>，选择当前看起来最有吸引力的路径，即
+<span class="math inline">\(h(n)\)</span> 最小</li>
+</ul></li>
+<li>A* 搜索
+<ul>
+<li>结合了实际代价 <span class="math inline">\(g(n)\)</span> 和估计代价
+<span class="math inline">\(h(n)\)</span>，即 <span
+class="math inline">\(f(n)=g(n)+h(n)\)</span>
+是常见搜索算法中最优秀的，能解决困难问题，但需要大量内存</li>
+</ul></li>
+</ul>
+<h4 id="局部搜索">局部搜索</h4>
+<p>不从根节点开始搜索整个路径，而是从一个初始解出发，在邻域内寻找更优解</p>
+<p>目标是找到一个局部最优解，它在其邻域内没有更好的解，但未必是全局最优解</p>
+<ul>
+<li>爬山算法
+<ul>
+<li>从初始解出发，评估邻域中的所有可能解，选择最优解作为新的当前解，重复直到没有更优解</li>
+</ul></li>
+<li>遗传算法
+<ol type="1">
+<li>初始化
+<ul>
+<li>随机生成一群个体（初始种群，代表一组可能的解）</li>
+</ul></li>
+<li>适应度分配
+<ul>
+<li>计算每个个体的“适应度”（分数），分数越高代表解越好</li>
+</ul></li>
+<li>选择 (Selection)
+<ul>
+<li>挑选适应度高的个体作为“父母”，淘汰差的</li>
+</ul></li>
+<li>交叉 (Crossover)
+<ul>
+<li>父母交换基因（特征），产生新一代子代</li>
+</ul></li>
+<li>变异 (Mutation)
+<ul>
+<li>对子代进行小概率的随机改变（防止陷入局部最优，增加多样性）</li>
+</ul></li>
+<li>迭代
+<ul>
+<li>重复上述过程，直到满足停止条件</li>
+</ul></li>
+</ol></li>
+</ul>
+<h4 id="对抗搜索">对抗搜索</h4>
+<p>主要用于解决博弈问题，需要考虑对手的行动</p>
+<p>在两个对立的玩家之间交替进行搜索，目的是通过预测对手的行动来找到自己的最优策略</p>
+<ul>
+<li><p>极大极小算法</p>
+<ul>
+<li><p>假设有两个玩家，Max（我方）和 Min（对手）</p>
+<ul>
+<li>Max 想要让最终得分（收益）最大化</li>
+<li>Min 想要让 Max 的得分最小化（即对手会采取对我们最不利的行动）。</li>
+</ul></li>
+<li><p>工作流程：</p>
+<ol type="1">
+<li><p>构建博弈树： 向下推演几步，直到达到某个深度或游戏结束。</p></li>
+<li><p>评估： 给底部的节点（结局）打分。</p></li>
+<li><p>倒推（回溯）：</p>
+<ul>
+<li>在 Min
+层（对手行动），选择子节点中分数最小的那个传上去（因为对手很聪明，会选对我们最不利的）</li>
+<li>在 Max
+层（我方行动），选择子节点中分数最大的那个传上去（我们要选对自己最有利的）</li>
+</ul></li>
+</ol></li>
+<li><p>结论：
+通过这种交替的“找最大”和“找最小”，找到当前的最优策略。</p></li>
+</ul></li>
+<li><p>Alpha-Beta 剪枝</p>
+<ul>
+<li>在搜索过程中维护两个值：
+<ul>
+<li><span class="math inline">\(\alpha\)</span>：
+我方（Max）目前为止找到的最好（最高）的保底收益。</li>
+<li><span class="math inline">\(\beta\)</span>：
+对手（Min）目前为止能限制我的最坏（最低）的上限收益。</li>
+</ul></li>
+<li>剪枝逻辑：
+<ul>
+<li>如果在搜索某个分支时，发现对手可以让局面变得比我已知的最好结果 <span
+class="math inline">\(\alpha\)</span>
+还要差（或者相等），那么这个分支就没必要继续搜下去了。</li>
+<li>因为理性的我绝不会选这条路，所以这条路剩下的细节无关紧要，直接“剪掉”</li>
+</ul></li>
+</ul></li>
+</ul>
+<h2 id="机器学习">机器学习</h2>
+<h3 id="基本要素">基本要素</h3>
+<h4 id="机器学习的定义">机器学习的定义</h4>
+<ul>
+<li>机器学习是人工智能的一个子集</li>
+<li>使用==统计方法==使机器挖掘数据中的规律，进而实现特定的目标</li>
+</ul>
+<h4 id="机器学习的关键要素">机器学习的关键要素</h4>
+<ul>
+<li>数据 (Data) —— 经验
+<ul>
+<li>机器学习的“原材料”，也就是机器用来学习的经验</li>
+</ul></li>
+<li>模型 (Model) —— 假设
+<ul>
+<li>对数据规律做出的假设，即一个待定系数的数学函数</li>
+</ul></li>
+<li>损失函数 (Loss Function) —— 目标
+<ul>
+<li>用来衡量模型预测好坏的标准（性能准则）。它计算预测值与真实值之间的误差</li>
+</ul></li>
+<li>参数优化 (Parameter Optimization) —— 改进
+<ul>
+<li>通过算法不断调整模型参数，使损失函数达到最小值的过程。这是真正的“学习”动作</li>
+</ul></li>
+</ul>
+<p>机器学习就是利用算法（优化），从数据中学习，不断调整模型的参数，以最小化损失函数的过程</p>
+<h3 id="相关概念">相关概念</h3>
+<h4 id="数据预处理">数据预处理</h4>
+<ul>
+<li>清洗
+<ul>
+<li>处理缺失值、异常值、重复数据等，确保数据质量</li>
+</ul></li>
+<li>标准化
+<ul>
+<li>抹除不同变量的幅值差异，将它们缩放到一个相似的范围内</li>
+<li>可以辅助提升机器学习模型的训练效率</li>
+<li>标准化不会改变数据的信息量，只是改变了数据的数值表达方式</li>
+</ul></li>
+<li>编码
+<ul>
+<li>将非数值数据转换为计算机可理解的数值向量</li>
+</ul></li>
+</ul>
+<h4 id="特征工程">特征工程</h4>
+<ul>
+<li>将原始数据转换为特征的过程。简单来说，就是从复杂的数据中“提炼”出对模型预测最有用的关键信息，让计算机更容易理解</li>
+<li>优点：
+<ul>
+<li>简化数据
+<ul>
+<li>降低了数据的维度和复杂度。</li>
+</ul></li>
+<li>提升效率
+<ul>
+<li>可以辅助提升机器学习模型的训练效率</li>
+</ul></li>
+<li>可解释性
+<ul>
+<li>提取的特征（如“峰值”）通常具有明确的物理意义，让人更容易理解模型是根据什么做判断的。</li>
+</ul></li>
+</ul></li>
+<li>缺点：
+<ul>
+<li>信息损失
+<ul>
+<li>提炼过程中，原始数据中的某些细节可能会丢失</li>
+<li>依赖专家知识
+<ul>
+<li>在传统机器学习中，这通常需要人工干预和专业领域的知识</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+<h4 id="泛化">泛化</h4>
+<ul>
+<li>泛化是指模型在未见过的、新的数据上的表现能力</li>
+<li>如果模型在训练集上得分很高，但在测试集（未见过的数据）上得分很差，我们就说这个模型的泛化能力差，这通常意味着发生了过拟合</li>
+</ul>
+<h4 id="过拟合与欠拟合">过拟合与欠拟合</h4>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202601160323158.png" srcset="/img/loading.jpeg" lazyload
+alt="三种拟合情况" />
+<figcaption aria-hidden="true">三种拟合情况</figcaption>
+</figure>
+<ul>
+<li>欠拟合
+<ul>
+<li>模型过于简单（复杂度低）</li>
+<li>还没学会数据的规律。它在训练集和测试集上的表现都很差。它无法捕捉数据的真实分布</li>
+</ul></li>
+<li>过拟合
+<ul>
+<li>模型过于复杂（复杂度高）</li>
+<li>在训练集上表现完美，但在测试集（未见过的数据）上表现很差，拟合了数据的噪声而不是真是的数据分布</li>
+</ul></li>
+</ul>
+<h4 id="偏差和方差">偏差和方差</h4>
+<ul>
+<li>偏差
+<ul>
+<li>衡量模型的准确性</li>
+<li>预测值与真实值之间的系统性偏差</li>
+</ul></li>
+<li>方差
+<ul>
+<li>衡量模型的稳定性</li>
+<li>样本之间的离散程度</li>
+</ul></li>
+</ul>
+<table>
+
+<thead>
+<tr>
+<th style="text-align: left;">模型状态</th>
+<th style="text-align: left;">复杂度</th>
+<th style="text-align: left;">偏差 (Bias)</th>
+<th style="text-align: left;">方差 (Variance)</th>
+<th style="text-align: left;">理解</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>欠拟合</strong></td>
+<td style="text-align: left;">低</td>
+<td style="text-align: left;"><strong>高 (High)</strong></td>
+<td style="text-align: left;">低 (Low)</td>
+<td
+style="text-align: left;">模型太“僵化”，无论数据怎么变，它都预测不准（偏差大），但也因为僵化，它很稳定（方差小）。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>过拟合</strong></td>
+<td style="text-align: left;">高</td>
+<td style="text-align: left;">低 (Low)</td>
+<td style="text-align: left;"><strong>高 (High)</strong></td>
+<td
+style="text-align: left;">模型太“敏感”，它能完美拟合训练数据（偏差小），但换一批数据预测结果就剧烈变化（方差大，不稳定）。</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>偏差-方差困境：欠拟合和过拟合都是需要避免的，需要在偏差和方差之间找到一个平衡点，找到适合的模型复杂度</li>
+</ul>
+<h4 id="防止过拟合">防止过拟合</h4>
+<ul>
+<li>选择合适复杂度的模型</li>
+<li>增加训练数据</li>
+<li>正则化（惩罚模型复杂度）</li>
+<li>留出法和交叉验证（使用未见过的数据确保泛化）</li>
+<li>提前停止训练</li>
+<li>利用先验知识（如：贝叶斯先验）</li>
+</ul>
+<h5 id="划分数据集">划分数据集</h5>
+<ul>
+<li>训练集
+<ul>
+<li>用于训练模型，调整模型参数</li>
+<li>一般最多</li>
+</ul></li>
+<li>验证集
+<ul>
+<li>用于调参和选择模型</li>
+<li>帮助检测过拟合</li>
+</ul></li>
+<li>测试集
+<ul>
+<li>用于评估模型的最终性能</li>
+<li>模拟模型在真实环境中的表现</li>
+</ul></li>
+</ul>
+<h5 id="交叉验证">交叉验证</h5>
+<p>在数据集很小时，使用交叉验证来更有效地利用数据</p>
+<ul>
+<li>K 折交叉验证
+<ul>
+<li>将数据集划分为 K 个子集</li>
+<li>每次用 K-1 个子集训练，剩下的一个子集测试</li>
+<li>重复 K 次，取平均性能作为最终评估</li>
+</ul></li>
+</ul>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202601160355020.png" srcset="/img/loading.jpeg" lazyload
+alt="K-折交叉验证" />
+<figcaption aria-hidden="true">K-折交叉验证</figcaption>
+</figure>
+<h5 id="提前停止训练">提前停止训练</h5>
+<p>在验证损失最小时停止训练，避免模型对训练数据的过拟合</p>
+<h5 id="正则化">正则化</h5>
+<p>添加一个对模型参数的惩罚项，防止模型对训练数据过拟合</p>
+<h3 id="优化算法">优化算法</h3>
+<h4 id="梯度下降">梯度下降</h4>
+<ul>
+<li>通过计算梯度，不断更新参数，让模型误差越来越小，直到找到最优模型的过程</li>
+</ul>
+<h4 id="启发式算法">启发式算法</h4>
+<ul>
+<li>一类基于经验和直觉的优化方法</li>
+<li>不保证找到全局最优解（最好的那个答案），但致力于在可接受的计算成本（时间）内，找到一个“足够好”的解</li>
+</ul>
+<h5 id="贪心算法">贪心算法</h5>
+<ul>
+<li>每一步选择中都采取在当前状态下最优的选择</li>
+<li>根据每次迭代的信息做出判断，而不考虑更广泛的问题</li>
+<li>无法为每个问题提供最佳答案，容易陷入局部最优</li>
+</ul>
+<h5 id="模拟退火算法">模拟退火算法</h5>
+<ul>
+<li>高温阶段
+<ul>
+<li>分子动能大，对应寻优过程中探索幅度大，以便在早期能越过局部最优解继续探索</li>
+</ul></li>
+<li>降温过程
+<ul>
+<li>随着时间（迭代次数）增长，逐渐向最优靠拢，但同时逐渐冷却，探索幅度减小</li>
+</ul></li>
+<li>冷却
+<ul>
+<li>不再探索，获得最终结果</li>
+</ul></li>
+</ul>
+<h5 id="蚁群算法">蚁群算法</h5>
+<ul>
+<li>由自然界中蚂蚁觅食的行为而启发的</li>
+</ul>
+<ol type="1">
+<li><span class="math inline">\(N\)</span> 只蚂蚁开始自由探索</li>
+<li>碰到还没走过的路口，就随机挑选一条路走。同时，释放与路径长度有关的信息素。路径越短信息素浓度越高</li>
+<li>蚂蚁有较大概率选择高信息素，越来越集中在信息素高的路径，长路径信息素逐渐挥发（正反馈）。</li>
+<li>最终蚂蚁集中在最优路径上。</li>
+</ol>
+<h5 id="粒子群算法">粒子群算法</h5>
+<ul>
+<li>模仿鸟群觅食</li>
+<li>群体中的个体通过信息共享，根据自己和同伴的经验，调整飞行方向，协作找到最优的目的地</li>
+</ul>
+<h5 id="遗传算法">遗传算法</h5>
+<p>同上</p>
+<h2 id="传统机器学习模型">传统机器学习模型</h2>
+<h3 id="线性模型">线性模型</h3>
+<ul>
+<li>回归问题
+<ul>
+<li>预测一个连续的数值</li>
+</ul></li>
+<li>分类问题
+<ul>
+<li>预测一个离散的类别</li>
+</ul></li>
+</ul>
+<h3 id="决策树">决策树</h3>
+<ul>
+<li>通过树状结构进行决策</li>
+<li>自上而下，选择最能区分数据的属性进行分裂，递归地将数据划分为越来越纯的子集，直到满足停止条件为止
+<ol type="1">
+<li>构建包含整个数据集的根节点</li>
+<li>选择最符合分类标准的属性</li>
+<li>根据所选属性将当前节点的样本分成子集</li>
+<li>为每个子集创建一个子节点</li>
+<li>递归地重复步骤 2~4 ，直到满足停止准则</li>
+</ol></li>
+</ul>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202601160424915.png" srcset="/img/loading.jpeg" lazyload
+alt="决策树" />
+<figcaption aria-hidden="true">决策树</figcaption>
+</figure>
+<ul>
+<li>决策树可以用于回归
+<ul>
+<li>将平均值作为预测值</li>
+</ul></li>
+<li>天然具有过拟合特质
+<ul>
+<li>通过剪枝能够减少过拟合</li>
+</ul></li>
+</ul>
+<h3 id="贝叶斯">贝叶斯</h3>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202601160751917.png" srcset="/img/loading.jpeg" lazyload
+alt="贝叶斯决策" />
+<figcaption aria-hidden="true">贝叶斯决策</figcaption>
+</figure>
+<ul>
+<li>贝叶斯神经网络最大的特点是其神经元的权重是一个概率分布，而不是一个确定的值</li>
+</ul>
+<h3 id="支持向量机">支持向量机</h3>
+<ul>
+<li>最大间隔化
+<ul>
+<li>通过最大化支持向量到决策边界的距离，来提高模型的泛化能力</li>
+</ul></li>
+<li>线性不可分
+<ul>
+<li>在二维平面上，有些数据是没法用一条直线分开的。这种情况就叫线性不可分</li>
+<li>把数据投影（映射）到高维空间</li>
+<li>核函数
+<ul>
+<li>核函数是一种数学工具，可以在不显式计算高维空间坐标的情况下，计算数据点在高维空间中的内积</li>
+<li>常见核函数有线性核、多项式核、径向基函数（RBF）核等</li>
+</ul></li>
+</ul></li>
+<li>多分类
+<ul>
+<li>一对多</li>
+<li>一对一</li>
+</ul></li>
+<li>用于回归
+<ul>
+<li>寻找一个最合适的管道，使样本点尽可能多的在管道内。中间的超平面被当做预测值</li>
+</ul></li>
+</ul>
+<h3 id="最近邻算法">最近邻算法</h3>
+<h4 id="k-最近邻算法knn">K-最近邻算法（KNN）</h4>
+<ul>
+<li>基于实例的学习，也称为懒惰学习
+<ul>
+<li>仅仅存储训练数据而不是学习一个模型</li>
+<li>每当有新的数据需要分类时，就从训练数据中找到其 <span
+class="math inline">\(K\)</span> 个最近邻</li>
+<li>储存所有可用案例，根据相似度度量对新数据或案例进行分类</li>
+<li>一般比较耗时</li>
+</ul></li>
+</ul>
+<ol type="1">
+<li>确定参数 <span class="math inline">\(𝐾\)</span></li>
+<li>从需要分类的测试数据中选择一个样本，并计算它与</li>
+<li>所有训练样本之间的距离</li>
+<li>对获得的距离进行排序，并选取最近的 <span
+class="math inline">\(𝐾\)</span> 个数据样本</li>
+<li>根据这 <span class="math inline">\(𝐾\)</span>
+个邻居的多数投票，将测试样本分配到相应的类别</li>
+</ol>
+<h2 id="神经网络与深度学习">神经网络与深度学习</h2>
+<h3 id="多层感知机">多层感知机</h3>
+<ul>
+<li>结构组成
+<ul>
+<li>是一种<strong>前馈神经网络</strong></li>
+<li><strong>输入层 (Input Layer)：</strong>
+接收原始数据（如图像像素的向量）</li>
+<li><strong>隐藏层 (Hidden Layers)：</strong>
+位于中间，负责提取特征。可以有一层或多层，层数越多，网络越“深”</li>
+<li><strong>输出层 (Output Layer)：</strong>
+输出最终的预测结果（如分类标签）</li>
+</ul></li>
+<li>核心特征：全连接 (Fully Connected)
+<ul>
+<li><strong>连接方式：</strong>
+上一层的<strong>每一个</strong>神经元都与下一层的<strong>每一个</strong>神经元相连</li>
+<li><strong>工作原理：</strong>
+信号通过加权求和及非线性激活函数，一层层向后传递</li>
+</ul></li>
+<li>优点
+<ul>
+<li>强大的拟合能力，能处理复杂的非线性关系</li>
+<li>通用性强，适用于多种任务（分类、回归等）</li>
+</ul></li>
+<li>缺点
+<ul>
+<li>梯度消失、梯度爆炸等</li>
+<li>参数量庞大，训练耗时长</li>
+</ul></li>
+</ul>
+<h3 id="卷积神经网络cnn">卷积神经网络（CNN）</h3>
+<ul>
+<li><p>在图像上进行空间滑动，进行特征提取</p></li>
+<li><p>在滑动过程中，神经元的权重共享</p></li>
+<li><p>计算参数</p>
+<ul>
+<li>核大小(Kernel Size)
+<ul>
+<li>卷积核的尺寸，决定了每次卷积覆盖的区域大小</li>
+</ul></li>
+<li>步长(Stride)
+<ul>
+<li>决定了卷积核在输入数据上移动的步幅</li>
+</ul></li>
+<li>填充(Padding)
+<ul>
+<li>对原始图片的边界添加额外的零填充的尺寸</li>
+</ul></li>
+<li>输入通道数(Input Channel)
+<ul>
+<li>取决于输入数据，可被视为输入特征图的深度</li>
+</ul></li>
+<li>输出通道数(Output Channel)
+<ul>
+<li>由卷积核的数量决定，每个通道是输入数据的特征映射</li>
+</ul></li>
+</ul></li>
+<li><p>计算参数量公式</p>
+<p><span class="math display">\[
+\text{Output} = \left\lfloor \frac{\text{Input} + 2 \times
+\text{Padding} - \text{Kernel}}{\text{Stride}} \right\rfloor + 1
+\]</span></p>
+<p>+1 是偏置项</p></li>
+</ul>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202601160856979.png" srcset="/img/loading.jpeg" lazyload
+alt="卷积操作" />
+<figcaption aria-hidden="true">卷积操作</figcaption>
+</figure>
+<ul>
+<li>卷积的维数是指卷积核的移动方向的维度，而不是数据或卷积核的维数</li>
+<li>池化（Pooling）:池化的核只负责框定某次池化计算需要的图片的范围，不需要学习权重。
+<ul>
+<li>最大池化
+<ul>
+<li>在池化窗口（Kernel）覆盖的区域内，选出数值最大的那一个，丢弃其他的</li>
+</ul></li>
+</ul></li>
+<li>经典 CNN 架构
+<ul>
+<li>LeNet</li>
+<li>AlexNet</li>
+<li>VGG</li>
+<li>Inception</li>
+<li>ResNet
+<ul>
+<li>跨层链接</li>
+<li>从数据直接引一个输入过来，这样的话可以让这个网络训练更稳定</li>
+</ul></li>
+<li>DenseNet</li>
+</ul></li>
+</ul>
+<h3 id="循环神经网络rnn">循环神经网络（RNN）</h3>
+<ul>
+<li>用于处理==序列数据==（如文本、时间序列等）</li>
+<li>面对长期依赖性问题</li>
+<li>长短期记忆网络
+<ul>
+<li>将长期记忆和短期记忆区分开来</li>
+</ul></li>
+</ul>
+<h3 id="attention-和-transformer">Attention 和 Transformer</h3>
+<ul>
+<li>==是现有大模型体系的核心模块==</li>
+<li>掌握其相比 RNN 的最大优势：解决了信息瓶颈问题和长序列依赖问题</li>
+</ul>
+<h3 id="位置编码">位置编码</h3>
+<ul>
+<li>解决 Attention 丢失单词位置信息的问题</li>
+</ul>
+<h3 id="强化学习rl">强化学习（RL）</h3>
+<ul>
+<li>强调如何基于环境而行动，以取得==最大化的长期利益==</li>
+<li>==核心要素==
+<ul>
+<li>智能体(Agent)
+<ul>
+<li>一个能够观察环境、采取行动并根据反馈做出决策的实体</li>
+</ul></li>
+<li>环境(Environment)
+<ul>
+<li>智能体所处的外部世界，智能体通过与环境的交互来获取信息和奖励。</li>
+</ul></li>
+<li>动作(Action)
+<ul>
+<li>代理在给定的状态下可以选择执行的决策或操作。</li>
+</ul></li>
+<li>动作空间(action space)
+<ul>
+<li>一个集合，包含了智能体在每个状态下可以采取的所有可能动作</li>
+</ul></li>
+<li>奖励(reward)
+<ul>
+<li>一个数值，用于衡量智能体采取某个行动后获得的即时收益</li>
+</ul></li>
+<li>状态(State)
+<ul>
+<li>代表了环境在某一时间点的一个具体状况或配置</li>
+</ul></li>
+<li>策略(Policy)
+<ul>
+<li>从状态映射到动作的函数</li>
+</ul></li>
+</ul></li>
+<li>理论依据
+<ul>
+<li>马尔可夫过程/链</li>
+</ul></li>
+<li>实现方式
+<ul>
+<li>价值学习
+<ul>
+<li>通过学习价值函数，评估状态/动作的好坏，进而间接推导出策略</li>
+</ul></li>
+<li>策略学习
+<ul>
+<li>直接学习策略函数，输出应该采取的行动</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>能源领域落地较少的原因</p>
+<ul>
+<li>强化学习是做决策，还会犯错，能源领域对安全性要求很高，不能随便犯错，成本过高</li>
+</ul>
+<h3 id="生成对抗网络gan">生成对抗网络（GAN）</h3>
+<ul>
+<li>学会的是数据的概率分布</li>
+<li>两个神经网络
+<ul>
+<li>生成器（Generator）
+<ul>
+<li>生成数据，目的是为了骗过判别器</li>
+<li>输入是随机噪声，输出是生成的数据</li>
+</ul></li>
+<li>判别器（Discriminator）
+<ul>
+<li>判断数据是真实的还是生成的，目的是找出生成器做的“假数据”</li>
+</ul></li>
+<li>生成器和判别器互相进行对抗</li>
+</ul></li>
+<li>经典 GAN 局限性
+<ul>
+<li>无法控制生成结果（不可控）</li>
+</ul></li>
+<li>条件 GAN
+<ul>
+<li>通过加入条件实现定向生成</li>
+</ul></li>
+</ul>
+<h2 id="大数据与云计算">大数据与云计算</h2>
+<h3 id="基本概念">基本概念</h3>
+<h4 id="大数据的-5v-特征">大数据的 5V 特征</h4>
+<ul>
+<li>数据量（Volume）
+<ul>
+<li>规模巨大</li>
+</ul></li>
+<li>多样性（Variety）
+<ul>
+<li>数据类型多样</li>
+</ul></li>
+<li>价值（Value）
+<ul>
+<li>潜在价值高</li>
+</ul></li>
+<li>速度（Velocity）
+<ul>
+<li>生成和处理速度快</li>
+</ul></li>
+<li>真实性（Veracity）
+<ul>
+<li>数据质量参差不齐</li>
+<li>不一致性和不确定性</li>
+</ul></li>
+</ul>
+<h4 id="大数据的类型">大数据的类型</h4>
+<ul>
+<li>结构化数据
+<ul>
+<li>具有明确结构的标准化格式</li>
+<li>使用预定义的数据模型，填充标签、数字和值</li>
+<li>如：Excel 表格、电子表格、数据库</li>
+</ul></li>
+<li>半结构化数据
+<ul>
+<li>缺乏精确的功能结构但具有某些结构特性</li>
+<li>主要是非结构化的，但有内部标签和标记来帮助分类</li>
+<li>如：NoSQL 数据库、JSON 文件、XML 文件</li>
+</ul></li>
+<li>非结构化数据
+<ul>
+<li>没有预先确定的形状或结构</li>
+<li>难以使用传统数据分析工具进行分析</li>
+<li>如：文本文件、电子邮件、音视频</li>
+</ul></li>
+</ul>
+<h3 id="大数据处理方法">大数据处理方法</h3>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202601161021843.png" srcset="/img/loading.jpeg" lazyload
+alt="独热编码" />
+<figcaption aria-hidden="true">独热编码</figcaption>
+</figure>
+<ul>
+<li>独热编码
+<ul>
+<li>避免数值大小关系，赋予均等地位</li>
+</ul></li>
+<li>元数据
+<ul>
+<li>关于数据的数据，它描述了数据的结构、内容、上下文等</li>
+<li>元数据提供了关于数据的信息，使数据更容易被理解</li>
+</ul></li>
+</ul>
+<h3 id="云计算基本概念">云计算基本概念</h3>
+<ul>
+<li>通过租用的方式，把自己的数据存储和计算在供应商提供远端的服务器上进行</li>
+<li>把计算服务与数据存储作为一种商品进行售卖或者租赁，购买后可以在云端提供服务</li>
+<li>云计算的类型
+<ul>
+<li>公有云
+<ul>
+<li>由第三方云服务提供商拥有和运营，向公众开放</li>
+<li>成本更低
+<ul>
+<li>无需购买硬件，仅对使用的服务付费</li>
+</ul></li>
+<li>无需维护
+<ul>
+<li>维护由服务提供商提供</li>
+</ul></li>
+<li>近乎无限制的缩放性
+<ul>
+<li>提供按需资源</li>
+</ul></li>
+<li>高可靠性
+<ul>
+<li>具备众多服务器，确保免受故障影响</li>
+</ul></li>
+</ul></li>
+<li>私有云
+<ul>
+<li>由单一组织拥有和运营，专门为该组织提供服务</li>
+<li>灵活性更高
+<ul>
+<li>可自定义云环境</li>
+</ul></li>
+<li>安全性更高
+<ul>
+<li>资源不与其他组织共享</li>
+</ul></li>
+<li>缩放性更高
+<ul>
+<li>具有一定的的缩放性和效率</li>
+</ul></li>
+</ul></li>
+<li>混合云
+<ul>
+<li>结合了公有云和私有云的优点，允许数据和应用在两者之间进行迁移</li>
+<li>控制性
+<ul>
+<li>组织可针对敏感资产维持私有基础结构</li>
+</ul></li>
+<li>灵活性
+<ul>
+<li>需要时可利用公有云中的其他资源</li>
+</ul></li>
+<li>成本效益
+<ul>
+<li>具备扩展至公有云的能力</li>
+</ul></li>
+<li>容易轻松
+<ul>
+<li>无需费时费力即可转换至云</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>公有云的服务形式
+<ul>
+<li>基础设施即服务 (IaaS)
+<ul>
+<li>提供虚拟化的计算资源（如服务器、存储、网络）</li>
+<li>用户负责操作系统、应用程序等的管理</li>
+<li>Amazon EC2、Microsoft Azure</li>
+</ul></li>
+<li>平台即服务 (PaaS)
+<ul>
+<li>提供开发和部署应用程序的平台</li>
+<li>用户只需关注应用程序的开发和管理，基础设施由服务提供商管理</li>
+<li>Google App Engine、Microsoft Azure App Services</li>
+</ul></li>
+<li>软件即服务 (SaaS)
+<ul>
+<li>提供基于云的应用程序，用户通过浏览器或客户端访问</li>
+<li>用户无需管理底层基础设施和平台</li>
+<li>Google Workspace、Microsoft 365</li>
+</ul></li>
+</ul></li>
+</ul>
+<h2 id="计算机视觉cv">计算机视觉（CV）</h2>
+<h3 id="主要任务">主要任务</h3>
+<ul>
+<li>分类</li>
+<li>语义分割</li>
+<li>目标检测</li>
+<li>目标描述</li>
+<li>图像生成</li>
+</ul>
+<h3 id="语义分割">语义分割</h3>
+<ul>
+<li>==是一种像素级别的分类方案==</li>
+</ul>
+<h3 id="vision-transformer-vit">Vision Transformer (ViT)</h3>
+<p>Transformer 架构可用于处理图像</p>
+<h3 id="图像生成">图像生成</h3>
+<ul>
+<li>去噪扩散模型
+<ul>
+<li>正向扩散过程</li>
+<li>反向去噪过程（生成图片）</li>
+</ul></li>
+</ul>
+<h2 id="自然语言处理nlp">自然语言处理（NLP）</h2>
+<ul>
+<li>属于==序列问题==</li>
+<li>很多问题用于解决长距离依赖</li>
+<li>两个阶段
+<ul>
+<li>预训练
+<ul>
+<li>属于自监督学习，下文是上文的标签</li>
+</ul></li>
+<li>微调
+<ul>
+<li>训练好的大模型针对具体任务改良</li>
+</ul></li>
+</ul></li>
+<li>两种模型
+<ul>
+<li>Bert
+<ul>
+<li>双向模型</li>
+</ul></li>
+<li>GPT
+<ul>
+<li>单向模型</li>
+</ul></li>
+</ul></li>
+</ul>
+<h3 id="多模态问题">多模态问题</h3>
+<p>能够协同处理不同类型数据（图像、文本、声音）</p>
+<h2 id="应用">应用</h2>
+<h3 id="ai-在能源领域具有的优势">AI 在能源领域具有的优势</h3>
+<ol type="1">
+<li>复杂规律学习
+<ul>
+<li>尤其是深度学习技术，可以从大量数据中学习到复杂、高维、非线性的内在规律（如预测问题）。这些规律的复杂度往往超出人类的能力范围。</li>
+</ul></li>
+<li>动态适应能力
+<ul>
+<li>知识来源是数据。数据可以不断地进行更新迭代，使得机器学习模型可以不断地基于最新的数据实现自我更新。这在建模领域尤其有价值</li>
+</ul></li>
+<li>提升工作效率
+<ul>
+<li>在部分业务环节，通过机器学习技术为人的决策提供支撑（例如故障恢复）或者替代人类决策（例如电压调节），实现效率的提升。模型的前向计算速度快</li>
+</ul></li>
+</ol>
+<h3
+id="机器学习在能源领域面临哪些挑战">机器学习在能源领域面临哪些挑战？</h3>
+<ol type="1">
+<li>数据敏感性问题
+<ul>
+<li>能源部门处理大量敏感数据，确保这些数据的安全至关重要。必须保护人工智能系统免受网络威胁和破坏。遵守
+GDPR 等数据隐私法规会增加额外的复杂性。</li>
+</ul></li>
+<li>鲁棒性与可解释性
+<ul>
+<li>机器学习得到的结论目前难以解释，且难以完全避免错误结果的产生，制约了其应用，导致其多数应用在决策支持领域，难以在关键环节直接进行决策。</li>
+</ul></li>
+<li>缺乏专业人员
+<ul>
+<li>缺乏既了解能源领域又了解人工智能技术的训练有素的人工智能专业人员。懂机器学习的不懂能源行业，懂能源行业的不懂机器学习。</li>
+</ul></li>
+</ol>
+<h3
+id="机器学习在能源领域的未来在哪里">机器学习在能源领域的未来在哪里？</h3>
+<ol type="1">
+<li>规范行业数据
+<ul>
+<li>以政府等具有公信力的部门，建立行业数据库以及配套的保密、交易机制，为能源领域机器学习的开展提供充足的数据支持。</li>
+</ul></li>
+<li>数据-机理融合
+<ul>
+<li>通过研究将能源领域长期积累的物理模型与机器学习模型的融合（例如物理约束嵌入损失函数），实现两类模型的优势互补，解决机器学习的可解释性、鲁棒性问题。</li>
+</ul></li>
+<li>培养交叉人才
+<ul>
+<li>培养既能深入了解行业专业知识，又具有扎实的机器学习应用能力的学科交叉人才，真正发挥机器学习这类强大工具的价值，解决能源领域的工程问题</li>
+</ul></li>
+</ol>
 
                 
               </div>
@@ -521,9 +1457,9 @@ alt="框架表示" />
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E4%B8%93%E4%B8%9A%E8%AF%BE%E7%A8%8B/" class="print-no-link">#专业课程</a>
-      
         <a href="/tags/%E7%BC%96%E7%A8%8B/" class="print-no-link">#编程</a>
+      
+        <a href="/tags/%E4%B8%93%E4%B8%9A%E8%AF%BE%E7%A8%8B/" class="print-no-link">#专业课程</a>
       
         <a href="/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" class="print-no-link">#人工智能</a>
       
