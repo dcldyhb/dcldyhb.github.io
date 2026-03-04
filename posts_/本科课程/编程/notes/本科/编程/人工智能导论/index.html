@@ -27,7 +27,7 @@
 <meta property="og:description" content="人工智能导论 导论 什么是人工智能 关于什么是人工智能没有一个统一的定义 人工智能的分类    类型 功能     狭窄 AI 以目标为导向的 AI，经过训练后可执行特定任务   通用 AI (？) 能够像人类一样独立思考的系统   超级 AI (!) 超越人类智能，可以比人类更好地完成任务   反应型机器 专注于当前场景，并根据最佳行动做出反应   有限记忆机器 可以在短时间内存储和使用过去的经">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-09-18T05:17:00.000Z">
-<meta property="article:modified_time" content="2026-01-16T04:18:19.000Z">
+<meta property="article:modified_time" content="2026-03-02T00:05:47.143Z">
 <meta property="article:author" content="dcldyhb">
 <meta property="article:tag" content="编程">
 <meta property="article:tag" content="专业课程">
@@ -449,7 +449,7 @@ alt="机器学习和深度学习" />
 <h4 id="逻辑表示">==逻辑表示==</h4>
 <p>分为两种类型</p>
 <ol type="1">
-<li><p>命题逻辑</p>
+<li>命题逻辑
 <ul>
 <li><p>以 Bool 值表示对象</p>
 <p><span class="math display">\[
@@ -457,7 +457,7 @@ alt="机器学习和深度学习" />
 \]</span></p>
 <p>(如果 P 为真则 Q 为真)</p></li>
 </ul></li>
-<li><p>一阶逻辑</p>
+<li>一阶逻辑
 <ul>
 <li><p>使用量词和谓词来表示对象</p>
 <p><span class="math display">\[
@@ -598,18 +598,18 @@ class="math inline">\(f(n)=g(n)+h(n)\)</span>
 <p>主要用于解决博弈问题，需要考虑对手的行动</p>
 <p>在两个对立的玩家之间交替进行搜索，目的是通过预测对手的行动来找到自己的最优策略</p>
 <ul>
-<li><p>极大极小算法</p>
+<li>极大极小算法
 <ul>
-<li><p>假设有两个玩家，Max（我方）和 Min（对手）</p>
+<li>假设有两个玩家，Max（我方）和 Min（对手）
 <ul>
 <li>Max 想要让最终得分（收益）最大化</li>
 <li>Min 想要让 Max 的得分最小化（即对手会采取对我们最不利的行动）。</li>
 </ul></li>
-<li><p>工作流程：</p>
+<li>工作流程：
 <ol type="1">
-<li><p>构建博弈树： 向下推演几步，直到达到某个深度或游戏结束。</p></li>
-<li><p>评估： 给底部的节点（结局）打分。</p></li>
-<li><p>倒推（回溯）：</p>
+<li>构建博弈树： 向下推演几步，直到达到某个深度或游戏结束。</li>
+<li>评估： 给底部的节点（结局）打分。</li>
+<li>倒推（回溯）：
 <ul>
 <li>在 Min
 层（对手行动），选择子节点中分数最小的那个传上去（因为对手很聪明，会选对我们最不利的）</li>
@@ -617,10 +617,9 @@ class="math inline">\(f(n)=g(n)+h(n)\)</span>
 层（我方行动），选择子节点中分数最大的那个传上去（我们要选对自己最有利的）</li>
 </ul></li>
 </ol></li>
-<li><p>结论：
-通过这种交替的“找最大”和“找最小”，找到当前的最优策略。</p></li>
+<li>结论： 通过这种交替的“找最大”和“找最小”，找到当前的最优策略。</li>
 </ul></li>
-<li><p>Alpha-Beta 剪枝</p>
+<li>Alpha-Beta 剪枝
 <ul>
 <li>在搜索过程中维护两个值：
 <ul>
