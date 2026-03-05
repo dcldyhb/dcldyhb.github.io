@@ -173,9 +173,9 @@
       
       <tag>编程</tag>
       
-      <tag>专业课程</tag>
-      
       <tag>人工智能</tag>
+      
+      <tag>专业课程</tag>
       
     </tags>
     
@@ -233,9 +233,9 @@
     
     <tags>
       
-      <tag>课程笔记</tag>
-      
       <tag>能源化学</tag>
+      
+      <tag>课程笔记</tag>
       
     </tags>
     
@@ -293,13 +293,13 @@
     
     <tags>
       
-      <tag>hexo</tag>
-      
-      <tag>博客</tag>
+      <tag>Git</tag>
       
       <tag>教程</tag>
       
-      <tag>Git</tag>
+      <tag>hexo</tag>
+      
+      <tag>博客</tag>
       
     </tags>
     
@@ -326,11 +326,11 @@
     
     <tags>
       
-      <tag>教程</tag>
-      
       <tag>Git</tag>
       
       <tag>版本控制</tag>
+      
+      <tag>教程</tag>
       
     </tags>
     
@@ -421,9 +421,9 @@
     
     <tags>
       
-      <tag>物理</tag>
-      
       <tag>课程笔记</tag>
+      
+      <tag>物理</tag>
       
       <tag>电磁学</tag>
       
@@ -454,13 +454,13 @@
     
     <tags>
       
+      <tag>课程笔记</tag>
+      
       <tag>物理</tag>
       
       <tag>力学</tag>
       
       <tag>热力学</tag>
-      
-      <tag>课程笔记</tag>
       
     </tags>
     
@@ -545,9 +545,9 @@
     
     <tags>
       
-      <tag>物理</tag>
-      
       <tag>课程笔记</tag>
+      
+      <tag>物理</tag>
       
       <tag>量子力学</tag>
       
