@@ -27,7 +27,7 @@
 <meta property="og:description" content="流动传热学 流动分析基础 流体力学诸论 什么是流体力学  研究流体的平衡与运动规律的科学 研究对象：流体 研究内容：流体的运动规律和与周围物体的相互作用规律 平衡规律  绝对静止和相对静止  压力计算和压力分布   流动规律  管内流和绕流  速度分布、压力分布、能量损失    如何学习流体力学  理论研究  建立模型 推导方程 求解方程 解释结果  实验研究  相似理论 模型试验 测量 数据分析">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-03-03T08:00:00.000Z">
-<meta property="article:modified_time" content="2026-03-04T07:05:09.000Z">
+<meta property="article:modified_time" content="2026-03-06T05:56:14.000Z">
 <meta property="article:author" content="dcldyhb">
 <meta property="article:tag" content="物理">
 <meta property="article:tag" content="热力学">
@@ -226,7 +226,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.9k 字
+          2.8k 字
         
       </span>
     
@@ -237,7 +237,7 @@
         
         
         
-          16 分钟
+          24 分钟
         
       </span>
     
@@ -632,6 +632,156 @@ class="math inline">\(&gt;\)</span> <strong>附着力</strong></td>
 </tr>
 </tbody>
 </table>
+<h2 id="流体静力学基础">流体静力学基础</h2>
+<h3 id="流体平衡应力特征与静压强">流体平衡应力特征与静压强</h3>
+<h4 id="流体平衡应力特征">流体平衡应力特征</h4>
+<ul>
+<li>没有黏性切向力</li>
+<li>只有法向分力</li>
+<li>不能承受拉力</li>
+<li>压力是唯一表面力</li>
+</ul>
+<h4 id="静压强基本特征">静压强基本特征</h4>
+<ol type="1">
+<li>流体静压强方向与作用面相垂直，并指向作用面的内法线方向（方向）</li>
+<li>静止流体中任意一点流体压强的大小与作用面的方位无关，即任一点上各方向的流体静压强都相同（大小）
+<ul>
+<li><p>流体的动压强定义为三个互相垂直的坐标轴上流体静压强的平均值</p>
+<p><span class="math display">\[
+p=\frac{p_x+p_y+p_z}{3}
+\]</span></p></li>
+</ul></li>
+</ol>
+<h3 id="流体平衡微分方程">流体平衡微分方程</h3>
+<h4 id="流体平衡微分方程的推导">流体平衡微分方程的推导</h4>
+<p>在静止流体中去一平行六面体微团，边长为 <span
+class="math inline">\(\mathrm{d}x\)</span>、<span
+class="math inline">\(\mathrm{d}y\)</span>、<span
+class="math inline">\(\mathrm{d}z\)</span>，体积为 <span
+class="math inline">\(\mathrm{d}V\)</span>，质量为 <span
+class="math inline">\(\mathrm{d}m\)</span>，受质量力 <span
+class="math inline">\(\vec{f}\)</span> 和表面力 <span
+class="math inline">\(\vec{p}\)</span> 的作用</p>
+<p>取 <span class="math inline">\(x\)</span> 方向进行分析</p>
+<ul>
+<li><p>质量力</p>
+<p><span class="math display">\[
+f_x\mathrm{d}x\mathrm{d}y\mathrm{d}z
+\]</span></p></li>
+<li><p>表面力</p>
+<p><span class="math display">\[
+p(x+\frac{\mathrm{d}x}{2})\mathrm{d}y\mathrm{d}z -
+p(x-\frac{\mathrm{d}x}{2})\mathrm{d}y\mathrm{d}z = \frac{\partial
+p}{\partial x}\mathrm{d}x\mathrm{d}y\mathrm{d}z
+\]</span></p></li>
+</ul>
+<p>根据平衡条件，<span class="math inline">\(x\)</span>
+方向的质量力与表面力平衡</p>
+<p><span class="math display">\[
+\begin{aligned}
+  p(x+\frac{\mathrm{d}x}{2})\mathrm{d}y\mathrm{d}z -
+p(x-\frac{\mathrm{d}x}{2})\mathrm{d}y\mathrm{d}z -
+f_x\mathrm{d}x\mathrm{d}y\mathrm{d}z &amp;= 0 \\
+  \frac{\partial p}{\partial x}\mathrm{d}x\mathrm{d}y\mathrm{d}z -
+f_x\mathrm{d}x\mathrm{d}y\mathrm{d}z &amp;= 0 \\
+  p_x - f_x &amp;= 0
+\end{aligned}
+\]</span></p>
+<p>同样的，在 <span class="math inline">\(y\)</span> 和 <span
+class="math inline">\(z\)</span> 方向上也可以得到类似的表达式</p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;f_x - \frac{1}{\rho}\frac{\partial p}{\partial x} = 0 \\
+      &amp;f_y - \frac{1}{\rho}\frac{\partial p}{\partial y} = 0 \\
+      &amp;f_z - \frac{1}{\rho}\frac{\partial p}{\partial z} = 0
+   \end{aligned}
+\right.
+\]</span></p>
+<p>写成矢量形式</p>
+<p><span class="math display">\[
+\vec{f}-\frac{1}{\rho}\nabla p = 0
+\]</span></p>
+<h4 id="压强差公式">压强差公式</h4>
+<p><span class="math display">\[
+\rho(f_x\mathrm{d}x+f_y\mathrm{d}y+f_z\mathrm{d}z) = \frac{\partial
+p}{\partial x}\mathrm{d}x+\frac{\partial p}{\partial
+y}\mathrm{d}y+\frac{\partial p}{\partial z}\mathrm{d}z
+\]</span></p>
+<p>即</p>
+<p><span class="math display">\[
+\mathrm{d}p = \rho(f_x\mathrm{d}x+f_y\mathrm{d}y+f_z\mathrm{d}z)=
+\rho\vec{f}\cdot\mathrm{d}\vec{r}
+\]</span></p>
+<h4 id="流体平衡条件">流体平衡条件</h4>
+<p>旋度为 <span class="math inline">\(0\)</span></p>
+<p><span class="math display">\[
+\nabla \times \vec{f} = 0
+\]</span></p>
+<p>展开</p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;\frac{\partial f_z}{\partial y} - \frac{\partial
+f_y}{\partial z} = 0 \\
+      &amp;\frac{\partial f_x}{\partial z} - \frac{\partial
+f_z}{\partial x} = 0 \\
+      &amp;\frac{\partial f_y}{\partial x} - \frac{\partial
+f_x}{\partial y} = 0
+   \end{aligned}
+\right.
+\]</span></p>
+<p>即在流体中，质量力场必须是<strong>无旋场</strong>，才能使流体处于平衡状态</p>
+<p>计单位质量体积力的势函数为 <span
+class="math inline">\(\phi\)</span>，则</p>
+<p><span class="math display">\[
+\mathrm{d}p = \rho(f_x\mathrm{d}x+f_y\mathrm{d}y+f_z\mathrm{d}z) =
+-\rho\left(\frac{\partial \phi}{\partial x}\mathrm{d}x+\frac{\partial
+\phi}{\partial y}\mathrm{d}y+\frac{\partial \phi}{\partial
+z}\mathrm{d}z\right) = -\rho\mathrm{d}\phi
+\]</span></p>
+<p>当 <span class="math inline">\(\rho\)</span> 是常数时，积分得到</p>
+<p><span class="math display">\[
+p=-\rho\phi + C
+\]</span></p>
+<h3 id="流体静力学基本方程">流体静力学基本方程</h3>
+<h4 id="静力学基本方程式的推导">静力学基本方程式的推导</h4>
+<p>在重力场中，质量力 <span class="math inline">\(\vec{f}\)</span>
+的分量为</p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;f_x = 0 \\
+      &amp;f_y = 0 \\
+      &amp;f_z = -g
+   \end{aligned}
+\right.
+\]</span></p>
+<p>带入流体平衡方程</p>
+<p><span class="math display">\[
+\mathrm{d}p = \rho(f_x\mathrm{d}x+f_y\mathrm{d}y+f_z\mathrm{d}z) = -\rho
+g \mathrm{d}z
+\]</span></p>
+<p>当 <span class="math inline">\(\rho\)</span>
+是常数时，积分得到流体静力学基本方程</p>
+<p><span class="math display">\[
+\boxed{z+\frac{p}{\rho g} = c}
+\]</span></p>
+<h4 id="静力学基本方程的物理意义">静力学基本方程的物理意义</h4>
+<p>表示在重力作用下静止流体中各点的单位重量流体的总势能是相等的</p>
+<ul>
+<li><span class="math inline">\(z\)</span>：位置势能</li>
+<li><span class="math inline">\(\displaystyle \frac{p}{\rho
+g}\)</span>：压强势能</li>
+<li><span
+class="math inline">\(c\)</span>：常数，表示单位重量流体的总势能</li>
+</ul>
+<p>或称在重力作用下静止流体中各点的静水头是相等的</p>
+<ul>
+<li>单位重量流体具有的能量用液柱高度来表示称为<strong>水头</strong></li>
+</ul>
+<h3 id="压强的测量">压强的测量</h3>
+<h4 id="压强的测量-1">压强的测量</h4>
 
                 
               </div>
