@@ -27,7 +27,7 @@
 <meta property="og:description" content="流动传热学 流动分析基础 流体力学诸论 什么是流体力学  研究流体的平衡与运动规律的科学 研究对象：流体 研究内容：流体的运动规律和与周围物体的相互作用规律 平衡规律  绝对静止和相对静止  压力计算和压力分布   流动规律  管内流和绕流  速度分布、压力分布、能量损失    如何学习流体力学  理论研究  建立模型 推导方程 求解方程 解释结果  实验研究  相似理论 模型试验 测量 数据分析">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-03-03T08:00:00.000Z">
-<meta property="article:modified_time" content="2026-03-06T05:56:14.000Z">
+<meta property="article:modified_time" content="2026-03-11T07:39:08.000Z">
 <meta property="article:author" content="dcldyhb">
 <meta property="article:tag" content="物理">
 <meta property="article:tag" content="热力学">
@@ -226,7 +226,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.8k 字
+          3.4k 字
         
       </span>
     
@@ -237,7 +237,7 @@
         
         
         
-          24 分钟
+          29 分钟
         
       </span>
     
@@ -780,8 +780,147 @@ class="math inline">\(c\)</span>：常数，表示单位重量流体的总势能
 <ul>
 <li>单位重量流体具有的能量用液柱高度来表示称为<strong>水头</strong></li>
 </ul>
+<h4 id="静力学基本方程的另一种形式">静力学基本方程的另一种形式</h4>
+<p><span class="math display">\[
+p=p_0 + \rho gh
+\]</span></p>
+<ul>
+<li><span class="math inline">\(p_0\)</span>：参考点的压强</li>
+<li><span class="math inline">\(h\)</span>：参考点与所求点之间的垂直距离
+<span class="math inline">\(\displaystyle h=z_0-z\)</span></li>
+</ul>
 <h3 id="压强的测量">压强的测量</h3>
 <h4 id="压强的测量-1">压强的测量</h4>
+<h3 id="静止流体对物体表面的压强合力">静止流体对物体表面的压强合力</h3>
+<h4 id="平面静水总压力">平面静水总压力</h4>
+<h5 id="总压力大小的推导">总压力大小的推导</h5>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/20260310161556.png" srcset="/img/loading.jpeg" lazyload
+alt="示意图" />
+<figcaption aria-hidden="true">示意图</figcaption>
+</figure>
+<p>任意微元面积受到的压力为</p>
+<p><span class="math display">\[
+\mathrm{d}P=p \mathrm{d}A= \rho g z \sin\alpha \mathrm{d}A
+\]</span></p>
+<p>积分得到静止液体作用在整个平面上的总压力</p>
+<p><span class="math display">\[
+P=\iint_{A}\rho gz\sin\alpha  \, \mathrm{d}A = \rho g \sin\alpha
+\iint_{A} z \, \mathrm{d}A
+\]</span></p>
+<p>记 <span class="math inline">\(\displaystyle \iint_A z \,
+\mathrm{d}A\)</span> 为 <span class="math inline">\(A\)</span> 对 <span
+class="math inline">\(OX\)</span> 轴的面积矩，记为 <span
+class="math inline">\(z_c\)</span>，则</p>
+<p><span class="math display">\[
+P=\rho g  \sin\alpha z_c A
+\]</span></p>
+<p>记 <span class="math inline">\(h_c\)</span> 为 <span
+class="math inline">\(z_c \sin\alpha\)</span>，称为形心淹深</p>
+<p><span class="math display">\[
+P=\rho g h_c A
+\]</span></p>
+<p>即压强合力等于受压面形心处的压强与面积的乘积，压强合力垂直于平面壁</p>
+<h5 id="力的作用点">力的作用点</h5>
+<p>使用和力矩来求作用点</p>
+<p><span class="math display">\[
+z_d P=\iint_A z\mathrm{d}P = \iint_A z \rho g z \sin\alpha \mathrm{d}A
+\]</span></p>
+<p><span class="math display">\[
+\iint_A z\mathrm{d}P = \iint_A z \rho g z \sin\alpha \mathrm{d}A=\rho g
+\sin\alpha \iint_A z^2 \mathrm{d}A
+\]</span></p>
+<p>定义</p>
+<p><span class="math display">\[
+J_x = \iint_A z^2 \mathrm{d}A
+\]</span></p>
+<p>将 <span class="math inline">\(\displaystyle \iint_A
+z\mathrm{d}P\)</span> 和 <span class="math inline">\(P\)</span>
+的表达式代入力矩平衡方程</p>
+<p><span class="math display">\[
+z_d \rho g z_c \sin\alpha = \rho g \sin\alpha J_x
+\]</span></p>
+<p>借得</p>
+<p><span class="math display">\[
+z_d = \frac{J_x}{z_c A}
+\]</span></p>
+<p>使用平行轴定理对这个结论进一步进行化简</p>
+<p><span class="math display">\[
+z_d = \frac{J_{cx}+{z_c}^2A}{z_c A} = z_c+\frac{J_{cx}}{z_c A}
+\]</span></p>
+<h4 id="曲面静水总压力">曲面静水总压力</h4>
+<h5 id="总压力大小推导">总压力大小推导</h5>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/20260311142217.png" srcset="/img/loading.jpeg" lazyload
+alt="示意图" />
+<figcaption aria-hidden="true">示意图</figcaption>
+</figure>
+<p>可以将力分解为沿 <span class="math inline">\(x\)</span> 和 <span
+class="math inline">\(z\)</span> 方向的两个分力</p>
+<p><span class="math display">\[
+\mathrm{d}P_x = \rho g h\cos\alpha\mathrm{d}A = \rho g h\mathrm{d}A_x
+\]</span></p>
+<p><span class="math display">\[
+P_x = \iint_A \rho g h \,\mathrm{d}A_x=\rho g h_c A_x
+\]</span></p>
+<p><span class="math display">\[
+\mathrm{d}P_z = \rho g h\sin\alpha\mathrm{d}A = \rho g h\mathrm{d}A_z
+\]</span></p>
+<p><span class="math display">\[
+P_z= \iint_A \rho g h \,\mathrm{d}A_z=\rho g V_p
+\]</span></p>
+<p>静止液体作用在曲面上的总压力的垂直分力等于压力体的液体重量</p>
+<h5 id="总压力作用点">总压力作用点</h5>
+<p>作出 <span class="math inline">\(P_x\)</span> 及 <span
+class="math inline">\(P_z\)</span> 的作用线，得交点，过此交点按倾斜角
+<span class="math inline">\(\alpha\)</span> 作总压力 <span
+class="math inline">\(P\)</span> 的作用线，与曲面壁 AB
+相交的点，即为总压力 <span class="math inline">\(\vec{P}\)</span>
+的作用点。</p>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/20260311151540.png" srcset="/img/loading.jpeg" lazyload
+alt="总压力" />
+<figcaption aria-hidden="true">总压力</figcaption>
+</figure>
+<h5 id="压力体定义以及组成">压力体定义以及组成</h5>
+<ul>
+<li>定义：x所研究的曲面（淹没在静止液体中的部分）到自由液面或自由液面的延长面间投影所包围的一块空间体积</li>
+</ul>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/20260311153106.png" srcset="/img/loading.jpeg" lazyload
+alt="压力体示意图" />
+<figcaption aria-hidden="true">压力体示意图</figcaption>
+</figure>
+<p>压力体体积计算公式</p>
+<p><span class="math display">\[
+V_p=A_{abcd}\cdot b
+\]</span></p>
+<ol type="1">
+<li>受压区面本身</li>
+<li>通过曲面边缘所作的铅垂面</li>
+<li>自由液面或自由液面的延长线</li>
+</ol>
+<h5 id="压力体种类">压力体种类</h5>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/20260311153744.png" srcset="/img/loading.jpeg" lazyload
+alt="两种压力体" />
+<figcaption aria-hidden="true">两种压力体</figcaption>
+</figure>
+<ul>
+<li>实压力体
+<ul>
+<li>方向向下</li>
+</ul></li>
+<li>虚压力体
+<ul>
+<li>方向向上</li>
+</ul></li>
+</ul>
 
                 
               </div>
