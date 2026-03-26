@@ -19,25 +19,27 @@
   <meta name="author" content="dcldyhb">
   <meta name="keywords" content="">
   
-    <meta name="description" content="工程热力学 诸论与基本概念 诸论 工程热力学是一门研究能量转换和物质性质的学科 能源转换利用的关系  一次能源 天然存在且未被加工或转换的能源  风能 水能 化学能 核能 地热能 太阳能  二次能源 一次能源转换成其他形式的能源  机械能 热能 电能   热能和机械能的转化  热能动力装置 从燃料燃烧中得到热能以及利用热能得到动力的整套装置（包括辅助设备）  燃气动力装置  内燃机 燃气轮机装置">
+    <meta name="description" content="依据《流动传热基础》现有内容整理。当前原笔记实际覆盖到流体力学部分，尚未展开导热、对流换热、辐射换热公式。 为便于复习，本文对原文中少量记号不统一或排版缺项处做了标准化处理：运动黏度统一记为 \(\nu\)，黏性伯努利方程统一写为 \(\alpha_1,\alpha_2\)，局部损失压强记为 \(\Delta p_j\)。  1. 连续介质与流体物性 1.1 连续介质假设 \[ \frac{L}">
 <meta property="og:type" content="article">
-<meta property="og:title" content="工程热力学">
-<meta property="og:url" content="http://dcldyhb.github.io/posts_/%E6%9C%AC%E7%A7%91%E8%AF%BE%E7%A8%8B/%E7%89%A9%E7%90%86/notes/%E6%9C%AC%E7%A7%91/%E7%89%A9%E7%90%86/%E5%B7%A5%E7%A8%8B%E7%83%AD%E5%8A%9B%E5%AD%A6/index.html">
+<meta property="og:title" content="流动传热基础公式整理">
+<meta property="og:url" content="http://dcldyhb.github.io/posts_/%E6%9C%AC%E7%A7%91%E8%AF%BE%E7%A8%8B/%E7%89%A9%E7%90%86/notes/%E6%9C%AC%E7%A7%91/%E7%89%A9%E7%90%86/%E6%B5%81%E5%8A%A8%E4%BC%A0%E7%83%AD%E5%9F%BA%E7%A1%80%E5%85%AC%E5%BC%8F%E6%95%B4%E7%90%86/index.html">
 <meta property="og:site_name" content="dcldyhb的笔记">
-<meta property="og:description" content="工程热力学 诸论与基本概念 诸论 工程热力学是一门研究能量转换和物质性质的学科 能源转换利用的关系  一次能源 天然存在且未被加工或转换的能源  风能 水能 化学能 核能 地热能 太阳能  二次能源 一次能源转换成其他形式的能源  机械能 热能 电能   热能和机械能的转化  热能动力装置 从燃料燃烧中得到热能以及利用热能得到动力的整套装置（包括辅助设备）  燃气动力装置  内燃机 燃气轮机装置">
+<meta property="og:description" content="依据《流动传热基础》现有内容整理。当前原笔记实际覆盖到流体力学部分，尚未展开导热、对流换热、辐射换热公式。 为便于复习，本文对原文中少量记号不统一或排版缺项处做了标准化处理：运动黏度统一记为 \(\nu\)，黏性伯努利方程统一写为 \(\alpha_1,\alpha_2\)，局部损失压强记为 \(\Delta p_j\)。  1. 连续介质与流体物性 1.1 连续介质假设 \[ \frac{L}">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2026-03-02T00:00:00.000Z">
-<meta property="article:modified_time" content="2026-03-26T06:06:25.000Z">
+<meta property="article:published_time" content="2026-03-24T04:00:00.000Z">
+<meta property="article:modified_time" content="2026-03-25T06:25:54.000Z">
 <meta property="article:author" content="dcldyhb">
 <meta property="article:tag" content="物理">
 <meta property="article:tag" content="热力学">
+<meta property="article:tag" content="流体力学">
+<meta property="article:tag" content="公式整理">
 <meta name="twitter:card" content="summary_large_image">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>工程热力学 - dcldyhb的笔记</title>
+  <title>流动传热基础公式整理 - dcldyhb的笔记</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -203,7 +205,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="工程热力学"></span>
+            <span id="subtitle" data-typed-text="流动传热基础公式整理"></span>
           
         </div>
 
@@ -214,8 +216,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2026-03-02 08:00" pubdate>
-          2026年3月2日 早上
+        <time datetime="2026-03-24 12:00" pubdate>
+          2026年3月24日 中午
         </time>
       </span>
     
@@ -226,7 +228,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.6k 字
+          2.1k 字
         
       </span>
     
@@ -237,7 +239,7 @@
         
         
         
-          22 分钟
+          18 分钟
         
       </span>
     
@@ -283,548 +285,526 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">工程热力学</h1>
+            <h1 id="seo-header">流动传热基础公式整理</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="工程热力学">工程热力学</h1>
-<h2 id="诸论与基本概念">诸论与基本概念</h2>
-<h3 id="诸论">诸论</h3>
-<p>工程热力学是一门研究能量转换和物质性质的学科</p>
-<h4 id="能源转换利用的关系">能源转换利用的关系</h4>
-<ul>
-<li>一次能源 天然存在且未被加工或转换的能源
-<ul>
-<li>风能</li>
-<li>水能</li>
-<li>化学能</li>
-<li>核能</li>
-<li>地热能</li>
-<li>太阳能</li>
-</ul></li>
-<li>二次能源 一次能源转换成其他形式的能源
-<ul>
-<li>机械能</li>
-<li>热能</li>
-<li>电能</li>
-</ul></li>
-</ul>
-<h4 id="热能和机械能的转化">热能和机械能的转化</h4>
-<ul>
-<li>热能动力装置
-从燃料燃烧中得到热能以及利用热能得到动力的整套装置（包括辅助设备）
-<ul>
-<li>燃气动力装置
-<ul>
-<li>内燃机</li>
-<li>燃气轮机装置</li>
-<li>喷气发动机</li>
-</ul></li>
-<li>蒸汽动力装置</li>
-</ul></li>
-</ul>
-<h5 id="内燃机">内燃机</h5>
-<h3 id="基本概念">基本概念</h3>
-<h4 id="热力学系统">热力学系统</h4>
-<ul>
-<li>热力系统
-<ul>
-<li>人为分割出来，作为热力学研究对象的有限物质系统</li>
-</ul></li>
-<li>外界
-<ul>
-<li>与体系发生质量、能量交换的物系</li>
-</ul></li>
-<li>边界
-<ul>
-<li>系统与外界的分界面（线）</li>
-</ul></li>
-</ul>
-<h5 id="热力系统分类">热力系统分类</h5>
-<ul>
-<li>按照组元数分类
-<ul>
-<li>单元系
-<ul>
-<li>系统由单一纯物质组成，仅含一种化学成分</li>
-</ul></li>
-<li>多元系
-<ul>
-<li>系统由两种或以上组分组成</li>
-</ul></li>
-</ul></li>
-<li>按照相数分类
-<ul>
-<li>单相系
-<ul>
-<li>系统内所有物质处于同一相态</li>
-<li>宏观上无洁面分隔，性质处处相同</li>
-<li>可以是单元系也可以是多元系</li>
-</ul></li>
-<li>多相系
-<ul>
-<li>系统中存在两种或以上物态</li>
-<li>各相性质不同</li>
-</ul></li>
-</ul></li>
-<li>按照系统内部状态分
-<ul>
-<li>均匀系
-<ul>
-<li>系统内所有部分的物理性质和化学组成完全相同，没有宏观上的差异或界面</li>
-<li>性质在系统内处处一致</li>
-<li>可以是单相或多相</li>
-</ul></li>
-<li>非均匀系
-<ul>
-<li>系统内存在宏观界面，不同部分的物理性质或化学组成有明显差异</li>
-<li>系统由多个相或组分组成，且相之间有清晰的边界</li>
-<li>性质在界面处发生突变</li>
-</ul></li>
-</ul></li>
-<li>按照系统与外界质量交换
-<ul>
-<li>闭口系
-<ul>
-<li>控制质量</li>
-<li>没有质量穿过边界</li>
-</ul></li>
-<li>开口系
-<ul>
-<li>控制体积</li>
-<li>通过边界与外界有质量交换</li>
-</ul></li>
-</ul></li>
-<li>按照能量交换
-<ul>
-<li>绝热系
-<ul>
-<li>与外界无热量交换</li>
-</ul></li>
-<li>孤立系
-<ul>
-<li>与外界无任何性质的质能交换</li>
-</ul></li>
-</ul></li>
-</ul>
-<h4
-id="工质的热力学状态与基本状态参数">工质的热力学状态与基本状态参数</h4>
-<ul>
-<li>热力学状态
-<ul>
-<li>工质所呈现的宏观物理状态</li>
-</ul></li>
-<li>状态参数
-<ul>
-<li>描述工质所处状态的宏观物理量</li>
-</ul></li>
-<li>常见状态参数
-<ul>
-<li><span class="math inline">\(p\)</span>：压力</li>
-<li><span class="math inline">\(T\)</span>：温度</li>
-<li><span class="math inline">\(V\)</span>：体积</li>
-<li><span class="math inline">\(U\)</span>：内能</li>
-<li><span class="math inline">\(H\)</span>：焓</li>
-<li><span class="math inline">\(S\)</span>：熵</li>
-</ul></li>
-<li>特点
-<ul>
-<li>状态参数是宏观量</li>
-<li>仅在平衡状态下有确定值</li>
-</ul></li>
-</ul>
-<h4 id="热力学能和焓">热力学能和焓</h4>
-<h5 id="热力学能">热力学能</h5>
-<p>热力学能</p>
-<ul>
-<li>化学能</li>
-<li>原子能</li>
-<li>内动能</li>
-<li>热运动能
-<ul>
-<li>内动能
-<ul>
-<li>平移动能</li>
-<li>转动动能</li>
-<li>振动动能</li>
-</ul></li>
-<li>内位能</li>
-</ul></li>
-</ul>
-<h5 id="总储存能">总储存能</h5>
+                <blockquote>
+<p>依据《流动传热基础》现有内容整理。当前原笔记实际覆盖到流体力学部分，尚未展开导热、对流换热、辐射换热公式。</p>
+<p>为便于复习，本文对原文中少量记号不统一或排版缺项处做了标准化处理：运动黏度统一记为
+<span class="math inline">\(\nu\)</span>，黏性伯努利方程统一写为 <span
+class="math inline">\(\alpha_1,\alpha_2\)</span>，局部损失压强记为 <span
+class="math inline">\(\Delta p_j\)</span>。</p>
+</blockquote>
+<h1 id="连续介质与流体物性">1. 连续介质与流体物性</h1>
+<h2 id="连续介质假设">1.1 连续介质假设</h2>
 <p><span class="math display">\[
-E=U+E_k+E_p
+\frac{L}{l}\ge 100
 \]</span></p>
-<ul>
-<li><span class="math inline">\(E\)</span>：总储存能
-<ul>
-<li><span class="math inline">\(U\)</span>：热力学能</li>
-<li>外部储存能
-<ul>
-<li><span class="math inline">\(E_k\)</span>：宏观动能</li>
-<li><span class="math inline">\(E_p\)</span>：宏观位能</li>
-</ul></li>
-</ul></li>
-</ul>
-<h5 id="推动功">推动功</h5>
-<p>系统引进或排除工质传递的能量</p>
+<h2 id="密度与相对密度">1.2 密度与相对密度</h2>
+<p>均质流体：</p>
 <p><span class="math display">\[
-W = pV
+\rho=\frac{m}{V}
 \]</span></p>
-<p>推动功是系统引进或排除工质时，由压力作用产生的功。</p>
-<h5 id="流动功">流动功</h5>
-<p>系统维持工质流动所需要的功</p>
-<p>常表示为 <span class="math inline">\(p
-v\)</span>，体现单位质量工质的流动功。</p>
-<h5 id="焓">焓</h5>
+<p>非均质流体：</p>
 <p><span class="math display">\[
-H=U+PV
+\rho=\lim_{\Delta V\to 0}\frac{\Delta m}{\Delta V}
+\]</span></p>
+<p>相对密度：</p>
+<p><span class="math display">\[
+d=\frac{\rho_f}{\rho_w}
+\]</span></p>
+<p>气体状态变化：</p>
+<p><span class="math display">\[
+\rho_2=\rho_1\frac{p_2T_1}{p_1T_2}
+\]</span></p>
+<h2 id="压缩性与膨胀性">1.3 压缩性与膨胀性</h2>
+<p>体积压缩系数：</p>
+<p><span class="math display">\[
+\beta=-\frac{1}{V}\frac{\mathrm{d}V}{\mathrm{d}P}
+\]</span></p>
+<p>体积膨胀系数：</p>
+<p><span class="math display">\[
+\alpha_V=\frac{1}{V}\frac{\mathrm{d}V}{\mathrm{d}T}
+\]</span></p>
+<p>不可压缩流体：</p>
+<p><span class="math display">\[
+\frac{\mathrm{d}\rho}{\mathrm{d}t}=0,
+\qquad
+\rho=\text{const.}
+\]</span></p>
+<p>可压缩流体：</p>
+<p><span class="math display">\[
+\frac{\mathrm{d}\rho}{\mathrm{d}t}\ne 0,
+\qquad
+\rho\ne\text{const.}
+\]</span></p>
+<h2 id="黏性与牛顿内摩擦定律">1.4 黏性与牛顿内摩擦定律</h2>
+<p><span class="math display">\[
+F\propto A\frac{\mathrm{d}u}{\mathrm{d}y}
 \]</span></p>
 <p><span class="math display">\[
-\mathrm{d}H=c_p\ \mathrm{d}T+\left[v-T\left(\frac{\partial V}{\partial
-T}\right)_p\right]\ \mathrm{d}p
+F=\mu A\frac{\mathrm{d}u}{\mathrm{d}y}
 \]</span></p>
-<h4 id="平衡状态">平衡状态</h4>
-<p>热力系统在不受外界影响的条件下保持状态参数不随时间而改变的状态</p>
-<p>系统达到平衡的充要条件是系统同时达到热平衡和力平衡</p>
+<p><span class="math display">\[
+\tau=\frac{F}{A}=\mu\frac{\mathrm{d}u}{\mathrm{d}y}
+\]</span></p>
+<p>运动黏度：</p>
+<p><span class="math display">\[
+\nu=\frac{\mu}{\rho}
+\]</span></p>
+<h1 id="流体受力与应力">2. 流体受力与应力</h1>
+<p>总表面力：</p>
+<p><span class="math display">\[
+\Delta F=\Delta P+\Delta T
+\]</span></p>
+<p>法向应力：</p>
+<p><span class="math display">\[
+p=\lim_{\Delta A\to 0}\frac{\Delta P}{\Delta
+A}=\frac{\mathrm{d}P}{\mathrm{d}A}
+\]</span></p>
+<p>切向应力：</p>
+<p><span class="math display">\[
+\tau=\lim_{\Delta A\to 0}\frac{\Delta T}{\Delta
+A}=\frac{\mathrm{d}T}{\mathrm{d}A}
+\]</span></p>
+<p>单位质量力：</p>
+<p><span class="math display">\[
+\vec{f}=\frac{\vec{F}}{m}=f_x\vec{i}+f_y\vec{j}+f_z\vec{k}
+\]</span></p>
+<h1 id="流体静力学">3. 流体静力学</h1>
+<h2 id="静压强基本关系">3.1 静压强基本关系</h2>
+<p><span class="math display">\[
+p=\frac{p_x+p_y+p_z}{3}
+\]</span></p>
+<h2 id="流体平衡微分方程">3.2 流体平衡微分方程</h2>
+<p><span class="math display">\[
+\begin{cases}
+f_x-\frac{1}{\rho}\frac{\partial p}{\partial x}=0 \\
+f_y-\frac{1}{\rho}\frac{\partial p}{\partial y}=0 \\
+f_z-\frac{1}{\rho}\frac{\partial p}{\partial z}=0
+\end{cases}
+\]</span></p>
+<p>矢量形式：</p>
+<p><span class="math display">\[
+\vec{f}-\frac{1}{\rho}\nabla p=0
+\]</span></p>
+<p>压强差公式：</p>
+<p><span class="math display">\[
+\mathrm{d}p=\rho(f_x\mathrm{d}x+f_y\mathrm{d}y+f_z\mathrm{d}z)=\rho\vec{f}\cdot\mathrm{d}\vec{r}
+\]</span></p>
+<h2 id="流体平衡条件">3.3 流体平衡条件</h2>
+<p><span class="math display">\[
+\nabla\times\vec{f}=0
+\]</span></p>
+<p>展开式：</p>
+<p><span class="math display">\[
+\begin{cases}
+\frac{\partial f_z}{\partial y}-\frac{\partial f_y}{\partial z}=0 \\
+\frac{\partial f_x}{\partial z}-\frac{\partial f_z}{\partial x}=0 \\
+\frac{\partial f_y}{\partial x}-\frac{\partial f_x}{\partial y}=0
+\end{cases}
+\]</span></p>
+<p>若单位质量力势函数为 <span
+class="math inline">\(\phi\)</span>，则</p>
+<p><span class="math display">\[
+\mathrm{d}p=-\rho\,\mathrm{d}\phi
+\]</span></p>
+<p>当 <span class="math inline">\(\rho\)</span> 为常数时：</p>
+<p><span class="math display">\[
+p=-\rho\phi+C
+\]</span></p>
+<h2 id="重力场中的静力学基本方程">3.4 重力场中的静力学基本方程</h2>
+<p><span class="math display">\[
+\begin{cases}
+f_x=0 \\
+f_y=0 \\
+f_z=-g
+\end{cases}
+\]</span></p>
+<p><span class="math display">\[
+\mathrm{d}p=-\rho g\,\mathrm{d}z
+\]</span></p>
+<p><span class="math display">\[
+z+\frac{p}{\rho g}=C
+\]</span></p>
+<p>另一常用形式：</p>
+<p><span class="math display">\[
+p=p_0+\rho gh
+\]</span></p>
+<p>其中</p>
+<p><span class="math display">\[
+h=z_0-z
+\]</span></p>
+<h2 id="平面静水总压力">3.5 平面静水总压力</h2>
+<p>微元压力：</p>
+<p><span class="math display">\[
+\mathrm{d}P=p\,\mathrm{d}A=\rho gz\sin\alpha\,\mathrm{d}A
+\]</span></p>
+<p>总压力：</p>
+<p><span class="math display">\[
+P=\iint_A \rho gz\sin\alpha\,\mathrm{d}A
+=\rho g\sin\alpha\iint_A z\,\mathrm{d}A
+\]</span></p>
+<p><span class="math display">\[
+P=\rho g\sin\alpha\,z_cA
+\]</span></p>
+<p><span class="math display">\[
+P=\rho gh_cA
+\]</span></p>
+<p>其中 <span class="math inline">\(h_c=z_c\sin\alpha\)</span>
+为形心淹深。</p>
+<h2 id="压力中心">3.6 压力中心</h2>
+<p><span class="math display">\[
+z_dP=\iint_A z\,\mathrm{d}P
+\]</span></p>
+<p><span class="math display">\[
+J_x=\iint_A z^2\,\mathrm{d}A
+\]</span></p>
+<p><span class="math display">\[
+z_d=\frac{J_x}{z_cA}
+\]</span></p>
+<p>利用平行轴定理：</p>
+<p><span class="math display">\[
+z_d=z_c+\frac{J_{cx}}{z_cA}
+\]</span></p>
+<h2 id="曲面静水总压力">3.7 曲面静水总压力</h2>
+<p>水平分力：</p>
+<p><span class="math display">\[
+\mathrm{d}P_x=\rho gh\cos\alpha\,\mathrm{d}A=\rho gh\,\mathrm{d}A_x
+\]</span></p>
+<p><span class="math display">\[
+P_x=\iint_A \rho gh\,\mathrm{d}A_x=\rho gh_cA_x
+\]</span></p>
+<p>竖直分力：</p>
+<p><span class="math display">\[
+\mathrm{d}P_z=\rho gh\sin\alpha\,\mathrm{d}A=\rho gh\,\mathrm{d}A_z
+\]</span></p>
+<p><span class="math display">\[
+P_z=\iint_A \rho gh\,\mathrm{d}A_z=\rho gV_p
+\]</span></p>
+<p>压力体体积：</p>
+<p><span class="math display">\[
+V_p=A_{abcd}\cdot b
+\]</span></p>
+<p>由分力合成可得总压力大小：</p>
+<p><span class="math display">\[
+P=\sqrt{P_x^2+P_z^2}
+\]</span></p>
+<h1 id="流体运动学">4. 流体运动学</h1>
+<h2 id="拉格朗日法">4.1 拉格朗日法</h2>
+<p>位移方程：</p>
+<p><span class="math display">\[
+\begin{cases}
+x=x(a,b,c,t) \\
+y=y(a,b,c,t) \\
+z=z(a,b,c,t)
+\end{cases}
+\]</span></p>
+<p>速度分量：</p>
+<p><span class="math display">\[
+\begin{cases}
+u=\frac{\partial x}{\partial t} \\
+v=\frac{\partial y}{\partial t} \\
+w=\frac{\partial z}{\partial t}
+\end{cases}
+\]</span></p>
+<p>加速度分量：</p>
+<p><span class="math display">\[
+\begin{cases}
+a_x=\frac{\partial^2x}{\partial t^2} \\
+a_y=\frac{\partial^2y}{\partial t^2} \\
+a_z=\frac{\partial^2z}{\partial t^2}
+\end{cases}
+\]</span></p>
+<h2 id="欧拉法">4.2 欧拉法</h2>
+<p>流场中各物理量：</p>
+<p><span class="math display">\[
+\begin{cases}
+u=u(x,y,z,t) \\
+v=v(x,y,z,t) \\
+w=w(x,y,z,t) \\
+p=p(x,y,z,t) \\
+\rho=\rho(x,y,z,t)
+\end{cases}
+\]</span></p>
+<h2 id="质点加速度">4.3 质点加速度</h2>
+<p><span class="math display">\[
+a_x=\frac{\mathrm{d}u}{\mathrm{d}t}
+=\frac{\partial u}{\partial t}
++\frac{\partial u}{\partial x}\frac{\mathrm{d}x}{\mathrm{d}t}
++\frac{\partial u}{\partial y}\frac{\mathrm{d}y}{\mathrm{d}t}
++\frac{\partial u}{\partial z}\frac{\mathrm{d}z}{\mathrm{d}t}
+\]</span></p>
+<p>展开后：</p>
+<p><span class="math display">\[
+\begin{cases}
+a_x=\frac{\partial u}{\partial t}+u\frac{\partial u}{\partial
+x}+v\frac{\partial u}{\partial y}+w\frac{\partial u}{\partial z} \\
+a_y=\frac{\partial v}{\partial t}+u\frac{\partial v}{\partial
+x}+v\frac{\partial v}{\partial y}+w\frac{\partial v}{\partial z} \\
+a_z=\frac{\partial w}{\partial t}+u\frac{\partial w}{\partial
+x}+v\frac{\partial w}{\partial y}+w\frac{\partial w}{\partial z}
+\end{cases}
+\]</span></p>
+<p>矢量形式：</p>
+<p><span class="math display">\[
+\vec{a}=\frac{\mathrm{d}\vec{V}}{\mathrm{d}t}
+=\frac{\partial\vec{V}}{\partial t}+(\vec{V}\cdot\nabla)\vec{V}
+\]</span></p>
+<p>定常流动：</p>
+<p><span class="math display">\[
+\vec{a}=(\vec{V}\cdot\nabla)\vec{V}
+\]</span></p>
+<p>非定常流动：</p>
+<p><span class="math display">\[
+\vec{a}=\frac{\partial\vec{V}}{\partial t}+(\vec{V}\cdot\nabla)\vec{V}
+\]</span></p>
+<h2 id="迹线与流线">4.4 迹线与流线</h2>
+<p>迹线微分关系：</p>
+<p><span class="math display">\[
+\begin{cases}
+u\,\mathrm{d}t=\mathrm{d}x \\
+v\,\mathrm{d}t=\mathrm{d}y \\
+w\,\mathrm{d}t=\mathrm{d}z
+\end{cases}
+\]</span></p>
+<p>流线速度矢量：</p>
+<p><span class="math display">\[
+\vec{V}=u\vec{i}+v\vec{j}+w\vec{k}
+\]</span></p>
+<p>流线微元：</p>
+<p><span class="math display">\[
+\mathrm{d}\vec{s}=\mathrm{d}x\vec{i}+\mathrm{d}y\vec{j}+\mathrm{d}z\vec{k}
+\]</span></p>
+<p>流线微分方程：</p>
+<p><span class="math display">\[
+\frac{\mathrm{d}x}{u}=\frac{\mathrm{d}y}{v}=\frac{\mathrm{d}z}{w}
+\]</span></p>
+<h1 id="连续性方程与运动方程">5. 连续性方程与运动方程</h1>
+<h2 id="连续性方程">5.1 连续性方程</h2>
+<p>微分形式：</p>
+<p><span class="math display">\[
+\frac{\partial\rho}{\partial t}
++\frac{\partial(\rho u)}{\partial x}
++\frac{\partial(\rho v)}{\partial y}
++\frac{\partial(\rho w)}{\partial z}=0
+\]</span></p>
+<p>微元流束积分形式：</p>
+<p><span class="math display">\[
+\rho_1V_1\,\mathrm{d}A_1=\rho_2V_2\,\mathrm{d}A_2=\rho
+V\,\mathrm{d}A=\text{const.}
+\]</span></p>
+<p>总流积分形式：</p>
+<p><span class="math display">\[
+\rho\bar{V}_1A_1=\rho\bar{V}_2A_2=\rho\bar{V}A=\text{const.}
+\]</span></p>
+<p>不可压缩流体常用形式：</p>
+<p><span class="math display">\[
+\bar{V}_1A_1=\bar{V}_2A_2=\bar{V}A=\text{const.}
+\]</span></p>
+<h2 id="理想流体运动微分方程">5.2 理想流体运动微分方程</h2>
+<p>欧拉运动方程：</p>
+<p><span class="math display">\[
+\begin{cases}
+f_x-\frac{1}{\rho}\frac{\partial p}{\partial
+x}=\frac{\mathrm{D}u}{\mathrm{D}t} \\
+f_y-\frac{1}{\rho}\frac{\partial p}{\partial
+y}=\frac{\mathrm{D}v}{\mathrm{D}t} \\
+f_z-\frac{1}{\rho}\frac{\partial p}{\partial
+z}=\frac{\mathrm{D}w}{\mathrm{D}t}
+\end{cases}
+\]</span></p>
+<p>矢量形式：</p>
+<p><span class="math display">\[
+\vec{f}-\frac{1}{\rho}\nabla p=\frac{\mathrm{D}\vec{V}}{\mathrm{D}t}
+\]</span></p>
+<h2 id="黏性流体运动微分方程">5.3 黏性流体运动微分方程</h2>
+<p>对均质、不可压缩、黏度为常数的黏性流体：</p>
+<p><span class="math display">\[
+\begin{cases}
+f_x-\frac{1}{\rho}\frac{\partial p}{\partial
+x}+\frac{\mu}{\rho}\left(\frac{\partial^2u}{\partial
+x^2}+\frac{\partial^2u}{\partial y^2}+\frac{\partial^2u}{\partial
+z^2}\right)=\frac{\partial u}{\partial t}+u\frac{\partial u}{\partial
+x}+v\frac{\partial u}{\partial y}+w\frac{\partial u}{\partial z} \\
+f_y-\frac{1}{\rho}\frac{\partial p}{\partial
+y}+\frac{\mu}{\rho}\left(\frac{\partial^2v}{\partial
+x^2}+\frac{\partial^2v}{\partial y^2}+\frac{\partial^2v}{\partial
+z^2}\right)=\frac{\partial v}{\partial t}+u\frac{\partial v}{\partial
+x}+v\frac{\partial v}{\partial y}+w\frac{\partial v}{\partial z} \\
+f_z-\frac{1}{\rho}\frac{\partial p}{\partial
+z}+\frac{\mu}{\rho}\left(\frac{\partial^2w}{\partial
+x^2}+\frac{\partial^2w}{\partial y^2}+\frac{\partial^2w}{\partial
+z^2}\right)=\frac{\partial w}{\partial t}+u\frac{\partial w}{\partial
+x}+v\frac{\partial w}{\partial y}+w\frac{\partial w}{\partial z}
+\end{cases}
+\]</span></p>
+<h1 id="伯努利方程">6. 伯努利方程</h1>
+<h2 id="理想流体微元流束伯努利方程">6.1 理想流体微元流束伯努利方程</h2>
+<p><span class="math display">\[
+z+\frac{p}{\rho g}+\frac{V^2}{2g}=C
+\]</span></p>
+<p>两点式：</p>
+<p><span class="math display">\[
+z_1+\frac{p_1}{\rho g}+\frac{V_1^2}{2g}
+=z_2+\frac{p_2}{\rho g}+\frac{V_2^2}{2g}
+\]</span></p>
+<h2 id="黏性流体总流伯努利方程">6.2 黏性流体总流伯努利方程</h2>
+<p><span class="math display">\[
+z_1+\frac{p_1}{\rho g}+\alpha_1\frac{\bar{V}_1^2}{2g}
+=z_2+\frac{p_2}{\rho g}+\alpha_2\frac{\bar{V}_2^2}{2g}+h_w
+\]</span></p>
+<h1 id="流态判别与阻力损失">7. 流态判别与阻力损失</h1>
+<h2 id="雷诺数">7.1 雷诺数</h2>
+<p>临界速度关系：</p>
+<p><span class="math display">\[
+V_c\propto\frac{\mu}{\rho d}=\frac{\nu}{d}
+\]</span></p>
+<p>圆管下临界雷诺数常取：</p>
+<p><span class="math display">\[
+\mathrm{Re}_c\approx 2300
+\]</span></p>
+<p>雷诺数：</p>
+<p><span class="math display">\[
+\mathrm{Re}=\frac{Vd_e}{\nu}
+\]</span></p>
+<p>当量直径：</p>
+<p><span class="math display">\[
+d_e=\frac{4A}{\kappa}
+\]</span></p>
+<p>物理意义：</p>
+<p><span class="math display">\[
+\mathrm{Re}=\frac{\rho Vl}{\mu}
+=\frac{\rho V^2l^2}{\mu Vl}
+=\frac{\text{惯性力}}{\text{黏性力}}
+\]</span></p>
+<h2 id="沿程损失">7.2 沿程损失</h2>
+<p>达西-威斯巴赫公式：</p>
+<p><span class="math display">\[
+\begin{cases}
+h_f=\frac{\lambda l}{d}\frac{V^2}{2g} \\
+\Delta p_f=\lambda\frac{l}{d}\rho\frac{V^2}{2}
+\end{cases}
+\]</span></p>
+<p>层流圆管：</p>
+<p><span class="math display">\[
+\lambda=\frac{64}{\mathrm{Re}}
+\]</span></p>
+<h2 id="局部损失">7.3 局部损失</h2>
+<p><span class="math display">\[
+\begin{cases}
+h_j=\zeta\frac{V^2}{2g} \\
+\Delta p_j=\zeta\rho\frac{V^2}{2}
+\end{cases}
+\]</span></p>
+<h1 id="圆管定常层流流动">8. 圆管定常层流流动</h1>
+<h2 id="受力与平衡">8.1 受力与平衡</h2>
+<p>截面压力：</p>
+<p><span class="math display">\[
+P_1=p_1A,
+\qquad
+P_2=p_2A
+\]</span></p>
+<p>重力：</p>
+<p><span class="math display">\[
+G=\rho gAl
+\]</span></p>
+<p>侧面总摩擦力：</p>
+<p><span class="math display">\[
+T=2\pi rl\tau
+\]</span></p>
+<p>力平衡方程：</p>
+<p><span class="math display">\[
+p_1A-p_2A-2\pi rl\tau-\rho gAl\sin\theta=0
+\]</span></p>
+<p>对应沿程损失：</p>
+<p><span class="math display">\[
+\begin{cases}
+h_f=\frac{2\tau}{r\rho g}l \\
+\Delta p_f=\frac{2\tau}{r}l
+\end{cases}
+\]</span></p>
+<h2 id="速度分布">8.2 速度分布</h2>
+<p>牛顿内摩擦定律：</p>
+<p><span class="math display">\[
+\tau=-\mu\frac{\mathrm{d}u}{\mathrm{d}r}
+\]</span></p>
+<p>层流速度分布：</p>
+<p><span class="math display">\[
+u=\frac{\Delta p_f}{4\mu l}(r_0^2-r^2)
+\]</span></p>
+<p>最大流速：</p>
+<p><span class="math display">\[
+u_{\max}=\frac{\Delta p_f}{4\mu l}r_0^2
+\]</span></p>
+<p>抛物线形式：</p>
+<p><span class="math display">\[
+u=u_{\max}\left(1-\frac{r^2}{r_0^2}\right)
+\]</span></p>
+<h2 id="流量与平均流速">8.3 流量与平均流速</h2>
+<p>微元流量：</p>
+<p><span class="math display">\[
+\mathrm{d}q_v=u\,\mathrm{d}A=u\cdot 2\pi r\,\mathrm{d}r
+\]</span></p>
+<p>哈根-泊肃叶公式：</p>
+<p><span class="math display">\[
+q_v=\frac{\Delta p_f\pi}{8\mu l}r_0^4
+\]</span></p>
+<p>平均流速：</p>
+<p><span class="math display">\[
+V=\frac{q_v}{A}=\frac{\Delta p_f}{8\mu l}r_0^2
+\]</span></p>
+<p>平均流速与最大流速关系：</p>
+<p><span class="math display">\[
+u_{\max}=2V
+\]</span></p>
+<h2 id="切应力分布">8.4 切应力分布</h2>
+<p><span class="math display">\[
+\tau=-\mu\frac{\mathrm{d}u}{\mathrm{d}r}=\frac{\Delta p_f}{2l}r
+\]</span></p>
+<p>管壁切应力：</p>
+<p><span class="math display">\[
+\tau_0=\frac{\Delta p_f}{2l}r_0
+\]</span></p>
+<p>分布关系：</p>
+<p><span class="math display">\[
+\tau=\tau_0\frac{r}{r_0}
+\]</span></p>
+<h2 id="沿程损失-1">8.5 沿程损失</h2>
+<p><span class="math display">\[
+\Delta p_f=\frac{8\mu l}{r_0^2}V
+\]</span></p>
+<p><span class="math display">\[
+h_f=\frac{\Delta p_f}{\rho g}
+=\frac{8\mu l}{\rho gr_0^2}V
+=\frac{32\mu l}{\rho gd^2}V
+=\frac{64}{\mathrm{Re}}\frac{l}{d}\frac{V^2}{2g}
+=\lambda\frac{l}{d}\frac{V^2}{2g}
+\]</span></p>
+<p>其中</p>
+<p><span class="math display">\[
+d=2r_0
+\]</span></p>
+<h2 id="动能修正系数">8.6 动能修正系数</h2>
+<p><span class="math display">\[
+\alpha=\frac{1}{A}\iint_A\left(\frac{u}{V}\right)^3\,\mathrm{d}A=2
+\]</span></p>
+<h1 id="常用符号">9. 常用符号</h1>
 <ul>
-<li>热平衡
-<ul>
-<li>无外界作用下热力系统各部分之间没有热量的传递，系统内部、系统与外界处处温度相等</li>
-</ul></li>
-<li>力平衡
-<ul>
-<li>无外界作用下，系统各部分之间没有相对位移，系统内部、系统与外界处处压力相等</li>
-</ul></li>
-</ul>
-<h4 id="状态方程">状态方程</h4>
-<p><span class="math display">\[
-f(p,V,T)=0
-\]</span></p>
-<h4 id="状态参数坐标图">状态参数坐标图</h4>
-<figure>
-<img
-src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/20260315205337.png" srcset="/img/loading.jpeg" lazyload
-alt="状态参数坐标图" />
-<figcaption aria-hidden="true">状态参数坐标图</figcaption>
-</figure>
-<h4 id="工质的状态变化过程">工质的状态变化过程</h4>
-<h5 id="准静态过程">准静态过程</h5>
-<p>偏离平衡态无穷小，随时恢复平衡的状态变化过程</p>
-<ul>
-<li>破坏平衡的势无限小</li>
-<li>过程进行无限缓慢</li>
-<li>工质有恢复平衡的能力</li>
-</ul>
-<h5 id="可逆过程">可逆过程</h5>
-<p>系统可以经过原途径返回原来状态而在外界不留下任何变化的过程</p>
-<p><span class="math display">\[
-\text{可逆过程}=\text{准静态过程}+\text{无耗散}
-\]</span></p>
-<ul>
-<li>一切实际过程均为不可逆过程</li>
-<li>可逆过程是实际过程的理想极限</li>
-</ul>
-<h4 id="功和热量">功和热量</h4>
-<h5 id="功">功</h5>
-<ul>
-<li>力学定义
-<ul>
-<li>力和沿力方向位移的乘积</li>
-</ul></li>
-<li>热力学定义
-<ul>
-<li>通过边界传递的能量，且其全部过程可表现为举起重物</li>
-</ul></li>
-<li>特点
-<ul>
-<li>功是过程量</li>
-<li>可在 <span class="math inline">\(p-v\)</span>
-图上表示为过程线下的面积</li>
-</ul></li>
-</ul>
-<h5 id="热量">热量</h5>
-<p>仅仅由于温差通过边界传递的能量</p>
-<ul>
-<li>特点
-<ul>
-<li>热量也是过程量</li>
-</ul></li>
-</ul>
-<h5 id="熵">熵</h5>
-<p><span class="math display">\[
-\mathrm{d}S=\frac{\partial q_{rev}}{T}
-\]</span></p>
-<ul>
-<li><span class="math inline">\(q_{rev}\)</span> <span
-class="math inline">\(1\ \text{kg}\)</span>
-工质在微元可逆过程中与热源交换的热量</li>
-</ul>
-<p>单位为 <span class="math inline">\(J/(kg\cdot K)\)</span></p>
-<p><span class="math display">\[
-S=k\ln \Omega
-\]</span></p>
-<h4 id="热力循环">热力循环</h4>
-<p>密闭的热力过程，在这个过程中一切状态参数恢复到初始状态</p>
-<p><span class="math display">\[
-\oint \mathrm{d}X=0
-\]</span></p>
-<ul>
-<li>动力循环
-<ul>
-<li>输出净功</li>
-<li>在 <span class="math inline">\(p-v\)</span> 或 <span
-class="math inline">\(T-s\)</span> 图上顺时针</li>
-</ul></li>
-<li>逆循环
-<ul>
-<li>输入净功</li>
-<li>在状态图上逆时针</li>
-<li>包括制冷循环与热泵循环</li>
-</ul></li>
-<li>循环性能指标
-<ul>
-<li>热效率 <span class="math display">\[
-\eta = \frac{W_{net}}{Q_{in}}
-\]</span></li>
-<li>制冷系数 <span class="math display">\[
-\varepsilon = \frac{Q}{W_{net}}
-\]</span></li>
-</ul></li>
-</ul>
-<h2 id="热力学第一定律">热力学第一定律</h2>
-<h3 id="热力学第一定律表述">热力学第一定律表述</h3>
-<p>惹事能的一种，机械能和热能之间相互转换的时候比值是一定的</p>
-<p>其实质是能量守恒与转换定律在热能与机械能相互转换中的应用</p>
-<h3 id="热力学第一定律基本能量方程式">热力学第一定律基本能量方程式</h3>
-<figure>
-<img
-src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/20260321161247.png" srcset="/img/loading.jpeg" lazyload
-alt="能量流动图" />
-<figcaption aria-hidden="true">能量流动图</figcaption>
-</figure>
-<p><span class="math display">\[
-\left(\delta Q + \sum \delta m_i e_i\right) - \left(\delta
-W_\text{total}+\sum \delta m_je_j\right) = \mathrm{d}E
-\]</span></p>
-<ul>
-<li>$(Q + m_i e_i) $ 为加入系统的能量</li>
-<li><span class="math inline">\(\left(\delta W_\text{total}+\sum \delta
-m_je_j\right)\)</span> 为离开系统的能量</li>
-<li><span class="math inline">\(\mathrm{d}E\)</span>
-为系统储存能的增量</li>
-</ul>
-<p>可以将其化为</p>
-<p><span class="math display">\[
-Q = \Delta E + \int _{\tau_1} ^{\tau_2} \left[\sum\left(e_j\delta
-m_j\right)-\sum\left(e_i\delta m_i\right)\right]+W_{\text{total}}
-\]</span></p>
-<h4 id="闭口系基本能量方程式">闭口系基本能量方程式</h4>
-<p>由</p>
-<p><span class="math display">\[
-Q = \Delta E + \int _{\tau_1} ^{\tau_2} \left[\sum\left(e_j\delta
-m_j\right)-\sum\left(e_i\delta m_i\right)\right]+W_{\text{total}}
-\]</span></p>
-<p>由于在闭口系中</p>
-<p><span class="math display">\[
-\left\{
-   \begin{aligned}
-      &amp;\delta m_i=0\\
-      &amp;\delta m_j=0
-   \end{aligned}
-\right.
-\]</span></p>
-<p>并且忽略宏观动能和宏观位能的变化</p>
-<p><span class="math display">\[
-\delta E = \Delta U
-\]</span></p>
-<p>可得</p>
-<p><span class="math display">\[
-\left\{
-   \begin{aligned}
-      &amp;Q=\Delta U+W\\
-      &amp;\delta Q = \mathrm{d}U + \delta W
-   \end{aligned}
-\right.
-\]</span></p>
-<h3 id="稳定流动开口系能量方程">稳定流动开口系能量方程</h3>
-<h4 id="局部平衡状态">局部平衡状态</h4>
-<p>将控制体积内分割成无数薄层，在层内工质处于平衡状态，但是可以有 <span
-class="math inline">\(\mathrm{d}p\)</span> 和 <span
-class="math inline">\(\mathrm{d}T\)</span> 的微小变化</p>
-<ul>
-<li>各截面上参数不随时间变化</li>
-<li><span class="math inline">\(\Delta E_{CV}=0\)</span>，<span
-class="math inline">\(\Delta S_{CV}=0\)</span>，<span
-class="math inline">\(\Delta m_{CV}=0\)</span> 等</li>
-</ul>
-<h4 id="稳定流动能量方程">稳定流动能量方程</h4>
-<ul>
-<li>流入的能量 <span class="math display">\[
-Q+q_{m1}\left(u_1+p_1v_1+\frac{1}{2}c_{f1}^2+gz_1\right)
-\]</span></li>
-<li>流出的能量 <span class="math display">\[
-W_s+q_{m2}\left(u_2+p_2v_2+\frac{1}{2}c_{f2}^2+gz_2\right)
-\]</span></li>
-<li>系统内部储能增量 <span class="math inline">\(\displaystyle \Delta
-E_{CV}\)</span> 为两者相减</li>
-</ul>
-<p>并且内部储能增量为 <span class="math inline">\(0\)</span></p>
-<p><span class="math display">\[
-Q=(H_2-H_1)+q_m\left(\frac{c_{f2}^2-c_{f1}^2}{2}\right)+q_m
-g(z_2-z_1)+W_s
-\]</span></p>
-<p><span class="math display">\[
-q=h_2-h_1+\left(\frac{c_{f2}^2-c_{f1}^2}{2}\right)+g(z_2-z_1)+w_s
-\]</span></p>
-<p><span class="math display">\[
-q-\Delta u = \Delta
-h+\left(\frac{c_{f2}^2-c_{f1}^2}{2}\right)+g(z_2-z_1)+w_s
-\]</span></p>
-<h4 id="技术功">技术功</h4>
-<p>技术上可以利用的功 <span class="math inline">\(w_t\)</span></p>
-<h2 id="气体和蒸汽的性质">气体和蒸汽的性质</h2>
-<h3 id="理想气体">理想气体</h3>
-<h4 id="理想气体的基本假设">理想气体的基本假设</h4>
-<ol type="1">
-<li>分子为不占体积的弹性质点</li>
-<li>除碰撞外分子间无作用力</li>
-</ol>
-<p>理想气体为实际气体在高温低压时的抽象</p>
-<h4 id="理想气体的状态方程">理想气体的状态方程</h4>
-<p><span class="math display">\[
-pV=mR_gT
-\]</span></p>
-<p>变式为</p>
-<p><span class="math display">\[
-\left\{
-   \begin{aligned}
-      &amp;pv=R_gT \text{（单位质量理想气体）}\\
-      &amp;pV=nR_uT \text{（单位物质的量理想气体）}
-   \end{aligned}
-\right.
-\]</span></p>
-<h3 id="理想气体的比热容">理想气体的比热容</h3>
-<h4 id="比热容">比热容</h4>
-<p>定义</p>
-<p><span class="math display">\[
-c=\lim_{\Delta T\to 0} \frac{q}{\Delta T}=\frac{\delta q}{\mathrm{d}T}
-\]</span></p>
-<p>按照物量分为</p>
-<ul>
-<li>定容热容 <span class="math inline">\(c_v\)</span>
-<ul>
-<li>在体积不变的条件下，单位质量工质温度升高 <span
-class="math inline">\(1\ K\)</span> 时吸收的热量</li>
-</ul></li>
-<li>定压热容 <span class="math inline">\(c_p\)</span>
-<ul>
-<li>在压力不变的条件下，单位质量工质温度升高 <span
-class="math inline">\(1\ K\)</span> 时吸收的热量</li>
-</ul></li>
-</ul>
-<h4
-id="理想气体比定压热容比定容热容和迈耶公式">理想气体比定压热容，比定容热容和迈耶公式</h4>
-<h5 id="一般过程的热容">一般过程的热容</h5>
-<p><span class="math display">\[
-\begin{aligned}
-c= \frac{\delta q}{\mathrm{d}T} &amp;= \frac{\mathrm{d}u+\delta
-w}{\mathrm{d}T}\\
-&amp;=
-\frac{\mathrm{d}u}{\mathrm{d}T}+\frac{p\mathrm{d}v}{\mathrm{d}T}\\
-\end{aligned}
-\]</span></p>
-<p>将 <span class="math inline">\(\displaystyle
-\mathrm{d}u=\frac{\partial u}{\partial T}\mathrm{d}T+\frac{\partial
-u}{\partial v}\mathrm{d}v\)</span> 代入上式</p>
-<p><span class="math display">\[
-\begin{aligned}
-c&amp;=\frac{\partial u}{\partial T}+\left(\frac{\partial u}{\partial
-v}+p\right)\frac{\mathrm{d}v}{\mathrm{d}T}
-\end{aligned}
-\]</span></p>
-<h5 id="定压比热容">定压比热容</h5>
-<p><span class="math display">\[
-\begin{aligned}
-  c_p&amp;=\frac{\partial u}{\partial T}+\left(\frac{\partial
-u}{\partial v}+p\right)\frac{\mathrm{d}v}{\mathrm{d}T}\\
-  &amp;= \frac{\partial u}{\partial T}+\left(\frac{\partial u}{\partial
-v}+p\right)\frac{R_g}{p}\\
-  &amp;= \frac{\partial u}{\partial T}+\frac{\partial u}{\partial v}+R_g
-\end{aligned}
-\]</span></p>
-<h5 id="迈耶公式">迈耶公式</h5>
-<p><span class="math display">\[
-c_p-c_v=\frac{\mathrm{d}h-\mathrm{d}u}{\mathrm{d}T}=\frac{\mathrm{d}(u+pv)-\mathrm{d}u}{\mathrm{d}T}=\frac{\mathrm{d}(pv)}{\mathrm{d}T}=R_g
-\]</span></p>
-<p>理想气体 <span class="math inline">\(c_p\)</span> 大于 <span
-class="math inline">\(c_v\)</span>，两者之差为 <span
-class="math inline">\(R_g\)</span></p>
-<p>可以理解为，定压过程需要克服外界压力做功，所以需要更多的热量来升高温度</p>
-<h5 id="理想气体的比热容比">理想气体的比热容比</h5>
-<p><span class="math display">\[
-\gamma = \frac{c_p}{c_v}
-\]</span></p>
-<p><span class="math display">\[
-\left\{
-   \begin{aligned}
-      &amp;c_p=\frac{\gamma R_g}{\gamma -1}\\
-      &amp;c_v=\frac{R_g}{\gamma -1}
-   \end{aligned}
-\right.
-\]</span></p>
-<h5 id="利用比热容计算热量">利用比热容计算热量</h5>
-<h6 id="积分计算">积分计算</h6>
-<p><span class="math display">\[
-c=\frac{\delta q}{\mathrm{d}T} \Rightarrow \delta q = c\ \mathrm{d}T
-\]</span></p>
-<p><span class="math display">\[
-q = \int_{T_1}^{T_2} c\ \mathrm{d}T
-\]</span></p>
-<h6 id="平均比热容表">平均比热容表</h6>
-<p><span class="math display">\[
-q=\int_0^{T_2} c\ \mathrm{d}T - \int_0^{T_1} c\ \mathrm{d}T =
-c_n\vert_0^{T_2}\cdot T_2-c_n\vert_0^{T_1}\cdot T_1
-\]</span></p>
-<h6 id="平均比热直线式">平均比热直线式</h6>
-<p>令 <span class="math inline">\(c_n= a + bT\)</span>，则</p>
-<p><span class="math display">\[
-q = \int_{T_1}^{T_2} (a + bT)\ \mathrm{d}T =
-a(T_2-T_1)+\frac{b}{2}(T_2^2-T_1^2) = \left(a +
-\frac{b}{2}(T_1+T_2)\right)(T_2-T_1)
-\]</span></p>
-<p>令 <span class="math inline">\(c_n\vert_{T_1}^{T_2} = a +
-\frac{b}{2}(T_1+T_2)\)</span></p>
-<h6 id="定值比热容">定值比热容</h6>
-<p><span class="math display">\[
-\left\{
-   \begin{aligned}
-      &amp;c_{v,m}=\frac{i}{2}R\\
-      &amp;c_{p,m}=\frac{i+2}{2}R
-   \end{aligned}
-\right.
-\]</span></p>
-<h3 id="理想气气体的热力学能焓和熵">理想气气体的热力学能、焓和熵</h3>
-<h4 id="熵-1">熵</h4>
-<p><span class="math display">\[
-\mathrm{d}S = \frac{\delta q_{rev}}{T} = \frac{\mathrm{d}u + p\
-\mathrm{d}v}{T}=c_v\frac{\mathrm{d}T}{T}+R\frac{\mathrm{d}v}{v}
-\]</span></p>
-<h3 id="饱和状态饱和温度和饱和压力">饱和状态、饱和温度和饱和压力</h3>
-<h4 id="汽化和液化">汽化和液化</h4>
-<ul>
-<li>汽化 液态到气态的过程
-<ul>
-<li>蒸发
-<ul>
-<li>在液体表面发生的汽化过程</li>
-</ul></li>
-<li>沸腾
-<ul>
-<li>在液体内部发生的汽化过程</li>
-</ul></li>
-</ul></li>
+<li><span class="math inline">\(\rho\)</span>：密度</li>
+<li><span class="math inline">\(d\)</span>：管径</li>
+<li><span class="math inline">\(d_e\)</span>：当量直径</li>
+<li><span class="math inline">\(\mu\)</span>：动力黏度</li>
+<li><span class="math inline">\(\nu\)</span>：运动黏度</li>
+<li><span class="math inline">\(\tau\)</span>：切应力</li>
+<li><span class="math inline">\(\lambda\)</span>：沿程阻力系数</li>
+<li><span class="math inline">\(\zeta\)</span>：局部阻力系数</li>
+<li><span class="math inline">\(\alpha\)</span>：动能修正系数</li>
+<li><span class="math inline">\(h_f\)</span>：沿程损失</li>
+<li><span class="math inline">\(h_j\)</span>：局部损失</li>
+<li><span class="math inline">\(h_w\)</span>：总水头损失</li>
 </ul>
 
                 
@@ -870,6 +850,10 @@ a(T_2-T_1)+\frac{b}{2}(T_2^2-T_1^2) = \left(a +
       
         <a href="/tags/%E7%83%AD%E5%8A%9B%E5%AD%A6/" class="print-no-link">#热力学</a>
       
+        <a href="/tags/%E6%B5%81%E4%BD%93%E5%8A%9B%E5%AD%A6/" class="print-no-link">#流体力学</a>
+      
+        <a href="/tags/%E5%85%AC%E5%BC%8F%E6%95%B4%E7%90%86/" class="print-no-link">#公式整理</a>
+      
     </div>
   
 </div>
@@ -882,18 +866,12 @@ a(T_2-T_1)+\frac{b}{2}(T_2^2-T_1^2) = \left(a +
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts_/%E6%9C%AC%E7%A7%91%E8%AF%BE%E7%A8%8B/%E7%89%A9%E7%90%86/notes/%E6%9C%AC%E7%A7%91/%E7%89%A9%E7%90%86/%E6%B5%81%E5%8A%A8%E4%BC%A0%E7%83%AD%E5%9F%BA%E7%A1%80/" title="流动传热基础">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">流动传热基础</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts_/%E4%B8%AA%E4%BA%BA%E5%AD%A6%E4%B9%A0/%E5%B7%A5%E5%85%B7/notes/%E4%B8%AA%E4%BA%BA%E5%AD%A6%E4%B9%A0/%E5%B7%A5%E5%85%B7/vim%E7%AC%94%E8%AE%B0/" title="Vim 笔记">
-                        <span class="hidden-mobile">Vim 笔记</span>
+                      <a href="/posts_/%E6%9C%AC%E7%A7%91%E8%AF%BE%E7%A8%8B/%E7%94%B5%E8%B7%AF/notes/%E6%9C%AC%E7%A7%91/%E7%94%B5%E8%B7%AF/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/" title="数字电子技术">
+                        <span class="hidden-mobile">数字电子技术</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

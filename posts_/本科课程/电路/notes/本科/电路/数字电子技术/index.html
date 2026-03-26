@@ -27,7 +27,7 @@
 <meta property="og:description" content="数字电子技术 基本概念 数字量和模拟量 电子电路分为两种  模拟电路 Analog Circuit  处理的是模拟信号 Analog Signal 时间和数值上是连续的 Continuous  数字电路 Digital Circuit  处理的数字信号 Digital Signal 时间和数值上是离散的 Discrete 数值上离散是指为量化单位的整数倍   离散信号在时间上离散，但是数值仍然保留">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-03-04T10:00:00.000Z">
-<meta property="article:modified_time" content="2026-03-10T07:51:26.000Z">
+<meta property="article:modified_time" content="2026-03-25T11:36:09.000Z">
 <meta property="article:author" content="dcldyhb">
 <meta property="article:tag" content="电路">
 <meta property="article:tag" content="数字电路">
@@ -226,7 +226,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.6k 字
+          4.8k 字
         
       </span>
     
@@ -237,7 +237,7 @@
         
         
         
-          22 分钟
+          41 分钟
         
       </span>
     
@@ -1153,6 +1153,619 @@ AB+\bar{A}C+BC=AB+\bar{A}C\)</span></li>
 (A+\bar{A})BC=ABC+\bar{A}BC\)</span></li>
 </ul>
 <p>可以理解为条件多的项被条件少的项吸收了</p>
+<h4 id="德摩根定律-de-morgans-theorems">德摩根定律 De Morgan’s
+Theorems</h4>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp; \overline{A \cdot B} = \overline{A} + \overline{B} \\
+      &amp; \overline{A + B} = \overline{A} \cdot \overline{B}
+   \end{aligned}
+\right.
+\]</span></p>
+<h3 id="逻辑函数的表示法及相互转换">逻辑函数的表示法及相互转换</h3>
+<h4 id="逻辑函数的表示法">逻辑函数的表示法</h4>
+<h5 id="逻辑表达式">逻辑表达式</h5>
+<p>形如</p>
+<p><span class="math display">\[
+F = A\overline{B} + \overline{A}B
+\]</span></p>
+<h5 id="真值表">真值表</h5>
+<p>输入所有可能的输入组合，并列出对应的输出值</p>
+<table>
+<thead>
+<tr>
+<th>A</th>
+<th>B</th>
+<th>Y</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>在真值表中，赋值为 <span class="math inline">\(1\)</span>
+的变量使用原始变量表示，赋值为 <span class="math inline">\(0\)</span>
+的变量使用取反变量表示</p>
+<p>例如，输入组合 <span class="math inline">\(A=0\)</span>、<span
+class="math inline">\(B=1\)</span> 对应的项为 <span
+class="math inline">\(\overline{A}B\)</span>，这样的乘积项被称为<strong>最小项</strong>，写作
+<span class="math inline">\(m_i\)</span>，其中 <span
+class="math inline">\(i\)</span>
+是输入组合的十进制表示，如例子中的最小项写作 <span
+class="math inline">\(m_1\)</span>，因为 <span
+class="math inline">\(A=0\)</span>、<span
+class="math inline">\(B=1\)</span> 的二进制表示为 <span
+class="math inline">\(01\)</span>，对应的十进制数为 <span
+class="math inline">\(1\)</span></p>
+<p>输入 <span class="math inline">\(n\)</span> 个变量有 <span
+class="math inline">\(2^n\)</span> 个最小项</p>
+<h6 id="将真值表转换为逻辑表达式">将真值表转换为逻辑表达式</h6>
+<ol type="1">
+<li>与或表达式 Sum of Products (SOP) 将所有输出为 <span
+class="math inline">\(1\)</span> 的输入组合对应的最小项相加</li>
+<li>与或非式 Product of Sums (POS)
+<ul>
+<li>将所有输出为 <span class="math inline">\(0\)</span>
+的输入组合对应的最大项相乘后取反</li>
+<li>在这里使用反演定理可以得到与或表达式 Product of Sums (POS)</li>
+<li>在与或表达式中的乘积项被称为<strong>最大项</strong>
+<ul>
+<li>最大项是赋值为 <span class="math inline">\(0\)</span>
+的变量使用原始变量表示，赋值为 <span class="math inline">\(1\)</span>
+的变量使用取反变量表示，将其求和得到的项被称为<strong>与或表达式</strong>，写作
+<span class="math inline">\(M_i\)</span>，其中 <span
+class="math inline">\(i\)</span> 是输入组合的十进制表示，如输入组合
+<span class="math inline">\(A=0\)</span>、<span
+class="math inline">\(B=1\)</span> 对应的最大项为 <span
+class="math inline">\(A + \overline{B}\)</span>，写作 <span
+class="math inline">\(M_1\)</span>，因为 <span
+class="math inline">\(A=0\)</span>、<span
+class="math inline">\(B=1\)</span> 的二进制表示为 <span
+class="math inline">\(01\)</span>，对应的十进制数为 <span
+class="math inline">\(1\)</span></li>
+</ul></li>
+</ul></li>
+</ol>
+<p>标准与或表达式 standard Sum of Products (SOP) 和标准与或非式 standard
+Product of Sums (POS) 是指在表达式中包含所有的最小项或最大项</p>
+<h5 id="逻辑图">逻辑图</h5>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202603181557552.png" srcset="/img/loading.jpeg" lazyload
+alt="逻辑图" />
+<figcaption aria-hidden="true">逻辑图</figcaption>
+</figure>
+<h2 id="门电路">门电路</h2>
+<p>按照逻辑功能可以将门电路分为</p>
+<ul>
+<li>与门</li>
+<li>或门</li>
+<li>非门</li>
+<li>与非门</li>
+<li>或非门</li>
+<li>与或非门</li>
+<li>异或门</li>
+</ul>
+<p>一般来说门电路采用正逻辑</p>
+<ul>
+<li>逻辑 <span class="math inline">\(1\)</span> 对应高电平，逻辑 <span
+class="math inline">\(0\)</span> 对应低电平</li>
+</ul>
+<h3 id="分立元件门电路">分立元件门电路</h3>
+<h4 id="基本思想">基本思想</h4>
+<p>分立元件门电路本质上是利用分立的二极管、三极管、电阻等器件构成逻辑功能电路</p>
+<p>数字电路中常将器件的工作状态抽象为“开关”</p>
+<ul>
+<li>导通时相当于开关闭合，电阻接近 <span
+class="math inline">\(0\)</span></li>
+<li>截止时相当于开关断开，电阻接近 <span
+class="math inline">\(\infty\)</span></li>
+<li>理想情况下开关延迟近似为 <span class="math inline">\(0\)</span></li>
+</ul>
+<p>半导体二极管、三极管和 MOS 管都是构成电子开关的基本元件</p>
+<h4 id="开关模型与逻辑对应关系">开关模型与逻辑对应关系</h4>
+<p>一般采用正逻辑</p>
+<ul>
+<li>高电平对应逻辑 <span class="math inline">\(1\)</span></li>
+<li>低电平对应逻辑 <span class="math inline">\(0\)</span></li>
+</ul>
+<p>对于上拉电阻加开关接地的基本模型：</p>
+<ul>
+<li>当开关 <span class="math inline">\(K\)</span> 断开时，输出端 <span
+class="math inline">\(V_O\)</span> 被上拉到高电平，对应逻辑 <span
+class="math inline">\(1\)</span></li>
+<li>当开关 <span class="math inline">\(K\)</span> 闭合时，输出端 <span
+class="math inline">\(V_O\)</span> 被接地拉成低电平，对应逻辑 <span
+class="math inline">\(0\)</span></li>
+</ul>
+<p>因此可以得到：</p>
+<ul>
+<li>开关断开 <span class="math inline">\(\rightarrow\)</span> 高电平
+<span class="math inline">\(\rightarrow\)</span> 逻辑 <span
+class="math inline">\(1\)</span></li>
+<li>开关闭合 <span class="math inline">\(\rightarrow\)</span> 低电平
+<span class="math inline">\(\rightarrow\)</span> 逻辑 <span
+class="math inline">\(0\)</span></li>
+</ul>
+<h4 id="二极管的开关作用">二极管的开关作用</h4>
+<p>二极管是否导通取决于两端电位关系</p>
+<ul>
+<li>当 <span class="math inline">\(V_A &gt; V_B\)</span>
+时，二极管导通</li>
+<li>当 <span class="math inline">\(V_A &lt; V_B\)</span>
+时，二极管截止</li>
+</ul>
+<p>因此二极管可以作为单向开关使用</p>
+<h4 id="三极管的开关作用">三极管的开关作用</h4>
+<p>三极管在数字电路中常工作在开关状态</p>
+<ul>
+<li>输入高电平使三极管导通并进入饱和区，相当于开关闭合</li>
+<li>输入低电平使三极管截止，相当于开关断开</li>
+</ul>
+<h4 id="二极管与门">二极管与门</h4>
+<p>在正逻辑下，二极管与门满足</p>
+<p><span class="math display">\[
+F = A \cdot B
+\]</span></p>
+<p>真值表如下</p>
+<table>
+<thead>
+<tr>
+<th><span class="math inline">\(A\)</span></th>
+<th><span class="math inline">\(B\)</span></th>
+<th><span class="math inline">\(F\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>其特点是：</p>
+<ul>
+<li>只有当所有输入都为 <span class="math inline">\(1\)</span>
+时，输出才为 <span class="math inline">\(1\)</span></li>
+</ul>
+<p>若改用负逻辑解释同一个电路，则正逻辑与门等效为负逻辑或门</p>
+<h4 id="反相器符号说明">反相器符号说明</h4>
+<p>逻辑图中常见两种“反相”标识：</p>
+<ul>
+<li><strong>bubble</strong>：小圆圈，表示该输入或输出端为低电平有效，或表示取反</li>
+<li><strong>triangle</strong>：在矩形逻辑符号中用于表示极性说明</li>
+</ul>
+<p>其核心含义都是：</p>
+<ul>
+<li>当符号出现在输入端或输出端时，表示该端的有效状态为逻辑 <span
+class="math inline">\(0\)</span></li>
+<li>也可理解为该端为低电平有效</li>
+</ul>
+<h4 id="与非门和或非门">与非门和或非门</h4>
+<h5 id="与非门-nand">与非门 NAND</h5>
+<p>逻辑表达式为</p>
+<p><span class="math display">\[
+F = \overline{A \cdot B}
+\]</span></p>
+<p>与非门还可以看作负逻辑或门</p>
+<h5 id="或非门-nor">或非门 NOR</h5>
+<p>逻辑表达式为</p>
+<p><span class="math display">\[
+F = \overline{A + B}
+\]</span></p>
+<p>或非门还可以看作负逻辑与门</p>
+<h4 id="分立元件门电路的缺点">分立元件门电路的缺点</h4>
+<p>分立元件门电路存在以下缺点：</p>
+<ol type="1">
+<li>体积大、工作不可靠</li>
+<li>需要不同电源</li>
+<li>各种门的输入、输出电平不匹配</li>
+</ol>
+<p>因此实际应用中通常采用集成门电路来替代分立元件实现方式</p>
+<h3 id="ic-门电路">IC 门电路</h3>
+<h2 id="组合逻辑电路">组合逻辑电路</h2>
+<ul>
+<li>数字电路
+<ul>
+<li>组合逻辑电路
+<ul>
+<li>特点：任何时刻的输出只取决于当前的输入</li>
+<li>组成：门电路，输出输入间没有反馈延迟通路，不存在记忆元件</li>
+</ul></li>
+<li>时序逻辑电路
+<ul>
+<li>特点：输出取决于当前的输入和原来的状态</li>
+<li>组成：组合电路、记忆元件</li>
+</ul></li>
+</ul></li>
+</ul>
+<h3 id="组合逻辑电路分析">组合逻辑电路分析</h3>
+<p>给定逻辑图，分析得到逻辑功能</p>
+<h3 id="常用的组合逻辑功能模块">常用的组合逻辑功能模块</h3>
+<p>与非门和或非门被称为通用门 Universal
+Gates，因为它们可以实现任意的逻辑功能</p>
+<h2 id="常用的组合逻辑器件">常用的组合逻辑器件</h2>
+<h3 id="加法器">加法器</h3>
+<ul>
+<li>逢二进一</li>
+<li>最低位是两个数最低位的叠加</li>
+<li>其余各位都是后三个数相加
+<ul>
+<li>加数</li>
+<li>被加数</li>
+<li>进位 用半加器实现</li>
+</ul></li>
+<li>任何位相加都会产生两个结果
+<ul>
+<li>本位和</li>
+<li>进位 用全加器实现</li>
+</ul></li>
+</ul>
+<h4 id="半加器-half-adder">半加器 Half Adder</h4>
+<p>不考虑从低位来的进位</p>
+<p>假设</p>
+<ul>
+<li><span class="math inline">\(A\)</span> 加数</li>
+<li><span class="math inline">\(B\)</span> 被加数</li>
+<li><span class="math inline">\(C_{\text{out}}\)</span> 进位</li>
+<li><span class="math inline">\(\Sigma\)</span> 本位和</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><span class="math inline">\(A\)</span></th>
+<th><span class="math inline">\(B\)</span></th>
+<th><span class="math inline">\(\Sigma\)</span></th>
+<th><span class="math inline">\(C_{\text{out}}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>可以得到逻辑表达式</p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp; \Sigma = \bar{A}B+A\bar{B}= A \oplus B \\
+      &amp; C_{\text{out}} = AB
+   \end{aligned}
+\right.
+\]</span></p>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/20260318191215.png" srcset="/img/loading.jpeg" lazyload
+alt="逻辑图和逻辑符号" />
+<figcaption aria-hidden="true">逻辑图和逻辑符号</figcaption>
+</figure>
+<h4 id="全加器-full-adder">全加器 Full Adder</h4>
+<p>假设</p>
+<ul>
+<li><span class="math inline">\(A\)</span> 加数</li>
+<li><span class="math inline">\(B\)</span> 被加数</li>
+<li><span class="math inline">\(C_{\text{in}}\)</span>
+从低位来的进位</li>
+<li><span class="math inline">\(C_{\text{out}}\)</span> 进位</li>
+<li><span class="math inline">\(\Sigma\)</span> 本位和</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><span class="math inline">\(A\)</span></th>
+<th><span class="math inline">\(B\)</span></th>
+<th><span class="math inline">\(C_{\text{in}}\)</span></th>
+<th><span class="math inline">\(C_{\text{out}}\)</span></th>
+<th><span class="math inline">\(\sum\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>可以得到逻辑表达式</p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp; \Sigma = A \oplus B \oplus C_{\text{in}} \\
+      &amp; C_{\text{out}} = AB + AC_{\text{in}} + BC_{\text{in}}
+   \end{aligned}
+\right.
+\]</span></p>
+<h4 id="多位加法">多位加法</h4>
+<h5 id="行波进位加法器-ripple-carry-adder">行波进位加法器 Ripple Carry
+Adder</h5>
+<p>以此将低全加器的进位输出接到高位全加器的进位输入，得到多行串进位的行波进位加法器</p>
+<h5 id="超前进位加法器-carry-look-ahead-adder">超前进位加法器 Carry
+Look-ahead Adder</h5>
+<p>基于输入参数预测每一集的进位输出</p>
+<p>是否进位输出取决于是否发生进位生成 Carry Generate 或进位传播 Carry
+Propagate</p>
+<ul>
+<li><p>进位生成 Carry Generate <span class="math inline">\(G_i\)</span>
+当 <span class="math inline">\(A_i\)</span> 和 <span
+class="math inline">\(B_i\)</span> 都为 <span
+class="math inline">\(1\)</span> 时，必然产生进位输出</p>
+<p><span class="math display">\[
+G_i = A_i B_i
+\]</span></p></li>
+<li><p>进位传播 Carry Propagate <span class="math inline">\(P_i\)</span>
+当 <span class="math inline">\(A_i\)</span> 和 <span
+class="math inline">\(B_i\)</span> 中至少有一个为 <span
+class="math inline">\(1\)</span> 时，可能产生进位输出</p>
+<p><span class="math display">\[
+P_i = A_i + B_i
+\]</span></p>
+<p>也可记作</p>
+<p><span class="math display">\[
+P_i = A_i \oplus B_i
+\]</span></p></li>
+</ul>
+<p><span class="math display">\[
+\begin{aligned}
+  C_i &amp;= A_iB_i+(A_i\oplus B_i)C_{i-1}\\
+      &amp;= G_i + P_i C_{i-1}
+\end{aligned}
+\]</span></p>
+<p>具体计算时将这个展开到不含进位输入的形式，从而实现一步到位计算每一位的进位输出</p>
+<h3 id="比较器-comparator">比较器 Comparator</h3>
+<h4 id="基本比较器-basic-comparator">基本比较器 Basic Comparator</h4>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/20260325175502.png" srcset="/img/loading.jpeg" lazyload
+alt="基本比较器" />
+<figcaption aria-hidden="true">基本比较器</figcaption>
+</figure>
+<h5 id="一位数值比较器">一位数值比较器</h5>
+<table>
+<thead>
+<tr>
+<th><span class="math inline">\(A\)</span></th>
+<th><span class="math inline">\(B\)</span></th>
+<th><span class="math inline">\(Y_{A=B}\)</span></th>
+<th><span class="math inline">\(Y_{A&gt;B}\)</span></th>
+<th><span class="math inline">\(Y_{A&lt;B}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;Y_{A=B}= \bar{A}\bar{B}+AB\\
+      &amp;Y_{A&gt;B}= A\bar{B}\\
+      &amp;Y_{A&lt;B}= \bar{A}B
+   \end{aligned}
+\right.
+\]</span></p>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/20260325181318.png" srcset="/img/loading.jpeg" lazyload
+alt="一位数值比较器" />
+<figcaption aria-hidden="true">一位数值比较器</figcaption>
+</figure>
+<h4 id="多位数值比较器">多位数值比较器</h4>
+<p>比较两个多位数的大小时，自高而低地逐位比较，而且只有在高位相等时，才需要比较低位</p>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/20260325181420.png" srcset="/img/loading.jpeg" lazyload
+alt="四位数值比较器" />
+<figcaption aria-hidden="true">四位数值比较器</figcaption>
+</figure>
+<h4 id="hc85-四位数值比较器">74HC85 四位数值比较器</h4>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/20260325183018.png" srcset="/img/loading.jpeg" lazyload
+alt="74HC85 四位数值比较器" />
+<figcaption aria-hidden="true">74HC85 四位数值比较器</figcaption>
+</figure>
+<ol type="1">
+<li>先看本位（当前4位）是否能判断大小</li>
+<li>如果能判断则直接输出（忽略级联输入）</li>
+<li>如果不能判断（相等）才使用级联输入</li>
+</ol>
+<h3 id="编码器-encoder">编码器 Encoder</h3>
+<h4 id="二进制编码器">二进制编码器</h4>
+<p>将一系列信号编制成二进制代码，<span class="math inline">\(n\)</span>
+位二进制代码可以表示 <span class="math inline">\(2^n\)</span>
+个不同的信号</p>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/20260325184241.png" srcset="/img/loading.jpeg" lazyload
+alt="三位二进制编码器" />
+<figcaption aria-hidden="true">三位二进制编码器</figcaption>
+</figure>
+<p>这里假设同一时刻只有一个输入为不同的</p>
+<h4 id="f148-优先编码器">74F148 优先编码器</h4>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/20260325191511.png" srcset="/img/loading.jpeg" lazyload
+alt="74F148 优先编码器" />
+<figcaption aria-hidden="true">74F148 优先编码器</figcaption>
+</figure>
+<p>8 线 3 线优先编码器</p>
+<ul>
+<li>输入 <span class="math inline">\(I_0\)</span> 至 <span
+class="math inline">\(I_7\)</span> 中优先级最高的是 <span
+class="math inline">\(I_7\)</span>，最低的是 <span
+class="math inline">\(I_0\)</span></li>
+<li>输出 <span class="math inline">\(A_0\)</span>、<span
+class="math inline">\(A_1\)</span>、<span
+class="math inline">\(A_2\)</span></li>
+<li>低电平有效
+<ul>
+<li>输入量 <span class="math inline">\(0\)</span> 表示有效</li>
+<li>反码输出</li>
+</ul></li>
+<li>当 <span class="math inline">\(\bar{EI}=1\)</span>
+时，芯片不工作</li>
+<li>当 <span class="math inline">\(\bar{EO}=1\)</span>
+时，表示芯片有有效输入</li>
+<li>当 <span class="math inline">\(\bar{GS} = 0\)</span>
+时，表示当前芯片被选中，即处于激活状态，并且有有效输入</li>
+</ul>
+<h4 id="二-十进制编码器-decimal-to-bcd-encoder">二-十进制编码器
+Decimal-to-BCD Encoder</h4>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/20260325193054.png" srcset="/img/loading.jpeg" lazyload
+alt="二-十进制编码器" />
+<figcaption aria-hidden="true">二-十进制编码器</figcaption>
+</figure>
+<p>将十个数字 <span class="math inline">\(0\sim 9\)</span> 编码成对应的
+BCD 码</p>
+<h3 id="译码器-decoder">译码器 Decoder</h3>
+<p>将二进制码翻译成电路的某状态</p>
+<h4 id="二进制译码器-minterm-generator">二进制译码器 Minterm
+Generator</h4>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/20260325193549.png" srcset="/img/loading.jpeg" lazyload
+alt="二进制译码器" />
+<figcaption aria-hidden="true">二进制译码器</figcaption>
+</figure>
 
                 
               </div>
@@ -1208,6 +1821,12 @@ AB+\bar{A}C+BC=AB+\bar{A}C\)</span></li>
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/posts_/%E6%9C%AC%E7%A7%91%E8%AF%BE%E7%A8%8B/%E7%89%A9%E7%90%86/notes/%E6%9C%AC%E7%A7%91/%E7%89%A9%E7%90%86/%E6%B5%81%E5%8A%A8%E4%BC%A0%E7%83%AD%E5%9F%BA%E7%A1%80%E5%85%AC%E5%BC%8F%E6%95%B4%E7%90%86/" title="流动传热基础公式整理">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">流动传热基础公式整理</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
