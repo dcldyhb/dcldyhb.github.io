@@ -27,7 +27,7 @@
 <meta property="og:description" content="流动传热学 流动分析基础 流体力学诸论 什么是流体力学  研究流体的平衡与运动规律的科学 研究对象：流体 研究内容：流体的运动规律和与周围物体的相互作用规律 平衡规律  绝对静止和相对静止  压力计算和压力分布   流动规律  管内流和绕流  速度分布、压力分布、能量损失    如何学习流体力学  理论研究  建立模型 推导方程 求解方程 解释结果  实验研究  相似理论 模型试验 测量 数据分析">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-03-03T08:00:00.000Z">
-<meta property="article:modified_time" content="2026-03-25T06:29:29.000Z">
+<meta property="article:modified_time" content="2026-03-27T05:53:40.000Z">
 <meta property="article:author" content="dcldyhb">
 <meta property="article:tag" content="物理">
 <meta property="article:tag" content="热力学">
@@ -226,7 +226,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          6.1k 字
+          7.3k 字
         
       </span>
     
@@ -237,7 +237,7 @@
         
         
         
-          52 分钟
+          62 分钟
         
       </span>
     
@@ -1443,9 +1443,294 @@ r_0^2}u_\text{max}=\frac{64}{\mathrm{Re}}
 \mathrm{d}r = 2
 \]</span></p>
 <h3 id="圆管定常湍流流动">圆管定常湍流流动</h3>
+<h4 id="紊流脉动现象与时均速度">紊流脉动现象与时均速度</h4>
+<ul>
+<li><p>紊流</p>
+<ul>
+<li>随机的三维非定常有旋运动</li>
+</ul></li>
+<li><p>脉动现象</p>
+<ul>
+<li>流动参数的变化</li>
+</ul></li>
+<li><p>时均速度</p>
+<p><span class="math display">\[
+\bar{u}=\frac{1}{T}\int_0^T u \, \mathrm{d}t
+\]</span></p></li>
+<li><p>脉动速度</p>
+<p><span class="math display">\[
+u&#39;
+\]</span></p></li>
+<li><p>瞬时速度</p>
+<p><span class="math display">\[
+u=\bar{u}+u&#39;
+\]</span></p></li>
+</ul>
+<p>同理可以得到</p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;p = \bar{p}+p&#39;\\
+      &amp;\rho = \bar{\rho}+\rho&#39;
+   \end{aligned}
+\right.
+\]</span></p>
+<p>在研究和计算紊流流动问题时，所指的流动参数都是时均参数</p>
+<p>为了书写方便，常将时均值符号上的 <span
+class="math inline">\(\bar{\quad}\)</span> 忽略</p>
+<p>将时均参数不随时间变化的流动称为准定常紊流</p>
+<h4 id="紊流结构">紊流结构</h4>
+<h5 id="紊流的速度分布">紊流的速度分布</h5>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/20260327101925.png" srcset="/img/loading.jpeg" lazyload
+alt="圆管内湍流速度分布" />
+<figcaption aria-hidden="true">圆管内湍流速度分布</figcaption>
+</figure>
+<ul>
+<li>靠近管壁的部分速度按照只限规律分布，被称为粘性底层</li>
+<li>靠近轴线中心的部分的速度时按照对数规律分布的，被称为紊流核心区
+<ul>
+<li>速度提督较小，速度较为均匀</li>
+<li>管轴线处的速度最大</li>
+</ul></li>
+</ul>
+<h5 id="紊流结构分析">紊流结构分析</h5>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/20260327102144.png" srcset="/img/loading.jpeg" lazyload
+alt="紊流结构示意图" />
+<figcaption aria-hidden="true">紊流结构示意图</figcaption>
+</figure>
+<ol type="1">
+<li>粘性底层区</li>
+<li>层流向紊流的过渡区</li>
+<li>充分发展区紊流（紊流核心区）</li>
+</ol>
+<p>黏性底层厚度公式</p>
+<ul>
+<li><p>常用形式</p>
+<p><span class="math display">\[
+\delta = \frac{58.3 d}{\mathrm{Re}^{0.875}}
+\]</span></p></li>
+<li><p>含有阻力系数</p>
+<p><span class="math display">\[
+\delta = \frac{32.8 d}{\mathrm{Re}\sqrt{\lambda}}
+\]</span></p></li>
+</ul>
+<h5 id="光滑管和粗糙管">光滑管和粗糙管</h5>
+<p>绝对粗糙度 <span class="math inline">\(\displaystyle
+\Delta\)</span></p>
+<ul>
+<li>管壁粗糙凸出部分的平均高度</li>
+</ul>
+<p>相对粗糙度 <span class="math inline">\(\displaystyle
+\frac{\Delta}{d}\)</span></p>
+<ul>
+<li><span class="math inline">\(\delta &gt; \Delta\)</span>：光滑管</li>
+<li><span class="math inline">\(\delta &lt; \Delta\)</span>：粗糙管</li>
+</ul>
+<h4 id="紊流的切向应力及分布">紊流的切向应力及分布</h4>
+<h5 id="切应力的构成">切应力的构成</h5>
+<ul>
+<li><p>摩擦切向应力</p>
+<p><span class="math display">\[
+\tau_\nu = \mu \frac{\mathrm{d}u}{\mathrm{d}y}
+\]</span></p></li>
+<li><p>附加切向应力</p>
+<p><span class="math display">\[
+\tau_t \propto \left(\frac{\mathrm{du}}{\mathrm{d}y}\right)^2
+\]</span></p></li>
+<li><p>紊流中的切向应力</p>
+<p><span class="math display">\[
+\tau = \tau_\nu + \tau_t
+\]</span></p>
+<ul>
+<li>靠近管壁的地方 <span class="math inline">\(\tau_\nu\)</span>
+占主导</li>
+<li>管道中心的地方 <span class="math inline">\(\tau_t\)</span>
+占主导</li>
+</ul></li>
+</ul>
 <h3 id="圆管流动沿程损失系数的确定">圆管流动沿程损失系数的确定</h3>
+<h4 id="尼古拉兹实验">尼古拉兹实验</h4>
+<p>用黄沙筛选后由细到粗分为六种，分别粘贴在光滑管上</p>
+<ul>
+<li>三种不同管径的圆管</li>
+<li>六种不同粗糙度</li>
+</ul>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/20260327103503.png" srcset="/img/loading.jpeg" lazyload
+alt="尼古拉兹实验结果" />
+<figcaption aria-hidden="true">尼古拉兹实验结果</figcaption>
+</figure>
+<ol type="1">
+<li>层流区 <span class="math display">\[
+\lambda = \frac{64}{\mathrm{Re}}
+\]</span></li>
+<li>过渡区 无一定规律</li>
+<li>紊流水力光滑管区
+<ul>
+<li><p>布拉修斯公式</p>
+<p><span class="math display">\[
+\lambda = \frac{0.3164}{\mathrm{Re}^{0.25}}
+\]</span></p></li>
+<li><p>尼古拉斯经验公式</p>
+<p><span class="math display">\[
+\frac{1}{\sqrt{\lambda}}=2\log_{10}(\mathrm{Re}\sqrt{\lambda})-0.8
+\]</span></p></li>
+</ul></li>
+<li>紊流水力粗糙管过渡区
+<ul>
+<li><p>实验结果</p>
+<p><span class="math display">\[
+\lambda = f(\mathrm{Re}, \frac{\Delta}{d})
+\]</span></p></li>
+<li><p>洛巴耶夫公式</p>
+<p><span class="math display">\[
+\begin{aligned}
+  \lambda &amp;=
+1.42\left(\log_{10}\left(\mathrm{Re}\frac{d}{\Delta}\right)\right)^{-2}\\
+  &amp;=1.42\left(\log_{10}\left(1.273\frac{q_v}{\nu\Delta}\right)\right)^{-2}
+\end{aligned}
+\]</span></p></li>
+<li><p>科尔布鲁克公式</p>
+<p><span class="math display">\[
+\frac{1}{\sqrt{\lambda}}=-2\log\_{10}\left(\frac{\Delta}{3.7d}+\frac{2.51}{\mathrm{Re}\sqrt{\lambda}}\right)
+\]</span></p></li>
+</ul></li>
+<li>紊流水力粗糙管平方阻力区
+<ul>
+<li><p>实验结果</p>
+<p><span class="math display">\[
+\lambda = f\left(\frac{\Delta}{d}\right)
+\]</span></p></li>
+<li><p>尼古拉兹经验公式</p>
+<p><span class="math display">\[
+\frac{1}{\sqrt{\lambda}}=2\log_{10}\frac{d}{2\Delta}+1.74
+\]</span></p></li>
+</ul></li>
+</ol>
+<h4 id="莫迪图">莫迪图</h4>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/20260327105452.png" srcset="/img/loading.jpeg" lazyload
+alt="莫迪图" />
+<figcaption aria-hidden="true">莫迪图</figcaption>
+</figure>
 <h3 id="管路中的局部损失">管路中的局部损失</h3>
+<h4 id="局部损失类型">局部损失类型</h4>
+<ol type="1">
+<li>突扩与突缩
+<ul>
+<li>经过阀门、弯管等套件</li>
+</ul></li>
+<li>弯管</li>
+</ol>
+<h4 id="突然扩大的局部损失">突然扩大的局部损失</h4>
+<p><span class="math display">\[
+h_j =
+\frac{(V_1-V_2)^2}{2g}=\zeta_1\frac{V_1^2}{2g}=\zeta_2\frac{V_2^2}{2g}
+\]</span></p>
+<ul>
+<li><span
+class="math inline">\(\zeta_1=\left(1-\frac{A_1}{A_2}\right)^2\)</span>：以入口流速为基准的局部损失系数</li>
+<li><span
+class="math inline">\(\zeta_2=\left(\frac{A_1}{A_2}-1\right)^2\)</span>：以出口流速为基准的局部损失系数</li>
+</ul>
+<h4 id="突然缩小的局部损失">突然缩小的局部损失</h4>
+<p><span class="math display">\[
+\zeta_2 = 0.5\left(1-\frac{A_1}{A_2}\right)^2
+\]</span></p>
 <h3 id="管路水力计算">管路水力计算</h3>
+<h4 id="管道系统分类">管道系统分类</h4>
+<ol type="1">
+<li>按照能量损失大小分
+<ul>
+<li>长管
+<ul>
+<li>局部阻力在总阻力的比例不足5％的管道系统，称为“水力长管”，只考虑沿程损失</li>
+</ul></li>
+<li>短管
+<ul>
+<li>在水力计算中，同时考虑沿程损失和局部损失的管道系统，称为短管</li>
+</ul></li>
+</ul></li>
+<li>按照管道系统结构分
+<ul>
+<li>简单管道
+<ul>
+<li>管径和粗糙度均相同的一根或数根管子串联在一起的管道</li>
+</ul></li>
+<li>复杂管道
+<ul>
+<li>串联管道</li>
+<li>并联管道</li>
+</ul></li>
+</ul></li>
+<li>与电路系统的类比
+<ul>
+<li>将流量比作电流</li>
+<li>压降相当于电压</li>
+</ul></li>
+</ol>
+<h4 id="管道水力计算方法">管道水力计算方法</h4>
+<h5 id="串联管道">串联管道</h5>
+<p>根据连续性原理，通过串联管道个管道的流量相等，对于不可压缩流体有</p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;q_{v1}=q_{v2}=\cdots = q_{vn} = const. \\
+      &amp;V_1A_1=V_2A_2=\cdots = V_nA_n=const.
+   \end{aligned}
+\right.
+\]</span></p>
+<p>串联管道的总能量损失是各段管道中的能量损失之和</p>
+<p><span class="math display">\[
+h_w =h_{w1}+h_{w2}+\cdots + h_{wn}
+\]</span></p>
+<p>若各段管道的管径都相同，通常被称为简单管道，则有</p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;A_1=A_2=\cdots = A_n=const. \\
+      &amp;V_1=V_2=\cdots = V_n=const.
+   \end{aligned}
+\right.
+\]</span></p>
+<h5 id="并联管道">并联管道</h5>
+<p>对于不可压缩流体</p>
+<p><span class="math display">\[
+q_v=q_{v1}+q_{v2}+\cdots + q_{vn}
+\]</span></p>
+<p>能量损失每个管道相等</p>
+<p><span class="math display">\[
+h_{w1}=h_{w2}=\cdots = h_{wn}=const.
+\]</span></p>
+<h5 id="基本公式">基本公式</h5>
+<p>连续性方程</p>
+<p><span class="math display">\[
+q_m = \rho_1 g V_1 A_1 = \rho_2 g V_2 A_2 = \text{const}
+\]</span></p>
+<p><span class="math display">\[
+q_v = V_1 A_1 = V_2 A_2 = \text{const}
+\]</span></p>
+<p>伯努利方程</p>
+<p><span class="math display">\[
+z_1 + \frac{p_1}{\rho g} + \frac{V_1^2}{2g}=z_2 + \frac{p_2}{\rho g} +
+\frac{V_2^2}{2g} + h_w
+\]</span></p>
+<p>能量损失</p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;h_w = \sum h_f + \sum h_j\\
+      &amp;h_f = \lambda \frac{l}{d} \frac{V^2}{2g}\\
+      &amp;h_j = \zeta \frac{V^2}{2g}
+   \end{aligned}
+\right.
+\]</span></p>
 
                 
               </div>
