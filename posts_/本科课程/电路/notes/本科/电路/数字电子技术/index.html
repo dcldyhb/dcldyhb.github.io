@@ -27,7 +27,7 @@
 <meta property="og:description" content="数字电子技术 基本概念 数字量和模拟量 电子电路分为两种  模拟电路 Analog Circuit  处理的是模拟信号 Analog Signal 时间和数值上是连续的 Continuous  数字电路 Digital Circuit  处理的数字信号 Digital Signal 时间和数值上是离散的 Discrete 数值上离散是指为量化单位的整数倍   离散信号在时间上离散，但是数值仍然保留">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-03-04T10:00:00.000Z">
-<meta property="article:modified_time" content="2026-03-25T11:36:09.000Z">
+<meta property="article:modified_time" content="2026-03-28T13:34:55.000Z">
 <meta property="article:author" content="dcldyhb">
 <meta property="article:tag" content="电路">
 <meta property="article:tag" content="数字电路">
@@ -226,7 +226,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          4.8k 字
+          6.3k 字
         
       </span>
     
@@ -237,7 +237,7 @@
         
         
         
-          41 分钟
+          53 分钟
         
       </span>
     
@@ -1758,14 +1758,282 @@ alt="二-十进制编码器" />
 BCD 码</p>
 <h3 id="译码器-decoder">译码器 Decoder</h3>
 <p>将二进制码翻译成电路的某状态</p>
-<h4 id="二进制译码器-minterm-generator">二进制译码器 Minterm
-Generator</h4>
+<h4 id="二进制译码器-binary-decoder">二进制译码器 Binary Decoder</h4>
 <figure>
 <img
 src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/20260325193549.png" srcset="/img/loading.jpeg" lazyload
 alt="二进制译码器" />
 <figcaption aria-hidden="true">二进制译码器</figcaption>
 </figure>
+<p>又被称为最小项发生器 Minterm
+Generator，因为每一路输出都对应输入变量的一个最小项</p>
+<h5 id="线--8线二进制译码器-74ls138">3线- 8线二进制译码器 74LS138</h5>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/20260328165051.png" srcset="/img/loading.jpeg" lazyload
+alt="74LS138 3线- 8线二进制译码器" />
+<figcaption aria-hidden="true">74LS138 3线- 8线二进制译码器</figcaption>
+</figure>
+<ul>
+<li>具有 <span class="math inline">\(3\)</span> 个地址输入端 (<span
+class="math inline">\(A_0, A_1, A_2\)</span>)，<span
+class="math inline">\(3\)</span> 个 使能端 (<span
+class="math inline">\(S_1,\bar{S_2},\bar{S_3}\)</span>)，<span
+class="math inline">\(8\)</span> 个输出端 (<span
+class="math inline">\(\overline{Y_0} \sim \overline{Y_7}\)</span>)
+<ul>
+<li>具有控制信号/使能端
+(Enable)：用于控制译码器是否工作，方便进行级联和扩展</li>
+<li>输出通常为低电平有效，即选中时输出为 <span
+class="math inline">\(0\)</span>，对应的逻辑表达式为最小项的反变量（<span
+class="math inline">\(\overline{Y_i} = \overline{m_i}\)</span>）</li>
+</ul></li>
+</ul>
+<h5 id="线--16线二进制译码器-74hc154">4线- 16线二进制译码器 74HC154</h5>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/20260328182221.png" srcset="/img/loading.jpeg" lazyload
+alt="74HC154 4线- 16线二进制译码器" />
+<figcaption aria-hidden="true">74HC154 4线-
+16线二进制译码器</figcaption>
+</figure>
+<ul>
+<li>具有 <span class="math inline">\(4\)</span> 个地址输入端 (<span
+class="math inline">\(A_0, A_1, A_2, A_3\)</span>)，<span
+class="math inline">\(2\)</span> 个使能端 (<span
+class="math inline">\(\bar{CS_1}, \bar{CS_2}\)</span>)，<span
+class="math inline">\(16\)</span> 个输出端 (<span
+class="math inline">\(\overline{Y_0} \sim
+\overline{Y_{15}}\)</span>)</li>
+</ul>
+<h5 id="二-十进制译码器">二-十进制译码器</h5>
+<p>将输入的四位 BCD 码（<span class="math inline">\(10\)</span> 种）译成
+<span class="math inline">\(10\)</span> 组不同的高低电平输出</p>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/20260328183937.png" srcset="/img/loading.jpeg" lazyload
+alt="74LS42 二-十进制译码器" />
+<figcaption aria-hidden="true">74LS42 二-十进制译码器</figcaption>
+</figure>
+<p>74LS42 和 74HC42
+都是二-十进制译码器，在符号上没有区别，只在工艺和电气特性上有所不同</p>
+<h5 id="显示译码器">显示译码器</h5>
+<p>将数字信号转换为视觉信号</p>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/20260328191712.png" srcset="/img/loading.jpeg" lazyload
+alt="74LS47 显示译码器" />
+<figcaption aria-hidden="true">74LS47 显示译码器</figcaption>
+</figure>
+<p>以 74LS47 为例，它是一个 BCD 到七段显示的译码器</p>
+<ul>
+<li>输入四位 BCD 码</li>
+<li>输出七位驱动信号，用于控制七段显示器的七个段的亮灭状态，从而显示对应的数字</li>
+<li>同时又有控制引脚
+<ul>
+<li>LT (Lamp Test)：当 <span class="math inline">\(\bar{LT}=0\)</span>
+时，所有段亮起，用于测试显示器</li>
+<li>BI (Blanking Input)：当 <span
+class="math inline">\(\bar{BI}=0\)</span>
+时，所有段熄灭，用于控制显示器的开关</li>
+<li>RBI (Ripple Blanking Input)：当输入为 <span
+class="math inline">\(0\)</span>，并且 <span
+class="math inline">\(\bar{RBI}=1\)</span> 时，输出为 <span
+class="math inline">\(0\)</span>
+不会熄灭，用于级联多个显示译码器时控制高位显示器的开关</li>
+<li>RBO (Ripple Blanking Output)：当输入为 <span
+class="math inline">\(0\)</span>，并且 <span
+class="math inline">\(\bar{RBI}=1\)</span> 或输入非 <span
+class="math inline">\(0\)</span> 时，输出为 <span
+class="math inline">\(1\)</span></li>
+</ul></li>
+</ul>
+<h6 id="隐消高位无效零">隐消高位无效零</h6>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/20260328192926.png" srcset="/img/loading.jpeg" lazyload
+alt="示例" />
+<figcaption aria-hidden="true">示例</figcaption>
+</figure>
+<h6 id="隐销低位无效零">隐销低位无效零</h6>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/20260328193226.png" srcset="/img/loading.jpeg" lazyload
+alt="示例" />
+<figcaption aria-hidden="true">示例</figcaption>
+</figure>
+<h3 id="代码转换器-code-converter">代码转换器 Code Converter</h3>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/20260328193754.png" srcset="/img/loading.jpeg" lazyload
+alt="二进制码和格雷码之间的转换" />
+<figcaption aria-hidden="true">二进制码和格雷码之间的转换</figcaption>
+</figure>
+<h3 id="数据选择器-multiplexer">数据选择器 Multiplexer</h3>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/20260328201830.png" srcset="/img/loading.jpeg" lazyload
+alt="数据选择器" />
+<figcaption aria-hidden="true">数据选择器</figcaption>
+</figure>
+<ul>
+<li>数据输入端
+<ul>
+<li><span class="math inline">\(D_0, D_1, D_2, D_3\)</span>
+四个数据输入端</li>
+</ul></li>
+<li>地址选择端
+<ul>
+<li><span class="math inline">\(A_0, A_1\)</span> 两个地址选择端</li>
+<li>输入两位二进制，表示选择哪个数据输入端的信号输出</li>
+</ul></li>
+<li>输出端
+<ul>
+<li><span class="math inline">\(Y\)</span> 输出端</li>
+</ul></li>
+</ul>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/20260328202016.png" srcset="/img/loading.jpeg" lazyload
+alt="74LS153 数据选择器" />
+<figcaption aria-hidden="true">74LS153 数据选择器</figcaption>
+</figure>
+<ul>
+<li>74LS153 是一个双 4-线-1线数据选择器</li>
+<li>每组数据有四个数据输入端 <span class="math inline">\(D_{ij}\)</span>
+和一个使能端 <span class="math inline">\(S_i\)</span>，还有输出端 <span
+class="math inline">\(Y_i\)</span>，两组数据共用一个地址选择端</li>
+</ul>
+<h4 id="hc157a-四重二输入数据选择器">74HC157A 四重二输入数据选择器</h4>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/20260328211719.png" srcset="/img/loading.jpeg" lazyload
+alt="74HC157A 四重二输入数据选择器" />
+<figcaption aria-hidden="true">74HC157A
+四重二输入数据选择器</figcaption>
+</figure>
+<ul>
+<li><strong>“四重”（Quad）</strong>：意味着芯片内部集成了 <strong>4
+个</strong>
+完全独立的数据选择器。它们共用一套控制信号，但处理不同的数据流。</li>
+<li><strong>“2 输入”</strong>：每个选择器有两路输入（A 和
+B），二选一。</li>
+<li><strong>引脚功能</strong>：
+<ul>
+<li><strong><span class="math inline">\(\overline{Enable}\)</span> (引脚
+15)</strong>：使能端，低电平有效。当它为 0 时芯片才工作；为 1
+时，所有输出（1Y-4Y）都被封锁。</li>
+<li><strong>Data select (引脚 1)</strong>：选择端。
+<ul>
+<li>图中红圈里的 <span class="math inline">\(\bar{1}\)</span> 和 <span
+class="math inline">\(1\)</span> 表示逻辑：当此端输入为
+<strong>0</strong> 时，选中 <strong>A 组</strong>（1A, 2A, 3A,
+4A）；当输入为 <strong>1</strong> 时，选中 <strong>B 组</strong>。</li>
+</ul></li>
+<li><strong>输出 (1Y ~ 4Y)</strong>：对应被选中的数据。图中蓝色的
+<strong>B</strong> 提示我们，当 Select 为 1 时，输出的就是 B
+组的数据。</li>
+</ul></li>
+<li><strong>应用场景</strong>：常用于<strong>多位（4位）总线数据的切换</strong>。比如在两组
+4 位宽的数据源之间进行快速切换。</li>
+</ul>
+<h4 id="hc15-8-输入数据选择器">4HC15 8 输入数据选择器</h4>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/20260328211825.png" srcset="/img/loading.jpeg" lazyload
+alt="4HC15 8 输入数据选择器" />
+<figcaption aria-hidden="true">4HC15 8 输入数据选择器</figcaption>
+</figure>
+<p>这款芯片是数字电路实验和设计中的“明星”，它是一个 <strong>8 选
+1</strong> 的结构。</p>
+<ul>
+<li><strong>数据输入 (<span class="math inline">\(D_0 \sim
+D_7\)</span>)</strong>：共有 8 个独立的数据输入端。</li>
+<li><strong>选择端 (<span class="math inline">\(S_0, S_1,
+S_2\)</span>)</strong>：地址控制线。
+<ul>
+<li>因为有 8 路输入，所以需要 3 位二进制地址码（<span
+class="math inline">\(2^3 = 8\)</span>）。</li>
+<li>比如：<span class="math inline">\(S_2 S_1 S_0 = 011\)</span>（二进制
+3），那么输出端就会传回 <span class="math inline">\(D_3\)</span>
+端口的信号。</li>
+</ul></li>
+<li><strong>双输出（红框部分）</strong>：
+<ul>
+<li><strong><span class="math inline">\(Y\)</span> (引脚
+5)</strong>：输出选中的原码信号。</li>
+<li><strong><span class="math inline">\(\bar{Y}\)</span> (引脚
+6)</strong>：输出选中信号的<strong>反相</strong>信号。</li>
+<li><strong>优点</strong>：同时提供原码和反码，在搭建复杂逻辑电路时可以省去额外的非门。</li>
+</ul></li>
+<li><strong><span class="math inline">\(\overline{Enable}\)</span> (引脚
+7)</strong>：使能端，低电平有效。</li>
+<li><strong>应用场景</strong>：
+<ol type="1">
+<li><strong>信号采样</strong>：从 8 路传感器中选一路读取。</li>
+<li><strong>逻辑函数产生器</strong>（非常重要）：可以通过给 <span
+class="math inline">\(D_0 \sim D_7\)</span> 接不同的高低电平，把 <span
+class="math inline">\(S_0 \sim S_2\)</span>
+看作变量，直接用这一片芯片实现任何 3 变量的逻辑函数。</li>
+</ol></li>
+</ul>
+<h3 id="数据分配器-demultiplexer">数据分配器 Demultiplexer</h3>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/20260328213002.png" srcset="/img/loading.jpeg" lazyload
+alt="数据分配器" />
+<figcaption aria-hidden="true">数据分配器</figcaption>
+</figure>
+<ul>
+<li><strong>地址选择信号（Select）</strong>：
+<ul>
+<li><span class="math inline">\(A, B, C\)</span> 接在地址端 <span
+class="math inline">\(A_2, A_1, A_0\)</span>。</li>
+<li>图中 <span class="math inline">\(A, B, C\)</span> 都设为
+<code>0</code>（即二进制 <code>000</code>）。这代表我们选择了 <strong>0
+号输出端 (<span
+class="math inline">\(\bar{Y}_0\)</span>)</strong>。</li>
+</ul></li>
+<li><strong>数据输入（Data In）</strong>：
+<ul>
+<li>数据信号 <span
+class="math inline">\(D\)</span>（一组脉冲波形）接在使能端 <span
+class="math inline">\(\bar{S}_2\)</span> 和 <span
+class="math inline">\(\bar{S}_3\)</span> 上。</li>
+<li>注意：<span class="math inline">\(\bar{S}\)</span>
+是低电平有效。</li>
+</ul></li>
+<li><strong>工作原理</strong>：
+<ul>
+<li><strong>当 <span class="math inline">\(D=0\)</span>
+时</strong>：使能端有效，芯片工作。因为地址是 <code>000</code>，所以
+<span class="math inline">\(\bar{Y}_0\)</span> 输出低电平（即跟随了
+<span class="math inline">\(D\)</span> 的状态）。</li>
+<li><strong>当 <span class="math inline">\(D=1\)</span>
+时</strong>：使能端无效，芯片停止工作。此时所有输出端 <span
+class="math inline">\(\bar{Y}_0 \sim \bar{Y}_7\)</span> 都被强制拉高为
+<code>1</code>。</li>
+</ul></li>
+<li><strong>结果（波形图）</strong>：
+<ul>
+<li>你会发现输出端 <span class="math inline">\(\bar{Y}_0\)</span>
+出现了和输入 <span class="math inline">\(D\)</span>
+一模一样的脉冲波形。</li>
+<li>而其他输出端（<span class="math inline">\(\bar{Y}_1 \sim
+\bar{Y}_7\)</span>）因为没被地址选中，始终保持高电平
+<code>1</code>，没有信号通过。</li>
+</ul></li>
+</ul>
+<h3 id="奇偶发生器校验器-parity-generatorchecker">奇偶发生器/校验器
+Parity Generator/Checker</h3>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/20260328213308.png" srcset="/img/loading.jpeg" lazyload
+alt="校验器" />
+<figcaption aria-hidden="true">校验器</figcaption>
+</figure>
+<p>若 1 的个数为偶数，则 5 输出为 <code>1</code>，若为奇数，则 6 输出为
+<code>1</code></p>
 
                 
               </div>
