@@ -19,15 +19,15 @@
   <meta name="author" content="dcldyhb">
   <meta name="keywords" content="">
   
-    <meta name="description" content="依据《流动传热基础》现有内容整理。当前原笔记实际覆盖到流体力学部分，尚未展开导热、对流换热、辐射换热公式。 为便于复习，本文对原文中少量记号不统一或排版缺项处做了标准化处理：运动黏度统一记为 \(\nu\)，黏性伯努利方程统一写为 \(\alpha_1,\alpha_2\)，局部损失压强记为 \(\Delta p_j\)。  1. 连续介质与流体物性 1.1 连续介质假设 \[ \frac{L}">
+    <meta name="description" content="流动传热基础公式整理  依据《流动传热基础》现有内容整理。当前原笔记已经覆盖流体力学基础、管路阻力、传热分析基础与导热理论。 为便于复习，本文对原文中少量记号不统一或排版缺项处做了标准化处理：运动黏度统一记为 \(\nu\)，黏性伯努利方程统一写为 \(\alpha_1,\alpha_2\)，局部损失压强记为 \(\Delta p_j\)，导热方程中的拉普拉斯算子统一写为 \(\nabla^2 t">
 <meta property="og:type" content="article">
 <meta property="og:title" content="流动传热基础公式整理">
 <meta property="og:url" content="http://dcldyhb.github.io/posts_/%E6%9C%AC%E7%A7%91%E8%AF%BE%E7%A8%8B/%E7%89%A9%E7%90%86/notes/%E6%9C%AC%E7%A7%91/%E7%89%A9%E7%90%86/%E6%B5%81%E5%8A%A8%E4%BC%A0%E7%83%AD%E5%9F%BA%E7%A1%80%E5%85%AC%E5%BC%8F%E6%95%B4%E7%90%86/index.html">
 <meta property="og:site_name" content="dcldyhb的笔记">
-<meta property="og:description" content="依据《流动传热基础》现有内容整理。当前原笔记实际覆盖到流体力学部分，尚未展开导热、对流换热、辐射换热公式。 为便于复习，本文对原文中少量记号不统一或排版缺项处做了标准化处理：运动黏度统一记为 \(\nu\)，黏性伯努利方程统一写为 \(\alpha_1,\alpha_2\)，局部损失压强记为 \(\Delta p_j\)。  1. 连续介质与流体物性 1.1 连续介质假设 \[ \frac{L}">
+<meta property="og:description" content="流动传热基础公式整理  依据《流动传热基础》现有内容整理。当前原笔记已经覆盖流体力学基础、管路阻力、传热分析基础与导热理论。 为便于复习，本文对原文中少量记号不统一或排版缺项处做了标准化处理：运动黏度统一记为 \(\nu\)，黏性伯努利方程统一写为 \(\alpha_1,\alpha_2\)，局部损失压强记为 \(\Delta p_j\)，导热方程中的拉普拉斯算子统一写为 \(\nabla^2 t">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-03-24T04:00:00.000Z">
-<meta property="article:modified_time" content="2026-03-25T06:25:54.000Z">
+<meta property="article:modified_time" content="2026-04-10T02:36:14.000Z">
 <meta property="article:author" content="dcldyhb">
 <meta property="article:tag" content="物理">
 <meta property="article:tag" content="热力学">
@@ -228,7 +228,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.1k 字
+          3.3k 字
         
       </span>
     
@@ -239,7 +239,7 @@
         
         
         
-          18 分钟
+          28 分钟
         
       </span>
     
@@ -290,12 +290,17 @@
             
               <div class="markdown-body">
                 
-                <blockquote>
-<p>依据《流动传热基础》现有内容整理。当前原笔记实际覆盖到流体力学部分，尚未展开导热、对流换热、辐射换热公式。</p>
+                <h1 id="流动传热基础公式整理">流动传热基础公式整理</h1>
+<blockquote>
+<p>依据《流动传热基础》现有内容整理。当前原笔记已经覆盖流体力学基础、管路阻力、传热分析基础与导热理论。</p>
 <p>为便于复习，本文对原文中少量记号不统一或排版缺项处做了标准化处理：运动黏度统一记为
 <span class="math inline">\(\nu\)</span>，黏性伯努利方程统一写为 <span
 class="math inline">\(\alpha_1,\alpha_2\)</span>，局部损失压强记为 <span
-class="math inline">\(\Delta p_j\)</span>。</p>
+class="math inline">\(\Delta
+p_j\)</span>，导热方程中的拉普拉斯算子统一写为 <span
+class="math inline">\(\nabla^2
+t\)</span>，辐射公式中的温度统一写为绝对温度 <span
+class="math inline">\(T\)</span>。</p>
 </blockquote>
 <h1 id="连续介质与流体物性">1. 连续介质与流体物性</h1>
 <h2 id="连续介质假设">1.1 连续介质假设</h2>
@@ -791,7 +796,302 @@ d=2r_0
 <p><span class="math display">\[
 \alpha=\frac{1}{A}\iint_A\left(\frac{u}{V}\right)^3\,\mathrm{d}A=2
 \]</span></p>
-<h1 id="常用符号">9. 常用符号</h1>
+<h2 id="圆管定常湍流流动">8.7 圆管定常湍流流动</h2>
+<p>时均速度：</p>
+<p><span class="math display">\[
+\bar{u}=\frac{1}{T}\int_0^T u\,\mathrm{d}t
+\]</span></p>
+<p>瞬时量分解：</p>
+<p><span class="math display">\[
+u=\bar{u}+u&#39;
+\]</span></p>
+<p>同理：</p>
+<p><span class="math display">\[
+\begin{cases}
+p=\bar{p}+p&#39; \\
+\rho=\bar{\rho}+\rho&#39;
+\end{cases}
+\]</span></p>
+<p>黏性底层厚度经验式：</p>
+<p><span class="math display">\[
+\delta=\frac{58.3d}{\mathrm{Re}^{0.875}}
+\]</span></p>
+<p><span class="math display">\[
+\delta=\frac{32.8d}{\mathrm{Re}\sqrt{\lambda}}
+\]</span></p>
+<p>紊流切应力分解：</p>
+<p><span class="math display">\[
+\tau_\nu=\mu\frac{\mathrm{d}u}{\mathrm{d}y}
+\]</span></p>
+<p><span class="math display">\[
+\tau_t\propto\left(\frac{\mathrm{d}u}{\mathrm{d}y}\right)^2
+\]</span></p>
+<p><span class="math display">\[
+\tau=\tau_\nu+\tau_t
+\]</span></p>
+<h2 id="圆管流动沿程损失系数">8.8 圆管流动沿程损失系数</h2>
+<p>层流区：</p>
+<p><span class="math display">\[
+\lambda=\frac{64}{\mathrm{Re}}
+\]</span></p>
+<p>紊流水力光滑管区：</p>
+<p><span class="math display">\[
+\lambda=\frac{0.3164}{\mathrm{Re}^{0.25}}
+\]</span></p>
+<p><span class="math display">\[
+\frac{1}{\sqrt{\lambda}}=2\log_{10}(\mathrm{Re}\sqrt{\lambda})-0.8
+\]</span></p>
+<p>紊流水力粗糙管过渡区：</p>
+<p><span class="math display">\[
+\lambda=f\left(\mathrm{Re},\frac{\Delta}{d}\right)
+\]</span></p>
+<p><span class="math display">\[
+\lambda=1.42\left[\log_{10}\left(\mathrm{Re}\frac{d}{\Delta}\right)\right]^{-2}
+=1.42\left[\log_{10}\left(1.273\frac{q_v}{\nu\Delta}\right)\right]^{-2}
+\]</span></p>
+<p><span class="math display">\[
+\frac{1}{\sqrt{\lambda}}=-2\log_{10}\left(\frac{\Delta}{3.7d}+\frac{2.51}{\mathrm{Re}\sqrt{\lambda}}\right)
+\]</span></p>
+<p>紊流水力粗糙管平方阻力区：</p>
+<p><span class="math display">\[
+\lambda=f\left(\frac{\Delta}{d}\right)
+\]</span></p>
+<p><span class="math display">\[
+\frac{1}{\sqrt{\lambda}}=2\log_{10}\frac{d}{2\Delta}+1.74
+\]</span></p>
+<h2 id="管路中的局部损失">8.9 管路中的局部损失</h2>
+<p>突然扩大：</p>
+<p><span class="math display">\[
+h_j=\frac{(V_1-V_2)^2}{2g}
+=\zeta_1\frac{V_1^2}{2g}
+=\zeta_2\frac{V_2^2}{2g}
+\]</span></p>
+<p><span class="math display">\[
+\zeta_1=\left(1-\frac{A_1}{A_2}\right)^2
+\]</span></p>
+<p><span class="math display">\[
+\zeta_2=\left(1-\frac{A_1}{A_2}\right)^2
+\]</span></p>
+<p>突然缩小：</p>
+<p><span class="math display">\[
+\zeta_2=0.5\left(1-\frac{A_1}{A_2}\right)^2
+\]</span></p>
+<h2 id="管路水力计算">8.10 管路水力计算</h2>
+<p>串联管道：</p>
+<p><span class="math display">\[
+\begin{cases}
+q_{v1}=q_{v2}=\cdots=q_{vn}=\text{const.} \\
+V_1A_1=V_2A_2=\cdots=V_nA_n=\text{const.}
+\end{cases}
+\]</span></p>
+<p><span class="math display">\[
+h_w=h_{w1}+h_{w2}+\cdots+h_{wn}
+\]</span></p>
+<p>若各段管径相同：</p>
+<p><span class="math display">\[
+\begin{cases}
+A_1=A_2=\cdots=A_n=\text{const.} \\
+V_1=V_2=\cdots=V_n=\text{const.}
+\end{cases}
+\]</span></p>
+<p>并联管道：</p>
+<p><span class="math display">\[
+q_v=q_{v1}+q_{v2}+\cdots+q_{vn}
+\]</span></p>
+<p><span class="math display">\[
+h_{w1}=h_{w2}=\cdots=h_{wn}=\text{const.}
+\]</span></p>
+<p>基本公式：</p>
+<p><span class="math display">\[
+\dot{m}=\rho VA=\text{const.}
+\]</span></p>
+<p><span class="math display">\[
+q_v=VA=\text{const.}
+\]</span></p>
+<p><span class="math display">\[
+z_1+\frac{p_1}{\rho g}+\frac{V_1^2}{2g}
+=z_2+\frac{p_2}{\rho g}+\frac{V_2^2}{2g}+h_w
+\]</span></p>
+<p><span class="math display">\[
+\begin{cases}
+h_w=\sum h_f+\sum h_j \\
+h_f=\lambda\frac{l}{d}\frac{V^2}{2g} \\
+h_j=\zeta\frac{V^2}{2g}
+\end{cases}
+\]</span></p>
+<h1 id="传热基础">9. 传热基础</h1>
+<h2 id="三种基本传热方式">9.1 三种基本传热方式</h2>
+<p>热传导：</p>
+<p><span class="math display">\[
+q=\frac{\Phi}{A}=-\lambda\frac{\mathrm{d}t}{\mathrm{d}x}
+\]</span></p>
+<p>热对流：</p>
+<p><span class="math display">\[
+q=\frac{\Phi}{A}=h(t_w-t_f)
+\]</span></p>
+<p>热辐射：</p>
+<p><span class="math display">\[
+\Phi=A\sigma T^4
+\]</span></p>
+<p><span class="math display">\[
+\Phi=\varepsilon A\sigma T^4
+\]</span></p>
+<h2 id="热阻思想">9.2 热阻思想</h2>
+<p>平壁导热：</p>
+<p><span class="math display">\[
+\Phi=\lambda A\frac{\Delta t}{\delta}
+=\frac{\Delta t}{\delta/(\lambda A)}
+\]</span></p>
+<p>导热热阻：</p>
+<p><span class="math display">\[
+R_{\mathrm{cond}}=\frac{\delta}{\lambda A}
+\]</span></p>
+<p>对流热阻：</p>
+<p><span class="math display">\[
+R_{\mathrm{conv}}=\frac{1}{hA}
+\]</span></p>
+<p>三环节串联传热：</p>
+<p><span class="math display">\[
+\begin{cases}
+\Phi=Ah_1(t_{f1}-t_{w1})=\dfrac{t_{f1}-t_{w1}}{1/(h_1A)} \\
+\Phi=\lambda
+A\dfrac{t_{w1}-t_{w2}}{\delta}=\dfrac{t_{w1}-t_{w2}}{\delta/(\lambda A)}
+\\
+\Phi=Ah_2(t_{w2}-t_{f2})=\dfrac{t_{w2}-t_{f2}}{1/(h_2A)}
+\end{cases}
+\]</span></p>
+<p>总热流率：</p>
+<p><span class="math display">\[
+\Phi=\frac{t_{f1}-t_{f2}}
+{\frac{1}{h_1A}+\frac{\delta}{\lambda A}+\frac{1}{h_2A}}
+\]</span></p>
+<p>总传热方程：</p>
+<p><span class="math display">\[
+\Phi=kA(t_{f1}-t_{f2})
+\]</span></p>
+<p>对应总传热系数：</p>
+<p><span class="math display">\[
+k=\frac{1}{\frac{1}{h_1}+\frac{\delta}{\lambda}+\frac{1}{h_2}}
+\]</span></p>
+<h1 id="温度场与温度梯度">10. 温度场与温度梯度</h1>
+<p>稳态温度场：</p>
+<p><span class="math display">\[
+t=f(\vec{r})
+\]</span></p>
+<p>非稳态温度场：</p>
+<p><span class="math display">\[
+t=f(\vec{r},\tau)
+\]</span></p>
+<p>温度梯度：</p>
+<p><span class="math display">\[
+\nabla t=\frac{\partial t}{\partial n}\vec{n}
+=\frac{\partial t}{\partial x}\vec{i}
++\frac{\partial t}{\partial y}\vec{j}
++\frac{\partial t}{\partial z}\vec{k}
+\]</span></p>
+<h1 id="傅里叶定律与导热系数">11. 傅里叶定律与导热系数</h1>
+<p>傅里叶定律矢量式：</p>
+<p><span class="math display">\[
+\vec{q}=-\lambda\nabla t=-\lambda\frac{\partial t}{\partial n}\vec{n}
+\]</span></p>
+<p>分量形式：</p>
+<p><span class="math display">\[
+\begin{cases}
+q_x=-\lambda\frac{\partial t}{\partial x} \\
+q_y=-\lambda\frac{\partial t}{\partial y} \\
+q_z=-\lambda\frac{\partial t}{\partial z}
+\end{cases}
+\]</span></p>
+<p>导热系数定义：</p>
+<p><span class="math display">\[
+\lambda=\frac{|\vec{q}|}{|\nabla t|}
+\]</span></p>
+<p>温度变化不大时：</p>
+<p><span class="math display">\[
+\lambda=\lambda_0(1+\alpha t)
+\]</span></p>
+<h1 id="导热微分方程与定解条件">12. 导热微分方程与定解条件</h1>
+<p>导热微分方程：</p>
+<p><span class="math display">\[
+\rho c\frac{\partial t}{\partial \tau}
+=\frac{\partial}{\partial x}\left(\lambda\frac{\partial t}{\partial
+x}\right)
++\frac{\partial}{\partial y}\left(\lambda\frac{\partial t}{\partial
+y}\right)
++\frac{\partial}{\partial z}\left(\lambda\frac{\partial t}{\partial
+z}\right)
++\dot{\Phi}
+\]</span></p>
+<p>热扩散率：</p>
+<p><span class="math display">\[
+a=\frac{\lambda}{\rho c}
+\]</span></p>
+<p><span class="math inline">\(\lambda\)</span> 为常数时：</p>
+<p><span class="math display">\[
+\frac{\partial t}{\partial \tau}
+=a\left(\frac{\partial^2 t}{\partial x^2}
++\frac{\partial^2 t}{\partial y^2}
++\frac{\partial^2 t}{\partial z^2}\right)
++\frac{\dot{\Phi}}{\rho c}
+\]</span></p>
+<p><span class="math inline">\(\lambda\)</span> 为常数且无内热源：</p>
+<p><span class="math display">\[
+\frac{\partial t}{\partial \tau}=a\nabla^2 t
+\]</span></p>
+<p><span class="math inline">\(\lambda\)</span> 为常数且稳态：</p>
+<p><span class="math display">\[
+\nabla^2 t+\frac{\dot{\Phi}}{\lambda}=0
+\]</span></p>
+<p><span class="math inline">\(\lambda\)</span>
+为常数、无内热源且稳态：</p>
+<p><span class="math display">\[
+\nabla^2 t=0
+\]</span></p>
+<p>一维稳态无内热源导热：</p>
+<p><span class="math display">\[
+\frac{\mathrm{d}^2 t}{\mathrm{d}x^2}=0
+\]</span></p>
+<p>柱坐标系：</p>
+<p><span class="math display">\[
+\rho c\frac{\partial t}{\partial \tau}
+=\frac{1}{r}\frac{\partial}{\partial r}\left(r\lambda\frac{\partial
+t}{\partial r}\right)
++\frac{1}{r^2}\frac{\partial}{\partial
+\theta}\left(\lambda\frac{\partial t}{\partial \theta}\right)
++\frac{\partial}{\partial z}\left(\lambda\frac{\partial t}{\partial
+z}\right)
++\dot{\Phi}
+\]</span></p>
+<p>球坐标系：</p>
+<p><span class="math display">\[
+\rho c\frac{\partial t}{\partial \tau}
+=\frac{1}{r^2}\frac{\partial}{\partial r}\left(r^2\lambda\frac{\partial
+t}{\partial r}\right)
++\frac{1}{r^2\sin\theta}\frac{\partial}{\partial
+\theta}\left(\sin\theta\,\lambda\frac{\partial t}{\partial
+\theta}\right)
++\frac{1}{r^2\sin^2\theta}\frac{\partial}{\partial
+\varphi}\left(\lambda\frac{\partial t}{\partial \varphi}\right)
++\dot{\Phi}
+\]</span></p>
+<p>初始条件：</p>
+<p><span class="math display">\[
+t=f(x,y,z)\qquad (\tau=0)
+\]</span></p>
+<p>第一类边界条件：</p>
+<p><span class="math display">\[
+t_w=f(\tau)
+\]</span></p>
+<p>第二类边界条件：</p>
+<p><span class="math display">\[
+-\lambda\left.\frac{\partial t}{\partial n}\right|_w=f(\tau)=q_w
+\]</span></p>
+<p>第三类边界条件：</p>
+<p><span class="math display">\[
+-\lambda\left.\frac{\partial t}{\partial n}\right|_w=h(t_w-t_f)
+\]</span></p>
+<h1 id="常用符号">13. 常用符号</h1>
+<p>流体部分：</p>
 <ul>
 <li><span class="math inline">\(\rho\)</span>：密度</li>
 <li><span class="math inline">\(d\)</span>：管径</li>
@@ -799,12 +1099,25 @@ d=2r_0
 <li><span class="math inline">\(\mu\)</span>：动力黏度</li>
 <li><span class="math inline">\(\nu\)</span>：运动黏度</li>
 <li><span class="math inline">\(\tau\)</span>：切应力</li>
+<li><span class="math inline">\(\Delta\)</span>：绝对粗糙度</li>
 <li><span class="math inline">\(\lambda\)</span>：沿程阻力系数</li>
 <li><span class="math inline">\(\zeta\)</span>：局部阻力系数</li>
 <li><span class="math inline">\(\alpha\)</span>：动能修正系数</li>
 <li><span class="math inline">\(h_f\)</span>：沿程损失</li>
 <li><span class="math inline">\(h_j\)</span>：局部损失</li>
 <li><span class="math inline">\(h_w\)</span>：总水头损失</li>
+</ul>
+<p>传热部分：</p>
+<ul>
+<li><span class="math inline">\(\Phi\)</span>：热流量、传热速率</li>
+<li><span class="math inline">\(q\)</span>：热流密度</li>
+<li><span class="math inline">\(\lambda\)</span>：导热系数</li>
+<li><span class="math inline">\(h\)</span>：对流换热系数</li>
+<li><span class="math inline">\(k\)</span>：总传热系数</li>
+<li><span class="math inline">\(a\)</span>：热扩散率</li>
+<li><span
+class="math inline">\(\dot{\Phi}\)</span>：单位体积内热源生成率</li>
+<li><span class="math inline">\(\delta\)</span>：壁厚或导热层厚度</li>
 </ul>
 
                 
