@@ -27,7 +27,7 @@
 <meta property="og:description" content="工程热力学 诸论与基本概念 诸论 工程热力学是一门研究能量转换和物质性质的学科 能源转换利用的关系  一次能源 天然存在且未被加工或转换的能源  风能 水能 化学能 核能 地热能 太阳能  二次能源 一次能源转换成其他形式的能源  机械能 热能 电能   热能和机械能的转化  热能动力装置 从燃料燃烧中得到热能以及利用热能得到动力的整套装置（包括辅助设备）  燃气动力装置  内燃机 燃气轮机装置">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-03-02T00:00:00.000Z">
-<meta property="article:modified_time" content="2026-04-13T05:36:11.000Z">
+<meta property="article:modified_time" content="2026-04-16T01:54:34.000Z">
 <meta property="article:author" content="dcldyhb">
 <meta property="article:tag" content="物理">
 <meta property="article:tag" content="热力学">
@@ -226,7 +226,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.7k 字
+          3.9k 字
         
       </span>
     
@@ -237,7 +237,7 @@
         
         
         
-          23 分钟
+          33 分钟
         
       </span>
     
@@ -700,8 +700,9 @@ pV=mR_gT
 <p><span class="math display">\[
 \left\{
    \begin{aligned}
-      &amp;pv=R_gT \text{（单位质量理想气体）}\\
-      &amp;pV=nR_uT \text{（单位物质的量理想气体）}
+      &amp;pv=R_gT &amp;&amp;\text{（单位质量理想气体）}\\
+      &amp;pV=nR_uT &amp;&amp;\text{（单位物质的量理想气体）}\\
+      &amp;p_0v_0 = RT_0 &amp;&amp;1\text{摩尔的理想气体}
    \end{aligned}
 \right.
 \]</span></p>
@@ -748,11 +749,10 @@ v}+p\right)\frac{\mathrm{d}v}{\mathrm{d}T}
 <h5 id="定压比热容">定压比热容</h5>
 <p><span class="math display">\[
 \begin{aligned}
-  c_p&amp;=\frac{\partial u}{\partial T}+\left(\frac{\partial
-u}{\partial v}+p\right)\frac{\mathrm{d}v}{\mathrm{d}T}\\
-  &amp;= \frac{\partial u}{\partial T}+\left(\frac{\partial u}{\partial
-v}+p\right)\frac{R_g}{p}\\
-  &amp;= \frac{\partial u}{\partial T}+\frac{\partial u}{\partial v}+R_g
+  c_p&amp;=\frac{\mathrm{d}u}{\mathrm{d}T}+\frac{p\mathrm{d}v}{\mathrm{d}T}\\
+     &amp;=\frac{\mathrm{d}(h-pv)+p\mathrm{d}v}{\mathrm{d}T}\\
+     &amp;=\frac{\mathrm{d}h -v \mathrm{d}p}{\mathrm{d}T}\\
+     &amp;=\frac{\mathrm{d}h}{\mathrm{d}T}
 \end{aligned}
 \]</span></p>
 <h5 id="迈耶公式">迈耶公式</h5>
@@ -762,7 +762,11 @@ c_p-c_v=\frac{\mathrm{d}h-\mathrm{d}u}{\mathrm{d}T}=\frac{\mathrm{d}(u+pv)-\math
 <p>理想气体 <span class="math inline">\(c_p\)</span> 大于 <span
 class="math inline">\(c_v\)</span>，两者之差为 <span
 class="math inline">\(R_g\)</span></p>
-<p>可以理解为，定压过程需要克服外界压力做功，所以需要更多的热量来升高温度</p>
+<p>可以理解为，定压过程需要克服外界压力做功，所以需要更多的热量来升高温度，<span
+class="math inline">\(R_g\)</span> 就是 <span class="math inline">\(1\
+\text{kg}\)</span> 理想气体在定压过程中升高 <span
+class="math inline">\(1\ \text{K}\)</span>
+时克服外界压力做功所需的热量</p>
 <h5 id="理想气体的比热容比">理想气体的比热容比</h5>
 <p><span class="math display">\[
 \gamma = \frac{c_p}{c_v}
@@ -807,11 +811,27 @@ a(T_2-T_1)+\frac{b}{2}(T_2^2-T_1^2) = \left(a +
 \right.
 \]</span></p>
 <h3 id="理想气气体的热力学能焓和熵">理想气气体的热力学能、焓和熵</h3>
+<h4 id="理想气体的热力学能和焓">理想气体的热力学能和焓</h4>
+<p>理想气体的热力学能和焓是温度的函数</p>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;\mathrm{d}u = c_v\ \mathrm{d}T\\
+      &amp;\mathrm{d}h = c_p\ \mathrm{d}T
+   \end{aligned}
+\right.
+\]</span></p>
+<p>对于实际气体 <span class="math inline">\(\Delta u\)</span> 和 <span
+class="math inline">\(\Delta h\)</span>
+还与过程有关，只有在定容过程中满足 <span class="math inline">\(\Delta u
+= c_v \Delta T\)</span>，在定压过程中满足 <span
+class="math inline">\(\Delta h = c_p \Delta T\)</span></p>
 <h4 id="熵-1">熵</h4>
 <p><span class="math display">\[
 \mathrm{d}S = \frac{\delta q_{rev}}{T} = \frac{\mathrm{d}u + p\
 \mathrm{d}v}{T}=c_v\frac{\mathrm{d}T}{T}+R\frac{\mathrm{d}v}{v}
 \]</span></p>
+<p>必须要是可逆过程</p>
 <h3 id="饱和状态饱和温度和饱和压力">饱和状态、饱和温度和饱和压力</h3>
 <h4 id="汽化和液化">汽化和液化</h4>
 <ul>
@@ -825,6 +845,54 @@ a(T_2-T_1)+\frac{b}{2}(T_2^2-T_1^2) = \left(a +
 <ul>
 <li>在液体内部发生的汽化过程</li>
 </ul></li>
+</ul></li>
+</ul>
+<h4 id="饱和状态">饱和状态</h4>
+<p>当汽化速度与液化速度相等时，系统处于动态平衡状态，宏观上气液两相保持一定的相对状态，此时被称为是饱和状态</p>
+<ul>
+<li>饱和温度 <span class="math inline">\(T_s\)</span></li>
+<li>饱和压力 <span class="math inline">\(p_s\)</span></li>
+</ul>
+<p>改变温度或者压力会使得系统建立新的动态平衡，<span
+class="math inline">\(T_s\)</span> 和 <span
+class="math inline">\(p_s\)</span>
+也会随之改变，两者一一对应，只有一个独立变量</p>
+<h4 id="名词解释">名词解释</h4>
+<ul>
+<li><p>饱和液</p>
+<ul>
+<li>处于饱和状态的液体，<span class="math inline">\(t=t_s\)</span></li>
+</ul></li>
+<li><p>干饱和蒸汽</p>
+<ul>
+<li>处于饱和状态的蒸汽，<span class="math inline">\(t=t_s\)</span></li>
+</ul></li>
+<li><p>未饱和液</p>
+<ul>
+<li>温度低于所处压力下饱和温度的液体，<span
+class="math inline">\(t&lt;t_s\)</span></li>
+</ul></li>
+<li><p>过热蒸汽</p>
+<ul>
+<li>温度高于所处压力下饱和温度的蒸汽，<span
+class="math inline">\(t&gt;t_s\)</span>，<span class="math inline">\(t -
+t_s = d\)</span> 为过热度</li>
+</ul></li>
+<li><p>湿饱和蒸汽</p>
+<ul>
+<li>饱和液干饱和蒸汽的混合物，<span
+class="math inline">\(t=t_s\)</span></li>
+</ul></li>
+<li><p>干度 <span class="math inline">\(x\)</span></p>
+<ul>
+<li>湿饱和蒸汽中干饱和蒸汽的质量占总质量的百分比</li>
+</ul>
+<p><span class="math display">\[
+x = \frac{m_v}{m_v+._l}
+\]</span></p></li>
+<li><p>三相点</p>
+<ul>
+<li>液固气三相共存的状态</li>
 </ul></li>
 </ul>
 <h4 id="水定压加热汽化过程">水定压加热汽化过程</h4>
@@ -884,6 +952,122 @@ class="math inline">\(x\)</span> 决定</p>
    \end{aligned}
 \right.
 \]</span></p>
+<p>其中 <span class="math inline">\(\gamma\)</span>
+为汽化过程的热量，称为汽化潜热</p>
+<p><span class="math display">\[
+\gamma = T_s (s&#39;&#39;-s&#39;) = h&#39;&#39;-h&#39; =
+u&#39;&#39;-u&#39;+p_s(v&#39;&#39;-v&#39;)
+\]</span></p>
+<h3 id="水蒸气表和图">水蒸气表和图</h3>
+<p>看书。</p>
+<h2 id="理想气体混合物及湿空气">理想气体混合物及湿空气</h2>
+<h3 id="理想气体混合物">理想气体混合物</h3>
+<h4
+id="气体混合物的折合气体常数和摩尔质量">气体混合物的折合气体常数和摩尔质量</h4>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;pV =mR_{g,eq}T\\
+      &amp;M_{eq}R_{g,eq} = R
+   \end{aligned}
+\right.
+\]</span></p>
+<h4
+id="混合气体的分压力定律和分容积定律">混合气体的分压力定律和分容积定律</h4>
+<h5 id="道尔顿分压定律">道尔顿分压定律</h5>
+<p>分压力是组分气体在与混合气体相同容积相同温度单独面对壁面的压力</p>
+<p><span class="math display">\[
+\sum_{i=1}^{m}p_iV = \sum_{i=1}^{m}n_iRT
+\]</span></p>
+<p>则</p>
+<p><span class="math display">\[
+p = \sum_{i=1}p_i
+\]</span></p>
+<h5 id="分容积定律">分容积定律</h5>
+<p>分容积是组分气体在与混合气体相同压力相同温度单独占有的体积</p>
+<p><span class="math display">\[
+p\sum_{i=1}^{m}V_i = \sum_{i=1}^{m}n_iRT
+\]</span></p>
+<p>则</p>
+<p><span class="math display">\[
+V = \sum_{i=1}V_i
+\]</span></p>
+<h4 id="混合气体成分">混合气体成分</h4>
+<ul>
+<li><p>质量分数</p>
+<p><span class="math display">\[
+w_i = \frac{m_i}{\sum_{i=1}^m m_i}
+\]</span></p></li>
+<li><p>体积分数</p>
+<p><span class="math display">\[
+\varphi_i = \frac{V_i}{\sum_{i=1}^m V_i}
+\]</span></p></li>
+<li><p>摩尔分数</p>
+<p><span class="math display">\[
+x_i = \frac{n_i}{\sum_{i=1}^m n_i}
+\]</span></p></li>
+</ul>
+<h4
+id="理想气体混合物的比热容热力学能焓和熵">理想气体混合物的比热容、热力学能、焓和熵</h4>
+<p>混合气体的比热容、热力学能、焓和熵等于各组分的加权平均值</p>
+<h3 id="湿空气">湿空气</h3>
+<h4 id="干空气和湿空气">干空气和湿空气</h4>
+<p>湿空气是干空气和水蒸气的混合物，为理想气体混合物</p>
+<h4 id="未饱和湿空气和饱和湿空气">未饱和湿空气和饱和湿空气</h4>
+<p>空气中的水蒸气过热，则未饱和，水蒸气饱和则为饱和湿空气</p>
+<p>使空气达到饱和的方法</p>
+<ul>
+<li>温度不变，增加压力</li>
+<li>压力不变，降低温度</li>
+</ul>
+<h4 id="露点">露点</h4>
+<p>湿空气中水蒸气分压对应的饱和温度</p>
+<h3 id="相对湿度和含湿量">相对湿度和含湿量</h3>
+<h4 id="绝对湿度-rho_v">绝对湿度 <span
+class="math inline">\(\rho_v\)</span></h4>
+<p>每立方米湿空气中水蒸气的质量</p>
+<p><span class="math display">\[
+\rho_v = \frac{1}{v_v} = \frac{p_v}{R_{gv}T}
+\]</span></p>
+<p>不能直接反应湿空气吸湿能力的大小</p>
+<h4 id="相对湿度-varphi">相对湿度 <span
+class="math inline">\(\varphi\)</span></h4>
+<p>湿空气中水蒸气含量与同温度下最大可能含量之比</p>
+<p><span class="math display">\[
+\varphi = \frac{\rho_v}{\rho_{s}} = \frac{p_v}{p_{s}
+\]</span></p>
+<h4 id="含湿量-d">含湿量 <span class="math inline">\(d\)</span></h4>
+<p>每千克干空气中水蒸气的质量</p>
+<p><span class="math display">\[
+d = \frac{m_v}{m_a} = \frac{\rho_v}{\rho_a} = 0.622\frac{p_v}{p_a} =
+0.622\frac{p_v}{p-p_v} = 0.622\frac{\varphi p_s}{p-\varphi p_s} \approx
+0.622\frac{p_v}{p}
+\]</span></p>
+<h4 id="干球温度-t-湿球温度-t_w-和绝热饱和温度-t_ad">干球温度 <span
+class="math inline">\(t\)</span> 湿球温度 <span
+class="math inline">\(t_w\)</span> 和绝热饱和温度 <span
+class="math inline">\(t_{ad}\)</span></h4>
+<h5 id="干球温度计和湿球温度计">干球温度计和湿球温度计</h5>
+<h3 id="湿空气的焓湿图">湿空气的焓湿图</h3>
+<h4 id="湿空气的焓">湿空气的焓</h4>
+<p><span class="math display">\[
+h = \frac{H}{m} = \frac{m_a h_a + m_v h_v}{m_a} = h_a + d h_v
+\]</span></p>
+<p><span class="math display">\[
+{h}_{\text{kJ/kgDA}} = 1.005 t + d (2501 + 1.86 {t}_c)
+\]</span></p>
+<h4 id="湿空气其他参数">湿空气其他参数</h4>
+<p>按照 <span class="math inline">\(1\ \text{kg}\)</span> 干空气和 <span
+class="math inline">\(d\ \text{kg}\)</span> 水蒸气的混合物计算</p>
+<h4 id="湿空气焓湿图">湿空气焓湿图</h4>
+<h2 id="气体和蒸汽的基本热力过程">气体和蒸汽的基本热力过程</h2>
+<h4 id="理想气体的基本热力过程">理想气体的基本热力过程</h4>
+<p>满足</p>
+<p><span class="math display">\[
+pv^n = const.
+\]</span></p>
+<p>的可逆过程称为多变过程，其中 <span class="math inline">\(n\)</span>
+为多变指数</p>
 
                 
               </div>
