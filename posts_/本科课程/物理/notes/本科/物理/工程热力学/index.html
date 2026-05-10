@@ -27,7 +27,7 @@
 <meta property="og:description" content="工程热力学 诸论与基本概念 诸论 工程热力学是一门研究能量转换和物质性质的学科 能源转换利用的关系  一次能源 天然存在且未被加工或转换的能源  风能 水能 化学能 核能 地热能 太阳能  二次能源 一次能源转换成其他形式的能源  机械能 热能 电能   热能和机械能的转化  热能动力装置 从燃料燃烧中得到热能以及利用热能得到动力的整套装置（包括辅助设备）  燃气动力装置  内燃机 燃气轮机装置">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-03-02T00:00:00.000Z">
-<meta property="article:modified_time" content="2026-05-05T08:03:22.000Z">
+<meta property="article:modified_time" content="2026-05-10T08:48:10.000Z">
 <meta property="article:author" content="dcldyhb">
 <meta property="article:tag" content="物理">
 <meta property="article:tag" content="热力学">
@@ -226,7 +226,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          5.9k 字
+          8.1k 字
         
       </span>
     
@@ -237,7 +237,7 @@
         
         
         
-          49 分钟
+          68 分钟
         
       </span>
     
@@ -1491,6 +1491,464 @@ src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/20
 alt="冷量作功能力分解图" />
 <figcaption aria-hidden="true">冷量作功能力分解图</figcaption>
 </figure>
+<p>冷量：低于环境温度传递的热量</p>
+<p><span class="math display">\[
+\delta q_a = \left(1-\frac{T}{T_0}\right)\delta q =
+\left(1-\frac{T}{T_0}\right)(\delta q_c + \delta q_a)
+\]</span></p>
+<p>得到</p>
+<p><span class="math display">\[
+\delta q_\mathrm{a}=\left(\frac{T_0}{T}-1\right)\delta q_\mathrm{c}
+\]</span></p>
+<p>冷量㶲</p>
+<p><span class="math display">\[
+q_\mathrm{a}=\int_1^2\left(\frac{T_0}{T}-1\right)\delta
+q_\mathrm{c}=T_0\int_1^2\frac{\delta q_\mathrm{c}}{T}-q_\mathrm{c} =
+T_0\Delta s_{12}-q_c
+\]</span></p>
+<h4 id="㶲和温度的关系">㶲和温度的关系</h4>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/20260506214059.png" srcset="/img/loading.jpeg" lazyload
+alt="温度-㶲图" />
+<figcaption aria-hidden="true">温度-㶲图</figcaption>
+</figure>
+<p>首先推导粉色点</p>
+<p>在粉色点处，㶲为 <span class="math inline">\(0\)</span>，此时 <span
+class="math inline">\(T=T_0\)</span>，热机温度等于环境温度，无法对外做功</p>
+<p>当 <span class="math inline">\(T&lt;T_0\)</span> 时</p>
+<p>热机温度小于外界温度，为冷量㶲</p>
+<p><span class="math display">\[
+E_{xQ} = \left(\frac{T_0}{T}-1\right)Q
+\]</span></p>
+<p><span class="math display">\[
+\frac{E_{xQ}}{Q} = \frac{T_0}{T}-1
+\]</span></p>
+<p>当 <span class="math inline">\(T&gt;T_0\)</span> 时</p>
+<p>热机温度大于外界温度，为热量㶲</p>
+<p><span class="math display">\[
+E_{xQ} = \left(1-\frac{T_0}{T}\right)Q
+\]</span></p>
+<p><span class="math display">\[
+\frac{E_{xQ}}{Q} = 1-\frac{T_0}{T}
+\]</span></p>
+<h4 id="闭口系的作功能力">闭口系的作功能力</h4>
+<p>闭口系的㶲：闭口系从当前状态经过<strong>可逆</strong>过程最终达到与环境平衡状态作出的最大有用功</p>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/20260507004744.png" srcset="/img/loading.jpeg" lazyload
+alt="闭口系作功分解图" />
+<figcaption aria-hidden="true">闭口系作功分解图</figcaption>
+</figure>
+<p>闭口系中气体从初始状态 <span class="math inline">\((p,t)\)</span> 到
+<span class="math inline">\((P_0,t_0)\)</span></p>
+<p>根据热力学第一定律</p>
+<p><span class="math display">\[
+q = \Delt u +w
+\]</span></p>
+<p>则</p>
+<p><span class="math display">\[
+\delta w = \delta q -\mathrm{d}u
+\]</span></p>
+<p>输出有用功为</p>
+<p><span class="math display">\[
+\delta w_{u,1} = \delta q -\mathrm{d}u -p_0 \mathrm{d}v
+\]</span></p>
+<p>在这个过程中系统放热 <span class="math inline">\(-\delta
+q\)</span>，理论上可以使用这部分热量作功，所以我们设置一个微卡诺热机</p>
+<p><span class="math display">\[
+\delta w_\text{net} = \left(1-\frac{T_0}{T}\right)(-\delta q)
+\]</span></p>
+<p>最终理论上对外做的最大功为</p>
+<p><span class="math display">\[
+\begin{aligned}
+   \delta w_u = &amp;\delta w_{u,1}+\delta w_\text{net} = \delta q
+-\mathrm{d}u-p_0 \mathrm{d}v+\left(1-\frac{T_0}{T}\right)(-\delta q)\\
+              = &amp;-\mathrm{d}u+T_0 \mathrm{d}s-p_0 \mathrm{d}v
+\end{aligned}
+\]</span></p>
+<p>则对外最大作功为</p>
+<p><span class="math display">\[
+w_{u,\text{max}} = u-u_0 - T_0(s-s_0)+p_0(v-v_0)
+\]</span></p>
+<h4 id="稳流工质的作功力">稳流工质的作功力</h4>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/202605071042075.png" srcset="/img/loading.jpeg" lazyload
+alt="流动工质作功能力分解图" />
+<figcaption aria-hidden="true">流动工质作功能力分解图</figcaption>
+</figure>
+<p>根据热力学第二定律</p>
+<p><span class="math display">\[
+q = \Delta h +w_t
+\]</span></p>
+<p><span class="math display">\[
+w_s = q-\Delta h
+\]</span></p>
+<p>同样在这个过程中系统对外散热 <span
+class="math inline">\(\displaystyle -\delta q\)</span></p>
+<p>可以作功</p>
+<p><span class="math display">\[
+w_c = \int _1^0\left(1-\frac{T_0}{T}\right)(-\delta q_i)=-q+T_0(s_0-s_1)
+\]</span></p>
+<p><span class="math display">\[
+w_{u,\text{max}}=q-(h_0-h_1)-q+T_0(s_0-s_1)=h_1-h_0-T_0(s_1-s_0)
+\]</span></p>
+<h4 id="熵产与系统功能力损失">熵产与系统功能力损失</h4>
+<h5 id="不可逆传热">不可逆传热</h5>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/20260508101122.png" srcset="/img/loading.jpeg" lazyload
+alt="不可逆传热作功能力损失图" />
+<figcaption aria-hidden="true">不可逆传热作功能力损失图</figcaption>
+</figure>
+<p><span class="math display">\[
+A_{121098}=A_{148103}
+\]</span></p>
+<p><span class="math display">\[
+I=q_{Bun}-q_{Aun}=T_0\Delta s_{iso}=T_0 s_g
+\]</span></p>
+<h5 id="不可逆膨胀或压缩">不可逆膨胀或压缩</h5>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/20260508105900.png" srcset="/img/loading.jpeg" lazyload
+alt="不可逆膨胀或压缩作功能力损失图" />
+<figcaption
+aria-hidden="true">不可逆膨胀或压缩作功能力损失图</figcaption>
+</figure>
+<p>过程 <span class="math inline">\(\displaystyle 2\to 3&#39;\)</span>
+不吸热，两个过程热量㶲的损失为</p>
+<p><span class="math display">\[
+I=T_0\Delta s_{23&#39;}=T_0 s_g
+\]</span></p>
+<h3 id="㶲平衡方程">㶲平衡方程</h3>
+<h4 id="㶲概念推广">㶲概念推广</h4>
+<p>机械能作功能力称为机械㶲，用 <span
+class="math inline">\(E_{x,w}\)</span> 表示</p>
+<p>严格来讲 <span class="math inline">\(E_{x,Q}\)</span>
+不是状态参数</p>
+<h4 id="㶲平衡方程-1">㶲平衡方程</h4>
+<h5 id="闭口系">闭口系</h5>
+<p>一切不可逆过程均造成㶲损失，所以㶲和熵一样是不守恒的，但是㶲在能量传递和转换过程总量是始终增加的</p>
+<p><span class="math display">\[
+\text{㶲流入系统}-\text{㶲流出系统}+\text{㶲损失}=\text{系统㶲变化量}
+\]</span></p>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/20260508202456.png" srcset="/img/loading.jpeg" lazyload
+alt="一个闭口系过程" />
+<figcaption aria-hidden="true">一个闭口系过程</figcaption>
+</figure>
+<p><span class="math display">\[
+\begin{aligned}
+   I&amp;=E_{x,Q}-W_u-\Delta E_{x,U}\\
+    &amp;=\left(1-\frac{T_0}{T_\mathrm{r}}\right)Q-\left[W-p_0\left(V_2-V_1\right)\right]-\left[\left(U_2-U_1\right)-T_0\left(S_2-S_1\right)+p_0\left(V_2-V_1\right)\right]\\
+    &amp;=Q-W-\left(U_2-U_1\right)-T_0\frac{Q}{T_\mathrm{r}}+T_0\left(S_2-S_1\right)\\
+    &amp;=Q_0-T_0\frac{Q}{T_\mathrm{r}}+T_0\left(S_2-S_1\right)\\
+    &amp;=T_0\frac{Q_0}{T_0}-T_0\frac{Q}{T_r}+T_0\left(S_2-S_1\right)=T_0\left[\left(S_2-S_1\right)-\sum
+S_\mathrm{f}\right]=T_0S_\mathrm{g}\
+\end{aligned}
+\]</span></p>
+<h5 id="稳流开系">稳流开系</h5>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/20260508205527.png" srcset="/img/loading.jpeg" lazyload
+alt="一个稳流开系过程" />
+<figcaption aria-hidden="true">一个稳流开系过程</figcaption>
+</figure>
+<p><span class="math display">\[
+\begin{aligned}
+   I&amp;=E_{_{\mathrm{x}1}}-E_{_{\mathrm{x}2}}+E_{_{\mathrm{x},Q}}-W_{_{\mathrm{s}}}\\
+   &amp;=H_1-H_2-T_0\left(S_1-S_2\right)+\frac{m}{2}c_{\mathrm{f1}}^2-\frac{m}{2}c_{\mathrm{f2}}^2-W_{\mathrm{s}}+\left(1-\frac{T_0}{T_{\mathrm{r}}}\right)Q\\
+   &amp;=-\Delta
+H-T_0\left(S_1-S_2\right)-W_\mathrm{t}+Q-T_0\frac{Q}{T_\mathrm{r}}\\
+   &amp;=Q_0+T_0\Delta S-T_0\frac{Q}{T_\mathrm{r}}\\
+   &amp;=T_0\frac{Q_0}{T_0}+T_0\Delta
+S-T_0\frac{Q}{T_\mathrm{r}}=T_0\left(\Delta S-\sum
+S_\mathrm{f}\right)=T_0S_\mathrm{g}
+\end{aligned}
+\]</span></p>
+<h4 id="㶲效率">㶲效率</h4>
+<p>㶲效率有多种写法</p>
+<ol type="1">
+<li><span class="math inline">\(\displaystyle
+\eta_{e_x}=\frac{E_{x,\text{收益}}}{E_{x,\text{代价}}}\)</span></li>
+<li><span class="math inline">\(\displaystyle \eta_{e_x} =
+\frac{W_s}{E_{x,1}}\)</span></li>
+<li><span class="math inline">\(\displaystyle
+\eta_{e_{\mathrm{x}}}=\frac{W_{\mathrm{s}}+E_{\mathrm{x},2}}{E_{\mathrm{x},1}}\)</span></li>
+<li><span class="math inline">\(\displaystyle
+\eta_{e_\mathrm{x}}=\frac{W_\mathrm{s}}{E_\mathrm{x,1}-E_\mathrm{x,2}}\)</span></li>
+</ol>
+<h2 id="气体与蒸汽的流动">气体与蒸汽的流动</h2>
+<h3 id="稳定流动的基本方程式">稳定流动的基本方程式</h3>
+<h3 id="促进流动改变的条件">促进流动改变的条件</h3>
+<h3 id="喷管计算">喷管计算</h3>
+<h3 id="有摩擦的绝热流动">有摩擦的绝热流动</h3>
+<h3 id="绝热节流">绝热节流</h3>
+<h2 id="压气机的热力过程">压气机的热力过程</h2>
+<h3
+id="活塞式压气机工作原理和理论耗功量">活塞式压气机工作原理和理论耗功量</h3>
+<h4 id="压气机的一般分类">压气机的一般分类</h4>
+<ul>
+<li>压头高低
+<ul>
+<li>鼓风机
+<ul>
+<li>表压 <span class="math inline">\(0.01\ \text{MPa}\)</span> 以下</li>
+</ul></li>
+<li>鼓风机
+<ul>
+<li>表压 <span class="math inline">\(0.01\sim 0.3\
+\text{MPa}\)</span></li>
+</ul></li>
+<li>压缩机
+<ul>
+<li>表压 <span class="math inline">\(0.3\ \text{MPa}\)</span> 以上</li>
+</ul></li>
+</ul></li>
+<li>工作原理
+<ul>
+<li>活塞式
+<ul>
+<li>压头高，流量小，间隙生产</li>
+</ul></li>
+<li>叶轮式
+<ul>
+<li>压头低，流量大。连续生产</li>
+</ul></li>
+</ul></li>
+</ul>
+<h4 id="单级活塞式压气机工作原理">单级活塞式压气机工作原理</h4>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/20260509081239.png" srcset="/img/loading.jpeg" lazyload
+alt="活塞式压气机示意图" />
+<figcaption aria-hidden="true">活塞式压气机示意图</figcaption>
+</figure>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/20260509081255.png" srcset="/img/loading.jpeg" lazyload
+alt="pv图" />
+<figcaption aria-hidden="true">pv图</figcaption>
+</figure>
+<p>过程拆解</p>
+<ol type="1">
+<li><span class="math inline">\(0\to 1\)</span> 吸气过程，传输推动功
+<span class="math inline">\(p_1v_1\)</span></li>
+<li><span class="math inline">\(1\to 2\)</span> 压缩过程，消耗外功 <span
+class="math inline">\(w_{1-2}=-\int_1^2 p\, \mathrm{d}v\)</span></li>
+<li><span class="math inline">\(2\to 3\)</span> 排气过程，传输推动功
+<span class="math inline">\(p_2v_2\)</span></li>
+</ol>
+<p>整个过程中压气机耗功（看连杆）</p>
+<p><span class="math display">\[
+W_\mathrm{C}= -\int_1^2 p\, \mathrm{d}V+p_2V_2-p_1V_1 = \int_1^2 V\,
+\mathrm{d}p = -W_\mathrm{t}
+\]</span></p>
+<p>压气机生产量通常用单位时间里生产气体的标准立方米表示</p>
+<h4 id="理论耗功">理论耗功</h4>
+<p><span class="math display">\[
+W_\mathrm{C} = \int_1^2 V\, \mathrm{d}p=-w_\mathrm{t} = \Delta h - q
+\]</span></p>
+<ol type="1">
+<li><p>绝热压缩($q=0)</p>
+<p><span class="math display">\[
+w_{\mathrm{C},s} = \Delta h =
+\frac{\kappa}{\kappa-1}R_gT_1\left[\left(\frac{p_2}{p_1}\right)^\frac{\kappa-1}{\kappa}-1\right]
+\]</span></p></li>
+<li><p>等温压缩(<span class="math inline">\(\Delta h=0\)</span>)</p>
+<p><span class="math display">\[
+w_{\mathrm{C},t} = -q =-\int_1^2 p\, \mathrm{d}p= R_gT_1\ln
+\frac{p_2}{p_1}
+\]</span></p></li>
+<li><p>多变压缩</p>
+<p><span class="math display">\[
+w_{\mathrm{C},n}=\frac{n}{n-1}p_{1}\nu_{1}\left(\pi^{\frac{n-1}{n}}-1\right)
+\]</span></p></li>
+</ol>
+<p><span class="math display">\[
+\left\{
+   \begin{aligned}
+      &amp;w_{\mathrm{C},s}&gt;w_{\mathrm{C},n}&gt;w_{\mathrm{C},T}\\
+      &amp;T_{2s}&gt;T_{2n}&gt;T_{2T}\\
+      &amp;\nu_{2s}&gt;\nu_{2n}&gt;\nu_{2T}
+   \end{aligned}
+\right.
+\]</span></p>
+<h4 id="余隙容积">余隙容积</h4>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/20260509090104.png" srcset="/img/loading.jpeg" lazyload
+alt="pv图" />
+<figcaption aria-hidden="true">pv图</figcaption>
+</figure>
+<p>过程拆解</p>
+<ol type="1">
+<li><p><span class="math inline">\(1\to 2\)</span> 质量 <span
+class="math inline">\(m_1\)</span> 气体压缩：<span
+class="math inline">\(p_1 \to p_2\)</span></p></li>
+<li><p><span class="math inline">\(2\to 3\)</span> <span
+class="math inline">\(m_1 \frac{V_2 - V_3}{V_2}\)</span>
+气体排向储气罐</p></li>
+<li><p><span class="math inline">\(3\to 4\)</span><br />
+<span class="math inline">\(m_1 \frac{V_3}{V_2}\)</span> 气体膨胀：<span
+class="math inline">\(p_2 \to p_1\)</span></p></li>
+<li><p><span class="math inline">\(4\to 1\)</span><br />
+<span class="math inline">\(m_1 \frac{V_1 - V_4}{V_1}\)</span>
+气体吸入气缸</p></li>
+</ol>
+<p>几个名词</p>
+<ul>
+<li><p>余隙容积 <span
+class="math inline">\(V_\mathrm{c}\)</span></p></li>
+<li><p>气缸工作容积（活塞排量）<span
+class="math inline">\(V_\mathrm{h}\)</span></p></li>
+<li><p>有效吸气容积 <span
+class="math inline">\(V_\mathrm{es}\)</span></p>
+<p><span class="math display">\[
+V_{\mathrm{es}}=V_1-V_4
+\]</span></p></li>
+<li><p>余隙容积比 <span class="math inline">\(\sigma\)</span></p>
+<p><span class="math display">\[
+\sigma = \frac{V_\mathrm{c}}{V_h}
+\]</span></p></li>
+</ul>
+<h4 id="余隙容积对生产量的影响">余隙容积对生产量的影响</h4>
+<p>容积效率</p>
+<p><span class="math display">\[
+\begin{aligned}
+   \eta_v&amp;=\frac{V_{\mathrm{es}}}{V_h}=\frac{V_1 - V_4}{V_1 - V_3}\\
+         &amp;=1 - \frac{V_3}{V_1 - V_3}\left(\frac{V_4}{V_3} -
+1\right)\\
+         &amp;=1 - \frac{V_{\mathrm{c}}}{V_h}\left(\pi^{\frac{1}{n}} -
+1\right)\\
+         &amp;=1 - \sigma\left(\pi^{\frac{1}{n}} - 1\right)
+\end{aligned}
+\]</span></p>
+<h4 id="余隙容积对理论耗功的影响">余隙容积对理论耗功的影响</h4>
+<p><span class="math display">\[
+\begin{aligned}
+  W_\mathrm{C}&amp;=W_{\mathrm{t}1-2}-W_{\mathrm{t}3-4}\\
+              &amp;=\frac{n}{n-1}p_1V_1\left(\pi^{\frac{n-1}{n}}-1\right)-\frac{n}{n-1}p_4V_4\left(\pi^{\frac{n-1}{n}}-1\right)\\
+              &amp;=\frac{n}{n-1}p_1(V_1-V_4)\left(\pi^{\frac{n-1}{n}}-1\right)\\
+              &amp;=\frac{n}{n-1}V_\mathrm{es}p_1\left(\pi^{\frac{n-1}{n}}-1\right)\\
+              &amp;=m_{\mathrm{pr}}\frac{n}{n-1}\nu_1p_1{\left(\pi^{\frac{n-1}{n}}-1\right)}
+\end{aligned}
+\]</span></p>
+<p>每千克生产气体的理论耗功</p>
+<p><span class="math display">\[
+W_\mathrm{C} = \frac{W_\mathrm{C}}{m_\mathrm{pr}} =
+\frac{n}{n-1}\nu_1p_1{\left(\pi^{\frac{n-1}{n}}-1\right)}
+\]</span></p>
+<p>和余隙容积无关</p>
+<p>余隙容积会使生产量下降，实际耗功增加</p>
+<h3 id="多级压缩和级间冷却">多级压缩和级间冷却</h3>
+<p>高压气体压缩过程中随着 <span class="math inline">\(p\)</span> 的升高
+<span class="math inline">\(T\)</span> 升高，同时 <span
+class="math inline">\(\eta_v\)</span> 下降</p>
+<p>使用多级压缩能够减少压缩的耗功</p>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/20260510155454.png" srcset="/img/loading.jpeg" lazyload
+alt="多级压缩示意图" />
+<figcaption aria-hidden="true">多级压缩示意图</figcaption>
+</figure>
+<p>每生产 <span class="math inline">\(1\ \text{kg}\)</span>
+气体的理论耗功</p>
+<p><span class="math display">\[
+\begin{aligned}
+w_{\mathrm{C}}&amp;=\frac{n}{n-1}R_\mathrm{g}T_1\left[\left(\frac{p_a}{p_1}\right)^{\frac{n-1}{n}}-1\right]+\frac{n}{n-1}R_\mathrm{g}T_3\left[\left(\frac{p_2}{p_a}\right)^{\frac{n-1}{n}}-1\right]\\
+              &amp;=\frac{n}{n-1}R_\mathrm{g}T_1\left[\left(\frac{p_a}{p_1}\right)^{\frac{n-1}{n}}+\left(\frac{p_2}{p_a}\right)^{\frac{n-1}{n}}-2\right]\end{aligned}
+\]</span></p>
+<p>要求最小耗功，令</p>
+<p><span class="math display">\[
+\frac{\partial w_\mathrm{C}}{\partial p_\mathrm{a}}=0
+\]</span></p>
+<p>得到</p>
+<p><span class="math display">\[
+p_a = \sqrt{p_1p_2}
+\]</span></p>
+<p>此时</p>
+<p><span class="math display">\[
+\pi _\mathrm{L}=\pi _\mathrm{H}
+\]</span></p>
+<p>若有 <span class="math inline">\(m\)</span> 级，则</p>
+<p><span class="math display">\[
+\pi _1 = \pi _2 = \cdots = \pi _m = \sqrt[m]{\pi}
+\]</span></p>
+<p>按 <span class="math inline">\(\displaystyle
+\pi_i=\sqrt[m]{\frac{p_2}{p_1}}\)</span>
+选择各级中间压力，可使总耗功最小。优点：</p>
+<ul>
+<li><p>各级耗功相等，为 <span class="math inline">\(\displaystyle
+w_{C,i} = \frac{n}{n-1}R_gT_1 \left( \pi_i^{\frac{n-1}{n}}-1
+\right)\)</span> 总耗功：<span class="math inline">\(\displaystyle
+w_C=mw_{C,i}\)</span> 有利于曲轴平衡</p></li>
+<li><p>各缸终温相同 <span class="math inline">\(\displaystyle
+T=T_1\pi_i^{\frac{n-1}{n}}\)</span>
+有利于润滑油工作及可靠性增加</p></li>
+<li><p>各级缸散热相同 <span class="math inline">\(\displaystyle
+q_i=\frac{n-\kappa}{n-1}c_v\Delta T\)</span> 各中冷器散热相等：<span
+class="math inline">\(\displaystyle q_{\text{中},i}=c_p\Delta
+T\)</span></p></li>
+<li><p>各缸按比例缩小</p></li>
+<li><p>对提高整机容积效率 <span class="math inline">\(\displaystyle
+\eta_v\)</span> 有利</p></li>
+</ul>
+<p>定温效率</p>
+<p><span class="math display">\[
+\eta
+_{\mathrm{C},\mathrm{T}}=\frac{w_{\mathrm{C},\mathrm{T}}}{w_{\mathrm{C}}}
+\]</span></p>
+<h4 id="叶轮式压气机工作原理">叶轮式压气机工作原理</h4>
+<p>有两种常见的叶轮式压气机</p>
+<ol type="1">
+<li><p>轴流式压气机</p>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/20260510160902.png" srcset="/img/loading.jpeg" lazyload
+alt="轴流式压气机示意图" />
+<figcaption aria-hidden="true">轴流式压气机示意图</figcaption>
+</figure>
+<p>轴流式压气机的气体流动方向和轴平行</p></li>
+<li><p>离心式压气机</p>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/20260510160947.png" srcset="/img/loading.jpeg" lazyload
+alt="离心式压气机示意图" />
+<figcaption aria-hidden="true">离心式压气机示意图</figcaption>
+</figure>
+<p>离心式压气机的气体流动方向和轴垂直</p></li>
+</ol>
+<p>叶轮式压气机较难冷却，可以看作绝热压缩</p>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/20260510163810.png" srcset="/img/loading.jpeg" lazyload
+alt="压缩过程 T-s 图" />
+<figcaption aria-hidden="true">压缩过程 T-s 图</figcaption>
+</figure>
+<p>理论耗功</p>
+<p><span class="math display">\[
+w_{\mathrm{C},s} = \Delta h - q = h_{2s}-h_{1s}
+\]</span></p>
+<p>实际耗功</p>
+<p><span class="math display">\[
+w_\mathrm{C}&#39; = \Delta h - q = h_2&#39; - h_1&#39;
+\]</span></p>
+<p>则多耗功为</p>
+<p><span class="math display">\[
+\Delta W_\mathrm{C} = h_2&#39;-h_{2s} = \int _{2s}^{2&#39;}
+T\,\mathrm{d}s+v\, \mathrm{d}p = A_\mathrm{mn2&#39;2_sm}
+\]</span></p>
+<p>绝热内效率</p>
+<p><span class="math display">\[
+\eta_{\mathrm{Cs}}=\frac{w_{\mathrm{Cs}}}{w_{\mathrm{C}}},=\frac{h_{2s}-h_1}{h_2^{\prime}-h_1}
+\]</span></p>
+<p>若为理想气体</p>
+<p><span class="math display">\[
+\eta_{\mathrm{Cs}}=\frac{T_{2\mathrm{s}}-T_1}{T_2^{\prime}-T_1}
+\]</span></p>
 
                 
               </div>
