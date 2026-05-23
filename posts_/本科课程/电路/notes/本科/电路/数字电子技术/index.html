@@ -27,7 +27,7 @@
 <meta property="og:description" content="数字电子技术 基本概念 数字量和模拟量 电子电路分为两种  模拟电路 Analog Circuit  处理的是模拟信号 Analog Signal 时间和数值上是连续的 Continuous  数字电路 Digital Circuit  处理的数字信号 Digital Signal 时间和数值上是离散的 Discrete 数值上离散是指为量化单位的整数倍   离散信号在时间上离散，但是数值仍然保留">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-03-04T10:00:00.000Z">
-<meta property="article:modified_time" content="2026-03-28T13:34:55.000Z">
+<meta property="article:modified_time" content="2026-05-23T12:18:55.000Z">
 <meta property="article:author" content="dcldyhb">
 <meta property="article:tag" content="电路">
 <meta property="article:tag" content="数字电路">
@@ -226,7 +226,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          6.3k 字
+          6.9k 字
         
       </span>
     
@@ -237,7 +237,7 @@
         
         
         
-          53 分钟
+          58 分钟
         
       </span>
     
@@ -2034,6 +2034,261 @@ alt="校验器" />
 </figure>
 <p>若 1 的个数为偶数，则 5 输出为 <code>1</code>，若为奇数，则 6 输出为
 <code>1</code></p>
+<h3 id="时序逻辑电路">时序逻辑电路</h3>
+<h4 id="锁存器触发器">锁存器、触发器</h4>
+<h5 id="基本-s-r-锁存器-the-set-reset-latch">基本 S-R 锁存器 The
+Set-Reset Latch</h5>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/20260522203354.png" srcset="/img/loading.jpeg" lazyload
+alt="S-R 锁存器" />
+<figcaption aria-hidden="true">S-R 锁存器</figcaption>
+</figure>
+<table>
+<thead>
+<tr>
+<th><span class="math inline">\(\bar{S}\)</span></th>
+<th><span class="math inline">\(\bar{R}\)</span></th>
+<th><span class="math inline">\(Q^{n+1}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="math inline">\(0\)</span></td>
+<td><span class="math inline">\(0\)</span></td>
+<td><span class="math inline">\(1^*\)</span> 不定</td>
+</tr>
+<tr>
+<td><span class="math inline">\(0\)</span></td>
+<td><span class="math inline">\(1\)</span></td>
+<td><span class="math inline">\(1\)</span></td>
+</tr>
+<tr>
+<td><span class="math inline">\(1\)</span></td>
+<td><span class="math inline">\(0\)</span></td>
+<td><span class="math inline">\(0\)</span></td>
+</tr>
+<tr>
+<td><span class="math inline">\(1\)</span></td>
+<td><span class="math inline">\(1\)</span></td>
+<td><span class="math inline">\(Q^n\)</span></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>当 <span class="math inline">\(\bar{S} = 0\)</span> 且 <span
+class="math inline">\(\bar{R} = 1\)</span> 时，输出 <span
+class="math inline">\(Q\)</span> 被置为 <span
+class="math inline">\(1\)</span>（Set 状态）</li>
+<li>当 <span class="math inline">\(\bar{S} = 1\)</span> 且 <span
+class="math inline">\(\bar{R} = 0\)</span> 时，输出 <span
+class="math inline">\(Q\)</span> 被复位为 <span
+class="math inline">\(0\)</span>（Reset 状态）</li>
+<li>当 <span class="math inline">\(\bar{S} = 1\)</span> 且 <span
+class="math inline">\(\bar{R} = 1\)</span> 时，输出 <span
+class="math inline">\(Q\)</span> 保持不变（Hold 状态）</li>
+<li>当 <span class="math inline">\(\bar{S} = 0\)</span> 且 <span
+class="math inline">\(\bar{R} = 0\)</span> 时，输出 <span
+class="math inline">\(Q\)</span> 处于不定状态
+<ul>
+<li>当 <span class="math inline">\(\bar{R}\)</span> 和 <span
+class="math inline">\(\bar{S}\)</span> 同时由 <span
+class="math inline">\(0\)</span> 变为 <span
+class="math inline">\(1\)</span> 时，翻转快的门会先变成 <span
+class="math inline">\(0\)</span>，另一个不变</li>
+</ul></li>
+</ul>
+<h5 id="门控-s-r-锁存器-the-gated-s-r-latch">门控 S-R 锁存器 The Gated
+S-R Latch</h5>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/20260522204242.png" srcset="/img/loading.jpeg" lazyload
+alt="门控 S-R 锁存器" />
+<figcaption aria-hidden="true">门控 S-R 锁存器</figcaption>
+</figure>
+<table>
+<thead>
+<tr>
+<th>EN</th>
+<th><span class="math inline">\(\bar{S}\)</span></th>
+<th><span class="math inline">\(\bar{R}\)</span></th>
+<th><span class="math inline">\(Q^{n+1}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="math inline">\(0\)</span></td>
+<td>X</td>
+<td>X</td>
+<td><span class="math inline">\(Q^n\)</span></td>
+</tr>
+<tr>
+<td><span class="math inline">\(1\)</span></td>
+<td><span class="math inline">\(0\)</span></td>
+<td><span class="math inline">\(0\)</span></td>
+<td><span class="math inline">\(1^*\)</span> 不定</td>
+</tr>
+<tr>
+<td><span class="math inline">\(1\)</span></td>
+<td><span class="math inline">\(0\)</span></td>
+<td><span class="math inline">\(1\)</span></td>
+<td><span class="math inline">\(1\)</span></td>
+</tr>
+<tr>
+<td><span class="math inline">\(1\)</span></td>
+<td><span class="math inline">\(1\)</span></td>
+<td><span class="math inline">\(0\)</span></td>
+<td><span class="math inline">\(0\)</span></td>
+</tr>
+<tr>
+<td><span class="math inline">\(1\)</span></td>
+<td><span class="math inline">\(1\)</span></td>
+<td><span class="math inline">\(1\)</span></td>
+<td><span class="math inline">\(Q^n\)</span></td>
+</tr>
+</tbody>
+</table>
+<h5 id="边沿触发器-edge-triggered-flip-flop">边沿触发器 Edge-triggered
+Flip-flop</h5>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/20260522205006.png" srcset="/img/loading.jpeg" lazyload
+alt="边沿触发器" />
+<figcaption aria-hidden="true">边沿触发器</figcaption>
+</figure>
+<table>
+<thead>
+<tr>
+<th>CLK</th>
+<th><span class="math inline">\(\bar{S}\)</span></th>
+<th><span class="math inline">\(\bar{R}\)</span></th>
+<th><span class="math inline">\(Q^{n+1}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x</td>
+<td><span class="math inline">\(0\)</span></td>
+<td><span class="math inline">\(0\)</span></td>
+<td><span class="math inline">\(Q^n\)</span></td>
+</tr>
+<tr>
+<td><span class="math inline">\(\uparrow\)</span></td>
+<td><span class="math inline">\(0\)</span></td>
+<td><span class="math inline">\(1\)</span></td>
+<td><span class="math inline">\(1\)</span></td>
+</tr>
+<tr>
+<td><span class="math inline">\(\uparrow\)</span></td>
+<td><span class="math inline">\(1\)</span></td>
+<td><span class="math inline">\(0\)</span></td>
+<td><span class="math inline">\(0\)</span></td>
+</tr>
+<tr>
+<td><span class="math inline">\(\uparrow\)</span></td>
+<td><span class="math inline">\(1\)</span></td>
+<td><span class="math inline">\(1\)</span></td>
+<td><span class="math inline">\(1^*\)</span> 不定</td>
+</tr>
+</tbody>
+</table>
+<h6 id="边沿触发-j-k-触发器-edge-triggered-j-k-flip-flop">边沿触发 J-K
+触发器 Edge-triggered J-K Flip-flop</h6>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/20260522205259.png" srcset="/img/loading.jpeg" lazyload
+alt="边沿触发 J-K 触发器" />
+<figcaption aria-hidden="true">边沿触发 J-K 触发器</figcaption>
+</figure>
+<table>
+<thead>
+<tr>
+<th>CLK</th>
+<th>J</th>
+<th>K</th>
+<th><span class="math inline">\(Q^{n+1}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x</td>
+<td>0</td>
+<td>0</td>
+<td><span class="math inline">\(Q^n\)</span></td>
+</tr>
+<tr>
+<td><span class="math inline">\(\uparrow\)</span></td>
+<td>0</td>
+<td>0</td>
+<td><span class="math inline">\(Q^n\)</span></td>
+</tr>
+<tr>
+<td><span class="math inline">\(\uparrow\)</span></td>
+<td>0</td>
+<td>1</td>
+<td><span class="math inline">\(0\)</span></td>
+</tr>
+<tr>
+<td><span class="math inline">\(\uparrow\)</span></td>
+<td>1</td>
+<td>0</td>
+<td><span class="math inline">\(1\)</span></td>
+</tr>
+<tr>
+<td><span class="math inline">\(\uparrow\)</span></td>
+<td>1</td>
+<td>1</td>
+<td><span class="math inline">\(\overline{Q^n}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><span class="math display">\[
+Q^{n+1} = S + \overline{R}Q^n = J\overline{Q^n} + \overline{K}Q^n
+\]</span></p>
+<h6 id="t-触发器-t-flip-flop">T 触发器 T Flip-flop</h6>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/20260523184510.png" srcset="/img/loading.jpeg" lazyload
+alt="T 触发器" />
+<figcaption aria-hidden="true">T 触发器</figcaption>
+</figure>
+<p><span class="math display">\[
+Q^{n+1} = T\overline{Q^n} + \overline{T}Q^n = T \oplus Q^n
+\]</span></p>
+<h5 id="触发器的工作特性">触发器的工作特性</h5>
+<h6 id="传输延迟时间-propagation-delay-time">传输延迟时间 Propagation
+Delay Time</h6>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/20260523192942.png" srcset="/img/loading.jpeg" lazyload
+alt="TPD" />
+<figcaption aria-hidden="true">TPD</figcaption>
+</figure>
+<p>当输入信号发生变化时，输出信号要经过一段微小的延迟才会跟着发生变化。这个“从输入变化到输出变化”的物理时间差就是传输延迟</p>
+<h6 id="设置时间-set-up-time">设置时间 Set-up Time</h6>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/20260523193856.png" srcset="/img/loading.jpeg" lazyload
+alt="Ts" />
+<figcaption aria-hidden="true">Ts</figcaption>
+</figure>
+<p>设置时间是指在时钟信号的有效边沿到来之前，输入信号必须保持稳定的最短时间。也就是说，输入信号必须在时钟边沿之前至少保持不变的时间长度，以确保触发器能够正确地捕捉到输入信号的状态</p>
+<h6 id="保持时间-hold-time">保持时间 Hold Time</h6>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/20260523195134.png" srcset="/img/loading.jpeg" lazyload
+alt="TH" />
+<figcaption aria-hidden="true">TH</figcaption>
+</figure>
+<p>保持时间是指在时钟信号的有效边沿到来之后，输入信号必须继续保持稳定的最短时间。也就是说，即使时钟边沿已经触发了触发器，输入信号仍然需要在这个边沿之后保持不变的时间长度，以确保触发器能够正确地处理输入信号并更新输出状态</p>
+<h5 id="数码寄存器">数码寄存器</h5>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/20260523201848.png" srcset="/img/loading.jpeg" lazyload
+alt="四位数码寄存器" />
+<figcaption aria-hidden="true">四位数码寄存器</figcaption>
+</figure>
+<p>截取输入信号的某一部分，并将其存储在寄存器中，直到下一次时钟信号到来时才更新</p>
 
                 
               </div>

@@ -27,7 +27,7 @@
 <meta property="og:description" content="工程热力学 诸论与基本概念 诸论 工程热力学是一门研究能量转换和物质性质的学科 能源转换利用的关系  一次能源 天然存在且未被加工或转换的能源  风能 水能 化学能 核能 地热能 太阳能  二次能源 一次能源转换成其他形式的能源  机械能 热能 电能   热能和机械能的转化  热能动力装置 从燃料燃烧中得到热能以及利用热能得到动力的整套装置（包括辅助设备）  燃气动力装置  内燃机 燃气轮机装置">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-03-02T00:00:00.000Z">
-<meta property="article:modified_time" content="2026-05-11T01:41:36.000Z">
+<meta property="article:modified_time" content="2026-05-15T06:27:19.000Z">
 <meta property="article:author" content="dcldyhb">
 <meta property="article:tag" content="物理">
 <meta property="article:tag" content="热力学">
@@ -226,7 +226,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          8.9k 字
+          10k 字
         
       </span>
     
@@ -237,7 +237,7 @@
         
         
         
-          75 分钟
+          84 分钟
         
       </span>
     
@@ -1682,8 +1682,275 @@ S_\mathrm{f}\right)=T_0S_\mathrm{g}
 </ol>
 <h2 id="气体与蒸汽的流动">气体与蒸汽的流动</h2>
 <h3 id="稳定流动的基本方程式">稳定流动的基本方程式</h3>
+<h4 id="基本假设与简化">基本假设与简化</h4>
+<p>工程中分析喷管、扩压管及节流阀内的流动问题时，采用以下简化：</p>
+<ul>
+<li><strong>一维稳定流动</strong>：参数仅沿流动方向变化</li>
+<li><strong>绝热流动</strong>：忽略与外界的热交换</li>
+<li><strong>不作轴功</strong>：<span class="math inline">\(w_s =
+0\)</span></li>
+<li><strong>忽略位能变化</strong>：<span class="math inline">\(g\Delta z
+\approx 0\)</span></li>
+</ul>
+<h4 id="稳定流动基本方程">稳定流动基本方程</h4>
+<h5 id="质量守恒方程">质量守恒方程</h5>
+<p><span class="math display">\[
+\frac{\partial \rho}{\partial t}+\frac{\partial \rho u}{\partial
+x}+\frac{\partial \rho v}{\partial y}+\frac{\partial \rho w}{\partial
+z}=0
+\]</span></p>
+<figure>
+<img
+src="https://raw.githubusercontent.com/dcldyhb/Freshman-Notes-Image-Host/main/20260512205918.png" srcset="/img/loading.jpeg" lazyload
+alt="一维稳定流动示意图" />
+<figcaption aria-hidden="true">一维稳定流动示意图</figcaption>
+</figure>
+<p>一维稳定流动则</p>
+<p><span class="math display">\[
+q_{m1} = \frac{A_1c_{f1}}{v_1} = q_{m2} = \frac{A_2c_{f2}}{v_2} =q_m =
+\frac{Ac_f}{v}=\mathrm{const}
+\]</span></p>
+<p>取自然对数并取微分得到</p>
+<p><span class="math display">\[
+\frac{\mathrm{d}v}{v} = \frac{\mathrm{d}A}{A}+\frac{\mathrm{d}c_f}{c_f}
+\]</span></p>
+<p>或</p>
+<p><span class="math display">\[
+\frac{\mathrm{d}\rho}{\rho}+\frac{\mathrm{d}c_f}{c_f}+\frac{\mathrm{d}A}{A}=0
+\]</span></p>
+<h5 id="可逆绝热过程方程">可逆绝热过程方程</h5>
+<p><span class="math display">\[
+p_1v_1^\kappa = p_2v_2^\kappa = pv^\kappa = \mathrm{const}
+\]</span></p>
+<p>微分形式</p>
+<p><span class="math display">\[
+\frac{\mathrm{d}p}{p}+\kappa \frac{\mathrm{d}v}{v}=0
+\]</span></p>
+<h5 id="稳定流动能量方程-1">稳定流动能量方程</h5>
+<p><span class="math display">\[
+q=\Delta h+\frac{1}{2}\Delta c_\mathrm{f}^2+g\Delta z+w_\mathrm{s}
+\]</span></p>
+<p>绝热、不作轴功、忽略位能条件下：</p>
+<p><span class="math display">\[
+h_1 + \frac{1}{2}c_{f1}^2 = h_2 + \frac{1}{2}c_{f2}^2 = h +
+\frac{1}{2}c_f^2 = h_0
+\]</span></p>
+<p>微分形式：</p>
+<p><span class="math display">\[
+\mathrm{d}h + c_f \mathrm{d}c_f = 0
+\]</span></p>
+<h6 id="绝热滞止">绝热滞止</h6>
+<p>当流速降至零时，焓达到最大值，称为滞止焓 <span
+class="math inline">\(h_0\)</span>，对应的温度为滞止温度 <span
+class="math inline">\(T_0\)</span></p>
+<p><span class="math display">\[
+h_0 = h_1 + \frac{1}{2}c_{f1}^2
+\]</span></p>
+<ul>
+<li>滞止参数的求取
+<ul>
+<li><p>理想气体</p>
+<p><span class="math display">\[
+T_0 = T_1 + \frac{c_{f1}^2}{2c_p}, \quad p_0 =
+p_1\left(\frac{T_0}{T_1}\right)^{\frac{\kappa}{\kappa-1}}, \quad v_0 =
+\frac{R_g T_0}{p_0}
+\]</span></p></li>
+<li><p>水蒸气</p>
+<p><span class="math display">\[
+h_0 = h_1 + \frac{1}{2}c_{f1}^2, \quad s_0 = s_1
+\]</span></p></li>
+</ul></li>
+</ul>
+<h5 id="声速方程">声速方程</h5>
+<ul>
+<li><p>声速为状态参数，称为当地声速</p>
+<p><span class="math display">\[
+c = \sqrt{\left(\frac{\partial p}{\partial \rho}\right)_s} =
+\sqrt{-\nu^2\left(\frac{\partial p}{\partial \nu}\right)_s}
+\]</span></p></li>
+<li><p>理想气体等熵过程</p>
+<p><span class="math display">\[
+c = \sqrt{\kappa p v} = \sqrt{\kappa R_g T}
+\]</span></p></li>
+<li><p>水蒸气当地声速</p>
+<p><span class="math display">\[
+c=\sqrt{\kappa p\nu}\quad\neq\sqrt{\kappa
+R_\mathrm{g}T}\quad,\quad\kappa\neq\frac{c_p}{c_V}
+\]</span></p></li>
+<li><p><strong>马赫数</strong>：</p>
+<p><span class="math display">\[
+Ma = \frac{c_f}{c}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(Ma &lt; 1\)</span>：亚声速流动</li>
+<li><span class="math inline">\(Ma = 1\)</span>：声速流动</li>
+<li><span class="math inline">\(Ma &gt; 1\)</span>：超声速流动</li>
+</ul></li>
+</ul>
 <h3 id="促进流动改变的条件">促进流动改变的条件</h3>
+<h4 id="力学条件">力学条件</h4>
+<p>可逆绝热流动中，流速变化与压力变化的耦合关系</p>
+<p><span class="math display">\[
+-\frac{\mathrm{d}p}{p} = \kappa Ma^2 \frac{\mathrm{d}c_f}{c_f}
+\]</span></p>
+<h4 id="几何条件">几何条件</h4>
+<p>由力学条件、过程方程和连续性方程联立，得截面变化与流速变化的关系：</p>
+<p><span class="math display">\[
+\frac{\mathrm{d}A}{A} = (Ma^2 - 1)\frac{\mathrm{d}c_f}{c_f}
+\]</span></p>
+<p><strong>不同马赫数下的流动特性：</strong></p>
+<table>
+
+<thead>
+<tr>
+<th style="text-align: center;">马赫数范围</th>
+<th style="text-align: center;"><span
+class="math inline">\(\mathrm{d}A\)</span> 与 <span
+class="math inline">\(\mathrm{d}c_f\)</span> 关系</th>
+<th style="text-align: center;">加速喷管形状</th>
+<th style="text-align: center;">减速扩压管形状</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><span class="math inline">\(Ma &lt;
+1\)</span></td>
+<td style="text-align: center;">异号</td>
+<td style="text-align: center;">渐缩</td>
+<td style="text-align: center;">渐扩</td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="math inline">\(Ma &gt;
+1\)</span></td>
+<td style="text-align: center;">同号</td>
+<td style="text-align: center;">渐扩</td>
+<td style="text-align: center;">渐缩</td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="math inline">\(Ma =
+1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathrm{d}A
+= 0\)</span></td>
+<td style="text-align: center;">临界截面（喉部）</td>
+<td style="text-align: center;">临界截面（喉部）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>临界截面</strong>（<span class="math inline">\(Ma =
+1\)</span>）：</p>
+<ul>
+<li>发生在 <span class="math inline">\(\mathrm{d}A = 0\)</span>
+处（喉部）</li>
+<li><span class="math inline">\(c_f = c =
+c_{\mathrm{cr}}\)</span>（当地声速）</li>
+<li>参数称为<strong>临界压力</strong> <span
+class="math inline">\(p_{\mathrm{cr}}\)</span>、<strong>临界温度</strong>
+<span
+class="math inline">\(T_{\mathrm{cr}}\)</span>、<strong>临界比体积</strong>
+<span class="math inline">\(v_{\mathrm{cr}}\)</span></li>
+</ul>
 <h3 id="喷管计算">喷管计算</h3>
+<h4 id="流速计算及分析">流速计算及分析</h4>
+<ul>
+<li><p>通用公式（绝热、不作功、任意工质）</p>
+<p><span class="math display">\[
+c_f = \sqrt{2(h_0 - h)} = \sqrt{2(h_1 - h) + c_{f1}^2}
+\]</span></p>
+<p>出口流速</p>
+<p><span class="math display">\[
+c_{f2} = \sqrt{2(h_0 - h_2)} = \sqrt{2c_p(T_0-T_2)} =
+\sqrt{2\frac{\kappa R_g}{\kappa-1}(T_0-T_2)} =
+\sqrt{2\frac{\kappa}{\kappa-1}p_0 v_0 \left[1 -
+\left(\frac{p_2}{p_0}\right)^{\frac{\kappa-1}{\kappa}}\right]}
+\]</span></p>
+<p>理想气体定比热容比</p>
+<p><span class="math display">\[
+c_{f2} = \sqrt{2\frac{\kappa}{\kappa-1}R_g T_0 \left[1 -
+\left(\frac{p_2}{p_0}\right)^{\frac{\kappa-1}{\kappa}}\right]}
+\]</span></p></li>
+</ul>
+<h4 id="临界压力比">临界压力比</h4>
+<p>临界压力比定义为临界截面压力与滞止压力之比</p>
+<p><span class="math display">\[
+\nu_{\mathrm{cr}} = \frac{p_{\mathrm{cr}}}{p_0} = \left(\frac{2}{\kappa
++ 1}\right)^{\frac{\kappa}{\kappa-1}}
+\]</span></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">工质</th>
+<th style="text-align: left;"><span
+class="math inline">\(\kappa\)</span></th>
+<th style="text-align: left;"><span
+class="math inline">\(\nu_{\mathrm{cr}}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">空气</td>
+<td style="text-align: left;">1.4</td>
+<td style="text-align: left;">0.528</td>
+</tr>
+<tr>
+<td style="text-align: left;">过热蒸汽</td>
+<td style="text-align: left;">1.3</td>
+<td style="text-align: left;">0.546</td>
+</tr>
+<tr>
+<td style="text-align: left;">干饱和蒸汽</td>
+<td style="text-align: left;">1.135</td>
+<td style="text-align: left;">0.577</td>
+</tr>
+</tbody>
+</table>
+<p>临界流速</p>
+<p><span class="math display">\[
+c_{f,\mathrm{cr}} = \sqrt{2\frac{\kappa}{\kappa+1}p_0 v_0} =
+\sqrt{\kappa p_{\mathrm{cr}} v_{\mathrm{cr}}} = \sqrt{\kappa R_g
+T_{\mathrm{cr}}}
+\]</span></p>
+<h4 id="流量计算">流量计算</h4>
+<p>通用计算公式</p>
+<p><span class="math display">\[
+q_m = \frac{A c_f}{v}
+\]</span></p>
+<p>收缩喷管取出口截面；缩放喷管取喉部截面或出口截面</p>
+<p>理想气体流量公式：</p>
+<p><span class="math display">\[
+q_m = A_2
+\sqrt{2\frac{\kappa}{\kappa-1}\frac{p_0}{v_0}\left[\left(\frac{p_2}{p_0}\right)^{\frac{2}{\kappa}}
+- \left(\frac{p_2}{p_0}\right)^{\frac{\kappa+1}{\kappa}}\right]}
+\]</span></p>
+<p>随着压强比 <span class="math inline">\(\displaystyle
+\frac{p_2}{p_0}\)</span> 下降，流量增加，直到到达临界，此时 <span
+class="math inline">\(\displaystyle \frac{p_2}{p_0} =
+v_\mathrm{cr}\)</span>，但是流量达到最大值后不再增加，保持为最大值，为壅塞现象</p>
+<p><span class="math display">\[
+q_{m,\mathrm{max}} = A_{\mathrm{cr}} \sqrt{\kappa p_0 v_0
+\left(\frac{2}{\kappa+1}\right)^{\frac{\kappa+1}{\kappa-1}}}
+\]</span></p>
+<h4 id="喷管设计要点">喷管设计要点</h4>
+<p><strong>外形选择</strong>：</p>
+<ol type="1">
+<li>计算临界压力 <span class="math inline">\(p_{\mathrm{cr}} =
+\nu_{\mathrm{cr}} \cdot p_0\)</span></li>
+<li>比较 <span class="math inline">\(p_{\mathrm{cr}}\)</span> 与 <span
+class="math inline">\(p_b\)</span>：
+<ul>
+<li><span class="math inline">\(p_b \ge
+p_{\mathrm{cr}}\)</span>：采用渐缩喷管</li>
+<li><span class="math inline">\(p_b &lt;
+p_{\mathrm{cr}}\)</span>：采用缩放喷管</li>
+</ul></li>
+</ol>
+<p><strong>几何尺寸</strong>：</p>
+<p>扩张段长度需合理：</p>
+<ul>
+<li><strong>太长</strong>：摩擦损失增大</li>
+<li><strong>太短</strong>：<span
+class="math inline">\(\mathrm{d}c_f/\mathrm{d}l\)</span>
+过大，产生涡流</li>
+</ul>
 <h3 id="有摩擦的绝热流动">有摩擦的绝热流动</h3>
 <h3 id="绝热节流">绝热节流</h3>
 <h2 id="压气机的热力过程">压气机的热力过程</h2>
@@ -2121,6 +2388,8 @@ q_1\)</span> 增大时，内部热效率下降</p>
 <p>这是由于温度上升导致 <span class="math inline">\(\displaystyle
 \kappa\)</span> 减小，从而造成热效率下降</p></li>
 </ul>
+<h3
+id="活塞式内燃机各种理想循环的热力学比较">活塞式内燃机各种理想循环的热力学比较</h3>
 
                 
               </div>
