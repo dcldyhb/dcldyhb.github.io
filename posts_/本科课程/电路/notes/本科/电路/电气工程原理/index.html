@@ -34,7 +34,7 @@
 <meta property="og:image" content="http://dcldyhb.github.io/posts_/%E6%9C%AC%E7%A7%91%E8%AF%BE%E7%A8%8B/%E7%94%B5%E8%B7%AF/notes/%E6%9C%AC%E7%A7%91/%E7%94%B5%E8%B7%AF/%E7%94%B5%E6%B0%94%E5%B7%A5%E7%A8%8B%E5%8E%9F%E7%90%86/%E7%94%B5%E6%B0%94%E5%B7%A5%E7%A8%8B%E5%8E%9F%E7%90%86.assets/off-nominal.png">
 <meta property="og:image" content="http://dcldyhb.github.io/posts_/%E6%9C%AC%E7%A7%91%E8%AF%BE%E7%A8%8B/%E7%94%B5%E8%B7%AF/notes/%E6%9C%AC%E7%A7%91/%E7%94%B5%E8%B7%AF/%E7%94%B5%E6%B0%94%E5%B7%A5%E7%A8%8B%E5%8E%9F%E7%90%86/%E7%94%B5%E6%B0%94%E5%B7%A5%E7%A8%8B%E5%8E%9F%E7%90%86.assets/pi-equivalent.png">
 <meta property="article:published_time" content="2026-10-06T02:52:52.000Z">
-<meta property="article:modified_time" content="2026-10-11T13:04:39.000Z">
+<meta property="article:modified_time" content="2026-10-11T13:34:09.000Z">
 <meta property="article:author" content="dcldyhb">
 <meta property="article:tag" content="课程笔记">
 <meta property="article:tag" content="电路">
@@ -1922,8 +1922,8 @@ y_1l\)</span></p>
 \end{bmatrix}
 =
 \begin{bmatrix}
-  \ch{\gamma x} &amp; Z_c\sh{\gamma x}\\
-  \frac{1}{Z_c}\sh{\gamma x} &amp; \ch{\gamma x}
+  \cosh{\gamma x} &amp; Z_c\sinh{\gamma x}\\
+  \frac{1}{Z_c}\sinh{\gamma x} &amp; \cosh{\gamma x}
 \end{bmatrix}
 \begin{bmatrix}
   U_\mathrm{R}\\
@@ -1983,8 +1983,8 @@ U_\mathrm{r}=Z_cI_\mathrm{r}\)</span> 时，有</p>
 \end{bmatrix}
 =
 \begin{bmatrix}
-  \ch{\gamma x} &amp; Z_c\sh{\gamma x}\\
-  \frac{1}{Z_c}\sh{\gamma x} &amp; \ch{\gamma x}
+  \cosh{\gamma x} &amp; Z_c\sinh{\gamma x}\\
+  \frac{1}{Z_c}\sinh{\gamma x} &amp; \cosh{\gamma x}
 \end{bmatrix}
 \begin{bmatrix}
   U_\mathrm{r}\\
@@ -1992,8 +1992,8 @@ U_\mathrm{r}=Z_cI_\mathrm{r}\)</span> 时，有</p>
 \end{bmatrix}
 =
 \begin{bmatrix}
-  \ch{\gamma x} &amp; Z_c\sh{\gamma x}\\
-  \frac{1}{Z_c}\sh{\gamma x} &amp; \ch{\gamma x}
+  \cosh{\gamma x} &amp; Z_c\sinh{\gamma x}\\
+  \frac{1}{Z_c}\sinh{\gamma x} &amp; \cosh{\gamma x}
 \end{bmatrix}
 \begin{bmatrix}
   Z_cI_\mathrm{r}\\
@@ -2002,14 +2002,15 @@ U_\mathrm{r}=Z_cI_\mathrm{r}\)</span> 时，有</p>
 \]</span></p>
 <p>则</p>
 <p><span class="math display">\[
-U_\mathrm{x} = Z_cI_\mathrm{r}\ch{\gamma x}+Z_cI_\mathrm{r}\sh{\gamma x}
-= Z_cI_\mathrm{r}\left(\ch{\gamma x}+\sh{\gamma x}\right) =
-Z_cI_\mathrm{r}e^{\gamma x}
+U_\mathrm{x} = Z_cI_\mathrm{r}\cosh{\gamma
+x}+Z_cI_\mathrm{r}\sinh{\gamma x} = Z_cI_\mathrm{r}\left(\cosh{\gamma
+x}+\sinh{\gamma x}\right) = Z_cI_\mathrm{r}e^{\gamma x}
 \]</span></p>
 <p><span class="math display">\[
-I_\mathrm{x} = \frac{1}{Z_c}I_\mathrm{r}\sh{\gamma
-x}+I_\mathrm{r}\ch{\gamma x} = I_\mathrm{r}\left(\frac{1}{Z_c}\sh{\gamma
-x}+\ch{\gamma x}\right) = I_\mathrm{r}e^{\gamma x}
+I_\mathrm{x} = \frac{1}{Z_c}I_\mathrm{r}\sinh{\gamma
+x}+I_\mathrm{r}\cosh{\gamma x} =
+I_\mathrm{r}\left(\frac{1}{Z_c}\sinh{\gamma x}+\cosh{\gamma x}\right) =
+I_\mathrm{r}e^{\gamma x}
 \]</span></p>
 <p>因此线路上任意一点的电压和电流比都是波阻抗</p>
 <h5 id="超高压输电线路的均匀长线特性">超高压输电线路的均匀长线特性</h5>
