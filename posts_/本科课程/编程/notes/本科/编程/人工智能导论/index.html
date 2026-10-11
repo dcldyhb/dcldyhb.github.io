@@ -1790,6 +1790,11 @@ id="机器学习在能源领域的未来在哪里">机器学习在能源领域�
                 inlineMath: { '[+]': [['$', '$']] },
                 // 现有笔记使用粗体向量、定义等号和 dcases，显式载入所需扩展。
                 packages: { '[+]': ['boldsymbol', 'mathtools'] },
+                // 保留笔记中的双曲函数 ch、sh 记法，按正体函数名排版。
+                macros: {
+                  ch: '\\operatorname{ch}',
+                  sh: '\\operatorname{sh}'
+                },
                 preFilters: [function(context) {
                   // 旧版允许大括号内部使用 align，新版需要使用可嵌套的 aligned。
                   context.math.math = context.math.math.replace(
