@@ -4,7 +4,7 @@
   
   
   <entry>
-    <title></title>
+    <title>电气工程原理</title>
     <link href="/posts_/uncategorized/notes/%E6%9C%AC%E7%A7%91/%E7%94%B5%E8%B7%AF/%E7%94%B5%E6%B0%94%E5%B7%A5%E7%A8%8B%E5%8E%9F%E7%90%86/"/>
     <url>/posts_/uncategorized/notes/%E6%9C%AC%E7%A7%91/%E7%94%B5%E8%B7%AF/%E7%94%B5%E6%B0%94%E5%B7%A5%E7%A8%8B%E5%8E%9F%E7%90%86/</url>
     
@@ -17,7 +17,7 @@
   
   
   <entry>
-    <title></title>
+    <title>电子电力技术基础</title>
     <link href="/posts_/uncategorized/notes/%E6%9C%AC%E7%A7%91/%E7%94%B5%E8%B7%AF/%E7%94%B5%E5%AD%90%E7%94%B5%E5%8A%9B%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80/"/>
     <url>/posts_/uncategorized/notes/%E6%9C%AC%E7%A7%91/%E7%94%B5%E8%B7%AF/%E7%94%B5%E5%AD%90%E7%94%B5%E5%8A%9B%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80/</url>
     
@@ -226,11 +226,11 @@
     
     <tags>
       
-      <tag>人工智能</tag>
+      <tag>专业课程</tag>
       
       <tag>编程</tag>
       
-      <tag>专业课程</tag>
+      <tag>人工智能</tag>
       
     </tags>
     
@@ -288,9 +288,9 @@
     
     <tags>
       
-      <tag>课程笔记</tag>
-      
       <tag>能源化学</tag>
+      
+      <tag>课程笔记</tag>
       
     </tags>
     
@@ -441,13 +441,13 @@
     
     <tags>
       
+      <tag>HTML</tag>
+      
       <tag>前端</tag>
       
       <tag>Web</tag>
       
       <tag>笔记</tag>
-      
-      <tag>HTML</tag>
       
     </tags>
     
@@ -571,9 +571,9 @@
     
     <tags>
       
-      <tag>高数</tag>
-      
       <tag>课程笔记</tag>
+      
+      <tag>高数</tag>
       
     </tags>
     
@@ -689,9 +689,9 @@
     
     <tags>
       
-      <tag>LeetCode</tag>
-      
       <tag>编程</tag>
+      
+      <tag>LeetCode</tag>
       
       <tag>算法</tag>
       
