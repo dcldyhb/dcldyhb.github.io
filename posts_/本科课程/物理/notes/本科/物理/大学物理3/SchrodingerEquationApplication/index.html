@@ -652,7 +652,6 @@ l\)</span></li>
 
 
 
-
     
 
     
@@ -867,46 +866,62 @@ l\)</span></li>
 
   
       <script>
-        if (!window.MathJax) {
-          window.MathJax = {
-            tex    : {
-              inlineMath: { '[+]': [['$', '$']] }
-            },
-            loader : {
-              load: ['ui/lazy']
-            },
-            options: {
-              renderActions: {
-                insertedScript: [200, () => {
-                  document.querySelectorAll('mjx-container').forEach(node => {
-                    let target = node.parentNode;
-                    if (target.nodeName.toLowerCase() === 'li') {
-                      target.parentNode.classList.add('has-jax');
-                    }
-                  });
-                }, '', false]
-              }
+        (function() {
+          function refreshMath() {
+            if (!window.MathJax || typeof MathJax.whenReady !== 'function') {
+              return;
             }
-          };
-        } else {
-          MathJax.startup.document.state(0);
-          MathJax.texReset();
-          MathJax.typeset();
-          MathJax.typesetPromise();
-        }
-
-        Fluid.events.registerRefreshCallback(function() {
-          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
-            MathJax.startup.document.state(0);
-            MathJax.texReset();
-            MathJax.typeset();
-            MathJax.typesetPromise();
+            // 等待正在进行的排版完成，再重置公式及编号。
+            MathJax.whenReady(function() {
+              MathJax.startup.document.state(0);
+              MathJax.texReset();
+            }).then(function() {
+              return MathJax.typesetPromise();
+            }).catch(function(error) {
+              console.error('MathJax 公式排版失败：', error);
+            });
           }
-        });
+
+          if (!window.MathJax) {
+            window.MathJax = {
+              tex: {
+                inlineMath: { '[+]': [['$', '$']] },
+                // 现有笔记使用粗体向量、定义等号和 dcases，显式载入所需扩展。
+                packages: { '[+]': ['boldsymbol', 'mathtools'] },
+                preFilters: [function(context) {
+                  // 旧版允许大括号内部使用 align，新版需要使用可嵌套的 aligned。
+                  context.math.math = context.math.math.replace(
+                    /(\\left\\\{\s*)\\begin\{align\}([\s\S]*?)\\end\{align\}(\s*\\right\.)/g,
+                    '$1\\begin{aligned}$2\\end{aligned}$3'
+                  );
+                }]
+              },
+              loader: {
+                load: ["[tex]/boldsymbol","[tex]/mathtools","ui/lazy"]
+              },
+              options: {
+                renderActions: {
+                  insertedScript: [200, function() {
+                    document.querySelectorAll('mjx-container').forEach(function(node) {
+                      var target = node.parentNode;
+                      if (target && target.nodeName.toLowerCase() === 'li') {
+                        target.parentNode.classList.add('has-jax');
+                      }
+                    });
+                  }, '', false]
+                }
+              }
+            };
+          } else {
+            refreshMath();
+          }
+
+          Fluid.events.registerRefreshCallback(refreshMath);
+        })();
       </script>
     
 
-  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+  <script  src="https://cdn.jsdelivr.net/npm/mathjax@4.1.3/tex-mml-chtml.js" ></script>
 
   <script  src="/js/local-search.js" ></script>
 
