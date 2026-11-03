@@ -1,0 +1,2320 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/avatar.jpg">
+  <link rel="icon" href="/img/avatar.jpg">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="dcldyhb">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="对应原 PDF 第 1 至 72 页的逐页复习总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="热能动力工程：期中总结">
+<meta property="og:url" content="http://dcldyhb.github.io/posts_/uncategorized/notes/thermo_midterm_work/project/reference/%E6%9C%9F%E4%B8%AD%E6%80%BB%E7%BB%93_%E9%80%90%E9%A1%B5%E6%80%BB%E7%BB%93_Marp/index.html">
+<meta property="og:site_name" content="dcldyhb的笔记">
+<meta property="og:description" content="对应原 PDF 第 1 至 72 页的逐页复习总结">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-11-03T01:14:00.000Z">
+<meta property="article:modified_time" content="2026-11-03T01:14:00.000Z">
+<meta property="article:author" content="dcldyhb">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>热能动力工程：期中总结 - dcldyhb的笔记</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"dcldyhb.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.jpeg","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>哦耶</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="热能动力工程：期中总结"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2026-11-03 09:14" pubdate>
+          2026年11月3日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          10k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          87 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">热能动力工程：期中总结</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="热能动力工程期中总结">热能动力工程：期中总结</h1>
+<h2 id="第-1-页封面与阅读说明">第 1 页｜封面与阅读说明</h2>
+<ul>
+<li>来源：《期中总结.pdf》，授课教师：于立军、陈金伟。</li>
+<li>本文件逐页对应原 PDF <strong>第 1 至 72 页</strong>，以
+<code>---</code> 分隔 Marp 页面。</li>
+<li>内容覆盖能源利用、锅炉、汽轮机、燃气轮机、内燃机。</li>
+<li>保留定义、流程、公式、关键数据与练习结论；图示转述为流程或表格。</li>
+<li>标为“阅读提示”的内容用于说明符号、适用条件或课件中的疑点。</li>
+</ul>
+<blockquote>
+<p>公式均使用单、双美元符号；单位和说明性下标使用正体。</p>
+</blockquote>
+<hr />
+<h2 id="第-2-页能源形式与科学用能章节导入">第 2
+页｜能源形式与科学用能：章节导入</h2>
+<p>本章围绕三个问题展开：</p>
+<ol type="1">
+<li><strong>能源有哪些形式？</strong> 区分资源类型及其利用方式。</li>
+<li><strong>能量怎样转换？</strong>
+认识锅炉、汽轮机、燃气轮机和内燃机。</li>
+<li><strong>怎样提高用能效果？</strong>
+关注转换效率、温度匹配与梯级利用。</li>
+</ol>
+<p>复习主线：能源资源 → 转换设备 → 能量转换链 → 科学用能。</p>
+<hr />
+<h2 id="第-3-页能源类型及利用方式">第 3 页｜能源类型及利用方式</h2>
+<table>
+<thead>
+<tr>
+<th>分类或对象</th>
+<th>课件列举的内容</th>
+<th>复习要点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>不可再生能源</td>
+<td>煤炭、石油、天然气</td>
+<td>也是课件列举的常规能源</td>
+</tr>
+<tr>
+<td>新能源相关形式</td>
+<td>风能、太阳能、生物质、氢能</td>
+<td>区分资源与能量载体</td>
+</tr>
+<tr>
+<td>其他利用形式</td>
+<td>水能、核能、储能</td>
+<td>分类维度并不完全相同</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>可再生性</strong>与<strong>常规／新能源</strong>是不同的分类依据。</li>
+<li>阅读提示：氢主要是能量载体；其可再生属性取决于制氢来源。</li>
+<li>储能是能量存储与调节方式，不能与一次能源资源直接等同。</li>
+</ul>
+<hr />
+<h2 id="第-4-页能源转换设备的分工">第 4 页｜能源转换设备的分工</h2>
+<table>
+<thead>
+<tr>
+<th>设备</th>
+<th>主要能量转换</th>
+<th>在系统中的作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>锅炉</td>
+<td>燃料化学能 → 工质热能</td>
+<td>产生满足参数要求的蒸汽</td>
+</tr>
+<tr>
+<td>汽轮机</td>
+<td>蒸汽热能 → 机械能</td>
+<td>驱动发电机或其他机械</td>
+</tr>
+<tr>
+<td>燃气轮机</td>
+<td>燃料能量 → 燃气能量 → 机械能</td>
+<td>压气、燃烧、膨胀连续进行</td>
+</tr>
+<tr>
+<td>内燃机</td>
+<td>缸内燃烧放热 → 机械能</td>
+<td>常以活塞往复运动输出功</td>
+</tr>
+</tbody>
+</table>
+<p>阅读提示：设备输出的机械能还需经<strong>发电机</strong>转换为电能。</p>
+<hr />
+<h2 id="第-5-页火力发电厂的蒸汽动力循环">第 5
+页｜火力发电厂的蒸汽动力循环</h2>
+<ul>
+<li><strong>燃料侧</strong>：煤炭制备、输送和燃烧，为锅炉提供热量。</li>
+<li><strong>汽水侧</strong>：给水 → 锅炉加热、汽化、过热 →
+汽轮机膨胀做功。</li>
+<li><strong>冷端</strong>：汽轮机排汽 → 凝汽器 → 凝结水及给水系统 →
+锅炉。</li>
+<li><strong>电力侧</strong>：汽轮机驱动发电机，电能经电气设备送出。</li>
+<li><strong>风烟侧</strong>：空气助燃，烟气放热后经净化装置排出。</li>
+</ul>
+<p>读图时先找汽水闭合回路，再辨认燃料、空气、烟气和冷却水的流向。</p>
+<hr />
+<h2 id="第-6-页串联能量转换效率">第 6 页｜串联能量转换效率</h2>
+<p>课件示例：锅炉环节约 <span
+class="math inline">\(92\%\)</span>，汽轮机环节约 <span
+class="math inline">\(42\%\)</span>， 发电机环节约 <span
+class="math inline">\(98\%\)</span>。</p>
+<p><span class="math display">\[
+\eta_{\mathrm{tot}}
+=\eta_{\mathrm{b}}\eta_{\mathrm{ST}}\eta_{\mathrm{g}}
+=0.92\times0.42\times0.98
+\approx0.379\approx38\%
+\]</span></p>
+<ul>
+<li>下标 <span class="math inline">\(\mathrm{b}\)</span>、<span
+class="math inline">\(\mathrm{ST}\)</span>、<span
+class="math inline">\(\mathrm{g}\)</span>
+分别指锅炉、汽轮机、发电机。</li>
+<li>各环节的输出作为下一环节的输入时，<strong>总效率等于效率之积</strong>。</li>
+<li>课件示例中，热能转机械能环节的转换比例最低。</li>
+<li>这些数值用于说明转换链，不代表所有机组的固定效率。</li>
+</ul>
+<hr />
+<h2 id="第-7-页科学用能与梯级利用">第 7 页｜科学用能与梯级利用</h2>
+<p>核心原则：<strong>分配得当、各取所需、温度对口、梯级利用</strong>。</p>
+<ul>
+<li>高品位能量优先满足发电、动力等需求，再利用剩余热量。</li>
+<li>课件示意：燃气轮机／内燃机余热 → 吸收式制冷 → 低温热利用。</li>
+<li>图示中温余热约为 <span
+class="math inline">\(300\sim500\,\mathrm{^{\circ}C}\)</span>，
+低温余热约为 <span
+class="math inline">\(100\sim200\,\mathrm{^{\circ}C}\)</span>。</li>
+<li>较低温度热源可服务供热、热泵及热驱动除湿等用途。</li>
+<li>AI 用能优化：结合系统输入、输出与运行数据，协调设备及能源分配。</li>
+</ul>
+<hr />
+<h2 id="第-8-页锅炉章节导入">第 8 页｜锅炉：章节导入</h2>
+<p>锅炉部分的复习顺序：</p>
+<ol type="1">
+<li><strong>作用与分类</strong>：产生什么蒸汽，如何组织工质流动。</li>
+<li><strong>结构与系统</strong>：区分本体、辅助设备、燃料、风烟和汽水流程。</li>
+<li><strong>热平衡</strong>：输入热量如何分配，效率如何计算，损失怎样降低。</li>
+</ol>
+<p>主线：燃料燃烧放热 → 受热面传热 → 工质吸热形成蒸汽。</p>
+<hr />
+<h2 id="第-9-页锅炉的作用与蒸汽参数">第 9 页｜锅炉的作用与蒸汽参数</h2>
+<p>锅炉完成循环工质的<strong>加热、汽化和蒸汽过热</strong>。</p>
+<ul>
+<li>能量转换：燃料化学能 → 热能 → 工质焓的增加。</li>
+<li>蒸汽的“质”：压力 <span class="math inline">\(p\)</span>、温度 <span
+class="math inline">\(t\)</span>、纯净度。</li>
+<li>蒸汽的“量”：蒸发量 <span
+class="math inline">\(D\)</span>，表示单位时间内产生的蒸汽量。</li>
+<li>相互耦合的三个过程：<strong>燃料燃烧、工质吸热、烟气放热</strong>。</li>
+<li>锅炉除生产主蒸汽外，还可承担汽轮机排汽的再热任务。</li>
+</ul>
+<p>复习时应同时关注蒸汽参数和流量，不能只比较温度。</p>
+<hr />
+<h2 id="第-10-页锅炉的两类分类依据">第 10 页｜锅炉的两类分类依据</h2>
+<table>
+<thead>
+<tr>
+<th>分类依据</th>
+<th>主要类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>水循环方式</td>
+<td>自然循环、强制循环、直流</td>
+</tr>
+<tr>
+<td>出口蒸汽参数</td>
+<td>低压、中压、高压、超高压、亚临界、超临界、超超临界</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>循环方式</strong>说明水／汽在受热面中如何流动。</li>
+<li><strong>蒸汽参数</strong>说明出口蒸汽的压力、温度等级。</li>
+<li>两种分类彼此关联，但描述的是不同特征。</li>
+<li>后续重点：有无汽包、循环驱动力以及是否一次通过受热面。</li>
+</ul>
+<hr />
+<h2 id="第-11-页炉与锅的结构分工">第 11 页｜“炉”与“锅”的结构分工</h2>
+<ul>
+<li><strong>炉侧</strong>：燃料在炉膛中燃烧，化学能转变为高温烟气的热能。</li>
+<li><strong>锅侧</strong>：工质经预热、蒸发和过热三个阶段吸热。</li>
+<li>省煤器：未饱和水 → 接近或达到饱和状态的水。</li>
+<li>水冷壁等蒸发受热面：水受热形成汽水混合物；汽包承担分离等作用。</li>
+<li>过热器：饱和蒸汽 → 过热蒸汽。</li>
+<li>烟气沿各受热面放热；空气预热、引风及烟气净化设备辅助运行。</li>
+</ul>
+<p>阅读提示：汽包是分离、汇集及循环组织部件，不宜等同于蒸发受热面。</p>
+<hr />
+<h2 id="第-12-页锅炉本体的主要部件">第 12 页｜锅炉本体的主要部件</h2>
+<table>
+<thead>
+<tr>
+<th>部件</th>
+<th>主要作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>炉膛、燃烧器、炉墙</td>
+<td>组织燃烧、形成燃烧空间并保温</td>
+</tr>
+<tr>
+<td>汽包</td>
+<td>汽水分离，连接循环回路</td>
+</tr>
+<tr>
+<td>水冷壁</td>
+<td>吸收炉膛热量，使水蒸发</td>
+</tr>
+<tr>
+<td>过热器、再热器</td>
+<td>分别加热主蒸汽、汽轮机高压缸排汽</td>
+</tr>
+<tr>
+<td>省煤器</td>
+<td>利用烟气余热预热给水</td>
+</tr>
+<tr>
+<td>空气预热器</td>
+<td>利用烟气余热加热助燃空气</td>
+</tr>
+</tbody>
+</table>
+<p>记忆线索：<strong>燃烧空间 + 汽水受热面 +
+尾部余热利用设备</strong>。</p>
+<hr />
+<h2 id="第-13-页锅炉辅助设备">第 13 页｜锅炉辅助设备</h2>
+<p>课件列出八类辅助设备或功能：</p>
+<ol type="1">
+<li>燃料供应、磨煤机：完成燃料供给和煤粉制备。</li>
+<li>送风、引风：提供空气并维持烟气流动。</li>
+<li>给水：向锅炉输送满足要求的水。</li>
+<li>除灰除渣：排出飞灰、底渣等固体产物。</li>
+<li>脱硫脱硝：控制烟气污染物。</li>
+<li>自动控制：协调燃烧、汽水参数和设备运行。</li>
+</ol>
+<p>区分：本体直接组织燃烧与传热，辅助设备保证本体连续、稳定运行。</p>
+<hr />
+<h2 id="第-14-页按蒸汽参数比较机组">第 14 页｜按蒸汽参数比较机组</h2>
+<p>以下摘录课件表中未被红叉标出的三类机组。压力单位 <span
+class="math inline">\(\mathrm{MPa}\)</span>， 温度单位 <span
+class="math inline">\(\mathrm{^{\circ}C}\)</span>，供电煤耗单位 <span
+class="math inline">\(\mathrm{g/(kW\cdot h)}\)</span>。</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>压力</th>
+<th>温度</th>
+<th>效率</th>
+<th>供电煤耗</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>亚临界</td>
+<td>17.0</td>
+<td>540／540</td>
+<td><span class="math inline">\(38\%\)</span></td>
+<td>324</td>
+</tr>
+<tr>
+<td>超临界</td>
+<td>25.5</td>
+<td>567／567</td>
+<td><span class="math inline">\(41\%\)</span></td>
+<td>300</td>
+</tr>
+<tr>
+<td>超超临界</td>
+<td>30.0</td>
+<td>600／600／600</td>
+<td><span class="math inline">\(48\%\)</span></td>
+<td>256</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>课件参考趋势：提高蒸汽参数，有利于提高效率、降低煤耗。</li>
+<li>课件所列临界参数：<span
+class="math inline">\(p_{\mathrm{cr}}=22.129\,\mathrm{MPa}\)</span>，
+<span
+class="math inline">\(t_{\mathrm{cr}}=374.15\,\mathrm{^{\circ}C}\)</span>。</li>
+<li>表中数值是课件对比示例；斜线分隔主蒸汽、再热蒸汽等温度参数。</li>
+</ul>
+<hr />
+<h2 id="第-15-页自然循环强制循环与直流锅炉">第 15
+页｜自然循环、强制循环与直流锅炉</h2>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>汽包</th>
+<th>工质流动的主要驱动力</th>
+<th>流动特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>自然循环</td>
+<td>有</td>
+<td>下降管与上升管内工质的密度差</td>
+<td>回路内循环</td>
+</tr>
+<tr>
+<td>强制循环</td>
+<td>有</td>
+<td>密度差及循环泵压头</td>
+<td>泵辅助循环</td>
+</tr>
+<tr>
+<td>直流</td>
+<td>无</td>
+<td>给水泵压头</td>
+<td>一次通过各受热面</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>自然循环的关键是建立可靠的<strong>密度差循环压头</strong>。</li>
+<li>强制循环在循环回路中增设循环泵。</li>
+<li>直流锅炉不依赖汽包组织循环，给水持续流过加热、蒸发和过热区段。</li>
+</ul>
+<hr />
+<h2 id="第-16-页锅炉系统总览">第 16 页｜锅炉系统总览</h2>
+<p>课件将锅炉系统分为四部分：</p>
+<ul>
+<li><strong>煤粉制备</strong>：煤仓、给煤机、磨煤机及送粉设备。</li>
+<li><strong>燃烧系统</strong>：燃烧器、炉膛、水冷壁及排渣装置。</li>
+<li><strong>风烟系统</strong>：送风机、空气预热器、烟道、净化设备、引风机及烟囱。</li>
+<li><strong>汽水系统</strong>：给水、汽包、下降管、水冷壁、过热器和再热器。</li>
+</ul>
+<p>读总图的方法：先按介质分线，再沿流向找设备；避免只背部件编号。</p>
+<hr />
+<h2 id="第-17-页煤粉制备和燃烧流程">第 17 页｜煤粉制备和燃烧流程</h2>
+<p>燃料主线：</p>
+<p>煤仓（原煤） → 给煤机 → 磨煤机（煤粉） → 燃烧器 → 炉膛。</p>
+<p>热空气支线：</p>
+<p>送风机（冷空气） → 空气预热器 → 热空气 → 磨煤及送粉环节。</p>
+<ul>
+<li>热空气用于<strong>加热、干燥和输送煤粉</strong>。</li>
+<li>煤粉与空气进入炉膛燃烧，产生高温烟气。</li>
+<li>底部灰渣经排渣装置排出；烟气继续进入后续受热面和烟道。</li>
+</ul>
+<hr />
+<h2 id="第-18-页风烟系统与余热回收">第 18 页｜风烟系统与余热回收</h2>
+<p>课件流程：烟气 → 过热器 → 再热器 → 省煤器 → 空气预热器 → 除尘器 →
+引风机 → 脱硫脱硝装置 → 烟囱。</p>
+<table>
+<thead>
+<tr>
+<th>课件中的亚临界 <span class="math inline">\(600\,\mathrm{MW}\)</span>
+机组示例</th>
+<th>温度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>进口烟温／排烟温度</td>
+<td><span
+class="math inline">\(1000/128\,\mathrm{^{\circ}C}\)</span></td>
+</tr>
+<tr>
+<td>过热蒸汽出口／省煤器出口水温</td>
+<td><span
+class="math inline">\(541/310\,\mathrm{^{\circ}C}\)</span></td>
+</tr>
+<tr>
+<td>一次风／二次风温度</td>
+<td><span
+class="math inline">\(284/307\,\mathrm{^{\circ}C}\)</span></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>烟气逐级放热，分别服务蒸汽、给水和空气加热。</li>
+<li>阅读提示：净化设备的实际布置因机组而异，此处按课件示意记忆。</li>
+</ul>
+<hr />
+<h2 id="第-19-页煤粉与风烟系统的耦合">第 19
+页｜煤粉与风烟系统的耦合</h2>
+<ul>
+<li><strong>一次风</strong>：参与煤粉干燥和输送，将煤粉送至燃烧器。</li>
+<li><strong>二次风</strong>：向燃烧区域补充空气，满足燃烧所需氧气。</li>
+<li>煤粉燃烧后，烟气流经炉膛、水平烟道与尾部烟道并放热。</li>
+<li>烟气中的飞灰由除尘装置分离，炉底灰渣由冷灰斗及排渣装置排出。</li>
+<li>未燃煤粒随飞灰、灰渣排出，会形成固体不完全燃烧热损失。</li>
+</ul>
+<p>本页三个功能：<strong>干燥输粉、供氧燃烧、向工质传热</strong>。</p>
+<hr />
+<h2 id="第-20-页汽水系统的状态变化">第 20 页｜汽水系统的状态变化</h2>
+<p>主蒸汽流程：</p>
+<p>给水 → 省煤器 → 饱和水 → 水冷壁蒸发 → 饱和蒸汽 → 过热器 → 过热蒸汽 →
+汽轮机高压缸。</p>
+<p>再热流程：</p>
+<p>高压缸排汽 → 再热器 → 再热蒸汽 → 后续汽轮机缸体。</p>
+<ul>
+<li>省煤器主要承担预热，水冷壁主要承担蒸发，过热器承担过热。</li>
+<li><strong>过热器与再热器的入口工质来源不同</strong>，不可混淆。</li>
+<li>本图按亚临界汽包锅炉的典型状态变化理解。</li>
+</ul>
+<hr />
+<h2 id="第-21-页汽包锅炉的汽水循环">第 21 页｜汽包锅炉的汽水循环</h2>
+<ul>
+<li><strong>给水进入</strong>：主凝结水及化学补充水 → 给水泵 → 省煤器 →
+汽包。</li>
+<li><strong>循环回路</strong>：汽包 → 下降管 → 下联箱 → 水冷壁 → 上联箱
+→ 导汽管 → 汽包／汽水分离环节。</li>
+<li><strong>蒸汽送出</strong>：分离出的饱和蒸汽 → 过热器 →
+汽轮机调节级。</li>
+<li>下降管内主要为水；水冷壁出口及导汽管内为汽水混合物。</li>
+<li>汽水分离使蒸汽与回路中的循环水分开，后者继续参与循环。</li>
+</ul>
+<p>读图重点：区分<strong>外部给水、内部循环水、送出蒸汽</strong>三条关系。</p>
+<hr />
+<h2 id="第-22-页煤的分析方法与成分基准">第 22
+页｜煤的分析方法与成分基准</h2>
+<ul>
+<li><strong>元素分析</strong>关注碳、氢、氧、氮、硫等元素以及灰分、水分。</li>
+<li><strong>工业分析</strong>关注水分、灰分、挥发分、固定碳。</li>
+<li>两种分析的划分依据不同，固定碳不等同于全部元素碳。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>基准</th>
+<th>正体下标</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>收到基</td>
+<td><span class="math inline">\(\mathrm{ar}\)</span></td>
+<td>包括入炉煤全部成分</td>
+</tr>
+<tr>
+<td>空气干燥基</td>
+<td><span class="math inline">\(\mathrm{ad}\)</span></td>
+<td>风干状态，去掉外部水分</td>
+</tr>
+<tr>
+<td>干燥基</td>
+<td><span class="math inline">\(\mathrm{d}\)</span></td>
+<td>去掉全部水分</td>
+</tr>
+<tr>
+<td>干燥无灰基</td>
+<td><span class="math inline">\(\mathrm{daf}\)</span></td>
+<td>去掉全部水分及灰分</td>
+</tr>
+</tbody>
+</table>
+<p>比较煤质、发热量和损失时，应先核对所用基准。</p>
+<hr />
+<h2 id="第-23-页锅炉热平衡的六项输出">第 23
+页｜锅炉热平衡的六项输出</h2>
+<p><span class="math display">\[
+Q_{\mathrm{f}}=Q_1+Q_2+Q_3+Q_4+Q_5+Q_6
+\]</span></p>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="math inline">\(Q_1\)</span></td>
+<td>向工质传递的有效利用热量</td>
+</tr>
+<tr>
+<td><span class="math inline">\(Q_2\)</span></td>
+<td>排烟及其携带飞灰带走的热量</td>
+</tr>
+<tr>
+<td><span class="math inline">\(Q_3\)</span></td>
+<td>未燃尽可燃气体带走的热量</td>
+</tr>
+<tr>
+<td><span class="math inline">\(Q_4\)</span></td>
+<td>飞灰、灰渣中未燃尽可燃物带走的热量</td>
+</tr>
+<tr>
+<td><span class="math inline">\(Q_5\)</span></td>
+<td>炉墙向环境散热</td>
+</tr>
+<tr>
+<td><span class="math inline">\(Q_6\)</span></td>
+<td>其他损失，课件后页重点讨论灰渣物理热</td>
+</tr>
+</tbody>
+</table>
+<p><span class="math inline">\(Q_{\mathrm{f}}\)</span>
+为输入热量；热效率为 <span
+class="math inline">\(Q_1/Q_{\mathrm{f}}\)</span>。</p>
+<hr />
+<h2 id="第-24-页正平衡反平衡与热损失">第 24
+页｜正平衡、反平衡与热损失</h2>
+<p>统一采用小数形式：<span
+class="math inline">\(q_j=Q_j/Q_{\mathrm{f}}\)</span>。</p>
+<p><span class="math display">\[
+\eta_{\mathrm{b}}=q_1
+=1-(q_2+q_3+q_4+q_5+q_6)
+\]</span></p>
+<ul>
+<li><strong>正平衡</strong>测有效利用热；<strong>反平衡</strong>测各项损失。写百分数时整体乘
+<span class="math inline">\(100\%\)</span>。</li>
+<li><span class="math inline">\(q_2\)</span>
+与排烟温度、烟气量有关；课件估计温度升高 <span
+class="math inline">\(10\sim15\,\mathrm{^{\circ}C}\)</span>，损失约增加
+1 个百分点。</li>
+<li>煤粉锅炉示例：<span
+class="math inline">\(q_3\approx0\)</span>，<span
+class="math inline">\(q_4\approx0.5\%\sim1\%\)</span>。</li>
+<li>负荷提高时 <span class="math inline">\(q_5\)</span>
+的比例通常减小；课件列 <span
+class="math inline">\(D&gt;900\,\mathrm{t/h}\)</span> 时 <span
+class="math inline">\(q_5\approx0.2\%\)</span>。<span
+class="math inline">\(q_6\)</span> 与灰渣温度、含灰量有关。</li>
+</ul>
+<blockquote>
+<p>阅读提示：课件末条忽略 <span class="math inline">\(q_6\)</span>
+的判据缺少单位说明，计算前需核实。</p>
+</blockquote>
+<hr />
+<h2 id="第-25-页汽轮机章节导入">第 25 页｜汽轮机：章节导入</h2>
+<p>本章沿“<strong>蒸汽如何做功</strong>”展开：</p>
+<ol type="1">
+<li>定义与分类：认识蒸汽动力机械。</li>
+<li>基本级：静叶、动叶、速度三角形及热力过程。</li>
+<li>级的性能：反动度、各种损失、相对内效率。</li>
+<li>多级汽轮机：分级膨胀与高、中、低压缸。</li>
+<li>凝汽系统：维持排汽低压并回收凝结水。</li>
+</ol>
+<hr />
+<h2 id="第-26-页汽轮机定义及能量转换链">第 26
+页｜汽轮机定义及能量转换链</h2>
+<p>汽轮机利用蒸汽能量驱动叶轮旋转，输出机械功。</p>
+<p>火电厂能量转换：</p>
+<p>燃料化学能 → 锅炉 → 蒸汽热能 → 汽轮机 → 机械能 → 发电机 → 电能。</p>
+<ul>
+<li>蒸汽也可以来自其他蒸汽发生装置。</li>
+<li>汽轮机可驱动发电机，也可驱动其他机械。</li>
+<li>课件列举用途：<strong>火电、核电、舰船和工业驱动</strong>。</li>
+</ul>
+<p>区分：锅炉负责向工质输入热量，汽轮机负责从蒸汽中取得机械功。</p>
+<hr />
+<h2 id="第-27-页汽轮机的分类">第 27 页｜汽轮机的分类</h2>
+<table>
+<thead>
+<tr>
+<th>分类依据</th>
+<th>主要类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>工作原理</td>
+<td>冲动式、反动式</td>
+</tr>
+<tr>
+<td>蒸汽流动方向</td>
+<td>轴流式、径流式、混流式</td>
+</tr>
+<tr>
+<td>主蒸汽参数</td>
+<td>低压、中压、高压、超高压、亚临界、超临界、超超临界</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>冲动／反动</strong>关注蒸汽在静叶和动叶中的膨胀分配。</li>
+<li><strong>轴流／径流／混流</strong>关注蒸汽的整体流动方向。</li>
+<li>主蒸汽参数等级与前述锅炉参数共同构成机组的热力条件。</li>
+</ul>
+<hr />
+<h2 id="第-28-页汽轮机的基本做功单元级">第 28
+页｜汽轮机的基本做功单元：级</h2>
+<ul>
+<li>一个级由<strong>一列喷嘴叶栅与配合工作的动叶栅</strong>组成。</li>
+<li>动叶栅可为单列，也可采用多列，例如双列复速级。</li>
+<li>相邻静叶形成喷嘴通道；相邻动叶形成动叶通道。</li>
+<li>喷嘴使蒸汽膨胀加速：热能 → 汽流动能。</li>
+<li>动叶使汽流与叶轮交换动量：汽流能量 → 转子机械能。</li>
+</ul>
+<p>阅读提示：这是能量转换的基本描述；在反动级中，蒸汽还在动叶内膨胀。</p>
+<hr />
+<h2 id="第-29-页速度三角形与参考系">第 29 页｜速度三角形与参考系</h2>
+<p><span class="math display">\[
+\boldsymbol{c}=\boldsymbol{u}+\boldsymbol{w}
+\]</span></p>
+<ul>
+<li><span
+class="math inline">\(\boldsymbol{c}\)</span>：汽流相对静止坐标系的<strong>绝对速度</strong>。</li>
+<li><span
+class="math inline">\(\boldsymbol{u}\)</span>：动叶的<strong>圆周速度</strong>。</li>
+<li><span
+class="math inline">\(\boldsymbol{w}\)</span>：汽流相对运动叶片的<strong>相对速度</strong>。</li>
+<li>下标 <span class="math inline">\(1\)</span>、<span
+class="math inline">\(2\)</span> 分别表示动叶入口、出口。</li>
+<li>课件示意 <span
+class="math inline">\(c_1&gt;c_2\)</span>，说明汽流绝对动能的一部分转换为机械能。</li>
+</ul>
+<p>速度三角形用于连接流动方向、叶片运动和做功；不能把 <span
+class="math inline">\(c\)</span> 与 <span
+class="math inline">\(w\)</span> 混用。</p>
+<hr />
+<h2 id="第-30-页级内速度变化与轮周功">第 30
+页｜级内速度变化与轮周功</h2>
+<p>状态顺序：喷嘴前 <span class="math inline">\(0\)</span> → 动叶入口
+<span class="math inline">\(1\)</span> → 动叶出口 <span
+class="math inline">\(2\)</span>。</p>
+<p>在课件采用的绝热、忽略位能变化的级模型下：</p>
+<p><span class="math display">\[
+W_{\mathrm{u}}
+=\left(h_0+\frac{c_0^2}{2}\right)
+-\left(h_2+\frac{c_2^2}{2}\right)
+\]</span></p>
+<ul>
+<li><span class="math inline">\(W_{\mathrm{u}}\)</span>
+是单位质量蒸汽对应的<strong>轮周比功</strong>。</li>
+<li>焓与速度动能必须使用一致单位：<span
+class="math inline">\(c^2/2\)</span> 按 <span
+class="math inline">\(\mathrm{J/kg}\)</span> 计； 换成 <span
+class="math inline">\(\mathrm{kJ/kg}\)</span> 时应除以 <span
+class="math inline">\(1000\)</span>。</li>
+<li>阅读提示：功率还需乘质量流量；课件“单位时间内所做的功”表述需区分。</li>
+</ul>
+<hr />
+<h2 id="第-31-页级的焓降及损失符号">第 31 页｜级的焓降及损失符号</h2>
+<p><span class="math display">\[
+\begin{aligned}
+\Delta h_{c0}&amp;=\frac{c_0^2}{2},
+&amp;\Delta h_{c2}&amp;=\frac{c_2^2}{2}\\
+\Delta h_{\mathrm{n}}&amp;=h_0-h_{1\mathrm{t}},
+&amp;\Delta h_{\mathrm{n}\xi}&amp;=h_1-h_{1\mathrm{t}}\\
+\Delta h_{\mathrm{b}}&amp;=h_1-h_{2\mathrm{t}},
+&amp;\Delta h_{\mathrm{b}\xi}&amp;=h_2-h_{2\mathrm{t}}\\
+\Delta h_{\mathrm{t}}&amp;=h_0-h_{2\mathrm{t}}&#39;,
+&amp;\Delta h_{\mathrm{t}}^*&amp;=\Delta h_{\mathrm{t}}+\Delta h_{c0}
+\end{aligned}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(\mathrm{n}\)</span>、<span
+class="math inline">\(\mathrm{b}\)</span> 分别表示喷嘴、动叶；<span
+class="math inline">\(\xi\)</span> 表示相应损失。</li>
+<li><span class="math inline">\(1\mathrm{t}\)</span>、<span
+class="math inline">\(2\mathrm{t}\)</span> 是分段等熵出口；<span
+class="math inline">\(2\mathrm{t}&#39;\)</span> 是整级等熵出口。</li>
+<li>课件近似：<span class="math inline">\(\Delta h_{\mathrm{t}}\approx
+\Delta h_{\mathrm{n}}+\Delta
+h_{\mathrm{b}}\)</span>；星号表示计入入口动能。</li>
+</ul>
+<hr />
+<h2 id="第-32-页反动度的定义">第 32 页｜反动度的定义</h2>
+<p>反动度衡量蒸汽在<strong>动叶通道内的膨胀程度</strong>。</p>
+<p><span class="math display">\[
+\Omega_{\mathrm{m}}
+=\frac{\Delta h_{\mathrm{b}}}{\Delta h_{\mathrm{t}}^*}
+\approx
+\frac{\Delta h_{\mathrm{b}}}
+{\Delta h_{\mathrm{n}}^*+\Delta h_{\mathrm{b}}}
+\]</span></p>
+<ul>
+<li>分子：动叶内的理想比焓降。</li>
+<li>分母：级的滞止理想比焓降。</li>
+<li><span class="math inline">\(\Delta h_{\mathrm{n}}^*\)</span>
+表示把入口动能计入的喷嘴理想能量。</li>
+<li>反动度越大，动叶内承担的膨胀份额越大。</li>
+</ul>
+<p>阅读提示：它是<strong>焓降的分配比例</strong>，不是动叶输出功占整级输出功的比例。</p>
+<hr />
+<h2 id="第-33-页冲动原理与反动原理">第 33 页｜冲动原理与反动原理</h2>
+<table>
+
+<thead>
+<tr>
+<th>原理</th>
+<th>物理图像</th>
+<th>在叶片中的体现</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>冲动</td>
+<td>流体速度大小或方向改变，产生作用力</td>
+<td>汽流转向并向动叶传递动量</td>
+</tr>
+<tr>
+<td>反动</td>
+<td>流体在运动部件通道内膨胀加速，产生反作用</td>
+<td>动叶内膨胀与加速参与做功</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>冲动原理强调汽流<strong>动量改变</strong>对叶片产生的力。</li>
+<li>反动原理强调动叶通道内<strong>膨胀加速</strong>产生的反作用。</li>
+<li>实际汽轮机中两种作用可同时存在。</li>
+</ul>
+<p>判断级型时，应结合动叶压降和反动度。</p>
+<hr />
+<h2 id="第-34-页纯冲动级与反动级">第 34 页｜纯冲动级与反动级</h2>
+<table>
+<thead>
+<tr>
+<th>比较项</th>
+<th>纯冲动级</th>
+<th>课件中的典型反动级</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>反动度</td>
+<td><span class="math inline">\(\Omega_{\mathrm{m}}=0\)</span></td>
+<td><span class="math inline">\(\Omega_{\mathrm{m}}=0.5\)</span></td>
+</tr>
+<tr>
+<td>膨胀位置</td>
+<td>主要在喷嘴</td>
+<td>喷嘴与动叶中均有膨胀</td>
+</tr>
+<tr>
+<td>动叶内理想过程</td>
+<td>不膨胀，主要改变汽流方向</td>
+<td>膨胀并参与加速</td>
+</tr>
+<tr>
+<td>课件叶型描述</td>
+<td>静、动叶承担不同任务</td>
+<td>喷嘴与动叶叶型相同</td>
+</tr>
+<tr>
+<td>课件性能比较</td>
+<td>做功能力较大，损失较大</td>
+<td>做功能力较小，效率较高</td>
+</tr>
+</tbody>
+</table>
+<p>阅读提示：表中性能是课件在相应设计条件下的比较，不能脱离条件泛化。</p>
+<hr />
+<h2 id="第-35-页带反动度的冲动级">第 35 页｜带反动度的冲动级</h2>
+<p>课件给出的典型范围：</p>
+<p><span class="math display">\[
+\Omega_{\mathrm{m}}=0.05\sim0.3
+\]</span></p>
+<ul>
+<li>以冲动作用为主，同时保留一定反动作用。</li>
+<li>动叶中有一定膨胀，入口压力高于出口压力。</li>
+<li>在课件比较的最佳速比条件下，做功能力比反动级大。</li>
+<li>效率比纯冲动级高，是工程中广泛采用的形式。</li>
+</ul>
+<p>记忆：<strong>冲动级不一定是纯冲动级</strong>；只有纯冲动级的反动度为零。</p>
+<hr />
+<h2 id="第-36-页级的理想能量与余速利用">第 36
+页｜级的理想能量与余速利用</h2>
+<p><span class="math display">\[
+E_0=\frac{c_0^2}{2}+\Delta h_{\mathrm{t}}
+-\mu_1\frac{c_2^2}{2}
+=\Delta h_{\mathrm{t}}^*-\mu_1\Delta h_{c2}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(\mu_1\)</span>
+为余速利用系数，表示本级出口动能被下一级利用的份额。</li>
+<li>课件取值：排汽级为 <span class="math inline">\(0\)</span>，抽汽级约
+<span class="math inline">\(0\sim0.5\)</span>，中间级为 <span
+class="math inline">\(1\)</span>。</li>
+<li><span class="math inline">\(E_0\)</span>
+从理想滞止焓降中扣除了归给下一级利用的出口动能。</li>
+<li>设计关注：合理降低动叶出口绝对速度 <span
+class="math inline">\(c_2\)</span>，改善余速利用。</li>
+</ul>
+<blockquote>
+<p>本页原课件标题编号写作“2.2”，内容仍属于汽轮机级的效率分析。</p>
+</blockquote>
+<hr />
+<h2 id="第-37-页级的相对内效率">第 37 页｜级的相对内效率</h2>
+<p><span class="math display">\[
+\eta_{\mathrm{i}}
+=\frac{\Delta h_{\mathrm{i}}}{E_0}
+=\frac{\Delta h_{\mathrm{i}}}
+{\Delta h_{\mathrm{t}}^*-\mu_1\Delta h_{c2}}
+\]</span></p>
+<p><span class="math display">\[
+\Delta h_{\mathrm{i}}
+=\Delta h_{\mathrm{t}}^*
+-\Delta h_{\mathrm{n}\xi}
+-\Delta h_{\mathrm{b}\xi}
+-\Delta h_{c2}-\sum\Delta h
+\]</span></p>
+<ul>
+<li>分子 <span class="math inline">\(\Delta
+h_{\mathrm{i}}\)</span>：扣除各项损失后的有效比焓降。</li>
+<li><span class="math inline">\(\sum\Delta h\)</span>
+表示课件未逐项展开的其他级内损失。</li>
+<li>余速利用既影响损失评价，也影响理想能量的计量边界。</li>
+<li>复习时将本页与前页的 <span class="math inline">\(E_0\)</span>、<span
+class="math inline">\(\mu_1\)</span> 定义配套使用。</li>
+</ul>
+<hr />
+<h2 id="第-38-页汽轮机级的练习结论">第 38 页｜汽轮机级的练习结论</h2>
+<ol type="1">
+<li><strong>推动叶轮旋转做功的是周向力</strong>，原题选
+<strong>C</strong>。 周向力形成绕主轴的转矩。</li>
+<li>带反动度 <span class="math inline">\(0.05\sim0.3\)</span>
+的冲动级，动叶内存在膨胀， 因而 <strong><span
+class="math inline">\(p_1&gt;p_2\)</span></strong>，原题选
+<strong>A</strong>。</li>
+<li>反动度为 <span class="math inline">\(0.5\)</span>
+时，喷嘴理想滞止焓降与动叶理想焓降相等， 原题选
+<strong>C</strong>。</li>
+</ol>
+<p><span class="math display">\[
+\Omega_{\mathrm{m}}\approx
+\frac{\Delta h_{\mathrm{b}}}
+{\Delta h_{\mathrm{n}}^*+\Delta h_{\mathrm{b}}}=0.5
+\quad\Rightarrow\quad
+\Delta h_{\mathrm{n}}^*=\Delta h_{\mathrm{b}}
+\]</span></p>
+<hr />
+<h2 id="第-39-页多级汽轮机为何效率较高">第 39
+页｜多级汽轮机为何效率较高</h2>
+<ul>
+<li>总焓降分配给多个级，每级焓降减小，更容易在较小直径下匹配最佳速比。</li>
+<li>上一级出口的余速动能，可以在下一级继续利用。</li>
+<li>课件指出汽流多处于亚音速流动，有利于减小流动损失。</li>
+<li>在所需通流面积一定时，减小级平均直径可以增加叶高。</li>
+</ul>
+<p><span class="math display">\[
+A\approx\pi d l
+\]</span></p>
+<p>其中 <span class="math inline">\(d\)</span> 为平均直径，<span
+class="math inline">\(l\)</span>
+为叶高。上述因素共同提高相对内效率。</p>
+<hr />
+<h2 id="第-40-页高中低压缸的特征">第 40 页｜高、中、低压缸的特征</h2>
+<table>
+<thead>
+<tr>
+<th>比较项</th>
+<th>高压缸</th>
+<th>中压缸</th>
+<th>低压缸</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>蒸汽状态</td>
+<td>高温、高压</td>
+<td>高温、中压</td>
+<td>低温、低压</td>
+</tr>
+<tr>
+<td>容积流量／平均直径</td>
+<td>小／小</td>
+<td>中／中</td>
+<td>大／大</td>
+</tr>
+<tr>
+<td>课件中的级焓降、反动度</td>
+<td>较小</td>
+<td>中等</td>
+<td>较大</td>
+</tr>
+<tr>
+<td>主要损失</td>
+<td>叶高、漏汽、部分进汽</td>
+<td>漏汽</td>
+<td>湿汽</td>
+</tr>
+<tr>
+<td>课件中的效率比较</td>
+<td>较低</td>
+<td>较高</td>
+<td>稍低</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>蒸汽膨胀后比容增大，后部通常需要更大的通流面积。</li>
+<li>课件给出的典型效率排序：<strong>中压缸 &gt; 低压缸 &gt;
+高压缸</strong>。</li>
+</ul>
+<hr />
+<h2 id="第-41-页汽轮机与发电机的效率边界">第 41
+页｜汽轮机与发电机的效率边界</h2>
+<p><span class="math display">\[
+\eta_{\mathrm{m}}=\frac{P_{\mathrm{e}}}{P_{\mathrm{i}}},
+\qquad
+\eta_{\mathrm{g}}=\frac{P_{\mathrm{el}}}{P_{\mathrm{e}}}
+\]</span></p>
+<p><span class="math display">\[
+\eta_{\mathrm{i}}
+=\frac{\Delta h_{\mathrm{i}}^{\mathrm{mac}}}
+{\Delta h_{\mathrm{t}}^{\mathrm{mac}}}
+\]</span></p>
+<ul>
+<li><span
+class="math inline">\(P_{\mathrm{i}}\)</span>：汽轮机内功率；<span
+class="math inline">\(P_{\mathrm{e}}\)</span>：联轴器端输出的轴功率。</li>
+<li><span
+class="math inline">\(P_{\mathrm{el}}\)</span>：发电机电功率；<span
+class="math inline">\(\mathrm{mac}\)</span> 表示整机。</li>
+<li>机械效率反映轴承摩擦、主油泵等机械耗功。</li>
+<li>相对内效率评价通流部分，机械效率评价传动损耗，发电机效率评价机电转换。</li>
+</ul>
+<hr />
+<h2 id="第-42-页凝汽系统与不凝结气体">第 42
+页｜凝汽系统与不凝结气体</h2>
+<p>凝汽系统主要由<strong>凝汽器、循环水泵、凝结水泵、抽气器</strong>组成。</p>
+<ul>
+<li>凝汽器：将汽轮机排汽凝结，形成低排汽压力并回收凝结水。</li>
+<li>循环水泵：使冷却水循环，带走凝结放热。</li>
+<li>凝结水泵：将凝结水送往后续汽水系统。</li>
+<li>抽气器：排除空气等不凝结气体。</li>
+<li>不凝结气体积聚 → 总压力升高、局部换热恶化 →
+<strong>凝汽器压力上升、真空度下降</strong>。</li>
+</ul>
+<p>关键关系：真空变差意味着排汽绝对压力升高。</p>
+<hr />
+<h2 id="第-43-页最佳真空极限真空与有效真空">第 43
+页｜最佳真空、极限真空与有效真空</h2>
+<ul>
+<li>冷却水流量增加，通常使凝汽器压力下降，汽轮机出力增加。</li>
+<li>同时循环水泵耗功增加，需比较新增出力和新增耗功。</li>
+</ul>
+<p><span class="math display">\[
+P_{\mathrm{net}}(D_{\mathrm{c}})
+=N_{\mathrm{el}}(D_{\mathrm{c}})
+-P_{\mathrm{pump}}(D_{\mathrm{c}})
+\]</span></p>
+<ul>
+<li><strong>最佳／经济真空</strong>：使上述净收益最大的运行点。</li>
+<li><strong>极限真空</strong>：课件以冷却水进口温度对应的蒸汽饱和压力表示其极限。</li>
+<li><strong>最大有效真空</strong>：末级动叶达到极限膨胀时的真空。</li>
+</ul>
+<p>阅读提示：经济最优并不要求真空无限提高；两种“极限”也有不同含义。</p>
+<hr />
+<h2 id="第-44-页表面式与混合式凝汽器">第 44
+页｜表面式与混合式凝汽器</h2>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>蒸汽与冷却介质的关系</th>
+<th>主要特征</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>表面式</td>
+<td>由换热壁面隔开</td>
+<td>蒸汽凝结水与冷却水不直接混合</td>
+</tr>
+<tr>
+<td>混合式</td>
+<td>直接接触、混合换热</td>
+<td>凝结水与冷却介质混合后排出</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>表面式图中可辨认冷却管、前后水室、蒸汽入口和凝结水汇集空间。</li>
+<li>混合式图中冷却水经喷嘴进入，与排汽直接接触。</li>
+<li>区分依据是<strong>是否直接接触混合</strong>，不是有无凝结过程。</li>
+</ul>
+<hr />
+<h2 id="第-45-页表面式凝汽器的流程数">第 45
+页｜表面式凝汽器的流程数</h2>
+<ul>
+<li>课件指出：火电机组基本采用<strong>表面式凝汽器</strong>。</li>
+<li>按冷却水的流动方式，分为<strong>单流程和多流程</strong>。</li>
+<li>单流程：冷却水沿管束通过一次。</li>
+<li>多流程：借助水室分隔和转向，使冷却水分段通过管束。</li>
+<li>原图右侧以两段反向水流展示双流程形式。</li>
+</ul>
+<p>阅读提示：“流程数”描述冷却水通过管束的路径，不是汽轮机的级数。</p>
+<hr />
+<h2 id="第-46-页水冷与空冷的比较">第 46 页｜水冷与空冷的比较</h2>
+<table>
+<thead>
+<tr>
+<th>比较项</th>
+<th>水冷</th>
+<th>空冷</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>排汽压力／真空</td>
+<td>较低／较高</td>
+<td>较高／较低</td>
+</tr>
+<tr>
+<td>投资</td>
+<td>课件比较中较小</td>
+<td>课件比较中较大</td>
+</tr>
+<tr>
+<td>耗水</td>
+<td>较大</td>
+<td>较小</td>
+</tr>
+<tr>
+<td>适用条件</td>
+<td>水源条件较好</td>
+<td>富煤缺水地区</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>课件列举空冷适用地区：山西、内蒙古等。</li>
+<li>课件节水示例：冷却系统节水超过 <span
+class="math inline">\(97\%\)</span>，全厂节水约 <span
+class="math inline">\(65\%\)</span>。</li>
+<li>阅读提示：节水率是课件示例，取决于比较基准和系统边界。</li>
+</ul>
+<hr />
+<h2 id="第-47-页燃气轮机章节导入">第 47 页｜燃气轮机：章节导入</h2>
+<p>本章将部件作用与布雷顿循环联系起来：</p>
+<ol type="1">
+<li><strong>压气机</strong>：消耗机械功，提高空气压力。</li>
+<li><strong>燃烧室</strong>：燃料与高压空气混合燃烧，提高工质温度。</li>
+<li><strong>涡轮</strong>：燃气膨胀做功，驱动压气机并输出剩余功。</li>
+<li><strong>循环性能</strong>：比功、热效率、增压比、温比和不可逆损失。</li>
+</ol>
+<p>复习重点：涡轮输出功与机组净输出功有不同边界。</p>
+<hr />
+<h2 id="第-48-页燃气轮机的定义与组成">第 48
+页｜燃气轮机的定义与组成</h2>
+<p>燃气轮机是以连续流动气体为工质的<strong>旋转叶轮式热力发动机</strong>。</p>
+<ul>
+<li>主要组成：<strong>压气机、燃烧室、涡轮／透平</strong>，以及辅助设备。</li>
+<li>空气经压气机升压后进入燃烧室，与燃料混合燃烧。</li>
+<li>高温燃气在涡轮中膨胀，将工质能量转变为机械功。</li>
+<li>涡轮功的一部分用于驱动压气机，其余用于外部负载。</li>
+</ul>
+<p><span class="math display">\[
+w_{\mathrm{net}}=w_{\mathrm{T}}-w_{\mathrm{C}}
+\]</span></p>
+<p>此式对应简化模型；<span
+class="math inline">\(\mathrm{T}\)</span>、<span
+class="math inline">\(\mathrm{C}\)</span> 分别表示涡轮和压气机。</p>
+<hr />
+<h2 id="第-49-页压气机的作用">第 49 页｜压气机的作用</h2>
+<ul>
+<li>旋转叶片<strong>连续对气体做功</strong>，使空气总压逐渐升高。</li>
+<li>压气机向燃烧室提供所需的高压空气。</li>
+<li>课件以轴流式压气机照片展示动、静叶排的组合。</li>
+<li>本页增压方式的判断：采用<strong>做功增压、连续做功</strong>。</li>
+<li>与往复式压缩装置相比，其工质流动与叶轮做功连续进行。</li>
+</ul>
+<p>注意：压气机是机组内部的重要耗功部件，涡轮必须先满足其功率需求。</p>
+<hr />
+<h2 id="第-50-页燃烧室的作用与可靠性">第 50
+页｜燃烧室的作用与可靠性</h2>
+<p>燃烧室使压气机送来的高压空气与燃料混合、燃烧，向涡轮提供高温燃气。</p>
+<table>
+<thead>
+<tr>
+<th>问题</th>
+<th>可能后果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>燃烧不稳定</td>
+<td>熄火</td>
+</tr>
+<tr>
+<td>出口局部温度过高</td>
+<td>透平叶片过热甚至烧毁</td>
+</tr>
+<tr>
+<td>燃烧组织不良</td>
+<td>流动损失增加、燃烧效率降低、积炭</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>燃烧室需要兼顾稳定燃烧、温度分布和较小压力损失。</li>
+<li>阅读提示：高压主要由压气机建立；实际燃烧室中存在压力损失。</li>
+</ul>
+<hr />
+<h2 id="第-51-页三种燃烧室结构">第 51 页｜三种燃烧室结构</h2>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>读图识别要点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>分管型</td>
+<td>多个独立管形燃烧单元沿周向布置</td>
+</tr>
+<tr>
+<td>环管型</td>
+<td>多个火焰筒布置在共同的环形机匣内</td>
+</tr>
+<tr>
+<td>环型</td>
+<td>整体呈连续环形的燃烧空间</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>三者都承担燃料喷入、混合、稳定燃烧和向涡轮供气的任务。</li>
+<li>本页重点是<strong>名称与结构形式对应</strong>。</li>
+<li>不应仅凭本页图片推断三种结构的绝对优劣或固定适用功率。</li>
+</ul>
+<hr />
+<h2 id="第-52-页燃气透平的类型与特点">第 52
+页｜燃气透平的类型与特点</h2>
+<p>燃气透平将高温、高压燃气中的能量转换为机械功。</p>
+<ul>
+<li><strong>轴流式</strong>：课件概括为功率大、流量大、效率高。</li>
+<li><strong>径流式</strong>：主要用于小功率燃气轮机。</li>
+<li>工质温度高，对材料、冷却和可靠性提出要求。</li>
+<li>级焓降较高，单级能量转换较大。</li>
+<li>级的气动负荷大，因此整个透平通常采用较少的级数。</li>
+</ul>
+<p>复习时将“高温、高级负荷、较少级数”联系起来记忆。</p>
+<hr />
+<h2 id="第-53-页涡轮与压气机对比">第 53 页｜涡轮与压气机对比</h2>
+<table>
+<thead>
+<tr>
+<th>比较项</th>
+<th>涡轮</th>
+<th>压气机</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>能量方向</td>
+<td>工质能量 → 机械能</td>
+<td>机械能 → 工质能量</td>
+</tr>
+<tr>
+<td>课件典型通道</td>
+<td>收敛式</td>
+<td>扩散式</td>
+</tr>
+<tr>
+<td>典型流动</td>
+<td>膨胀加速</td>
+<td>扩压减速</td>
+</tr>
+<tr>
+<td>级的构成顺序</td>
+<td>静叶 + 动叶</td>
+<td>动叶 + 静叶</td>
+</tr>
+<tr>
+<td>叶型</td>
+<td>厚、弯度大</td>
+<td>薄、弯度小</td>
+</tr>
+<tr>
+<td>温度／级数</td>
+<td>高／少</td>
+<td>相对低／多</td>
+</tr>
+</tbody>
+</table>
+<p>阅读提示：表中是课件的典型比较；压气机总压上升由动叶输入功实现，
+不能将“扩压减速”理解为所有叶排内的全部速度分量都减小。</p>
+<hr />
+<h2 id="第-54-页燃气轮机的比功与热效率">第 54
+页｜燃气轮机的比功与热效率</h2>
+<p><span class="math display">\[
+W_{\mathrm{n}}=\frac{P}{q_{\mathrm{ma}}},
+\qquad
+\eta_{\mathrm{s}}=\frac{P}{q_{\mathrm{mf}}H_{\mathrm{u}}}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(P\)</span>：机组净输出功率，单位 <span
+class="math inline">\(\mathrm{kW}\)</span>。</li>
+<li><span
+class="math inline">\(q_{\mathrm{ma}}\)</span>：空气质量流量，单位 <span
+class="math inline">\(\mathrm{kg/s}\)</span>。</li>
+<li><span
+class="math inline">\(W_{\mathrm{n}}\)</span>：按空气流量计的比功，单位
+<span class="math inline">\(\mathrm{kJ/kg}\)</span>。</li>
+<li><span
+class="math inline">\(q_{\mathrm{mf}}\)</span>：燃料质量流量，单位 <span
+class="math inline">\(\mathrm{kg/s}\)</span>。</li>
+<li><span
+class="math inline">\(H_{\mathrm{u}}\)</span>：燃料低位发热量，单位
+<span class="math inline">\(\mathrm{kJ/kg}\)</span>。</li>
+</ul>
+<p>比功反映单位空气流量的输出能力；热效率反映燃料输入的利用程度。</p>
+<hr />
+<h2 id="第-55-页理想布雷顿循环的四个过程">第 55
+页｜理想布雷顿循环的四个过程</h2>
+<table>
+<thead>
+<tr>
+<th>过程</th>
+<th>理想过程</th>
+<th>对应设备或物理过程</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="math inline">\(1\to2\)</span></td>
+<td>等熵压缩</td>
+<td>压气机耗功</td>
+</tr>
+<tr>
+<td><span class="math inline">\(2\to3\)</span></td>
+<td>定压吸热</td>
+<td>用吸热过程理想化燃烧室</td>
+</tr>
+<tr>
+<td><span class="math inline">\(3\to4\)</span></td>
+<td>等熵膨胀</td>
+<td>涡轮输出功</td>
+</tr>
+<tr>
+<td><span class="math inline">\(4\to1\)</span></td>
+<td>定压放热</td>
+<td>用放热过程闭合理想循环</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>正向循环将输入热量的一部分转变为净机械功。</li>
+<li>图示中涡轮输出的大部分要返回压气机，只有剩余部分对外输出。</li>
+<li>阅读提示：实际开式机组吸入新空气并排出燃气；闭合回路是理想循环模型。</li>
+</ul>
+<hr />
+<h2 id="第-56-页由温差计算理想循环效率">第 56
+页｜由温差计算理想循环效率</h2>
+<p>采用定比热理想气体模型；<span class="math inline">\(T_j^*\)</span>
+表示各状态点的总温，使用 <span
+class="math inline">\(\mathrm{K}\)</span>。</p>
+<p><span class="math display">\[
+\begin{aligned}
+q_{\mathrm{in}}&amp;=c_p(T_3^*-T_2^*),\\
+q_{\mathrm{out}}&amp;=c_p(T_4^*-T_1^*),\\
+w_{\mathrm{net}}&amp;=q_{\mathrm{in}}-q_{\mathrm{out}}
+\end{aligned}
+\]</span></p>
+<p><span class="math display">\[
+\eta=\frac{w_{\mathrm{net}}}{q_{\mathrm{in}}}
+=1-\frac{T_4^*-T_1^*}{T_3^*-T_2^*}
+\]</span></p>
+<p>阅读提示：统一用单位质量的热量、比功推导；若用功率，热输入也应改用热流率。</p>
+<hr />
+<h2 id="第-57-页增压比与理想热效率">第 57 页｜增压比与理想热效率</h2>
+<p>令 <span class="math inline">\(\pi=p_2^*/p_1^*\)</span>，<span
+class="math inline">\(\kappa=c_p/c_v\)</span>。理想定压过程给出 <span
+class="math inline">\(p_2^*=p_3^*\)</span>、<span
+class="math inline">\(p_4^*=p_1^*\)</span>，结合等熵关系：</p>
+<p><span class="math display">\[
+\frac{T_2^*}{T_1^*}
+=\frac{T_3^*}{T_4^*}
+=\pi^{(\kappa-1)/\kappa}
+\quad\Rightarrow\quad
+\eta=1-\pi^{-(\kappa-1)/\kappa}
+\]</span></p>
+<ul>
+<li>在这些假设下，固定 <span class="math inline">\(\kappa\)</span>
+时，提高增压比可提高理想热效率。</li>
+<li>固定增压比而提高 <span
+class="math inline">\(T_3^*\)</span>，净比功与吸热量增加，理想热效率不变。</li>
+<li>温比定义：<span
+class="math inline">\(\tau=T_3^*/T_1^*\)</span>。</li>
+</ul>
+<p>阅读提示：效率与温比无显式关系是<strong>理想模型结论</strong>，不能直接推广到实际循环。</p>
+<hr />
+<h2 id="第-58-页最大净比功对应的增压比">第 58
+页｜最大净比功对应的增压比</h2>
+<p>令 <span class="math inline">\(a=(\kappa-1)/\kappa\)</span>，<span
+class="math inline">\(\tau=T_3^*/T_1^*\)</span>，则：</p>
+<p><span class="math display">\[
+w_{\mathrm{net}}
+=c_pT_1^*\left[\tau(1-\pi^{-a})-(\pi^a-1)\right]
+\]</span></p>
+<p>固定 <span class="math inline">\(T_1^*\)</span>、<span
+class="math inline">\(T_3^*\)</span> 与 <span
+class="math inline">\(c_p\)</span>，对增压比求极值：</p>
+<p><span class="math display">\[
+\frac{\partial w_{\mathrm{net}}}{\partial\pi}=0
+\quad\Rightarrow\quad
+\pi_{\mathrm{opt}}=\tau^{\kappa/[2(\kappa-1)]}
+\]</span></p>
+<ul>
+<li>温比越高，<strong>最大净比功</strong>对应的增压比越高；该最优点上的理想效率也提高。</li>
+<li>最大比功点与最高效率的追求不同；增压比过高会使净比功下降。</li>
+<li>阅读提示：课件此处用 <span
+class="math inline">\(P_{\mathrm{gt}}\)</span>
+表示的式子量纲为比功，已统一写作 <span
+class="math inline">\(w\)</span>。</li>
+</ul>
+<hr />
+<h2 id="第-59-页实际循环与绝热效率">第 59 页｜实际循环与绝热效率</h2>
+<p>实际过程：<span class="math inline">\(1\to2\mathrm{a}\)</span>
+为不可逆绝热压缩， <span class="math inline">\(3\to4\mathrm{a}\)</span>
+为不可逆绝热膨胀；吸热与放热过程还伴随压力损失。</p>
+<p><span class="math display">\[
+\eta_{\mathrm{C}}
+=\frac{h_{2\mathrm{s}}-h_1}{h_{2\mathrm{a}}-h_1},
+\qquad
+\eta_{\mathrm{T}}
+=\frac{h_3-h_{4\mathrm{a}}}{h_3-h_{4\mathrm{s}}}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(\mathrm{s}\)</span>
+为相同出口压力下的等熵参考状态，<span
+class="math inline">\(\mathrm{a}\)</span> 为实际状态。</li>
+<li>压气机：实际耗功大于理想耗功，效率为<strong>理想耗功／实际耗功</strong>。</li>
+<li>涡轮：实际出功小于理想出功，效率为<strong>实际出功／理想出功</strong>。</li>
+<li>不可逆损失使压气机耗功增加、涡轮出功减少，降低净输出与循环效率。</li>
+</ul>
+<hr />
+<h2 id="第-60-页内燃机章节导入">第 60 页｜内燃机：章节导入</h2>
+<p>本章复习主线：</p>
+<ol type="1">
+<li><strong>结构</strong>：机体、两大机构、五大系统。</li>
+<li><strong>几何术语</strong>：止点、行程、工作容积、排量、压缩比。</li>
+<li><strong>工作循环</strong>：喷油与点火、四冲程与二冲程。</li>
+<li><strong>性能参数</strong>：转矩、功率、热效率和燃油消耗率。</li>
+</ol>
+<p>注意把几何量、循环过程和性能指标分开，再建立它们的联系。</p>
+<hr />
+<h2 id="第-61-页内燃机的定义与分类">第 61 页｜内燃机的定义与分类</h2>
+<p>内燃机使燃料在机器内部燃烧，并将释放的热能转变为机械功。
+课件随后主要讨论<strong>活塞式内燃机</strong>。</p>
+<table>
+<thead>
+<tr>
+<th>分类依据</th>
+<th>类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>点火方式</td>
+<td>点燃式、压燃式</td>
+</tr>
+<tr>
+<td>冲程数</td>
+<td>二冲程、四冲程</td>
+</tr>
+<tr>
+<td>燃料</td>
+<td>汽油机、柴油机、煤气机等</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>汽油机、柴油机是常见的活塞式内燃机。</li>
+<li>点火方式、冲程数和燃料类别是不同维度，不能相互替代。</li>
+</ul>
+<hr />
+<h2 id="第-62-页一个机体两大机构五大系统">第 62
+页｜一个机体、两大机构、五大系统</h2>
+<ul>
+<li><strong>一个机体</strong>：为各部件安装、支承与工作提供基础。</li>
+<li><strong>曲柄连杆机构</strong>：连接活塞与曲轴，将往复运动转变为转动。</li>
+<li><strong>配气机构</strong>：控制进、排气过程。</li>
+<li><strong>五大系统</strong>：燃料供给、点火、润滑、冷却、启动。</li>
+<li>结构图重点辨认：气门、凸轮轴、火花塞／喷油器、活塞、曲轴。</li>
+</ul>
+<p>阅读提示：课件按通用框架列系统；柴油机依靠压燃，通常不设置汽油机式火花点火系统。</p>
+<hr />
+<h2 id="第-63-页上下止点与活塞行程">第 63 页｜上、下止点与活塞行程</h2>
+<ul>
+<li><strong>上止点</strong>：活塞顶距曲轴回转中心最远的位置。</li>
+<li><strong>下止点</strong>：活塞顶距曲轴回转中心最近的位置。</li>
+<li>活塞在上、下止点瞬时速度为零。</li>
+<li>活塞行程 <span
+class="math inline">\(S\)</span>：上、下止点之间的距离；曲柄半径为 <span
+class="math inline">\(R\)</span>。</li>
+</ul>
+<p>对于气缸中心线通过曲轴回转中心的机构：</p>
+<p><span class="math display">\[
+S=2R
+\]</span></p>
+<p>曲轴旋转一周，活塞完成两个行程；<strong>两个行程不一定等于一个工作循环</strong>。</p>
+<hr />
+<h2 id="第-64-页工作容积排量与燃烧室容积">第 64
+页｜工作容积、排量与燃烧室容积</h2>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>气缸工作容积</td>
+<td>活塞从上止点移至下止点扫过的容积</td>
+</tr>
+<tr>
+<td>内燃机排量</td>
+<td>所有气缸工作容积之和</td>
+</tr>
+<tr>
+<td>燃烧室／压缩容积</td>
+<td>活塞处于上止点时，活塞顶以上的剩余容积</td>
+</tr>
+</tbody>
+</table>
+<p>记单缸工作容积为 <span
+class="math inline">\(V_{\mathrm{s}}\)</span>、缸径为 <span
+class="math inline">\(D\)</span>、缸数为 <span
+class="math inline">\(z\)</span>，总排量为 <span
+class="math inline">\(V_{\mathrm{disp}}\)</span>：</p>
+<p><span class="math display">\[
+V_{\mathrm{s}}=\frac{\pi D^2}{4}S,
+\qquad
+V_{\mathrm{disp}}=zV_{\mathrm{s}}
+\]</span></p>
+<p>本页 <span class="math inline">\(D\)</span>
+表示缸径，与锅炉部分的蒸发量 <span class="math inline">\(D\)</span>
+不同；排量不包含燃烧室容积。</p>
+<hr />
+<h2 id="第-65-页气缸总容积与压缩比">第 65 页｜气缸总容积与压缩比</h2>
+<p>以 <span class="math inline">\(V_{\mathrm{c}}\)</span>
+表示燃烧室容积，<span class="math inline">\(V_{\mathrm{a}}\)</span>
+表示下止点时的总容积：</p>
+<p><span class="math display">\[
+V_{\mathrm{a}}=V_{\mathrm{s}}+V_{\mathrm{c}}
+\]</span></p>
+<p><span class="math display">\[
+\varepsilon
+=\frac{V_{\mathrm{a}}}{V_{\mathrm{c}}}
+=1+\frac{V_{\mathrm{s}}}{V_{\mathrm{c}}}
+\]</span></p>
+<ul>
+<li>压缩比 <span class="math inline">\(\varepsilon\)</span>
+是无量纲几何参数。</li>
+<li>其他条件相同时，压缩比增大意味着压缩终了压力、温度更高。</li>
+<li><strong>压缩比是容积比</strong>，不能直接当作压缩前后压力之比。</li>
+</ul>
+<hr />
+<h2 id="第-66-页喷油与点火时序">第 66 页｜喷油与点火时序</h2>
+<p>三类机型均按“进气 → 压缩 → 做功 → 排气”组织四冲程循环。</p>
+<table>
+<thead>
+<tr>
+<th>机型</th>
+<th>课件时序图的主要区别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>气道喷射汽油机</td>
+<td>燃油先在气道供给，混合气进入气缸，再由火花点火</td>
+</tr>
+<tr>
+<td>缸内直喷汽油机</td>
+<td>燃油直接喷入气缸，图示安排在压缩阶段，仍需火花点火</td>
+</tr>
+<tr>
+<td>柴油机</td>
+<td>先压缩空气，压缩末期喷油，依靠高温空气压燃</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>区分两个问题：<strong>燃油在哪里喷入</strong>、<strong>混合气如何着火</strong>。</li>
+<li>图示为简化时序；实际喷油、点火位置会随设计和工况变化。</li>
+</ul>
+<hr />
+<h2 id="第-67-页四冲程工作循环">第 67 页｜四冲程工作循环</h2>
+<table>
+<thead>
+<tr>
+<th>冲程</th>
+<th>活塞运动</th>
+<th>主要过程</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>进气</td>
+<td>上止点 → 下止点</td>
+<td>进气门开启，吸入新鲜充量</td>
+</tr>
+<tr>
+<td>压缩</td>
+<td>下止点 → 上止点</td>
+<td>进排气门基本关闭，压缩气体</td>
+</tr>
+<tr>
+<td>做功</td>
+<td>上止点 → 下止点</td>
+<td>燃烧后气体膨胀，推动活塞</td>
+</tr>
+<tr>
+<td>排气</td>
+<td>下止点 → 上止点</td>
+<td>排气门开启，排出废气</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>一个循环需要曲轴旋转<strong>两周，即 <span
+class="math inline">\(720^\circ\)</span></strong>。</li>
+<li>每缸每循环有一次做功冲程，其他冲程依靠储能及其他缸的协同完成。</li>
+<li>表中按理想化冲程说明；实际存在气门提前开启、延迟关闭等配气时刻。</li>
+</ul>
+<hr />
+<h2 id="第-68-页二冲程工作循环">第 68 页｜二冲程工作循环</h2>
+<p>课件图示为带火花塞、进排气口及曲轴箱换气的二冲程结构。</p>
+<ul>
+<li><strong>第一行程，活塞上行</strong>：缸内混合气压缩，曲轴箱吸入新鲜混合气。</li>
+<li>上止点附近点火燃烧，随后进入第二行程。</li>
+<li><strong>第二行程，活塞下行</strong>：燃气膨胀做功，曲轴箱内新鲜混合气受压。</li>
+<li>下行后段排气口、扫气口相继开启，进行排气和扫气充填。</li>
+<li>一个循环曲轴旋转<strong>一周，即 <span
+class="math inline">\(360^\circ\)</span></strong>，每缸每循环做功一次。</li>
+</ul>
+<p>阅读提示：进排气与其他过程重叠完成；本图结构不能概括所有二冲程发动机。</p>
+<hr />
+<h2 id="第-69-页汽油机与柴油机比较">第 69 页｜汽油机与柴油机比较</h2>
+<p>本页比较对象是典型<strong>四冲程</strong>汽油机与柴油机。</p>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>汽油机</th>
+<th>柴油机</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>典型关键部件</td>
+<td>火花塞</td>
+<td>喷油器</td>
+</tr>
+<tr>
+<td>进气内容</td>
+<td>传统气道供油时为混合气</td>
+<td>主要为空气</td>
+</tr>
+<tr>
+<td>点火方式</td>
+<td>点燃式</td>
+<td>压燃式</td>
+</tr>
+<tr>
+<td>课件压缩比示例</td>
+<td><span class="math inline">\(8\sim11\)</span></td>
+<td><span class="math inline">\(13\sim18\)</span></td>
+</tr>
+<tr>
+<td>每缸工作循环</td>
+<td>四冲程、两周、做功一次</td>
+<td>四冲程、两周、做功一次</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>缸内直喷汽油机的进气应结合第 66
+页理解，不能套用“都吸入混合气”。</li>
+<li>课件将优点简写为汽油机轻便、柴油机便宜且功率大；这些比较依具体机型而变。</li>
+</ul>
+<hr />
+<h2 id="第-70-页有效转矩与有效功率">第 70 页｜有效转矩与有效功率</h2>
+<ul>
+<li><strong>有效转矩 <span
+class="math inline">\(T_{\mathrm{e}}\)</span></strong>：克服摩擦、附件驱动等损失后，曲轴输出的净转矩。</li>
+<li><strong>有效功率 <span
+class="math inline">\(P_{\mathrm{e}}\)</span></strong>：曲轴或飞轮对外输出的净功率。</li>
+</ul>
+<p><span class="math display">\[
+P_{\mathrm{e}}=T_{\mathrm{e}}\omega,
+\qquad
+\omega=\frac{2\pi n}{60}
+\]</span></p>
+<p>采用常用工程单位时：</p>
+<p><span class="math display">\[
+\frac{P_{\mathrm{e}}}{\mathrm{kW}}
+\approx\frac{1}{9550}
+\left(\frac{T_{\mathrm{e}}}{\mathrm{N\cdot m}}\right)
+\left(\frac{n}{\mathrm{r/min}}\right)
+\]</span></p>
+<p><span class="math inline">\(n\)</span>
+为转速；功率等于转矩乘<strong>角速度</strong>，测得转矩和转速后即可计算功率。</p>
+<hr />
+<h2 id="第-71-页热效率与有效燃油消耗率">第 71
+页｜热效率与有效燃油消耗率</h2>
+<p><span class="math display">\[
+\eta_{\mathrm{t}}=\frac{P_{\mathrm{i}}}{\dot
+m_{\mathrm{f}}H_{\mathrm{u}}},
+\qquad
+\eta_{\mathrm{e}}=\frac{P_{\mathrm{e}}}{\dot
+m_{\mathrm{f}}H_{\mathrm{u}}}
+\]</span></p>
+<ul>
+<li>课件用 <span class="math inline">\(\eta_{\mathrm{t}}\)</span>
+表示<strong>指示热效率</strong>：燃料热量转变为缸内指示功的比例。</li>
+<li><strong>有效热效率</strong>：燃料热量转变为曲轴有效功的比例，计入机械损失后更低。</li>
+<li><span class="math inline">\(\dot m_{\mathrm{f}}\)</span>
+为燃油质量流量；<span class="math inline">\(H_{\mathrm{u}}\)</span>
+为低位发热量。</li>
+</ul>
+<p><span class="math display">\[
+\frac{g_{\mathrm{e}}}{\mathrm{g/(kW\cdot h)}}
+=3.6\times10^6
+\left(\frac{\dot m_{\mathrm{f}}}{\mathrm{kg/s}}\right)
+\left(\frac{P_{\mathrm{e}}}{\mathrm{kW}}\right)^{-1}
+\]</span></p>
+<p>有效燃油消耗率越低越经济；相同燃料下，它与有效热效率成反比。</p>
+<hr />
+<h2 id="第-72-页结束页与复习自检">第 72 页｜结束页与复习自检</h2>
+<p>原页为“谢谢”，没有新增知识点。可用以下问题串联全篇：</p>
+<ol type="1">
+<li>能否画出蒸汽电厂的能量转换链、风烟流程和汽水流程？</li>
+<li>能否区分锅炉三种流动方式，并列出六项热平衡输出？</li>
+<li>能否解释速度三角形、反动度、级损失与相对内效率？</li>
+<li>能否说明凝汽器维持真空的作用，以及经济真空的权衡？</li>
+<li>能否写出布雷顿循环四过程，说明增压比与温比的不同影响？</li>
+<li>能否区分行程、排量、压缩比，并用转矩、转速计算功率？</li>
+</ol>
+<p><strong>复习重点</strong>：先说明系统边界与假设，再使用公式和经验数据。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+</div>
+
+
+              
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/posts_/uncategorized/notes/thermo_midterm_work/project/README/" title="热能动力工程 · 期中总结（SJTUBeamer 扩充版）">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">热能动力工程 · 期中总结（SJTUBeamer 扩充版）</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/posts_/uncategorized/notes/thermo_midterm_work/project/latexindent/" title="">
+                        <span class="hidden-mobile"></span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        (function() {
+          function refreshMath() {
+            if (!window.MathJax || typeof MathJax.whenReady !== 'function') {
+              return;
+            }
+            // 等待正在进行的排版完成，再重置公式及编号。
+            MathJax.whenReady(function() {
+              MathJax.startup.document.state(0);
+              MathJax.texReset();
+            }).then(function() {
+              return MathJax.typesetPromise();
+            }).catch(function(error) {
+              console.error('MathJax 公式排版失败：', error);
+            });
+          }
+
+          if (!window.MathJax) {
+            window.MathJax = {
+              tex: {
+                inlineMath: { '[+]': [['$', '$']] },
+                // 现有笔记使用粗体向量、定义等号和 dcases，显式载入所需扩展。
+                packages: { '[+]': ['boldsymbol', 'mathtools'] },
+                // 保留笔记中的双曲函数 ch、sh 记法，按正体函数名排版。
+                macros: {
+                  ch: '\\operatorname{ch}',
+                  sh: '\\operatorname{sh}'
+                },
+                preFilters: [function(context) {
+                  // 旧版允许大括号内部使用 align，新版需要使用可嵌套的 aligned。
+                  context.math.math = context.math.math.replace(
+                    /(\\left\\\{\s*)\\begin\{align\}([\s\S]*?)\\end\{align\}(\s*\\right\.)/g,
+                    '$1\\begin{aligned}$2\\end{aligned}$3'
+                  );
+                }]
+              },
+              loader: {
+                load: ["[tex]/boldsymbol","[tex]/mathtools","ui/lazy"]
+              },
+              options: {
+                renderActions: {
+                  insertedScript: [200, function() {
+                    document.querySelectorAll('mjx-container').forEach(function(node) {
+                      var target = node.parentNode;
+                      if (target && target.nodeName.toLowerCase() === 'li') {
+                        target.parentNode.classList.add('has-jax');
+                      }
+                    });
+                  }, '', false]
+                }
+              }
+            };
+          } else {
+            refreshMath();
+          }
+
+          Fluid.events.registerRefreshCallback(refreshMath);
+        })();
+      </script>
+    
+
+  <script  src="https://cdn.jsdelivr.net/npm/mathjax@4.1.3/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
