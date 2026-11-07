@@ -1,0 +1,1945 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/avatar.jpg">
+  <link rel="icon" href="/img/avatar.jpg">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="dcldyhb">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="能源系统仿真实验 能源系统仿真用数学模型代替实际系统，在计算机上复现系统的稳态或动态过程。课程分四块：能源系统仿真的基本概念、MATLAB 与 Simulink 两个工具平台、机理与数据建模方法，最后是 PV-SOFC 系统仿真实验。 考核：出勤 \(10\%\)、课堂作业 \(30\%\)、项目大作业 \(60\%\)，没有闭卷笔试。 能源系统仿真概述 能源系统与仿真 能源系统是把能源资源转化为">
+<meta property="og:type" content="article">
+<meta property="og:title" content="能源系统仿真实验">
+<meta property="og:url" content="http://dcldyhb.github.io/posts_/%E6%9C%AC%E7%A7%91%E8%AF%BE%E7%A8%8B/%E7%BC%96%E7%A8%8B/notes/%E6%9C%AC%E7%A7%91/%E7%BC%96%E7%A8%8B/%E8%83%BD%E6%BA%90%E7%B3%BB%E7%BB%9F%E4%BB%BF%E7%9C%9F%E5%AE%9E%E9%AA%8C/index.html">
+<meta property="og:site_name" content="dcldyhb的笔记">
+<meta property="og:description" content="能源系统仿真实验 能源系统仿真用数学模型代替实际系统，在计算机上复现系统的稳态或动态过程。课程分四块：能源系统仿真的基本概念、MATLAB 与 Simulink 两个工具平台、机理与数据建模方法，最后是 PV-SOFC 系统仿真实验。 考核：出勤 \(10\%\)、课堂作业 \(30\%\)、项目大作业 \(60\%\)，没有闭卷笔试。 能源系统仿真概述 能源系统与仿真 能源系统是把能源资源转化为">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-11-06T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-11-07T11:55:04.000Z">
+<meta property="article:author" content="dcldyhb">
+<meta property="article:tag" content="能源系统">
+<meta property="article:tag" content="MATLAB">
+<meta property="article:tag" content="Simulink">
+<meta property="article:tag" content="仿真">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>能源系统仿真实验 - dcldyhb的笔记</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"dcldyhb.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.jpeg","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>哦耶</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="能源系统仿真实验"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2026-11-07 00:00" pubdate>
+          2026年11月7日 凌晨
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          7.4k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          62 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">能源系统仿真实验</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="能源系统仿真实验">能源系统仿真实验</h1>
+<p>能源系统仿真用数学模型代替实际系统，在计算机上复现系统的稳态或动态过程。课程分四块：能源系统仿真的基本概念、MATLAB
+与 Simulink 两个工具平台、机理与数据建模方法，最后是 PV-SOFC
+系统仿真实验。</p>
+<p>考核：出勤 <span class="math inline">\(10\%\)</span>、课堂作业 <span
+class="math inline">\(30\%\)</span>、项目大作业 <span
+class="math inline">\(60\%\)</span>，没有闭卷笔试。</p>
+<h2 id="能源系统仿真概述">能源系统仿真概述</h2>
+<h3 id="能源系统与仿真">能源系统与仿真</h3>
+<p>能源系统是把能源资源转化为可利用能量并输送到终端用户的全过程，包含生产、转换、传输与分配、利用与存储、管理五个环节。</p>
+<p><strong>仿真</strong>是利用模型复现实际系统本质过程的方法。它的用途主要有五类：</p>
+<ul>
+<li>预测与规划</li>
+<li>优化设计与运行</li>
+<li>风险评估</li>
+<li>教育培训</li>
+<li>技术创新</li>
+</ul>
+<p>能源系统有四个特征：复杂性、多样性、动态性、多功能性。</p>
+<h3 id="建模方法的分类">建模方法的分类</h3>
+<table>
+
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>理论分析方法</td>
+<td>从内部物理过程出发建立动态数学模型再求解，如用基尔霍夫定律分析电路、用热力学定律分析气体膨胀</td>
+</tr>
+<tr>
+<td>实验测定方法</td>
+<td>由实际输入输出数据确定模型，手段有系统辨识、参数估计、神经网络</td>
+</tr>
+<tr>
+<td>经验归纳方法</td>
+<td>时间序列、归纳推理（黑箱）、频域方法（由 <span
+class="math inline">\(G(s)\)</span> 得匹配的 <span
+class="math inline">\(G(z)\)</span>）、灰色理论（部分已知加部分未知）</td>
+</tr>
+</tbody>
+</table>
+<p>按参数分布分为两类：</p>
+<ul>
+<li><strong>集总参数模型</strong>：把系统看成一个质点，参数（温度、压力）处处均匀，只考虑外部影响、不描述内部状态，适合大尺度稳态简化分析</li>
+<li><strong>分布参数模型</strong>：参数随空间连续变化，需要用偏微分方程描述</li>
+</ul>
+<p>常用仿真软件：PSS/E 面向电力系统稳态与暂态，TRNSYS 面向建筑 HVAC
+与可再生能源动态，MATLAB/Simulink 是通用平台。</p>
+<h3 id="稳态与动态">稳态与动态</h3>
+<ul>
+<li><strong>稳态</strong>：经过一定时间后，输出或关键参数不再随时间变化</li>
+<li><strong>动态</strong>：参数随时间持续变化</li>
+</ul>
+<table>
+
+<thead>
+<tr>
+<th>对比</th>
+<th>稳态仿真</th>
+<th>动态仿真</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>求解内容</td>
+<td>长期运行状态</td>
+<td>初始条件或外部条件变化下的时间响应</td>
+</tr>
+<tr>
+<td>方法</td>
+<td>热平衡与物平衡方程组（<span class="math inline">\(\sum\)</span>
+输入热量 <span class="math inline">\(=\sum\)</span> 输出热量）</td>
+<td>数值方法（有限差分、有限元）</td>
+</tr>
+<tr>
+<td>优点</td>
+<td>模型简单、计算快</td>
+<td>能反映启停、扰动、状态转换</td>
+</tr>
+<tr>
+<td>缺点</td>
+<td>无法捕捉动态响应</td>
+<td>计算量大、需要初值和参数</td>
+</tr>
+</tbody>
+</table>
+<p>两者互为支持：稳态结果给动态仿真提供初值和初始状态，动态结果反过来验证并优化稳态结果。</p>
+<p>动态与稳态的差别主要体现在<strong>惯性</strong>上：热惯性、容积惯性、机械惯性。稳态问题通常不考虑惯性。</p>
+<p>判断该用哪种模型，有两条判据：模型是否含时间变量；有没有考虑惯性。</p>
+<h2 id="matlab-基础">MATLAB 基础</h2>
+<h3 id="工作环境">工作环境</h3>
+<p>MATLAB 名称来自 Matrix
+Laboratory，基本数据单位是矩阵。界面分四区：当前文件夹、命令行窗口（提示符
+<code>&gt;&gt;</code>）、工作区、编辑器。</p>
+<p>常用命令：</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>clc</code></td>
+<td>清屏，不清除变量</td>
+</tr>
+<tr>
+<td><code>clear</code></td>
+<td>清除工作区变量</td>
+</tr>
+<tr>
+<td><code>close all</code></td>
+<td>关闭所有图窗</td>
+</tr>
+<tr>
+<td><code>Ctrl+C</code></td>
+<td>强制中断运行中的程序</td>
+</tr>
+</tbody>
+</table>
+<p>没有返回值的语句，结果送到默认变量 <code>ans</code>。</p>
+<h3 id="数据类型与变量">数据类型与变量</h3>
+<ul>
+<li>默认 <code>double</code> 为 64 位、8 字节，另有
+<code>uint8</code>、<code>uint16</code> 等整型</li>
+<li>保留字：<code>pi</code>、<code>eps</code>（<span
+class="math inline">\(2.2204\times10^{-16}\)</span>）、<code>inf</code>、<code>NaN</code>（<span
+class="math inline">\(0/0\)</span>、<span
+class="math inline">\(\mathrm{Inf}/\mathrm{Inf}\)</span>
+的结果）、<code>i</code>、<code>j</code>（一旦当纯虚常量用，就不能再当循环变量）</li>
+<li>变量命名：必须字母开头，可含字母、数字、下划线，<strong>大小写敏感</strong>，无需声明，赋值即创建</li>
+</ul>
+<h3 id="矩阵与数组">矩阵与数组</h3>
+<ul>
+<li>矩阵是线性代数概念，只存数值；数组是计算机概念，可存数值、字符、逻辑</li>
+<li>标量、行向量、列向量分别是 <span
+class="math inline">\(1\times1\)</span>、<span
+class="math inline">\(1\times n\)</span>、<span
+class="math inline">\(n\times1\)</span></li>
+</ul>
+<p>三种创建方式：</p>
+<ol type="1">
+<li>元素列举：逗号或空格分列，分号分行，中括号包裹</li>
+<li>专用函数：<code>zeros</code>、<code>ones</code>、<code>rand</code>，以及矩阵拼接</li>
+<li>冒号序列：<code>first:step:last</code>，步长可正可负、可为小数</li>
+</ol>
+<p>下标访问的三条易错规则：</p>
+<ul>
+<li>下标从 <span class="math inline">\(1\)</span> 开始</li>
+<li>矩阵按列存储</li>
+<li>下标越界会自动扩展，并用 <span class="math inline">\(0\)</span>
+填充</li>
+</ul>
+<p><code>size(X)</code>
+返回行数和列数组成的行向量，<code>size(X,dim)</code>
+取某一维，<code>length(X)</code> 返回最大维的长度。</p>
+<h3 id="运算">运算</h3>
+<table>
+<thead>
+<tr>
+<th>运算</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>按位与、按位或</td>
+<td>用于数组之间</td>
+</tr>
+<tr>
+<td>短路与、短路或</td>
+<td>用于表达式之间，有短路特性</td>
+</tr>
+<tr>
+<td><code>/</code>、<code>\</code></td>
+<td>右除、左除；<span class="math inline">\(5/2=2.5\)</span>，<span
+class="math inline">\(5\backslash2=0.4\)</span>，也可用于矩阵</td>
+</tr>
+<tr>
+<td>点运算 <code>.*</code>、<code>./</code>、<code>.^</code></td>
+<td>逐元素作用，要求两操作数同维同长</td>
+</tr>
+<tr>
+<td>矩阵运算</td>
+<td>遵循线性代数规则</td>
+</tr>
+<tr>
+<td><code>'</code> 与 <code>.'</code></td>
+<td>共轭转置与不共轭转置</td>
+</tr>
+</tbody>
+</table>
+<h3 id="脚本与函数">脚本与函数</h3>
+<ul>
+<li>脚本 <code>.m</code>：直接运行，变量全部进入工作区；实时脚本
+<code>.mlx</code> 把代码与输出图形同屏</li>
+<li>函数：有入口和出口参数，<strong>文件名必须与函数名相同</strong>，不能独立运行，只能在别处调用</li>
+</ul>
+<p>内置函数库分四类：初等数学、线性代数、数值积分与微分方程求解、傅里叶分析与滤波。</p>
+<h3 id="流程控制">流程控制</h3>
+<table>
+<thead>
+<tr>
+<th>语句</th>
+<th>要点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>if</code> / <code>elseif</code> / <code>else</code></td>
+<td>条件分支</td>
+</tr>
+<tr>
+<td><code>switch</code> / <code>case</code></td>
+<td>case 后不能含关系运算符，也不能加 <code>break</code></td>
+</tr>
+<tr>
+<td><code>for</code></td>
+<td><code>初值:步长:终值</code>，或直接遍历数组；遍历数组时按列循环</td>
+</tr>
+<tr>
+<td><code>while</code></td>
+<td>循环体必须改变判断表达式，否则死循环</td>
+</tr>
+<tr>
+<td><code>break</code> / <code>continue</code></td>
+<td>跳出整个循环 / 跳过本次剩余语句</td>
+</tr>
+</tbody>
+</table>
+<h3 id="绘图">绘图</h3>
+<p><code>plot(X1,Y1,LineSpec1,...)</code> 一条语句可以画多条曲线，<span
+class="math inline">\(X\)</span>、<span class="math inline">\(Y\)</span>
+必须等长。<code>LineSpec</code>
+由线型、标记、颜色组成，参数必须用单引号括起；也可以用名值对设置属性。之后再叠加标题、坐标轴、图例、网格。</p>
+<ul>
+<li><code>subplot(m,n,p)</code> 把窗口分成 <span
+class="math inline">\(m\times n\)</span> 个子图，序号按行排列</li>
+<li><code>plot3(x,y,z)</code> 画三维曲线</li>
+<li><code>stem()</code> 画离散序列</li>
+</ul>
+<h2 id="simulink-仿真平台">Simulink 仿真平台</h2>
+<h3 id="模块与模块库">模块与模块库</h3>
+<p>模块（Block）是搭建仿真模型的基本单位。模块库分基本模块库和扩展模块库（工具箱），库浏览器带搜索栏。</p>
+<p>常用模块：</p>
+<table>
+<thead>
+<tr>
+<th>类别</th>
+<th>模块</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>信号源 Sources</td>
+<td>Constant、Step、Sine、Pulse、Random</td>
+</tr>
+<tr>
+<td>接收器 Sinks</td>
+<td>Scope、Display、To Workspace、To File</td>
+</tr>
+<tr>
+<td>连续 Continuous</td>
+<td>Integrator、Derivative、Transfer Fcn</td>
+</tr>
+<tr>
+<td>数学运算</td>
+<td>Sum、Gain、Product、Fcn</td>
+</tr>
+<tr>
+<td>信号路由</td>
+<td>Mux、Demux</td>
+</tr>
+</tbody>
+</table>
+<p>注意：接收器子库的模块只有输入端，没有输出端。</p>
+<h3 id="建模流程">建模流程</h3>
+<ol type="1">
+<li>想清楚输入是什么、用什么模块实现</li>
+<li>想清楚要做哪些运算、用什么模块</li>
+<li>想清楚输出是什么、怎么显示</li>
+<li>新建空白模型并保存，从库浏览器拖入模块</li>
+<li>连线、设参数、运行仿真</li>
+</ol>
+<p>编辑操作：滚轮平移缩放、右键拖动复制、<code>Ctrl+R</code>
+旋转、<code>Ctrl+I</code>
+翻转、双击打开参数界面。布局上坚持左输入右输出，尽量在一条直线上分布。</p>
+<h3 id="求解器">求解器</h3>
+<p>Simulink
+在指定时间范围内按给定步长计算系统状态，每次循环是一个”仿真步”。求解器（Solver）就是体现特定求解方法的程序。</p>
+<table>
+<thead>
+<tr>
+<th>分类</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>固定步长</td>
+<td>仿真过程中步长固定，没有误差控制</td>
+</tr>
+<tr>
+<td>变步长</td>
+<td>步长由求解器自动确定，通过增减步长满足误差容限</td>
+</tr>
+<tr>
+<td>离散求解器</td>
+<td>适用于离散系统</td>
+</tr>
+<tr>
+<td>连续求解器</td>
+<td>适用于连续系统</td>
+</tr>
+</tbody>
+</table>
+<p>常见变步长求解器：<code>ode45</code>（默认，适用于多数非刚性系统）、<code>ode15s</code>（刚性系统）、<code>ode23</code>、<code>ode113</code>。</p>
+<p>选择原则：一般先用
+<code>auto</code>，让系统自动选择并尽量取大步长；结果不满足要求时再手动比较不同求解器。对变步长求解器，结果应落在指定的容差范围内。</p>
+<h3 id="采样时间">采样时间</h3>
+<p>模块的 <code>Sample time</code> 参数决定执行速度：</p>
+<ul>
+<li>设为 <span
+class="math inline">\(0\)</span>：以求解器步长计算，输出<strong>连续信号</strong></li>
+<li>设为非零：以该采样时间作为步长，输出<strong>离散信号</strong></li>
+</ul>
+<h3 id="运行仿真">运行仿真</h3>
+<ul>
+<li>图形界面：点击运行按钮；运行键变成暂停键</li>
+<li>命令行：<code>sim()</code> 函数</li>
+</ul>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-attr">simOutputs</span> = sim(model, Name, Value)<br></code></pre></td></tr></table></figure>
+<p>例如</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs stylus"><span class="hljs-function"><span class="hljs-title">sim</span><span class="hljs-params">(<span class="hljs-string">&#x27;Ex_1&#x27;</span>)</span></span><br><span class="hljs-function"><span class="hljs-title">sim</span><span class="hljs-params">(<span class="hljs-string">&#x27;Ex_1&#x27;</span>,<span class="hljs-string">&#x27;Solver&#x27;</span>,<span class="hljs-string">&#x27;ode15s&#x27;</span>,<span class="hljs-string">&#x27;TimeOut&#x27;</span>,<span class="hljs-number">20</span>)</span></span><br></code></pre></td></tr></table></figure>
+<p>模型文件名用引号括起，不需要写 <code>.slx</code> 后缀。</p>
+<p>注意：Simulink
+运行后不会自动保存编辑内容和运行结果，必须手动保存。</p>
+<h3 id="数据导出">数据导出</h3>
+<p>仿真数据包括时间变量、输入信号、输出信号、状态变量和日志。导出方式：</p>
+<table>
+<thead>
+<tr>
+<th>方式</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Scope</td>
+<td>显示波形，一般用于检查数据</td>
+</tr>
+<tr>
+<td>To Workspace</td>
+<td>数据送到 MATLAB 工作区，用 <code>out.参数名.data</code> 访问</td>
+</tr>
+<tr>
+<td>To File</td>
+<td>数据存为 <code>.mat</code> 文件，可导入 Excel、MATLAB、Origin</td>
+</tr>
+<tr>
+<td><code>sim()</code></td>
+<td>结果自动保存到工作区</td>
+</tr>
+</tbody>
+</table>
+<p>导出格式有六种：数组、结构体（块）、带时间的结构体、MATLAB
+时间序列、<code>Simulink.SimulationData.Dataset</code>、<code>ModelDataLogs</code>。</p>
+<p>勾选时间向量、状态变量、输出变量后，三种数据会合并到同一个变量
+<code>out</code> 中。</p>
+<h3 id="动态系统仿真步骤">动态系统仿真步骤</h3>
+<ol type="1">
+<li>把微分方程最高阶项的系数化为 <span
+class="math inline">\(1\)</span>，等式左侧只保留最高阶项</li>
+<li>微分方程的阶数就是积分模块的数量</li>
+<li>从积分模块开始画仿真流程图，确定模块和信号流向</li>
+<li>按流程图在 Simulink 中建模，运行并分析动态特性</li>
+</ol>
+<h2 id="能源系统机理建模">能源系统机理建模</h2>
+<h3 id="守恒方程">守恒方程</h3>
+<p>守恒方程描述系统内部物质与能量的守恒，分质量、动量、能量三类，用微分方程描述系统行为的变化。</p>
+<p>取一个控制体，基本关系是</p>
+<p><span class="math display">\[
+\text{变化的}=\text{得到的}-\text{失去的}
+\]</span></p>
+<h4 id="质量守恒">质量守恒</h4>
+<p><span class="math display">\[
+\frac{\mathrm{d}M}{\mathrm{d}t}-m_\mathrm{in}+m_\mathrm{ex}=0
+\]</span></p>
+<ul>
+<li>稳态时 <span
+class="math inline">\(\dfrac{\mathrm{d}M}{\mathrm{d}t}=0\)</span>，于是
+<span class="math inline">\(m_\mathrm{in}=m_\mathrm{ex}\)</span></li>
+<li>对圆柱形储液罐 <span class="math inline">\(M=\rho
+Sh\)</span>，有</li>
+</ul>
+<p><span class="math display">\[
+\rho S\frac{\mathrm{d}h}{\mathrm{d}t}-m_\mathrm{in}+m_\mathrm{ex}=0
+\]</span></p>
+<h4 id="能量守恒">能量守恒</h4>
+<p>单位质量的能量为</p>
+<p><span class="math display">\[
+E=e+\frac{1}{2}V^2+gz+\frac{p}{\rho}
+\]</span></p>
+<p>四项分别是内能、动能、势能、静压能。</p>
+<p>控制体的能量方程</p>
+<p><span class="math display">\[
+\frac{\mathrm{d}E_{CV}}{\mathrm{d}t}=Q-W+m_\mathrm{in}h_\mathrm{in}-m_\mathrm{ex}h_\mathrm{ex}
+\]</span></p>
+<ul>
+<li>稳态时 <span
+class="math inline">\(\dfrac{\mathrm{d}E_{CV}}{\mathrm{d}t}=0\)</span>，有
+<span
+class="math inline">\(Q-W+m_\mathrm{in}h_\mathrm{in}-m_\mathrm{ex}h_\mathrm{ex}=0\)</span></li>
+<li>若系统不做体积功且绝热，则能量变化只由进出口焓差决定</li>
+</ul>
+<p>开放系统（开口系统）要考虑质量流动携带的能量；封闭系统没有物质交换，只有功和热。</p>
+<h4 id="封闭系统与微分形式">封闭系统与微分形式</h4>
+<p><span class="math display">\[
+\Delta U=Q-W
+\]</span></p>
+<p>单位工质 <span class="math inline">\(\Delta
+u=q-w\)</span>，微元过程</p>
+<p><span class="math display">\[
+\mathrm{d}u=\delta q-\delta w
+\]</span></p>
+<p>体积功（压强功）</p>
+<p><span class="math display">\[
+\delta w=p\,\mathrm{d}V
+\]</span></p>
+<p>四个典型过程：</p>
+<table>
+<thead>
+<tr>
+<th>过程</th>
+<th>条件</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>绝热</td>
+<td><span class="math inline">\(\delta q=0\)</span></td>
+<td><span class="math inline">\(\mathrm{d}u=\delta w\)</span></td>
+</tr>
+<tr>
+<td>等温</td>
+<td><span class="math inline">\(T\)</span> 不变，理想气体 <span
+class="math inline">\(\mathrm{d}u=0\)</span></td>
+<td><span class="math inline">\(Q=W\)</span></td>
+</tr>
+<tr>
+<td>等容</td>
+<td><span class="math inline">\(\mathrm{d}V=0\)</span></td>
+<td><span class="math inline">\(\mathrm{d}u=\delta q\)</span></td>
+</tr>
+<tr>
+<td>等压</td>
+<td><span class="math inline">\(p\)</span> 恒定</td>
+<td><span class="math inline">\(\Delta U=Q-p\Delta V\)</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="传热的三种方式">传热的三种方式</h3>
+<table>
+
+<thead>
+<tr>
+<th>方式</th>
+<th>规律</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>热传导</td>
+<td>傅里叶定律 <span
+class="math inline">\(q=-kA\dfrac{\mathrm{d}T}{\mathrm{d}r}\)</span></td>
+</tr>
+<tr>
+<td>对流传热</td>
+<td>牛顿冷却公式 <span
+class="math inline">\(q=hA\left(t_w-t_f\right)\)</span>，<span
+class="math inline">\(h\)</span> 与流动类型有关</td>
+</tr>
+<tr>
+<td>辐射传热</td>
+<td>斯特藩-玻尔兹曼定律 <span class="math inline">\(q=\sigma
+A\left(T_1^4-T_2^4\right)\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>能源系统仿真中考虑辐射的情况比较少。</p>
+<p>综合起来</p>
+<p><span class="math display">\[
+\mathrm{d}u=\delta q_{cn}+\delta q_{cv}+\delta q_r-p\delta V-\delta
+w_{\text{其他}}
+\]</span></p>
+<h3 id="换热过程集总模型">换热过程集总模型</h3>
+<p>以管内流体被外部高温热源加热为例，假设：</p>
+<ul>
+<li>管壁外高温热源温度 <span class="math inline">\(T_h\)</span>
+不变</li>
+<li>不考虑管壁传热过程，管内流体参数分布均匀</li>
+</ul>
+<p>列四个方程：</p>
+<p><span class="math display">\[
+\left\{
+\begin{aligned}
+&amp;\text{热平衡：}&amp;&amp;
+m_{cv}c_p\frac{\mathrm{d}T_\mathrm{ex}}{\mathrm{d}t}=Q+m_\mathrm{in}c_pT_\mathrm{in}-m_\mathrm{ex}c_pT_\mathrm{ex}\\
+&amp;\text{连续性：}&amp;&amp; m_\mathrm{in}=m_\mathrm{ex}=\rho Au\\
+&amp;\text{对流传热：}&amp;&amp; Q=hA\left(T_h-T_\mathrm{ex}\right)\\
+&amp;\text{质量关联：}&amp;&amp; m_{cv}=\rho V
+\end{aligned}
+\right.
+\]</span></p>
+<p>合并得</p>
+<p><span class="math display">\[
+\rho c_pV\frac{\mathrm{d}T_\mathrm{ex}}{\mathrm{d}t}
+=hA\left(T_h-T_\mathrm{ex}\right)+m_\mathrm{in}c_p\left(T_\mathrm{in}-T_\mathrm{ex}\right)
+\]</span></p>
+<p>三项分别是能量变化率、对流传热量、热流携带量。</p>
+<p>算例：<span class="math inline">\(T_h=35\
+^\circ\mathrm{C}\)</span>，<span class="math inline">\(T_\mathrm{in}=10\
+^\circ\mathrm{C}\)</span>，<span class="math inline">\(R=0.2\
+\mathrm{m}\)</span>，<span class="math inline">\(L=1\
+\mathrm{m}\)</span>。</p>
+<table>
+
+<thead>
+<tr>
+<th>流体</th>
+<th><span class="math inline">\(c_p\)</span></th>
+<th><span class="math inline">\(\rho\)</span></th>
+<th><span class="math inline">\(h\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>空气</td>
+<td><span class="math inline">\(1.005\ \mathrm{kJ/(kg\cdot
+K)}\)</span></td>
+<td><span class="math inline">\(1.2\ \mathrm{kg/m^3}\)</span></td>
+<td><span class="math inline">\(0.15\ \mathrm{kW/(m^2\cdot
+K)}\)</span></td>
+</tr>
+<tr>
+<td>水</td>
+<td><span class="math inline">\(4.2\ \mathrm{kJ/(kg\cdot
+K)}\)</span></td>
+<td><span class="math inline">\(1000\ \mathrm{kg/m^3}\)</span></td>
+<td><span class="math inline">\(1.0\ \mathrm{kW/(m^2\cdot
+K)}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>两者的时间常数相差几个数量级，所以空气的出口温度响应快、水慢。</p>
+<h3 id="微型燃机电制冷系统模型">微型燃机电制冷系统模型</h3>
+<p>微燃机燃烧天然气发电，余热驱动制冷机。动态模型把系统简化为一阶惯性环节：</p>
+<ul>
+<li>变量：<span class="math inline">\(P_{mt}\)</span> 微燃机功率，<span
+class="math inline">\(G_{fm}\)</span> 燃气流率，<span
+class="math inline">\(T_{abs}\)</span> 制冷机供水温度</li>
+<li>常数：<span
+class="math inline">\(k_1=-6.862\times10^{-5}\)</span>、<span
+class="math inline">\(k_2=2.144\times10^{4}\)</span>、<span
+class="math inline">\(k_3=-1.128\times10^{2}\)</span>、<span
+class="math inline">\(k_4=-3.863\times10^{-2}\)</span></li>
+<li>时间常数：<span class="math inline">\(\tau_{mt}=20\)</span>、<span
+class="math inline">\(\tau_{abs}=130\)</span></li>
+</ul>
+<p>模型形式为</p>
+<p><span class="math display">\[
+\left\{
+\begin{aligned}
+\tau_{mt}\frac{\mathrm{d}P_{mt}}{\mathrm{d}t}&amp;=k_1G_{fm}^2+k_2G_{fm}+k_3-P_{mt}\\
+\tau_{abs}\frac{\mathrm{d}T_{abs}}{\mathrm{d}t}&amp;=k_4P_{mt}-T_{abs}
+\end{aligned}
+\right.
+\]</span></p>
+<p>稳态时令导数项为零，得到初值</p>
+<p><span class="math display">\[
+P_0=k_1G_0^2+k_2G_0+k_3,\qquad T_0=k_4P_0
+\]</span></p>
+<p>用这个初值设置积分器，系统就能从平衡状态出发，再施加阶跃扰动观察动态响应。</p>
+<h2 id="数据驱动与混合建模">数据驱动与混合建模</h2>
+<h3 id="数据驱动建模">数据驱动建模</h3>
+<p>当显式物理规律难以获得时，可以直接从数据中学习输入—输出映射，不依赖机理先验知识。常用模型：线性回归、支持向量机（SVM）、长短期记忆网络（LSTM）、自回归网络（NARX）。</p>
+<p>流程：</p>
+<ol type="1">
+<li>数据采集与预处理：清洗、去噪、标准化</li>
+<li>特征工程：把原始数据转换为更能表达问题本质的特征</li>
+<li>模型选择、设计与训练：在参数空间中寻找使预测偏差最小的参数</li>
+<li>模型验证：用未参与训练的数据测试泛化能力</li>
+<li>模型评估：用指标量化精度</li>
+</ol>
+<p>预处理常做异常值剔除、缺失值插补和 <strong>Z-score
+归一化</strong></p>
+<p><span class="math display">\[
+z=\frac{x-\mu}{\sigma}
+\]</span></p>
+<p>它表示数据点距均值多少个标准差，用于消除量纲差异。</p>
+<p>特征工程的作用：提升模型性能、加速训练、增强泛化能力、适应模型假设。</p>
+<h3 id="欠拟合与过拟合">欠拟合与过拟合</h3>
+<table>
+<thead>
+<tr>
+<th>状态</th>
+<th>表现</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>欠拟合</td>
+<td>模型过于简单，训练集和测试集误差都偏高，泛化能力差</td>
+</tr>
+<tr>
+<td>适拟合</td>
+<td>复杂度与数据规律匹配，训练误差和测试误差都低且接近</td>
+</tr>
+<tr>
+<td>过拟合</td>
+<td>模型复杂度过高，训练误差接近零，测试误差明显增大</td>
+</tr>
+</tbody>
+</table>
+<h3 id="评估指标">评估指标</h3>
+<p><span class="math display">\[
+\mathrm{RMSE}=\sqrt{\frac{1}{n}\sum_{i=1}^{n}\left(y_i-\hat
+y_i\right)^2}
+\]</span></p>
+<p><span class="math display">\[
+\mathrm{MAE}=\frac{1}{n}\sum_{i=1}^{n}\left|y_i-\hat y_i\right|
+\]</span></p>
+<p><span class="math display">\[
+R^2=1-\frac{\sum\left(y_i-\hat y_i\right)^2}{\sum\left(y_i-\bar
+y\right)^2}
+\]</span></p>
+<p>RMSE 对大误差更敏感，MAE 更稳健，<span
+class="math inline">\(R^2\)</span> 越接近 <span
+class="math inline">\(1\)</span> 拟合越好。</p>
+<h3 id="机理与数据混合建模">机理与数据混合建模</h3>
+<p>纯机理模型在复杂系统中难以精确，纯数据模型缺乏可解释性。混合建模把两者结合，常见策略：</p>
+<ul>
+<li>机理模型为主，数据模型修正残差</li>
+<li>数据模型为主，机理约束参数范围</li>
+<li>串联：机理模型输出作为数据模型输入</li>
+<li>并联：两者加权融合</li>
+</ul>
+<p>混合建模既能保持物理可解释性，又能提高精度，是能源系统建模的常用方向。</p>
+<h2 id="pv-sofc-系统仿真实验">PV-SOFC 系统仿真实验</h2>
+<p>这一章是综合实验：先建立光伏电池的数学模型，再建立固体氧化物燃料电池（SOFC）的电压与热模型，最后把两者组合成
+PV-SOFC 冷热电联供系统。</p>
+<h3 id="光伏发电概述">光伏发电概述</h3>
+<h4 id="光生伏特效应">光生伏特效应</h4>
+<p>光伏发电利用半导体材料制成的太阳能电池，在吸收太阳光后产生伏特效应（光生伏特效应），把光能直接转变为电能。</p>
+<p>机理分四步：</p>
+<ol type="1">
+<li>光照激发：P-N 结内的电子受光激发，产生额外的电子—空穴对</li>
+<li>形成载流子：电子和空穴的产生率大于复合率，形成非平衡载流子（光生载流子）</li>
+<li>迁移与内建电场：载流子迁移，形成内建电场</li>
+<li>光生电动势：P 区和 N
+区因载流子迁移，产生与内建电场方向相反的光生电动势场</li>
+</ol>
+<h4 id="发展历程">发展历程</h4>
+<table>
+
+<thead>
+<tr>
+<th>年份</th>
+<th>事件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1839</td>
+<td>贝克雷尔（Becquerel）发现光生伏特效应</td>
+</tr>
+<tr>
+<td>1954</td>
+<td>贝尔实验室制成第一块实用单晶硅电池，效率 <span
+class="math inline">\(6\%\)</span></td>
+</tr>
+<tr>
+<td>20 世纪 70 年代</td>
+<td>能源危机与污染问题推动光伏发展</td>
+</tr>
+<tr>
+<td>90 年代</td>
+<td>各国推出屋顶计划、上网电价，产业快速成长</td>
+</tr>
+<tr>
+<td>2023</td>
+<td>全球新增装机 <span class="math inline">\(425\
+\mathrm{GW}\)</span>，中国 <span class="math inline">\(263\
+\mathrm{GW}\)</span>，占约 <span
+class="math inline">\(62\%\)</span></td>
+</tr>
+</tbody>
+</table>
+<h4 id="优缺点">优缺点</h4>
+<p>优点七项：无枯竭危险、安全可靠、无噪声无污染、不受资源分布地域限制、可就地发电供电、无需消耗燃料和架设输电线路、建设周期短。</p>
+<p>缺点四项：</p>
+<ul>
+<li>能量分布密度低、占地面积大（地面辐射度最高约 <span
+class="math inline">\(1.2\ \mathrm{kW/m^2}\)</span>，多数地区低于 <span
+class="math inline">\(1\ \mathrm{kW/m^2}\)</span>）</li>
+<li>转换效率低、间歇性工作（实验室多结电池 <span
+class="math inline">\(28\%\sim30\%\)</span>，商业晶硅电池 <span
+class="math inline">\(20\%\sim25\%\)</span>）</li>
+<li>受气候、环境和地域因素影响大</li>
+<li>光伏板制造过程高污染、高能耗（硅砂需提纯到 <span
+class="math inline">\(99.9999\%\)</span> 以上）</li>
+</ul>
+<h4 id="应用形式">应用形式</h4>
+<table>
+<thead>
+<tr>
+<th>形式</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>离网系统</td>
+<td>组件、控制器、蓄电池、负载组成独立电源</td>
+</tr>
+<tr>
+<td>集中式并网电站</td>
+<td>容量大、占地广、建在偏远地区，需专业人员维护</td>
+</tr>
+<tr>
+<td>分布式发电</td>
+<td>容量小、接入电压低、靠近负荷，对电网影响小</td>
+</tr>
+<tr>
+<td>BIPV</td>
+<td>光伏建筑一体化，组件与建筑同步设计</td>
+</tr>
+<tr>
+<td>BAPV</td>
+<td>建筑附加光伏，组件附加安装在屋面</td>
+</tr>
+</tbody>
+</table>
+<h3 id="光伏电池模型">光伏电池模型</h3>
+<h4 id="等效电路">等效电路</h4>
+<p>理想光伏电池可以看成<strong>恒流源并联一个二极管</strong>：</p>
+<ul>
+<li>光生电流 <span
+class="math inline">\(I_{ph}\)</span>：光照射产生的电流，大小与辐照度成正比</li>
+<li>暗电流 <span
+class="math inline">\(I_D\)</span>：无光照时，外电压作用下 P-N
+结的漏电流，方向与光生电流相反</li>
+</ul>
+<p>实际电池还要考虑两个电阻：</p>
+<ul>
+<li><strong>串联电阻 <span
+class="math inline">\(R_s\)</span></strong>：由电池体电阻、表面电阻、电极导体电阻、电极与硅表面接触电阻组成，数值很小（约
+<span class="math inline">\(10^{-3}\ \Omega\)</span>）</li>
+<li><strong>并联电阻 <span
+class="math inline">\(R_{sh}\)</span></strong>：由硅片边缘不清洁或体内缺陷导致，数值很大（约
+<span class="math inline">\(10^3\ \Omega\)</span>）</li>
+</ul>
+<h4 id="特性方程">特性方程</h4>
+<p>由 KCL 和 KVL 得</p>
+<p><span class="math display">\[
+I=I_{ph}-I_0\left[\exp\left(\frac{q\left(V+IR_s\right)}{AKT}\right)-1\right]
+-\frac{V+IR_s}{R_{sh}}
+\]</span></p>
+<p>式中 <span class="math inline">\(I_0\)</span>
+为二极管反向饱和电流，<span class="math inline">\(q\)</span>
+为电子电量，<span class="math inline">\(k\)</span> 为玻尔兹曼常数（<span
+class="math inline">\(1.38\times10^{-23}\ \mathrm{J/K}\)</span>），<span
+class="math inline">\(T\)</span> 为绝对温度，<span
+class="math inline">\(A\)</span> 为二极管因子（取 <span
+class="math inline">\(1\sim2\)</span>）。</p>
+<p>这是一个超越方程，含 <span
+class="math inline">\(I_{ph}\)</span>、<span
+class="math inline">\(I_0\)</span>、<span
+class="math inline">\(R_s\)</span>、<span
+class="math inline">\(A\)</span>、<span
+class="math inline">\(R_{sh}\)</span>
+五个未知参数，直接求解困难。厂家通常只给出标准状况下的四个参数：</p>
+<ul>
+<li>短路电流 <span class="math inline">\(I_{sc}\)</span></li>
+<li>开路电压 <span class="math inline">\(V_{oc}\)</span></li>
+<li>最大功率点电流 <span class="math inline">\(I_m\)</span></li>
+<li>最大功率点电压 <span class="math inline">\(V_m\)</span></li>
+</ul>
+<p>标准状况：<span class="math inline">\(T=25\
+^\circ\mathrm{C}\)</span>、<span class="math inline">\(P=1\
+\mathrm{atm}\)</span>、<span class="math inline">\(S_{ref}=1\
+\mathrm{kW/m^2}\)</span>。</p>
+<h4 id="四参数工程模型">四参数工程模型</h4>
+<p>制造工艺较好的电池可以近似认为 <span
+class="math inline">\(R_s\approx0\)</span>、<span
+class="math inline">\(R_{sh}\to\infty\)</span>，方程简化为</p>
+<p><span class="math display">\[
+I=I_{sc}-C_1I_{sc}\left[\exp\left(\frac{V}{C_2V_{oc}}\right)-1\right]
+\]</span></p>
+<p>用两个无量纲系数 <span class="math inline">\(C_1\)</span>、<span
+class="math inline">\(C_2\)</span> 代替含温度和二极管因子的物理量。这样
+<span class="math inline">\(V=0\)</span> 时自动得到 <span
+class="math inline">\(I=I_{sc}\)</span>，剩下开路点和最大功率点两个条件正好确定两个未知数。</p>
+<p><strong>第一步：用最大功率点</strong></p>
+<p>代入 <span class="math inline">\(V=V_m\)</span>、<span
+class="math inline">\(I=I_m\)</span>，并利用 <span
+class="math inline">\(V_m/(C_2V_{oc})\gg1\)</span>，略去 <span
+class="math inline">\(-1\)</span>，得</p>
+<p><span class="math display">\[
+C_1=\left(1-\frac{I_m}{I_{sc}}\right)\exp\left(-\frac{V_m}{C_2V_{oc}}\right)
+\]</span></p>
+<p>方程里还含 <span class="math inline">\(C_2\)</span>，不能直接算。</p>
+<p><strong>第二步：用开路点</strong></p>
+<p>代入 <span class="math inline">\(V=V_{oc}\)</span>、<span
+class="math inline">\(I=0\)</span>，同样略去 <span
+class="math inline">\(-1\)</span>，得</p>
+<p><span class="math display">\[
+C_1=\left(1-\frac{I_{sc}}{I_{sc}}\right)\exp\left(\frac{V_{oc}}{C_2V_{oc}}\right)
+\]</span></p>
+<p>与第一步联立，消去 <span
+class="math inline">\(C_1\)</span>，取对数解出</p>
+<p><span class="math display">\[
+C_2=\frac{\dfrac{V_m}{V_{oc}}-1}{\ln\left(1-\dfrac{I_m}{I_{sc}}\right)}
+\]</span></p>
+<p>再代回求 <span class="math inline">\(C_1\)</span>。</p>
+<p>符号检查：<span class="math inline">\(V_m&lt;V_{oc}\)</span>
+使分子为负，<span class="math inline">\(I_m&lt;I_{sc}\)</span>
+使对数为负，所以 <span class="math inline">\(C_2&gt;0\)</span>。</p>
+<p>计算流程：</p>
+<ol type="1">
+<li>读取铭牌 <span class="math inline">\(I_{sc}\)</span>、<span
+class="math inline">\(V_{oc}\)</span>、<span
+class="math inline">\(I_m\)</span>、<span
+class="math inline">\(V_m\)</span></li>
+<li>先算 <span class="math inline">\(C_2\)</span></li>
+<li>再算 <span class="math inline">\(C_1\)</span></li>
+<li>代入 <span class="math inline">\(I(V)\)</span>，<span
+class="math inline">\(V\)</span> 从 <span
+class="math inline">\(0\)</span> 取到 <span
+class="math inline">\(V_{oc}\)</span></li>
+</ol>
+<h4 id="温度与辐照修正">温度与辐照修正</h4>
+<p>实际工况不是标准状况，需要修正：</p>
+<ul>
+<li>短路电流随辐照度成正比，并随温度上升而增大（温度系数 <span
+class="math inline">\(a\)</span>）</li>
+<li>开路电压随温度上升而下降（温度系数 <span
+class="math inline">\(b\)</span>），并随辐照度按对数规律上升</li>
+<li>电池温度由环境温度和辐照度决定 <span
+class="math inline">\(T=T_{air}+kS\)</span></li>
+</ul>
+<p>课件算例：<span class="math inline">\(V_{oc}=21.5\
+\mathrm{V}\)</span>、<span class="math inline">\(I_{sc}=2.5\
+\mathrm{A}\)</span>、<span class="math inline">\(I_m=2.33\
+\mathrm{A}\)</span>、<span class="math inline">\(V_m=17.2\
+\mathrm{V}\)</span>，<span class="math inline">\(a=0.0025\
+\mathrm{A/^\circ C}\)</span>、<span class="math inline">\(b=0.0028\
+\mathrm{V/^\circ C}\)</span>、<span class="math inline">\(R_s=0.005\
+\Omega\)</span>、<span class="math inline">\(T_{air}=20\
+^\circ\mathrm{C}\)</span>、<span class="math inline">\(k=0.03\
+^\circ\mathrm{C\cdot m^2/W}\)</span>。</p>
+<h4 id="光伏阵列与旁路二极管">光伏阵列与旁路二极管</h4>
+<p>一个组件由若干电池串联，组件再串并联成阵列。仿真模型用三个子模块串联，每个子模块由
+<span class="math inline">\(20\)</span> 个电池串联：</p>
+<table>
+<thead>
+<tr>
+<th>子模块</th>
+<th>辐照度</th>
+<th>模拟工况</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><span class="math inline">\(1000\ \mathrm{W/m^2}\)</span></td>
+<td>标准光照</td>
+</tr>
+<tr>
+<td>2</td>
+<td><span class="math inline">\(300\ \mathrm{W/m^2}\)</span></td>
+<td>部分遮挡</td>
+</tr>
+<tr>
+<td>3</td>
+<td><span class="math inline">\(600\ \mathrm{W/m^2}\)</span></td>
+<td>部分遮挡</td>
+</tr>
+</tbody>
+</table>
+<p>每个子模块配一个<strong>旁路二极管</strong>：某个模块被遮挡时，旁路二极管提供电流通路，避免模块因反向电流损坏，并维持整个阵列的电流输出。</p>
+<p>仿真的输出是 <span class="math inline">\(I\)</span>-<span
+class="math inline">\(V\)</span> 和 <span
+class="math inline">\(P\)</span>-<span class="math inline">\(V\)</span>
+特性曲线，最大功率点对应的电压和电流是设计与控制最关键的参考值。</p>
+<h3 id="固体氧化物燃料电池概述">固体氧化物燃料电池概述</h3>
+<h4 id="定义与原理">定义与原理</h4>
+<p>燃料电池是按电化学原理，在等温条件下把燃料的化学能直接转换为电能的装置。只要保持燃料和氧化剂供给，就能连续发电。</p>
+<p>SOFC 使用固体氧化物（通常是氧化钇稳定的氧化锆 YSZ）作电解质，在 <span
+class="math inline">\(600\sim1000\ ^\circ\mathrm{C}\)</span>
+的高温下工作。</p>
+<p>工作过程：</p>
+<table>
+<thead>
+<tr>
+<th>位置</th>
+<th>过程</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>阴极（空气极）</td>
+<td><span
+class="math inline">\(\mathrm{O_2+4e^-\to2O^{2-}}\)</span></td>
+</tr>
+<tr>
+<td>电解质</td>
+<td><span class="math inline">\(\mathrm{O^{2-}}\)</span>
+经氧空位从阴极迁移到阳极</td>
+</tr>
+<tr>
+<td>阳极</td>
+<td><span class="math inline">\(\mathrm{H_2+O^{2-}\to
+H_2O+2e^-}\)</span></td>
+</tr>
+<tr>
+<td>外电路</td>
+<td>电子经负载做功，形成回路</td>
+</tr>
+</tbody>
+</table>
+<p>记忆要点：<strong>离子在电池内部从阴极走到阳极，电子在电池外部从阳极走到阴极</strong>。</p>
+<h4 id="为什么效率高">为什么效率高</h4>
+<p>传统热机是”化学能 <span class="math inline">\(\to\)</span> 热能 <span
+class="math inline">\(\to\)</span> 机械能 <span
+class="math inline">\(\to\)</span> 电能”，受卡诺循环限制，效率不超过
+<span class="math inline">\(50\%\)</span>。燃料电池是”化学能 <span
+class="math inline">\(\to\)</span>
+电能”直接转换，不经过热功转换，可逆热力学效率可达 <span
+class="math inline">\(70\%\)</span> 左右。</p>
+<h4 id="发展历程-1">发展历程</h4>
+<table>
+
+<thead>
+<tr>
+<th>年份</th>
+<th>事件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1899</td>
+<td>能斯特（Nernst）发现固态氧离子导体（<span
+class="math inline">\(85\%\)</span> <span
+class="math inline">\(\mathrm{ZrO_2}\)</span> + <span
+class="math inline">\(15\%\)</span> <span
+class="math inline">\(\mathrm{Y_2O_3}\)</span>）</td>
+</tr>
+<tr>
+<td>1937</td>
+<td>Baur 和 Preis 提出用固体氧化物作电解质</td>
+</tr>
+<tr>
+<td>1960–70 年代</td>
+<td>西屋公司提出并发展管式 SOFC</td>
+</tr>
+<tr>
+<td>1990 年代</td>
+<td>发电效率突破 <span class="math inline">\(50\%\)</span></td>
+</tr>
+<tr>
+<td>2000 年至今</td>
+<td>小型化与商业化</td>
+</tr>
+</tbody>
+</table>
+<p><span class="math inline">\(\mathrm{Y_2O_3}\)</span> 掺入 <span
+class="math inline">\(\mathrm{ZrO_2}\)</span>
+后，立方相在低温下稳定存在，并引入氧空位，使 <span
+class="math inline">\(\mathrm{O^{2-}}\)</span> 能在晶格中迁移。</p>
+<h4 id="平板式与管式">平板式与管式</h4>
+<table>
+
+<thead>
+<tr>
+<th>结构</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>平板式</td>
+<td>阳极、电解质、阴极、连接体构成重复单元，层状堆叠；功率密度高、制造工艺成熟、热管理好</td>
+</tr>
+<tr>
+<td>管式</td>
+<td>同心圆管，管内空气、管外燃料；无需高温密封、结构稳定抗热循环，但功率密度低、成本高</td>
+</tr>
+</tbody>
+</table>
+<h4 id="优缺点-1">优缺点</h4>
+<p>优点：排放低（燃料电池的 <span
+class="math inline">\(\mathrm{CO_2}\)</span> 排放约 <span
+class="math inline">\(270\ \mathrm{kg/MWh}\)</span>，煤约 <span
+class="math inline">\(800\)</span>）、效率高（<span
+class="math inline">\(45\%\sim50\%\)</span>，与涡轮联用可达 <span
+class="math inline">\(60\%\sim70\%\)</span>）、燃料适应性广、高温余热可梯级利用。</p>
+<p>缺点多源于高温运行：</p>
+<ul>
+<li>工作温度高（<span class="math inline">\(600\sim1000\
+^\circ\mathrm{C}\)</span>），材料老化、寿命缩短</li>
+<li>启动时间长，冷启动慢</li>
+<li>对材料要求高，成本高</li>
+<li>高温高压下密封困难</li>
+</ul>
+<h3 id="sofc-建模">SOFC 建模</h3>
+<h4 id="零维集总模型的三条假设">零维集总模型的三条假设</h4>
+<ol type="1">
+<li>所有气体均为理想气体</li>
+<li>分压均一：每种气体只定义一个分压</li>
+<li>温度均一：整个电堆只有一个温度 <span
+class="math inline">\(T\)</span></li>
+</ol>
+<p>把阳极、电解质、阴极（PEN）视为一个整体，电堆与流道作为控制体。</p>
+<h4 id="nernst-电压">Nernst 电压</h4>
+<p>燃料电池能输出的理论最大电动势称为 Nernst 电压</p>
+<p><span class="math display">\[
+V_\mathrm{Nernst}=E_0+\frac{RT}{2F}\ln\left(\frac{p_{\mathrm{H_2}}p_{\mathrm{O_2}}^{1/2}}{p_{\mathrm{H_2O}}}\right)
+\]</span></p>
+<p>其中</p>
+<ul>
+<li><span class="math inline">\(E_0\)</span>
+为标准电动势，是温度的函数：<span
+class="math inline">\(E_0=1.273-2.7645\times10^{-4}T\)</span></li>
+<li><span class="math inline">\(R=8.314\ \mathrm{J/(mol\cdot
+K)}\)</span>，<span class="math inline">\(F=96485\
+\mathrm{C/mol}\)</span></li>
+<li>分压取集总模型的单值，单位 <span
+class="math inline">\(\mathrm{Pa}\)</span></li>
+</ul>
+<p>反应物分压越高，Nernst 电压越高。</p>
+<h4 id="三种电压损失">三种电压损失</h4>
+<p>实际输出电压低于 Nernst 电压，差值来自三种极化</p>
+<p><span class="math display">\[
+V=V_\mathrm{Nernst}-V_\mathrm{act}-V_\mathrm{ohm}-V_\mathrm{conc}
+\]</span></p>
+<h5 id="活化极化">活化极化</h5>
+<p>电极反应某一步速率较慢，需要额外电压驱动，称为活化极化（电化学极化）。低电流密度区电压下降最明显。</p>
+<p><span class="math display">\[
+V_\mathrm{act}=a+b\log i
+\]</span></p>
+<p>系数随温度变化</p>
+<p><span class="math display">\[
+\left\{
+\begin{aligned}
+a&amp;=0.343333-0.000275T\\
+b&amp;=0.0153+2.5917\times10^{-5}T-1.0804\times10^{-8}T^2
+\end{aligned}
+\right.
+\]</span></p>
+<p>这是 Tafel 形式：活化损失随电流密度对数增长。</p>
+<h5 id="欧姆极化">欧姆极化</h5>
+<p>电解质离子传导电阻和电极、连接件电子传导电阻引起，与电流近似成正比</p>
+<p><span class="math display">\[
+V_\mathrm{ohm}=IR_\mathrm{ohm}
+\]</span></p>
+<p>内阻为各层电阻串联</p>
+<p><span class="math display">\[
+R_\mathrm{ohm}=\frac{\tau_\mathrm{anode}}{\sigma_\mathrm{anode}}
++\frac{\tau_\mathrm{electrolyte}}{\sigma_\mathrm{electrolyte}}
++\frac{\tau_\mathrm{cathode}}{\sigma_\mathrm{cathode}}
+\]</span></p>
+<p>各层电导率随温度变化</p>
+<p><span class="math display">\[
+\left\{
+\begin{aligned}
+\frac{1}{\sigma_\mathrm{anode}}&amp;=2.98\times10^{-5}\exp\left(-\frac{1392}{T}\right)\\
+\frac{1}{\sigma_\mathrm{cathode}}&amp;=8.11\times10^{-5}\exp\left(-\frac{600}{T}\right)\\
+\frac{1}{\sigma_\mathrm{electrolyte}}&amp;=2.94\times10^{-5}\exp\left(-\frac{10350}{T}\right)
+\end{aligned}
+\right.
+\]</span></p>
+<p>厚度取阴极 <span class="math inline">\(1\ \mathrm{mm}\)</span>、阳极
+<span class="math inline">\(1\ \mathrm{mm}\)</span>、电解质 <span
+class="math inline">\(2\ \mathrm{mm}\)</span>。</p>
+<h5 id="浓差极化">浓差极化</h5>
+<p>高电流时反应气体供应跟不上，电极界面浓度下降，导致电压损失</p>
+<p><span class="math display">\[
+V_\mathrm{conc}=\frac{RT}{\alpha nF}\ln\left(\frac{i_L}{i_L-i}\right)
+\]</span></p>
+<p>其中 <span class="math inline">\(\alpha=1\)</span>
+为传质反应速率常数，<span class="math inline">\(n=2\)</span>
+为转移电子数，<span class="math inline">\(i_L\)</span>
+为极限电流密度。当 <span class="math inline">\(i\to i_L\)</span>
+时，浓差损失急剧增大。</p>
+<h4 id="组分守恒">组分守恒</h4>
+<p>电化学反应很快，组分守恒方程近似按稳态处理：</p>
+<p><span class="math display">\[
+\left\{
+\begin{aligned}
+\frac{\mathrm{d}m_{\mathrm{H_2},an}}{\mathrm{d}t}
+&amp;=m_{\mathrm{H_2},an,in}-m_{\mathrm{H_2},an,ex}-\Delta
+m_{\mathrm{H_2},reacted}\approx0\\
+\frac{\mathrm{d}m_{\mathrm{O_2},ca}}{\mathrm{d}t}
+&amp;=m_{\mathrm{O_2},ca,in}-m_{\mathrm{O_2},ca,ex}-\Delta
+m_{\mathrm{O_2},reacted}\approx0
+\end{aligned}
+\right.
+\]</span></p>
+<p>由法拉第定律，反应消耗与生成速率为</p>
+<p><span class="math display">\[
+\left\{
+\begin{aligned}
+\Delta m_{\mathrm{H_2}}&amp;=N_cM_{\mathrm{H_2}}\frac{I}{2F}\\
+\Delta m_{\mathrm{O_2}}&amp;=N_cM_{\mathrm{O_2}}\frac{I}{4F}\\
+\Delta m_{\mathrm{H_2O}}&amp;=N_cM_{\mathrm{H_2O}}\frac{I}{2F}
+\end{aligned}
+\right.
+\]</span></p>
+<p>其中 <span class="math inline">\(N_c\)</span> 为电池片数，<span
+class="math inline">\(I/(2F)\)</span> 为单电池氢气消耗的摩尔数。</p>
+<p>用途：由组分守恒算出出口组分含量与分压，再算 Nernst
+电压，最后算电池电压。</p>
+<h4 id="能量守恒与热模型">能量守恒与热模型</h4>
+<p>电堆温度是动态的，能量守恒方程为</p>
+<p><span class="math display">\[
+N_c\rho V_c c_p\frac{\mathrm{d}T_\mathrm{ex}}{\mathrm{d}t}
+=\sum_i\dot n_{i,in}h_i\left(T_\mathrm{in}\right)
+-\sum_i\dot n_{i,ex}h_i\left(T_\mathrm{ex}\right)
+-\left(1-\beta\right)\frac{N_cI}{2F}\Delta H_r-IV
+\]</span></p>
+<p>等式右边五项依次是：储热变化、入口焓、出口焓、反应放热（扣除热损失）、输出电功。</p>
+<ul>
+<li><span class="math inline">\(\beta\)</span> 为热损失系数，绝热时取
+<span class="math inline">\(0\)</span></li>
+<li><span class="math inline">\(\Delta H_r\)</span>
+为氢气的摩尔反应热（约 <span class="math inline">\(-2.418\times10^5\
+\mathrm{J/mol}\)</span>）</li>
+<li><span class="math inline">\(V_c=A_cd_c\)</span> 为单电池体积</li>
+<li>假设出口温度等于电堆温度 <span
+class="math inline">\(T_\mathrm{ex}=T\)</span></li>
+</ul>
+<p>各气体焓值是温度的多项式，例如</p>
+<p><span class="math display">\[
+h_{\mathrm{H_2}}=29.11T-\frac{0.1916\times10^{-2}}{2}T^2
++\frac{0.4003\times10^{-5}}{3}T^3-\frac{0.8704\times10^{-9}}{4}T^4
+\]</span></p>
+<p>氧气、水蒸气、氮气有各自的多项式系数。</p>
+<h4 id="建模步骤">建模步骤</h4>
+<p>电压模型：</p>
+<ol type="1">
+<li>由电流 <span class="math inline">\(I\)</span> 算电流密度 <span
+class="math inline">\(i=I/A_c\)</span>，再算氢气、氧气、水蒸气的反应量</li>
+<li>由组分守恒算阴、阳极出口各组分质量流量，以及燃料利用系数 <span
+class="math inline">\(FU=\Delta
+n_{\mathrm{H_2}}/n_{\mathrm{H_2},in}\)</span>、氧气利用系数 <span
+class="math inline">\(OU=\Delta
+n_{\mathrm{O_2}}/n_{\mathrm{O_2},in}\)</span></li>
+<li>由出口流量和分压定律算各组分分压</li>
+<li>由温度算 <span
+class="math inline">\(V_\mathrm{Nernst}\)</span>、<span
+class="math inline">\(V_\mathrm{ohm}\)</span>、<span
+class="math inline">\(V_\mathrm{act}\)</span>、<span
+class="math inline">\(V_\mathrm{conc}\)</span>，最后得 <span
+class="math inline">\(V\)</span></li>
+</ol>
+<p>热模型：</p>
+<ol type="1">
+<li>计算 <span class="math inline">\(N_c\rho V_c
+c_p\)</span>，把微分项系数化为 <span
+class="math inline">\(1\)</span></li>
+<li>计算进出口焓值</li>
+<li>计算反应热与输出功率</li>
+<li>计算积分项</li>
+<li>与电压方程耦合，完成仿真</li>
+</ol>
+<h4 id="算例参数">算例参数</h4>
+<p>电压模型算例：<span class="math inline">\(T=1160\
+\mathrm{K}\)</span>，<span class="math inline">\(I=60\
+\mathrm{A}\)</span>，<span class="math inline">\(A_c=100\
+\mathrm{cm^2}\)</span>，<span class="math inline">\(p_{in}=101325\
+\mathrm{Pa}\)</span>，<span class="math inline">\(i_L=2\
+\mathrm{A/cm^2}\)</span>，<span
+class="math inline">\(N_c=1\)</span>，氢气进口质量流量 <span
+class="math inline">\(8.4\times10^{-7}\
+\mathrm{kg/s}\)</span>，空气进口质量流量 <span
+class="math inline">\(4.8249\times10^{-5}\ \mathrm{kg/s}\)</span>。</p>
+<p>热模型算例：<span class="math inline">\(c_p=200\ \mathrm{J/(kg\cdot
+K)}\)</span>，<span class="math inline">\(\rho=3755\
+\mathrm{kg/m^3}\)</span>，<span class="math inline">\(d_c=2\
+\mathrm{cm}\)</span>，<span class="math inline">\(\Delta
+H_r=-2.418\times10^5\ \mathrm{J/mol}\)</span>，<span
+class="math inline">\(T_\mathrm{in}=800\
+\mathrm{K}\)</span>，初始电堆温度 <span class="math inline">\(1000\
+\mathrm{K}\)</span>。</p>
+<h4 id="实验作业">实验作业</h4>
+<ol type="1">
+<li>建立 SOFC 电压模型，研究电堆温度 <span
+class="math inline">\(900\)</span>、<span
+class="math inline">\(1000\)</span>、<span class="math inline">\(1100\
+\mathrm{K}\)</span> 下的 <span class="math inline">\(i\)</span>-<span
+class="math inline">\(V\)</span> 与 <span
+class="math inline">\(i\)</span>-<span class="math inline">\(P\)</span>
+曲线</li>
+<li>搭建 SOFC 热模型并与电压模型耦合，研究电流 <span
+class="math inline">\(40\)</span>、<span
+class="math inline">\(60\)</span>、<span class="math inline">\(80\
+\mathrm{A}\)</span> 下电堆温度的变化</li>
+</ol>
+<p>这两个作业就是大作业的缩小版，做完之后 PV-SOFC
+联供系统的建模框架就完整了。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%9C%AC%E7%A7%91%E8%AF%BE%E7%A8%8B/" class="category-chain-item">本科课程</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E6%9C%AC%E7%A7%91%E8%AF%BE%E7%A8%8B/%E7%BC%96%E7%A8%8B/" class="category-chain-item">编程</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E8%83%BD%E6%BA%90%E7%B3%BB%E7%BB%9F/" class="print-no-link">#能源系统</a>
+      
+        <a href="/tags/MATLAB/" class="print-no-link">#MATLAB</a>
+      
+        <a href="/tags/Simulink/" class="print-no-link">#Simulink</a>
+      
+        <a href="/tags/%E4%BB%BF%E7%9C%9F/" class="print-no-link">#仿真</a>
+      
+    </div>
+  
+</div>
+
+
+              
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/posts_/%E6%9C%AC%E7%A7%91%E8%AF%BE%E7%A8%8B/%E7%89%A9%E7%90%86/notes/%E6%9C%AC%E7%A7%91/%E7%89%A9%E7%90%86/%E7%83%AD%E8%83%BD%E5%8A%A8%E5%8A%9B%E5%B7%A5%E7%A8%8B/" title="热能动力工程">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">热能动力工程</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/posts_/uncategorized/notes/thermo_midterm_work/project/%E9%AA%8C%E8%AF%81%E8%AE%B0%E5%BD%95/" title="验证记录">
+                        <span class="hidden-mobile">验证记录</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        (function() {
+          function refreshMath() {
+            if (!window.MathJax || typeof MathJax.whenReady !== 'function') {
+              return;
+            }
+            // 等待正在进行的排版完成，再重置公式及编号。
+            MathJax.whenReady(function() {
+              MathJax.startup.document.state(0);
+              MathJax.texReset();
+            }).then(function() {
+              return MathJax.typesetPromise();
+            }).catch(function(error) {
+              console.error('MathJax 公式排版失败：', error);
+            });
+          }
+
+          if (!window.MathJax) {
+            window.MathJax = {
+              tex: {
+                inlineMath: { '[+]': [['$', '$']] },
+                // 现有笔记使用粗体向量、定义等号和 dcases，显式载入所需扩展。
+                packages: { '[+]': ['boldsymbol', 'mathtools'] },
+                // 保留笔记中的双曲函数 ch、sh 记法，按正体函数名排版。
+                macros: {
+                  ch: '\\operatorname{ch}',
+                  sh: '\\operatorname{sh}'
+                },
+                preFilters: [function(context) {
+                  // 旧版允许大括号内部使用 align，新版需要使用可嵌套的 aligned。
+                  context.math.math = context.math.math.replace(
+                    /(\\left\\\{\s*)\\begin\{align\}([\s\S]*?)\\end\{align\}(\s*\\right\.)/g,
+                    '$1\\begin{aligned}$2\\end{aligned}$3'
+                  );
+                }]
+              },
+              loader: {
+                load: ["[tex]/boldsymbol","[tex]/mathtools","ui/lazy"]
+              },
+              options: {
+                renderActions: {
+                  insertedScript: [200, function() {
+                    document.querySelectorAll('mjx-container').forEach(function(node) {
+                      var target = node.parentNode;
+                      if (target && target.nodeName.toLowerCase() === 'li') {
+                        target.parentNode.classList.add('has-jax');
+                      }
+                    });
+                  }, '', false]
+                }
+              }
+            };
+          } else {
+            refreshMath();
+          }
+
+          Fluid.events.registerRefreshCallback(refreshMath);
+        })();
+      </script>
+    
+
+  <script  src="https://cdn.jsdelivr.net/npm/mathjax@4.1.3/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

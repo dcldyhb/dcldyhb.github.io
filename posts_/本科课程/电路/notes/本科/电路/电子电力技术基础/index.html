@@ -27,7 +27,7 @@
 <meta property="og:description" content="电力电子技术基础 绪论 电力电子技术的概念 电力电子技术是利用电力电子器件，对电能进行变换和控制的技术。 它是电力技术、电子技术和控制技术相结合的交叉学科。  电力技术：研究电能的生产、传输、分配和使用。 电子技术：提供实现电能变换的半导体器件和电路。 控制技术：使变换器按照给定目标运行。  电力电子技术处理的是电能，控制电路处理的是实现这一目标所需的信息。 电力电子技术的三要素 电力电子系统主要">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-09-20T06:28:59.000Z">
-<meta property="article:modified_time" content="2026-11-07T11:47:02.000Z">
+<meta property="article:modified_time" content="2026-11-07T11:49:54.000Z">
 <meta property="article:author" content="dcldyhb">
 <meta property="article:tag" content="课程笔记">
 <meta property="article:tag" content="电路">
@@ -227,7 +227,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          12k 字
+          20k 字
         
       </span>
     
@@ -238,7 +238,7 @@
         
         
         
-          102 分钟
+          167 分钟
         
       </span>
     
@@ -1516,6 +1516,537 @@ v_L = L\frac{\mathrm{d}i_L}{\mathrm{d}t}
 <p>可以看到，在相同电感电压下，增加电感可减缓电流上升。</p>
 <p>但电感储能也可能在关断时形成过电压，缓冲元件本身还会产生损耗。
 因此缓冲电路需要与器件、驱动和主电路共同设计。</p>
+<h2 id="dc-ac-变换器">DC-AC 变换器</h2>
+<p>逆变器把直流电变换为交流电，输出幅值和频率都可以调节。它是光伏并网、储能、变频调速、不间断电源的核心环节。</p>
+<p>这一章从方波逆变讲起，说明为什么方波不行；再讲 SPWM
+的原理、谐波和调制方式；然后分别讨论单相、三相逆变器，最后是 PWM
+整流器、控制与滤波器设计、电流型逆变器。</p>
+<h3 id="逆变器概述">逆变器概述</h3>
+<h4 id="基本概念">基本概念</h4>
+<ul>
+<li>输入：恒定直流电</li>
+<li>输出：幅值和频率均可变化的交流电</li>
+<li>定义：把直流电变换为交流电的变换器，能量从直流侧流向交流侧</li>
+</ul>
+<h4 id="分类">分类</h4>
+<p>按直流侧储能形式分为两类：</p>
+<ul>
+<li><strong>电压源型逆变器（VSI）</strong>：直流侧并联大电容，直流电压基本恒定</li>
+<li><strong>电流源型逆变器（CSI）</strong>：直流侧串联大电感，直流电流基本恒定</li>
+</ul>
+<p>实际应用以电压型逆变器为主。</p>
+<h3 id="方波运行与调制">方波运行与调制</h3>
+<h4 id="单相全桥-180-方波运行">单相全桥 180° 方波运行</h4>
+<p>单相全桥有两个桥臂：<span
+class="math inline">\(T_{A+}\)</span>、<span
+class="math inline">\(T_{A-}\)</span> 组成 A 桥臂，<span
+class="math inline">\(T_{B+}\)</span>、<span
+class="math inline">\(T_{B-}\)</span> 组成 B 桥臂。</p>
+<p>按 <span class="math inline">\(180^\circ\)</span> 方波控制时：</p>
+<ul>
+<li><span class="math inline">\(T_{A+}\)</span> 与 <span
+class="math inline">\(T_{B-}\)</span> 同时开关</li>
+<li><span class="math inline">\(T_{A-}\)</span> 与 <span
+class="math inline">\(T_{B+}\)</span> 同时开关</li>
+<li>两组交替各导通 <span class="math inline">\(180^\circ\)</span></li>
+</ul>
+<p>输出电压为 <span class="math inline">\(\pm
+V_\mathrm{D}\)</span>，幅值是半桥的 <span
+class="math inline">\(2\)</span>
+倍。纯阻性负载时，输出电流与电压同相，也是方波。</p>
+<h4 id="方波的问题">方波的问题</h4>
+<p>方波不是正弦波。做傅里叶分析，方波含有一系列低频奇次谐波。这些谐波会：</p>
+<ul>
+<li>使电机产生附加损耗和转矩脉动</li>
+<li>使变压器、电抗器发热</li>
+<li>干扰通信和敏感设备</li>
+</ul>
+<p>所以逆变器的目标是把输出做成<strong>正弦波</strong>，办法是用开关序列去逼近正弦。</p>
+<h4 id="调制">调制</h4>
+<p>产生开关信号的方式称为<strong>调制</strong>。主要有两种：</p>
+<ul>
+<li><strong>PFM</strong>（脉冲频率调制）：改变开关频率</li>
+<li><strong>PWM</strong>（脉冲宽度调制）：改变脉冲宽度，开关频率固定</li>
+</ul>
+<p>SPWM 是正弦脉宽调制，用正弦波作为调制波、三角波作为载波。</p>
+<h3 id="spwm-原理与实现">SPWM 原理与实现</h3>
+<h4 id="面积等效原理">面积等效原理</h4>
+<p>面积相等而形状不同的窄脉冲作用于同一个惯性环节时，其响应基本相同，尤其在低频段一致。这就是<strong>面积等效原理</strong>（冲量等效原理）。</p>
+<p>它是 SPWM
+的理论基础：用一系列等幅不等宽的脉冲来代替正弦波，只要每个脉冲的面积等于对应正弦波段的面积，输出经过滤波后就近似为正弦。</p>
+<h4 id="半桥-spwm">半桥 SPWM</h4>
+<p>单相半桥逆变器需要直流侧电容中点作为输出端，上下管不同时开通。</p>
+<ul>
+<li>调制波：正弦波 <span
+class="math inline">\(v_\mathrm{control}\)</span></li>
+<li>载波：三角波 <span
+class="math inline">\(v_\mathrm{tri}\)</span></li>
+</ul>
+<p>定义两个重要参数：</p>
+<p><span class="math display">\[
+m_a=\frac{\text{调制波幅值}}{\text{载波幅值}},\qquad
+m_f=\frac{\text{载波频率}}{\text{调制波频率}}
+\]</span></p>
+<p><span class="math inline">\(m_a\)</span>
+称为<strong>调制比</strong>，<span class="math inline">\(m_f\)</span>
+称为<strong>载波比</strong>。</p>
+<p>由于载波频率远高于调制波频率，在一个开关周期内可以认为调制波幅值不变。用相似三角形可以推出，半桥输出基波幅值为</p>
+<p><span class="math display">\[
+V_{1\mathrm{m}}=m_a\frac{V_\mathrm{D}}{2},\qquad m_a\le1
+\]</span></p>
+<p><span class="math inline">\(m_a\le1\)</span>
+时，输出基波幅值与调制比成线性关系，这一段称为<strong>线性调制区</strong>。</p>
+<p>全桥由两个半桥组成，输出基波幅值是半桥的 <span
+class="math inline">\(2\)</span> 倍</p>
+<p><span class="math display">\[
+V_{1\mathrm{m}}=m_aV_\mathrm{D}
+\]</span></p>
+<h4 id="输出电压的谐波分布">输出电压的谐波分布</h4>
+<p>半桥 SPWM 输出的频谱有以下特征：</p>
+<ul>
+<li>基波</li>
+<li>以开关频率及其倍数频率为中心的边频带谐波</li>
+<li>边频带中的谐波满足：<span class="math inline">\(j\)</span>、<span
+class="math inline">\(k\)</span> 同奇偶时存在，不同奇偶时为零（<span
+class="math inline">\(j\)</span> 为载波倍数，<span
+class="math inline">\(k\)</span> 为边频序号）</li>
+<li>开关频率偶数倍处的谐波为零</li>
+</ul>
+<p>载波比较小时，要求 <span class="math inline">\(m_f\)</span>
+取奇数。<span class="math inline">\(m_a&lt;0.6\)</span>
+时，开关频率处的谐波幅值甚至可能超过基波。</p>
+<h4 id="同步调制与异步调制">同步调制与异步调制</h4>
+<table>
+
+<thead>
+<tr>
+<th>方式</th>
+<th>定义</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>同步调制</td>
+<td>调制波频率变化时，载波频率随之变化，保持 <span
+class="math inline">\(m_f\)</span> 为常整数</td>
+<td>半波奇对称，不产生间谐波</td>
+</tr>
+<tr>
+<td>异步调制</td>
+<td>载波频率恒定，<span class="math inline">\(m_f\)</span>
+不再是整数</td>
+<td>实现简单，但低频时 <span class="math inline">\(m_f\)</span>
+很大、高频时 <span class="math inline">\(m_f\)</span> 很小</td>
+</tr>
+</tbody>
+</table>
+<p>选择原则：</p>
+<ul>
+<li><span class="math inline">\(m_f\le21\)</span>
+时用同步调制，避免间谐波，并取奇整数以获得半波奇对称</li>
+<li><span class="math inline">\(m_f\ge21\)</span>
+时同步、异步都可以</li>
+<li>驱动交流电机时采用同步调制</li>
+</ul>
+<h4 id="过调制与方波调制">过调制与方波调制</h4>
+<ul>
+<li><span
+class="math inline">\(m_a&gt;1\)</span>：进入<strong>过调制</strong>，基波不再与
+<span class="math inline">\(m_a\)</span> 成正比，出现低次谐波</li>
+<li><span class="math inline">\(m_a\)</span> 远大于 <span
+class="math inline">\(1\)</span>：退化为<strong>方波调制</strong>，输出为
+<span class="math inline">\(180^\circ\)</span> 方波</li>
+</ul>
+<p>过调制和方波调制的临界 <span class="math inline">\(m_a\)</span>
+随载波比变化。过调制区同样建议采用同步调制，避免间谐波。</p>
+<p>方波调制时基波幅值为</p>
+<p><span class="math display">\[
+\left\{
+\begin{aligned}
+\text{半桥：}&amp;\quad V_{1\mathrm{m}}=\frac{2V_\mathrm{D}}{\pi}\\
+\text{全桥：}&amp;\quad V_{1\mathrm{m}}=\frac{4V_\mathrm{D}}{\pi}
+\end{aligned}
+\right.
+\]</span></p>
+<h4 id="具体实现方式">具体实现方式</h4>
+<ul>
+<li>模拟电路：正弦波发生器产生调制波，三角波发生器产生载波，比较器输出开关信号。改变载波比、载波频率比较困难。</li>
+<li>数字控制：现在大多用数字芯片实现，灵活，但受采样和计算限制。
+<ul>
+<li><strong>自然采样</strong>：直接求正弦波与三角波的交点，需要解超越方程，计算时间长</li>
+<li><strong>规则采样</strong>：在三角波峰值或谷值处采样调制波，计算量小，便于数字实现</li>
+</ul></li>
+</ul>
+<h3 id="单相逆变器">单相逆变器</h3>
+<h4 id="双极性调制">双极性调制</h4>
+<p>在一个开关周期内，输出电压的极性有正有负，称为<strong>双极性调制</strong>。</p>
+<p>全桥的四个开关组合中，双极性调制只用了两种：<span
+class="math inline">\(T_{A+}T_{B-}\)</span> 同时通、<span
+class="math inline">\(T_{A-}T_{B+}\)</span> 同时通。</p>
+<ul>
+<li>谐波分布与半桥一致，幅值为 <span class="math inline">\(2\)</span>
+倍</li>
+<li>载波比较小时，<span class="math inline">\(m_f\)</span> 取奇数</li>
+</ul>
+<h4 id="单极性倍频调制">单极性倍频调制</h4>
+<p>左右桥臂用<strong>反相</strong>的调制波与同一个三角波比较，各自独立决定上下管：</p>
+<ul>
+<li><span
+class="math inline">\(v_\mathrm{control}&gt;v_\mathrm{tri}\)</span>：左桥臂上管开通，否则下管开通</li>
+<li><span
+class="math inline">\(-v_\mathrm{control}&gt;v_\mathrm{tri}\)</span>：右桥臂上管开通，否则下管开通</li>
+</ul>
+<p>输出基波幅值仍为</p>
+<p><span class="math display">\[
+V_{1\mathrm{m}}=m_aV_\mathrm{D}
+\]</span></p>
+<p>谐波特征：</p>
+<ul>
+<li>频谱中<strong>没有 <span class="math inline">\(m_f\)</span>
+及其倍数次谐波</strong></li>
+<li>只含 <span class="math inline">\(m_f\)</span>
+偶数倍频率处的边频带谐波，最低次谐波为 <span
+class="math inline">\(2m_f\)</span> 的边带</li>
+<li>同样的开关频率下，最低次谐波频率翻倍，所以称为<strong>倍频</strong></li>
+</ul>
+<h4 id="具有低频控制臂的单极性调制">具有低频控制臂的单极性调制</h4>
+<p>一个桥臂高频斩波，另一个桥臂按调制波极性工频翻转：</p>
+<ul>
+<li>高频臂：<span
+class="math inline">\(v_\mathrm{control}&gt;v_\mathrm{tri}\)</span>
+时上管开通，否则下管开通</li>
+<li>低频臂：调制波正半周下管恒通，负半周上管恒通</li>
+</ul>
+<p>谐波特征：</p>
+<ul>
+<li>与双极性调制相比，不含载波倍数次谐波</li>
+<li>与倍频单极性相比，仍含<strong>奇数倍</strong>载波频率处的边频带谐波</li>
+<li>取 <span class="math inline">\(m_f\)</span>
+为偶数，可以消去偶次谐波</li>
+</ul>
+<h4 id="直流侧纹波">直流侧纹波</h4>
+<p>单相逆变器输出瞬时功率中含有 <span class="math inline">\(2\)</span>
+倍输出频率的分量，而直流侧输入是恒定功率，差额必须由电容调和，因此在直流侧产生
+<span class="math inline">\(100\ \mathrm{Hz}\)</span>（输出 <span
+class="math inline">\(50\ \mathrm{Hz}\)</span> 时）的低频纹波。</p>
+<p>直流侧电流包含三种成分：</p>
+<ul>
+<li>直流</li>
+<li>开关频率的高频纹波</li>
+<li>输出频率 <span class="math inline">\(2\)</span> 倍的低频纹波</li>
+</ul>
+<p>所以实际产品在直流侧设计两种电容：</p>
+<ul>
+<li><strong>低频电解电容</strong>：储能，吸收 <span
+class="math inline">\(2\)</span> 倍频功率脉动</li>
+<li><strong>高频去耦电容</strong>：滤波，吸收开关频率纹波</li>
+</ul>
+<p>双极性调制下，直流侧电流为双极性；单极性调制下，直流侧电流为单极性。</p>
+<h4 id="输出侧纹波">输出侧纹波</h4>
+<p>把输出电压的瞬时值减去基波成分，就得到纹波电压。输出电压和电流的纹波都在<strong>基频电压分量过零点</strong>达到最大——此时瞬时功率为零，电容、电感吞吐的能量最大。</p>
+<h3 id="三相逆变器">三相逆变器</h3>
+<h4 id="数学模型">数学模型</h4>
+<p>三相电压型逆变器有三个桥臂，直流侧需要大电容维持电压稳定，三个桥臂中点作为三相输出。</p>
+<p>定义单极性二值逻辑开关函数</p>
+<p><span class="math display">\[
+S_k=\begin{cases}1,&amp;\text{上管开通}\\0,&amp;\text{下管开通}\end{cases}\qquad
+k=\mathrm{a},\mathrm{b},\mathrm{c}
+\]</span></p>
+<p>桥臂输出电压</p>
+<p><span class="math display">\[
+v_{k\mathrm{N}}=S_kV_\mathrm{D}
+\]</span></p>
+<p>配合输出滤波电感方程，就得到三相逆变器的数学模型。</p>
+<h4 id="spwm-调制">SPWM 调制</h4>
+<p>三相的三个调制波互差 <span
+class="math inline">\(120^\circ\)</span>。每个桥臂输出电压的基波幅值为</p>
+<p><span class="math display">\[
+V_{k1\mathrm{m}}=m_a\frac{V_\mathrm{D}}{2}
+\]</span></p>
+<p>线电压基波有效值为</p>
+<p><span class="math display">\[
+V_{\mathrm{LL}1}=\frac{\sqrt3}{2\sqrt2}m_aV_\mathrm{D}\approx0.612m_aV_\mathrm{D}
+\]</span></p>
+<p>直流电压利用率（线电压基波峰值与 <span
+class="math inline">\(V_\mathrm{D}\)</span> 之比）为</p>
+<p><span class="math display">\[
+\frac{\sqrt3}{2}\approx0.866
+\]</span></p>
+<h4 id="线电压谐波">线电压谐波</h4>
+<p>三相三线逆变器的线电压中：</p>
+<ul>
+<li>开关频率及其倍数频率的谐波全部消失</li>
+<li>剩余的边频带谐波满足：<span class="math inline">\(j\)</span>、<span
+class="math inline">\(k\)</span> 不同奇偶，且 <span
+class="math inline">\(k\)</span> 不是 <span
+class="math inline">\(3\)</span> 的倍数</li>
+<li>当 <span class="math inline">\(k\)</span> 为 <span
+class="math inline">\(3\)</span> 的倍数时，边频带谐波也消失</li>
+</ul>
+<p><span class="math inline">\(m_f\)</span>
+足够大时，是否同步、奇偶都不重要。</p>
+<h4 id="方波调制">方波调制</h4>
+<p>每个桥臂上下管各导通 <span
+class="math inline">\(180^\circ\)</span>，桥臂之间互差 <span
+class="math inline">\(120^\circ\)</span>。只能通过改变直流电压来调节输出幅值。</p>
+<p>线电压基波有效值为</p>
+<p><span class="math display">\[
+V_{\mathrm{LL}1}=\frac{\sqrt6}{\pi}V_\mathrm{D}\approx0.78V_\mathrm{D}
+\]</span></p>
+<p><span class="math inline">\(h\)</span> 次谐波有效值（<span
+class="math inline">\(h=6n\pm1\)</span>）为</p>
+<p><span class="math display">\[
+V_{\mathrm{LL}h}=\frac{\sqrt6}{\pi h}V_\mathrm{D}
+\]</span></p>
+<h4 id="直流侧与输出纹波">直流侧与输出纹波</h4>
+<p>三相对称时，交流侧三相瞬时功率恒定，等于直流侧功率。因此三相逆变器的直流侧电流只含直流和高频成分，<strong>不含
+<span class="math inline">\(2\)</span>
+倍频低频成分</strong>，这是它与单相逆变器的重要区别。</p>
+<p>输出侧纹波的分析与单相相同：输出电压瞬时值减去基波，得到纹波电压。</p>
+<h4 id="三次谐波注入调制">三次谐波注入调制</h4>
+<p>三相 SPWM 的电压利用率只有 <span
+class="math inline">\(0.866\)</span>，提高 <span
+class="math inline">\(m_a\)</span> 会进入过调制、增加谐波。</p>
+<p>三次谐波注入的思路是：在相电压调制波中注入三次谐波，使相电压峰值降低、基波幅值可以取得更大。由于三相对称，三次谐波在<strong>线电压中互相抵消</strong>，不会出现在线电压上。</p>
+<p>效果：</p>
+<ul>
+<li>直流电压利用率由 <span class="math inline">\(0.866\)</span> 提高到
+<span class="math inline">\(1\)</span></li>
+<li>提高了约 <span class="math inline">\(15.47\%\)</span></li>
+<li>线电压谐波不增加</li>
+</ul>
+<h4 id="空间矢量调制">空间矢量调制</h4>
+<h5 id="基本思想">基本思想</h5>
+<p>三相对称系统的三个相电压可以合成一个旋转的空间矢量。忽略电阻时，电压矢量与电机磁链的关系决定了：要得到圆形磁链，就要用圆形电压矢量。</p>
+<p>SVPWM
+的基本思想是：在矢量空间用有限的静止矢量去合成和跟踪调制波的空间旋转矢量，使合成的矢量含有调制波的信息。</p>
+<h5 id="八个基本矢量">八个基本矢量</h5>
+<p>三相桥臂共有 <span class="math inline">\(2^3=8\)</span>
+种开关组合：</p>
+<ul>
+<li>六个有效矢量 <span class="math inline">\(V_1\sim
+V_6\)</span>，幅值为 <span
+class="math inline">\(\dfrac{2}{3}V_\mathrm{D}\)</span>，互差 <span
+class="math inline">\(60^\circ\)</span>，把复平面分成六个扇区</li>
+<li>两个零矢量 <span class="math inline">\(V_0\)</span>（<span
+class="math inline">\(000\)</span>）和 <span
+class="math inline">\(V_7\)</span>（<span
+class="math inline">\(111\)</span>）</li>
+</ul>
+<p>只使用六个有效矢量时，矢量轨迹是正六边形，对应方波运行。用八个矢量合成更多矢量，轨迹就越接近圆。</p>
+<p>矢量圆与正六边形内切时，相电压矢量模达到最大 <span
+class="math inline">\(V_\mathrm{D}/\sqrt3\)</span>，此时直流电压利用率为
+<span class="math inline">\(1\)</span>。</p>
+<h5 id="矢量合成与作用时间">矢量合成与作用时间</h5>
+<p>设旋转矢量 <span class="math inline">\(V^*\)</span> 落在第 <span
+class="math inline">\(k\)</span> 扇区，由相邻两个基本矢量 <span
+class="math inline">\(V_i\)</span>、<span
+class="math inline">\(V_j\)</span> 和零矢量合成。在一个开关周期 <span
+class="math inline">\(T_\mathrm{s}\)</span> 内按冲量等效</p>
+<p><span class="math display">\[
+V^*T_\mathrm{s}=V_iT_i+V_jT_j
+\]</span></p>
+<p>其中 <span class="math inline">\(T_i\)</span>、<span
+class="math inline">\(T_j\)</span> 分别是 <span
+class="math inline">\(V_i\)</span>、<span
+class="math inline">\(V_j\)</span> 的作用时间，剩余时间由零矢量补齐</p>
+<p><span class="math display">\[
+T_0=T_\mathrm{s}-T_i-T_j
+\]</span></p>
+<p>以第 I 扇区为例，由正弦定理可以解出 <span
+class="math inline">\(T_1\)</span>、<span
+class="math inline">\(T_2\)</span>，再代入 <span
+class="math inline">\(|V^*|\)</span> 与调制比的关系即可。</p>
+<h5 id="实现步骤">实现步骤</h5>
+<ol type="1">
+<li>通过 Clark 变换把三相电压变换到 <span
+class="math inline">\(\alpha\beta\)</span> 两相静止坐标系</li>
+<li>判断旋转矢量落在哪个扇区</li>
+<li>按最近矢量原则确定基本矢量，计算作用时间</li>
+<li>按谐波含量和开关次数折中，确定矢量切换序列</li>
+</ol>
+<h5 id="切换序列">切换序列</h5>
+<table>
+
+<thead>
+<tr>
+<th>方式</th>
+<th>零矢量</th>
+<th>每周期开关次数</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>直接法</td>
+<td>不用或简单补齐</td>
+<td>少</td>
+<td>实现简单，谐波较大</td>
+</tr>
+<tr>
+<td>七段对称调制</td>
+<td>两个零矢量对称分布</td>
+<td><span class="math inline">\(6\)</span> 次</td>
+<td>开关次谐波低</td>
+</tr>
+<tr>
+<td>五段对称调制</td>
+<td>一个零矢量对称分布</td>
+<td><span class="math inline">\(4\)</span> 次</td>
+<td>与直接法开关次数相同，谐波较低</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pwm-整流器">PWM 整流器</h3>
+<h4 id="整流与逆变的判据">整流与逆变的判据</h4>
+<p>逆变器和整流器按<strong>平均功率方向</strong>判断：</p>
+<ul>
+<li>平均功率从直流流向交流：逆变器</li>
+<li>平均功率从交流流向直流：整流器</li>
+</ul>
+<p>从瞬时功率看，在一个基波周期内，PWM
+逆变器既存在逆变模式也存在整流模式：区间 1、3 为逆变，区间 2、4
+为整流。</p>
+<h4 id="相量关系">相量关系</h4>
+<p>忽略电阻，电网电压 <span class="math inline">\(\dot
+U_\mathrm{s}\)</span>、桥臂交流侧电压 <span class="math inline">\(\dot
+U\)</span> 与电感电压满足</p>
+<p><span class="math display">\[
+\dot U_\mathrm{s}=\dot U+j\omega L\dot I
+\]</span></p>
+<p>控制 <span class="math inline">\(\dot U\)</span>
+的幅值和相位，就控制了电流 <span class="math inline">\(\dot I\)</span>
+的大小和方向，从而实现能量的双向流动。这就是并网储能变流器的基本原理。</p>
+<h3 id="逆变器的控制与滤波器设计">逆变器的控制与滤波器设计</h3>
+<h4 id="闭环控制结构">闭环控制结构</h4>
+<table>
+
+<thead>
+<tr>
+<th>结构</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>单电压环</td>
+<td>只反馈输出电压，结构简单，动态响应较慢</td>
+</tr>
+<tr>
+<td>单电流环</td>
+<td>反馈输出电流，动态快，但电压存在稳态误差</td>
+</tr>
+<tr>
+<td>电压外环 + 电流内环</td>
+<td>外环稳定电压，内环快速跟踪电流，兼顾稳态精度和动态响应</td>
+</tr>
+</tbody>
+</table>
+<p>三相 PWM 整流器的双闭环：外环是电压环，内环是电流环。</p>
+<ul>
+<li>稳态时 <span
+class="math inline">\(V_\mathrm{D}^*=V_\mathrm{D}\)</span>，PI
+调节器输入为零，输出 <span class="math inline">\(i_\mathrm{D}\)</span>
+保持稳定，交流输入功率与直流输出功率平衡</li>
+<li>负载电流增大时，交流输入功率小于直流输出功率，直流电容放电、<span
+class="math inline">\(V_\mathrm{D}\)</span> 降低；<span
+class="math inline">\(V_\mathrm{D}^*-V_\mathrm{D}\)</span>
+的正差值变大，使 <span class="math inline">\(i_\mathrm{D}\)</span>
+增大，交流输入电流增大，<span
+class="math inline">\(V_\mathrm{D}\)</span> 回升，达到新的稳态</li>
+</ul>
+<h4 id="lc-滤波器设计">LC 滤波器设计</h4>
+<p>逆变器输出接 LC 二阶低通滤波器，谐振角频率为</p>
+<p><span class="math display">\[
+\omega_0=\frac{1}{\sqrt{LC}},\qquad
+f_0=\frac{1}{2\pi\sqrt{LC}}
+\]</span></p>
+<p>设计原则：</p>
+<ul>
+<li>转折频率远低于开关频率，通常取开关频率的 <span
+class="math inline">\(\dfrac{1}{10}\)</span> 左右</li>
+<li>滤波电容吸收的基波无功功率不能大于系统额定有功功率的 <span
+class="math inline">\(5\%\)</span></li>
+</ul>
+<p><span class="math display">\[
+\omega_0\ll\omega_\mathrm{s},\qquad
+Q_C=\omega_0CU^2\le5\%P_\mathrm{N}
+\]</span></p>
+<h3 id="电流型逆变器">电流型逆变器</h3>
+<h4 id="特点">特点</h4>
+<p>电流型逆变器的直流侧以电感为能量缓冲元件，呈现电流源特性：</p>
+<ul>
+<li>需要足够大的储能电感，使直流侧呈现电流源特性</li>
+<li>输出电流波形为方波或方波序列脉冲</li>
+<li>采用全控器件时，为防止开关切换产生过电压，需要在输出侧设置电容</li>
+<li>开关管需要串联二极管，以承受反向电压并防止电流倒送</li>
+</ul>
+<h4 id="单相全桥电流型方波逆变器">单相全桥电流型方波逆变器</h4>
+<ul>
+<li>半控型（晶闸管）：电容 <span class="math inline">\(C\)</span> 与负载
+<span class="math inline">\(L\)</span>、<span
+class="math inline">\(R\)</span>
+构成并联谐振电路，输出电压近似正弦；补偿电容使负载总体上呈容性小失谐，以实现负载换流</li>
+<li>全控型：每个开关管正向串联二极管，以获得反向阻断能力；由于采用强迫换流，开关切换存在死区时可能出现电流断续</li>
+</ul>
+<h4 id="三相桥式电流型方波逆变器">三相桥式电流型方波逆变器</h4>
+<ul>
+<li>半控型采用串联二极管式结构，换流过程分四个阶段：恒流供电、换流电容恒流放电、二极管换流、换流后恒流供电</li>
+<li>全控型一般采用 <span class="math inline">\(120^\circ\)</span>
+导电方式，而电压型方波逆变器采用 <span
+class="math inline">\(180^\circ\)</span> 导电方式</li>
+</ul>
+<h4 id="电流型-pwm-逆变器">电流型 PWM 逆变器</h4>
+<ul>
+<li>单相全桥：调制信号正半周使 <span
+class="math inline">\(T_{A+}\)</span> 常通，<span
+class="math inline">\(T_{A-}\)</span> 与 <span
+class="math inline">\(T_{B-}\)</span> 交替导通；负半周使 <span
+class="math inline">\(T_{B+}\)</span> 常通</li>
+<li>三相：每相桥臂的开关函数为三值逻辑信号（<span
+class="math inline">\(1\)</span>、<span
+class="math inline">\(0\)</span>、<span
+class="math inline">\(-1\)</span>），分别对应上管通、下管通、上下管都关断（电流断续）</li>
+<li>为维持直流侧电感电流恒定，必须包含<strong>储能</strong>和<strong>馈能</strong>两个阶段</li>
+<li>电流型逆变器通常用在大功率低频场合，以方波控制为主</li>
+</ul>
+<h3 id="其他调制与控制方式">其他调制与控制方式</h3>
+<h4 id="选择性谐波消除">选择性谐波消除</h4>
+<p>方波逆变器的低频谐波含量大。选择性谐波消除（SHE）在方波中开”陷波”，通过傅里叶计算预先求出开关角，使指定次谐波的幅值为零。</p>
+<p>例如要消除 <span class="math inline">\(5\)</span> 次和 <span
+class="math inline">\(7\)</span> 次谐波，就令 <span
+class="math inline">\(b_5=0\)</span>、<span
+class="math inline">\(b_7=0\)</span> 且 <span
+class="math inline">\(b_1\ne0\)</span>，解出三个开关角 <span
+class="math inline">\(\alpha_1\)</span>、<span
+class="math inline">\(\alpha_2\)</span>、<span
+class="math inline">\(\alpha_3\)</span>。</p>
+<h4 id="滞环电流控制">滞环电流控制</h4>
+<p>用误差滞环比较器比较实际电流与参考电流：</p>
+<ul>
+<li>实际电流超过上限：<span class="math inline">\(T_{A+}\)</span>
+关断、<span class="math inline">\(T_{A-}\)</span> 导通</li>
+<li>实际电流低于下限：<span class="math inline">\(T_{A-}\)</span>
+关断、<span class="math inline">\(T_{A+}\)</span> 导通</li>
+</ul>
+<p>优点是动态响应非常快；缺点是开关频率由电流从上、下限之间穿越的时间决定，不固定，给
+LC 滤波器设计带来困难。</p>
+<h3 id="本章要点">本章要点</h3>
+<ul>
+<li>逆变器按直流侧储能分为电压型和电流型，实际以电压型为主</li>
+<li>SPWM 的理论基础是面积等效原理，<span
+class="math inline">\(m_a\)</span> 决定基波幅值，<span
+class="math inline">\(m_f\)</span> 决定谐波分布</li>
+<li>单相全桥有双极性、单极性倍频、低频控制臂三种调制，谐波分布各不相同</li>
+<li>单相逆变器直流侧含 <span class="math inline">\(2\)</span>
+倍频低频纹波，三相则不含</li>
+<li>三次谐波注入和 SVPWM 都能把电压利用率从 <span
+class="math inline">\(0.866\)</span> 提高到 <span
+class="math inline">\(1\)</span></li>
+<li>并网变流器按平均功率方向区分整流与逆变，控制 <span
+class="math inline">\(\dot U\)</span> 即可控制功率流向</li>
+</ul>
 <h2 id="二极管整流电路">二极管整流电路</h2>
 <p>整流是把交流电变换为直流电。用二极管组成的整流电路不需要控制信号，输出电压不能主动调节，称为<strong>不控整流</strong>。</p>
 <h3 id="概述-1">概述</h3>
@@ -1645,23 +2176,33 @@ class="math inline">\(D_4\)</span>
 <span class="math inline">\(\Delta V_\mathrm{D}\)</span></li>
 <li>输入电流的波形由方波变为梯形波，谐波含量和功率因数都发生变化</li>
 </ul>
-<p>对 <span class="math inline">\(m\)</span>
-脉波整流电路，换相压降的通式为</p>
+<p>换相压降为</p>
 <p><span class="math display">\[
-\Delta V_\mathrm{D}=\frac{mX_\mathrm{B}I_\mathrm{d}}{2\pi}
+\left\{
+\begin{aligned}
+\text{单相桥式：}&amp;\quad \Delta
+V_\mathrm{D}=\frac{2X_\mathrm{B}I_\mathrm{d}}{\pi}\\
+\text{三相桥式：}&amp;\quad \Delta
+V_\mathrm{D}=\frac{3X_\mathrm{B}I_\mathrm{d}}{\pi}
+\end{aligned}
+\right.
 \]</span></p>
 <p>其中 <span class="math inline">\(X_\mathrm{B}=\omega
-L_\mathrm{s}\)</span> 为每相漏抗，<span class="math inline">\(m\)</span>
-为脉波数（单相桥式 <span class="math inline">\(m=2\)</span>，三相桥式
-<span class="math inline">\(m=6\)</span>）。</p>
+L_\mathrm{s}\)</span> 为每相漏抗。</p>
 <p>换流重叠角满足</p>
 <p><span class="math display">\[
-\cos\alpha-\cos(\alpha+\gamma)=\frac{2X_\mathrm{B}I_\mathrm{d}}{\sqrt2U_2\sin\frac{\pi}{m}}
+\left\{
+\begin{aligned}
+\text{单相桥式：}&amp;\quad
+\cos\alpha-\cos(\alpha+\gamma)=\frac{2X_\mathrm{B}I_\mathrm{d}}{\sqrt2U_2}\\
+\text{三相桥式：}&amp;\quad
+\cos\alpha-\cos(\alpha+\gamma)=\frac{2X_\mathrm{B}I_\mathrm{d}}{\sqrt6U_2}
+\end{aligned}
+\right.
 \]</span></p>
-<p>对二极管整流 <span class="math inline">\(\alpha=0\)</span>，因此</p>
-<p><span class="math display">\[
-1-\cos\gamma=\frac{2X_\mathrm{B}I_\mathrm{d}}{\sqrt2U_2\sin\frac{\pi}{m}}
-\]</span></p>
+<p>对二极管整流 <span class="math inline">\(\alpha=0\)</span>，把左边的
+<span class="math inline">\(\cos\alpha\)</span> 换成 <span
+class="math inline">\(1\)</span> 即可。</p>
 <p>由这两式可以看出：<span class="math inline">\(L_\mathrm{s}\)</span>
 越大、<span class="math inline">\(I_\mathrm{d}\)</span>
 越大、换流电压越低，重叠角越大，换相压降也越大。</p>
@@ -1797,9 +2338,9 @@ class="math inline">\(D_1\)</span>
 <p><span class="math display">\[
 \Delta V_\mathrm{D}=\frac{3X_\mathrm{B}I_\mathrm{d}}{\pi}
 \]</span></p>
-<p>换流重叠角仍满足</p>
+<p>换流重叠角为</p>
 <p><span class="math display">\[
-\cos\alpha-\cos(\alpha+\gamma)=\frac{2X_\mathrm{B}I_\mathrm{d}}{\sqrt2U_2\sin\frac{\pi}{6}}
+\cos\alpha-\cos(\alpha+\gamma)=\frac{2X_\mathrm{B}I_\mathrm{d}}{\sqrt6U_2}
 \]</span></p>
 <p>换流使输出电压平均值降低，并使输入电流波形变为梯形。</p>
 <h4 id="恒定电压负载-1">恒定电压负载</h4>
@@ -1854,13 +2395,380 @@ class="math inline">\(5\)</span> 次</td>
 <tr>
 <td>换相压降</td>
 <td><span
-class="math inline">\(X_\mathrm{B}I_\mathrm{d}/\pi\)</span></td>
+class="math inline">\(2X_\mathrm{B}I_\mathrm{d}/\pi\)</span></td>
 <td><span
 class="math inline">\(3X_\mathrm{B}I_\mathrm{d}/\pi\)</span></td>
 </tr>
 </tbody>
 </table>
 <p>三相整流输出电压高、脉动小、谐波次数高、功率因数高，在大功率场合优先采用。</p>
+<h2 id="晶闸管整流与逆变电路">晶闸管整流与逆变电路</h2>
+<p>二极管整流的输出电压由交流电压和负载决定，不能调节。把二极管换成晶闸管，在控制角
+<span class="math inline">\(\alpha\)</span>
+处施加触发脉冲，就可以控制输出电压的大小，这就是<strong>相控整流</strong>。</p>
+<p>这一章讨论单相和三相晶闸管整流电路在不同负载下的输出电压、换流过程，以及晶闸管电路特有的<strong>逆变模式</strong>。</p>
+<h3 id="概述-2">概述</h3>
+<p>控制输出直流电压的办法有两条：</p>
+<ul>
+<li>加入可控开关管，用开关的占空比控制</li>
+<li>用晶闸管代替二极管，用触发角控制</li>
+</ul>
+<p>晶闸管整流的共同特征是<strong>负载通常为大电感</strong>：直流电动机电枢、HVDC
+平波电抗器、大电容滤波的负载，都可以近似为电流源负载。</p>
+<h3 id="基本概念-1">基本概念</h3>
+<h4 id="触发角与导通角">触发角与导通角</h4>
+<ul>
+<li><strong>触发角</strong> <span
+class="math inline">\(\alpha\)</span>：从晶闸管开始承受正向电压起到施加触发脉冲为止的电角度</li>
+<li><strong>导通角</strong> <span
+class="math inline">\(\theta\)</span>：晶闸管在一个周期中处于导通的电角度</li>
+</ul>
+<h4 id="移相与移相范围">移相与移相范围</h4>
+<p>改变触发脉冲出现的时刻、从而改变触发角大小以控制输出电压，称为<strong>移相控制</strong>。</p>
+<p>触发角使输出电压平均值从最大降到零所对应的范围，称为<strong>移相范围</strong>。</p>
+<h4 id="同步">同步</h4>
+<p>使触发脉冲与相控整流电路的电源电压之间保持频率和相位的协调关系，称为<strong>同步</strong>。</p>
+<p>不同步时，触发脉冲的相位相对电源电压漂移，输出电压失控。</p>
+<h4 id="换流">换流</h4>
+<p>电流从一个支路向另一个支路转移的过程称为<strong>换流</strong>，也称换相。晶闸管的换流方式有三种：</p>
+<table>
+<thead>
+<tr>
+<th>换流方式</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>电网换流</td>
+<td>由交流电网电压过零或反向，使晶闸管承受反压而关断</td>
+</tr>
+<tr>
+<td>负载换流</td>
+<td>由负载侧的电容、电感振荡产生反压使晶闸管关断</td>
+</tr>
+<tr>
+<td>强迫换流</td>
+<td>另设换流电路，强迫晶闸管电流过零</td>
+</tr>
+</tbody>
+</table>
+<p>相控整流电路依靠电网电压换流。</p>
+<h4 id="触发信号的产生">触发信号的产生</h4>
+<p>先产生一个与电网电压同相位的锯齿波，再用控制电压与锯齿波比较，交点即为触发时刻。调节控制电压的电平，就能改变触发角。实际电路用专用集成芯片同时完成同步与移相。</p>
+<h3 id="单相桥式晶闸管整流电路">单相桥式晶闸管整流电路</h3>
+<h4 id="纯电阻负载">纯电阻负载</h4>
+<p><span class="math inline">\(v_\mathrm{s}\)</span> 正半周触发 <span
+class="math inline">\(T_1\)</span>、<span
+class="math inline">\(T_2\)</span>，负半周触发 <span
+class="math inline">\(T_3\)</span>、<span
+class="math inline">\(T_4\)</span>，两组轮流导通。</p>
+<p>输出电压波形是电源电压在 <span
+class="math inline">\([\alpha,\pi]\)</span> 和 <span
+class="math inline">\([\pi+\alpha,2\pi]\)</span> 上的两段。</p>
+<p>输出平均电压</p>
+<p><span class="math display">\[
+V_\mathrm{D}=\frac{1}{\pi}\int_{\alpha}^{\pi}\sqrt2U_2\sin\omega
+t\,\mathrm{d}(\omega t)
+=\frac{2\sqrt2}{\pi}U_2\cdot\frac{1+\cos\alpha}{2}
+\approx0.9U_2\frac{1+\cos\alpha}{2}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(\alpha=0\)</span> 时 <span
+class="math inline">\(V_\mathrm{D}\approx0.9U_2\)</span>，与不控整流相同</li>
+<li><span class="math inline">\(\alpha=180^\circ\)</span> 时 <span
+class="math inline">\(V_\mathrm{D}=0\)</span></li>
+<li>移相范围 <span class="math inline">\(180^\circ\)</span></li>
+</ul>
+<p>单相半波可控整流的平均电压是它的一半</p>
+<p><span class="math display">\[
+V_\mathrm{D}\approx0.45U_2\frac{1+\cos\alpha}{2}
+\]</span></p>
+<h4 id="阻感负载">阻感负载</h4>
+<p>电感使电流不能突变。电源电压过零变负后，电感储能维持电流继续流动，输出电压出现负的部分。</p>
+<p>当电感足够大、电流连续时，输出电压正负两部分对称，平均电压为</p>
+<p><span class="math display">\[
+V_\mathrm{D}=0.9U_2\cos\alpha
+\]</span></p>
+<ul>
+<li><span class="math inline">\(\alpha=90^\circ\)</span> 时 <span
+class="math inline">\(V_\mathrm{D}=0\)</span></li>
+<li>移相范围 <span class="math inline">\(90^\circ\)</span></li>
+<li><span class="math inline">\(\alpha&gt;90^\circ\)</span> 时 <span
+class="math inline">\(V_\mathrm{D}&lt;0\)</span>，进入逆变模式</li>
+</ul>
+<h4 id="谐波与功率因数-1">谐波与功率因数</h4>
+<ul>
+<li>输出电压的谐波次数为 <span class="math inline">\(2n\)</span>
+次，最低次为 <span class="math inline">\(2\)</span> 次</li>
+<li>输入电流的谐波次数为 <span class="math inline">\(2n\pm1\)</span>
+次，即 <span class="math inline">\(3,5,7,\cdots\)</span> 次，最低次为
+<span class="math inline">\(3\)</span> 次</li>
+<li>各次谐波有效值满足 <span
+class="math inline">\(I_{\mathrm{s}h}=I_{\mathrm{s}1}/h\)</span></li>
+</ul>
+<p>晶闸管整流时电流滞后于电压，功率因数中还包含位移因数 <span
+class="math inline">\(\cos\alpha\)</span>（近似），所以</p>
+<p><span class="math display">\[
+\mathrm{PF}=\frac{I_{\mathrm{s}1}}{I_\mathrm{s}}\cos\alpha
+\]</span></p>
+<p>触发角越大，功率因数越低，这是相控整流电网友好的主要问题。</p>
+<h4 id="单相桥式半控整流电路">单相桥式半控整流电路</h4>
+<p>半控桥由两只晶闸管和两只二极管组成，常用于只需要单向可控的场合。</p>
+<h5 id="工作过程">工作过程</h5>
+<ul>
+<li><span class="math inline">\(v_\mathrm{s}\)</span> 正半周、<span
+class="math inline">\(\alpha\)</span> 处触发 <span
+class="math inline">\(T_1\)</span>：经 <span
+class="math inline">\(T_1\)</span> 和 <span
+class="math inline">\(D_2\)</span> 向负载供电</li>
+<li><span class="math inline">\(v_\mathrm{s}\)</span> 过零变负：电流从
+<span class="math inline">\(D_2\)</span> 转移到 <span
+class="math inline">\(D_4\)</span>，经 <span
+class="math inline">\(T_1\)</span> 和 <span
+class="math inline">\(D_4\)</span> 续流，<span
+class="math inline">\(v_\mathrm{D}=0\)</span></li>
+<li><span class="math inline">\(v_\mathrm{s}\)</span> 负半周、<span
+class="math inline">\(\pi+\alpha\)</span> 处触发 <span
+class="math inline">\(T_3\)</span>：<span
+class="math inline">\(T_1\)</span> 受反压关断，经 <span
+class="math inline">\(T_3\)</span> 和 <span
+class="math inline">\(D_4\)</span> 向负载供电</li>
+<li>再次过零：电流从 <span class="math inline">\(D_4\)</span> 转移到
+<span class="math inline">\(D_2\)</span>，经 <span
+class="math inline">\(T_3\)</span> 和 <span
+class="math inline">\(D_2\)</span> 续流，<span
+class="math inline">\(v_\mathrm{D}=0\)</span></li>
+</ul>
+<p>输出电压不含负的部分，平均电压与电阻负载相同</p>
+<p><span class="math display">\[
+V_\mathrm{D}\approx0.9U_2\frac{1+\cos\alpha}{2}
+\]</span></p>
+<h5 id="失控现象">失控现象</h5>
+<p>实际运行时，如果 <span class="math inline">\(\alpha\)</span>
+突然增大到 <span
+class="math inline">\(180^\circ\)</span>，或者触发脉冲丢失，会出现一只晶闸管持续导通、两只二极管轮流续流的情况。此时
+<span class="math inline">\(v_\mathrm{D}\)</span>
+变成正弦半波：半周期为正弦、半周期为零，平均值保持恒定，相当于单相半波不控整流。触发脉冲失去控制作用，称为<strong>失控</strong>。</p>
+<h5 id="加续流二极管">加续流二极管</h5>
+<p>在负载两端并联续流二极管 <span
+class="math inline">\(D_\mathrm{FWD}\)</span> 后，续流电流改由 <span
+class="math inline">\(D_\mathrm{FWD}\)</span>
+提供，晶闸管在电源过零时因承受反压而关断，失控现象消除。</p>
+<p>此时导通顺序为</p>
+<p><span class="math display">\[
+T_1D_2\to D_2D_\mathrm{FWD}\to T_3D_4\to D_4D_\mathrm{FWD}
+\]</span></p>
+<h4 id="反电动势负载">反电动势负载</h4>
+<p>直流电动机电枢可以看成反电动势 <span
+class="math inline">\(E_\mathrm{D}\)</span> 与电阻 <span
+class="math inline">\(R\)</span>、电感 <span
+class="math inline">\(L\)</span> 串联。</p>
+<p><span class="math inline">\(RE\)</span> 负载（电感很小）时，只有
+<span class="math inline">\(v_\mathrm{s}&gt;E_\mathrm{D}\)</span>
+的区间才有电流，负载电流断续。用于直流电动机供电会带来一系列问题：</p>
+<ul>
+<li>机械特性变软</li>
+<li>晶闸管导通角小、电流波形窄，为达到同样的平均值，电流峰值很大</li>
+<li>峰值和有效值增大，装置容量变大</li>
+<li>脉冲电流造成换向困难，容易产生火花</li>
+</ul>
+<p>解决办法是在电枢回路串联<strong>平波电抗器</strong>，构成 <span
+class="math inline">\(RLE\)</span>
+负载。电感足够大时电流连续，晶闸管导通 <span
+class="math inline">\(180^\circ\)</span>，输出电压波形与阻感负载相同，平均电压仍为</p>
+<p><span class="math display">\[
+V_\mathrm{D}=0.9U_2\cos\alpha
+\]</span></p>
+<h4 id="考虑输入电感的换流-2">考虑输入电感的换流</h4>
+<p>输入电感 <span class="math inline">\(L_\mathrm{s}\)</span>
+使换流需要时间，对应的电角度称为<strong>换流重叠角</strong> <span
+class="math inline">\(u\)</span>。</p>
+<p>换流时四个晶闸管同时导通，换流等效电路与二极管整流时完全一致。换流使输出电压平均值下降，产生电压损失</p>
+<p><span class="math display">\[
+\Delta V_\mathrm{D}=\frac{2X_\mathrm{B}I_\mathrm{d}}{\pi}
+\]</span></p>
+<p>其中 <span class="math inline">\(X_\mathrm{B}=\omega
+L_\mathrm{s}\)</span>。换流期间电源电流由 <span
+class="math inline">\(+I_\mathrm{d}\)</span> 变到 <span
+class="math inline">\(-I_\mathrm{d}\)</span>，电流变化量是 <span
+class="math inline">\(2I_\mathrm{d}\)</span>，所以系数是 <span
+class="math inline">\(2\)</span>。</p>
+<p>换流重叠角满足</p>
+<p><span class="math display">\[
+\cos\alpha-\cos(\alpha+u)=\frac{2X_\mathrm{B}I_\mathrm{d}}{\sqrt2U_2}
+\]</span></p>
+<p>结论：</p>
+<ul>
+<li>负载电流 <span class="math inline">\(I_\mathrm{d}\)</span>
+和输入电感 <span class="math inline">\(L_\mathrm{s}\)</span>
+越大，重叠角 <span class="math inline">\(u\)</span> 越大</li>
+<li><span class="math inline">\(\alpha\le90^\circ\)</span> 时，<span
+class="math inline">\(\alpha\)</span> 越小，<span
+class="math inline">\(u\)</span> 越大。因为 <span
+class="math inline">\(\alpha\)</span>
+越小，换流时相邻相的电压差越小，<span
+class="math inline">\(\mathrm{d}i/\mathrm{d}t\)</span>
+越小，能量释放越慢</li>
+</ul>
+<h4 id="实际电路连续与断续">实际电路：连续与断续</h4>
+<p>实际电路的电流可能处于连续（CCM）或断续（DCM）模式，取决于 <span
+class="math inline">\(L_\mathrm{d}\)</span> 的大小：</p>
+<ul>
+<li>轻载、电感小：电流断续，输出电压高于连续模式的计算值</li>
+<li>重载、电感大：电流连续，输出电压按 <span
+class="math inline">\(0.9U_2\cos\alpha\)</span> 计算</li>
+</ul>
+<h4 id="逆变模式">逆变模式</h4>
+<p>当 <span class="math inline">\(\alpha&gt;90^\circ\)</span> 时，<span
+class="math inline">\(V_\mathrm{D}&lt;0\)</span>。如果直流侧接有极性与晶闸管导通方向一致的直流电动势，电路就把直流侧的能量送回交流电网，这就是<strong>有源逆变</strong>。</p>
+<p>注意”有源逆变”在这里专指”与电网连接 + 相控”的逆变，不要与并网 PWM
+逆变器混淆，也不要与”有源阻尼”“有源器件”中的”有源”混淆。</p>
+<h5 id="实现逆变的条件">实现逆变的条件</h5>
+<ol type="1">
+<li>触发角 <span
+class="math inline">\(\alpha&gt;90^\circ\)</span>，使变流器输出平均电压为负</li>
+<li>直流侧电动势 <span class="math inline">\(E_\mathrm{D}\)</span>
+的极性变负，且与晶闸管导通方向一致</li>
+<li><span
+class="math inline">\(|E_\mathrm{D}|&gt;|V_\mathrm{D}|\)</span>，保证电流方向不变</li>
+</ol>
+<h5 id="启动与失败">启动与失败</h5>
+<p>启动时先把 <span class="math inline">\(\alpha\)</span>
+增大到足够大，使电流断续，再建立逆变工作点。</p>
+<p>逆变失败的原因：</p>
+<ul>
+<li>熄灭角（逆变角）不够大，换相没有足够裕量</li>
+<li>触发电路不可靠，脉冲丢失或相位漂移</li>
+<li>晶闸管发生故障</li>
+<li>交流电源发生故障（缺相、断电、电压跌落）</li>
+</ul>
+<p>逆变角 <span
+class="math inline">\(\beta=180^\circ-\alpha\)</span>，必须留有最小逆变角
+<span
+class="math inline">\(\beta_{\min}\)</span>，否则换相失败会导致逆变颠覆。</p>
+<h3 id="三相半波可控整流电路">三相半波可控整流电路</h3>
+<p>三相半波是三个单相半波电路共用一个中性点组成的，触发角从自然换相点开始计算。</p>
+<p>纯电阻负载：</p>
+<ul>
+<li><span class="math inline">\(\alpha\le30^\circ\)</span>
+时负载电流连续，输出电压为</li>
+</ul>
+<p><span class="math display">\[
+V_\mathrm{D}=1.17U_2\cos\alpha
+\]</span></p>
+<ul>
+<li><span class="math inline">\(\alpha&gt;30^\circ\)</span>
+时电流断续，输出电压为</li>
+</ul>
+<p><span class="math display">\[
+V_\mathrm{D}=0.675U_2\left[1+\cos\left(\alpha+30^\circ\right)\right]
+\]</span></p>
+<ul>
+<li>移相范围 <span class="math inline">\(150^\circ\)</span></li>
+</ul>
+<p>阻感负载：</p>
+<ul>
+<li>电感使电流连续，输出电压为</li>
+</ul>
+<p><span class="math display">\[
+V_\mathrm{D}=1.17U_2\cos\alpha
+\]</span></p>
+<ul>
+<li>移相范围 <span class="math inline">\(90^\circ\)</span></li>
+<li><span class="math inline">\(\alpha\le30^\circ\)</span>
+时波形与电阻负载相同；<span
+class="math inline">\(\alpha&gt;30^\circ\)</span>
+时电感使晶闸管继续导通，<span class="math inline">\(\alpha\)</span>
+增大会增加输出电压中负的部分</li>
+</ul>
+<p>反电动势负载的分析与单相桥相同，同样需要考虑电流断续和加平波电抗器。</p>
+<h3 id="三相桥式晶闸管整流电路">三相桥式晶闸管整流电路</h3>
+<h4 id="纯电阻负载-1">纯电阻负载</h4>
+<p>晶闸管的导通顺序为</p>
+<p><span class="math display">\[
+T_1T_2\to T_2T_3\to T_3T_4\to T_4T_5\to T_5T_6\to T_6T_1
+\]</span></p>
+<ul>
+<li><span
+class="math inline">\(\alpha\le60^\circ\)</span>：输出电压波形连续，<span
+class="math inline">\(V_\mathrm{D}=2.34U_2\cos\alpha\)</span></li>
+<li><span
+class="math inline">\(\alpha=60^\circ\)</span>：电流连续与断续的边界</li>
+<li><span
+class="math inline">\(\alpha&gt;60^\circ\)</span>：电流断续，输出电压为</li>
+</ul>
+<p><span class="math display">\[
+V_\mathrm{D}=2.34U_2\left[1+\cos\left(\alpha+60^\circ\right)\right]
+\]</span></p>
+<ul>
+<li>移相范围 <span class="math inline">\(120^\circ\)</span></li>
+</ul>
+<h4 id="阻感负载-1">阻感负载</h4>
+<p>电流连续时，输出电压与负载电流无关</p>
+<p><span class="math display">\[
+V_\mathrm{D}=2.34U_2\cos\alpha
+\]</span></p>
+<ul>
+<li><span class="math inline">\(\alpha=0\)</span> 时 <span
+class="math inline">\(V_\mathrm{D}=2.34U_2\)</span></li>
+<li><span class="math inline">\(\alpha\le60^\circ\)</span> 时 <span
+class="math inline">\(v_\mathrm{D}\)</span>
+波形连续，工作情况与纯电阻负载相似</li>
+<li><span class="math inline">\(\alpha&gt;60^\circ\)</span> 时 <span
+class="math inline">\(v_\mathrm{D}\)</span> 出现负的部分</li>
+<li>移相范围 <span class="math inline">\(90^\circ\)</span></li>
+</ul>
+<h4 id="考虑输入电感的换流-3">考虑输入电感的换流</h4>
+<p>考虑 <span class="math inline">\(L_\mathrm{s}\)</span>
+时，换流期间参与换流的两只晶闸管同时导通，共三只晶闸管同时导通，电路共有
+<span class="math inline">\(12\)</span> 个状态。</p>
+<p>输出电压为共阴极组与共阳极组电位之差</p>
+<p><span class="math display">\[
+v_\mathrm{D}=v_{P\mathrm{n}}-v_{N\mathrm{n}}
+\]</span></p>
+<p>电压损失与重叠角的关系与单相桥同理，只是系数不同</p>
+<p><span class="math display">\[
+\Delta V_\mathrm{D}=\frac{3X_\mathrm{B}I_\mathrm{d}}{\pi}
+\]</span></p>
+<h4 id="实际电路-1">实际电路</h4>
+<p>晶闸管变换器通常带大电感负载，计算时可认为 <span
+class="math inline">\(L_\mathrm{d}\to\infty\)</span>，按电流源负载处理。</p>
+<ul>
+<li>通常满足 <span class="math inline">\(\omega L_\mathrm{D}\gg
+r_\mathrm{D}\)</span>，输出电流接近恒定，工作在 CCM</li>
+<li>当 <span class="math inline">\(E_\mathrm{D}\)</span>
+较大且不满足上述条件时，存在 DCM 模式</li>
+</ul>
+<h4 id="逆变模式-1">逆变模式</h4>
+<p>三相桥式的逆变条件与单相相同：</p>
+<ol type="1">
+<li><span
+class="math inline">\(\alpha&gt;90^\circ\)</span>，输出电压为负</li>
+<li><span class="math inline">\(E_\mathrm{D}\)</span> 极性为负</li>
+<li><span
+class="math inline">\(|E_\mathrm{D}|&gt;|V_\mathrm{D}|\)</span>，以产生正向电流</li>
+</ol>
+<p>三相桥式逆变时，输出电压波形为线电压包络的负半部分，直流侧能量经变压器送回电网，这是
+HVDC 逆变站的基本工作方式。</p>
+<h4 id="线电压畸变">线电压畸变</h4>
+<p>换流不仅在输出侧造成电压损失和谐波，也在输入侧造成电压损失和谐波，进而在公共连接点（PCC）干扰其他设备。</p>
+<p>换相期间，交流侧两相短路，PCC 线电压出现缺口（下陷）。缺口面积与
+<span class="math inline">\(L_\mathrm{s}\)</span>、<span
+class="math inline">\(I_\mathrm{d}\)</span> 有关。工程标准（如 VDE
+标准）规定了电网侧最小电感 <span
+class="math inline">\(L_\mathrm{s2}\)</span> 的取值，以限制 PCC
+点的电压畸变。</p>
+<h3 id="本章小结">本章小结</h3>
+<ul>
+<li>整流电路按器件分为不控、半控、全控</li>
+<li>单相和三相晶闸管整流的拓扑与特性分析，核心是<strong>不同负载下的输出电压计算、换向过程、逆变条件</strong></li>
+<li>负载性质决定波形：电阻负载电流断续、阻感负载电流连续、反电动势负载需要平波电抗器</li>
+<li>触发角决定输出电压：<span
+class="math inline">\(\alpha&lt;90^\circ\)</span> 整流，<span
+class="math inline">\(\alpha&gt;90^\circ\)</span> 可进入逆变</li>
+<li>输入电感造成换相压降与重叠角，并在网侧产生电压畸变</li>
+</ul>
 
                 
               </div>
