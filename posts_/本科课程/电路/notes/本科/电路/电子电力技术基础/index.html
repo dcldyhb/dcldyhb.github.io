@@ -27,7 +27,7 @@
 <meta property="og:description" content="电力电子技术基础 绪论 电力电子技术的概念 电力电子技术是利用电力电子器件，对电能进行变换和控制的技术。 它是电力技术、电子技术和控制技术相结合的交叉学科。  电力技术：研究电能的生产、传输、分配和使用。 电子技术：提供实现电能变换的半导体器件和电路。 控制技术：使变换器按照给定目标运行。  电力电子技术处理的是电能，控制电路处理的是实现这一目标所需的信息。 电力电子技术的三要素 电力电子系统主要">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-09-20T06:28:59.000Z">
-<meta property="article:modified_time" content="2026-10-12T06:31:11.000Z">
+<meta property="article:modified_time" content="2026-11-07T11:47:02.000Z">
 <meta property="article:author" content="dcldyhb">
 <meta property="article:tag" content="课程笔记">
 <meta property="article:tag" content="电路">
@@ -227,7 +227,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          9.5k 字
+          12k 字
         
       </span>
     
@@ -238,7 +238,7 @@
         
         
         
-          80 分钟
+          102 分钟
         
       </span>
     
@@ -1516,6 +1516,351 @@ v_L = L\frac{\mathrm{d}i_L}{\mathrm{d}t}
 <p>可以看到，在相同电感电压下，增加电感可减缓电流上升。</p>
 <p>但电感储能也可能在关断时形成过电压，缓冲元件本身还会产生损耗。
 因此缓冲电路需要与器件、驱动和主电路共同设计。</p>
+<h2 id="二极管整流电路">二极管整流电路</h2>
+<p>整流是把交流电变换为直流电。用二极管组成的整流电路不需要控制信号，输出电压不能主动调节，称为<strong>不控整流</strong>。</p>
+<h3 id="概述-1">概述</h3>
+<h4 id="整流电路的分类">整流电路的分类</h4>
+<table>
+
+<thead>
+<tr>
+<th>分类依据</th>
+<th>类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>输入相数</td>
+<td>单相、三相、多相</td>
+</tr>
+<tr>
+<td>电路结构</td>
+<td>半波、全波、桥式</td>
+</tr>
+<tr>
+<td>器件</td>
+<td>不控（全二极管）、半控（可控器件与二极管混合）、全控（全部可控器件）</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>不控整流：输出电压不能主动调节</li>
+<li>半控整流：输出电压可调，但极性不能改变</li>
+<li>全控整流：输出电压的极性和大小均可调节</li>
+</ul>
+<h4 id="二极管整流的实际问题">二极管整流的实际问题</h4>
+<p>理想分析把二极管当作理想开关、忽略电源电感。实际电路中：</p>
+<ul>
+<li>输入电流不连续、波形畸变，含有大量谐波</li>
+<li>电网存在线路电感 <span
+class="math inline">\(L_\mathrm{s}\)</span>，输入电流不能突变，换流需要时间</li>
+<li>负载通常不是纯电阻，而是 RC 负载或恒压负载</li>
+</ul>
+<p>所以这一章的分析顺序是：先做 <span
+class="math inline">\(L_\mathrm{s}=0\)</span>
+的理想化分析，得到输出电压和输入电流的基本结论；再加入 <span
+class="math inline">\(L_\mathrm{s}\)</span> 讨论换流；最后讨论 RC
+负载、恒压负载和状态空间分析法。</p>
+<h3 id="单相桥式二极管整流电路">单相桥式二极管整流电路</h3>
+<h4 id="理想化电路">理想化电路</h4>
+<p>设输入电感 <span
+class="math inline">\(L_\mathrm{s}=0\)</span>，二极管为理想开关，交流电源为
+<span class="math inline">\(v_\mathrm{s}=\sqrt2U_2\sin\omega
+t\)</span>。</p>
+<ul>
+<li><span class="math inline">\(v_\mathrm{s}\)</span> 正半周：<span
+class="math inline">\(D_1\)</span>、<span
+class="math inline">\(D_2\)</span> 导通</li>
+<li><span class="math inline">\(v_\mathrm{s}\)</span> 负半周：<span
+class="math inline">\(D_3\)</span>、<span
+class="math inline">\(D_4\)</span> 导通</li>
+</ul>
+<h5 id="电阻负载">电阻负载</h5>
+<p>输出电压就是电源电压的绝对值</p>
+<p><span class="math display">\[
+v_\mathrm{D}=|v_\mathrm{s}|
+\]</span></p>
+<p>输出平均电压</p>
+<p><span class="math display">\[
+V_\mathrm{D}=\frac{1}{\pi}\int_0^{\pi}\sqrt2U_2\sin\omega
+t\,\mathrm{d}(\omega t)
+=\frac{2\sqrt2}{\pi}U_2\approx0.9U_2
+\]</span></p>
+<p>输出平均电流</p>
+<p><span class="math display">\[
+I_\mathrm{D}=\frac{V_\mathrm{D}}{R}
+\]</span></p>
+<p>每只二极管导通半个周期，其电流平均值为 <span
+class="math inline">\(I_\mathrm{D}/2\)</span>；二极管承受的最大反向电压为
+<span class="math inline">\(\sqrt2U_2\)</span>。</p>
+<h5 id="电流源负载">电流源负载</h5>
+<p>直流侧串大电感，输出电流可视为恒定 <span
+class="math inline">\(I_\mathrm{d}\)</span>。</p>
+<ul>
+<li>输出电压波形与电阻负载相同，平均值仍为 <span
+class="math inline">\(V_\mathrm{D}\approx0.9U_2\)</span></li>
+<li>输入电流 <span class="math inline">\(i_\mathrm{s}\)</span>
+为方波，幅值等于 <span
+class="math inline">\(I_\mathrm{d}\)</span>，正负半周各持续 <span
+class="math inline">\(180^\circ\)</span></li>
+</ul>
+<h4 id="输入电流谐波与功率因数">输入电流谐波与功率因数</h4>
+<p>方波电流只含奇次谐波，单相桥式的谐波次数为</p>
+<p><span class="math display">\[
+h=2n\pm1,\qquad n=1,2,3,\cdots
+\]</span></p>
+<p>各次谐波的有效值与基波有效值成反比</p>
+<p><span class="math display">\[
+I_{\mathrm{s}h}=\frac{I_{\mathrm{s}1}}{h}
+\]</span></p>
+<p>方波电流的基波有效值为</p>
+<p><span class="math display">\[
+I_{\mathrm{s}1}=\frac{2\sqrt2}{\pi}I_\mathrm{d}
+\]</span></p>
+<p>而电流总有效值为 <span
+class="math inline">\(I_\mathrm{s}=I_\mathrm{d}\)</span>，所以基波因数</p>
+<p><span class="math display">\[
+\lambda=\frac{I_{\mathrm{s}1}}{I_\mathrm{s}}=\frac{2\sqrt2}{\pi}\approx0.9
+\]</span></p>
+<p>二极管整流的位移因数接近 <span
+class="math inline">\(1\)</span>（电流与电压基本同相），因此功率因数近似等于基波因数</p>
+<p><span class="math display">\[
+\mathrm{PF}=\frac{P}{S}=\frac{I_{\mathrm{s}1}}{I_\mathrm{s}}\cos\varphi_1\approx0.9
+\]</span></p>
+<p>输入电流的畸变是二极管整流功率因数低的根本原因。</p>
+<h4 id="考虑输入电感的换流">考虑输入电感的换流</h4>
+<p>实际电网存在电感 <span
+class="math inline">\(L_\mathrm{s}\)</span>，输入电流不能突变。当 <span
+class="math inline">\(v_\mathrm{s}\)</span> 由正变负时，<span
+class="math inline">\(D_1\)</span>、<span
+class="math inline">\(D_2\)</span> 中的电流不能立刻降到零，<span
+class="math inline">\(D_3\)</span>、<span
+class="math inline">\(D_4\)</span>
+也不能立刻建立电流，四只二极管会同时导通一段时间。</p>
+<p>这段时间内，交流电源被四只二极管短接，输出电压为零，称为<strong>换流过程</strong>；对应的电角度称为<strong>换流重叠角</strong>
+<span class="math inline">\(\gamma\)</span>。</p>
+<p>换流带来的后果：</p>
+<ul>
+<li>输出电压每半周缺一块，平均值下降，称为<strong>换相压降</strong>
+<span class="math inline">\(\Delta V_\mathrm{D}\)</span></li>
+<li>输入电流的波形由方波变为梯形波，谐波含量和功率因数都发生变化</li>
+</ul>
+<p>对 <span class="math inline">\(m\)</span>
+脉波整流电路，换相压降的通式为</p>
+<p><span class="math display">\[
+\Delta V_\mathrm{D}=\frac{mX_\mathrm{B}I_\mathrm{d}}{2\pi}
+\]</span></p>
+<p>其中 <span class="math inline">\(X_\mathrm{B}=\omega
+L_\mathrm{s}\)</span> 为每相漏抗，<span class="math inline">\(m\)</span>
+为脉波数（单相桥式 <span class="math inline">\(m=2\)</span>，三相桥式
+<span class="math inline">\(m=6\)</span>）。</p>
+<p>换流重叠角满足</p>
+<p><span class="math display">\[
+\cos\alpha-\cos(\alpha+\gamma)=\frac{2X_\mathrm{B}I_\mathrm{d}}{\sqrt2U_2\sin\frac{\pi}{m}}
+\]</span></p>
+<p>对二极管整流 <span class="math inline">\(\alpha=0\)</span>，因此</p>
+<p><span class="math display">\[
+1-\cos\gamma=\frac{2X_\mathrm{B}I_\mathrm{d}}{\sqrt2U_2\sin\frac{\pi}{m}}
+\]</span></p>
+<p>由这两式可以看出：<span class="math inline">\(L_\mathrm{s}\)</span>
+越大、<span class="math inline">\(I_\mathrm{d}\)</span>
+越大、换流电压越低，重叠角越大，换相压降也越大。</p>
+<h4 id="恒定电压负载">恒定电压负载</h4>
+<p>当直流侧接恒压负载（如蓄电池、大电容）时，输出电压 <span
+class="math inline">\(v_\mathrm{D}\)</span>
+近似恒定，输入电流由换流过程决定。</p>
+<ul>
+<li>输出电压恒定时，平均输出电流 <span
+class="math inline">\(I_\mathrm{D}\)</span> 与 <span
+class="math inline">\(V_\mathrm{D}\)</span>、<span
+class="math inline">\(L_\mathrm{s}\)</span> 有关</li>
+<li><span class="math inline">\(L_\mathrm{s}\)</span> 或 <span
+class="math inline">\(I_\mathrm{D}\)</span>
+增大，输入电流波形更接近方波，电流质量提高</li>
+<li>输入电流不连续时，输出电流出现断续区间</li>
+</ul>
+<h4 id="实际-rc-负载">实际 RC 负载</h4>
+<p>二极管整流最常见的负载是电容滤波的 RC 负载。设 <span
+class="math inline">\(L_\mathrm{s}=0\)</span>，一个周期可分为四段：</p>
+<ol type="1">
+<li><span class="math inline">\([0,\omega t_1]\)</span>：<span
+class="math inline">\(v_\mathrm{s}&lt;v_\mathrm{D}\)</span>，四只二极管都不导通，电容向负载放电，<span
+class="math inline">\(v_\mathrm{D}\)</span> 按指数规律下降；到 <span
+class="math inline">\(\omega t_1\)</span> 时 <span
+class="math inline">\(v_\mathrm{s}=v_\mathrm{D}\)</span>，<span
+class="math inline">\(D_1\)</span>、<span
+class="math inline">\(D_2\)</span> 开始导通</li>
+<li><span class="math inline">\([\omega t_1,\omega t_2]\)</span>：<span
+class="math inline">\(v_\mathrm{s}&gt;v_\mathrm{D}\)</span>，交流电源给电容充电并向负载供电，可近似认为
+<span class="math inline">\(v_\mathrm{D}=v_\mathrm{s}\)</span>；到 <span
+class="math inline">\(\omega t_2\)</span> 时 <span
+class="math inline">\(v_\mathrm{s}\)</span> 与 <span
+class="math inline">\(v_\mathrm{D}\)</span> 同时达到峰值</li>
+<li><span class="math inline">\([\omega t_2,\omega t_3]\)</span>：<span
+class="math inline">\(v_\mathrm{s}\)</span> 开始下降，<span
+class="math inline">\(v_\mathrm{D}\)</span> 随之下降，二极管仍导通</li>
+<li><span class="math inline">\([\omega t_3,\omega
+t_4]\)</span>：电容电压下降速度低于电源电压，<span
+class="math inline">\(D_1\)</span>、<span
+class="math inline">\(D_2\)</span> 承受反压关断，<span
+class="math inline">\(v_\mathrm{D}\)</span> 按指数规律放电；到 <span
+class="math inline">\(\omega t_4\)</span> 时 <span
+class="math inline">\(D_3\)</span>、<span
+class="math inline">\(D_4\)</span> 导通，进入负半周的相同过程</li>
+</ol>
+<p>RC
+时间常数越大，电容放电越慢，输出越平稳，但二极管导通角越小、输入电流的尖峰越大。</p>
+<p>考虑 <span class="math inline">\(L_\mathrm{s}\ne0\)</span>
+时，工作过程变为：</p>
+<ul>
+<li><span class="math inline">\(t_\mathrm{b}\)</span> 之前：<span
+class="math inline">\(0&lt;v_\mathrm{s}&lt;v_\mathrm{D}\)</span>，二极管均不导通，电容向负载放电</li>
+<li><span
+class="math inline">\([t_\mathrm{b},t_\mathrm{p}]\)</span>：<span
+class="math inline">\(v_\mathrm{s}&gt;v_\mathrm{D}\)</span>，<span
+class="math inline">\(D_1\)</span>、<span
+class="math inline">\(D_2\)</span>
+导通，电源向电容充电并向负载供电，输入电流上升；<span
+class="math inline">\(t_\mathrm{p}\)</span> 时输入电流达到最大值</li>
+<li><span
+class="math inline">\([t_\mathrm{p},t_\mathrm{f}]\)</span>：电感电压变负，输入电流下降直到为零；<span
+class="math inline">\(t_\mathrm{f}\)</span> 时刻 <span
+class="math inline">\(D_1\)</span>、<span
+class="math inline">\(D_2\)</span> 截止</li>
+<li><span class="math inline">\(t_\mathrm{f}\)</span>
+之后：电容向负载放电，<span class="math inline">\(v_\mathrm{D}\)</span>
+按指数规律下降，直到 <span class="math inline">\(D_3\)</span>、<span
+class="math inline">\(D_4\)</span> 导通</li>
+</ul>
+<h4 id="状态空间分析法">状态空间分析法</h4>
+<p>RC 负载整流电路在不同区间内由不同的线性电路描述，可以写成状态方程</p>
+<p><span class="math display">\[
+\frac{\mathrm{d}\boldsymbol{x}}{\mathrm{d}t}=\boldsymbol{A}\boldsymbol{x}+\boldsymbol{B}\boldsymbol{u}
+\]</span></p>
+<p>其中状态变量取电容电压和电感电流，系数矩阵随二极管通断状态切换。逐个区间求解，再用边界条件衔接，即可得到完整的输出电压和电流波形。</p>
+<p>数值求解时常用梯形法处理积分，把微分方程离散成代数方程逐步推进。</p>
+<h4 id="输入电流谐波的治理">输入电流谐波的治理</h4>
+<p>二极管整流输入电流的谐波可以用<strong>功率因数校正（PFC）</strong>治理：在整流桥与负载之间加入开关变换器，控制输入电流跟踪输入电压的正弦波形，使输入电流接近正弦、功率因数接近
+<span class="math inline">\(1\)</span>。</p>
+<h3 id="三相桥式二极管整流电路">三相桥式二极管整流电路</h3>
+<h4 id="结构与工作原理">结构与工作原理</h4>
+<p>三相桥式整流电路由三个桥臂组成：</p>
+<ul>
+<li><strong>共阴极组</strong>：三只二极管的阴极连在一起，接直流正极</li>
+<li><strong>共阳极组</strong>：三只二极管的阳极连在一起，接直流负极</li>
+</ul>
+<p>每一时刻，共阴极组中阳极电位最高的一只导通，共阳极组中阴极电位最低的一只导通。因此任意时刻有两只二极管同时导通，每相通过上下两个二极管与直流侧相连。</p>
+<p>二极管按导通顺序编号，依次为 <span class="math inline">\(D_1\sim
+D_6\)</span>，每只导通 <span
+class="math inline">\(120^\circ\)</span>。</p>
+<h4 id="自然换相点">自然换相点</h4>
+<p>相电压的交点称为<strong>自然换相点</strong>。在交点之后，某相电压高于（或低于）其他相，对应的二极管开始承受正向电压，具备导通条件。</p>
+<p>三相桥式的自然换相点就是相邻两相电压的交点，每隔 <span
+class="math inline">\(60^\circ\)</span> 出现一次。</p>
+<h4 id="输出电压和输入电流">输出电压和输入电流</h4>
+<p>理想情况下输出电压是线电压的包络线，每周期有六个脉波，称为<strong>六脉波整流</strong>。</p>
+<p>输出平均电压（<span class="math inline">\(U_2\)</span>
+为相电压有效值）</p>
+<p><span class="math display">\[
+V_\mathrm{D}=\frac{3\sqrt6}{\pi}U_2\approx2.34U_2
+\]</span></p>
+<p>若用线电压 <span
+class="math inline">\(U_{2\mathrm{L}}=\sqrt3U_2\)</span> 表示</p>
+<p><span class="math display">\[
+V_\mathrm{D}=\frac{3\sqrt2}{\pi}U_{2\mathrm{L}}\approx1.35U_{2\mathrm{L}}
+\]</span></p>
+<p>输入电流每相为正负各 <span class="math inline">\(120^\circ\)</span>
+的方波。</p>
+<h4 id="谐波与功率因数">谐波与功率因数</h4>
+<ul>
+<li>输出电压的谐波次数为 <span class="math inline">\(6n\)</span>
+次，最低次为 <span class="math inline">\(6\)</span> 次</li>
+<li>输入电流的谐波次数为 <span class="math inline">\(6n\pm1\)</span>
+次，即 <span class="math inline">\(5,7,11,13,\cdots\)</span>
+次，最低次为 <span class="math inline">\(5\)</span> 次</li>
+<li>各次谐波有效值仍满足 <span
+class="math inline">\(I_{\mathrm{s}h}=I_{\mathrm{s}1}/h\)</span></li>
+</ul>
+<p>三相桥式的基波因数为</p>
+<p><span class="math display">\[
+\lambda=\frac{3}{\pi}\approx0.955
+\]</span></p>
+<p>因此三相整流的功率因数明显高于单相整流，输入电流的谐波含量也更小。</p>
+<h4 id="考虑输入电感的换流-1">考虑输入电感的换流</h4>
+<p>三相桥式同样存在换流过程。以 <span
+class="math inline">\(D_5\)</span>、<span
+class="math inline">\(D_6\)</span> 导通换到 <span
+class="math inline">\(D_6\)</span>、<span
+class="math inline">\(D_1\)</span>
+导通为例，换流期间三只二极管同时导通，直流侧电压下降。</p>
+<p>换相压降（<span class="math inline">\(m=6\)</span>）</p>
+<p><span class="math display">\[
+\Delta V_\mathrm{D}=\frac{3X_\mathrm{B}I_\mathrm{d}}{\pi}
+\]</span></p>
+<p>换流重叠角仍满足</p>
+<p><span class="math display">\[
+\cos\alpha-\cos(\alpha+\gamma)=\frac{2X_\mathrm{B}I_\mathrm{d}}{\sqrt2U_2\sin\frac{\pi}{6}}
+\]</span></p>
+<p>换流使输出电压平均值降低，并使输入电流波形变为梯形。</p>
+<h4 id="恒定电压负载-1">恒定电压负载</h4>
+<p>直流侧电压恒定的三相整流器中，直流侧电流 <span
+class="math inline">\(i_\mathrm{D}\)</span>
+在电流不为零的区间内，任意时刻都有共阴极组和共阳极组各一只二极管同时导通。</p>
+<ul>
+<li>增大 <span class="math inline">\(L_\mathrm{s}\)</span> 或 <span
+class="math inline">\(I_\mathrm{D}\)</span> 可以提升电能质量</li>
+<li>三相整流器的各项电能质量指标优于单相整流器</li>
+</ul>
+<h4 id="实际电路">实际电路</h4>
+<p>实际三相整流桥中，即使很小的输入电感 <span
+class="math inline">\(L_\mathrm{s}\)</span> 也能使 <span
+class="math inline">\(i_\mathrm{D}\)</span>
+连续，微分方程的分段变得复杂，很难像单相桥一样逐段建立解析式，通常采用仿真分析。</p>
+<h3 id="单相与三相二极管整流的比较">单相与三相二极管整流的比较</h3>
+<table>
+
+<thead>
+<tr>
+<th>项目</th>
+<th>单相桥式</th>
+<th>三相桥式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>输出平均电压</td>
+<td><span class="math inline">\(0.9U_2\)</span></td>
+<td><span class="math inline">\(2.34U_2\)</span></td>
+</tr>
+<tr>
+<td>输出电压谐波</td>
+<td><span class="math inline">\(2n\)</span> 次，最低 <span
+class="math inline">\(2\)</span> 次</td>
+<td><span class="math inline">\(6n\)</span> 次，最低 <span
+class="math inline">\(6\)</span> 次</td>
+</tr>
+<tr>
+<td>输入电流谐波</td>
+<td><span class="math inline">\(2n\pm1\)</span> 次，最低 <span
+class="math inline">\(3\)</span> 次</td>
+<td><span class="math inline">\(6n\pm1\)</span> 次，最低 <span
+class="math inline">\(5\)</span> 次</td>
+</tr>
+<tr>
+<td>基波因数</td>
+<td><span class="math inline">\(2\sqrt2/\pi\approx0.9\)</span></td>
+<td><span class="math inline">\(3/\pi\approx0.955\)</span></td>
+</tr>
+<tr>
+<td>换相压降</td>
+<td><span
+class="math inline">\(X_\mathrm{B}I_\mathrm{d}/\pi\)</span></td>
+<td><span
+class="math inline">\(3X_\mathrm{B}I_\mathrm{d}/\pi\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>三相整流输出电压高、脉动小、谐波次数高、功率因数高，在大功率场合优先采用。</p>
 
                 
               </div>
