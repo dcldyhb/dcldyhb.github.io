@@ -1,0 +1,1366 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/avatar.jpg">
+  <link rel="icon" href="/img/avatar.jpg">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="dcldyhb">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="能源系统仿真实验 · 课件缺口清单  对照材料：大学资料&#x2F;大三上&#x2F;能源系统仿真实验&#x2F;ppt&#x2F;（概述、MATLAB、Simulink、机理与数据建模、5.1 光伏、5.2 SOFC，共 302 页） 现有材料：本课没有 .md 笔记，只有 微燃机Simulink仿真分析 作业报告 考核：出勤 10% + 课堂作业 30% + 项目大作业 60%（无闭卷笔试），所以优先级按「实验、作业、答辩用得上」排">
+<meta property="og:type" content="article">
+<meta property="og:title" content="能源系统仿真实验 · 课件缺口清单">
+<meta property="og:url" content="http://dcldyhb.github.io/posts_/%E6%9C%AC%E7%A7%91%E8%AF%BE%E7%A8%8B/%E5%A4%A7%E4%B8%89%E4%B8%8A/notes/%E6%9C%AC%E7%A7%91/%E5%A4%A7%E4%B8%89%E4%B8%8A/04_%E8%83%BD%E6%BA%90%E7%B3%BB%E7%BB%9F%E4%BB%BF%E7%9C%9F%E5%AE%9E%E9%AA%8C/index.html">
+<meta property="og:site_name" content="dcldyhb的笔记">
+<meta property="og:description" content="能源系统仿真实验 · 课件缺口清单  对照材料：大学资料&#x2F;大三上&#x2F;能源系统仿真实验&#x2F;ppt&#x2F;（概述、MATLAB、Simulink、机理与数据建模、5.1 光伏、5.2 SOFC，共 302 页） 现有材料：本课没有 .md 笔记，只有 微燃机Simulink仿真分析 作业报告 考核：出勤 10% + 课堂作业 30% + 项目大作业 60%（无闭卷笔试），所以优先级按「实验、作业、答辩用得上」排">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-11-06T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-11-07T10:42:30.000Z">
+<meta property="article:author" content="dcldyhb">
+<meta property="article:tag" content="缺口清单">
+<meta property="article:tag" content="能源系统仿真实验">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>能源系统仿真实验 · 课件缺口清单 - dcldyhb的笔记</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"dcldyhb.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.jpeg","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>哦耶</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="能源系统仿真实验 · 课件缺口清单"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2026-11-07 00:00" pubdate>
+          2026年11月7日 凌晨
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          12k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          101 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">能源系统仿真实验 · 课件缺口清单</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="能源系统仿真实验-课件缺口清单">能源系统仿真实验 ·
+课件缺口清单</h1>
+<blockquote>
+<p>对照材料：<code>大学资料/大三上/能源系统仿真实验/ppt/</code>（概述、MATLAB、Simulink、机理与数据建模、5.1
+光伏、5.2 SOFC，共 302 页） 现有材料：本课没有 .md 笔记，只有
+<code>微燃机Simulink仿真分析</code> 作业报告 考核：出勤 10% + 课堂作业
+30% + 项目大作业
+60%（无闭卷笔试），所以优先级按「实验、作业、答辩用得上」排</p>
+</blockquote>
+<h2 id="口径说明先读这段影响优先级判断">0.
+口径说明（先读这段，影响优先级判断）</h2>
+<ol type="1">
+<li><strong>考核不设闭卷笔试</strong>。课件 P16 明确：出勤 10% ＋
+课堂作业 30% ＋ 项目大作业 60%（10
+组答辩、提交报告与仿真文件）。因此本清单的 <strong>P0
+定义为”实验操作、课堂作业、大作业报告与答辩当场用得上”，而非”考试会考”</strong>；P1＝理解原理、能解释现象；P2＝扩展与背景。</li>
+<li><strong>公式符号大量乱码</strong>，本清单只根据中文标题、正文文字与可辨识的参数表/算例数值归纳，<strong>不据乱码符号反推公式</strong>。凡引用具体数值，均已核对到页码。</li>
+<li><strong>“仿真流程”与”误差与验证”在第 1
+章没有独立小节</strong>——课件的组织是”概念（1 章）→ 工具（2/3 章）→
+方法（4 章）→ 实验（5 章）“。这两块内容实际落在：第 3 章
+P16–P17（建模步骤）、P29–P30（误差容限与求解器）、第 4 章
+P23（动态仿真四步法）、P31–P32（模型验证与评估）。<strong>已在清单中标出真实页码，未虚构第
+1 章章节</strong>。</li>
+<li><strong>课件”参数”与”实验步骤”两处是知识密度最高、也最容易被笔记漏掉的地方</strong>：第
+4 章 P22、第 5 章 5.1 P21、5.2 P25–P26
+都给了可直接抄进报告的算例数值。</li>
+</ol>
+<hr />
+<h2 id="覆盖矩阵">1. 覆盖矩阵</h2>
+<table>
+
+<thead>
+<tr>
+<th>章</th>
+<th>课件页数</th>
+<th>现有材料状态</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>第 1 章 能源系统仿真实验概述</td>
+<td>68（P1–P68）</td>
+<td><strong>无笔记</strong></td>
+<td>全概念：能源系统定义/构成/类型/特征、仿真定义与五类需求、建模方法分类、稳态与动态。无公式推导，纯背诵型，适合一次性做概念卡。报告完全未涉及。</td>
+</tr>
+<tr>
+<td>第 2 章 MATLAB 建模仿真平台</td>
+<td>64（P1–P64）</td>
+<td><strong>无笔记</strong>；报告仅用到”参数初始化脚本”一处</td>
+<td>概述、数据类型、基本运算、脚本与函数、流程控制、数据可视化六块齐全。报告的
+<code>init.m</code>
+是唯一落到本章知识的产物，但<strong>只覆盖了”脚本”一个点</strong>，数据类型/矩阵/流程控制/绘图全空。</td>
+</tr>
+<tr>
+<td>第 3 章 Simulink 建模仿真平台</td>
+<td>71（P1–P71）</td>
+<td><strong>无笔记</strong>；报告覆盖建模与运行主干</td>
+<td>报告用到 Step、Fcn、Gain、Sum、Integrator、Scope 与
+ode45（变步长、最大步长 0.1 s、AbsTol 1e-11），对应课件
+P8/P13/P17/P29–P33。<strong>但求解器原理、采样时间、数据导出格式、浮动示波器/信号观察器全部未落笔</strong>——这是本章最大缺口，也是作业最容易卡住的地方。</td>
+</tr>
+<tr>
+<td>第 4 章 能源系统机理及数据建模方法</td>
+<td>44（P1–P44）</td>
+<td><strong>无笔记</strong>；报告只覆盖 1.6 节微燃机模型（P24）</td>
+<td>三大守恒、开放/封闭系统能量方程、三种传热、换热集总模型、数据驱动与混合建模。报告只取了
+P24 的参数表与两条一阶惯性方程，<strong>P5–P23 的方程推导与 P26–P43
+的数据/混合建模整章空白</strong>。</td>
+</tr>
+<tr>
+<td>第 5 章（5.1）PV-SOFC 系统仿真实验 · 光伏</td>
+<td>25（P1–P25）</td>
+<td><strong>无笔记</strong>；报告未涉及</td>
+<td>光伏概述、光生伏特效应、理想/实际等效电路、铭牌四参数法、C₁/C₂
+推导、工程 I-V 模型与算例、PV 阵列与旁路二极管。</td>
+</tr>
+<tr>
+<td>第 5 章（5.2）PV-SOFC 系统仿真实验 · SOFC</td>
+<td>30（P1–P30）</td>
+<td><strong>无笔记</strong>；报告未涉及</td>
+<td>SOFC 发展史与原理、平板/管式结构、优缺点、Nernst
+电压、三种极化、组分守恒、能量守恒与电堆温度动态方程、算例与作业。</td>
+</tr>
+<tr>
+<td><strong>合计</strong></td>
+<td><strong>302</strong></td>
+<td><strong>系统笔记覆盖率 ≈ 0</strong></td>
+<td>唯一可用资产是微燃机报告（约占全部知识点 15%，且集中在一处）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>覆盖率一句话</strong>：6 章里 <strong>0
+章有系统笔记</strong>；302 页课件中，真正被那份报告”消化过”的约
+<strong>20 页</strong>（第 3 章建模主干 ＋ 第 4 章 P24），其余
+<strong>280 余页是纯缺口</strong>。</p>
+<hr />
+<h2 id="应补知识点清单">2. 应补知识点清单</h2>
+<blockquote>
+<p>格式：<code>- **知识点名**（课件 Pxx–Pyy）｜优先级｜要点：一句话；现状：…</code>
+优先级：<strong>P0</strong> 实验/作业/答辩直接用得上 ｜
+<strong>P1</strong> 理解原理 ｜ <strong>P2</strong> 扩展</p>
+</blockquote>
+<h3 id="第-1-章-能源系统仿真实验概述68-页">第 1 章
+能源系统仿真实验概述（68 页）</h3>
+<ul>
+<li><strong>能源系统的定义与构成环节</strong>（P19–P24）｜P1｜要点：能源系统是把能源资源转化为可利用能量并输送分配到终端用户的全过程，含生产、转换、传输及分配、利用及存储、管理五大环节；现状：无笔记。</li>
+<li><strong>能源系统仿真的定义与五类用途</strong>（P27–P32）｜P0｜要点：仿真＝“利用模型复现实际系统发生的本质过程”，用途为预测规划、优化设计运行、风险评估、教育培训、技术创新；现状：无笔记。</li>
+<li><strong>能源系统的类型与四大特征</strong>（P25–P26）｜P1｜要点：按能源类型（电/气/热）与技术特征（分布式/集中式/智慧）两个维度分类；特征是复杂性、多样性、动态性、多功能性；现状：无笔记。</li>
+<li><strong>集总参数模型及其选用判据</strong>（P34–P35）｜P0｜要点：把系统视为一个质点、参数（温度、压力）处处均匀，只考虑外部影响不考虑内部状态，适合大尺度稳态简化分析；分布参数模型才用偏微分方程描述空间连续变化；现状：报告里零散出现（微燃机两方程实质就是集总一阶惯性模型，但报告未点明”集总”这一概念，也未与分布参数对照）。</li>
+<li><strong>理论分析方法（理论解析模型）</strong>（P36）｜P0｜要点：从内部物理过程出发建立动态数学模型再求解，如用基尔霍夫定律分析电路、用热力学定律分析气体膨胀做功；现状：报告里零散出现（两条一阶惯性方程即属此类，但报告未把它归入方法分类，答辩时答不出”你用的是哪类建模方法”）。</li>
+<li><strong>实验测定方法（经验归纳模型）</strong>（P37）｜P1｜要点：由实际输入输出数据确定模型，手段含系统辨识、参数估计、神经网络；现状：无笔记。</li>
+<li><strong>四种经验归纳建模方法</strong>（P38–P41）｜P2｜要点：时间序列、归纳推理（黑箱）、频域（由
+G(s) 得匹配的
+G(z)）、灰色理论（部分已知＋部分未知，是机理与数据融合的早期形态）；现状：无笔记。</li>
+<li><strong>仿真软件与工具三分法</strong>（P42–P48）｜P2｜要点：PSS/E
+面向电力系统稳态与暂态、TRNSYS 面向建筑 HVAC
+与可再生能源动态、MATLAB/Simulink 为通用平台；现状：无笔记。</li>
+<li><strong>MATLAB/Simulink
+的五项优势</strong>（P48）｜P1｜要点：集成性强、可视化建模、灵活性与扩展性（可自定义模块＋多种求解器）、多领域仿真、自动代码生成；现状：无笔记。</li>
+<li><strong>稳态的定义与稳态仿真</strong>（P50–P52）｜P0｜要点：稳态＝经过一定时间后输出或关键参数不再随时间变化；稳态仿真只求长期运行状态，优点是模型简单、计算快，缺点是<strong>无法捕捉启停与状态转换的动态响应</strong>；现状：无笔记。</li>
+<li><strong>动态的定义与动态仿真</strong>（P53–P54）｜P0｜要点：动态＝参数随时间持续变化；动态仿真分析初始条件或外部条件变化下的时间响应；现状：报告里零散出现（阶跃响应曲线就是动态仿真的产物，但报告没写定义、没划清与稳态的界线）。</li>
+<li><strong>稳态与动态互为支持</strong>（P55–P56）｜P0｜要点：稳态结果给动态仿真提供初值与初始状态，动态结果又反过来验证并优化稳态结果；现状：报告里零散出现（用稳态方程算
+P₀、T₀
+再设为积分器初值，干的正是这件事，但报告没上升到方法论，答辩时这是最容易丢分的一问）。</li>
+<li><strong>惯性——动态问题的物理根源</strong>（P57–P58）｜P1｜要点：动态与稳态的差别主要体现在热惯性、容积惯性、机械惯性上，稳态问题通常不考虑惯性；现状：无笔记。</li>
+<li><strong>稳态/动态的两条判据与求解方法差异</strong>（P59–P60）｜P1｜要点：判据一是模型是否含时间变量、二是有无考虑惯性；稳态靠热平衡与物平衡方程组求解（Σ输入热量＝Σ输出热量），动态靠数值方法（有限差分、有限元）；现状：无笔记。</li>
+</ul>
+<h3 id="第-2-章-matlab-建模仿真平台64-页">第 2 章 MATLAB
+建模仿真平台（64 页）</h3>
+<ul>
+<li><strong>MATLAB 的定位与工作环境四区</strong>（P4,
+P8–P11）｜P0｜要点：MATLAB 源于 Matrix
+Laboratory、基本数据单位是矩阵，与 Mathematica、Maple
+并称三大数学软件；界面分当前文件夹、命令行窗口（提示符
+<code>&gt;&gt;</code>）、工作区、编辑器四个子窗口，无返回值的语句结果送到默认变量
+<code>ans</code>；现状：无笔记。</li>
+<li><strong>三条环境清理命令与中断</strong>（P11,
+P14）｜P0｜要点：<code>clc</code> 只清屏不清变量、<code>clear</code>
+清工作区变量、<code>close all</code> 关闭所有图窗、<code>CTRL+C</code>
+强制中断运行中的程序；现状：无笔记（报告 init.m
+里没有这些，属于”会跑但说不清”）。</li>
+<li><strong>数据类型与典型常数</strong>（P16）｜P0｜要点：默认 double 为
+64 位 8 字节，另有 uint8/uint16；保留字含
+<code>pi</code>、<code>eps</code>（2.2204×10⁻¹⁶＝2⁻⁵²）、<code>inf</code>、<code>NaN</code>（0/0、Inf/Inf
+的结果）、<code>i</code>/<code>j</code>（一旦当纯虚常量用就不能再当循环计数变量）；现状：无笔记。</li>
+<li><strong>变量命名规则</strong>（P17）｜P0｜要点：必须字母开头、可含字母数字下划线、<strong>大小写敏感</strong>、无需声明由
+MATLAB 自动创建并分配空间；现状：无笔记。</li>
+<li><strong>矩阵与数组的区别</strong>（P18–P19）｜P1｜要点：矩阵是线性代数概念、只存数值，数组是计算机概念、可存数值/字符/逻辑，数组范围更广；标量、行向量、列向量即
+1×1、1×n、n×1；现状：无笔记。</li>
+<li><strong>三种矩阵创建方式</strong>（P20–P22）｜P0｜要点：元素列举法（逗号或空格分列、分号分行、中括号包裹）、专用函数法（zeros/ones/rand
+及矩阵拼接）、冒号序列
+<code>first:step:last</code>（步长可正可负可为小数）；现状：无笔记。</li>
+<li><strong>下标访问与三条易错规则</strong>（P23）｜P0｜要点：<code>A(d1,d2,…)</code>
+访问单个元素、<code>A(n)</code> 按线性索引访问；<strong>下标从 1
+开始、矩阵按列存储、下标越界会自动扩展并用 0
+填充</strong>；现状：无笔记。</li>
+<li><strong>size 与
+length</strong>（P24）｜P0｜要点：<code>size(X)</code>
+返回行数和列数组成的行向量，<code>size(X,dim)</code>
+取某一维，<code>length(X)</code>
+返回最大维的长度；现状：无笔记（写循环取维度时天天要用，报告里没有）。</li>
+<li><strong>标量运算、点运算与矩阵运算</strong>（P26–P28）｜P0｜要点：<code>&amp;</code>/<code>|</code>
+用于数组之间、<code>&amp;&amp;</code>/<code>||</code>
+用于表达式之间；<code>/</code> 为右除、<code>\</code>
+为左除（5/2＝2.5，5\2＝0.4，也可用于矩阵）；点运算逐元素作用、要求两操作数同维同长；矩阵运算遵循线性代数规则；<code>'</code>
+是共轭转置、<code>.'</code> 是不取共轭的转置；现状：无笔记。</li>
+<li><strong>脚本、实时脚本与函数</strong>（P30–P37）｜P0｜要点：<code>.m</code>
+脚本可直接运行并把变量全部丢进工作区、<code>.mlx</code>
+实时脚本把代码与输出图形同屏；函数有入口与出口参数、文件名必须与函数名完全相同、<strong>不能独立运行</strong>只能在别处调用；现状：报告里零散出现（报告只写了
+init.m 脚本，函数的声明/函数体/end 三段结构与调用格式完全没碰）。</li>
+<li><strong>内置函数库四类</strong>（P38–P39）｜P1｜要点：初等数学函数库、线性代数函数库、数值积分与微分方程求解函数库、傅里叶分析与滤波函数库；现状：无笔记。</li>
+<li><strong>流程控制六件套</strong>（P41–P51）｜P0｜要点：if/elseif/else、switch（case
+里不能含关系运算符、<strong>case 后不能加
+break</strong>）、for（<code>初值:步长:终值</code>
+或直接遍历数组，遍历数组时按列循环）、while（循环体必须改变表达式值否则死循环）、break（跳出整个循环）与
+continue（跳过本次剩余语句）；现状：无笔记（这是”能看懂别人代码但自己写不出”的分水岭）。</li>
+<li><strong>二维绘图 plot
+与线条属性</strong>（P53–P57）｜P0｜要点：<code>plot(X1,Y1,LineSpec1,…)</code>
+可一条语句画多条曲线，X、Y 必须等长；LineSpec
+由线型、标记、颜色组成且<strong>所有参数必须用单引号括起</strong>；也可用
+Name-Value
+名值对设置属性；再叠加标题、坐标轴刻度、图例、网格；现状：无笔记（报告里的图是截图，没有一行自己的绘图代码）。</li>
+<li><strong>subplot、plot3 与
+stem</strong>（P58–P63）｜P1｜要点：<code>subplot(m,n,p)</code>
+把窗口分成 m×n
+个子图、<strong>序号按行排列</strong>；<code>plot3(x,y,z)</code>
+画三维曲线；<code>stem()</code> 画离散序列；现状：无笔记。</li>
+</ul>
+<h3 id="第-3-章-simulink-建模仿真平台71-页">第 3 章 Simulink
+建模仿真平台（71 页）</h3>
+<ul>
+<li><strong>启动、文件格式与工作界面四区</strong>（P4–P6）｜P1｜要点：主页按钮或命令行输入
+<code>simulink</code> 启动，模型文件后缀为 <code>.slx</code> 或
+<code>.mdl</code>、双击即打开编辑器；界面按”文件管理—运行准备—仿真运行—结果观察”四段布置，主体是模块库（库浏览器）与模型编辑区；现状：无笔记。</li>
+<li><strong>模块与模块库的分层 ＋
+常用模块清单</strong>（P7–P14）｜P0｜要点：模块（Block）是搭建仿真模型的基本单位；模块库分基本模块库（Sources
+信号源、Sinks 接收器、Continuous 连续等子库）与扩展模块库（工具箱，如
+Deep Learning/Control
+System/MPC），库浏览器带搜索栏可直接搜模块名；常用模块有
+Constant、Gain、Integrator、Scope、Display、Mux/Demux，<strong>接收器子库所有模块只有输入端没有输出端</strong>，信号源子库产生波形/随机/阶跃/脉冲/常数，数学运算子库含加减、增益、乘法；现状：报告里零散出现（用了
+Step/Fcn/Gain/Sum/Integrator/Scope
+六个，但没有模块库的整体地图，换一个模型就找不到模块）。</li>
+<li><strong>仿真基本过程与建模七步</strong>（P16–P17）｜P0｜要点：信号（输入）→运算→结果（输出）三段式；建模型时先问”输入是什么、用什么模块实现”“要做哪些运算、用什么模块”“输出是什么、怎么显示”；操作顺序为建空白模型并重命名保存→库浏览器搜模块拖入→连线；现状：报告里零散出现（报告描述了搭模型的过程，但没有把”先想清输入-运算-输出再动手”这条方法论写出来）。</li>
+<li><strong>编辑操作与布局规范</strong>（P17）｜P1｜要点：滚轮平移缩放、右键拖动复制模块、<code>ctrl+R</code>
+旋转、<code>ctrl+I</code>
+翻转、双击模块开参数界面；布局上坚持左输入右输出、在一条直线上分布，避免模块多了布线杂乱；现状：无笔记。</li>
+<li><strong>模块参数设置的四种途径</strong>（P20–P24）｜P0｜要点：模块参数对话框、模型数据编辑器、属性检查器、模型资源管理器；参数可以是常数数值、变量或表达式（<strong>写成变量名才能被工作区一键改工况，这是三组阶跃实验能复用的关键</strong>）；现状：报告里零散出现（报告把
+k1~k4、τ 全写成变量确实做到了，但没写成”参数化建模”这条方法）。</li>
+<li><strong>求解器与”仿真步”</strong>（P26）｜P0｜要点：仿真是在指定时间范围内按给定步长循环计算系统状态，<strong>每次循环是一个”仿真步”</strong>，每步内按初始化阶段确定的块执行顺序依次执行各模块，这个过程叫模型求解；求解器分定步长/变步长、离散/连续四类；现状：无笔记（报告用了
+ode45，但说不出 ode45 属于哪一类、为什么选它）。</li>
+<li><strong>采样时间与步长的绑定关系</strong>（P27–P28）｜P0｜要点：求解器步长很大程度上由各模块的
+Sample time 决定；<strong>Sample time＝0
+则以求解器步长执行该模块、输出连续信号；Sample time≠0
+则以该参数为步长、输出离散信号</strong>；现状：无笔记（“为什么我的波形是折线”“为什么输出点数不对”多半卡在这里）。</li>
+<li><strong>定步长与变步长的本质差别</strong>（P29）｜P0｜要点：定步长步长固定、<strong>没有误差控制机制</strong>；变步长会计算步长并通过增减步长满足设定的误差容限；小型系统求解时间一般在秒级、用默认步长即可；现状：报告里零散出现（报告设了最大步长
+0.1 s 与 AbsTol
+1e-11，这正是变步长的误差控制参数，但报告未解释其含义）。</li>
+<li><strong>求解器的选择策略</strong>（P30）｜P0｜要点：选择取决于系统动态特性、结果稳定性、计算速度与稳健性；<strong>先选
+auto
+让系统自动定，不满足要求再手选</strong>；实操上是迭代比较不同求解器的结果，取”最小代价获得最优性能”的那个；现状：无笔记。</li>
+<li><strong>运行仿真与 sim()
+函数</strong>（P31–P33）｜P0｜要点：界面点”运行”即可，运行中按钮变暂停、可步进前进/后退；<strong>Simulink
+运行后不会自动保存编辑内容与结果，必须手动保存</strong>；也可用
+<code>simOutputs = sim(model,Name,Value)</code> 由代码启动，如
+<code>sim('Ex_1','Solver','ode15s','TimeOut',20)</code>，模型名带引号且不写
+<code>.slx</code>
+后缀；现状：无笔记（批量跑多工况时这是唯一高效做法）。</li>
+<li><strong>仿真数据的组成与导出格式</strong>（P35–P37）｜P0｜要点：仿真数据含时间变量、输入信号、输出信号、状态变量与数据存储日志；导出格式有数组、结构体、带时间的结构体、MATLAB
+时间序列、Dataset、ModelDataLogs；勾选 <strong>Single simulation
+output</strong> 后时间、状态、输出三变量合并为一个 <code>out</code>
+结构体；现状：无笔记。</li>
+<li><strong>三种导出格式的数据访问写法</strong>（P38–P43）｜P0｜要点：数组格式用
+<code>tout</code>/<code>yout</code>（<code>plot(tout,yout(:,1))</code>）；合并后写
+<code>out.tout</code>/<code>out.yout</code>；结构体格式写
+<code>yout.signals(2).values</code>；数据集格式写
+<code>yout&#123;2&#125;.Values</code>；现状：无笔记（换一种导出格式，报告里那种”直接画”的思路立刻失效，这是必踩的坑）。</li>
+<li><strong>To Workspace 与 To File
+的区别</strong>（P44–P46）｜P0｜要点：To Workspace
+把数据先写内部缓冲区、<strong>仿真暂停或结束后才可用</strong>，且<strong>只输出
+y 信号</strong>；To File 写成 <code>.mat</code>
+文件、<strong>同时保存时间信号 u 和
+y</strong>，文件已存在会被覆盖、仿真异常终止仍保留已记录数据；输出格式由模块自己的”保存格式”参数决定，<strong>不由数据导入导出面板的设置决定</strong>；多信号经
+Bus Creator 合成一路后可用 <code>y.sig1</code> 访问；现状：无笔记。</li>
+<li><strong>示波器、浮动示波器与信号观察器</strong>（P47–P63）｜P0｜要点：信号观察手段有信号测试点、信号记录、信号查看器、Scope、浮动示波器；Scope
+单窗最多 256 个信号，靠 Number of input ports
+或把信号线直接拖上去自动加端子，多个信号也可用 Bus Creator
+合成一路送入；浮动示波器<strong>没有输入端</strong>、靠 Signal Selector
+点选信号，适合复杂模型减少连线；仿真数据检查器可放大移动观察并比较多次仿真的波形；现状：报告里零散出现（只用了最基础的
+Scope，多信号同屏与多次仿真对比都没做过）。</li>
+<li><strong>动态系统仿真的四步法</strong>（P65–P69）｜P0｜要点：动态系统＝状态随时间变化、可用微分方程描述的系统（分连续/离散）；建模四步为<strong>①最高阶项系数化为
+1 且等式左侧只保留最高阶项 ②微分方程的阶数＝积分模块的数量
+③从积分模块倒推画仿真流程图、明确信号流向 ④照流程图在 Simulink
+里搭模型</strong>；P70
+三道思考题（基本模块有哪些、仿真需要哪些主要步骤、多方程如何简洁表达）就是本章的复习提纲；现状：报告里零散出现（微燃机两个一阶方程确实是”一个积分器＋反馈”的标准结构，报告也是这么搭的，但”阶数＝积分器个数”这条法则没写出来，换成二阶系统就不会推了）。</li>
+</ul>
+<h3 id="第-4-章-能源系统机理及数据建模方法44-页">第 4 章
+能源系统机理及数据建模方法（44 页）</h3>
+<ul>
+<li><strong>守恒方程与控制体</strong>（P5–P6）｜P0｜要点：守恒方程是描述系统内部物质-能量守恒的基本法则，类型含质量、动量、能量三种，用微分方程描述行为变化；核心恒等式是<strong>“变化的＝得到的−失去的”</strong>，控制体是列方程的基本单元；现状：无笔记。</li>
+<li><strong>质量守恒方程及其稳态形式</strong>（P7–P8）｜P0｜要点：控制体质量平衡写作
+<code>dM/dt − m_in + m_ex = 0</code>；<strong>稳态时 dM/dt＝0，故
+m_in＝m_ex</strong>；圆柱形储液罐取 M＝ρSh 得
+<code>ρS dh/dt − m_in + m_ex = 0</code>；现状：无笔记。</li>
+<li><strong>能量守恒方程的一般形式</strong>（P9–P11）｜P0｜要点：<code>dE_cv/dt = Q − W + m_in h_in − m_ex h_ex</code>，物理含义是”控制体总能量变化率＋通过控制面流入的能量＝外界传导的热量−对外所做的功”；<strong>稳态时左端为
+0</strong>，只剩 Q−W+m_in h_in−m_ex h_ex＝0；单位质量能量
+E＝e＋½V²＋gz＋p/ρ（内能、动能、势能、静压能）；现状：无笔记（报告用的稳态条件只是”令
+dP/dt＝0”，没有与通用能量方程对上）。</li>
+<li><strong>开放系统与封闭系统能量方程</strong>（P12–P17）｜P0｜要点：热力学第一定律
+ΔU＝Q−W；<strong>开放系统</strong>要额外计入质量流动携带的焓进出，不对外做功且忽略势能动能时只剩热与焓流；<strong>封闭系统</strong>无物质交换、ΔE＝ΔU＝U₂−U₁；微分形式更常用：单位工质
+Δu＝q−w、微元过程
+<code>du = δq − δw</code>，对任何工质任何过程都成立；现状：无笔记（“开放还是封闭”是答辩必问，报告完全没提）。</li>
+<li><strong>体积功与三种传热方式</strong>（P16,
+P18–P20）｜P0｜要点：体积功（压强功）δw＝pdV；热传递三方式为热传导（傅里叶定律
+<code>q/A = −k dT/dr</code>）、对流传热（<code>q = h(t_w − t_f)</code>，h
+与流动类型有关）、辐射传热（斯特藩-玻尔兹曼 q＝σAT⁴，两源间
+q＝σA(T₁⁴−T₂⁴)，<strong>能源系统仿真中考虑辐射的较少</strong>）；综合式即
+du＝δq_导热＋δq_对流＋δq_辐射−pδV−δw_其他；现状：无笔记。</li>
+<li><strong>四个典型热力过程的简化</strong>（P17）｜P1｜要点：绝热 δq＝0
+⇒ du＝δw；等温（理想气体）du＝0 ⇒ Q＝W；等容 δw＝0 ⇒ du＝δq；等压 W＝pΔV
+⇒
+ΔU＝Q−pΔV；现状：无笔记（考试型送分点，也是判断”该不该忽略某项”的依据）。</li>
+<li><strong>换热过程集总模型的四条方程</strong>（P21–P22）｜P0｜要点：假设高温热源温度
+T_h
+不变、不考虑管壁传热、管内流体参数分布均匀，则联立<strong>热平衡方程</strong>、<strong>连续性方程</strong>（m_in＝m_ex＝ρAu）、<strong>对流传热方程</strong>（Q＝hA(T_h−T_ex)）、<strong>质量关联方程</strong>（m_cv＝ρV）四条；现状：无笔记。</li>
+<li><strong>换热集总模型的最终形式与三项含义</strong>（P22–P23）｜P0｜要点：化简为
+<code>ρc_p V dT_ex/dt = hA(T_h − T_ex) + m_in c_p (T_in − T_ex)</code>，右端依次是<strong>能量变化率、对流传热、热流</strong>三项；算例参数
+T_h＝35℃、T_in＝10℃、R＝0.2 m、L＝1
+m，对比空气（cp＝1.005、ρ＝1.2、h＝0.15、u＝1
+m/s）与水（cp＝4.2、ρ＝1000、h＝1.0、u＝1
+m/s）两种流体出口温度变化；现状：无笔记（这是第 4
+章唯一一个”给全参数、可直接上机”的完整算例，报告没做）。</li>
+<li><strong>微型燃机电制冷系统动态模型</strong>（P24）｜P0｜要点：微型燃机烧天然气发电、余热驱动制冷机；变量为
+P_mt（微机功率）、G_fm（燃气流率）、T_abs（制冷机供水温度），常数为
+k₁＝−6.862×10⁻⁵、k₂＝2.144×10⁴、k₃＝−1.128×10²、k₄＝−3.863×10⁻²、τ_mt＝20、τ_abs＝130；现状：<strong>报告里零散出现（报告已完整使用本页参数表与两条一阶惯性方程，这是全课重合度最高的一页）</strong>。</li>
+<li><strong>数据驱动建模的概念与流程</strong>（P26–P30）｜P1｜要点：无显式物理方程、从数据学输入-输出映射、参数完全由数据决定；流程为数据采集与预处理（清洗去噪、异常值剔除、缺失值插补、Z-score
+归一化消除量纲）→特征工程（提升性能、加速训练、增强泛化、适配模型假设）→模型选择与训练（在参数空间找使偏差最小的最优参数、直到损失函数收敛）；现状：无笔记。</li>
+<li><strong>模型验证与过拟合判据</strong>（P31）｜P1｜要点：验证是用<strong>未参与训练的数据</strong>测泛化能力，防止学到训练集特例；三种形态为欠拟合（训练集测试集误差都高）、拟合适中（误差都低且接近）、过拟合（训练误差近零但测试误差明显增大）；现状：无笔记。</li>
+<li><strong>模型评估三指标的取舍</strong>（P32）｜P1｜要点：RMSE
+因平方放大效应对大误差与离群点赋予更高权重、能反映极端偏差；MAE
+直接度量整体偏离、对异常值鲁棒且有明确物理量纲；R²
+是残差方差与总方差之比、范围 (−∞,1]，＝1 完美拟合、＝0
+等同用均值预测、＜0 说明劣于基准；现状：无笔记。</li>
+<li><strong>纯数据驱动的三个局限</strong>（P37）｜P1｜要点：外推失效（只在训练过的数据范围内可靠）、数据依赖、物理不一致（不知物理定律）；现状：无笔记。</li>
+<li><strong>数据与机理混合建模的三种策略</strong>（P38–P39）｜P1｜要点：串联式（数据模块与机理模块顺序连接，适合物理因果链明确、部分环节机理缺失）、并联式（并行后加权融合或残差修正，<strong>残差学习在工程实践中最常见</strong>）、嵌入式（数据模块嵌入机理模型内部替代特定子方程，<strong>对替代模型的精度与鲁棒性要求最高、不能破坏机理模型收敛性</strong>）；核心思想是”物理约束＋数据修正”，在保留可解释性与泛化能力的同时弥补参数不确定与计算代价高；现状：无笔记。</li>
+<li><strong>两个建模案例的可引用结论</strong>（P33–P35,
+P40–P43）｜P2｜要点：NARX-LSSVR-PSO 用机理模型造数据预测 SOFC
+电堆出口温度，预测 0.2 s 对比机理 36 s，<strong>加速
+180×</strong>；LS-SVM 以<strong>嵌入式</strong>策略替代 SOFC
+六组电化学方程后嵌入 SOFC-GT 联合循环（328 kW，总效率
+61.88%），设计性能最大偏差仅
+<strong>0.25%</strong>；现状：无笔记（答辩讲”为什么用数据驱动”时这是现成论据）。</li>
+</ul>
+<h3 id="第-5-章-5.1-pv-sofc-系统仿真实验光伏25-页">第 5 章 · 5.1 PV-SOFC
+系统仿真实验（光伏，25 页）</h3>
+<ul>
+<li><strong>光生伏特效应与光伏发电定义</strong>（P4,
+P13）｜P1｜要点：光伏是利用半导体太阳能电池吸收太阳光产生光生伏特效应、把光能<strong>直接</strong>转变为电能；机理四步为光照激发产生电子-空穴对→产生率大于复合率形成光生载流子→载流子迁移形成内建电场→产生与内建电场反向的光生电动势；现状：无笔记。</li>
+<li><strong>光伏技术的特点（7 优 4
+缺）</strong>（P8）｜P2｜要点：优点是清洁安全、可就地部署、建设周期短等
+7 项；缺点集中在能量密度低（陆地仅占地球接收量约 10%，辐照最高约 1.2
+kW/m²、多数地区低于 1 kW/m²）、转换效率低且间歇（商业晶硅
+20%–25%，仅白天发电）、受气候环境影响、<strong>制造过程高污染高能耗</strong>（硅砂需提纯至
+99.9999% 以上）；现状：无笔记。</li>
+<li><strong>理想等效电路与暗电流</strong>（P14）｜P1｜要点：理想太阳能电池＝恒流源
+I_ph 并联一个二极管；暗电流 I_D
+是无光照时外电压作用下产生的导电电流，<strong>方向与光生电流相反、会抵消部分光生电流</strong>；现状：无笔记。</li>
+<li><strong>实际等效电路与超越方程难点</strong>（P15–P16）｜P0｜要点：加上串联电阻
+R_s（很小，约 10⁻³ Ω，来自体电阻/表面电阻/电极接触电阻）与旁路电阻
+R_sh（很大，约 10³ Ω，来自硅片边缘不清洁或体内缺陷）；电特性方程为含
+<code>exp(q(V+IR_s)/AKT)</code>
+的<strong>超越方程，求解困难且参数多</strong>（I_ph、I₀、R_s、A、R_sh
+五个未知）；现状：无笔记。</li>
+<li><strong>铭牌四参数与两个边界条件</strong>（P16–P18）｜P0｜要点：厂家只给四个参数
+<strong>I_sc（短路电流）、V_oc（开路电压）、I_m（最大功率电流）、V_m（最大功率电压）</strong>，标准状况
+T＝25℃、P＝1 atm、S_ref＝1 kW/m²；未知的是
+I_ph、I₀、A、T；用<strong>短路点 (0, I_sc)</strong> 与<strong>开路点
+(V_oc, 0)</strong> 两个边界条件把 I_ph、I₀
+消去，最后只剩一个未知量；现状：无笔记。</li>
+<li><strong>重新参数化 C₁/C₂
+与求解顺序</strong>（P19–P20）｜P0｜要点：把含温度与二极管因子的物理量换成两个无量纲系数
+C₁、C₂，好处是 V＝0 时自动满足 I＝I_sc；<strong>必须先由开路点求
+C₂、再代回最大功率点求 C₁</strong>（C₁ 的表达式里含
+C₂，不能直接算）；符号检查：V_m＜V_oc 使分子为负、I_m＜I_sc
+使对数为负，故 C₂＞0；现状：无笔记。</li>
+<li><strong>工程用 I-V
+模型与课堂算例</strong>（P21）｜P0｜要点：给定输出电压 U 算电流
+<code>I = I_sc − C₁I_sc(exp(V/(V_ocC₂)) − 1)</code>；算例参数 V_os＝21.5
+V、I_scs＝2.5 A、I_ms＝2.33 A、V_ms＝17.2 V、a＝0.0025 A/℃、b＝0.0028
+V/℃、R_s＝0.005 Ω、T_air＝20℃、k＝0.03℃·m²/W，给定 S＝0.8
+kW/m²、T_air＝20℃、V＝18 V 建 Simulink 模型看 PV
+输出特性；现状：无笔记（参数给全、可直接照做，是 5.1
+最该抄进笔记的一页）。</li>
+<li><strong>PV 阵列模型与部分遮挡</strong>（P22–P25）｜P1｜要点：阵列由
+3 个串联子模块组成、每子模块 20 个单元串联（共 60
+单元）；三组光照强度分别设 1000、300、600 W/m² 模拟局部遮挡，环境温度
+25℃；<strong>每个子模块配旁路二极管</strong>，被遮挡时提供电流旁路路径、避免反向电流损坏模块并维持阵列电流输出；读图重点是与最大功率点对应的
+V 和 I；现状：无笔记。</li>
+</ul>
+<h3 id="第-5-章-5.2-pv-sofc-系统仿真实验sofc30-页">第 5 章 · 5.2 PV-SOFC
+系统仿真实验（SOFC，30 页）</h3>
+<ul>
+<li><strong>燃料电池的定义、组成与类型</strong>（P3）｜P1｜要点：按电化学原理在<strong>等温条件下</strong>把燃料化学能直接转为电能的装置；基本组成为阳极、电解质、阴极；主要类型有
+PEMFC、SOFC、PAFC、AFC；只要持续供氢氧就连续发电；现状：无笔记。</li>
+<li><strong>SOFC 的固态电解质与工作原理</strong>（P4–P5,
+P7）｜P0｜要点：用固体氧化物（典型为氧化钇稳定的氧化锆
+YSZ）作电解质、<strong>600~1000℃ 高温运行</strong>；1937 年 Baur 与
+Preis 首次提出用 ZrO₂ 作电解质、Y₂O₃ 掺入引入氧空位使 O²⁻
+可在晶格中迁移；电池由阴极、阳极、电解质、用电器四部分组成；阳极
+H₂+O²⁻→H₂O+2e⁻、阴极 ½O₂+2e⁻→O²⁻、总反应
+2H₂+O₂＝2H₂O；<strong>记忆要点：O²⁻ 在电池内部由阴极走到阳极，e⁻
+在电池外部由阳极走到阴极，二者合起来构成闭合回路</strong>；现状：无笔记。</li>
+<li><strong>为什么燃料电池效率不受卡诺限制</strong>（P8）｜P1｜要点：传统热机走”热能→机械能→电能”、受卡诺循环限制（热源温度受材料耐热限制）、η≤50%；燃料电池走”化学能→电能”直接转换、不经”热→功”、与环境热交换很小，可逆热力学效率约
+70%，对比内燃机 43%；现状：无笔记。</li>
+<li><strong>平板式与管式结构对比</strong>（P9）｜P2｜要点：平板式为层状堆叠、结构紧凑（阳极＋电解质＋阴极＋连接体为一个重复单元，多层堆叠即成电堆），优点是高功率密度、紧凑设计、制造工艺相对成熟、热管理更好；管式同心圆管（管内空气、管外燃料），优点是<strong>无需高温密封</strong>、结构稳定抗热循环，缺点是功率密度较低、制造成本较高；现状：无笔记。</li>
+<li><strong>SOFC 的优缺点</strong>（P10）｜P1｜要点：优点是排放低（CO₂
+排放燃料电池 270 对煤 800、石油 620、天然气 360
+kg/MWh）与效率高（燃料电池 45~50%，与涡轮机联用
+60~70%）；缺点是工作温度高、启动时间长、对材料要求高成本高、密封困难，<strong>这些缺点大多源于高温运行，因此降温和中低温
+SOFC 是重要研究方向</strong>；现状：无笔记。</li>
+<li><strong>零维（集总）建模的三条假设</strong>（P16）｜P0｜要点：为简化模型把电池堆及通道作为一个整体，假设<strong>①所有气体为理想气体
+②分压均一（每种气体只定义一个分压）③温度均一（整个电堆只有一个温度
+T）</strong>；PEN（阳极、阴极、电解质）视为一个整体；现状：无笔记（这是把
+44 页第 4 章”集总”概念真正落到 SOFC
+上的一页，“分压均一”后面反复要用）。</li>
+<li><strong>Nernst 电压</strong>（P17）｜P0｜要点：Nernst
+电压是理论最大电动势，受反应温度与反应物分压影响：<code>V_Nernst = E₀ + (RT/2F)·ln(pH₂·pO₂^0.5 / pH₂O)</code>；E₀
+为标准电动势且<strong>是温度的函数</strong>（E₀＝1.273−2.7645×10⁻⁴T）；R＝8.314
+J/(mol·K)、F＝96485
+C/mol；分压项含义是反应物分压升高电压升高；<strong>分压取值位置：H₂
+取燃料通道侧、O₂
+取空气通道侧</strong>，集总模型中每种气体只取一个分压；现状：无笔记。</li>
+<li><strong>三种极化损失与极化曲线分区</strong>（P18–P21）｜P0｜要点：<code>V = V_Nernst − V_ohmic − V_act − V_conc</code>；<strong>活化极化</strong>（反应需克服活化能垒，低电流密度区下降最明显，Tafel
+形式 <code>V_act＝a＋b·log(i)</code>，a、b
+随电堆温度变化）；<strong>欧姆极化</strong>（电解质离子传导电阻＋电极连接件电子传导电阻，<code>V_ohmic＝I·R_ohm</code>，与电流密度近似成正比，R_ohm＝τ_anode/σ_anode＋τ_cathode/σ_cathode＋τ_electrolyte/σ_electrolyte，层厚
+1/1/2
+mm）；<strong>浓差极化</strong>（高电流时供气跟不上、电极处浓度下降而急剧增大，<code>V_conc＝(RT_c/αnF)ln(i_L/(i_L−i))</code>，α＝1、n＝2）；另有零电流时的电压损失
+η_loss 使开路电压低于 Nernst 电压；现状：无笔记（三种损失的区域划分是读
+i-V 曲线、答”曲线为什么这样弯”的唯一依据，必背）。</li>
+<li><strong>组分守恒与法拉第定律</strong>（P22,
+P25）｜P0｜要点：电化学反应很快，<strong>组分守恒方程近似按稳态处理</strong>（d
+m/dt ≈ 0）；阳极氢气
+<code>m_H2,an,in − m_H2,an,ex − Δm_H2,reacted ≈ 0</code>，阴极同理；消耗与生成速率基于法拉第定律
+<strong>Δm_H2＝N_c·M_H2·I/(2F)、Δm_O2＝N_c·M_O2·I/(4F)、Δm_H2O＝N_c·M_H2O·I/(2F)</strong>（N_c
+为电池片数）；用途链条是”组分守恒→出口组分含量及分压→Nernst
+电压→电池电压”；现状：无笔记。</li>
+<li><strong>能量守恒与电堆温度动态方程</strong>（P23–P24,
+P26）｜P0｜要点：先分别算进出口总焓（H_in 只含 H₂/O₂/N₂，H_ex
+多一项水蒸气，各气体焓值给到温度多项式）；再列<strong>电堆温度动态方程
+<code>N_c ρV_c c_p dT_ex/dt = Σh_i,in(T_in) − Σh_i,ex(T_ex) − (1−β)(N_cI/2F)ΔH_r − IV</code></strong>，右端五项依次是储热变化、入口焓、出口焓、反应放热（扣除热损失）、输出电功；假设<strong>出口温度＝电堆温度</strong>，单电池热容
+M＝ρV_c c_p、V_c＝A_c·d_c；β 为热损失系数（绝热取 0）；算例 cp＝200
+J/(kg·K)、ρ＝3755 kg/m³、d_c＝2 cm、H_r＝−2.418×10⁵ J/mol、T_in＝800
+K、T_c|t=0＝1000 K；现状：无笔记。</li>
+<li><strong>电压模型汇总、算例与作业任务</strong>（P25–P27）｜P0｜要点：把
+V_Nernst、V_act、V_ohmic、V_conc
+与两条组分守恒方程并列成一页”总装图”，并给出燃料利用系数
+FU＝Δn_H2/n_H2,in、氧气利用系数 OU＝Δn_O2/n_O2,in；算例给 T＝1160
+K、I＝60 A、A_c＝100 cm²、P_in＝101325 Pa、i_L＝2
+A/cm²、N_c＝1、m_H2,an,in＝8.4e-7 kg/s、m_air,an,in＝4.8249e-5
+kg/s；计算流程四步：由 I 算电流密度 i
+与三个变化量→由组分守恒算出口质量流量与利用系数→由分压定律算各组分分压→算四个电压得
+V（<strong>对应的落地算式在
+P28”进出口流量计算”、P29”出口分压计算”，这两页正文是图片、文本未提取，需回看原课件</strong>）；<strong>作业：①不同电堆温度
+900/1000/1100 K 下的 i-V 与 i-P 曲线 ②搭建热模型并与电压模型耦合，看
+40/60/80 A 下的电堆温度变化</strong>；现状：无笔记（P27
+的作业就是大作业的缩小版，必须优先补）。</li>
+</ul>
+<hr />
+<h2 id="与现有微燃机报告的重合-缺口">3. 与现有微燃机报告的重合 /
+缺口</h2>
+<p>报告路径：<code>大学资料/大三上/能源系统仿真实验/作业/微燃机Simulink仿真分析/main.typ</code>（502
+行，Typst 排版，含 <code>init.m</code>、Simulink
+截图、三组阶跃图与结果对比表）。</p>
+<h3 id="已覆盖可直接复用只需搬进笔记">3.1
+已覆盖（可直接复用，只需”搬”进笔记）</h3>
+<table>
+
+<thead>
+<tr>
+<th>报告内容</th>
+<th>对应课件</th>
+<th>状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>微燃机电制冷系统工作原理（G_fm 输入 → P_mt、T_abs
+输出，余热驱动制冷）</td>
+<td>第 4 章 P24</td>
+<td>✅ 完全对上，文字可直接引用</td>
+</tr>
+<tr>
+<td>k₁~k₄、τ_mt＝20、τ_abs＝130 参数表</td>
+<td>第 4 章 P24</td>
+<td>✅ <strong>数值逐项一致</strong>，是全课重合度最高的一处</td>
+</tr>
+<tr>
+<td>两条一阶惯性方程、微分方程变换</td>
+<td>第 4 章 P24（方程本体为图片，文本未提取）</td>
+<td>✅ 报告自行整理，反而比课件更清楚</td>
+</tr>
+<tr>
+<td>稳态初值 P₀＝k₁G₀²+k₂G₀+k₃、T₀＝k₄P₀</td>
+<td>第 1 章 P55、第 4 章 P8/P11（稳态＝令导数项为 0）</td>
+<td>✅ 做法正确，但未与”稳态给动态提供初值”的原理挂钩</td>
+</tr>
+<tr>
+<td><code>init.m</code> 参数初始化脚本、变量化参数</td>
+<td>第 2 章 P30–P31（脚本）、第 3 章 P20（参数可为变量）</td>
+<td>✅ 已落地，是唯一的 MATLAB 产物</td>
+</tr>
+<tr>
+<td>Step、Fcn、Gain、Sum、Integrator、Scope 搭模型</td>
+<td>第 3 章 P8、P13、P17</td>
+<td>✅ 已落地</td>
+</tr>
+<tr>
+<td>积分器初值设为 P₀/T₀ 以保证起始稳态</td>
+<td>第 3 章 P8（Integrator）、第 1 章 P55</td>
+<td>✅ 已落地（课件未单讲初值设置，报告反而补充了）</td>
+</tr>
+<tr>
+<td>ode45 变步长、最大步长 0.1 s、AbsTol 1e-11、输出间隔 0.1 s</td>
+<td>第 3 章 P29–P30</td>
+<td>⚠️ 用了但未解释（“为什么变步长”“容差是什么”答不上来）</td>
+</tr>
+<tr>
+<td>三组阶跃工况（+20%/−20%/+40%）与响应曲线</td>
+<td>第 3 章 P11（信号源含阶跃）、P16</td>
+<td>✅ 已落地</td>
+</tr>
+<tr>
+<td>2% 误差带调节时间、时间常数决定衰减速度的推导</td>
+<td>无（课件未涉及调节时间定义）</td>
+<td>✅ <strong>报告超出课件</strong>，是加分项</td>
+</tr>
+<tr>
+<td>传递函数 1/(τs+1) 与串联框图</td>
+<td>无（课件未讲 Laplace/传递函数）</td>
+<td>✅ <strong>报告超出课件</strong>（借自自动控制原理）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="报告里看起来有其实没有的三处需要更正认知">3.2
+报告里”看起来有、其实没有”的三处（需要更正认知）</h3>
+<p>提交版 <code>main.typ</code> 经逐行核对，全文无
+<code>斜坡</code>/<code>ramp</code>/<code>敏感</code>/<code>集总</code>/<code>热模型</code>
+字样，实际情况是：</p>
+<ol type="1">
+<li><strong>提交版里没有斜坡响应</strong>——只有三组<strong>阶跃</strong>（G₁＝0.012、0.008、0.014，即
++20%/−20%/+40%），Step 模块；斜坡（Ramp）只在未并入的批量稿里。</li>
+<li><strong>不是集总热模型</strong>——是<strong>一阶惯性（传递函数
+1/(τs+1)）动态模型</strong>，没有温度场、没有热容/换热系数、没有第 4 章
+P21–P23
+那套换热集总方程。两者是不同东西，答辩时若说”我做了集总热模型”会被追问焓平衡。</li>
+<li><strong>提交版不是参数敏感性</strong>——做的是<strong>阶跃幅值</strong>对稳态量与调节时间的影响，k₁~k₄、τ
+全程固定；时间常数敏感性只在未并入的批量稿 C 组里。</li>
+</ol>
+<p>→ 这三处在<strong>提交版报告</strong>里确实是缺口，但注意：同目录的
+<code>generated-results.typ</code>（批量实验稿，未并入
+<code>main.typ</code>）实际跑了 <strong>13 个工况</strong>——A1–A4
+阶跃、B1–B4 有限斜坡（斜坡时长 100/200/400 s）、C1–C5
+时间常数敏感性（τ_mt 取 10/20/40 s、τ_abs 取 65/130/260 s），求解器
+ode45、rtol 1e-9、最大步长 0.5 s。也就是说”斜坡响应 +
+参数敏感性”不是没做，而是没写进提交版；要补这部分，素材现成，不必重跑仿真，只需把脚本结果并进报告。</p>
+<h3 id="只差整理知识已在手边落笔即可">3.3
+只差整理（知识已在手边，落笔即可）</h3>
+<ul>
+<li><strong>“稳态给动态提供初值”的方法论表述</strong>：报告用稳态方程算了
+P₀/T₀ 作积分器初值（第 1 章 P55 原理），把这句话补进笔记即可。</li>
+<li><strong>“阶数＝积分模块数”的建模法则</strong>：报告的两个一阶方程对应两个积分器，结构完全符合第
+3 章 P65–P69 四步法，只差把法则写出来。</li>
+<li><strong>“参数化建模”</strong>：报告把 k、τ 全写成变量（第 3 章
+P20），这正是”改一处就能跑多工况”的原因，只差命名。</li>
+<li><strong>建模方法归类</strong>：报告的模型属”理论分析方法＋集总参数模型”（第
+1 章 P34、P36），补两行分类即可让答辩逻辑闭环。</li>
+</ul>
+<h3 id="报告完全没有且课件明确讲了的纯缺口按章计">3.4
+报告完全没有、且课件明确讲了的（纯缺口，按章计）</h3>
+<ul>
+<li>第 1
+章：能源系统定义/构成/类型/特征、仿真五类用途、稳态与动态的定义与判据、四类经验归纳建模法、仿真软件三分法
+—— <strong>整章 0 覆盖</strong>。</li>
+<li>第 2
+章：数据类型与保留字、矩阵/数组与下标三规则、size/length、点运算 vs
+矩阵运算、<strong>函数的三段结构与调用</strong>、流程控制六件套、<strong>plot/LineSpec/subplot/stem</strong>
+—— 除脚本外 <strong>0 覆盖</strong>。</li>
+<li>第 3
+章：求解器四类分类与仿真步概念、<strong>采样时间与步长的绑定</strong>、<strong>数据导出六种格式与三种访问写法</strong>、To
+Workspace 与 To File
+的区别、浮动示波器/信号观察器/仿真数据检查器、<code>sim()</code> 批量跑
+—— <strong>报告只覆盖了”搭模型-点运行-看
+Scope”这条最粗的线</strong>。</li>
+<li>第 4
+章：三大守恒方程、开放/封闭系统能量方程、体积功与三种传热、四个典型过程、<strong>换热集总模型四条方程与最终形式（含空气/水对比算例）</strong>、数据驱动建模全流程、RMSE/MAE/R²、三种混合策略
+—— 除 P24 一页外 <strong>整章空白</strong>。</li>
+<li>第 5 章（5.1
+PV）：<strong>全部空白</strong>（等效电路、铭牌四参数法、C₁/C₂
+推导、工程 I-V 模型与算例、阵列与旁路二极管）。</li>
+<li>第 5 章（5.2 SOFC）：<strong>全部空白</strong>（Nernst
+电压、三种极化、组分守恒、电堆温度动态方程、P27 作业）。</li>
+</ul>
+<h3 id="顺带发现库里有可借用的跨课程资产非本课笔记仅只差整理级别">3.5
+顺带发现：库里有可借用的跨课程资产（<strong>非本课笔记</strong>，仅”只差整理”级别）</h3>
+<ul>
+<li><code>本科/电路/自动控制原理.md</code> 有 <strong>“Matlab 和
+Simulink”</strong> 专节（含 MATLAB 变量名规则、语句结尾
+<code>;</code>/<code>,</code>/<code>...</code>、注释写法），并有<strong>传递函数、单位阶跃信号
+Laplace
+变换、稳态特性、调节时间</strong>的完整推导——正是报告”超出课件”那部分的来源。第
+2 章 P17、第 3 章部分基础可直接搬运改写。</li>
+<li><code>本科/物理/工程热力学.md</code>
+有<strong>控制体积、质量守恒方程、稳定流动基本方程、能量方程</strong>（偏微分形式与一维稳定流动形式），可作第
+4 章 P5–P11
+的补充推导来源；但角度是”稳定流动”而非课件的”控制体集总建模”，<strong>需要改写，不能直接当本课笔记</strong>。</li>
+</ul>
+<hr />
+<h2 id="建议补写顺序">4. 建议补写顺序</h2>
+<ol type="1">
+<li><p><strong>先补第 3 章的”求解器 + 采样时间 +
+数据导出”三件套</strong>（P26–P46）。
+理由：这是每次上机必卡的三处，也是”能跑但说不清”的重灾区。报告已经用了
+ode45、AbsTol、Scope，只差把”定步长/变步长有没有误差控制”“Sample time＝0
+与非零的区别”“tout/yout 与 out.tout、yout{2}.Values
+怎么互转”写成三张对照卡。<strong>一次投入，第 4、5
+章所有仿真实验都受益</strong>。</p></li>
+<li><p><strong>再补第 4 章 P5–P23 的守恒方程与换热集总模型</strong>（约
+19 页）。
+理由：这是全课唯一成体系的”机理建模”骨架，<code>ρc_pV dT/dt = hA(T_h−T) + m_in c_p(T_in−T)</code>
+是第 1 章”集总＋惯性”、第 5 章 SOFC
+热模型、以及你报告里一阶惯性模型三者的公共祖先。补完这一节，前面那些”零散出现”的知识点会自动串成一条线。<strong>注意：动量守恒仅在
+P5
+列名、课件未展开，笔记里如实标注”未展开”，别自己补公式</strong>。</p></li>
+<li><p><strong>接着补第 5 章 5.2 的 SOFC
+电压模型</strong>（P16–P26，配套 P28–P29 回看原课件）。 理由：P27
+的白纸黑字作业（900/1000/1100 K 的 i-V、i-P 曲线；40/60/80 A
+的温度变化）就是大作业的缩小版，且”Nernst 电压 + 三种极化 + 组分守恒 +
+温度方程”是一条完整链路，缺任何一环都跑不出图。<strong>优先级等同第 3
+章</strong>。</p></li>
+<li><p><strong>然后补第 5 章 5.1 的光伏四参数法</strong>（P16–P21）。
+理由：P21 把算例参数（21.5 V/2.5 A/2.33 A/17.2
+V、a、b、R_s、T_air、k）给全了，是”抄下来就能做”的一页；C₁/C₂
+的求解顺序（先 C₂ 后 C₁）是本章唯一有推导链条的地方，适合做成 5
+行流程图记忆。若大作业选题偏 PV-SOFC 联供，这一步不能跳。</p></li>
+<li><p><strong>最后补第 1、2 章，做成两张”速查卡”而非笔记</strong>。 第
+1 章按”定义—分类—判据”三栏做一张 A4 概念卡（P19–P60
+全部概念足够塞进一页），专门应付答辩追问；第 2
+章只做”接口卡”：下标三规则、点运算 vs
+矩阵运算、<code>plot</code>+<code>LineSpec</code>+<code>subplot</code>、函数三段结构、流程控制六件套——<strong>够你读改写别人代码即可，不必系统学
+MATLAB</strong>。</p></li>
+</ol>
+<blockquote>
+<p><strong>一句话取舍</strong>：第 3、4、5 章是 P0
+主战场（占实验与作业的九成），第 1 章是答辩保险，第 2 章只学”够用”。</p>
+</blockquote>
+<hr />
+<h2 id="附录核对记录与存疑">5. 附录：核对记录与存疑</h2>
+<ul>
+<li><strong>页码核对</strong>：6 个课件页数为 68/64/71/44/25/30，合计
+302 页。</li>
+<li><strong>公式乱码</strong>：第 4 章 P7–P11、P21–P22、第 5 章 5.2
+P17–P26
+的公式符号大量乱码，本清单只保留<strong>中文标题、变量中文说明与未被破坏的数值</strong>；凡公式写法以课件页内的中文注释为准，未据乱码符号反推。</li>
+<li><strong>第 5 章 5.1 无”谢谢”尾页</strong>：文件止于
+P25（光伏特性曲线）。5.1、5.2 的目录都列了”5
+总结”，但<strong>两册正文均无总结页</strong>（5.2 止于 P30 致谢）。</li>
+<li><strong>5.2 P28–P29
+只有标题、正文为图片</strong>：这两页是”进出口流量计算”与”出口分压计算”，正是
+P25 计算流程第 1–3
+步的落地算式，但逐页文本只提取到标题。<strong>这两页必须回看原课件补图，不能靠现有文本补笔记</strong>——否则
+SOFC 那边第 1–3 步会断链。</li>
+<li><strong>第 4 章 P24
+的方程本体未在文本中</strong>：仅给出变量名与常数表，两条一阶惯性方程的具体形式由报告
+<code>main.typ</code> 第 96–109 行补齐（与常数表完全自洽）。</li>
+<li><strong>动量守恒只有名字没有内容</strong>：第 4 章 P5
+把”质量、动量、能量”并列为守恒方程类型，但 P6–P11
+只推导了质量守恒与能量守恒，<strong>动量守恒方程全章未展开</strong>。笔记里如实写”课件未展开”即可，不要自行补三大方向动量方程。</li>
+<li><strong>报告引用出处有误</strong>：<code>main.typ</code> 第 96
+行写”根据课件 1.6 节”，该节实际位于<strong>第 4 章第 24 页</strong>（第
+4 章内部编号 1.6），不是第 1 章。整理笔记时建议改标”第 4 章 P24”。</li>
+<li><strong>考核方式以课件 P16 为准</strong>：出勤 10%＋课堂作业
+30%＋项目大作业 60%，未提及闭卷考试；若后续老师另有说明，P0/P1
+的划法需要相应调整。</li>
+</ul>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%9C%AC%E7%A7%91%E8%AF%BE%E7%A8%8B/" class="category-chain-item">本科课程</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E6%9C%AC%E7%A7%91%E8%AF%BE%E7%A8%8B/%E5%A4%A7%E4%B8%89%E4%B8%8A/" class="category-chain-item">大三上</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E7%BC%BA%E5%8F%A3%E6%B8%85%E5%8D%95/" class="print-no-link">#缺口清单</a>
+      
+        <a href="/tags/%E8%83%BD%E6%BA%90%E7%B3%BB%E7%BB%9F%E4%BB%BF%E7%9C%9F%E5%AE%9E%E9%AA%8C/" class="print-no-link">#能源系统仿真实验</a>
+      
+    </div>
+  
+</div>
+
+
+              
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/posts_/%E6%9C%AC%E7%A7%91%E8%AF%BE%E7%A8%8B/%E5%A4%A7%E4%B8%89%E4%B8%8A/notes/%E6%9C%AC%E7%A7%91/%E5%A4%A7%E4%B8%89%E4%B8%8A/03_%E7%83%AD%E8%83%BD%E5%8A%A8%E5%8A%9B%E5%B7%A5%E7%A8%8B/" title="热能动力工程 · 课件缺口清单">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">热能动力工程 · 课件缺口清单</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/posts_/%E6%9C%AC%E7%A7%91%E8%AF%BE%E7%A8%8B/%E5%A4%A7%E4%B8%89%E4%B8%8A/notes/%E6%9C%AC%E7%A7%91/%E5%A4%A7%E4%B8%89%E4%B8%8A/01_%E7%94%B5%E6%B0%94%E5%B7%A5%E7%A8%8B%E5%8E%9F%E7%90%86/" title="电气工程原理 · 课件缺口清单">
+                        <span class="hidden-mobile">电气工程原理 · 课件缺口清单</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        (function() {
+          function refreshMath() {
+            if (!window.MathJax || typeof MathJax.whenReady !== 'function') {
+              return;
+            }
+            // 等待正在进行的排版完成，再重置公式及编号。
+            MathJax.whenReady(function() {
+              MathJax.startup.document.state(0);
+              MathJax.texReset();
+            }).then(function() {
+              return MathJax.typesetPromise();
+            }).catch(function(error) {
+              console.error('MathJax 公式排版失败：', error);
+            });
+          }
+
+          if (!window.MathJax) {
+            window.MathJax = {
+              tex: {
+                inlineMath: { '[+]': [['$', '$']] },
+                // 现有笔记使用粗体向量、定义等号和 dcases，显式载入所需扩展。
+                packages: { '[+]': ['boldsymbol', 'mathtools'] },
+                // 保留笔记中的双曲函数 ch、sh 记法，按正体函数名排版。
+                macros: {
+                  ch: '\\operatorname{ch}',
+                  sh: '\\operatorname{sh}'
+                },
+                preFilters: [function(context) {
+                  // 旧版允许大括号内部使用 align，新版需要使用可嵌套的 aligned。
+                  context.math.math = context.math.math.replace(
+                    /(\\left\\\{\s*)\\begin\{align\}([\s\S]*?)\\end\{align\}(\s*\\right\.)/g,
+                    '$1\\begin{aligned}$2\\end{aligned}$3'
+                  );
+                }]
+              },
+              loader: {
+                load: ["[tex]/boldsymbol","[tex]/mathtools","ui/lazy"]
+              },
+              options: {
+                renderActions: {
+                  insertedScript: [200, function() {
+                    document.querySelectorAll('mjx-container').forEach(function(node) {
+                      var target = node.parentNode;
+                      if (target && target.nodeName.toLowerCase() === 'li') {
+                        target.parentNode.classList.add('has-jax');
+                      }
+                    });
+                  }, '', false]
+                }
+              }
+            };
+          } else {
+            refreshMath();
+          }
+
+          Fluid.events.registerRefreshCallback(refreshMath);
+        })();
+      </script>
+    
+
+  <script  src="https://cdn.jsdelivr.net/npm/mathjax@4.1.3/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
