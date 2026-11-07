@@ -34,7 +34,7 @@
 <meta property="og:image" content="http://dcldyhb.github.io/posts_/%E6%9C%AC%E7%A7%91%E8%AF%BE%E7%A8%8B/%E7%94%B5%E8%B7%AF/notes/%E6%9C%AC%E7%A7%91/%E7%94%B5%E8%B7%AF/%E7%94%B5%E6%B0%94%E5%B7%A5%E7%A8%8B%E5%8E%9F%E7%90%86/%E7%94%B5%E6%B0%94%E5%B7%A5%E7%A8%8B%E5%8E%9F%E7%90%86.assets/off-nominal.png">
 <meta property="og:image" content="http://dcldyhb.github.io/posts_/%E6%9C%AC%E7%A7%91%E8%AF%BE%E7%A8%8B/%E7%94%B5%E8%B7%AF/notes/%E6%9C%AC%E7%A7%91/%E7%94%B5%E8%B7%AF/%E7%94%B5%E6%B0%94%E5%B7%A5%E7%A8%8B%E5%8E%9F%E7%90%86/%E7%94%B5%E6%B0%94%E5%B7%A5%E7%A8%8B%E5%8E%9F%E7%90%86.assets/pi-equivalent.png">
 <meta property="article:published_time" content="2026-10-06T02:52:52.000Z">
-<meta property="article:modified_time" content="2026-11-07T11:42:33.000Z">
+<meta property="article:modified_time" content="2026-11-07T11:44:40.000Z">
 <meta property="article:author" content="dcldyhb">
 <meta property="article:tag" content="课程笔记">
 <meta property="article:tag" content="电路">
@@ -235,7 +235,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          24k 字
+          30k 字
         
       </span>
     
@@ -246,7 +246,7 @@
         
         
         
-          200 分钟
+          248 分钟
         
       </span>
     
@@ -2935,6 +2935,274 @@ class="math inline">\(o\)</span> 形成的对地导纳。</li>
 class="math inline">\(\pi\)</span> 型电路。</li>
 <li>合并同一节点的对地导纳，建立节点方程。</li>
 </ol>
+<h2 id="电力网络模型与标幺制">电力网络模型与标幺制</h2>
+<h3 id="电力网络模型">电力网络模型</h3>
+<h4 id="网络模型的组成">网络模型的组成</h4>
+<p>发电机、变压器、输电线路和负荷各有自己的数学模型，把它们按拓扑关系连接起来，就得到电力网络的模型。</p>
+<table>
+<thead>
+<tr>
+<th>元件</th>
+<th>模型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>发电机</td>
+<td>恒定电源（<span class="math inline">\(P_G\)</span>、<span
+class="math inline">\(Q_G\)</span>）或电势 <span
+class="math inline">\(E\)</span> 串电抗 <span
+class="math inline">\(X_d\)</span></td>
+</tr>
+<tr>
+<td>变压器</td>
+<td>串联阻抗 + 理想变压器，或 <span class="math inline">\(\pi\)</span>
+型等值电路</td>
+</tr>
+<tr>
+<td>输电线路</td>
+<td>串联阻抗，或 <span class="math inline">\(\pi\)</span>
+型等值电路</td>
+</tr>
+<tr>
+<td>负荷</td>
+<td>恒定功率，或恒定阻抗</td>
+</tr>
+</tbody>
+</table>
+<h4 id="有名值等值电路">有名值等值电路</h4>
+<p>各元件参数都用有名值表示时，不同电压等级之间必须保留理想变压器。例如发电机机端
+<span class="math inline">\(10\ \mathrm{kV}\)</span>、经 <span
+class="math inline">\(10.5/242\ \mathrm{kV}\)</span> 升压变接入 <span
+class="math inline">\(220\ \mathrm{kV}\)</span>
+线路，等值电路中就同时存在阻抗和变比。</p>
+<p>有名值等值电路的缺点是：电压等级多时理想变压器多，计算繁琐，而且不同电压级的阻抗数值相差悬殊，不便于比较。</p>
+<h4 id="发电机直轴电抗的归算">发电机直轴电抗的归算</h4>
+<p>发电机铭牌给出的是以自身额定值为基准的标幺值 <span
+class="math inline">\(X_d&#39;&#39;\)</span> 或 <span
+class="math inline">\(X_d\)</span>，换算成有名值</p>
+<p><span class="math display">\[
+X_d=X_{d(\text{铭牌})}\frac{U_{G\mathrm{N}}^2}{S_{G\mathrm{N}}}
+=X_{d(\text{铭牌})}\frac{U_{G\mathrm{N}}^2}{P_{G\mathrm{N}}/\cos\varphi}
+\]</span></p>
+<h3 id="电力系统的标幺制-1">电力系统的标幺制</h3>
+<h4 id="标幺值的定义">标幺值的定义</h4>
+<p><strong>有名值</strong>是有具体物理单位的量值，<strong>标幺值</strong>是没有单位的相对值</p>
+<p><span class="math display">\[
+\text{标幺值}=\frac{\text{有名值}}{\text{基准值}}
+\]</span></p>
+<p>采用标幺制的好处：</p>
+<ul>
+<li>各级电压的标幺值都接近 <span
+class="math inline">\(1\)</span>，便于判断数值是否合理</li>
+<li>不同电压等级、不同容量的元件参数可以直接比较</li>
+<li>对称三相电路的计算可以与单相电路完全一致</li>
+</ul>
+<h4 id="基准值的选择">基准值的选择</h4>
+<p>一般选定两个基准值：基准功率 <span
+class="math inline">\(S_\mathrm{B}\)</span> 和基准电压 <span
+class="math inline">\(U_\mathrm{B}\)</span>。其余基准值由它们导出</p>
+<p><span class="math display">\[
+\left\{
+\begin{aligned}
+I_\mathrm{B}&amp;=\frac{S_\mathrm{B}}{\sqrt3U_\mathrm{B}}\\
+Z_\mathrm{B}&amp;=\frac{U_\mathrm{B}^2}{S_\mathrm{B}}
+\end{aligned}
+\right.
+\]</span></p>
+<p>各物理量的标幺值为</p>
+<p><span class="math display">\[
+S_*=\frac{S}{S_\mathrm{B}},\quad
+P_*=\frac{P}{S_\mathrm{B}},\quad
+Q_*=\frac{Q}{S_\mathrm{B}},\quad
+U_*=\frac{U}{U_\mathrm{B}},\quad
+I_*=\frac{I}{I_\mathrm{B}},\quad
+Z_*=\frac{Z}{Z_\mathrm{B}}=Z\frac{S_\mathrm{B}}{U_\mathrm{B}^2}
+\]</span></p>
+<p>由于 <span class="math inline">\(S_\mathrm{B}\)</span> 和 <span
+class="math inline">\(U_\mathrm{B}\)</span>
+是三相功率和线电压，三相总功率与单相功率的标幺值相等，线电压与相电压的标幺值也相等，这是标幺制在对称三相系统中好用的原因。</p>
+<h4 id="统一基准值的选定与换算">统一基准值的选定与换算</h4>
+<p>各元件的铭牌参数以自身额定值为基准，接入统一网络前要先换算到统一基准</p>
+<p><span class="math display">\[
+\text{铭牌标幺值}\to\text{有名值}\to\text{统一基准标幺值}
+\]</span></p>
+<p>对阻抗有</p>
+<p><span class="math display">\[
+Z_{*(\text{统一})}=Z_{*(\text{铭牌})}
+\left(\frac{U_\mathrm{N}}{U_\mathrm{B}}\right)^2
+\left(\frac{S_\mathrm{B}}{S_\mathrm{N}}\right)
+\]</span></p>
+<h4 id="多电压等级系统的电压级归算">多电压等级系统的电压级归算</h4>
+<p>无论用有名值还是标幺值，多电压等级网络都必须把参数归算到同一电压级，通常取最高电压级为<strong>基本级</strong>。</p>
+<h5 id="逐级归算法">逐级归算法</h5>
+<p>设各级变压器变比为 <span
+class="math inline">\(k_1,k_2,\dots\)</span>，把某元件参数归算到基本级</p>
+<p><span class="math display">\[
+\left\{
+\begin{aligned}
+Z&#39;&amp;=Z\left(k_1k_2k_3\cdots\right)^2\\
+Y&#39;&amp;=Y\left(\frac{1}{k_1k_2k_3\cdots}\right)^2\\
+U&#39;&amp;=U\left(k_1k_2k_3\cdots\right)\\
+I&#39;&amp;=I\left(\frac{1}{k_1k_2k_3\cdots}\right)
+\end{aligned}
+\right.
+\]</span></p>
+<p>标幺值的电压级归算有两条等价途径：</p>
+<ul>
+<li>先把有名值归算到基本级，再除以基本级的基准阻抗</li>
+</ul>
+<p><span class="math display">\[
+Z_*=\frac{Z&#39;}{Z_\mathrm{B}}=\frac{Z(k_1k_2k_3\cdots)^2}{Z_\mathrm{B}}
+\]</span></p>
+<ul>
+<li>把统一基准值折算到该元件所在电压级，再直接用有名值相除</li>
+</ul>
+<p><span class="math display">\[
+Z_*=\frac{Z}{Z_\mathrm{B}&#39;}
+=\frac{Z}{Z_\mathrm{B}\left(\frac{1}{k_1k_2k_3\cdots}\right)^2}
+\]</span></p>
+<p>两条途径结果相同。以 <span class="math inline">\(10\
+\mathrm{kV}\)</span> 侧 <span class="math inline">\(R=10\
+\Omega\)</span> 归算到 <span class="math inline">\(500\
+\mathrm{kV}\)</span> 为例，逐级变比为 <span
+class="math inline">\(\frac{35}{11}\)</span>、<span
+class="math inline">\(\frac{110}{38.5}\)</span>、<span
+class="math inline">\(\frac{500}{121}\)</span>：</p>
+<p><span class="math display">\[
+R&#39;=10\left(\frac{35}{11}\cdot\frac{110}{38.5}\cdot\frac{500}{121}\right)^2=14112\
+\Omega
+\]</span></p>
+<p>取 <span class="math inline">\(S_\mathrm{B}=100\
+\mathrm{MVA}\)</span>、<span class="math inline">\(U_\mathrm{B}=500\
+\mathrm{kV}\)</span>，则 <span class="math inline">\(Z_\mathrm{B}=2500\
+\Omega\)</span>，</p>
+<p><span class="math display">\[
+R_*=\frac{14112}{2500}\approx5.6
+\]</span></p>
+<h5 id="各选电压法">各选电压法</h5>
+<p>各级分别选自己的基准电压 <span
+class="math inline">\(U_{B1}\)</span>、<span
+class="math inline">\(U_{B2}\)</span>，理想变压器的变比变成<strong>标幺变比</strong></p>
+<p><span class="math display">\[
+K_*=\frac{U_{I*}}{U_{II*}}=\frac{U_{It}/U_{B1}}{U_{IIt}/U_{B2}}
+\]</span></p>
+<p>基准电压的选法不同，标幺变比是否等于 <span
+class="math inline">\(1\)</span> 也不同：</p>
+<table>
+
+<thead>
+<tr>
+<th>基准值选法</th>
+<th>关系式</th>
+<th>标幺变比</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>按变压器实际变比选择</td>
+<td><span
+class="math inline">\(U_{B1}=\dfrac{U_{It}}{U_{IIt}}U_{B2}\)</span></td>
+<td><span class="math inline">\(K_*=1\)</span></td>
+</tr>
+<tr>
+<td>按变压器额定变比选择</td>
+<td><span
+class="math inline">\(U_{B1}=\dfrac{U_{I\mathrm{N}}}{U_{II\mathrm{N}}}U_{B2}\)</span></td>
+<td><span class="math inline">\(K_*\ne1\)</span></td>
+</tr>
+<tr>
+<td>按线路额定电压选择</td>
+<td><span class="math inline">\(U_{B1}=U_{\mathrm{N}1}\)</span>，<span
+class="math inline">\(U_{B2}=U_{N2}\)</span></td>
+<td><span class="math inline">\(K_*\ne1\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>工程上常取<strong>平均额定电压</strong> <span
+class="math inline">\(U_\mathrm{av}\)</span> 作为各级基准电压：</p>
+<table style="width:100%;">
+
+<thead>
+<tr>
+<th><span class="math inline">\(U_\mathrm{N}\)</span>（<span
+class="math inline">\(\mathrm{kV}\)</span>）</th>
+<th><span class="math inline">\(3\)</span></th>
+<th><span class="math inline">\(6\)</span></th>
+<th><span class="math inline">\(10\)</span></th>
+<th><span class="math inline">\(35\)</span></th>
+<th><span class="math inline">\(110\)</span></th>
+<th><span class="math inline">\(220\)</span></th>
+<th><span class="math inline">\(330\)</span></th>
+<th><span class="math inline">\(500\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="math inline">\(U_\mathrm{av}\)</span>（<span
+class="math inline">\(\mathrm{kV}\)</span>）</td>
+<td><span class="math inline">\(3.15\)</span></td>
+<td><span class="math inline">\(6.3\)</span></td>
+<td><span class="math inline">\(10.5\)</span></td>
+<td><span class="math inline">\(37\)</span></td>
+<td><span class="math inline">\(115\)</span></td>
+<td><span class="math inline">\(230\)</span></td>
+<td><span class="math inline">\(345\)</span></td>
+<td><span class="math inline">\(525\)</span></td>
+</tr>
+</tbody>
+</table>
+<h5 id="近似计算法">近似计算法</h5>
+<p>取各级基准电压都等于平均额定电压，并近似认为所有元件的额定电压也等于平均额定电压，于是</p>
+<p><span class="math display">\[
+\left(\frac{U_\mathrm{N}}{U_\mathrm{av}}\right)^2=1
+\]</span></p>
+<p>标幺变比恒为 <span
+class="math inline">\(1\)</span>，等值电路中的理想变压器可以全部省去。</p>
+<p>此时发电机、变压器参数的标幺值简化为</p>
+<p><span class="math display">\[
+X_{d*}=X_{d*(\text{铭牌})}\frac{S_\mathrm{B}}{S_\mathrm{N}}
+\]</span></p>
+<p><span class="math display">\[
+\left\{
+\begin{aligned}
+R_{\mathrm{T}*}&amp;=\frac{P_k}{1000S_\mathrm{N}}\cdot\frac{S_\mathrm{B}}{S_\mathrm{N}}\\
+X_{\mathrm{T}*}&amp;=\frac{U_k\%}{100}\cdot\frac{S_\mathrm{B}}{S_\mathrm{N}}
+\end{aligned}
+\right.
+\]</span></p>
+<h4 id="三种方法的区别">三种方法的区别</h4>
+<table>
+
+<thead>
+<tr>
+<th>方法</th>
+<th>特点</th>
+<th>适用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>逐级归算法</td>
+<td>保留实际变比，逐级归算到基本级，计算量大但精确</td>
+<td>变比偏离额定值较多、需要精确计算时</td>
+</tr>
+<tr>
+<td>各选电压法</td>
+<td>各级各选基准电压，保留标幺变比</td>
+<td>计算机计算，网络中有非标准变比</td>
+</tr>
+<tr>
+<td>近似计算法</td>
+<td><span
+class="math inline">\(U_\mathrm{B}=U_\mathrm{av}\)</span>，标幺变比恒为
+<span class="math inline">\(1\)</span>，省去理想变压器</td>
+<td>手算、短路电流估算，误差在工程允许范围内</td>
+</tr>
+</tbody>
+</table>
+<p>三种方法的完整算例见 <a
+href="../../第五章_电力网络模型与标幺制_讲义全文.md">第五章讲义</a>，那里按课件页码给出了逐页整理和数值过程。</p>
 <h2 id="开关电器">开关电器</h2>
 <p>开关电器负责接通和开断电路：正常运行时按调度指令投切电路，故障时切除故障设备。</p>
 <p>断路器触头分开的瞬间，如果电压和电流足够大，触头间的空气会被电离，电流以<strong>电弧</strong>的形式继续流通。电弧不熄灭，电路就没有真正断开。因此这一章先讲电弧的产生与熄灭，再讲各类开关电器。</p>
@@ -4355,6 +4623,613 @@ class="math inline">\(0\)</span> 或很小，故障时阻抗很大</td>
 </tbody>
 </table>
 <p>其中<strong>分片分区运行是降低短路电流最直接、最有效的措施</strong>。</p>
+<h2 id="电力网络特性计算">电力网络特性计算</h2>
+<p>前面的章节解决”元件怎么建模”：线路参数、变压器等值电路、标幺制。这一章解决”网络怎么运行”：给定网络拓扑、参数和节点注入功率，求各节点电压和各支路功率。</p>
+<p>这就是<strong>潮流计算</strong>，它是电力系统最基本的稳态分析计算。8.1
+讲手算简单网络，8.2 讲计算机算复杂网络。</p>
+<h3 id="网络计算概述">网络计算概述</h3>
+<h4 id="潮流计算的任务">潮流计算的任务</h4>
+<ul>
+<li>已知
+<ul>
+<li>网架结构：拓扑、参数、变压器变比</li>
+<li>注入功率：各节点负荷、发电机出力</li>
+</ul></li>
+<li>待求
+<ul>
+<li>各节点电压幅值和相角</li>
+<li>网络中的功率分布</li>
+</ul></li>
+</ul>
+<p>电压是”因”，功率分布是”果”，两者又通过功率损耗耦合在一起，所以不能一次直接解出。</p>
+<h4 id="节点功率方程">节点功率方程</h4>
+<p>对节点 <span class="math inline">\(i\)</span>
+写功率方程，采用极坐标表示电压 <span class="math inline">\(\dot
+U_i=U_i\angle\delta_i\)</span>、导纳 <span
+class="math inline">\(Y_{ij}=G_{ij}+jB_{ij}\)</span>，有</p>
+<p><span class="math display">\[
+\left\{
+\begin{aligned}
+P_i &amp;=
+U_i\sum_{j=1}^{n}U_j\left(G_{ij}\cos\delta_{ij}+B_{ij}\sin\delta_{ij}\right)\\
+Q_i &amp;=
+U_i\sum_{j=1}^{n}U_j\left(G_{ij}\sin\delta_{ij}-B_{ij}\cos\delta_{ij}\right)
+\end{aligned}
+\right.
+\]</span></p>
+<p>其中 <span
+class="math inline">\(\delta_{ij}=\delta_i-\delta_j\)</span>，<span
+class="math inline">\(G_{ij}\)</span>、<span
+class="math inline">\(B_{ij}\)</span> 为节点导纳矩阵元素。</p>
+<p>这是一组关于 <span class="math inline">\(U_i\)</span>、<span
+class="math inline">\(\delta_i\)</span>
+的非线性代数方程，节点数越多，阶数越高，手算只能针对简单网络做近似。</p>
+<h4 id="支路功率方程">支路功率方程</h4>
+<p>流经支路 <span class="math inline">\(i\)</span>-<span
+class="math inline">\(j\)</span> 的功率为</p>
+<p><span class="math display">\[
+\left\{
+\begin{aligned}
+P_{ij} &amp;=
+G_{ij}U_i^2-G_{ij}U_iU_j\cos\delta_{ij}-B_{ij}U_iU_j\sin\delta_{ij}\\
+Q_{ij} &amp;=
+-\left(B_{ij}+B_{i0}\right)U_i^2+B_{ij}U_iU_j\cos\delta_{ij}-G_{ij}U_iU_j\sin\delta_{ij}
+\end{aligned}
+\right.
+\]</span></p>
+<p>其中 <span class="math inline">\(B_{i0}\)</span> 为节点 <span
+class="math inline">\(i\)</span> 的对地电纳。</p>
+<h4 id="网络分类">网络分类</h4>
+<ul>
+<li><strong>开式网</strong>：辐射状网络，功率从电源单向流向负荷，已知末端负荷即可逐段回推</li>
+<li><strong>闭式网</strong>：环网、两端或多端供电网络，功率分布不能直接看出，需要先求基本功率分布</li>
+</ul>
+<p>开式网的求解思路是逐段推算；闭式网先简化、求基本功率分布、在功率分界点分解成两个开式网。</p>
+<h3 id="电压降落与功率损耗">电压降落与功率损耗</h3>
+<h4 id="电压降落">电压降落</h4>
+<p>设线路两端为 1、2，电流从 1 流向 2，串联阻抗 <span
+class="math inline">\(Z=R+jX\)</span>。</p>
+<h5 id="已知末端功率和电压">已知末端功率和电压</h5>
+<p>已知末端 <span class="math inline">\(\dot
+S_2=P_2+jQ_2\)</span>、<span class="math inline">\(\dot
+U_2\)</span>，则</p>
+<p><span class="math display">\[
+\Delta\dot U=\dot U_1-\dot U_2=\dot I(R+jX)
+=\left(\frac{P_2+jQ_2}{U_2}\right)^{*}(R+jX)
+\]</span></p>
+<p>拆成纵分量和横分量</p>
+<p><span class="math display">\[
+\Delta U=\frac{P_2R+Q_2X}{U_2},\qquad
+\delta U=\frac{P_2X-Q_2R}{U_2}
+\]</span></p>
+<p>于是首端电压的幅值和相角为</p>
+<p><span class="math display">\[
+U_1=\sqrt{\left(U_2+\Delta U\right)^2+\left(\delta U\right)^2},\qquad
+\delta=\arctan\frac{\delta U}{U_2+\Delta U}
+\]</span></p>
+<p>注意 <span class="math inline">\(\Delta\dot U\)</span>
+是相量差，<span class="math inline">\(\Delta U\)</span>
+只是它的纵分量，不能把 <span class="math inline">\(|\dot U_1|-|\dot
+U_2|\)</span> 与 <span class="math inline">\(|\Delta\dot U|\)</span>
+混为一谈。单相、三相、标幺值下公式同形。</p>
+<h5 id="已知首端功率和电压">已知首端功率和电压</h5>
+<p>已知首端 <span class="math inline">\(\dot
+S_1=P_1+jQ_1\)</span>、<span class="math inline">\(U_1\)</span>，则</p>
+<p><span class="math display">\[
+\Delta U=\frac{P_1R+Q_1X}{U_1},\qquad
+\delta U=\frac{P_1X-Q_1R}{U_1}
+\]</span></p>
+<p><span class="math display">\[
+U_2=\sqrt{\left(U_1-\Delta U\right)^2+\left(\delta U\right)^2},\qquad
+\delta=-\arctan\frac{\delta U}{U_1-\Delta U}
+\]</span></p>
+<p>已知首端时，末端电压是”首端减去降落”，相角通常为负，表示末端滞后于首端。</p>
+<h5 id="近似计算">近似计算</h5>
+<p>忽略横分量 <span class="math inline">\(\delta
+U\)</span>，只保留纵分量：</p>
+<p><span class="math display">\[
+\left\{
+\begin{aligned}
+\text{已知末端：}&amp;\quad U_1=U_2+\frac{P_2R+Q_2X}{U_2}\\
+\text{已知首端：}&amp;\quad U_2=U_1-\frac{P_1R+Q_1X}{U_1}
+\end{aligned}
+\right.
+\]</span></p>
+<p>高压网络中 <span class="math inline">\(R\ll X\)</span>，有</p>
+<p><span class="math display">\[
+\Delta U\approx\frac{Q_2X}{U_2},\qquad
+\delta U\approx\frac{P_2X}{U_2}
+\]</span></p>
+<ul>
+<li>电压<strong>数值</strong>差主要由<strong>无功</strong>传输决定</li>
+<li>电压<strong>相位</strong>差主要由<strong>有功</strong>传输决定</li>
+</ul>
+<p>这就是”无功不足时末端电压低、无功过剩时末端电压高”的定量来源。若
+<span class="math inline">\(Q_2\le0\)</span>（容性负荷或无功注入），则
+<span class="math inline">\(\Delta U\le0\)</span>，可能出现 <span
+class="math inline">\(U_1\le U_2\)</span>。</p>
+<h4 id="电压质量指标">电压质量指标</h4>
+<p>四个”率”的分母通常都取额定电压 <span
+class="math inline">\(U_\mathrm{N}\)</span>，但含义不同：</p>
+<p><span class="math display">\[
+\left\{
+\begin{aligned}
+\text{电压损耗率}&amp;=\frac{U_1-U_2}{U_\mathrm{N}}\times100\%\\
+\text{始端电压偏移}&amp;=\frac{U_1-U_\mathrm{N}}{U_\mathrm{N}}\times100\%\\
+\text{末端电压偏移}&amp;=\frac{U_2-U_\mathrm{N}}{U_\mathrm{N}}\times100\%\\
+\text{电压调整}&amp;=\frac{U_{20}-U_2}{U_\mathrm{N}}\times100\%
+\end{aligned}
+\right.
+\]</span></p>
+<ul>
+<li><strong>电压损耗</strong>：沿线路”掉了多少”</li>
+<li><strong>电压偏移</strong>：某点偏离额定值多少</li>
+<li><strong>电压调整</strong>：从空载电压 <span
+class="math inline">\(U_{20}\)</span> 到负载电压 <span
+class="math inline">\(U_2\)</span> 的变化</li>
+</ul>
+<h4 id="功率损耗">功率损耗</h4>
+<h5 id="串联阻抗上的损耗">串联阻抗上的损耗</h5>
+<p><span class="math display">\[
+\Delta\dot S_Z=I^2Z=\frac{P^2+Q^2}{U^2}(R+jX)
+\]</span></p>
+<p>因此</p>
+<p><span class="math display">\[
+\Delta P_Z=\frac{P^2+Q^2}{U^2}R,\qquad
+\Delta Q_Z=\frac{P^2+Q^2}{U^2}X
+\]</span></p>
+<p>有功损耗恒为正；无功损耗的符号取决于 <span
+class="math inline">\(X\)</span>，输电线路的 <span
+class="math inline">\(X&gt;0\)</span>，所以串联电抗总是消耗无功。</p>
+<h5 id="并联导纳上的损耗">并联导纳上的损耗</h5>
+<p><span class="math display">\[
+\Delta\dot S_Y=\dot U(\dot UY)^{*}=U^2(G-jB)
+\]</span></p>
+<p>因此</p>
+<p><span class="math display">\[
+\Delta P_Y=U^2G,\qquad
+\Delta Q_Y=-U^2B
+\]</span></p>
+<p>线路的 <span class="math inline">\(B&gt;0\)</span>（容性），<span
+class="math inline">\(\Delta
+Q_Y&lt;0\)</span>，相当于线路发出无功；变压器的励磁支路 <span
+class="math inline">\(B&lt;0\)</span>（感性），吸收无功。</p>
+<p>串联支路用”流过该阻抗的功率与对应端电压”，并联支路用”接入点电压”。</p>
+<h4 id="输电线路与变压器的损耗模型">输电线路与变压器的损耗模型</h4>
+<p>输电线路采用 <span class="math inline">\(\pi\)</span>
+型等值，两端各接 <span class="math inline">\(Y/2\)</span>，中间串联
+<span class="math inline">\(Z\)</span>，总损耗为</p>
+<p><span class="math display">\[
+\Delta\dot S_\mathrm{L}=\Delta\dot S_{Y1}+\Delta\dot S_Z+\Delta\dot
+S_{Y2}
+\]</span></p>
+<p>输电效率为</p>
+<p><span class="math display">\[
+\eta=\frac{P_2}{P_1}\times100\%
+\]</span></p>
+<p>变压器采用 <span class="math inline">\(\Gamma\)</span>
+型等值，总损耗为</p>
+<p><span class="math display">\[
+\Delta\dot S_\mathrm{T}=\Delta\dot S_{Z\mathrm{T}}+\Delta\dot
+S_{Y\mathrm{T}}
+\]</span></p>
+<p>其中励磁支路的损耗为</p>
+<p><span class="math display">\[
+\Delta\dot S_{Y\mathrm{T}}=U^2\left(G_\mathrm{T}+jB_\mathrm{T}\right)
+\]</span></p>
+<p>手算时通常先算串联损耗，再在两端分别加并联支路损耗。并联电纳的无功符号是常见失分点。</p>
+<h4 id="电能损耗">电能损耗</h4>
+<p>功率损耗对时间积分就是电能损耗</p>
+<p><span class="math display">\[
+\Delta A=\int_0^T \Delta p(t)\,\mathrm{d}t
+\]</span></p>
+<p>工程上用<strong>最大负荷损耗小时数</strong> <span
+class="math inline">\(\tau_\mathrm{max}\)</span> 估算</p>
+<p><span class="math display">\[
+\Delta A=\Delta P_\mathrm{max}\tau_\mathrm{max}
+\]</span></p>
+<p>其中 <span class="math inline">\(\Delta P_\mathrm{max}\)</span>
+是最大负荷时的有功损耗，<span
+class="math inline">\(\tau_\mathrm{max}\)</span> 是一年中损耗电量等于
+<span class="math inline">\(\Delta
+P_\mathrm{max}\tau_\mathrm{max}\)</span> 的等效小时数。</p>
+<p>年供电量为</p>
+<p><span class="math display">\[
+A=P_\mathrm{max}T_\mathrm{max}
+\]</span></p>
+<p>其中 <span class="math inline">\(T_\mathrm{max}\)</span>
+是年最大负荷利用小时数。线损率为</p>
+<p><span class="math display">\[
+\text{线损率}=\frac{\Delta A}{A_1}\times100\%
+\]</span></p>
+<h3 id="简单电力网络的潮流计算">简单电力网络的潮流计算</h3>
+<h4 id="开式网">开式网</h4>
+<h5 id="已知同一端的功率和电压">已知同一端的功率和电压</h5>
+<p>已知末端 <span class="math inline">\(\dot S_5\)</span>、<span
+class="math inline">\(\dot U_5\)</span>
+时，从末端开始逐段向上游推算，每一段都重复”先算损耗、再算电压降落、得到下一节点”：</p>
+<p><span class="math display">\[
+\dot S_5,\dot U_5
+\to \Delta\dot S_{\mathrm{L}2},\ \Delta U_{\mathrm{L}2}
+\to \dot S_4,\dot U_4
+\to \Delta\dot S_{\mathrm{T}2},\ \Delta U_{\mathrm{T}2}
+\to \dot S_3,\dot U_3
+\to \cdots
+\to \dot S_1,\dot U_1
+\]</span></p>
+<p>每一段的具体算式为</p>
+<p><span class="math display">\[
+\left\{
+\begin{aligned}
+\Delta\dot S&amp;=\frac{P^2+Q^2}{U^2}(R+jX)\\
+\Delta U&amp;=\frac{PR+QX}{U}
+\end{aligned}
+\right.
+\]</span></p>
+<p>并联支路在相应节点另外加上</p>
+<p><span class="math display">\[
+\Delta\dot S_Y=U^2\left(-j\frac{B}{2}\right)
+\]</span></p>
+<p>同一端已知时不需要迭代，一次回推即可。</p>
+<h5 id="已知不同端的功率和电压">已知不同端的功率和电压</h5>
+<p>若已知首端电压、末端负荷功率，功率分布和电压降落互相依赖，不能一次回推。这时分两步：</p>
+<ol type="1">
+<li>假定全网电压为额定电压 <span
+class="math inline">\(U_\mathrm{N}\)</span>，从<strong>给定功率端</strong>回推各元件的功率损耗，得到全网功率分布</li>
+<li>从<strong>给定电压端</strong>出发，用第 1
+步的功率分布逐段计算电压降落，得到各节点电压，<strong>不再重算功率分布</strong></li>
+</ol>
+<p>线路损耗与电压平方成反比，电压未知时先取 <span
+class="math inline">\(U_\mathrm{N}\)</span>
+近似；由此得到的功率分布误差较小，再用它算电压，避免”功率—电压”相互等待。</p>
+<p>若精度不够，可以把算出的电压代回第 1
+步反复迭代，这就是配电网前推回代法的雏形。</p>
+<h5 id="分支支路">分支支路</h5>
+<p>有分支的辐射网，先把各分支末端的负荷连同其损耗归并到分支点，再按主干线路向上游回推。</p>
+<h4 id="闭式网">闭式网</h4>
+<h5 id="网络简化">网络简化</h5>
+<p>先把发电机、变压器、线路的并联支路都折算进节点注入功率：原网络只保留节点和支路阻抗。</p>
+<p><span class="math display">\[
+\left\{
+\begin{aligned}
+\dot S_1&amp;=\dot S_4-\Delta\dot S_{Z\mathrm{T}1}-\Delta\dot
+S_{Y\mathrm{T}1}
+-\Delta\dot S_{Y\mathrm{L}1/2}-\Delta\dot S_{Y\mathrm{L}3/2}\\
+\dot S_2&amp;=\dot S_5+\Delta\dot S_{Z\mathrm{T}2}+\Delta\dot
+S_{Y\mathrm{T}2}
++\Delta\dot S_{Y\mathrm{L}1/2}+\Delta\dot S_{Y\mathrm{L}2/2}
+\end{aligned}
+\right.
+\]</span></p>
+<p>约定<strong>节点注入功率以流入网络为正</strong>。</p>
+<h5 id="环网的基本功率分布">环网的基本功率分布</h5>
+<p>计算基本功率分布时做两条假设：全网电压为 <span
+class="math inline">\(U_\mathrm{N}\)</span>、忽略功率损耗。</p>
+<p>对三节点环网，按回路电流列方程</p>
+<p><span class="math display">\[
+\dot I_aZ_{12}+(\dot I_a-\dot I_2)Z_{23}+(\dot I_a-\dot I_2-\dot
+I_3)Z_{31}=0
+\]</span></p>
+<p>把电流换成共轭功率</p>
+<p><span class="math display">\[
+\dot I_a=\left(\frac{\dot S_a}{U_\mathrm{N}}\right)^{*},\qquad
+\dot I_2=\left(\frac{\dot S_2}{U_\mathrm{N}}\right)^{*}
+\]</span></p>
+<p>得到关于 <span class="math inline">\(\dot S_a\)</span>
+的线性方程，解出后由 <span class="math inline">\(\dot S_b=\dot S_2+\dot
+S_3-\dot S_a\)</span> 得另一端。</p>
+<p>三相推导与单相结果相同：三相电流多出的 <span
+class="math inline">\(\sqrt3\)</span> 和 <span
+class="math inline">\(e^{j30^\circ}\)</span>
+在回路方程的每一项中都出现，可以整体约去。所以后续统一用单相等值电路加标幺值。</p>
+<p>一般环网的功率分布为</p>
+<p><span class="math display">\[
+\left\{
+\begin{aligned}
+\dot S_a&amp;=\frac{(Z_{23}^{*}+Z_{31}^{*})\dot S_2+Z_{31}^{*}\dot S_3}
+{Z_{12}^{*}+Z_{23}^{*}+Z_{31}^{*}}\\
+\dot S_b&amp;=\frac{Z_{12}^{*}\dot S_2+(Z_{12}^{*}+Z_{23}^{*})\dot S_3}
+{Z_{12}^{*}+Z_{23}^{*}+Z_{31}^{*}}
+\end{aligned}
+\right.
+\]</span></p>
+<p>分子是”对方负荷乘对侧阻抗”的叠加，可以用 <span
+class="math inline">\(\dot S_a+\dot S_b=\dot S_2+\dot S_3\)</span>
+校验。</p>
+<h5 id="均一网络">均一网络</h5>
+<p>若各段导线型号相同，<span
+class="math inline">\(Z_{ij}=(r_1+jx_1)l_{ij}\)</span>，阻抗比等于长度比，功率分布只取决于线路长度：</p>
+<p><span class="math display">\[
+\left\{
+\begin{aligned}
+\dot S_a&amp;=\frac{(l_{23}+l_{31})\dot S_2+l_{31}\dot S_3}
+{l_{12}+l_{23}+l_{31}}\\
+\dot S_b&amp;=\frac{l_{12}\dot S_2+(l_{12}+l_{23})\dot S_3}
+{l_{12}+l_{23}+l_{31}}
+\end{aligned}
+\right.
+\]</span></p>
+<p>均一网络的功率分布与导线截面无关，手算时最常用。</p>
+<h5 id="两端供电网络与循环功率">两端供电网络与循环功率</h5>
+<p>两端电压不相等时，即使空载也有环流。功率分布由两部分叠加：</p>
+<p><span class="math display">\[
+\dot S_a=\underbrace{\frac{(Z_{23}^{*}+Z_{34}^{*})\dot
+S_2+Z_{34}^{*}\dot S_3}
+{Z_{12}^{*}+Z_{23}^{*}+Z_{34}^{*}}}_{\text{基本功率分布}}
++\underbrace{\frac{U_\mathrm{N}\Delta\dot U^{*}}
+{Z_{12}^{*}+Z_{23}^{*}+Z_{34}^{*}}}_{\text{循环功率 }\dot S_c}
+\]</span></p>
+<p>其中</p>
+<p><span class="math display">\[
+\Delta\dot U=\dot U_1-\dot U_4
+\]</span></p>
+<ul>
+<li>第一项是负荷引起的基本功率分布</li>
+<li>第二项是两端电压差引起的循环功率</li>
+<li>循环功率不经过负荷，只在环网中”打转”，方向从电压高的端点流向电压低的端点</li>
+</ul>
+<p>若 <span class="math inline">\(\dot U_1=\dot U_4\)</span>，则 <span
+class="math inline">\(\dot S_c=0\)</span>，退化为普通环网。</p>
+<h5 id="功率分界点与分解">功率分界点与分解</h5>
+<p>环网中总有某一点，两侧功率在这里”碰头”，即功率方向改变。在<strong>无功分界点</strong>把环打开，就分成两个开式网，可以分别用逐段推算法计算。</p>
+<p>分界点不能随便切：切在功率分界点，才能保证两个开式网的功率方向与原环网一致。分界点两侧算出的电压应当相同，可以作为校验。</p>
+<h4 id="复杂网络的四步法">复杂网络的四步法</h4>
+<p>实际网络可能有多个环、多个电源，手算时按以下四步化简：</p>
+<ol type="1">
+<li>分支支路简化：末端电压取 <span
+class="math inline">\(U_\mathrm{N}\)</span>，回推得该支路在环网节点上的注入功率</li>
+<li>环网基本功率分布：忽略损耗，按阻抗（均一网络按长度）分配</li>
+<li>在功率分界点分解为两个开式网</li>
+<li>分别计算两个开式网的潮流</li>
+</ol>
+<h3 id="复杂电力网络的潮流计算">复杂电力网络的潮流计算</h3>
+<h4 id="节点电压方程与节点导纳矩阵">节点电压方程与节点导纳矩阵</h4>
+<p>对节点 <span class="math inline">\(i\)</span>
+写基尔霍夫电流定律，把各支路电流都用节点电压表示：</p>
+<p><span class="math display">\[
+I_i=U_iy_{i0}+\sum_{j\ne i}(U_i-U_j)y_{ij}
+=\sum_{j=1}^{n}Y_{ij}U_j
+\]</span></p>
+<p>其中</p>
+<ul>
+<li>互导纳</li>
+</ul>
+<p><span class="math display">\[
+Y_{ij}=-y_{ij}\qquad(i\ne j)
+\]</span></p>
+<ul>
+<li>自导纳</li>
+</ul>
+<p><span class="math display">\[
+Y_{ii}=y_{i0}+\sum_{j\ne i}y_{ij}
+\]</span></p>
+<p>写成矩阵形式</p>
+<p><span class="math display">\[
+\boldsymbol{I}_n=\boldsymbol{Y}_n\boldsymbol{U}_n
+\]</span></p>
+<p>节点导纳矩阵 <span class="math inline">\(\boldsymbol{Y}_n\)</span>
+是线性、稀疏、对称的方阵。</p>
+<h4 id="导纳矩阵的修改">导纳矩阵的修改</h4>
+<p>增加一条 <span class="math inline">\(i\)</span>-<span
+class="math inline">\(j\)</span> 支路（导纳 <span
+class="math inline">\(y_{ij}\)</span>）时，只改变四个元素：</p>
+<p><span class="math display">\[
+\Delta Y_{ii}=\Delta Y_{jj}=y_{ij},\qquad
+\Delta Y_{ij}=\Delta Y_{ji}=-y_{ij}
+\]</span></p>
+<p>切除支路时各项反号；支路导纳由 <span
+class="math inline">\(y_{ij}\)</span> 改为 <span
+class="math inline">\(y&#39;_{ij}\)</span> 时</p>
+<p><span class="math display">\[
+\Delta Y_{ii}=\Delta Y_{jj}=y&#39;_{ij}-y_{ij},\qquad
+\Delta Y_{ij}=\Delta Y_{ji}=y_{ij}-y&#39;_{ij}
+\]</span></p>
+<p>这组公式是断线分析、网络等值和灵敏度分析的基础。</p>
+<h4 id="非标准变比变压器的修正">非标准变比变压器的修正</h4>
+<p>变压器变比为 <span class="math inline">\(K\)</span>（非标准变比），其
+<span class="math inline">\(\pi\)</span> 型等值电路接入导纳矩阵后</p>
+<p><span class="math display">\[
+\left\{
+\begin{aligned}
+Y_{ij}&amp;=Y_{ji}=-\frac{y_\mathrm{T}}{K}\\
+Y_{ii}&amp;=\frac{y_\mathrm{T}}{K}+\frac{K-1}{K}y_\mathrm{T}=y_\mathrm{T}\\
+Y_{jj}&amp;=\frac{y_\mathrm{T}}{K}+\frac{1-K}{K^2}y_\mathrm{T}=\frac{y_\mathrm{T}}{K^2}
+\end{aligned}
+\right.
+\]</span></p>
+<p>当变比由 <span class="math inline">\(K\)</span> 改为 <span
+class="math inline">\(K&#39;\)</span> 时</p>
+<p><span class="math display">\[
+\Delta Y_{ij}=\Delta
+Y_{ji}=-\left(\frac{y_\mathrm{T}}{K&#39;}-\frac{y_\mathrm{T}}{K}\right),\qquad
+\Delta Y_{ii}=0,\qquad
+\Delta Y_{jj}=\frac{y_\mathrm{T}}{K&#39;^2}-\frac{y_\mathrm{T}}{K^2}
+\]</span></p>
+<p>非标准变比在导纳矩阵中表现为<strong>非对称修正</strong>：<span
+class="math inline">\(Y_{ii}\)</span> 不变，<span
+class="math inline">\(Y_{jj}\)</span> 和互导纳改变。</p>
+<h4 id="功率方程">功率方程</h4>
+<p>由 <span class="math inline">\(\dot S_i=\dot U_i\dot
+I_i^{*}\)</span>，把 <span class="math inline">\(\dot
+I_i=\sum_jY_{ij}\dot U_j\)</span> 代入，得</p>
+<p><span class="math display">\[
+\left\{
+\begin{aligned}
+P_i&amp;=U_i\sum_{j=1}^{n}U_j\left(G_{ij}\cos\delta_{ij}+B_{ij}\sin\delta_{ij}\right)\\
+Q_i&amp;=U_i\sum_{j=1}^{n}U_j\left(G_{ij}\sin\delta_{ij}-B_{ij}\cos\delta_{ij}\right)
+\end{aligned}
+\right.
+\]</span></p>
+<p>这是非线性方程组，不能用线性代数一次解出，需要迭代。</p>
+<h4 id="节点分类">节点分类</h4>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>已知量</th>
+<th>未知量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PQ 节点（负荷节点）</td>
+<td><span class="math inline">\(P_i\)</span>、<span
+class="math inline">\(Q_i\)</span></td>
+<td><span class="math inline">\(U_i\)</span>、<span
+class="math inline">\(\delta_i\)</span></td>
+</tr>
+<tr>
+<td>PV 节点（发电机节点）</td>
+<td><span class="math inline">\(P_i\)</span>、<span
+class="math inline">\(U_i\)</span></td>
+<td><span class="math inline">\(Q_i\)</span>、<span
+class="math inline">\(\delta_i\)</span></td>
+</tr>
+<tr>
+<td>平衡节点（松弛节点）</td>
+<td><span class="math inline">\(U_i\)</span>、<span
+class="math inline">\(\delta_i\)</span></td>
+<td><span class="math inline">\(P_i\)</span>、<span
+class="math inline">\(Q_i\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>设系统有 <span class="math inline">\(n\)</span> 个节点，其中 <span
+class="math inline">\(m\)</span> 个 PQ
+节点，则方程数与未知量数相等：</p>
+<p><span class="math display">\[
+\underbrace{(n-1)}_{P_i\text{ 方程}}+\underbrace{m}_{Q_i\text{ 方程}}
+=\underbrace{(n-1)}_{\delta_i}+\underbrace{m}_{U_i}
+\]</span></p>
+<p>平衡节点一般全系统只设一个，负责承担网损和功率不平衡。</p>
+<h4 id="牛顿-拉夫逊法">牛顿-拉夫逊法</h4>
+<h5 id="误差方程">误差方程</h5>
+<p>把功率方程写成 <span class="math inline">\(F(x)=0\)</span>
+的形式，定义误差</p>
+<p><span class="math display">\[
+\Delta P_i=P_{i,\mathrm{spec}}-P_i=0,\qquad
+\Delta Q_i=Q_{i,\mathrm{spec}}-Q_i=0
+\]</span></p>
+<p>未知量 <span class="math inline">\(x\)</span> 由所有非平衡节点的
+<span class="math inline">\(\delta_i\)</span> 和所有 PQ 节点的 <span
+class="math inline">\(U_i\)</span> 组成。</p>
+<h5 id="修正方程">修正方程</h5>
+<p>把非线性方程在初值附近做一阶泰勒展开，得到线性修正方程</p>
+<p><span class="math display">\[
+\begin{bmatrix}
+\Delta P\\
+\Delta Q
+\end{bmatrix}
+=
+\begin{bmatrix}
+\dfrac{\partial P}{\partial\delta}&amp;\dfrac{\partial P}{\partial
+U}\\[6pt]
+\dfrac{\partial Q}{\partial\delta}&amp;\dfrac{\partial Q}{\partial U}
+\end{bmatrix}
+\begin{bmatrix}
+\Delta\delta\\
+\Delta U
+\end{bmatrix}
+\]</span></p>
+<p>若把电压修正量改为相对量 <span class="math inline">\(\Delta
+U/U\)</span>，修正方程写成</p>
+<p><span class="math display">\[
+\begin{bmatrix}
+\Delta P\\
+\Delta Q
+\end{bmatrix}
+=
+\begin{bmatrix}
+H&amp;N\\
+J&amp;L
+\end{bmatrix}
+\begin{bmatrix}
+\Delta\delta\\
+\Delta U/U
+\end{bmatrix}
+\]</span></p>
+<p>其中</p>
+<p><span class="math display">\[
+H_{ij}=\frac{\partial P_i}{\partial\delta_j},\qquad
+N_{ij}=U_j\frac{\partial P_i}{\partial U_j}
+\]</span></p>
+<p><span class="math display">\[
+J_{ij}=\frac{\partial Q_i}{\partial\delta_j},\qquad
+L_{ij}=U_j\frac{\partial Q_i}{\partial U_j}
+\]</span></p>
+<h5 id="求解步骤">求解步骤</h5>
+<ol type="1">
+<li>给定初值 <span class="math inline">\(U_i^{(0)}\)</span>、<span
+class="math inline">\(\delta_i^{(0)}\)</span></li>
+<li>计算误差 <span class="math inline">\(\Delta P\)</span>、<span
+class="math inline">\(\Delta Q\)</span></li>
+<li>形成雅可比矩阵 <span class="math inline">\(H\)</span>、<span
+class="math inline">\(N\)</span>、<span
+class="math inline">\(J\)</span>、<span
+class="math inline">\(L\)</span></li>
+<li>解线性方程得 <span
+class="math inline">\(\Delta\delta\)</span>、<span
+class="math inline">\(\Delta U/U\)</span></li>
+<li>更新 <span class="math inline">\(\delta\)</span>、<span
+class="math inline">\(U\)</span></li>
+<li>检查 <span class="math inline">\(|\Delta P|\)</span>、<span
+class="math inline">\(|\Delta Q|\)</span> 是否满足精度，不满足则回到第 2
+步</li>
+</ol>
+<p>牛顿法具有平方收敛特性，初值合适时收敛很快；雅可比矩阵的稀疏结构与节点导纳矩阵相同。</p>
+<h4 id="快速解耦法">快速解耦法</h4>
+<h5 id="简化依据">简化依据</h5>
+<p>高压网络中 <span class="math inline">\(r\ll X\)</span>，有</p>
+<p><span class="math display">\[
+|g_{ij}|\ll|b_{ij}|,\qquad
+\cos\delta_{ij}\approx1
+\]</span></p>
+<p>物理含义是：有功变化主要影响相角，无功变化主要影响电压。于是耦合项可以忽略</p>
+<p><span class="math display">\[
+N_{ij}\approx0,\qquad J_{ij}\approx0
+\]</span></p>
+<h5 id="雅可比元素的简化">雅可比元素的简化</h5>
+<p>非对角元素</p>
+<p><span class="math display">\[
+H_{ij}\approx-U_iU_jB_{ij},\qquad
+L_{ij}\approx-U_iU_jB_{ij}
+\]</span></p>
+<p>对角元素利用 <span class="math inline">\(\sum_{j\ne
+i}B_{ij}=-B_{ii}\)</span>，得</p>
+<p><span class="math display">\[
+H_{ii}\approx-U_i^2B_{ii},\qquad
+L_{ii}\approx-U_i^2B_{ii}
+\]</span></p>
+<h5 id="解耦后的修正方程">解耦后的修正方程</h5>
+<p><span class="math display">\[
+[\Delta P]=[B&#39;][\Delta\delta],\qquad
+[\Delta Q]=[B&#39;&#39;][\Delta U]
+\]</span></p>
+<p>其中 <span class="math inline">\(B&#39;\)</span>、<span
+class="math inline">\(B&#39;&#39;\)</span>
+由节点导纳矩阵的虚部构成。两个方程阶数更低，且系数矩阵在迭代中保持不变，只需分解一次。</p>
+<p>快速解耦不是”忽略无功”或”忽略有功”，而是忽略有功—电压和无功—相角的弱耦合。</p>
+<h4 id="直流潮流">直流潮流</h4>
+<p>再做三条假设：</p>
+<ul>
+<li><span class="math inline">\(r\ll X\)</span>，支路电纳 <span
+class="math inline">\(b_{ij}=-1/x_{ij}\)</span>，忽略对地支路</li>
+<li><span
+class="math inline">\(\sin\delta_{ij}\approx\delta_i-\delta_j\)</span>，<span
+class="math inline">\(\cos\delta_{ij}\approx1\)</span></li>
+<li>各节点电压幅值 <span class="math inline">\(U_i\approx1\)</span></li>
+</ul>
+<p>功率方程退化为线性方程</p>
+<p><span class="math display">\[
+P_i=\sum_{j=1}^{n}B_{ij}\left(\delta_i-\delta_j\right)
+=-\sum_{j=1}^{n}B_{ij}\delta_j
+\]</span></p>
+<p>写成矩阵形式</p>
+<p><span class="math display">\[
+[\boldsymbol{P}]=[\boldsymbol{B}][\boldsymbol{\delta}]
+\]</span></p>
+<p>直流潮流无损耗、无无功、电压幅值全为 <span
+class="math inline">\(1\)</span>，只反映有功与相角的线性关系，计算速度快，适合规划设计、安全分析初筛，不能用于电压质量分析。</p>
 
                 
               </div>
