@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title></title>
+    <link href="/posts_/uncategorized/notes/thermo_midterm_work/project_93/latexindent/"/>
+    <url>/posts_/uncategorized/notes/thermo_midterm_work/project_93/latexindent/</url>
+    
+    <content type="html"><![CDATA[{"defaultIndent":"  ","verbatimEnvironments":{"codeblock":1,"codeblockminted":1},"verbatimCommands":{"url":1,"link":1,"href":1},"modifyLineBreaks":{"textWrapOptions":{"columns":80}},"replacements":[{"substitution":"s/\\n+(\\h*)\\\\(url|link|href)\\{/\\n$1\\\\$2\\{/g","when":"after"},{"substitution":"s/\\\\(url|link|href)\\{([^\\}]*)\\n\\s*([^\\}]*)\\}/\\\\$1\\{$2$3\\}/g","when":"after"}],"onlyOneBackUp":1,"dos2unixlinebreaks":1}]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Notes：多模型协作说明</title>
     <link href="/posts_/uncategorized/notes/AGENTS/"/>
     <url>/posts_/uncategorized/notes/AGENTS/</url>
